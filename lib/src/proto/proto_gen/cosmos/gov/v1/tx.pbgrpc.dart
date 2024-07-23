@@ -49,6 +49,18 @@ class MsgClient extends $grpc.Client {
           ($0.MsgDeposit value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MsgDepositResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/cosmos.gov.v1.Msg/UpdateParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
+  static final _$cancelProposal =
+      $grpc.ClientMethod<$0.MsgCancelProposal, $0.MsgCancelProposalResponse>(
+          '/cosmos.gov.v1.Msg/CancelProposal',
+          ($0.MsgCancelProposal value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgCancelProposalResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -81,6 +93,18 @@ class MsgClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.MsgDepositResponse> deposit($0.MsgDeposit request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deposit, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgCancelProposalResponse> cancelProposal(
+      $0.MsgCancelProposal request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$cancelProposal, request, options: options);
   }
 }
 
@@ -130,6 +154,24 @@ abstract class MsgServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MsgDeposit.fromBuffer(value),
         ($0.MsgDepositResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateParams',
+            updateParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgCancelProposal, $0.MsgCancelProposalResponse>(
+            'CancelProposal',
+            cancelProposal_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgCancelProposal.fromBuffer(value),
+            ($0.MsgCancelProposalResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgSubmitProposalResponse> submitProposal_Pre(
@@ -159,6 +201,17 @@ abstract class MsgServiceBase extends $grpc.Service {
     return deposit(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateParams(call, await request);
+  }
+
+  $async.Future<$0.MsgCancelProposalResponse> cancelProposal_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgCancelProposal> request) async {
+    return cancelProposal(call, await request);
+  }
+
   $async.Future<$0.MsgSubmitProposalResponse> submitProposal(
       $grpc.ServiceCall call, $0.MsgSubmitProposal request);
   $async.Future<$0.MsgExecLegacyContentResponse> execLegacyContent(
@@ -169,4 +222,8 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgVoteWeighted request);
   $async.Future<$0.MsgDepositResponse> deposit(
       $grpc.ServiceCall call, $0.MsgDeposit request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
+  $async.Future<$0.MsgCancelProposalResponse> cancelProposal(
+      $grpc.ServiceCall call, $0.MsgCancelProposal request);
 }

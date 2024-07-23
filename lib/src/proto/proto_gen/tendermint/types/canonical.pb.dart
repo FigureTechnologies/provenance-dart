@@ -515,6 +515,126 @@ class CanonicalVote extends $pb.GeneratedMessage {
   void clearChainId() => clearField(6);
 }
 
+/// CanonicalVoteExtension provides us a way to serialize a vote extension from
+/// a particular validator such that we can sign over those serialized bytes.
+class CanonicalVoteExtension extends $pb.GeneratedMessage {
+  factory CanonicalVoteExtension({
+    $core.List<$core.int>? extension_1,
+    $fixnum.Int64? height,
+    $fixnum.Int64? round,
+    $core.String? chainId,
+  }) {
+    final $result = create();
+    if (extension_1 != null) {
+      $result.extension_1 = extension_1;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (round != null) {
+      $result.round = round;
+    }
+    if (chainId != null) {
+      $result.chainId = chainId;
+    }
+    return $result;
+  }
+  CanonicalVoteExtension._() : super();
+  factory CanonicalVoteExtension.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory CanonicalVoteExtension.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CanonicalVoteExtension',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.types'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'extension', $pb.PbFieldType.OY)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'height', $pb.PbFieldType.OSF6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'round', $pb.PbFieldType.OSF6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, _omitFieldNames ? '' : 'chainId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  CanonicalVoteExtension clone() =>
+      CanonicalVoteExtension()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  CanonicalVoteExtension copyWith(
+          void Function(CanonicalVoteExtension) updates) =>
+      super.copyWith((message) => updates(message as CanonicalVoteExtension))
+          as CanonicalVoteExtension;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CanonicalVoteExtension create() => CanonicalVoteExtension._();
+  CanonicalVoteExtension createEmptyInstance() => create();
+  static $pb.PbList<CanonicalVoteExtension> createRepeated() =>
+      $pb.PbList<CanonicalVoteExtension>();
+  @$core.pragma('dart2js:noInline')
+  static CanonicalVoteExtension getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CanonicalVoteExtension>(create);
+  static CanonicalVoteExtension? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get extension_1 => $_getN(0);
+  @$pb.TagNumber(1)
+  set extension_1($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasExtension_1() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExtension_1() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get height => $_getI64(1);
+  @$pb.TagNumber(2)
+  set height($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasHeight() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHeight() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get round => $_getI64(2);
+  @$pb.TagNumber(3)
+  set round($fixnum.Int64 v) {
+    $_setInt64(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasRound() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRound() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get chainId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set chainId($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasChainId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChainId() => clearField(4);
+}
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

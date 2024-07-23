@@ -403,9 +403,9 @@ const QueryGetCommitmentResponse$json = {
 /// Descriptor for `QueryGetCommitmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryGetCommitmentResponseDescriptor =
     $convert.base64Decode(
-        'ChpRdWVyeUdldENvbW1pdG1lbnRSZXNwb25zZRJjCgZhbW91bnQYASADKAsyGS5jb3Ntb3MuYm'
-        'FzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90'
-        'eXBlcy5Db2luc1IGYW1vdW50');
+        'ChpRdWVyeUdldENvbW1pdG1lbnRSZXNwb25zZRJ5CgZhbW91bnQYASADKAsyGS5jb3Ntb3MuYm'
+        'FzZS52MWJldGExLkNvaW5CRsjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90'
+        'eXBlcy5Db2luc5rnsCoMbGVnYWN5X2NvaW5zqOewKgFSBmFtb3VudA==');
 
 @$core.Deprecated('Use queryGetAccountCommitmentsRequestDescriptor instead')
 const QueryGetAccountCommitmentsRequest$json = {
@@ -746,16 +746,17 @@ const QueryCommitmentSettlementFeeCalcResponse$json = {
 
 /// Descriptor for `QueryCommitmentSettlementFeeCalcResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryCommitmentSettlementFeeCalcResponseDescriptor = $convert.base64Decode(
-    'CihRdWVyeUNvbW1pdG1lbnRTZXR0bGVtZW50RmVlQ2FsY1Jlc3BvbnNlEnAKDWV4Y2hhbmdlX2'
-    'ZlZXMYASADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNv'
-    'bS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IMZXhjaGFuZ2VGZWVzEmwKC2lucHV0X3'
-    'RvdGFsGAIgAygLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQjDI3h8Aqt8fKGdpdGh1Yi5j'
-    'b20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbnNSCmlucHV0VG90YWwSdAoPY29udmVydG'
-    'VkX3RvdGFsGAMgAygLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQjDI3h8Aqt8fKGdpdGh1'
-    'Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbnNSDmNvbnZlcnRlZFRvdGFsElQKD2'
-    'NvbnZlcnNpb25fbmF2cxgEIAMoCzIlLnByb3ZlbmFuY2UuZXhjaGFuZ2UudjEuTmV0QXNzZXRQ'
-    'cmljZUIEyN4fAFIOY29udmVyc2lvbk5hdnMSQwoKdG9fZmVlX25hdhgFIAEoCzIlLnByb3Zlbm'
-    'FuY2UuZXhjaGFuZ2UudjEuTmV0QXNzZXRQcmljZVIIdG9GZWVOYXY=');
+    'CihRdWVyeUNvbW1pdG1lbnRTZXR0bGVtZW50RmVlQ2FsY1Jlc3BvbnNlEoYBCg1leGNoYW5nZV'
+    '9mZWVzGAEgAygLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQkbI3h8Aqt8fKGdpdGh1Yi5j'
+    'b20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbnOa57AqDGxlZ2FjeV9jb2luc6jnsCoBUg'
+    'xleGNoYW5nZUZlZXMSggEKC2lucHV0X3RvdGFsGAIgAygLMhkuY29zbW9zLmJhc2UudjFiZXRh'
+    'MS5Db2luQkbI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbn'
+    'Oa57AqDGxlZ2FjeV9jb2luc6jnsCoBUgppbnB1dFRvdGFsEooBCg9jb252ZXJ0ZWRfdG90YWwY'
+    'AyADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CRsjeHwCq3x8oZ2l0aHViLmNvbS9jb3'
+    'Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc5rnsCoMbGVnYWN5X2NvaW5zqOewKgFSDmNvbnZl'
+    'cnRlZFRvdGFsElQKD2NvbnZlcnNpb25fbmF2cxgEIAMoCzIlLnByb3ZlbmFuY2UuZXhjaGFuZ2'
+    'UudjEuTmV0QXNzZXRQcmljZUIEyN4fAFIOY29udmVyc2lvbk5hdnMSQwoKdG9fZmVlX25hdhgF'
+    'IAEoCzIlLnByb3ZlbmFuY2UuZXhjaGFuZ2UudjEuTmV0QXNzZXRQcmljZVIIdG9GZWVOYXY=');
 
 @$core.Deprecated('Use queryValidateCreateMarketRequestDescriptor instead')
 const QueryValidateCreateMarketRequest$json = {
@@ -869,3 +870,252 @@ final $typed_data.Uint8List queryValidateManageFeesResponseDescriptor =
     $convert.base64Decode(
         'Ch9RdWVyeVZhbGlkYXRlTWFuYWdlRmVlc1Jlc3BvbnNlEhQKBWVycm9yGAEgASgJUgVlcnJvch'
         'IrChJnb3ZfcHJvcF93aWxsX3Bhc3MYAiABKAhSD2dvdlByb3BXaWxsUGFzcw==');
+
+@$core.Deprecated('Use queryGetPaymentRequestDescriptor instead')
+const QueryGetPaymentRequest$json = {
+  '1': 'QueryGetPaymentRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {'1': 'external_id', '3': 2, '4': 1, '5': 9, '10': 'externalId'},
+  ],
+};
+
+/// Descriptor for `QueryGetPaymentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetPaymentRequestDescriptor = $convert.base64Decode(
+    'ChZRdWVyeUdldFBheW1lbnRSZXF1ZXN0EjAKBnNvdXJjZRgBIAEoCUIY0rQtFGNvc21vcy5BZG'
+    'RyZXNzU3RyaW5nUgZzb3VyY2USHwoLZXh0ZXJuYWxfaWQYAiABKAlSCmV4dGVybmFsSWQ=');
+
+@$core.Deprecated('Use queryGetPaymentResponseDescriptor instead')
+const QueryGetPaymentResponse$json = {
+  '1': 'QueryGetPaymentResponse',
+  '2': [
+    {
+      '1': 'payment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.provenance.exchange.v1.Payment',
+      '10': 'payment'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetPaymentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetPaymentResponseDescriptor =
+    $convert.base64Decode(
+        'ChdRdWVyeUdldFBheW1lbnRSZXNwb25zZRI5CgdwYXltZW50GAEgASgLMh8ucHJvdmVuYW5jZS'
+        '5leGNoYW5nZS52MS5QYXltZW50UgdwYXltZW50');
+
+@$core.Deprecated('Use queryGetPaymentsWithSourceRequestDescriptor instead')
+const QueryGetPaymentsWithSourceRequest$json = {
+  '1': 'QueryGetPaymentsWithSourceRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {
+      '1': 'pagination',
+      '3': 99,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageRequest',
+      '10': 'pagination'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetPaymentsWithSourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetPaymentsWithSourceRequestDescriptor =
+    $convert.base64Decode(
+        'CiFRdWVyeUdldFBheW1lbnRzV2l0aFNvdXJjZVJlcXVlc3QSMAoGc291cmNlGAEgASgJQhjStC'
+        '0UY29zbW9zLkFkZHJlc3NTdHJpbmdSBnNvdXJjZRJGCgpwYWdpbmF0aW9uGGMgASgLMiYuY29z'
+        'bW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use queryGetPaymentsWithSourceResponseDescriptor instead')
+const QueryGetPaymentsWithSourceResponse$json = {
+  '1': 'QueryGetPaymentsWithSourceResponse',
+  '2': [
+    {
+      '1': 'payments',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.provenance.exchange.v1.Payment',
+      '10': 'payments'
+    },
+    {
+      '1': 'pagination',
+      '3': 99,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageResponse',
+      '10': 'pagination'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetPaymentsWithSourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetPaymentsWithSourceResponseDescriptor =
+    $convert.base64Decode(
+        'CiJRdWVyeUdldFBheW1lbnRzV2l0aFNvdXJjZVJlc3BvbnNlEjsKCHBheW1lbnRzGAEgAygLMh'
+        '8ucHJvdmVuYW5jZS5leGNoYW5nZS52MS5QYXltZW50UghwYXltZW50cxJHCgpwYWdpbmF0aW9u'
+        'GGMgASgLMicuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2VSCnBhZ2luYX'
+        'Rpb24=');
+
+@$core.Deprecated('Use queryGetPaymentsWithTargetRequestDescriptor instead')
+const QueryGetPaymentsWithTargetRequest$json = {
+  '1': 'QueryGetPaymentsWithTargetRequest',
+  '2': [
+    {'1': 'target', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'target'},
+    {
+      '1': 'pagination',
+      '3': 99,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageRequest',
+      '10': 'pagination'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetPaymentsWithTargetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetPaymentsWithTargetRequestDescriptor =
+    $convert.base64Decode(
+        'CiFRdWVyeUdldFBheW1lbnRzV2l0aFRhcmdldFJlcXVlc3QSMAoGdGFyZ2V0GAEgASgJQhjStC'
+        '0UY29zbW9zLkFkZHJlc3NTdHJpbmdSBnRhcmdldBJGCgpwYWdpbmF0aW9uGGMgASgLMiYuY29z'
+        'bW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use queryGetPaymentsWithTargetResponseDescriptor instead')
+const QueryGetPaymentsWithTargetResponse$json = {
+  '1': 'QueryGetPaymentsWithTargetResponse',
+  '2': [
+    {
+      '1': 'payments',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.provenance.exchange.v1.Payment',
+      '10': 'payments'
+    },
+    {
+      '1': 'pagination',
+      '3': 99,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageResponse',
+      '10': 'pagination'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetPaymentsWithTargetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetPaymentsWithTargetResponseDescriptor =
+    $convert.base64Decode(
+        'CiJRdWVyeUdldFBheW1lbnRzV2l0aFRhcmdldFJlc3BvbnNlEjsKCHBheW1lbnRzGAEgAygLMh'
+        '8ucHJvdmVuYW5jZS5leGNoYW5nZS52MS5QYXltZW50UghwYXltZW50cxJHCgpwYWdpbmF0aW9u'
+        'GGMgASgLMicuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2VSCnBhZ2luYX'
+        'Rpb24=');
+
+@$core.Deprecated('Use queryGetAllPaymentsRequestDescriptor instead')
+const QueryGetAllPaymentsRequest$json = {
+  '1': 'QueryGetAllPaymentsRequest',
+  '2': [
+    {
+      '1': 'pagination',
+      '3': 99,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageRequest',
+      '10': 'pagination'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetAllPaymentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetAllPaymentsRequestDescriptor =
+    $convert.base64Decode(
+        'ChpRdWVyeUdldEFsbFBheW1lbnRzUmVxdWVzdBJGCgpwYWdpbmF0aW9uGGMgASgLMiYuY29zbW'
+        '9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use queryGetAllPaymentsResponseDescriptor instead')
+const QueryGetAllPaymentsResponse$json = {
+  '1': 'QueryGetAllPaymentsResponse',
+  '2': [
+    {
+      '1': 'payments',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.provenance.exchange.v1.Payment',
+      '10': 'payments'
+    },
+    {
+      '1': 'pagination',
+      '3': 99,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageResponse',
+      '10': 'pagination'
+    },
+  ],
+};
+
+/// Descriptor for `QueryGetAllPaymentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryGetAllPaymentsResponseDescriptor = $convert.base64Decode(
+    'ChtRdWVyeUdldEFsbFBheW1lbnRzUmVzcG9uc2USOwoIcGF5bWVudHMYASADKAsyHy5wcm92ZW'
+    '5hbmNlLmV4Y2hhbmdlLnYxLlBheW1lbnRSCHBheW1lbnRzEkcKCnBhZ2luYXRpb24YYyABKAsy'
+    'Jy5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXNwb25zZVIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use queryPaymentFeeCalcRequestDescriptor instead')
+const QueryPaymentFeeCalcRequest$json = {
+  '1': 'QueryPaymentFeeCalcRequest',
+  '2': [
+    {
+      '1': 'payment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.provenance.exchange.v1.Payment',
+      '8': {},
+      '10': 'payment'
+    },
+  ],
+};
+
+/// Descriptor for `QueryPaymentFeeCalcRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryPaymentFeeCalcRequestDescriptor =
+    $convert.base64Decode(
+        'ChpRdWVyeVBheW1lbnRGZWVDYWxjUmVxdWVzdBI/CgdwYXltZW50GAEgASgLMh8ucHJvdmVuYW'
+        '5jZS5leGNoYW5nZS52MS5QYXltZW50QgTI3h8AUgdwYXltZW50');
+
+@$core.Deprecated('Use queryPaymentFeeCalcResponseDescriptor instead')
+const QueryPaymentFeeCalcResponse$json = {
+  '1': 'QueryPaymentFeeCalcResponse',
+  '2': [
+    {
+      '1': 'fee_create',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.Coin',
+      '8': {},
+      '10': 'feeCreate'
+    },
+    {
+      '1': 'fee_accept',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.Coin',
+      '8': {},
+      '10': 'feeAccept'
+    },
+  ],
+};
+
+/// Descriptor for `QueryPaymentFeeCalcResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryPaymentFeeCalcResponseDescriptor = $convert.base64Decode(
+    'ChtRdWVyeVBheW1lbnRGZWVDYWxjUmVzcG9uc2USgAEKCmZlZV9jcmVhdGUYASADKAsyGS5jb3'
+    'Ntb3MuYmFzZS52MWJldGExLkNvaW5CRsjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9z'
+    'LXNkay90eXBlcy5Db2luc5rnsCoMbGVnYWN5X2NvaW5zqOewKgFSCWZlZUNyZWF0ZRKAAQoKZm'
+    'VlX2FjY2VwdBgCIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkJGyN4fAKrfHyhnaXRo'
+    'dWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zmuewKgxsZWdhY3lfY29pbnOo57'
+    'AqAVIJZmVlQWNjZXB0');

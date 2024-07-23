@@ -2542,6 +2542,141 @@ class MsgSupplyIncreaseProposalResponse extends $pb.GeneratedMessage {
   static MsgSupplyIncreaseProposalResponse? _defaultInstance;
 }
 
+/// MsgSupplyDecreaseProposalRequest defines a governance proposal to decrease total supply of the marker
+class MsgSupplyDecreaseProposalRequest extends $pb.GeneratedMessage {
+  factory MsgSupplyDecreaseProposalRequest({
+    $3.Coin? amount,
+    $core.String? authority,
+  }) {
+    final $result = create();
+    if (amount != null) {
+      $result.amount = amount;
+    }
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    return $result;
+  }
+  MsgSupplyDecreaseProposalRequest._() : super();
+  factory MsgSupplyDecreaseProposalRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgSupplyDecreaseProposalRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgSupplyDecreaseProposalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOM<$3.Coin>(1, _omitFieldNames ? '' : 'amount',
+        subBuilder: $3.Coin.create)
+    ..aOS(2, _omitFieldNames ? '' : 'authority')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgSupplyDecreaseProposalRequest clone() =>
+      MsgSupplyDecreaseProposalRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgSupplyDecreaseProposalRequest copyWith(
+          void Function(MsgSupplyDecreaseProposalRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgSupplyDecreaseProposalRequest))
+          as MsgSupplyDecreaseProposalRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgSupplyDecreaseProposalRequest create() =>
+      MsgSupplyDecreaseProposalRequest._();
+  MsgSupplyDecreaseProposalRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgSupplyDecreaseProposalRequest> createRepeated() =>
+      $pb.PbList<MsgSupplyDecreaseProposalRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgSupplyDecreaseProposalRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgSupplyDecreaseProposalRequest>(
+          create);
+  static MsgSupplyDecreaseProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.Coin get amount => $_getN(0);
+  @$pb.TagNumber(1)
+  set amount($3.Coin v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAmount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAmount() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.Coin ensureAmount() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get authority => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set authority($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasAuthority() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthority() => clearField(2);
+}
+
+/// MsgSupplyIncreaseProposalResponse defines the Msg/SupplyDecreaseProposal response type
+class MsgSupplyDecreaseProposalResponse extends $pb.GeneratedMessage {
+  factory MsgSupplyDecreaseProposalResponse() => create();
+  MsgSupplyDecreaseProposalResponse._() : super();
+  factory MsgSupplyDecreaseProposalResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgSupplyDecreaseProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgSupplyDecreaseProposalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgSupplyDecreaseProposalResponse clone() =>
+      MsgSupplyDecreaseProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgSupplyDecreaseProposalResponse copyWith(
+          void Function(MsgSupplyDecreaseProposalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgSupplyDecreaseProposalResponse))
+          as MsgSupplyDecreaseProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgSupplyDecreaseProposalResponse create() =>
+      MsgSupplyDecreaseProposalResponse._();
+  MsgSupplyDecreaseProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgSupplyDecreaseProposalResponse> createRepeated() =>
+      $pb.PbList<MsgSupplyDecreaseProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgSupplyDecreaseProposalResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgSupplyDecreaseProposalResponse>(
+          create);
+  static MsgSupplyDecreaseProposalResponse? _defaultInstance;
+}
+
 /// MsgUpdateRequiredAttributesRequest defines a msg to update/add/remove required attributes from a resticted marker
 /// signer must have transfer authority to change attributes, to update attribute add current to remove list and new to
 /// add list
@@ -3285,6 +3420,872 @@ class MsgAddNetAssetValuesResponse extends $pb.GeneratedMessage {
   static MsgAddNetAssetValuesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<MsgAddNetAssetValuesResponse>(create);
   static MsgAddNetAssetValuesResponse? _defaultInstance;
+}
+
+/// MsgSetAdministratorProposalRequest defines the Msg/SetAdministratorProposal request type
+class MsgSetAdministratorProposalRequest extends $pb.GeneratedMessage {
+  factory MsgSetAdministratorProposalRequest({
+    $core.String? denom,
+    $core.Iterable<$4.AccessGrant>? access,
+    $core.String? authority,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    if (access != null) {
+      $result.access.addAll(access);
+    }
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    return $result;
+  }
+  MsgSetAdministratorProposalRequest._() : super();
+  factory MsgSetAdministratorProposalRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgSetAdministratorProposalRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgSetAdministratorProposalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..pc<$4.AccessGrant>(2, _omitFieldNames ? '' : 'access', $pb.PbFieldType.PM,
+        subBuilder: $4.AccessGrant.create)
+    ..aOS(3, _omitFieldNames ? '' : 'authority')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgSetAdministratorProposalRequest clone() =>
+      MsgSetAdministratorProposalRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgSetAdministratorProposalRequest copyWith(
+          void Function(MsgSetAdministratorProposalRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgSetAdministratorProposalRequest))
+          as MsgSetAdministratorProposalRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgSetAdministratorProposalRequest create() =>
+      MsgSetAdministratorProposalRequest._();
+  MsgSetAdministratorProposalRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgSetAdministratorProposalRequest> createRepeated() =>
+      $pb.PbList<MsgSetAdministratorProposalRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgSetAdministratorProposalRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgSetAdministratorProposalRequest>(
+          create);
+  static MsgSetAdministratorProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$4.AccessGrant> get access => $_getList(1);
+
+  /// The signer of the message.  Must have admin authority to marker or be governance module account address.
+  @$pb.TagNumber(3)
+  $core.String get authority => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authority($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasAuthority() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthority() => clearField(3);
+}
+
+/// MsgSetAdministratorProposalResponse defines the Msg/SetAdministratorProposal response type
+class MsgSetAdministratorProposalResponse extends $pb.GeneratedMessage {
+  factory MsgSetAdministratorProposalResponse() => create();
+  MsgSetAdministratorProposalResponse._() : super();
+  factory MsgSetAdministratorProposalResponse.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgSetAdministratorProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgSetAdministratorProposalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgSetAdministratorProposalResponse clone() =>
+      MsgSetAdministratorProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgSetAdministratorProposalResponse copyWith(
+          void Function(MsgSetAdministratorProposalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgSetAdministratorProposalResponse))
+          as MsgSetAdministratorProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgSetAdministratorProposalResponse create() =>
+      MsgSetAdministratorProposalResponse._();
+  MsgSetAdministratorProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgSetAdministratorProposalResponse> createRepeated() =>
+      $pb.PbList<MsgSetAdministratorProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgSetAdministratorProposalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MsgSetAdministratorProposalResponse>(create);
+  static MsgSetAdministratorProposalResponse? _defaultInstance;
+}
+
+/// MsgRemoveAdministratorProposalRequest defines the Msg/RemoveAdministratorProposal request type
+class MsgRemoveAdministratorProposalRequest extends $pb.GeneratedMessage {
+  factory MsgRemoveAdministratorProposalRequest({
+    $core.String? denom,
+    $core.Iterable<$core.String>? removedAddress,
+    $core.String? authority,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    if (removedAddress != null) {
+      $result.removedAddress.addAll(removedAddress);
+    }
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    return $result;
+  }
+  MsgRemoveAdministratorProposalRequest._() : super();
+  factory MsgRemoveAdministratorProposalRequest.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgRemoveAdministratorProposalRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgRemoveAdministratorProposalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..pPS(2, _omitFieldNames ? '' : 'removedAddress')
+    ..aOS(3, _omitFieldNames ? '' : 'authority')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgRemoveAdministratorProposalRequest clone() =>
+      MsgRemoveAdministratorProposalRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgRemoveAdministratorProposalRequest copyWith(
+          void Function(MsgRemoveAdministratorProposalRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgRemoveAdministratorProposalRequest))
+          as MsgRemoveAdministratorProposalRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgRemoveAdministratorProposalRequest create() =>
+      MsgRemoveAdministratorProposalRequest._();
+  MsgRemoveAdministratorProposalRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgRemoveAdministratorProposalRequest> createRepeated() =>
+      $pb.PbList<MsgRemoveAdministratorProposalRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgRemoveAdministratorProposalRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MsgRemoveAdministratorProposalRequest>(create);
+  static MsgRemoveAdministratorProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get removedAddress => $_getList(1);
+
+  /// The signer of the message.  Must have admin authority to marker or be governance module account address.
+  @$pb.TagNumber(3)
+  $core.String get authority => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authority($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasAuthority() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthority() => clearField(3);
+}
+
+/// MsgRemoveAdministratorProposalResponse defines the Msg/RemoveAdministratorProposal response type
+class MsgRemoveAdministratorProposalResponse extends $pb.GeneratedMessage {
+  factory MsgRemoveAdministratorProposalResponse() => create();
+  MsgRemoveAdministratorProposalResponse._() : super();
+  factory MsgRemoveAdministratorProposalResponse.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgRemoveAdministratorProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgRemoveAdministratorProposalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgRemoveAdministratorProposalResponse clone() =>
+      MsgRemoveAdministratorProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgRemoveAdministratorProposalResponse copyWith(
+          void Function(MsgRemoveAdministratorProposalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgRemoveAdministratorProposalResponse))
+          as MsgRemoveAdministratorProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgRemoveAdministratorProposalResponse create() =>
+      MsgRemoveAdministratorProposalResponse._();
+  MsgRemoveAdministratorProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgRemoveAdministratorProposalResponse> createRepeated() =>
+      $pb.PbList<MsgRemoveAdministratorProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgRemoveAdministratorProposalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MsgRemoveAdministratorProposalResponse>(create);
+  static MsgRemoveAdministratorProposalResponse? _defaultInstance;
+}
+
+/// MsgChangeStatusProposalRequest defines the Msg/ChangeStatusProposal request type
+class MsgChangeStatusProposalRequest extends $pb.GeneratedMessage {
+  factory MsgChangeStatusProposalRequest({
+    $core.String? denom,
+    $6.MarkerStatus? newStatus,
+    $core.String? authority,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    if (newStatus != null) {
+      $result.newStatus = newStatus;
+    }
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    return $result;
+  }
+  MsgChangeStatusProposalRequest._() : super();
+  factory MsgChangeStatusProposalRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgChangeStatusProposalRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgChangeStatusProposalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..e<$6.MarkerStatus>(
+        2, _omitFieldNames ? '' : 'newStatus', $pb.PbFieldType.OE,
+        defaultOrMaker: $6.MarkerStatus.MARKER_STATUS_UNSPECIFIED,
+        valueOf: $6.MarkerStatus.valueOf,
+        enumValues: $6.MarkerStatus.values)
+    ..aOS(3, _omitFieldNames ? '' : 'authority')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgChangeStatusProposalRequest clone() =>
+      MsgChangeStatusProposalRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgChangeStatusProposalRequest copyWith(
+          void Function(MsgChangeStatusProposalRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgChangeStatusProposalRequest))
+          as MsgChangeStatusProposalRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgChangeStatusProposalRequest create() =>
+      MsgChangeStatusProposalRequest._();
+  MsgChangeStatusProposalRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgChangeStatusProposalRequest> createRepeated() =>
+      $pb.PbList<MsgChangeStatusProposalRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgChangeStatusProposalRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgChangeStatusProposalRequest>(create);
+  static MsgChangeStatusProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $6.MarkerStatus get newStatus => $_getN(1);
+  @$pb.TagNumber(2)
+  set newStatus($6.MarkerStatus v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasNewStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewStatus() => clearField(2);
+
+  /// The signer of the message.  Must have admin authority to marker or be governance module account address.
+  @$pb.TagNumber(3)
+  $core.String get authority => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authority($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasAuthority() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthority() => clearField(3);
+}
+
+/// MsgChangeStatusProposalResponse defines the Msg/ChangeStatusProposal response type
+class MsgChangeStatusProposalResponse extends $pb.GeneratedMessage {
+  factory MsgChangeStatusProposalResponse() => create();
+  MsgChangeStatusProposalResponse._() : super();
+  factory MsgChangeStatusProposalResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgChangeStatusProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgChangeStatusProposalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgChangeStatusProposalResponse clone() =>
+      MsgChangeStatusProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgChangeStatusProposalResponse copyWith(
+          void Function(MsgChangeStatusProposalResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgChangeStatusProposalResponse))
+          as MsgChangeStatusProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgChangeStatusProposalResponse create() =>
+      MsgChangeStatusProposalResponse._();
+  MsgChangeStatusProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgChangeStatusProposalResponse> createRepeated() =>
+      $pb.PbList<MsgChangeStatusProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgChangeStatusProposalResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgChangeStatusProposalResponse>(
+          create);
+  static MsgChangeStatusProposalResponse? _defaultInstance;
+}
+
+/// MsgWithdrawEscrowProposalRequest defines the Msg/WithdrawEscrowProposal request type
+class MsgWithdrawEscrowProposalRequest extends $pb.GeneratedMessage {
+  factory MsgWithdrawEscrowProposalRequest({
+    $core.String? denom,
+    $core.Iterable<$3.Coin>? amount,
+    $core.String? targetAddress,
+    $core.String? authority,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    if (amount != null) {
+      $result.amount.addAll(amount);
+    }
+    if (targetAddress != null) {
+      $result.targetAddress = targetAddress;
+    }
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    return $result;
+  }
+  MsgWithdrawEscrowProposalRequest._() : super();
+  factory MsgWithdrawEscrowProposalRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgWithdrawEscrowProposalRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgWithdrawEscrowProposalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..pc<$3.Coin>(2, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.PM,
+        subBuilder: $3.Coin.create)
+    ..aOS(3, _omitFieldNames ? '' : 'targetAddress')
+    ..aOS(4, _omitFieldNames ? '' : 'authority')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgWithdrawEscrowProposalRequest clone() =>
+      MsgWithdrawEscrowProposalRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgWithdrawEscrowProposalRequest copyWith(
+          void Function(MsgWithdrawEscrowProposalRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgWithdrawEscrowProposalRequest))
+          as MsgWithdrawEscrowProposalRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgWithdrawEscrowProposalRequest create() =>
+      MsgWithdrawEscrowProposalRequest._();
+  MsgWithdrawEscrowProposalRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgWithdrawEscrowProposalRequest> createRepeated() =>
+      $pb.PbList<MsgWithdrawEscrowProposalRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgWithdrawEscrowProposalRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgWithdrawEscrowProposalRequest>(
+          create);
+  static MsgWithdrawEscrowProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$3.Coin> get amount => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get targetAddress => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetAddress($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasTargetAddress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetAddress() => clearField(3);
+
+  /// The signer of the message.  Must have admin authority to marker or be governance module account address.
+  @$pb.TagNumber(4)
+  $core.String get authority => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set authority($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasAuthority() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthority() => clearField(4);
+}
+
+/// MsgWithdrawEscrowProposalResponse defines the Msg/WithdrawEscrowProposal response type
+class MsgWithdrawEscrowProposalResponse extends $pb.GeneratedMessage {
+  factory MsgWithdrawEscrowProposalResponse() => create();
+  MsgWithdrawEscrowProposalResponse._() : super();
+  factory MsgWithdrawEscrowProposalResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgWithdrawEscrowProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgWithdrawEscrowProposalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgWithdrawEscrowProposalResponse clone() =>
+      MsgWithdrawEscrowProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgWithdrawEscrowProposalResponse copyWith(
+          void Function(MsgWithdrawEscrowProposalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgWithdrawEscrowProposalResponse))
+          as MsgWithdrawEscrowProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgWithdrawEscrowProposalResponse create() =>
+      MsgWithdrawEscrowProposalResponse._();
+  MsgWithdrawEscrowProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgWithdrawEscrowProposalResponse> createRepeated() =>
+      $pb.PbList<MsgWithdrawEscrowProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgWithdrawEscrowProposalResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgWithdrawEscrowProposalResponse>(
+          create);
+  static MsgWithdrawEscrowProposalResponse? _defaultInstance;
+}
+
+/// MsgSetDenomMetadataProposalRequest defines the Msg/SetDenomMetadataProposal request type
+class MsgSetDenomMetadataProposalRequest extends $pb.GeneratedMessage {
+  factory MsgSetDenomMetadataProposalRequest({
+    $5.Metadata? metadata,
+    $core.String? authority,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    return $result;
+  }
+  MsgSetDenomMetadataProposalRequest._() : super();
+  factory MsgSetDenomMetadataProposalRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgSetDenomMetadataProposalRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgSetDenomMetadataProposalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOM<$5.Metadata>(1, _omitFieldNames ? '' : 'metadata',
+        subBuilder: $5.Metadata.create)
+    ..aOS(2, _omitFieldNames ? '' : 'authority')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgSetDenomMetadataProposalRequest clone() =>
+      MsgSetDenomMetadataProposalRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgSetDenomMetadataProposalRequest copyWith(
+          void Function(MsgSetDenomMetadataProposalRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgSetDenomMetadataProposalRequest))
+          as MsgSetDenomMetadataProposalRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgSetDenomMetadataProposalRequest create() =>
+      MsgSetDenomMetadataProposalRequest._();
+  MsgSetDenomMetadataProposalRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgSetDenomMetadataProposalRequest> createRepeated() =>
+      $pb.PbList<MsgSetDenomMetadataProposalRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgSetDenomMetadataProposalRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgSetDenomMetadataProposalRequest>(
+          create);
+  static MsgSetDenomMetadataProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $5.Metadata get metadata => $_getN(0);
+  @$pb.TagNumber(1)
+  set metadata($5.Metadata v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasMetadata() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetadata() => clearField(1);
+  @$pb.TagNumber(1)
+  $5.Metadata ensureMetadata() => $_ensure(0);
+
+  /// The signer of the message.  Must have admin authority to marker or be governance module account address.
+  @$pb.TagNumber(2)
+  $core.String get authority => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set authority($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasAuthority() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthority() => clearField(2);
+}
+
+/// MsgSetDenomMetadataProposalResponse defines the Msg/SetDenomMetadataProposal response type
+class MsgSetDenomMetadataProposalResponse extends $pb.GeneratedMessage {
+  factory MsgSetDenomMetadataProposalResponse() => create();
+  MsgSetDenomMetadataProposalResponse._() : super();
+  factory MsgSetDenomMetadataProposalResponse.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgSetDenomMetadataProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgSetDenomMetadataProposalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgSetDenomMetadataProposalResponse clone() =>
+      MsgSetDenomMetadataProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgSetDenomMetadataProposalResponse copyWith(
+          void Function(MsgSetDenomMetadataProposalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgSetDenomMetadataProposalResponse))
+          as MsgSetDenomMetadataProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgSetDenomMetadataProposalResponse create() =>
+      MsgSetDenomMetadataProposalResponse._();
+  MsgSetDenomMetadataProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgSetDenomMetadataProposalResponse> createRepeated() =>
+      $pb.PbList<MsgSetDenomMetadataProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgSetDenomMetadataProposalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MsgSetDenomMetadataProposalResponse>(create);
+  static MsgSetDenomMetadataProposalResponse? _defaultInstance;
+}
+
+/// MsgUpdateParamsRequest is a request message for the UpdateParams endpoint.
+class MsgUpdateParamsRequest extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsRequest({
+    $core.String? authority,
+    $6.Params? params,
+  }) {
+    final $result = create();
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
+  MsgUpdateParamsRequest._() : super();
+  factory MsgUpdateParamsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authority')
+    ..aOM<$6.Params>(2, _omitFieldNames ? '' : 'params',
+        subBuilder: $6.Params.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsRequest clone() =>
+      MsgUpdateParamsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsRequest copyWith(
+          void Function(MsgUpdateParamsRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsRequest))
+          as MsgUpdateParamsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsRequest create() => MsgUpdateParamsRequest._();
+  MsgUpdateParamsRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsRequest> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsRequest>(create);
+  static MsgUpdateParamsRequest? _defaultInstance;
+
+  /// authority should be the governance module account address.
+  @$pb.TagNumber(1)
+  $core.String get authority => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authority($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAuthority() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthority() => clearField(1);
+
+  /// params are the new param values to set.
+  @$pb.TagNumber(2)
+  $6.Params get params => $_getN(1);
+  @$pb.TagNumber(2)
+  set params($6.Params v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasParams() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParams() => clearField(2);
+  @$pb.TagNumber(2)
+  $6.Params ensureParams() => $_ensure(1);
+}
+
+/// MsgUpdateParamsResponse is a response message for the UpdateParams endpoint.
+class MsgUpdateParamsResponse extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsResponse() => create();
+  MsgUpdateParamsResponse._() : super();
+  factory MsgUpdateParamsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse clone() =>
+      MsgUpdateParamsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse copyWith(
+          void Function(MsgUpdateParamsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsResponse))
+          as MsgUpdateParamsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse create() => MsgUpdateParamsResponse._();
+  MsgUpdateParamsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsResponse> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsResponse>(create);
+  static MsgUpdateParamsResponse? _defaultInstance;
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

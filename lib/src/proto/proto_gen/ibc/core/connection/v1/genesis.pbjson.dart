@@ -40,7 +40,6 @@ const GenesisState$json = {
       '3': 3,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'nextConnectionSequence'
     },
     {
@@ -58,10 +57,8 @@ const GenesisState$json = {
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
     'CgxHZW5lc2lzU3RhdGUSVAoLY29ubmVjdGlvbnMYASADKAsyLC5pYmMuY29yZS5jb25uZWN0aW'
-    '9uLnYxLklkZW50aWZpZWRDb25uZWN0aW9uQgTI3h8AUgtjb25uZWN0aW9ucxKHAQoXY2xpZW50'
-    'X2Nvbm5lY3Rpb25fcGF0aHMYAiADKAsyJy5pYmMuY29yZS5jb25uZWN0aW9uLnYxLkNvbm5lY3'
-    'Rpb25QYXRoc0ImyN4fAPLeHx55YW1sOiJjbGllbnRfY29ubmVjdGlvbl9wYXRocyJSFWNsaWVu'
-    'dENvbm5lY3Rpb25QYXRocxJdChhuZXh0X2Nvbm5lY3Rpb25fc2VxdWVuY2UYAyABKARCI/LeHx'
-    '95YW1sOiJuZXh0X2Nvbm5lY3Rpb25fc2VxdWVuY2UiUhZuZXh0Q29ubmVjdGlvblNlcXVlbmNl'
-    'EjwKBnBhcmFtcxgEIAEoCzIeLmliYy5jb3JlLmNvbm5lY3Rpb24udjEuUGFyYW1zQgTI3h8AUg'
-    'ZwYXJhbXM=');
+    '9uLnYxLklkZW50aWZpZWRDb25uZWN0aW9uQgTI3h8AUgtjb25uZWN0aW9ucxJlChdjbGllbnRf'
+    'Y29ubmVjdGlvbl9wYXRocxgCIAMoCzInLmliYy5jb3JlLmNvbm5lY3Rpb24udjEuQ29ubmVjdG'
+    'lvblBhdGhzQgTI3h8AUhVjbGllbnRDb25uZWN0aW9uUGF0aHMSOAoYbmV4dF9jb25uZWN0aW9u'
+    'X3NlcXVlbmNlGAMgASgEUhZuZXh0Q29ubmVjdGlvblNlcXVlbmNlEjwKBnBhcmFtcxgEIAEoCz'
+    'IeLmliYy5jb3JlLmNvbm5lY3Rpb24udjEuUGFyYW1zQgTI3h8AUgZwYXJhbXM=');

@@ -107,7 +107,7 @@ class ValidatorSigningInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAddress() => clearField(1);
 
-  /// Height at which validator was first a candidate OR was unjailed
+  /// Height at which validator was first a candidate OR was un-jailed
   @$pb.TagNumber(2)
   $fixnum.Int64 get startHeight => $_getI64(1);
   @$pb.TagNumber(2)
@@ -120,9 +120,9 @@ class ValidatorSigningInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStartHeight() => clearField(2);
 
-  /// Index which is incremented each time the validator was a bonded
-  /// in a block and may have signed a precommit or not. This in conjunction with the
-  /// `SignedBlocksWindow` param determines the index in the `MissedBlocksBitArray`.
+  /// Index which is incremented every time a validator is bonded in a block and
+  /// _may_ have signed a pre-commit or not. This in conjunction with the
+  /// signed_blocks_window param determines the index in the missed block bitmap.
   @$pb.TagNumber(3)
   $fixnum.Int64 get indexOffset => $_getI64(2);
   @$pb.TagNumber(3)
@@ -150,8 +150,9 @@ class ValidatorSigningInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $0.Timestamp ensureJailedUntil() => $_ensure(3);
 
-  /// Whether or not a validator has been tombstoned (killed out of validator set). It is set
-  /// once the validator commits an equivocation or for any other configured misbehiavor.
+  /// Whether or not a validator has been tombstoned (killed out of validator
+  /// set). It is set once the validator commits an equivocation or for any other
+  /// configured misbehavior.
   @$pb.TagNumber(5)
   $core.bool get tombstoned => $_getBF(4);
   @$pb.TagNumber(5)
@@ -164,8 +165,8 @@ class ValidatorSigningInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearTombstoned() => clearField(5);
 
-  /// A counter kept to avoid unnecessary array reads.
-  /// Note that `Sum(MissedBlocksBitArray)` always equals `MissedBlocksCounter`.
+  /// A counter of missed (unsigned) blocks. It is used to avoid unnecessary
+  /// reads in the missed block bitmap.
   @$pb.TagNumber(6)
   $fixnum.Int64 get missedBlocksCounter => $_getI64(5);
   @$pb.TagNumber(6)

@@ -27,6 +27,12 @@ class MsgClient extends $grpc.Client {
       ($0.MsgGovUpdateParamsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgGovUpdateParamsResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParamsRequest, $0.MsgUpdateParamsResponse>(
+          '/provenance.ibcratelimit.v1.Msg/UpdateParams',
+          ($0.MsgUpdateParamsRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -37,6 +43,12 @@ class MsgClient extends $grpc.Client {
       $0.MsgGovUpdateParamsRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$govUpdateParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParamsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
   }
 }
 
@@ -54,6 +66,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgGovUpdateParamsRequest.fromBuffer(value),
         ($0.MsgGovUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgUpdateParamsRequest,
+            $0.MsgUpdateParamsResponse>(
+        'UpdateParams',
+        updateParams_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgUpdateParamsRequest.fromBuffer(value),
+        ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgGovUpdateParamsResponse> govUpdateParams_Pre(
@@ -62,6 +83,14 @@ abstract class MsgServiceBase extends $grpc.Service {
     return govUpdateParams(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgUpdateParamsRequest> request) async {
+    return updateParams(call, await request);
+  }
+
   $async.Future<$0.MsgGovUpdateParamsResponse> govUpdateParams(
       $grpc.ServiceCall call, $0.MsgGovUpdateParamsRequest request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParamsRequest request);
 }

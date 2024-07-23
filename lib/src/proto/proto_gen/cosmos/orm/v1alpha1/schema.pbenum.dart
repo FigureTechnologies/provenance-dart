@@ -21,17 +21,11 @@ class StorageType extends $pb.ProtobufEnum {
       StorageType._(1, _omitEnumNames ? '' : 'STORAGE_TYPE_MEMORY');
   static const StorageType STORAGE_TYPE_TRANSIENT =
       StorageType._(2, _omitEnumNames ? '' : 'STORAGE_TYPE_TRANSIENT');
-  static const StorageType STORAGE_TYPE_INDEX =
-      StorageType._(3, _omitEnumNames ? '' : 'STORAGE_TYPE_INDEX');
-  static const StorageType STORAGE_TYPE_COMMITMENT =
-      StorageType._(4, _omitEnumNames ? '' : 'STORAGE_TYPE_COMMITMENT');
 
   static const $core.List<StorageType> values = <StorageType>[
     STORAGE_TYPE_DEFAULT_UNSPECIFIED,
     STORAGE_TYPE_MEMORY,
     STORAGE_TYPE_TRANSIENT,
-    STORAGE_TYPE_INDEX,
-    STORAGE_TYPE_COMMITMENT,
   ];
 
   static final $core.Map<$core.int, StorageType> _byValue =

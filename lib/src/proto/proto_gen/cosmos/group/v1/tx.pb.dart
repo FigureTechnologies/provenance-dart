@@ -913,6 +913,53 @@ class MsgUpdateGroupPolicyAdmin extends $pb.GeneratedMessage {
   void clearNewAdmin() => clearField(3);
 }
 
+/// MsgUpdateGroupPolicyAdminResponse is the Msg/UpdateGroupPolicyAdmin response type.
+class MsgUpdateGroupPolicyAdminResponse extends $pb.GeneratedMessage {
+  factory MsgUpdateGroupPolicyAdminResponse() => create();
+  MsgUpdateGroupPolicyAdminResponse._() : super();
+  factory MsgUpdateGroupPolicyAdminResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateGroupPolicyAdminResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateGroupPolicyAdminResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.group.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateGroupPolicyAdminResponse clone() =>
+      MsgUpdateGroupPolicyAdminResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateGroupPolicyAdminResponse copyWith(
+          void Function(MsgUpdateGroupPolicyAdminResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MsgUpdateGroupPolicyAdminResponse))
+          as MsgUpdateGroupPolicyAdminResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateGroupPolicyAdminResponse create() =>
+      MsgUpdateGroupPolicyAdminResponse._();
+  MsgUpdateGroupPolicyAdminResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateGroupPolicyAdminResponse> createRepeated() =>
+      $pb.PbList<MsgUpdateGroupPolicyAdminResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateGroupPolicyAdminResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateGroupPolicyAdminResponse>(
+          create);
+  static MsgUpdateGroupPolicyAdminResponse? _defaultInstance;
+}
+
 /// MsgCreateGroupWithPolicy is the Msg/CreateGroupWithPolicy request type.
 class MsgCreateGroupWithPolicy extends $pb.GeneratedMessage {
   factory MsgCreateGroupWithPolicy({
@@ -1152,53 +1199,6 @@ class MsgCreateGroupWithPolicyResponse extends $pb.GeneratedMessage {
   $core.bool hasGroupPolicyAddress() => $_has(1);
   @$pb.TagNumber(2)
   void clearGroupPolicyAddress() => clearField(2);
-}
-
-/// MsgUpdateGroupPolicyAdminResponse is the Msg/UpdateGroupPolicyAdmin response type.
-class MsgUpdateGroupPolicyAdminResponse extends $pb.GeneratedMessage {
-  factory MsgUpdateGroupPolicyAdminResponse() => create();
-  MsgUpdateGroupPolicyAdminResponse._() : super();
-  factory MsgUpdateGroupPolicyAdminResponse.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory MsgUpdateGroupPolicyAdminResponse.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'MsgUpdateGroupPolicyAdminResponse',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.group.v1'),
-      createEmptyInstance: create)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  MsgUpdateGroupPolicyAdminResponse clone() =>
-      MsgUpdateGroupPolicyAdminResponse()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  MsgUpdateGroupPolicyAdminResponse copyWith(
-          void Function(MsgUpdateGroupPolicyAdminResponse) updates) =>
-      super.copyWith((message) =>
-              updates(message as MsgUpdateGroupPolicyAdminResponse))
-          as MsgUpdateGroupPolicyAdminResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static MsgUpdateGroupPolicyAdminResponse create() =>
-      MsgUpdateGroupPolicyAdminResponse._();
-  MsgUpdateGroupPolicyAdminResponse createEmptyInstance() => create();
-  static $pb.PbList<MsgUpdateGroupPolicyAdminResponse> createRepeated() =>
-      $pb.PbList<MsgUpdateGroupPolicyAdminResponse>();
-  @$core.pragma('dart2js:noInline')
-  static MsgUpdateGroupPolicyAdminResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<MsgUpdateGroupPolicyAdminResponse>(
-          create);
-  static MsgUpdateGroupPolicyAdminResponse? _defaultInstance;
 }
 
 /// MsgUpdateGroupPolicyDecisionPolicy is the Msg/UpdateGroupPolicyDecisionPolicy request type.
@@ -1448,7 +1448,7 @@ class MsgUpdateGroupPolicyMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearGroupPolicyAddress() => clearField(2);
 
-  /// metadata is the updated group policy metadata.
+  /// metadata is the group policy metadata to be updated.
   @$pb.TagNumber(3)
   $core.String get metadata => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1518,6 +1518,8 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
     $core.String? metadata,
     $core.Iterable<$2.Any>? messages,
     Exec? exec,
+    $core.String? title,
+    $core.String? summary,
   }) {
     final $result = create();
     if (groupPolicyAddress != null) {
@@ -1534,6 +1536,12 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
     }
     if (exec != null) {
       $result.exec = exec;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (summary != null) {
+      $result.summary = summary;
     }
     return $result;
   }
@@ -1559,6 +1567,8 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
         defaultOrMaker: Exec.EXEC_UNSPECIFIED,
         valueOf: Exec.valueOf,
         enumValues: Exec.values)
+    ..aOS(6, _omitFieldNames ? '' : 'title')
+    ..aOS(7, _omitFieldNames ? '' : 'summary')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1602,7 +1612,7 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$core.String> get proposers => $_getList(1);
 
-  /// metadata is any arbitrary metadata to attached to the proposal.
+  /// metadata is any arbitrary metadata attached to the proposal.
   @$pb.TagNumber(3)
   $core.String get metadata => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1633,6 +1643,36 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
   $core.bool hasExec() => $_has(4);
   @$pb.TagNumber(5)
   void clearExec() => clearField(5);
+
+  ///  title is the title of the proposal.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(6)
+  $core.String get title => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set title($core.String v) {
+    $_setString(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTitle() => clearField(6);
+
+  ///  summary is the summary of the proposal.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(7)
+  $core.String get summary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set summary($core.String v) {
+    $_setString(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSummary() => clearField(7);
 }
 
 /// MsgSubmitProposalResponse is the Msg/SubmitProposal response type.
@@ -1948,7 +1988,7 @@ class MsgVote extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearOption() => clearField(3);
 
-  /// metadata is any arbitrary metadata to attached to the vote.
+  /// metadata is any arbitrary metadata attached to the vote.
   @$pb.TagNumber(4)
   $core.String get metadata => $_getSZ(3);
   @$pb.TagNumber(4)

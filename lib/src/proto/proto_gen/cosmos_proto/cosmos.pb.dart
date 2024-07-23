@@ -211,12 +211,22 @@ class ScalarDescriptor extends $pb.GeneratedMessage {
 }
 
 class Cosmos {
+  static final methodAddedIn = $pb.Extension<$core.String>(
+      _omitMessageNames ? '' : 'google.protobuf.MethodOptions',
+      _omitFieldNames ? '' : 'methodAddedIn',
+      93001,
+      $pb.PbFieldType.OS);
   static final implementsInterface = $pb.Extension<$core.String>.repeated(
       _omitMessageNames ? '' : 'google.protobuf.MessageOptions',
       _omitFieldNames ? '' : 'implementsInterface',
       93001,
       $pb.PbFieldType.PS,
       check: $pb.getCheckFunction($pb.PbFieldType.PS));
+  static final messageAddedIn = $pb.Extension<$core.String>(
+      _omitMessageNames ? '' : 'google.protobuf.MessageOptions',
+      _omitFieldNames ? '' : 'messageAddedIn',
+      93002,
+      $pb.PbFieldType.OS);
   static final acceptsInterface = $pb.Extension<$core.String>(
       _omitMessageNames ? '' : 'google.protobuf.FieldOptions',
       _omitFieldNames ? '' : 'acceptsInterface',
@@ -226,6 +236,11 @@ class Cosmos {
       _omitMessageNames ? '' : 'google.protobuf.FieldOptions',
       _omitFieldNames ? '' : 'scalar',
       93002,
+      $pb.PbFieldType.OS);
+  static final fieldAddedIn = $pb.Extension<$core.String>(
+      _omitMessageNames ? '' : 'google.protobuf.FieldOptions',
+      _omitFieldNames ? '' : 'fieldAddedIn',
+      93003,
       $pb.PbFieldType.OS);
   static final declareInterface = $pb.Extension<InterfaceDescriptor>.repeated(
       _omitMessageNames ? '' : 'google.protobuf.FileOptions',
@@ -241,12 +256,21 @@ class Cosmos {
       $pb.PbFieldType.PM,
       check: $pb.getCheckFunction($pb.PbFieldType.PM),
       subBuilder: ScalarDescriptor.create);
+  static final fileAddedIn = $pb.Extension<$core.String>(
+      _omitMessageNames ? '' : 'google.protobuf.FileOptions',
+      _omitFieldNames ? '' : 'fileAddedIn',
+      793023,
+      $pb.PbFieldType.OS);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
+    registry.add(methodAddedIn);
     registry.add(implementsInterface);
+    registry.add(messageAddedIn);
     registry.add(acceptsInterface);
     registry.add(scalar);
+    registry.add(fieldAddedIn);
     registry.add(declareInterface);
     registry.add(declareScalar);
+    registry.add(fileAddedIn);
   }
 }
 

@@ -53,71 +53,18 @@ const GenesisState$json = {
       '8': {},
       '10': 'sequences'
     },
-    {
-      '1': 'gen_msgs',
-      '3': 5,
-      '4': 3,
-      '5': 11,
-      '6': '.cosmwasm.wasm.v1.GenesisState.GenMsgs',
-      '8': {},
-      '10': 'genMsgs'
-    },
-  ],
-  '3': [GenesisState_GenMsgs$json],
-};
-
-@$core.Deprecated('Use genesisStateDescriptor instead')
-const GenesisState_GenMsgs$json = {
-  '1': 'GenMsgs',
-  '2': [
-    {
-      '1': 'store_code',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmwasm.wasm.v1.MsgStoreCode',
-      '9': 0,
-      '10': 'storeCode'
-    },
-    {
-      '1': 'instantiate_contract',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmwasm.wasm.v1.MsgInstantiateContract',
-      '9': 0,
-      '10': 'instantiateContract'
-    },
-    {
-      '1': 'execute_contract',
-      '3': 3,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmwasm.wasm.v1.MsgExecuteContract',
-      '9': 0,
-      '10': 'executeContract'
-    },
-  ],
-  '8': [
-    {'1': 'sum'},
   ],
 };
 
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
-    'CgxHZW5lc2lzU3RhdGUSNgoGcGFyYW1zGAEgASgLMhguY29zbXdhc20ud2FzbS52MS5QYXJhbX'
-    'NCBMjeHwBSBnBhcmFtcxJFCgVjb2RlcxgCIAMoCzIWLmNvc213YXNtLndhc20udjEuQ29kZUIX'
-    'yN4fAOreHw9jb2RlcyxvbWl0ZW1wdHlSBWNvZGVzElUKCWNvbnRyYWN0cxgDIAMoCzIaLmNvc2'
-    '13YXNtLndhc20udjEuQ29udHJhY3RCG8jeHwDq3h8TY29udHJhY3RzLG9taXRlbXB0eVIJY29u'
-    'dHJhY3RzElUKCXNlcXVlbmNlcxgEIAMoCzIaLmNvc213YXNtLndhc20udjEuU2VxdWVuY2VCG8'
-    'jeHwDq3h8Tc2VxdWVuY2VzLG9taXRlbXB0eVIJc2VxdWVuY2VzEl0KCGdlbl9tc2dzGAUgAygL'
-    'MiYuY29zbXdhc20ud2FzbS52MS5HZW5lc2lzU3RhdGUuR2VuTXNnc0IayN4fAOreHxJnZW5fbX'
-    'NncyxvbWl0ZW1wdHlSB2dlbk1zZ3MagwIKB0dlbk1zZ3MSPwoKc3RvcmVfY29kZRgBIAEoCzIe'
-    'LmNvc213YXNtLndhc20udjEuTXNnU3RvcmVDb2RlSABSCXN0b3JlQ29kZRJdChRpbnN0YW50aW'
-    'F0ZV9jb250cmFjdBgCIAEoCzIoLmNvc213YXNtLndhc20udjEuTXNnSW5zdGFudGlhdGVDb250'
-    'cmFjdEgAUhNpbnN0YW50aWF0ZUNvbnRyYWN0ElEKEGV4ZWN1dGVfY29udHJhY3QYAyABKAsyJC'
-    '5jb3Ntd2FzbS53YXNtLnYxLk1zZ0V4ZWN1dGVDb250cmFjdEgAUg9leGVjdXRlQ29udHJhY3RC'
-    'BQoDc3Vt');
+    'CgxHZW5lc2lzU3RhdGUSOwoGcGFyYW1zGAEgASgLMhguY29zbXdhc20ud2FzbS52MS5QYXJhbX'
+    'NCCcjeHwCo57AqAVIGcGFyYW1zEkoKBWNvZGVzGAIgAygLMhYuY29zbXdhc20ud2FzbS52MS5D'
+    'b2RlQhzI3h8A6t4fD2NvZGVzLG9taXRlbXB0eajnsCoBUgVjb2RlcxJaCgljb250cmFjdHMYAy'
+    'ADKAsyGi5jb3Ntd2FzbS53YXNtLnYxLkNvbnRyYWN0QiDI3h8A6t4fE2NvbnRyYWN0cyxvbWl0'
+    'ZW1wdHmo57AqAVIJY29udHJhY3RzEloKCXNlcXVlbmNlcxgEIAMoCzIaLmNvc213YXNtLndhc2'
+    '0udjEuU2VxdWVuY2VCIMjeHwDq3h8Tc2VxdWVuY2VzLG9taXRlbXB0eajnsCoBUglzZXF1ZW5j'
+    'ZXM=');
 
 @$core.Deprecated('Use codeDescriptor instead')
 const Code$json = {
@@ -140,15 +87,23 @@ const Code$json = {
 
 /// Descriptor for `Code`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List codeDescriptor = $convert.base64Decode(
-    'CgRDb2RlEiMKB2NvZGVfaWQYASABKARCCuLeHwZDb2RlSURSBmNvZGVJZBI9Cgljb2RlX2luZm'
-    '8YAiABKAsyGi5jb3Ntd2FzbS53YXNtLnYxLkNvZGVJbmZvQgTI3h8AUghjb2RlSW5mbxIdCgpj'
-    'b2RlX2J5dGVzGAMgASgMUgljb2RlQnl0ZXMSFgoGcGlubmVkGAQgASgIUgZwaW5uZWQ=');
+    'CgRDb2RlEiMKB2NvZGVfaWQYASABKARCCuLeHwZDb2RlSURSBmNvZGVJZBJCCgljb2RlX2luZm'
+    '8YAiABKAsyGi5jb3Ntd2FzbS53YXNtLnYxLkNvZGVJbmZvQgnI3h8AqOewKgFSCGNvZGVJbmZv'
+    'Eh0KCmNvZGVfYnl0ZXMYAyABKAxSCWNvZGVCeXRlcxIWCgZwaW5uZWQYBCABKAhSBnBpbm5lZA'
+    '==');
 
 @$core.Deprecated('Use contractDescriptor instead')
 const Contract$json = {
   '1': 'Contract',
   '2': [
-    {'1': 'contract_address', '3': 1, '4': 1, '5': 9, '10': 'contractAddress'},
+    {
+      '1': 'contract_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'contractAddress'
+    },
     {
       '1': 'contract_info',
       '3': 2,
@@ -181,12 +136,13 @@ const Contract$json = {
 
 /// Descriptor for `Contract`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List contractDescriptor = $convert.base64Decode(
-    'CghDb250cmFjdBIpChBjb250cmFjdF9hZGRyZXNzGAEgASgJUg9jb250cmFjdEFkZHJlc3MSSQ'
-    'oNY29udHJhY3RfaW5mbxgCIAEoCzIeLmNvc213YXNtLndhc20udjEuQ29udHJhY3RJbmZvQgTI'
-    '3h8AUgxjb250cmFjdEluZm8SRAoOY29udHJhY3Rfc3RhdGUYAyADKAsyFy5jb3Ntd2FzbS53YX'
-    'NtLnYxLk1vZGVsQgTI3h8AUg1jb250cmFjdFN0YXRlEmQKFWNvbnRyYWN0X2NvZGVfaGlzdG9y'
-    'eRgEIAMoCzIqLmNvc213YXNtLndhc20udjEuQ29udHJhY3RDb2RlSGlzdG9yeUVudHJ5QgTI3h'
-    '8AUhNjb250cmFjdENvZGVIaXN0b3J5');
+    'CghDb250cmFjdBJDChBjb250cmFjdF9hZGRyZXNzGAEgASgJQhjStC0UY29zbW9zLkFkZHJlc3'
+    'NTdHJpbmdSD2NvbnRyYWN0QWRkcmVzcxJOCg1jb250cmFjdF9pbmZvGAIgASgLMh4uY29zbXdh'
+    'c20ud2FzbS52MS5Db250cmFjdEluZm9CCcjeHwCo57AqAVIMY29udHJhY3RJbmZvEkkKDmNvbn'
+    'RyYWN0X3N0YXRlGAMgAygLMhcuY29zbXdhc20ud2FzbS52MS5Nb2RlbEIJyN4fAKjnsCoBUg1j'
+    'b250cmFjdFN0YXRlEmkKFWNvbnRyYWN0X2NvZGVfaGlzdG9yeRgEIAMoCzIqLmNvc213YXNtLn'
+    'dhc20udjEuQ29udHJhY3RDb2RlSGlzdG9yeUVudHJ5QgnI3h8AqOewKgFSE2NvbnRyYWN0Q29k'
+    'ZUhpc3Rvcnk=');
 
 @$core.Deprecated('Use sequenceDescriptor instead')
 const Sequence$json = {

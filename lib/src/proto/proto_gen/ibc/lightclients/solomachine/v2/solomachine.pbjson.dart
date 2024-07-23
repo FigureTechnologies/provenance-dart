@@ -49,14 +49,13 @@ const ClientState$json = {
   '1': 'ClientState',
   '2': [
     {'1': 'sequence', '3': 1, '4': 1, '5': 4, '10': 'sequence'},
-    {'1': 'is_frozen', '3': 2, '4': 1, '5': 8, '8': {}, '10': 'isFrozen'},
+    {'1': 'is_frozen', '3': 2, '4': 1, '5': 8, '10': 'isFrozen'},
     {
       '1': 'consensus_state',
       '3': 3,
       '4': 1,
       '5': 11,
       '6': '.ibc.lightclients.solomachine.v2.ConsensusState',
-      '8': {},
       '10': 'consensusState'
     },
     {
@@ -64,7 +63,6 @@ const ClientState$json = {
       '3': 4,
       '4': 1,
       '5': 8,
-      '8': {},
       '10': 'allowUpdateAfterProposal'
     },
   ],
@@ -73,12 +71,11 @@ const ClientState$json = {
 
 /// Descriptor for `ClientState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List clientStateDescriptor = $convert.base64Decode(
-    'CgtDbGllbnRTdGF0ZRIaCghzZXF1ZW5jZRgBIAEoBFIIc2VxdWVuY2USMQoJaXNfZnJvemVuGA'
-    'IgASgIQhTy3h8QeWFtbDoiaXNfZnJvemVuIlIIaXNGcm96ZW4SdAoPY29uc2Vuc3VzX3N0YXRl'
-    'GAMgASgLMi8uaWJjLmxpZ2h0Y2xpZW50cy5zb2xvbWFjaGluZS52Mi5Db25zZW5zdXNTdGF0ZU'
-    'Ia8t4fFnlhbWw6ImNvbnNlbnN1c19zdGF0ZSJSDmNvbnNlbnN1c1N0YXRlEmUKG2FsbG93X3Vw'
-    'ZGF0ZV9hZnRlcl9wcm9wb3NhbBgEIAEoCEIm8t4fInlhbWw6ImFsbG93X3VwZGF0ZV9hZnRlcl'
-    '9wcm9wb3NhbCJSGGFsbG93VXBkYXRlQWZ0ZXJQcm9wb3NhbDoEiKAfAA==');
+    'CgtDbGllbnRTdGF0ZRIaCghzZXF1ZW5jZRgBIAEoBFIIc2VxdWVuY2USGwoJaXNfZnJvemVuGA'
+    'IgASgIUghpc0Zyb3plbhJYCg9jb25zZW5zdXNfc3RhdGUYAyABKAsyLy5pYmMubGlnaHRjbGll'
+    'bnRzLnNvbG9tYWNoaW5lLnYyLkNvbnNlbnN1c1N0YXRlUg5jb25zZW5zdXNTdGF0ZRI9ChthbG'
+    'xvd191cGRhdGVfYWZ0ZXJfcHJvcG9zYWwYBCABKAhSGGFsbG93VXBkYXRlQWZ0ZXJQcm9wb3Nh'
+    'bDoEiKAfAA==');
 
 @$core.Deprecated('Use consensusStateDescriptor instead')
 const ConsensusState$json = {
@@ -90,7 +87,6 @@ const ConsensusState$json = {
       '4': 1,
       '5': 11,
       '6': '.google.protobuf.Any',
-      '8': {},
       '10': 'publicKey'
     },
     {'1': 'diversifier', '3': 2, '4': 1, '5': 9, '10': 'diversifier'},
@@ -101,9 +97,9 @@ const ConsensusState$json = {
 
 /// Descriptor for `ConsensusState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List consensusStateDescriptor = $convert.base64Decode(
-    'Cg5Db25zZW5zdXNTdGF0ZRJKCgpwdWJsaWNfa2V5GAEgASgLMhQuZ29vZ2xlLnByb3RvYnVmLk'
-    'FueUIV8t4fEXlhbWw6InB1YmxpY19rZXkiUglwdWJsaWNLZXkSIAoLZGl2ZXJzaWZpZXIYAiAB'
-    'KAlSC2RpdmVyc2lmaWVyEhwKCXRpbWVzdGFtcBgDIAEoBFIJdGltZXN0YW1wOgSIoB8A');
+    'Cg5Db25zZW5zdXNTdGF0ZRIzCgpwdWJsaWNfa2V5GAEgASgLMhQuZ29vZ2xlLnByb3RvYnVmLk'
+    'FueVIJcHVibGljS2V5EiAKC2RpdmVyc2lmaWVyGAIgASgJUgtkaXZlcnNpZmllchIcCgl0aW1l'
+    'c3RhbXAYAyABKARSCXRpbWVzdGFtcDoEiKAfAA==');
 
 @$core.Deprecated('Use headerDescriptor instead')
 const Header$json = {
@@ -118,17 +114,9 @@ const Header$json = {
       '4': 1,
       '5': 11,
       '6': '.google.protobuf.Any',
-      '8': {},
       '10': 'newPublicKey'
     },
-    {
-      '1': 'new_diversifier',
-      '3': 5,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'newDiversifier'
-    },
+    {'1': 'new_diversifier', '3': 5, '4': 1, '5': 9, '10': 'newDiversifier'},
   ],
   '7': {},
 };
@@ -136,16 +124,15 @@ const Header$json = {
 /// Descriptor for `Header`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List headerDescriptor = $convert.base64Decode(
     'CgZIZWFkZXISGgoIc2VxdWVuY2UYASABKARSCHNlcXVlbmNlEhwKCXRpbWVzdGFtcBgCIAEoBF'
-    'IJdGltZXN0YW1wEhwKCXNpZ25hdHVyZRgDIAEoDFIJc2lnbmF0dXJlElUKDm5ld19wdWJsaWNf'
-    'a2V5GAQgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueUIZ8t4fFXlhbWw6Im5ld19wdWJsaWNfa2'
-    'V5IlIMbmV3UHVibGljS2V5EkMKD25ld19kaXZlcnNpZmllchgFIAEoCUIa8t4fFnlhbWw6Im5l'
-    'd19kaXZlcnNpZmllciJSDm5ld0RpdmVyc2lmaWVyOgSIoB8A');
+    'IJdGltZXN0YW1wEhwKCXNpZ25hdHVyZRgDIAEoDFIJc2lnbmF0dXJlEjoKDm5ld19wdWJsaWNf'
+    'a2V5GAQgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIMbmV3UHVibGljS2V5EicKD25ld19kaX'
+    'ZlcnNpZmllchgFIAEoCVIObmV3RGl2ZXJzaWZpZXI6BIigHwA=');
 
 @$core.Deprecated('Use misbehaviourDescriptor instead')
 const Misbehaviour$json = {
   '1': 'Misbehaviour',
   '2': [
-    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'clientId'},
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
     {'1': 'sequence', '3': 2, '4': 1, '5': 4, '10': 'sequence'},
     {
       '1': 'signature_one',
@@ -153,7 +140,6 @@ const Misbehaviour$json = {
       '4': 1,
       '5': 11,
       '6': '.ibc.lightclients.solomachine.v2.SignatureAndData',
-      '8': {},
       '10': 'signatureOne'
     },
     {
@@ -162,7 +148,6 @@ const Misbehaviour$json = {
       '4': 1,
       '5': 11,
       '6': '.ibc.lightclients.solomachine.v2.SignatureAndData',
-      '8': {},
       '10': 'signatureTwo'
     },
   ],
@@ -171,12 +156,11 @@ const Misbehaviour$json = {
 
 /// Descriptor for `Misbehaviour`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List misbehaviourDescriptor = $convert.base64Decode(
-    'CgxNaXNiZWhhdmlvdXISMQoJY2xpZW50X2lkGAEgASgJQhTy3h8QeWFtbDoiY2xpZW50X2lkIl'
-    'IIY2xpZW50SWQSGgoIc2VxdWVuY2UYAiABKARSCHNlcXVlbmNlEnAKDXNpZ25hdHVyZV9vbmUY'
-    'AyABKAsyMS5pYmMubGlnaHRjbGllbnRzLnNvbG9tYWNoaW5lLnYyLlNpZ25hdHVyZUFuZERhdG'
-    'FCGPLeHxR5YW1sOiJzaWduYXR1cmVfb25lIlIMc2lnbmF0dXJlT25lEnAKDXNpZ25hdHVyZV90'
-    'd28YBCABKAsyMS5pYmMubGlnaHRjbGllbnRzLnNvbG9tYWNoaW5lLnYyLlNpZ25hdHVyZUFuZE'
-    'RhdGFCGPLeHxR5YW1sOiJzaWduYXR1cmVfdHdvIlIMc2lnbmF0dXJlVHdvOgSIoB8A');
+    'CgxNaXNiZWhhdmlvdXISGwoJY2xpZW50X2lkGAEgASgJUghjbGllbnRJZBIaCghzZXF1ZW5jZR'
+    'gCIAEoBFIIc2VxdWVuY2USVgoNc2lnbmF0dXJlX29uZRgDIAEoCzIxLmliYy5saWdodGNsaWVu'
+    'dHMuc29sb21hY2hpbmUudjIuU2lnbmF0dXJlQW5kRGF0YVIMc2lnbmF0dXJlT25lElYKDXNpZ2'
+    '5hdHVyZV90d28YBCABKAsyMS5pYmMubGlnaHRjbGllbnRzLnNvbG9tYWNoaW5lLnYyLlNpZ25h'
+    'dHVyZUFuZERhdGFSDHNpZ25hdHVyZVR3bzoEiKAfAA==');
 
 @$core.Deprecated('Use signatureAndDataDescriptor instead')
 const SignatureAndData$json = {
@@ -189,7 +173,6 @@ const SignatureAndData$json = {
       '4': 1,
       '5': 14,
       '6': '.ibc.lightclients.solomachine.v2.DataType',
-      '8': {},
       '10': 'dataType'
     },
     {'1': 'data', '3': 3, '4': 1, '5': 12, '10': 'data'},
@@ -200,33 +183,26 @@ const SignatureAndData$json = {
 
 /// Descriptor for `SignatureAndData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List signatureAndDataDescriptor = $convert.base64Decode(
-    'ChBTaWduYXR1cmVBbmREYXRhEhwKCXNpZ25hdHVyZRgBIAEoDFIJc2lnbmF0dXJlElwKCWRhdG'
-    'FfdHlwZRgCIAEoDjIpLmliYy5saWdodGNsaWVudHMuc29sb21hY2hpbmUudjIuRGF0YVR5cGVC'
-    'FPLeHxB5YW1sOiJkYXRhX3R5cGUiUghkYXRhVHlwZRISCgRkYXRhGAMgASgMUgRkYXRhEhwKCX'
-    'RpbWVzdGFtcBgEIAEoBFIJdGltZXN0YW1wOgSIoB8A');
+    'ChBTaWduYXR1cmVBbmREYXRhEhwKCXNpZ25hdHVyZRgBIAEoDFIJc2lnbmF0dXJlEkYKCWRhdG'
+    'FfdHlwZRgCIAEoDjIpLmliYy5saWdodGNsaWVudHMuc29sb21hY2hpbmUudjIuRGF0YVR5cGVS'
+    'CGRhdGFUeXBlEhIKBGRhdGEYAyABKAxSBGRhdGESHAoJdGltZXN0YW1wGAQgASgEUgl0aW1lc3'
+    'RhbXA6BIigHwA=');
 
 @$core.Deprecated('Use timestampedSignatureDataDescriptor instead')
 const TimestampedSignatureData$json = {
   '1': 'TimestampedSignatureData',
   '2': [
-    {
-      '1': 'signature_data',
-      '3': 1,
-      '4': 1,
-      '5': 12,
-      '8': {},
-      '10': 'signatureData'
-    },
+    {'1': 'signature_data', '3': 1, '4': 1, '5': 12, '10': 'signatureData'},
     {'1': 'timestamp', '3': 2, '4': 1, '5': 4, '10': 'timestamp'},
   ],
   '7': {},
 };
 
 /// Descriptor for `TimestampedSignatureData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List timestampedSignatureDataDescriptor = $convert.base64Decode(
-    'ChhUaW1lc3RhbXBlZFNpZ25hdHVyZURhdGESQAoOc2lnbmF0dXJlX2RhdGEYASABKAxCGfLeHx'
-    'V5YW1sOiJzaWduYXR1cmVfZGF0YSJSDXNpZ25hdHVyZURhdGESHAoJdGltZXN0YW1wGAIgASgE'
-    'Ugl0aW1lc3RhbXA6BIigHwA=');
+final $typed_data.Uint8List timestampedSignatureDataDescriptor =
+    $convert.base64Decode(
+        'ChhUaW1lc3RhbXBlZFNpZ25hdHVyZURhdGESJQoOc2lnbmF0dXJlX2RhdGEYASABKAxSDXNpZ2'
+        '5hdHVyZURhdGESHAoJdGltZXN0YW1wGAIgASgEUgl0aW1lc3RhbXA6BIigHwA=');
 
 @$core.Deprecated('Use signBytesDescriptor instead')
 const SignBytes$json = {
@@ -241,7 +217,6 @@ const SignBytes$json = {
       '4': 1,
       '5': 14,
       '6': '.ibc.lightclients.solomachine.v2.DataType',
-      '8': {},
       '10': 'dataType'
     },
     {'1': 'data', '3': 5, '4': 1, '5': 12, '10': 'data'},
@@ -252,10 +227,9 @@ const SignBytes$json = {
 /// Descriptor for `SignBytes`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List signBytesDescriptor = $convert.base64Decode(
     'CglTaWduQnl0ZXMSGgoIc2VxdWVuY2UYASABKARSCHNlcXVlbmNlEhwKCXRpbWVzdGFtcBgCIA'
-    'EoBFIJdGltZXN0YW1wEiAKC2RpdmVyc2lmaWVyGAMgASgJUgtkaXZlcnNpZmllchJcCglkYXRh'
-    'X3R5cGUYBCABKA4yKS5pYmMubGlnaHRjbGllbnRzLnNvbG9tYWNoaW5lLnYyLkRhdGFUeXBlQh'
-    'Ty3h8QeWFtbDoiZGF0YV90eXBlIlIIZGF0YVR5cGUSEgoEZGF0YRgFIAEoDFIEZGF0YToEiKAf'
-    'AA==');
+    'EoBFIJdGltZXN0YW1wEiAKC2RpdmVyc2lmaWVyGAMgASgJUgtkaXZlcnNpZmllchJGCglkYXRh'
+    'X3R5cGUYBCABKA4yKS5pYmMubGlnaHRjbGllbnRzLnNvbG9tYWNoaW5lLnYyLkRhdGFUeXBlUg'
+    'hkYXRhVHlwZRISCgRkYXRhGAUgASgMUgRkYXRhOgSIoB8A');
 
 @$core.Deprecated('Use headerDataDescriptor instead')
 const HeaderData$json = {
@@ -267,26 +241,18 @@ const HeaderData$json = {
       '4': 1,
       '5': 11,
       '6': '.google.protobuf.Any',
-      '8': {},
       '10': 'newPubKey'
     },
-    {
-      '1': 'new_diversifier',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'newDiversifier'
-    },
+    {'1': 'new_diversifier', '3': 2, '4': 1, '5': 9, '10': 'newDiversifier'},
   ],
   '7': {},
 };
 
 /// Descriptor for `HeaderData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List headerDataDescriptor = $convert.base64Decode(
-    'CgpIZWFkZXJEYXRhEkwKC25ld19wdWJfa2V5GAEgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueU'
-    'IW8t4fEnlhbWw6Im5ld19wdWJfa2V5IlIJbmV3UHViS2V5EkMKD25ld19kaXZlcnNpZmllchgC'
-    'IAEoCUIa8t4fFnlhbWw6Im5ld19kaXZlcnNpZmllciJSDm5ld0RpdmVyc2lmaWVyOgSIoB8A');
+    'CgpIZWFkZXJEYXRhEjQKC25ld19wdWJfa2V5GAEgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueV'
+    'IJbmV3UHViS2V5EicKD25ld19kaXZlcnNpZmllchgCIAEoCVIObmV3RGl2ZXJzaWZpZXI6BIig'
+    'HwA=');
 
 @$core.Deprecated('Use clientStateDataDescriptor instead')
 const ClientStateData$json = {
@@ -299,7 +265,6 @@ const ClientStateData$json = {
       '4': 1,
       '5': 11,
       '6': '.google.protobuf.Any',
-      '8': {},
       '10': 'clientState'
     },
   ],
@@ -308,9 +273,8 @@ const ClientStateData$json = {
 
 /// Descriptor for `ClientStateData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List clientStateDataDescriptor = $convert.base64Decode(
-    'Cg9DbGllbnRTdGF0ZURhdGESEgoEcGF0aBgBIAEoDFIEcGF0aBJQCgxjbGllbnRfc3RhdGUYAi'
-    'ABKAsyFC5nb29nbGUucHJvdG9idWYuQW55Qhfy3h8TeWFtbDoiY2xpZW50X3N0YXRlIlILY2xp'
-    'ZW50U3RhdGU6BIigHwA=');
+    'Cg9DbGllbnRTdGF0ZURhdGESEgoEcGF0aBgBIAEoDFIEcGF0aBI3CgxjbGllbnRfc3RhdGUYAi'
+    'ABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UgtjbGllbnRTdGF0ZToEiKAfAA==');
 
 @$core.Deprecated('Use consensusStateDataDescriptor instead')
 const ConsensusStateData$json = {
@@ -323,7 +287,6 @@ const ConsensusStateData$json = {
       '4': 1,
       '5': 11,
       '6': '.google.protobuf.Any',
-      '8': {},
       '10': 'consensusState'
     },
   ],
@@ -332,9 +295,8 @@ const ConsensusStateData$json = {
 
 /// Descriptor for `ConsensusStateData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List consensusStateDataDescriptor = $convert.base64Decode(
-    'ChJDb25zZW5zdXNTdGF0ZURhdGESEgoEcGF0aBgBIAEoDFIEcGF0aBJZCg9jb25zZW5zdXNfc3'
-    'RhdGUYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55Qhry3h8WeWFtbDoiY29uc2Vuc3VzX3N0'
-    'YXRlIlIOY29uc2Vuc3VzU3RhdGU6BIigHwA=');
+    'ChJDb25zZW5zdXNTdGF0ZURhdGESEgoEcGF0aBgBIAEoDFIEcGF0aBI9Cg9jb25zZW5zdXNfc3'
+    'RhdGUYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55Ug5jb25zZW5zdXNTdGF0ZToEiKAfAA==');
 
 @$core.Deprecated('Use connectionStateDataDescriptor instead')
 const ConnectionStateData$json = {
@@ -428,18 +390,11 @@ const NextSequenceRecvData$json = {
   '1': 'NextSequenceRecvData',
   '2': [
     {'1': 'path', '3': 1, '4': 1, '5': 12, '10': 'path'},
-    {
-      '1': 'next_seq_recv',
-      '3': 2,
-      '4': 1,
-      '5': 4,
-      '8': {},
-      '10': 'nextSeqRecv'
-    },
+    {'1': 'next_seq_recv', '3': 2, '4': 1, '5': 4, '10': 'nextSeqRecv'},
   ],
 };
 
 /// Descriptor for `NextSequenceRecvData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List nextSequenceRecvDataDescriptor = $convert.base64Decode(
-    'ChROZXh0U2VxdWVuY2VSZWN2RGF0YRISCgRwYXRoGAEgASgMUgRwYXRoEjwKDW5leHRfc2VxX3'
-    'JlY3YYAiABKARCGPLeHxR5YW1sOiJuZXh0X3NlcV9yZWN2IlILbmV4dFNlcVJlY3Y=');
+    'ChROZXh0U2VxdWVuY2VSZWN2RGF0YRISCgRwYXRoGAEgASgMUgRwYXRoEiIKDW5leHRfc2VxX3'
+    'JlY3YYAiABKARSC25leHRTZXFSZWN2');

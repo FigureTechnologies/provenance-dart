@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../../cosmos/base/v1beta1/coin.pb.dart' as $1;
 import 'transfer.pb.dart' as $0;
 
 /// GenesisState defines the ibc-transfer genesis state
@@ -21,6 +22,7 @@ class GenesisState extends $pb.GeneratedMessage {
     $core.String? portId,
     $core.Iterable<$0.DenomTrace>? denomTraces,
     $0.Params? params,
+    $core.Iterable<$1.Coin>? totalEscrowed,
   }) {
     final $result = create();
     if (portId != null) {
@@ -31,6 +33,9 @@ class GenesisState extends $pb.GeneratedMessage {
     }
     if (params != null) {
       $result.params = params;
+    }
+    if (totalEscrowed != null) {
+      $result.totalEscrowed.addAll(totalEscrowed);
     }
     return $result;
   }
@@ -53,6 +58,8 @@ class GenesisState extends $pb.GeneratedMessage {
         subBuilder: $0.DenomTrace.create)
     ..aOM<$0.Params>(3, _omitFieldNames ? '' : 'params',
         subBuilder: $0.Params.create)
+    ..pc<$1.Coin>(4, _omitFieldNames ? '' : 'totalEscrowed', $pb.PbFieldType.PM,
+        subBuilder: $1.Coin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -106,6 +113,11 @@ class GenesisState extends $pb.GeneratedMessage {
   void clearParams() => clearField(3);
   @$pb.TagNumber(3)
   $0.Params ensureParams() => $_ensure(2);
+
+  /// total_escrowed contains the total amount of tokens escrowed
+  /// by the transfer module
+  @$pb.TagNumber(4)
+  $core.List<$1.Coin> get totalEscrowed => $_getList(3);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

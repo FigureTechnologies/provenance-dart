@@ -21,13 +21,14 @@ const ObjectStoreLocator$json = {
     {'1': 'locator_uri', '3': 2, '4': 1, '5': 9, '10': 'locatorUri'},
     {'1': 'encryption_key', '3': 3, '4': 1, '5': 9, '10': 'encryptionKey'},
   ],
+  '7': {},
 };
 
 /// Descriptor for `ObjectStoreLocator`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List objectStoreLocatorDescriptor = $convert.base64Decode(
     'ChJPYmplY3RTdG9yZUxvY2F0b3ISFAoFb3duZXIYASABKAlSBW93bmVyEh8KC2xvY2F0b3JfdX'
     'JpGAIgASgJUgpsb2NhdG9yVXJpEiUKDmVuY3J5cHRpb25fa2V5GAMgASgJUg1lbmNyeXB0aW9u'
-    'S2V5');
+    'S2V5OgqC57AqBW93bmVy');
 
 @$core.Deprecated('Use oSLocatorParamsDescriptor instead')
 const OSLocatorParams$json = {
@@ -46,5 +47,5 @@ const OSLocatorParams$json = {
 
 /// Descriptor for `OSLocatorParams`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List oSLocatorParamsDescriptor = $convert.base64Decode(
-    'Cg9PU0xvY2F0b3JQYXJhbXMSTQoObWF4X3VyaV9sZW5ndGgYASABKA1CJ8jeHwDa3h8GdWludD'
-    'My8t4fFXlhbWw6Im1heF91cmlfbGVuZ3RoIlIMbWF4VXJpTGVuZ3Ro');
+    'Cg9PU0xvY2F0b3JQYXJhbXMSNAoObWF4X3VyaV9sZW5ndGgYASABKA1CDsjeHwDa3h8GdWludD'
+    'MyUgxtYXhVcmlMZW5ndGg=');

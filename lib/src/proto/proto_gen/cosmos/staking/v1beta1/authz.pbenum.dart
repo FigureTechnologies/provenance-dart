@@ -29,12 +29,19 @@ class AuthorizationType extends $pb.ProtobufEnum {
   static const AuthorizationType AUTHORIZATION_TYPE_REDELEGATE =
       AuthorizationType._(
           3, _omitEnumNames ? '' : 'AUTHORIZATION_TYPE_REDELEGATE');
+  static const AuthorizationType
+      AUTHORIZATION_TYPE_CANCEL_UNBONDING_DELEGATION = AuthorizationType._(
+          4,
+          _omitEnumNames
+              ? ''
+              : 'AUTHORIZATION_TYPE_CANCEL_UNBONDING_DELEGATION');
 
   static const $core.List<AuthorizationType> values = <AuthorizationType>[
     AUTHORIZATION_TYPE_UNSPECIFIED,
     AUTHORIZATION_TYPE_DELEGATE,
     AUTHORIZATION_TYPE_UNDELEGATE,
     AUTHORIZATION_TYPE_REDELEGATE,
+    AUTHORIZATION_TYPE_CANCEL_UNBONDING_DELEGATION,
   ];
 
   static final $core.Map<$core.int, AuthorizationType> _byValue =

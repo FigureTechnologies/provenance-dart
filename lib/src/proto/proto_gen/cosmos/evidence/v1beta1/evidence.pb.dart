@@ -83,6 +83,7 @@ class Equivocation extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<Equivocation>(create);
   static Equivocation? _defaultInstance;
 
+  /// height is the equivocation height.
   @$pb.TagNumber(1)
   $fixnum.Int64 get height => $_getI64(0);
   @$pb.TagNumber(1)
@@ -95,6 +96,7 @@ class Equivocation extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearHeight() => clearField(1);
 
+  /// time is the equivocation time.
   @$pb.TagNumber(2)
   $0.Timestamp get time => $_getN(1);
   @$pb.TagNumber(2)
@@ -109,6 +111,7 @@ class Equivocation extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $0.Timestamp ensureTime() => $_ensure(1);
 
+  /// power is the equivocation validator power.
   @$pb.TagNumber(3)
   $fixnum.Int64 get power => $_getI64(2);
   @$pb.TagNumber(3)
@@ -121,6 +124,7 @@ class Equivocation extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPower() => clearField(3);
 
+  /// consensus_address is the equivocation validator consensus address.
   @$pb.TagNumber(4)
   $core.String get consensusAddress => $_getSZ(3);
   @$pb.TagNumber(4)

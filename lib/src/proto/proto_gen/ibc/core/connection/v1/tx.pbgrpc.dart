@@ -45,6 +45,12 @@ class MsgClient extends $grpc.Client {
       ($0.MsgConnectionOpenConfirm value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgConnectionOpenConfirmResponse.fromBuffer(value));
+  static final _$updateConnectionParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/ibc.core.connection.v1.Msg/UpdateConnectionParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -73,6 +79,13 @@ class MsgClient extends $grpc.Client {
       connectionOpenConfirm($0.MsgConnectionOpenConfirm request,
           {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$connectionOpenConfirm, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateConnectionParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateConnectionParams, request,
+        options: options);
   }
 }
 
@@ -117,6 +130,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgConnectionOpenConfirm.fromBuffer(value),
         ($0.MsgConnectionOpenConfirmResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateConnectionParams',
+            updateConnectionParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgConnectionOpenInitResponse> connectionOpenInit_Pre(
@@ -143,6 +165,11 @@ abstract class MsgServiceBase extends $grpc.Service {
     return connectionOpenConfirm(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateConnectionParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateConnectionParams(call, await request);
+  }
+
   $async.Future<$0.MsgConnectionOpenInitResponse> connectionOpenInit(
       $grpc.ServiceCall call, $0.MsgConnectionOpenInit request);
   $async.Future<$0.MsgConnectionOpenTryResponse> connectionOpenTry(
@@ -151,4 +178,6 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgConnectionOpenAck request);
   $async.Future<$0.MsgConnectionOpenConfirmResponse> connectionOpenConfirm(
       $grpc.ServiceCall call, $0.MsgConnectionOpenConfirm request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateConnectionParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
 }

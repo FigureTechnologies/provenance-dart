@@ -72,6 +72,7 @@ class QueryBalanceRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryBalanceRequest>(create);
   static QueryBalanceRequest? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -84,6 +85,7 @@ class QueryBalanceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// owner is the owner address of the nft
   @$pb.TagNumber(2)
   $core.String get owner => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -149,6 +151,7 @@ class QueryBalanceResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryBalanceResponse>(create);
   static QueryBalanceResponse? _defaultInstance;
 
+  /// amount is the number of all NFTs of a given class owned by the owner
   @$pb.TagNumber(1)
   $fixnum.Int64 get amount => $_getI64(0);
   @$pb.TagNumber(1)
@@ -217,6 +220,7 @@ class QueryOwnerRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryOwnerRequest>(create);
   static QueryOwnerRequest? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -229,6 +233,7 @@ class QueryOwnerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// id is a unique identifier of the NFT
   @$pb.TagNumber(2)
   $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -292,6 +297,7 @@ class QueryOwnerResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryOwnerResponse>(create);
   static QueryOwnerResponse? _defaultInstance;
 
+  /// owner is the owner address of the nft
   @$pb.TagNumber(1)
   $core.String get owner => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -355,6 +361,7 @@ class QuerySupplyRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QuerySupplyRequest>(create);
   static QuerySupplyRequest? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -419,6 +426,7 @@ class QuerySupplyResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QuerySupplyResponse>(create);
   static QuerySupplyResponse? _defaultInstance;
 
+  /// amount is the number of all NFTs from the given class
   @$pb.TagNumber(1)
   $fixnum.Int64 get amount => $_getI64(0);
   @$pb.TagNumber(1)
@@ -493,6 +501,7 @@ class QueryNFTsRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryNFTsRequest>(create);
   static QueryNFTsRequest? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -505,6 +514,7 @@ class QueryNFTsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// owner is the owner address of the nft
   @$pb.TagNumber(2)
   $core.String get owner => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -517,6 +527,7 @@ class QueryNFTsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearOwner() => clearField(2);
 
+  /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(3)
   $1.PageRequest get pagination => $_getN(2);
   @$pb.TagNumber(3)
@@ -589,9 +600,11 @@ class QueryNFTsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryNFTsResponse>(create);
   static QueryNFTsResponse? _defaultInstance;
 
+  /// NFT defines the NFT
   @$pb.TagNumber(1)
   $core.List<$2.NFT> get nfts => $_getList(0);
 
+  /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
   $1.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
@@ -662,6 +675,7 @@ class QueryNFTRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryNFTRequest>(create);
   static QueryNFTRequest? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -674,6 +688,7 @@ class QueryNFTRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// id is a unique identifier of the NFT
   @$pb.TagNumber(2)
   $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -737,6 +752,7 @@ class QueryNFTResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryNFTResponse>(create);
   static QueryNFTResponse? _defaultInstance;
 
+  /// owner is the owner address of the nft
   @$pb.TagNumber(1)
   $2.NFT get nft => $_getN(0);
   @$pb.TagNumber(1)
@@ -802,6 +818,7 @@ class QueryClassRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryClassRequest>(create);
   static QueryClassRequest? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -866,6 +883,7 @@ class QueryClassResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryClassResponse>(create);
   static QueryClassResponse? _defaultInstance;
 
+  /// class defines the class of the nft type.
   @$pb.TagNumber(1)
   $2.Class get class_1 => $_getN(0);
   @$pb.TagNumber(1)
@@ -1006,9 +1024,11 @@ class QueryClassesResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryClassesResponse>(create);
   static QueryClassesResponse? _defaultInstance;
 
+  /// class defines the class of the nft type.
   @$pb.TagNumber(1)
   $core.List<$2.Class> get classes => $_getList(0);
 
+  /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
   $1.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)

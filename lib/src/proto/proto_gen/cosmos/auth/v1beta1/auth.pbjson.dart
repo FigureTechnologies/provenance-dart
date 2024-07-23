@@ -36,10 +36,11 @@ const BaseAccount$json = {
 /// Descriptor for `BaseAccount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List baseAccountDescriptor = $convert.base64Decode(
     'CgtCYXNlQWNjb3VudBIyCgdhZGRyZXNzGAEgASgJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbm'
-    'dSB2FkZHJlc3MSRwoHcHViX2tleRgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCGOreHxRw'
-    'dWJsaWNfa2V5LG9taXRlbXB0eVIGcHViS2V5EiUKDmFjY291bnRfbnVtYmVyGAMgASgEUg1hY2'
-    'NvdW50TnVtYmVyEhoKCHNlcXVlbmNlGAQgASgEUghzZXF1ZW5jZToYiKAfAJigHwDooB8AyrQt'
-    'CEFjY291bnRJ');
+    'dSB2FkZHJlc3MSVgoHcHViX2tleRgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCJ+reHxRw'
+    'dWJsaWNfa2V5LG9taXRlbXB0eaLnsCoKcHVibGljX2tleVIGcHViS2V5EiUKDmFjY291bnRfbn'
+    'VtYmVyGAMgASgEUg1hY2NvdW50TnVtYmVyEhoKCHNlcXVlbmNlGAQgASgEUghzZXF1ZW5jZTpD'
+    'iKAfAOigHwDKtC0cY29zbW9zLmF1dGgudjFiZXRhMS5BY2NvdW50SYrnsCoWY29zbW9zLXNkay'
+    '9CYXNlQWNjb3VudA==');
 
 @$core.Deprecated('Use moduleAccountDescriptor instead')
 const ModuleAccount$json = {
@@ -64,8 +65,25 @@ const ModuleAccount$json = {
 final $typed_data.Uint8List moduleAccountDescriptor = $convert.base64Decode(
     'Cg1Nb2R1bGVBY2NvdW50EkkKDGJhc2VfYWNjb3VudBgBIAEoCzIgLmNvc21vcy5hdXRoLnYxYm'
     'V0YTEuQmFzZUFjY291bnRCBNDeHwFSC2Jhc2VBY2NvdW50EhIKBG5hbWUYAiABKAlSBG5hbWUS'
-    'IAoLcGVybWlzc2lvbnMYAyADKAlSC3Blcm1pc3Npb25zOhqIoB8AmKAfAMq0LQ5Nb2R1bGVBY2'
-    'NvdW50SQ==');
+    'IAoLcGVybWlzc2lvbnMYAyADKAlSC3Blcm1pc3Npb25zOlqIoB8AyrQtImNvc21vcy5hdXRoLn'
+    'YxYmV0YTEuTW9kdWxlQWNjb3VudEmK57AqGGNvc21vcy1zZGsvTW9kdWxlQWNjb3VudJLnsCoO'
+    'bW9kdWxlX2FjY291bnQ=');
+
+@$core.Deprecated('Use moduleCredentialDescriptor instead')
+const ModuleCredential$json = {
+  '1': 'ModuleCredential',
+  '2': [
+    {'1': 'module_name', '3': 1, '4': 1, '5': 9, '10': 'moduleName'},
+    {'1': 'derivation_keys', '3': 2, '4': 3, '5': 12, '10': 'derivationKeys'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `ModuleCredential`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleCredentialDescriptor = $convert.base64Decode(
+    'ChBNb2R1bGVDcmVkZW50aWFsEh8KC21vZHVsZV9uYW1lGAEgASgJUgptb2R1bGVOYW1lEicKD2'
+    'Rlcml2YXRpb25fa2V5cxgCIAMoDFIOZGVyaXZhdGlvbktleXM6JornsCohY29zbW9zLXNkay9H'
+    'cm91cEFjY291bnRDcmVkZW50aWFs');
 
 @$core.Deprecated('Use paramsDescriptor instead')
 const Params$json = {
@@ -113,4 +131,5 @@ final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
     'Ynl0ZRgDIAEoBFIRdHhTaXplQ29zdFBlckJ5dGUSTwoXc2lnX3ZlcmlmeV9jb3N0X2VkMjU1MT'
     'kYBCABKARCGOLeHxRTaWdWZXJpZnlDb3N0RUQyNTUxOVIUc2lnVmVyaWZ5Q29zdEVkMjU1MTkS'
     'VQoZc2lnX3ZlcmlmeV9jb3N0X3NlY3AyNTZrMRgFIAEoBEIa4t4fFlNpZ1ZlcmlmeUNvc3RTZW'
-    'NwMjU2azFSFnNpZ1ZlcmlmeUNvc3RTZWNwMjU2azE6CJigHwDooB8B');
+    'NwMjU2azFSFnNpZ1ZlcmlmeUNvc3RTZWNwMjU2azE6IeigHwGK57AqGGNvc21vcy1zZGsveC9h'
+    'dXRoL1BhcmFtcw==');

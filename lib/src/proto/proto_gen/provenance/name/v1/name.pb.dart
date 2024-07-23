@@ -233,6 +233,8 @@ class NameRecord extends $pb.GeneratedMessage {
 /// CreateRootNameProposal details a proposal to create a new root name
 /// that is controlled by a given owner and optionally restricted to the owner
 /// for the sole creation of sub names.
+/// Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+/// proposals, see MsgCreateRootNameRequest.
 class CreateRootNameProposal extends $pb.GeneratedMessage {
   factory CreateRootNameProposal({
     $core.String? title,
@@ -659,6 +661,122 @@ class EventNameUpdate extends $pb.GeneratedMessage {
   $core.bool hasRestricted() => $_has(2);
   @$pb.TagNumber(3)
   void clearRestricted() => clearField(3);
+}
+
+/// EventNameParamsUpdated event emitted when name params are updated.
+class EventNameParamsUpdated extends $pb.GeneratedMessage {
+  factory EventNameParamsUpdated({
+    $core.String? allowUnrestrictedNames,
+    $core.String? maxNameLevels,
+    $core.String? minSegmentLength,
+    $core.String? maxSegmentLength,
+  }) {
+    final $result = create();
+    if (allowUnrestrictedNames != null) {
+      $result.allowUnrestrictedNames = allowUnrestrictedNames;
+    }
+    if (maxNameLevels != null) {
+      $result.maxNameLevels = maxNameLevels;
+    }
+    if (minSegmentLength != null) {
+      $result.minSegmentLength = minSegmentLength;
+    }
+    if (maxSegmentLength != null) {
+      $result.maxSegmentLength = maxSegmentLength;
+    }
+    return $result;
+  }
+  EventNameParamsUpdated._() : super();
+  factory EventNameParamsUpdated.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventNameParamsUpdated.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventNameParamsUpdated',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'provenance.name.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'allowUnrestrictedNames')
+    ..aOS(2, _omitFieldNames ? '' : 'maxNameLevels')
+    ..aOS(3, _omitFieldNames ? '' : 'minSegmentLength')
+    ..aOS(4, _omitFieldNames ? '' : 'maxSegmentLength')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventNameParamsUpdated clone() =>
+      EventNameParamsUpdated()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventNameParamsUpdated copyWith(
+          void Function(EventNameParamsUpdated) updates) =>
+      super.copyWith((message) => updates(message as EventNameParamsUpdated))
+          as EventNameParamsUpdated;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventNameParamsUpdated create() => EventNameParamsUpdated._();
+  EventNameParamsUpdated createEmptyInstance() => create();
+  static $pb.PbList<EventNameParamsUpdated> createRepeated() =>
+      $pb.PbList<EventNameParamsUpdated>();
+  @$core.pragma('dart2js:noInline')
+  static EventNameParamsUpdated getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventNameParamsUpdated>(create);
+  static EventNameParamsUpdated? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get allowUnrestrictedNames => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set allowUnrestrictedNames($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAllowUnrestrictedNames() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAllowUnrestrictedNames() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get maxNameLevels => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set maxNameLevels($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasMaxNameLevels() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaxNameLevels() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get minSegmentLength => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set minSegmentLength($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasMinSegmentLength() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMinSegmentLength() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get maxSegmentLength => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set maxSegmentLength($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasMaxSegmentLength() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaxSegmentLength() => clearField(4);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

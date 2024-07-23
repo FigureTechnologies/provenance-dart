@@ -21,8 +21,7 @@ import '../../../../tendermint/types/types.pb.dart' as $3;
 import '../../query/v1beta1/pagination.pb.dart' as $1;
 import 'types.pb.dart' as $5;
 
-/// GetValidatorSetByHeightRequest is the request type for the
-/// Query/GetValidatorSetByHeight RPC method.
+/// GetValidatorSetByHeightRequest is the request type for the Query/GetValidatorSetByHeight RPC method.
 class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   factory GetValidatorSetByHeightRequest({
     $fixnum.Int64? height,
@@ -110,8 +109,7 @@ class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   $1.PageRequest ensurePagination() => $_ensure(1);
 }
 
-/// GetValidatorSetByHeightResponse is the response type for the
-/// Query/GetValidatorSetByHeight RPC method.
+/// GetValidatorSetByHeightResponse is the response type for the Query/GetValidatorSetByHeight RPC method.
 class GetValidatorSetByHeightResponse extends $pb.GeneratedMessage {
   factory GetValidatorSetByHeightResponse({
     $fixnum.Int64? blockHeight,
@@ -209,8 +207,7 @@ class GetValidatorSetByHeightResponse extends $pb.GeneratedMessage {
   $1.PageResponse ensurePagination() => $_ensure(2);
 }
 
-/// GetLatestValidatorSetRequest is the request type for the
-/// Query/GetValidatorSetByHeight RPC method.
+/// GetLatestValidatorSetRequest is the request type for the Query/GetValidatorSetByHeight RPC method.
 class GetLatestValidatorSetRequest extends $pb.GeneratedMessage {
   factory GetLatestValidatorSetRequest({
     $1.PageRequest? pagination,
@@ -281,8 +278,7 @@ class GetLatestValidatorSetRequest extends $pb.GeneratedMessage {
   $1.PageRequest ensurePagination() => $_ensure(0);
 }
 
-/// GetLatestValidatorSetResponse is the response type for the
-/// Query/GetValidatorSetByHeight RPC method.
+/// GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method.
 class GetLatestValidatorSetResponse extends $pb.GeneratedMessage {
   factory GetLatestValidatorSetResponse({
     $fixnum.Int64? blockHeight,
@@ -493,8 +489,7 @@ class Validator extends $pb.GeneratedMessage {
   void clearProposerPriority() => clearField(4);
 }
 
-/// GetBlockByHeightRequest is the request type for the Query/GetBlockByHeight
-/// RPC method.
+/// GetBlockByHeightRequest is the request type for the Query/GetBlockByHeight RPC method.
 class GetBlockByHeightRequest extends $pb.GeneratedMessage {
   factory GetBlockByHeightRequest({
     $fixnum.Int64? height,
@@ -559,8 +554,7 @@ class GetBlockByHeightRequest extends $pb.GeneratedMessage {
   void clearHeight() => clearField(1);
 }
 
-/// GetBlockByHeightResponse is the response type for the Query/GetBlockByHeight
-/// RPC method.
+/// GetBlockByHeightResponse is the response type for the Query/GetBlockByHeight RPC method.
 class GetBlockByHeightResponse extends $pb.GeneratedMessage {
   factory GetBlockByHeightResponse({
     $3.BlockID? blockId,
@@ -670,8 +664,7 @@ class GetBlockByHeightResponse extends $pb.GeneratedMessage {
   $5.Block ensureSdkBlock() => $_ensure(2);
 }
 
-/// GetLatestBlockRequest is the request type for the Query/GetLatestBlock RPC
-/// method.
+/// GetLatestBlockRequest is the request type for the Query/GetLatestBlock RPC method.
 class GetLatestBlockRequest extends $pb.GeneratedMessage {
   factory GetLatestBlockRequest() => create();
   GetLatestBlockRequest._() : super();
@@ -715,8 +708,7 @@ class GetLatestBlockRequest extends $pb.GeneratedMessage {
   static GetLatestBlockRequest? _defaultInstance;
 }
 
-/// GetLatestBlockResponse is the response type for the Query/GetLatestBlock RPC
-/// method.
+/// GetLatestBlockResponse is the response type for the Query/GetLatestBlock RPC method.
 class GetLatestBlockResponse extends $pb.GeneratedMessage {
   factory GetLatestBlockResponse({
     $3.BlockID? blockId,
@@ -973,8 +965,7 @@ class GetNodeInfoRequest extends $pb.GeneratedMessage {
   static GetNodeInfoRequest? _defaultInstance;
 }
 
-/// GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC
-/// method.
+/// GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC method.
 class GetNodeInfoResponse extends $pb.GeneratedMessage {
   factory GetNodeInfoResponse({
     $6.DefaultNodeInfo? defaultNodeInfo,
@@ -1447,8 +1438,7 @@ class ABCIQueryRequest extends $pb.GeneratedMessage {
   void clearProve() => clearField(4);
 }
 
-///  ABCIQueryResponse defines the response structure for the ABCIQuery gRPC
-///  query.
+///  ABCIQueryResponse defines the response structure for the ABCIQuery gRPC query.
 ///
 ///  Note: This type is a duplicate of the ResponseQuery proto type defined in
 ///  Tendermint.
@@ -1656,11 +1646,10 @@ class ABCIQueryResponse extends $pb.GeneratedMessage {
 }
 
 ///  ProofOp defines an operation used for calculating Merkle root. The data could
-///  be arbitrary format, providing nessecary data for example neighbouring node
+///  be arbitrary format, providing necessary data for example neighbouring node
 ///  hash.
 ///
-///  Note: This type is a duplicate of the ProofOp proto type defined in
-///  Tendermint.
+///  Note: This type is a duplicate of the ProofOp proto type defined in Tendermint.
 class ProofOp extends $pb.GeneratedMessage {
   factory ProofOp({
     $core.String? type,
@@ -1759,8 +1748,7 @@ class ProofOp extends $pb.GeneratedMessage {
 
 ///  ProofOps is Merkle proof defined by the list of ProofOps.
 ///
-///  Note: This type is a duplicate of the ProofOps proto type defined in
-///  Tendermint.
+///  Note: This type is a duplicate of the ProofOps proto type defined in Tendermint.
 class ProofOps extends $pb.GeneratedMessage {
   factory ProofOps({
     $core.Iterable<ProofOp>? ops,

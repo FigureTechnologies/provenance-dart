@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../crypto/keys.pb.dart' as $0;
 
+export 'validator.pbenum.dart';
+
 class ValidatorSet extends $pb.GeneratedMessage {
   factory ValidatorSet({
     $core.Iterable<Validator>? validators,

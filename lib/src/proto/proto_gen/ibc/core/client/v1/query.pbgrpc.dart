@@ -78,6 +78,12 @@ class QueryClient extends $grpc.Client {
       ($0.QueryUpgradedConsensusStateRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.QueryUpgradedConsensusStateResponse.fromBuffer(value));
+  static final _$verifyMembership = $grpc.ClientMethod<
+          $0.QueryVerifyMembershipRequest, $0.QueryVerifyMembershipResponse>(
+      '/ibc.core.client.v1.Query/VerifyMembership',
+      ($0.QueryVerifyMembershipRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryVerifyMembershipResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -137,6 +143,12 @@ class QueryClient extends $grpc.Client {
           {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$upgradedConsensusState, request,
         options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryVerifyMembershipResponse> verifyMembership(
+      $0.QueryVerifyMembershipRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$verifyMembership, request, options: options);
   }
 }
 
@@ -228,6 +240,15 @@ abstract class QueryServiceBase extends $grpc.Service {
             $0.QueryUpgradedConsensusStateRequest.fromBuffer(value),
         ($0.QueryUpgradedConsensusStateResponse value) =>
             value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryVerifyMembershipRequest,
+            $0.QueryVerifyMembershipResponse>(
+        'VerifyMembership',
+        verifyMembership_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryVerifyMembershipRequest.fromBuffer(value),
+        ($0.QueryVerifyMembershipResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryClientStateResponse> clientState_Pre(
@@ -284,6 +305,12 @@ abstract class QueryServiceBase extends $grpc.Service {
     return upgradedConsensusState(call, await request);
   }
 
+  $async.Future<$0.QueryVerifyMembershipResponse> verifyMembership_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryVerifyMembershipRequest> request) async {
+    return verifyMembership(call, await request);
+  }
+
   $async.Future<$0.QueryClientStateResponse> clientState(
       $grpc.ServiceCall call, $0.QueryClientStateRequest request);
   $async.Future<$0.QueryClientStatesResponse> clientStates(
@@ -302,4 +329,6 @@ abstract class QueryServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.QueryUpgradedClientStateRequest request);
   $async.Future<$0.QueryUpgradedConsensusStateResponse> upgradedConsensusState(
       $grpc.ServiceCall call, $0.QueryUpgradedConsensusStateRequest request);
+  $async.Future<$0.QueryVerifyMembershipResponse> verifyMembership(
+      $grpc.ServiceCall call, $0.QueryVerifyMembershipRequest request);
 }

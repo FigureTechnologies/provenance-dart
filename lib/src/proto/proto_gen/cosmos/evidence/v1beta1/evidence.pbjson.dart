@@ -42,7 +42,8 @@ const Equivocation$json = {
 
 /// Descriptor for `Equivocation`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List equivocationDescriptor = $convert.base64Decode(
-    'CgxFcXVpdm9jYXRpb24SFgoGaGVpZ2h0GAEgASgDUgZoZWlnaHQSOAoEdGltZRgCIAEoCzIaLm'
-    'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x8BUgR0aW1lEhQKBXBvd2VyGAMgASgD'
-    'UgVwb3dlchJFChFjb25zZW5zdXNfYWRkcmVzcxgEIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3'
-    'RyaW5nUhBjb25zZW5zdXNBZGRyZXNzOgyIoB8AmKAfAOigHwA=');
+    'CgxFcXVpdm9jYXRpb24SFgoGaGVpZ2h0GAEgASgDUgZoZWlnaHQSPQoEdGltZRgCIAEoCzIaLm'
+    'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCDcjeHwCQ3x8BqOewKgFSBHRpbWUSFAoFcG93ZXIY'
+    'AyABKANSBXBvd2VyEkUKEWNvbnNlbnN1c19hZGRyZXNzGAQgASgJQhjStC0UY29zbW9zLkFkZH'
+    'Jlc3NTdHJpbmdSEGNvbnNlbnN1c0FkZHJlc3M6JIigHwDooB8AiuewKhdjb3Ntb3Mtc2RrL0Vx'
+    'dWl2b2NhdGlvbg==');

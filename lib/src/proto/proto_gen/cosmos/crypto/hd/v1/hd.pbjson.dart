@@ -30,4 +30,5 @@ const BIP44Params$json = {
 final $typed_data.Uint8List bIP44ParamsDescriptor = $convert.base64Decode(
     'CgtCSVA0NFBhcmFtcxIYCgdwdXJwb3NlGAEgASgNUgdwdXJwb3NlEhsKCWNvaW5fdHlwZRgCIA'
     'EoDVIIY29pblR5cGUSGAoHYWNjb3VudBgDIAEoDVIHYWNjb3VudBIWCgZjaGFuZ2UYBCABKAhS'
-    'BmNoYW5nZRIjCg1hZGRyZXNzX2luZGV4GAUgASgNUgxhZGRyZXNzSW5kZXg6BJigHwA=');
+    'BmNoYW5nZRIjCg1hZGRyZXNzX2luZGV4GAUgASgNUgxhZGRyZXNzSW5kZXg6I5igHwCK57AqGm'
+    'NyeXB0by9rZXlzL2hkL0JJUDQ0UGFyYW1z');

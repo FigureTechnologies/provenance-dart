@@ -45,6 +45,24 @@ class MsgClient extends $grpc.Client {
       ($0.MsgSubmitMisbehaviour value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgSubmitMisbehaviourResponse.fromBuffer(value));
+  static final _$recoverClient =
+      $grpc.ClientMethod<$0.MsgRecoverClient, $0.MsgRecoverClientResponse>(
+          '/ibc.core.client.v1.Msg/RecoverClient',
+          ($0.MsgRecoverClient value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgRecoverClientResponse.fromBuffer(value));
+  static final _$iBCSoftwareUpgrade = $grpc.ClientMethod<
+          $0.MsgIBCSoftwareUpgrade, $0.MsgIBCSoftwareUpgradeResponse>(
+      '/ibc.core.client.v1.Msg/IBCSoftwareUpgrade',
+      ($0.MsgIBCSoftwareUpgrade value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgIBCSoftwareUpgradeResponse.fromBuffer(value));
+  static final _$updateClientParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/ibc.core.client.v1.Msg/UpdateClientParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -73,6 +91,24 @@ class MsgClient extends $grpc.Client {
       $0.MsgSubmitMisbehaviour request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$submitMisbehaviour, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgRecoverClientResponse> recoverClient(
+      $0.MsgRecoverClient request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$recoverClient, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgIBCSoftwareUpgradeResponse> iBCSoftwareUpgrade(
+      $0.MsgIBCSoftwareUpgrade request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$iBCSoftwareUpgrade, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateClientParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateClientParams, request, options: options);
   }
 }
 
@@ -117,6 +153,33 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgSubmitMisbehaviour.fromBuffer(value),
         ($0.MsgSubmitMisbehaviourResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgRecoverClient, $0.MsgRecoverClientResponse>(
+            'RecoverClient',
+            recoverClient_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgRecoverClient.fromBuffer(value),
+            ($0.MsgRecoverClientResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgIBCSoftwareUpgrade,
+            $0.MsgIBCSoftwareUpgradeResponse>(
+        'IBCSoftwareUpgrade',
+        iBCSoftwareUpgrade_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgIBCSoftwareUpgrade.fromBuffer(value),
+        ($0.MsgIBCSoftwareUpgradeResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateClientParams',
+            updateClientParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgCreateClientResponse> createClient_Pre(
@@ -141,6 +204,23 @@ abstract class MsgServiceBase extends $grpc.Service {
     return submitMisbehaviour(call, await request);
   }
 
+  $async.Future<$0.MsgRecoverClientResponse> recoverClient_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgRecoverClient> request) async {
+    return recoverClient(call, await request);
+  }
+
+  $async.Future<$0.MsgIBCSoftwareUpgradeResponse> iBCSoftwareUpgrade_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgIBCSoftwareUpgrade> request) async {
+    return iBCSoftwareUpgrade(call, await request);
+  }
+
+  $async.Future<$0.MsgUpdateParamsResponse> updateClientParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateClientParams(call, await request);
+  }
+
   $async.Future<$0.MsgCreateClientResponse> createClient(
       $grpc.ServiceCall call, $0.MsgCreateClient request);
   $async.Future<$0.MsgUpdateClientResponse> updateClient(
@@ -149,4 +229,10 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgUpgradeClient request);
   $async.Future<$0.MsgSubmitMisbehaviourResponse> submitMisbehaviour(
       $grpc.ServiceCall call, $0.MsgSubmitMisbehaviour request);
+  $async.Future<$0.MsgRecoverClientResponse> recoverClient(
+      $grpc.ServiceCall call, $0.MsgRecoverClient request);
+  $async.Future<$0.MsgIBCSoftwareUpgradeResponse> iBCSoftwareUpgrade(
+      $grpc.ServiceCall call, $0.MsgIBCSoftwareUpgrade request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateClientParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
 }

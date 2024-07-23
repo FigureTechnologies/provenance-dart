@@ -13,11 +13,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../cosmos/base/v1beta1/coin.pb.dart' as $0;
+
 /// Params is a representation of the exchange module parameters.
 class Params extends $pb.GeneratedMessage {
   factory Params({
     $core.int? defaultSplit,
     $core.Iterable<DenomSplit>? denomSplits,
+    $core.Iterable<$0.Coin>? feeCreatePaymentFlat,
+    $core.Iterable<$0.Coin>? feeAcceptPaymentFlat,
   }) {
     final $result = create();
     if (defaultSplit != null) {
@@ -25,6 +29,12 @@ class Params extends $pb.GeneratedMessage {
     }
     if (denomSplits != null) {
       $result.denomSplits.addAll(denomSplits);
+    }
+    if (feeCreatePaymentFlat != null) {
+      $result.feeCreatePaymentFlat.addAll(feeCreatePaymentFlat);
+    }
+    if (feeAcceptPaymentFlat != null) {
+      $result.feeAcceptPaymentFlat.addAll(feeAcceptPaymentFlat);
     }
     return $result;
   }
@@ -46,6 +56,12 @@ class Params extends $pb.GeneratedMessage {
     ..pc<DenomSplit>(
         2, _omitFieldNames ? '' : 'denomSplits', $pb.PbFieldType.PM,
         subBuilder: DenomSplit.create)
+    ..pc<$0.Coin>(
+        3, _omitFieldNames ? '' : 'feeCreatePaymentFlat', $pb.PbFieldType.PM,
+        subBuilder: $0.Coin.create)
+    ..pc<$0.Coin>(
+        4, _omitFieldNames ? '' : 'feeAcceptPaymentFlat', $pb.PbFieldType.PM,
+        subBuilder: $0.Coin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -87,6 +103,18 @@ class Params extends $pb.GeneratedMessage {
   /// denom_splits are the denom-specific amounts the exchange receives.
   @$pb.TagNumber(2)
   $core.List<DenomSplit> get denomSplits => $_getList(1);
+
+  /// fee_create_payment_flat is the flat fee options for creating a payment.
+  /// If the source amount is not zero then one of these fee entries is required to create the payment.
+  /// This field is currently limited to zero or one entries.
+  @$pb.TagNumber(3)
+  $core.List<$0.Coin> get feeCreatePaymentFlat => $_getList(2);
+
+  /// fee_accept_payment_flat is the flat fee options for accepting a payment.
+  /// If the target amount is not zero then one of these fee entries is required to accept the payment.
+  /// This field is currently limited to zero or one entries.
+  @$pb.TagNumber(4)
+  $core.List<$0.Coin> get feeAcceptPaymentFlat => $_getList(3);
 }
 
 /// DenomSplit associates a coin denomination with an amount the exchange receives for that denom.

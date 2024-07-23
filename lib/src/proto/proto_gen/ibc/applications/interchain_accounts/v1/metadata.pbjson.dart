@@ -23,7 +23,6 @@ const Metadata$json = {
       '3': 2,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'controllerConnectionId'
     },
     {
@@ -31,7 +30,6 @@ const Metadata$json = {
       '3': 3,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'hostConnectionId'
     },
     {'1': 'address', '3': 4, '4': 1, '5': 9, '10': 'address'},
@@ -42,9 +40,7 @@ const Metadata$json = {
 
 /// Descriptor for `Metadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode(
-    'CghNZXRhZGF0YRIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEl0KGGNvbnRyb2xsZXJfY29ubm'
-    'VjdGlvbl9pZBgCIAEoCUIj8t4fH3lhbWw6ImNvbnRyb2xsZXJfY29ubmVjdGlvbl9pZCJSFmNv'
-    'bnRyb2xsZXJDb25uZWN0aW9uSWQSSwoSaG9zdF9jb25uZWN0aW9uX2lkGAMgASgJQh3y3h8ZeW'
-    'FtbDoiaG9zdF9jb25uZWN0aW9uX2lkIlIQaG9zdENvbm5lY3Rpb25JZBIYCgdhZGRyZXNzGAQg'
-    'ASgJUgdhZGRyZXNzEhoKCGVuY29kaW5nGAUgASgJUghlbmNvZGluZxIXCgd0eF90eXBlGAYgAS'
-    'gJUgZ0eFR5cGU=');
+    'CghNZXRhZGF0YRIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEjgKGGNvbnRyb2xsZXJfY29ubm'
+    'VjdGlvbl9pZBgCIAEoCVIWY29udHJvbGxlckNvbm5lY3Rpb25JZBIsChJob3N0X2Nvbm5lY3Rp'
+    'b25faWQYAyABKAlSEGhvc3RDb25uZWN0aW9uSWQSGAoHYWRkcmVzcxgEIAEoCVIHYWRkcmVzcx'
+    'IaCghlbmNvZGluZxgFIAEoCVIIZW5jb2RpbmcSFwoHdHhfdHlwZRgGIAEoCVIGdHhUeXBl');

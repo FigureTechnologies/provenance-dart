@@ -23,7 +23,7 @@ class GenesisState extends $pb.GeneratedMessage {
     $core.Iterable<$0.ClientConsensusStates>? clientsConsensus,
     $core.Iterable<IdentifiedGenesisMetadata>? clientsMetadata,
     $0.Params? params,
-    $core.bool? createLocalhost,
+    @$core.Deprecated('This field is deprecated.') $core.bool? createLocalhost,
     $fixnum.Int64? nextClientSequence,
   }) {
     final $result = create();
@@ -40,6 +40,7 @@ class GenesisState extends $pb.GeneratedMessage {
       $result.params = params;
     }
     if (createLocalhost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.createLocalhost = createLocalhost;
     }
     if (nextClientSequence != null) {
@@ -126,16 +127,21 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $0.Params ensureParams() => $_ensure(3);
 
-  /// create localhost on initialization
+  /// Deprecated: create_localhost has been deprecated.
+  /// The localhost client is automatically created at genesis.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool get createLocalhost => $_getBF(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   set createLocalhost($core.bool v) {
     $_setBool(4, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool hasCreateLocalhost() => $_has(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   void clearCreateLocalhost() => clearField(5);
 

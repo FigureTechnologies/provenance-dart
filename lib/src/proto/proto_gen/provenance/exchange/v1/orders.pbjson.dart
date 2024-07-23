@@ -96,7 +96,7 @@ final $typed_data.Uint8List askOrderDescriptor = $convert.base64Decode(
     'Ntb3MuYmFzZS52MWJldGExLkNvaW5CBMjeHwBSBXByaWNlElYKGnNlbGxlcl9zZXR0bGVtZW50'
     'X2ZsYXRfZmVlGAUgASgLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luUhdzZWxsZXJTZXR0bG'
     'VtZW50RmxhdEZlZRIjCg1hbGxvd19wYXJ0aWFsGAYgASgIUgxhbGxvd1BhcnRpYWwSHwoLZXh0'
-    'ZXJuYWxfaWQYByABKAlSCmV4dGVybmFsSWQ6BIigHwA=');
+    'ZXJuYWxfaWQYByABKAlSCmV4dGVybmFsSWQ6D4igHwCC57AqBnNlbGxlcg==');
 
 @$core.Deprecated('Use bidOrderDescriptor instead')
 const BidOrder$json = {
@@ -142,8 +142,8 @@ final $typed_data.Uint8List bidOrderDescriptor = $convert.base64Decode(
     'CghCaWRPcmRlchIbCgltYXJrZXRfaWQYASABKA1SCG1hcmtldElkEi4KBWJ1eWVyGAIgASgJQh'
     'jStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSBWJ1eWVyEjcKBmFzc2V0cxgDIAEoCzIZLmNvc21v'
     'cy5iYXNlLnYxYmV0YTEuQ29pbkIEyN4fAFIGYXNzZXRzEjUKBXByaWNlGAQgASgLMhkuY29zbW'
-    '9zLmJhc2UudjFiZXRhMS5Db2luQgTI3h8AUgVwcmljZRJ/ChVidXllcl9zZXR0bGVtZW50X2Zl'
-    'ZXMYBSADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS'
-    '9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1ITYnV5ZXJTZXR0bGVtZW50RmVlcxIjCg1h'
-    'bGxvd19wYXJ0aWFsGAYgASgIUgxhbGxvd1BhcnRpYWwSHwoLZXh0ZXJuYWxfaWQYByABKAlSCm'
-    'V4dGVybmFsSWQ6BIigHwA=');
+    '9zLmJhc2UudjFiZXRhMS5Db2luQgTI3h8AUgVwcmljZRKVAQoVYnV5ZXJfc2V0dGxlbWVudF9m'
+    'ZWVzGAUgAygLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQkbI3h8Aqt8fKGdpdGh1Yi5jb2'
+    '0vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbnOa57AqDGxlZ2FjeV9jb2luc6jnsCoBUhNi'
+    'dXllclNldHRsZW1lbnRGZWVzEiMKDWFsbG93X3BhcnRpYWwYBiABKAhSDGFsbG93UGFydGlhbB'
+    'IfCgtleHRlcm5hbF9pZBgHIAEoCVIKZXh0ZXJuYWxJZDoOiKAfAILnsCoFYnV5ZXI=');

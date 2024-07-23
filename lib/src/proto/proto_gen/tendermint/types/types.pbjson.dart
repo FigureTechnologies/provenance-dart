@@ -13,25 +13,6 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use blockIDFlagDescriptor instead')
-const BlockIDFlag$json = {
-  '1': 'BlockIDFlag',
-  '2': [
-    {'1': 'BLOCK_ID_FLAG_UNKNOWN', '2': 0, '3': {}},
-    {'1': 'BLOCK_ID_FLAG_ABSENT', '2': 1, '3': {}},
-    {'1': 'BLOCK_ID_FLAG_COMMIT', '2': 2, '3': {}},
-    {'1': 'BLOCK_ID_FLAG_NIL', '2': 3, '3': {}},
-  ],
-  '3': {},
-};
-
-/// Descriptor for `BlockIDFlag`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List blockIDFlagDescriptor = $convert.base64Decode(
-    'CgtCbG9ja0lERmxhZxIxChVCTE9DS19JRF9GTEFHX1VOS05PV04QABoWip0gEkJsb2NrSURGbG'
-    'FnVW5rbm93bhIvChRCTE9DS19JRF9GTEFHX0FCU0VOVBABGhWKnSARQmxvY2tJREZsYWdBYnNl'
-    'bnQSLwoUQkxPQ0tfSURfRkxBR19DT01NSVQQAhoVip0gEUJsb2NrSURGbGFnQ29tbWl0EikKEU'
-    'JMT0NLX0lEX0ZMQUdfTklMEAMaEoqdIA5CbG9ja0lERmxhZ05pbBoIiKMeAKikHgE=');
-
 @$core.Deprecated('Use signedMsgTypeDescriptor instead')
 const SignedMsgType$json = {
   '1': 'SignedMsgType',
@@ -241,6 +222,14 @@ const Vote$json = {
     },
     {'1': 'validator_index', '3': 7, '4': 1, '5': 5, '10': 'validatorIndex'},
     {'1': 'signature', '3': 8, '4': 1, '5': 12, '10': 'signature'},
+    {'1': 'extension', '3': 9, '4': 1, '5': 12, '10': 'extension'},
+    {
+      '1': 'extension_signature',
+      '3': 10,
+      '4': 1,
+      '5': 12,
+      '10': 'extensionSignature'
+    },
   ],
 };
 
@@ -252,7 +241,8 @@ final $typed_data.Uint8List voteDescriptor = $convert.base64Decode(
     'RSB2Jsb2NrSWQSQgoJdGltZXN0YW1wGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
     'cEIIyN4fAJDfHwFSCXRpbWVzdGFtcBIrChF2YWxpZGF0b3JfYWRkcmVzcxgGIAEoDFIQdmFsaW'
     'RhdG9yQWRkcmVzcxInCg92YWxpZGF0b3JfaW5kZXgYByABKAVSDnZhbGlkYXRvckluZGV4EhwK'
-    'CXNpZ25hdHVyZRgIIAEoDFIJc2lnbmF0dXJl');
+    'CXNpZ25hdHVyZRgIIAEoDFIJc2lnbmF0dXJlEhwKCWV4dGVuc2lvbhgJIAEoDFIJZXh0ZW5zaW'
+    '9uEi8KE2V4dGVuc2lvbl9zaWduYXR1cmUYCiABKAxSEmV4dGVuc2lvblNpZ25hdHVyZQ==');
 
 @$core.Deprecated('Use commitDescriptor instead')
 const Commit$json = {
@@ -326,6 +316,90 @@ final $typed_data.Uint8List commitSigDescriptor = $convert.base64Decode(
     'xvY2tJREZsYWdSC2Jsb2NrSWRGbGFnEisKEXZhbGlkYXRvcl9hZGRyZXNzGAIgASgMUhB2YWxp'
     'ZGF0b3JBZGRyZXNzEkIKCXRpbWVzdGFtcBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3'
     'RhbXBCCMjeHwCQ3x8BUgl0aW1lc3RhbXASHAoJc2lnbmF0dXJlGAQgASgMUglzaWduYXR1cmU=');
+
+@$core.Deprecated('Use extendedCommitDescriptor instead')
+const ExtendedCommit$json = {
+  '1': 'ExtendedCommit',
+  '2': [
+    {'1': 'height', '3': 1, '4': 1, '5': 3, '10': 'height'},
+    {'1': 'round', '3': 2, '4': 1, '5': 5, '10': 'round'},
+    {
+      '1': 'block_id',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.types.BlockID',
+      '8': {},
+      '10': 'blockId'
+    },
+    {
+      '1': 'extended_signatures',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.types.ExtendedCommitSig',
+      '8': {},
+      '10': 'extendedSignatures'
+    },
+  ],
+};
+
+/// Descriptor for `ExtendedCommit`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extendedCommitDescriptor = $convert.base64Decode(
+    'Cg5FeHRlbmRlZENvbW1pdBIWCgZoZWlnaHQYASABKANSBmhlaWdodBIUCgVyb3VuZBgCIAEoBV'
+    'IFcm91bmQSRQoIYmxvY2tfaWQYAyABKAsyGS50ZW5kZXJtaW50LnR5cGVzLkJsb2NrSURCD8je'
+    'HwDi3h8HQmxvY2tJRFIHYmxvY2tJZBJaChNleHRlbmRlZF9zaWduYXR1cmVzGAQgAygLMiMudG'
+    'VuZGVybWludC50eXBlcy5FeHRlbmRlZENvbW1pdFNpZ0IEyN4fAFISZXh0ZW5kZWRTaWduYXR1'
+    'cmVz');
+
+@$core.Deprecated('Use extendedCommitSigDescriptor instead')
+const ExtendedCommitSig$json = {
+  '1': 'ExtendedCommitSig',
+  '2': [
+    {
+      '1': 'block_id_flag',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.tendermint.types.BlockIDFlag',
+      '10': 'blockIdFlag'
+    },
+    {
+      '1': 'validator_address',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '10': 'validatorAddress'
+    },
+    {
+      '1': 'timestamp',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'timestamp'
+    },
+    {'1': 'signature', '3': 4, '4': 1, '5': 12, '10': 'signature'},
+    {'1': 'extension', '3': 5, '4': 1, '5': 12, '10': 'extension'},
+    {
+      '1': 'extension_signature',
+      '3': 6,
+      '4': 1,
+      '5': 12,
+      '10': 'extensionSignature'
+    },
+  ],
+};
+
+/// Descriptor for `ExtendedCommitSig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extendedCommitSigDescriptor = $convert.base64Decode(
+    'ChFFeHRlbmRlZENvbW1pdFNpZxJBCg1ibG9ja19pZF9mbGFnGAEgASgOMh0udGVuZGVybWludC'
+    '50eXBlcy5CbG9ja0lERmxhZ1ILYmxvY2tJZEZsYWcSKwoRdmFsaWRhdG9yX2FkZHJlc3MYAiAB'
+    'KAxSEHZhbGlkYXRvckFkZHJlc3MSQgoJdGltZXN0YW1wGAMgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcEIIyN4fAJDfHwFSCXRpbWVzdGFtcBIcCglzaWduYXR1cmUYBCABKAxSCXNp'
+    'Z25hdHVyZRIcCglleHRlbnNpb24YBSABKAxSCWV4dGVuc2lvbhIvChNleHRlbnNpb25fc2lnbm'
+    'F0dXJlGAYgASgMUhJleHRlbnNpb25TaWduYXR1cmU=');
 
 @$core.Deprecated('Use proposalDescriptor instead')
 const Proposal$json = {

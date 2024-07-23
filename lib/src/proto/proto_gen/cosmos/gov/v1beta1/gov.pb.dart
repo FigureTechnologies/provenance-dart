@@ -82,6 +82,7 @@ class WeightedVoteOption extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<WeightedVoteOption>(create);
   static WeightedVoteOption? _defaultInstance;
 
+  /// option defines the valid vote options, it must not contain duplicate vote options.
   @$pb.TagNumber(1)
   VoteOption get option => $_getN(0);
   @$pb.TagNumber(1)
@@ -94,6 +95,7 @@ class WeightedVoteOption extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOption() => clearField(1);
 
+  /// weight is the vote weight associated with the vote option.
   @$pb.TagNumber(2)
   $core.String get weight => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -163,6 +165,7 @@ class TextProposal extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<TextProposal>(create);
   static TextProposal? _defaultInstance;
 
+  /// title of the proposal.
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -175,6 +178,7 @@ class TextProposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearTitle() => clearField(1);
 
+  /// description associated with the proposal.
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -250,6 +254,7 @@ class Deposit extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Deposit>(create);
   static Deposit? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -262,6 +267,7 @@ class Deposit extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// depositor defines the deposit addresses from the proposals.
   @$pb.TagNumber(2)
   $core.String get depositor => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -274,6 +280,7 @@ class Deposit extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDepositor() => clearField(2);
 
+  /// amount to be deposited by depositor.
   @$pb.TagNumber(3)
   $core.List<$0.Coin> get amount => $_getList(2);
 }
@@ -378,6 +385,7 @@ class Proposal extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Proposal>(create);
   static Proposal? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -390,6 +398,7 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// content is the proposal's content.
   @$pb.TagNumber(2)
   $1.Any get content => $_getN(1);
   @$pb.TagNumber(2)
@@ -404,6 +413,7 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Any ensureContent() => $_ensure(1);
 
+  /// status defines the proposal status.
   @$pb.TagNumber(3)
   ProposalStatus get status => $_getN(2);
   @$pb.TagNumber(3)
@@ -433,6 +443,7 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   TallyResult ensureFinalTallyResult() => $_ensure(3);
 
+  /// submit_time is the time of proposal submission.
   @$pb.TagNumber(5)
   $2.Timestamp get submitTime => $_getN(4);
   @$pb.TagNumber(5)
@@ -447,6 +458,7 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $2.Timestamp ensureSubmitTime() => $_ensure(4);
 
+  /// deposit_end_time is the end time for deposition.
   @$pb.TagNumber(6)
   $2.Timestamp get depositEndTime => $_getN(5);
   @$pb.TagNumber(6)
@@ -461,9 +473,11 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $2.Timestamp ensureDepositEndTime() => $_ensure(5);
 
+  /// total_deposit is the total deposit on the proposal.
   @$pb.TagNumber(7)
   $core.List<$0.Coin> get totalDeposit => $_getList(6);
 
+  /// voting_start_time is the starting time to vote on a proposal.
   @$pb.TagNumber(8)
   $2.Timestamp get votingStartTime => $_getN(7);
   @$pb.TagNumber(8)
@@ -478,6 +492,7 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $2.Timestamp ensureVotingStartTime() => $_ensure(7);
 
+  /// voting_end_time is the end time of voting on a proposal.
   @$pb.TagNumber(9)
   $2.Timestamp get votingEndTime => $_getN(8);
   @$pb.TagNumber(9)
@@ -557,6 +572,7 @@ class TallyResult extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<TallyResult>(create);
   static TallyResult? _defaultInstance;
 
+  /// yes is the number of yes votes on a proposal.
   @$pb.TagNumber(1)
   $core.String get yes => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -569,6 +585,7 @@ class TallyResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearYes() => clearField(1);
 
+  /// abstain is the number of abstain votes on a proposal.
   @$pb.TagNumber(2)
   $core.String get abstain => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -581,6 +598,7 @@ class TallyResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAbstain() => clearField(2);
 
+  /// no is the number of no votes on a proposal.
   @$pb.TagNumber(3)
   $core.String get no => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -593,6 +611,7 @@ class TallyResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearNo() => clearField(3);
 
+  /// no_with_veto is the number of no with veto votes on a proposal.
   @$pb.TagNumber(4)
   $core.String get noWithVeto => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -678,6 +697,7 @@ class Vote extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Vote>(create);
   static Vote? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -690,6 +710,7 @@ class Vote extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// voter is the voter address of the proposal.
   @$pb.TagNumber(2)
   $core.String get voter => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -721,7 +742,9 @@ class Vote extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearOption() => clearField(3);
 
-  /// Since: cosmos-sdk 0.43
+  ///  options is the weighted vote options.
+  ///
+  ///  Since: cosmos-sdk 0.43
   @$pb.TagNumber(4)
   $core.List<WeightedVoteOption> get options => $_getList(3);
 }
@@ -855,7 +878,7 @@ class VotingParams extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<VotingParams>(create);
   static VotingParams? _defaultInstance;
 
-  /// Length of the voting period.
+  /// Duration of the voting period.
   @$pb.TagNumber(1)
   $3.Duration get votingPeriod => $_getN(0);
   @$pb.TagNumber(1)

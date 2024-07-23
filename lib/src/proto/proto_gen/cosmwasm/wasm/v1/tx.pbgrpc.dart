@@ -63,6 +63,69 @@ class MsgClient extends $grpc.Client {
           ($0.MsgClearAdmin value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MsgClearAdminResponse.fromBuffer(value));
+  static final _$updateInstantiateConfig = $grpc.ClientMethod<
+          $0.MsgUpdateInstantiateConfig, $0.MsgUpdateInstantiateConfigResponse>(
+      '/cosmwasm.wasm.v1.Msg/UpdateInstantiateConfig',
+      ($0.MsgUpdateInstantiateConfig value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgUpdateInstantiateConfigResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/cosmwasm.wasm.v1.Msg/UpdateParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
+  static final _$sudoContract =
+      $grpc.ClientMethod<$0.MsgSudoContract, $0.MsgSudoContractResponse>(
+          '/cosmwasm.wasm.v1.Msg/SudoContract',
+          ($0.MsgSudoContract value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgSudoContractResponse.fromBuffer(value));
+  static final _$pinCodes =
+      $grpc.ClientMethod<$0.MsgPinCodes, $0.MsgPinCodesResponse>(
+          '/cosmwasm.wasm.v1.Msg/PinCodes',
+          ($0.MsgPinCodes value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgPinCodesResponse.fromBuffer(value));
+  static final _$unpinCodes =
+      $grpc.ClientMethod<$0.MsgUnpinCodes, $0.MsgUnpinCodesResponse>(
+          '/cosmwasm.wasm.v1.Msg/UnpinCodes',
+          ($0.MsgUnpinCodes value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUnpinCodesResponse.fromBuffer(value));
+  static final _$storeAndInstantiateContract = $grpc.ClientMethod<
+          $0.MsgStoreAndInstantiateContract,
+          $0.MsgStoreAndInstantiateContractResponse>(
+      '/cosmwasm.wasm.v1.Msg/StoreAndInstantiateContract',
+      ($0.MsgStoreAndInstantiateContract value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgStoreAndInstantiateContractResponse.fromBuffer(value));
+  static final _$removeCodeUploadParamsAddresses = $grpc.ClientMethod<
+          $0.MsgRemoveCodeUploadParamsAddresses,
+          $0.MsgRemoveCodeUploadParamsAddressesResponse>(
+      '/cosmwasm.wasm.v1.Msg/RemoveCodeUploadParamsAddresses',
+      ($0.MsgRemoveCodeUploadParamsAddresses value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgRemoveCodeUploadParamsAddressesResponse.fromBuffer(value));
+  static final _$addCodeUploadParamsAddresses = $grpc.ClientMethod<
+          $0.MsgAddCodeUploadParamsAddresses,
+          $0.MsgAddCodeUploadParamsAddressesResponse>(
+      '/cosmwasm.wasm.v1.Msg/AddCodeUploadParamsAddresses',
+      ($0.MsgAddCodeUploadParamsAddresses value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgAddCodeUploadParamsAddressesResponse.fromBuffer(value));
+  static final _$storeAndMigrateContract = $grpc.ClientMethod<
+          $0.MsgStoreAndMigrateContract, $0.MsgStoreAndMigrateContractResponse>(
+      '/cosmwasm.wasm.v1.Msg/StoreAndMigrateContract',
+      ($0.MsgStoreAndMigrateContract value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgStoreAndMigrateContractResponse.fromBuffer(value));
+  static final _$updateContractLabel = $grpc.ClientMethod<
+          $0.MsgUpdateContractLabel, $0.MsgUpdateContractLabelResponse>(
+      '/cosmwasm.wasm.v1.Msg/UpdateContractLabel',
+      ($0.MsgUpdateContractLabel value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgUpdateContractLabelResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -109,6 +172,71 @@ class MsgClient extends $grpc.Client {
       $0.MsgClearAdmin request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$clearAdmin, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateInstantiateConfigResponse>
+      updateInstantiateConfig($0.MsgUpdateInstantiateConfig request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateInstantiateConfig, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgSudoContractResponse> sudoContract(
+      $0.MsgSudoContract request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sudoContract, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgPinCodesResponse> pinCodes($0.MsgPinCodes request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pinCodes, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUnpinCodesResponse> unpinCodes(
+      $0.MsgUnpinCodes request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$unpinCodes, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgStoreAndInstantiateContractResponse>
+      storeAndInstantiateContract($0.MsgStoreAndInstantiateContract request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$storeAndInstantiateContract, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgRemoveCodeUploadParamsAddressesResponse>
+      removeCodeUploadParamsAddresses(
+          $0.MsgRemoveCodeUploadParamsAddresses request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeCodeUploadParamsAddresses, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgAddCodeUploadParamsAddressesResponse>
+      addCodeUploadParamsAddresses($0.MsgAddCodeUploadParamsAddresses request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addCodeUploadParamsAddresses, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgStoreAndMigrateContractResponse>
+      storeAndMigrateContract($0.MsgStoreAndMigrateContract request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$storeAndMigrateContract, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateContractLabelResponse> updateContractLabel(
+      $0.MsgUpdateContractLabel request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateContractLabel, request, options: options);
   }
 }
 
@@ -176,6 +304,97 @@ abstract class MsgServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MsgClearAdmin.fromBuffer(value),
         ($0.MsgClearAdminResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgUpdateInstantiateConfig,
+            $0.MsgUpdateInstantiateConfigResponse>(
+        'UpdateInstantiateConfig',
+        updateInstantiateConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgUpdateInstantiateConfig.fromBuffer(value),
+        ($0.MsgUpdateInstantiateConfigResponse value) =>
+            value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateParams',
+            updateParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgSudoContract, $0.MsgSudoContractResponse>(
+            'SudoContract',
+            sudoContract_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgSudoContract.fromBuffer(value),
+            ($0.MsgSudoContractResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgPinCodes, $0.MsgPinCodesResponse>(
+        'PinCodes',
+        pinCodes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MsgPinCodes.fromBuffer(value),
+        ($0.MsgPinCodesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgUnpinCodes, $0.MsgUnpinCodesResponse>(
+        'UnpinCodes',
+        unpinCodes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MsgUnpinCodes.fromBuffer(value),
+        ($0.MsgUnpinCodesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgStoreAndInstantiateContract,
+            $0.MsgStoreAndInstantiateContractResponse>(
+        'StoreAndInstantiateContract',
+        storeAndInstantiateContract_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgStoreAndInstantiateContract.fromBuffer(value),
+        ($0.MsgStoreAndInstantiateContractResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgRemoveCodeUploadParamsAddresses,
+            $0.MsgRemoveCodeUploadParamsAddressesResponse>(
+        'RemoveCodeUploadParamsAddresses',
+        removeCodeUploadParamsAddresses_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgRemoveCodeUploadParamsAddresses.fromBuffer(value),
+        ($0.MsgRemoveCodeUploadParamsAddressesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgAddCodeUploadParamsAddresses,
+            $0.MsgAddCodeUploadParamsAddressesResponse>(
+        'AddCodeUploadParamsAddresses',
+        addCodeUploadParamsAddresses_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgAddCodeUploadParamsAddresses.fromBuffer(value),
+        ($0.MsgAddCodeUploadParamsAddressesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgStoreAndMigrateContract,
+            $0.MsgStoreAndMigrateContractResponse>(
+        'StoreAndMigrateContract',
+        storeAndMigrateContract_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgStoreAndMigrateContract.fromBuffer(value),
+        ($0.MsgStoreAndMigrateContractResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgUpdateContractLabel,
+            $0.MsgUpdateContractLabelResponse>(
+        'UpdateContractLabel',
+        updateContractLabel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgUpdateContractLabel.fromBuffer(value),
+        ($0.MsgUpdateContractLabelResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgStoreCodeResponse> storeCode_Pre(
@@ -217,6 +436,62 @@ abstract class MsgServiceBase extends $grpc.Service {
     return clearAdmin(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateInstantiateConfigResponse>
+      updateInstantiateConfig_Pre($grpc.ServiceCall call,
+          $async.Future<$0.MsgUpdateInstantiateConfig> request) async {
+    return updateInstantiateConfig(call, await request);
+  }
+
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateParams(call, await request);
+  }
+
+  $async.Future<$0.MsgSudoContractResponse> sudoContract_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgSudoContract> request) async {
+    return sudoContract(call, await request);
+  }
+
+  $async.Future<$0.MsgPinCodesResponse> pinCodes_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgPinCodes> request) async {
+    return pinCodes(call, await request);
+  }
+
+  $async.Future<$0.MsgUnpinCodesResponse> unpinCodes_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUnpinCodes> request) async {
+    return unpinCodes(call, await request);
+  }
+
+  $async.Future<$0.MsgStoreAndInstantiateContractResponse>
+      storeAndInstantiateContract_Pre($grpc.ServiceCall call,
+          $async.Future<$0.MsgStoreAndInstantiateContract> request) async {
+    return storeAndInstantiateContract(call, await request);
+  }
+
+  $async.Future<$0.MsgRemoveCodeUploadParamsAddressesResponse>
+      removeCodeUploadParamsAddresses_Pre($grpc.ServiceCall call,
+          $async.Future<$0.MsgRemoveCodeUploadParamsAddresses> request) async {
+    return removeCodeUploadParamsAddresses(call, await request);
+  }
+
+  $async.Future<$0.MsgAddCodeUploadParamsAddressesResponse>
+      addCodeUploadParamsAddresses_Pre($grpc.ServiceCall call,
+          $async.Future<$0.MsgAddCodeUploadParamsAddresses> request) async {
+    return addCodeUploadParamsAddresses(call, await request);
+  }
+
+  $async.Future<$0.MsgStoreAndMigrateContractResponse>
+      storeAndMigrateContract_Pre($grpc.ServiceCall call,
+          $async.Future<$0.MsgStoreAndMigrateContract> request) async {
+    return storeAndMigrateContract(call, await request);
+  }
+
+  $async.Future<$0.MsgUpdateContractLabelResponse> updateContractLabel_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgUpdateContractLabel> request) async {
+    return updateContractLabel(call, await request);
+  }
+
   $async.Future<$0.MsgStoreCodeResponse> storeCode(
       $grpc.ServiceCall call, $0.MsgStoreCode request);
   $async.Future<$0.MsgInstantiateContractResponse> instantiateContract(
@@ -231,4 +506,27 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgUpdateAdmin request);
   $async.Future<$0.MsgClearAdminResponse> clearAdmin(
       $grpc.ServiceCall call, $0.MsgClearAdmin request);
+  $async.Future<$0.MsgUpdateInstantiateConfigResponse> updateInstantiateConfig(
+      $grpc.ServiceCall call, $0.MsgUpdateInstantiateConfig request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
+  $async.Future<$0.MsgSudoContractResponse> sudoContract(
+      $grpc.ServiceCall call, $0.MsgSudoContract request);
+  $async.Future<$0.MsgPinCodesResponse> pinCodes(
+      $grpc.ServiceCall call, $0.MsgPinCodes request);
+  $async.Future<$0.MsgUnpinCodesResponse> unpinCodes(
+      $grpc.ServiceCall call, $0.MsgUnpinCodes request);
+  $async.Future<$0.MsgStoreAndInstantiateContractResponse>
+      storeAndInstantiateContract(
+          $grpc.ServiceCall call, $0.MsgStoreAndInstantiateContract request);
+  $async.Future<$0.MsgRemoveCodeUploadParamsAddressesResponse>
+      removeCodeUploadParamsAddresses($grpc.ServiceCall call,
+          $0.MsgRemoveCodeUploadParamsAddresses request);
+  $async.Future<$0.MsgAddCodeUploadParamsAddressesResponse>
+      addCodeUploadParamsAddresses(
+          $grpc.ServiceCall call, $0.MsgAddCodeUploadParamsAddresses request);
+  $async.Future<$0.MsgStoreAndMigrateContractResponse> storeAndMigrateContract(
+      $grpc.ServiceCall call, $0.MsgStoreAndMigrateContract request);
+  $async.Future<$0.MsgUpdateContractLabelResponse> updateContractLabel(
+      $grpc.ServiceCall call, $0.MsgUpdateContractLabel request);
 }

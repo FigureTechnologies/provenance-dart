@@ -26,6 +26,11 @@ class ServiceClient extends $grpc.Client {
           '/cosmos.base.node.v1beta1.Service/Config',
           ($0.ConfigRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+  static final _$status =
+      $grpc.ClientMethod<$0.StatusRequest, $0.StatusResponse>(
+          '/cosmos.base.node.v1beta1.Service/Status',
+          ($0.StatusRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.StatusResponse.fromBuffer(value));
 
   ServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -35,6 +40,11 @@ class ServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.ConfigResponse> config($0.ConfigRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$config, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.StatusResponse> status($0.StatusRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$status, request, options: options);
   }
 }
 
@@ -50,6 +60,13 @@ abstract class ServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
         ($0.ConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StatusRequest, $0.StatusResponse>(
+        'Status',
+        status_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StatusRequest.fromBuffer(value),
+        ($0.StatusResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ConfigResponse> config_Pre(
@@ -57,6 +74,13 @@ abstract class ServiceBase extends $grpc.Service {
     return config(call, await request);
   }
 
+  $async.Future<$0.StatusResponse> status_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.StatusRequest> request) async {
+    return status(call, await request);
+  }
+
   $async.Future<$0.ConfigResponse> config(
       $grpc.ServiceCall call, $0.ConfigRequest request);
+  $async.Future<$0.StatusResponse> status(
+      $grpc.ServiceCall call, $0.StatusRequest request);
 }

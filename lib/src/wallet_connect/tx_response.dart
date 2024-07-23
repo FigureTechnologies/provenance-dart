@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:provenance_dart/proto_cosmos_base_abci_v1beta1.dart';
 import 'package:provenance_dart/proto_tendermint_abci.dart';
 
@@ -158,8 +156,8 @@ class WalletConnectEventAttribute {
   });
 
   WalletConnectEventAttribute.fromProto(EventAttribute attribute)
-      : key = base64Encode(attribute.key),
-        value = base64Encode(attribute.value),
+      : key = attribute.key,
+        value = attribute.value,
         index = attribute.index;
 
   final String key;

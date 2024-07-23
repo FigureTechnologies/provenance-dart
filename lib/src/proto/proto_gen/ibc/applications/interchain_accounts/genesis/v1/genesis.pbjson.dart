@@ -41,13 +41,11 @@ const GenesisState$json = {
 
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
-    'CgxHZW5lc2lzU3RhdGUSqgEKGGNvbnRyb2xsZXJfZ2VuZXNpc19zdGF0ZRgBIAEoCzJHLmliYy'
+    'CgxHZW5lc2lzU3RhdGUShwEKGGNvbnRyb2xsZXJfZ2VuZXNpc19zdGF0ZRgBIAEoCzJHLmliYy'
     '5hcHBsaWNhdGlvbnMuaW50ZXJjaGFpbl9hY2NvdW50cy5nZW5lc2lzLnYxLkNvbnRyb2xsZXJH'
-    'ZW5lc2lzU3RhdGVCJ8jeHwDy3h8feWFtbDoiY29udHJvbGxlcl9nZW5lc2lzX3N0YXRlIlIWY2'
-    '9udHJvbGxlckdlbmVzaXNTdGF0ZRKSAQoSaG9zdF9nZW5lc2lzX3N0YXRlGAIgASgLMkEuaWJj'
-    'LmFwcGxpY2F0aW9ucy5pbnRlcmNoYWluX2FjY291bnRzLmdlbmVzaXMudjEuSG9zdEdlbmVzaX'
-    'NTdGF0ZUIhyN4fAPLeHxl5YW1sOiJob3N0X2dlbmVzaXNfc3RhdGUiUhBob3N0R2VuZXNpc1N0'
-    'YXRl');
+    'ZW5lc2lzU3RhdGVCBMjeHwBSFmNvbnRyb2xsZXJHZW5lc2lzU3RhdGUSdQoSaG9zdF9nZW5lc2'
+    'lzX3N0YXRlGAIgASgLMkEuaWJjLmFwcGxpY2F0aW9ucy5pbnRlcmNoYWluX2FjY291bnRzLmdl'
+    'bmVzaXMudjEuSG9zdEdlbmVzaXNTdGF0ZUIEyN4fAFIQaG9zdEdlbmVzaXNTdGF0ZQ==');
 
 @$core.Deprecated('Use controllerGenesisStateDescriptor instead')
 const ControllerGenesisState$json = {
@@ -87,14 +85,13 @@ const ControllerGenesisState$json = {
 
 /// Descriptor for `ControllerGenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List controllerGenesisStateDescriptor = $convert.base64Decode(
-    'ChZDb250cm9sbGVyR2VuZXNpc1N0YXRlEocBCg9hY3RpdmVfY2hhbm5lbHMYASADKAsyPi5pYm'
-    'MuYXBwbGljYXRpb25zLmludGVyY2hhaW5fYWNjb3VudHMuZ2VuZXNpcy52MS5BY3RpdmVDaGFu'
-    'bmVsQh7I3h8A8t4fFnlhbWw6ImFjdGl2ZV9jaGFubmVscyJSDmFjdGl2ZUNoYW5uZWxzEqEBCh'
-    'NpbnRlcmNoYWluX2FjY291bnRzGAIgAygLMkwuaWJjLmFwcGxpY2F0aW9ucy5pbnRlcmNoYWlu'
-    'X2FjY291bnRzLmdlbmVzaXMudjEuUmVnaXN0ZXJlZEludGVyY2hhaW5BY2NvdW50QiLI3h8A8t'
-    '4fGnlhbWw6ImludGVyY2hhaW5fYWNjb3VudHMiUhJpbnRlcmNoYWluQWNjb3VudHMSFAoFcG9y'
-    'dHMYAyADKAlSBXBvcnRzElgKBnBhcmFtcxgEIAEoCzI6LmliYy5hcHBsaWNhdGlvbnMuaW50ZX'
-    'JjaGFpbl9hY2NvdW50cy5jb250cm9sbGVyLnYxLlBhcmFtc0IEyN4fAFIGcGFyYW1z');
+    'ChZDb250cm9sbGVyR2VuZXNpc1N0YXRlEm0KD2FjdGl2ZV9jaGFubmVscxgBIAMoCzI+LmliYy'
+    '5hcHBsaWNhdGlvbnMuaW50ZXJjaGFpbl9hY2NvdW50cy5nZW5lc2lzLnYxLkFjdGl2ZUNoYW5u'
+    'ZWxCBMjeHwBSDmFjdGl2ZUNoYW5uZWxzEoMBChNpbnRlcmNoYWluX2FjY291bnRzGAIgAygLMk'
+    'wuaWJjLmFwcGxpY2F0aW9ucy5pbnRlcmNoYWluX2FjY291bnRzLmdlbmVzaXMudjEuUmVnaXN0'
+    'ZXJlZEludGVyY2hhaW5BY2NvdW50QgTI3h8AUhJpbnRlcmNoYWluQWNjb3VudHMSFAoFcG9ydH'
+    'MYAyADKAlSBXBvcnRzElgKBnBhcmFtcxgEIAEoCzI6LmliYy5hcHBsaWNhdGlvbnMuaW50ZXJj'
+    'aGFpbl9hY2NvdW50cy5jb250cm9sbGVyLnYxLlBhcmFtc0IEyN4fAFIGcGFyYW1z');
 
 @$core.Deprecated('Use hostGenesisStateDescriptor instead')
 const HostGenesisState$json = {
@@ -134,35 +131,26 @@ const HostGenesisState$json = {
 
 /// Descriptor for `HostGenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List hostGenesisStateDescriptor = $convert.base64Decode(
-    'ChBIb3N0R2VuZXNpc1N0YXRlEocBCg9hY3RpdmVfY2hhbm5lbHMYASADKAsyPi5pYmMuYXBwbG'
-    'ljYXRpb25zLmludGVyY2hhaW5fYWNjb3VudHMuZ2VuZXNpcy52MS5BY3RpdmVDaGFubmVsQh7I'
-    '3h8A8t4fFnlhbWw6ImFjdGl2ZV9jaGFubmVscyJSDmFjdGl2ZUNoYW5uZWxzEqEBChNpbnRlcm'
-    'NoYWluX2FjY291bnRzGAIgAygLMkwuaWJjLmFwcGxpY2F0aW9ucy5pbnRlcmNoYWluX2FjY291'
-    'bnRzLmdlbmVzaXMudjEuUmVnaXN0ZXJlZEludGVyY2hhaW5BY2NvdW50QiLI3h8A8t4fGnlhbW'
-    'w6ImludGVyY2hhaW5fYWNjb3VudHMiUhJpbnRlcmNoYWluQWNjb3VudHMSEgoEcG9ydBgDIAEo'
-    'CVIEcG9ydBJSCgZwYXJhbXMYBCABKAsyNC5pYmMuYXBwbGljYXRpb25zLmludGVyY2hhaW5fYW'
-    'Njb3VudHMuaG9zdC52MS5QYXJhbXNCBMjeHwBSBnBhcmFtcw==');
+    'ChBIb3N0R2VuZXNpc1N0YXRlEm0KD2FjdGl2ZV9jaGFubmVscxgBIAMoCzI+LmliYy5hcHBsaW'
+    'NhdGlvbnMuaW50ZXJjaGFpbl9hY2NvdW50cy5nZW5lc2lzLnYxLkFjdGl2ZUNoYW5uZWxCBMje'
+    'HwBSDmFjdGl2ZUNoYW5uZWxzEoMBChNpbnRlcmNoYWluX2FjY291bnRzGAIgAygLMkwuaWJjLm'
+    'FwcGxpY2F0aW9ucy5pbnRlcmNoYWluX2FjY291bnRzLmdlbmVzaXMudjEuUmVnaXN0ZXJlZElu'
+    'dGVyY2hhaW5BY2NvdW50QgTI3h8AUhJpbnRlcmNoYWluQWNjb3VudHMSEgoEcG9ydBgDIAEoCV'
+    'IEcG9ydBJSCgZwYXJhbXMYBCABKAsyNC5pYmMuYXBwbGljYXRpb25zLmludGVyY2hhaW5fYWNj'
+    'b3VudHMuaG9zdC52MS5QYXJhbXNCBMjeHwBSBnBhcmFtcw==');
 
 @$core.Deprecated('Use activeChannelDescriptor instead')
 const ActiveChannel$json = {
   '1': 'ActiveChannel',
   '2': [
-    {
-      '1': 'connection_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'connectionId'
-    },
-    {'1': 'port_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'connection_id', '3': 1, '4': 1, '5': 9, '10': 'connectionId'},
+    {'1': 'port_id', '3': 2, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 3, '4': 1, '5': 9, '10': 'channelId'},
     {
       '1': 'is_middleware_enabled',
       '3': 4,
       '4': 1,
       '5': 8,
-      '8': {},
       '10': 'isMiddlewareEnabled'
     },
   ],
@@ -170,39 +158,23 @@ const ActiveChannel$json = {
 
 /// Descriptor for `ActiveChannel`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List activeChannelDescriptor = $convert.base64Decode(
-    'Cg1BY3RpdmVDaGFubmVsEj0KDWNvbm5lY3Rpb25faWQYASABKAlCGPLeHxR5YW1sOiJjb25uZW'
-    'N0aW9uX2lkIlIMY29ubmVjdGlvbklkEisKB3BvcnRfaWQYAiABKAlCEvLeHw55YW1sOiJwb3J0'
-    'X2lkIlIGcG9ydElkEjQKCmNoYW5uZWxfaWQYAyABKAlCFfLeHxF5YW1sOiJjaGFubmVsX2lkIl'
-    'IJY2hhbm5lbElkElQKFWlzX21pZGRsZXdhcmVfZW5hYmxlZBgEIAEoCEIg8t4fHHlhbWw6Imlz'
-    'X21pZGRsZXdhcmVfZW5hYmxlZCJSE2lzTWlkZGxld2FyZUVuYWJsZWQ=');
+    'Cg1BY3RpdmVDaGFubmVsEiMKDWNvbm5lY3Rpb25faWQYASABKAlSDGNvbm5lY3Rpb25JZBIXCg'
+    'dwb3J0X2lkGAIgASgJUgZwb3J0SWQSHQoKY2hhbm5lbF9pZBgDIAEoCVIJY2hhbm5lbElkEjIK'
+    'FWlzX21pZGRsZXdhcmVfZW5hYmxlZBgEIAEoCFITaXNNaWRkbGV3YXJlRW5hYmxlZA==');
 
 @$core.Deprecated('Use registeredInterchainAccountDescriptor instead')
 const RegisteredInterchainAccount$json = {
   '1': 'RegisteredInterchainAccount',
   '2': [
-    {
-      '1': 'connection_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'connectionId'
-    },
-    {'1': 'port_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {
-      '1': 'account_address',
-      '3': 3,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'accountAddress'
-    },
+    {'1': 'connection_id', '3': 1, '4': 1, '5': 9, '10': 'connectionId'},
+    {'1': 'port_id', '3': 2, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'account_address', '3': 3, '4': 1, '5': 9, '10': 'accountAddress'},
   ],
 };
 
 /// Descriptor for `RegisteredInterchainAccount`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List registeredInterchainAccountDescriptor = $convert.base64Decode(
-    'ChtSZWdpc3RlcmVkSW50ZXJjaGFpbkFjY291bnQSPQoNY29ubmVjdGlvbl9pZBgBIAEoCUIY8t'
-    '4fFHlhbWw6ImNvbm5lY3Rpb25faWQiUgxjb25uZWN0aW9uSWQSKwoHcG9ydF9pZBgCIAEoCUIS'
-    '8t4fDnlhbWw6InBvcnRfaWQiUgZwb3J0SWQSQwoPYWNjb3VudF9hZGRyZXNzGAMgASgJQhry3h'
-    '8WeWFtbDoiYWNjb3VudF9hZGRyZXNzIlIOYWNjb3VudEFkZHJlc3M=');
+final $typed_data.Uint8List registeredInterchainAccountDescriptor =
+    $convert.base64Decode(
+        'ChtSZWdpc3RlcmVkSW50ZXJjaGFpbkFjY291bnQSIwoNY29ubmVjdGlvbl9pZBgBIAEoCVIMY2'
+        '9ubmVjdGlvbklkEhcKB3BvcnRfaWQYAiABKAlSBnBvcnRJZBInCg9hY2NvdW50X2FkZHJlc3MY'
+        'AyABKAlSDmFjY291bnRBZGRyZXNz');

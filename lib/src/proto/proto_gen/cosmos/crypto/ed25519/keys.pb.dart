@@ -79,7 +79,7 @@ class PubKey extends $pb.GeneratedMessage {
   void clearKey() => clearField(1);
 }
 
-/// Deprecated: PrivKey defines a ed25519 private key.
+/// PrivKey defines a ed25519 private key.
 /// NOTE: ed25519 keys must not be used in SDK apps except in a tendermint validator context.
 class PrivKey extends $pb.GeneratedMessage {
   factory PrivKey({

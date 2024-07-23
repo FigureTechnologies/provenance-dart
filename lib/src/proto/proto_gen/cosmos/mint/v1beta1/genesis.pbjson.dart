@@ -40,6 +40,6 @@ const GenesisState$json = {
 
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
-    'CgxHZW5lc2lzU3RhdGUSOQoGbWludGVyGAEgASgLMhsuY29zbW9zLm1pbnQudjFiZXRhMS5NaW'
-    '50ZXJCBMjeHwBSBm1pbnRlchI5CgZwYXJhbXMYAiABKAsyGy5jb3Ntb3MubWludC52MWJldGEx'
-    'LlBhcmFtc0IEyN4fAFIGcGFyYW1z');
+    'CgxHZW5lc2lzU3RhdGUSPgoGbWludGVyGAEgASgLMhsuY29zbW9zLm1pbnQudjFiZXRhMS5NaW'
+    '50ZXJCCcjeHwCo57AqAVIGbWludGVyEj4KBnBhcmFtcxgCIAEoCzIbLmNvc21vcy5taW50LnYx'
+    'YmV0YTEuUGFyYW1zQgnI3h8AqOewKgFSBnBhcmFtcw==');

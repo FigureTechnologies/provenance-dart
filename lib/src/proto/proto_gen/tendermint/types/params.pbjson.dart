@@ -23,7 +23,6 @@ const ConsensusParams$json = {
       '4': 1,
       '5': 11,
       '6': '.tendermint.types.BlockParams',
-      '8': {},
       '10': 'block'
     },
     {
@@ -32,7 +31,6 @@ const ConsensusParams$json = {
       '4': 1,
       '5': 11,
       '6': '.tendermint.types.EvidenceParams',
-      '8': {},
       '10': 'evidence'
     },
     {
@@ -41,7 +39,6 @@ const ConsensusParams$json = {
       '4': 1,
       '5': 11,
       '6': '.tendermint.types.ValidatorParams',
-      '8': {},
       '10': 'validator'
     },
     {
@@ -50,20 +47,27 @@ const ConsensusParams$json = {
       '4': 1,
       '5': 11,
       '6': '.tendermint.types.VersionParams',
-      '8': {},
       '10': 'version'
+    },
+    {
+      '1': 'abci',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.types.ABCIParams',
+      '10': 'abci'
     },
   ],
 };
 
 /// Descriptor for `ConsensusParams`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List consensusParamsDescriptor = $convert.base64Decode(
-    'Cg9Db25zZW5zdXNQYXJhbXMSOQoFYmxvY2sYASABKAsyHS50ZW5kZXJtaW50LnR5cGVzLkJsb2'
-    'NrUGFyYW1zQgTI3h8AUgVibG9jaxJCCghldmlkZW5jZRgCIAEoCzIgLnRlbmRlcm1pbnQudHlw'
-    'ZXMuRXZpZGVuY2VQYXJhbXNCBMjeHwBSCGV2aWRlbmNlEkUKCXZhbGlkYXRvchgDIAEoCzIhLn'
-    'RlbmRlcm1pbnQudHlwZXMuVmFsaWRhdG9yUGFyYW1zQgTI3h8AUgl2YWxpZGF0b3ISPwoHdmVy'
-    'c2lvbhgEIAEoCzIfLnRlbmRlcm1pbnQudHlwZXMuVmVyc2lvblBhcmFtc0IEyN4fAFIHdmVyc2'
-    'lvbg==');
+    'Cg9Db25zZW5zdXNQYXJhbXMSMwoFYmxvY2sYASABKAsyHS50ZW5kZXJtaW50LnR5cGVzLkJsb2'
+    'NrUGFyYW1zUgVibG9jaxI8CghldmlkZW5jZRgCIAEoCzIgLnRlbmRlcm1pbnQudHlwZXMuRXZp'
+    'ZGVuY2VQYXJhbXNSCGV2aWRlbmNlEj8KCXZhbGlkYXRvchgDIAEoCzIhLnRlbmRlcm1pbnQudH'
+    'lwZXMuVmFsaWRhdG9yUGFyYW1zUgl2YWxpZGF0b3ISOQoHdmVyc2lvbhgEIAEoCzIfLnRlbmRl'
+    'cm1pbnQudHlwZXMuVmVyc2lvblBhcmFtc1IHdmVyc2lvbhIwCgRhYmNpGAUgASgLMhwudGVuZG'
+    'VybWludC50eXBlcy5BQkNJUGFyYW1zUgRhYmNp');
 
 @$core.Deprecated('Use blockParamsDescriptor instead')
 const BlockParams$json = {
@@ -71,14 +75,16 @@ const BlockParams$json = {
   '2': [
     {'1': 'max_bytes', '3': 1, '4': 1, '5': 3, '10': 'maxBytes'},
     {'1': 'max_gas', '3': 2, '4': 1, '5': 3, '10': 'maxGas'},
-    {'1': 'time_iota_ms', '3': 3, '4': 1, '5': 3, '10': 'timeIotaMs'},
+  ],
+  '9': [
+    {'1': 3, '2': 4},
   ],
 };
 
 /// Descriptor for `BlockParams`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List blockParamsDescriptor = $convert.base64Decode(
     'CgtCbG9ja1BhcmFtcxIbCgltYXhfYnl0ZXMYASABKANSCG1heEJ5dGVzEhcKB21heF9nYXMYAi'
-    'ABKANSBm1heEdhcxIgCgx0aW1lX2lvdGFfbXMYAyABKANSCnRpbWVJb3RhTXM=');
+    'ABKANSBm1heEdhc0oECAMQBA==');
 
 @$core.Deprecated('Use evidenceParamsDescriptor instead')
 const EvidenceParams$json = {
@@ -129,15 +135,14 @@ final $typed_data.Uint8List validatorParamsDescriptor = $convert.base64Decode(
 const VersionParams$json = {
   '1': 'VersionParams',
   '2': [
-    {'1': 'app_version', '3': 1, '4': 1, '5': 4, '10': 'appVersion'},
+    {'1': 'app', '3': 1, '4': 1, '5': 4, '10': 'app'},
   ],
   '7': {},
 };
 
 /// Descriptor for `VersionParams`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List versionParamsDescriptor = $convert.base64Decode(
-    'Cg1WZXJzaW9uUGFyYW1zEh8KC2FwcF92ZXJzaW9uGAEgASgEUgphcHBWZXJzaW9uOgi4oB8B6K'
-    'AfAQ==');
+    'Cg1WZXJzaW9uUGFyYW1zEhAKA2FwcBgBIAEoBFIDYXBwOgi4oB8B6KAfAQ==');
 
 @$core.Deprecated('Use hashedParamsDescriptor instead')
 const HashedParams$json = {
@@ -152,3 +157,22 @@ const HashedParams$json = {
 final $typed_data.Uint8List hashedParamsDescriptor = $convert.base64Decode(
     'CgxIYXNoZWRQYXJhbXMSJgoPYmxvY2tfbWF4X2J5dGVzGAEgASgDUg1ibG9ja01heEJ5dGVzEi'
     'IKDWJsb2NrX21heF9nYXMYAiABKANSC2Jsb2NrTWF4R2Fz');
+
+@$core.Deprecated('Use aBCIParamsDescriptor instead')
+const ABCIParams$json = {
+  '1': 'ABCIParams',
+  '2': [
+    {
+      '1': 'vote_extensions_enable_height',
+      '3': 1,
+      '4': 1,
+      '5': 3,
+      '10': 'voteExtensionsEnableHeight'
+    },
+  ],
+};
+
+/// Descriptor for `ABCIParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List aBCIParamsDescriptor = $convert.base64Decode(
+    'CgpBQkNJUGFyYW1zEkEKHXZvdGVfZXh0ZW5zaW9uc19lbmFibGVfaGVpZ2h0GAEgASgDUhp2b3'
+    'RlRXh0ZW5zaW9uc0VuYWJsZUhlaWdodA==');

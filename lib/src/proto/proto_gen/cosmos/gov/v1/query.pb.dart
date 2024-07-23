@@ -18,6 +18,113 @@ import '../../base/query/v1beta1/pagination.pb.dart' as $2;
 import 'gov.pb.dart' as $1;
 import 'gov.pbenum.dart' as $1;
 
+/// QueryConstitutionRequest is the request type for the Query/Constitution RPC method
+class QueryConstitutionRequest extends $pb.GeneratedMessage {
+  factory QueryConstitutionRequest() => create();
+  QueryConstitutionRequest._() : super();
+  factory QueryConstitutionRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryConstitutionRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryConstitutionRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.gov.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryConstitutionRequest clone() =>
+      QueryConstitutionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryConstitutionRequest copyWith(
+          void Function(QueryConstitutionRequest) updates) =>
+      super.copyWith((message) => updates(message as QueryConstitutionRequest))
+          as QueryConstitutionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryConstitutionRequest create() => QueryConstitutionRequest._();
+  QueryConstitutionRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryConstitutionRequest> createRepeated() =>
+      $pb.PbList<QueryConstitutionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryConstitutionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryConstitutionRequest>(create);
+  static QueryConstitutionRequest? _defaultInstance;
+}
+
+/// QueryConstitutionResponse is the response type for the Query/Constitution RPC method
+class QueryConstitutionResponse extends $pb.GeneratedMessage {
+  factory QueryConstitutionResponse({
+    $core.String? constitution,
+  }) {
+    final $result = create();
+    if (constitution != null) {
+      $result.constitution = constitution;
+    }
+    return $result;
+  }
+  QueryConstitutionResponse._() : super();
+  factory QueryConstitutionResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryConstitutionResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryConstitutionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.gov.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'constitution')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryConstitutionResponse clone() =>
+      QueryConstitutionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryConstitutionResponse copyWith(
+          void Function(QueryConstitutionResponse) updates) =>
+      super.copyWith((message) => updates(message as QueryConstitutionResponse))
+          as QueryConstitutionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryConstitutionResponse create() => QueryConstitutionResponse._();
+  QueryConstitutionResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryConstitutionResponse> createRepeated() =>
+      $pb.PbList<QueryConstitutionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryConstitutionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryConstitutionResponse>(create);
+  static QueryConstitutionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get constitution => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set constitution($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasConstitution() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConstitution() => clearField(1);
+}
+
 /// QueryProposalRequest is the request type for the Query/Proposal RPC method.
 class QueryProposalRequest extends $pb.GeneratedMessage {
   factory QueryProposalRequest({
@@ -136,6 +243,7 @@ class QueryProposalResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryProposalResponse>(create);
   static QueryProposalResponse? _defaultInstance;
 
+  /// proposal is the requested governance proposal.
   @$pb.TagNumber(1)
   $1.Proposal get proposal => $_getN(0);
   @$pb.TagNumber(1)
@@ -336,6 +444,7 @@ class QueryProposalsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryProposalsResponse>(create);
   static QueryProposalsResponse? _defaultInstance;
 
+  /// proposals defines all the requested governance proposals.
   @$pb.TagNumber(1)
   $core.List<$1.Proposal> get proposals => $_getList(0);
 
@@ -487,7 +596,7 @@ class QueryVoteResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryVoteResponse>(create);
   static QueryVoteResponse? _defaultInstance;
 
-  /// vote defined the queried vote.
+  /// vote defines the queried vote.
   @$pb.TagNumber(1)
   $1.Vote get vote => $_getN(0);
   @$pb.TagNumber(1)
@@ -645,7 +754,7 @@ class QueryVotesResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryVotesResponse>(create);
   static QueryVotesResponse? _defaultInstance;
 
-  /// votes defined the queried votes.
+  /// votes defines the queried votes.
   @$pb.TagNumber(1)
   $core.List<$1.Vote> get votes => $_getList(0);
 
@@ -732,19 +841,28 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
 /// QueryParamsResponse is the response type for the Query/Params RPC method.
 class QueryParamsResponse extends $pb.GeneratedMessage {
   factory QueryParamsResponse({
+    @$core.Deprecated('This field is deprecated.')
     $1.VotingParams? votingParams,
+    @$core.Deprecated('This field is deprecated.')
     $1.DepositParams? depositParams,
-    $1.TallyParams? tallyParams,
+    @$core.Deprecated('This field is deprecated.') $1.TallyParams? tallyParams,
+    $1.Params? params,
   }) {
     final $result = create();
     if (votingParams != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.votingParams = votingParams;
     }
     if (depositParams != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.depositParams = depositParams;
     }
     if (tallyParams != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.tallyParams = tallyParams;
+    }
+    if (params != null) {
+      $result.params = params;
     }
     return $result;
   }
@@ -766,6 +884,8 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
         subBuilder: $1.DepositParams.create)
     ..aOM<$1.TallyParams>(3, _omitFieldNames ? '' : 'tallyParams',
         subBuilder: $1.TallyParams.create)
+    ..aOM<$1.Params>(4, _omitFieldNames ? '' : 'params',
+        subBuilder: $1.Params.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -791,50 +911,85 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryParamsResponse>(create);
   static QueryParamsResponse? _defaultInstance;
 
+  /// Deprecated: Prefer to use `params` instead.
   /// voting_params defines the parameters related to voting.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $1.VotingParams get votingParams => $_getN(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set votingParams($1.VotingParams v) {
     setField(1, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasVotingParams() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearVotingParams() => clearField(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $1.VotingParams ensureVotingParams() => $_ensure(0);
 
+  /// Deprecated: Prefer to use `params` instead.
   /// deposit_params defines the parameters related to deposit.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $1.DepositParams get depositParams => $_getN(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   set depositParams($1.DepositParams v) {
     setField(2, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasDepositParams() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   void clearDepositParams() => clearField(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $1.DepositParams ensureDepositParams() => $_ensure(1);
 
+  /// Deprecated: Prefer to use `params` instead.
   /// tally_params defines the parameters related to tally.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $1.TallyParams get tallyParams => $_getN(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set tallyParams($1.TallyParams v) {
     setField(3, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasTallyParams() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearTallyParams() => clearField(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $1.TallyParams ensureTallyParams() => $_ensure(2);
+
+  ///  params defines all the paramaters of x/gov module.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(4)
+  $1.Params get params => $_getN(3);
+  @$pb.TagNumber(4)
+  set params($1.Params v) {
+    setField(4, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasParams() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearParams() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.Params ensureParams() => $_ensure(3);
 }
 
 /// QueryDepositRequest is the request type for the Query/Deposit RPC method.
@@ -1132,6 +1287,7 @@ class QueryDepositsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryDepositsResponse>(create);
   static QueryDepositsResponse? _defaultInstance;
 
+  /// deposits defines the requested deposits.
   @$pb.TagNumber(1)
   $core.List<$1.Deposit> get deposits => $_getList(0);
 

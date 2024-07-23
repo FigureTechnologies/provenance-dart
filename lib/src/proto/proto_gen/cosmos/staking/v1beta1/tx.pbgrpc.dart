@@ -15,89 +15,101 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'tx.pb.dart' as $0;
+import 'tx.pb.dart' as $1;
 
 export 'tx.pb.dart';
 
 @$pb.GrpcServiceName('cosmos.staking.v1beta1.Msg')
 class MsgClient extends $grpc.Client {
   static final _$createValidator =
-      $grpc.ClientMethod<$0.MsgCreateValidator, $0.MsgCreateValidatorResponse>(
+      $grpc.ClientMethod<$1.MsgCreateValidator, $1.MsgCreateValidatorResponse>(
           '/cosmos.staking.v1beta1.Msg/CreateValidator',
-          ($0.MsgCreateValidator value) => value.writeToBuffer(),
+          ($1.MsgCreateValidator value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.MsgCreateValidatorResponse.fromBuffer(value));
+              $1.MsgCreateValidatorResponse.fromBuffer(value));
   static final _$editValidator =
-      $grpc.ClientMethod<$0.MsgEditValidator, $0.MsgEditValidatorResponse>(
+      $grpc.ClientMethod<$1.MsgEditValidator, $1.MsgEditValidatorResponse>(
           '/cosmos.staking.v1beta1.Msg/EditValidator',
-          ($0.MsgEditValidator value) => value.writeToBuffer(),
+          ($1.MsgEditValidator value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.MsgEditValidatorResponse.fromBuffer(value));
+              $1.MsgEditValidatorResponse.fromBuffer(value));
   static final _$delegate =
-      $grpc.ClientMethod<$0.MsgDelegate, $0.MsgDelegateResponse>(
+      $grpc.ClientMethod<$1.MsgDelegate, $1.MsgDelegateResponse>(
           '/cosmos.staking.v1beta1.Msg/Delegate',
-          ($0.MsgDelegate value) => value.writeToBuffer(),
+          ($1.MsgDelegate value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.MsgDelegateResponse.fromBuffer(value));
+              $1.MsgDelegateResponse.fromBuffer(value));
   static final _$beginRedelegate =
-      $grpc.ClientMethod<$0.MsgBeginRedelegate, $0.MsgBeginRedelegateResponse>(
+      $grpc.ClientMethod<$1.MsgBeginRedelegate, $1.MsgBeginRedelegateResponse>(
           '/cosmos.staking.v1beta1.Msg/BeginRedelegate',
-          ($0.MsgBeginRedelegate value) => value.writeToBuffer(),
+          ($1.MsgBeginRedelegate value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.MsgBeginRedelegateResponse.fromBuffer(value));
+              $1.MsgBeginRedelegateResponse.fromBuffer(value));
   static final _$undelegate =
-      $grpc.ClientMethod<$0.MsgUndelegate, $0.MsgUndelegateResponse>(
+      $grpc.ClientMethod<$1.MsgUndelegate, $1.MsgUndelegateResponse>(
           '/cosmos.staking.v1beta1.Msg/Undelegate',
-          ($0.MsgUndelegate value) => value.writeToBuffer(),
+          ($1.MsgUndelegate value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.MsgUndelegateResponse.fromBuffer(value));
+              $1.MsgUndelegateResponse.fromBuffer(value));
   static final _$cancelUnbondingDelegation = $grpc.ClientMethod<
-          $0.MsgCancelUnbondingDelegation,
-          $0.MsgCancelUnbondingDelegationResponse>(
+          $1.MsgCancelUnbondingDelegation,
+          $1.MsgCancelUnbondingDelegationResponse>(
       '/cosmos.staking.v1beta1.Msg/CancelUnbondingDelegation',
-      ($0.MsgCancelUnbondingDelegation value) => value.writeToBuffer(),
+      ($1.MsgCancelUnbondingDelegation value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
-          $0.MsgCancelUnbondingDelegationResponse.fromBuffer(value));
+          $1.MsgCancelUnbondingDelegationResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$1.MsgUpdateParams, $1.MsgUpdateParamsResponse>(
+          '/cosmos.staking.v1beta1.Msg/UpdateParams',
+          ($1.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.MsgCreateValidatorResponse> createValidator(
-      $0.MsgCreateValidator request,
+  $grpc.ResponseFuture<$1.MsgCreateValidatorResponse> createValidator(
+      $1.MsgCreateValidator request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createValidator, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.MsgEditValidatorResponse> editValidator(
-      $0.MsgEditValidator request,
+  $grpc.ResponseFuture<$1.MsgEditValidatorResponse> editValidator(
+      $1.MsgEditValidator request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$editValidator, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.MsgDelegateResponse> delegate($0.MsgDelegate request,
+  $grpc.ResponseFuture<$1.MsgDelegateResponse> delegate($1.MsgDelegate request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$delegate, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.MsgBeginRedelegateResponse> beginRedelegate(
-      $0.MsgBeginRedelegate request,
+  $grpc.ResponseFuture<$1.MsgBeginRedelegateResponse> beginRedelegate(
+      $1.MsgBeginRedelegate request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$beginRedelegate, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.MsgUndelegateResponse> undelegate(
-      $0.MsgUndelegate request,
+  $grpc.ResponseFuture<$1.MsgUndelegateResponse> undelegate(
+      $1.MsgUndelegate request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$undelegate, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.MsgCancelUnbondingDelegationResponse>
-      cancelUnbondingDelegation($0.MsgCancelUnbondingDelegation request,
+  $grpc.ResponseFuture<$1.MsgCancelUnbondingDelegationResponse>
+      cancelUnbondingDelegation($1.MsgCancelUnbondingDelegation request,
           {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$cancelUnbondingDelegation, request,
         options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgUpdateParamsResponse> updateParams(
+      $1.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
   }
 }
 
@@ -106,104 +118,120 @@ abstract class MsgServiceBase extends $grpc.Service {
   $core.String get $name => 'cosmos.staking.v1beta1.Msg';
 
   MsgServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.MsgCreateValidator,
-            $0.MsgCreateValidatorResponse>(
+    $addMethod($grpc.ServiceMethod<$1.MsgCreateValidator,
+            $1.MsgCreateValidatorResponse>(
         'CreateValidator',
         createValidator_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.MsgCreateValidator.fromBuffer(value),
-        ($0.MsgCreateValidatorResponse value) => value.writeToBuffer()));
+            $1.MsgCreateValidator.fromBuffer(value),
+        ($1.MsgCreateValidatorResponse value) => value.writeToBuffer()));
     $addMethod(
-        $grpc.ServiceMethod<$0.MsgEditValidator, $0.MsgEditValidatorResponse>(
+        $grpc.ServiceMethod<$1.MsgEditValidator, $1.MsgEditValidatorResponse>(
             'EditValidator',
             editValidator_Pre,
             false,
             false,
             ($core.List<$core.int> value) =>
-                $0.MsgEditValidator.fromBuffer(value),
-            ($0.MsgEditValidatorResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.MsgDelegate, $0.MsgDelegateResponse>(
+                $1.MsgEditValidator.fromBuffer(value),
+            ($1.MsgEditValidatorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgDelegate, $1.MsgDelegateResponse>(
         'Delegate',
         delegate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.MsgDelegate.fromBuffer(value),
-        ($0.MsgDelegateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.MsgBeginRedelegate,
-            $0.MsgBeginRedelegateResponse>(
+        ($core.List<$core.int> value) => $1.MsgDelegate.fromBuffer(value),
+        ($1.MsgDelegateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgBeginRedelegate,
+            $1.MsgBeginRedelegateResponse>(
         'BeginRedelegate',
         beginRedelegate_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.MsgBeginRedelegate.fromBuffer(value),
-        ($0.MsgBeginRedelegateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.MsgUndelegate, $0.MsgUndelegateResponse>(
+            $1.MsgBeginRedelegate.fromBuffer(value),
+        ($1.MsgBeginRedelegateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgUndelegate, $1.MsgUndelegateResponse>(
         'Undelegate',
         undelegate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.MsgUndelegate.fromBuffer(value),
-        ($0.MsgUndelegateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.MsgCancelUnbondingDelegation,
-            $0.MsgCancelUnbondingDelegationResponse>(
+        ($core.List<$core.int> value) => $1.MsgUndelegate.fromBuffer(value),
+        ($1.MsgUndelegateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgCancelUnbondingDelegation,
+            $1.MsgCancelUnbondingDelegationResponse>(
         'CancelUnbondingDelegation',
         cancelUnbondingDelegation_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.MsgCancelUnbondingDelegation.fromBuffer(value),
-        ($0.MsgCancelUnbondingDelegationResponse value) =>
+            $1.MsgCancelUnbondingDelegation.fromBuffer(value),
+        ($1.MsgCancelUnbondingDelegationResponse value) =>
             value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.MsgUpdateParams, $1.MsgUpdateParamsResponse>(
+            'UpdateParams',
+            updateParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.MsgUpdateParams.fromBuffer(value),
+            ($1.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.MsgCreateValidatorResponse> createValidator_Pre(
+  $async.Future<$1.MsgCreateValidatorResponse> createValidator_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.MsgCreateValidator> request) async {
+      $async.Future<$1.MsgCreateValidator> request) async {
     return createValidator(call, await request);
   }
 
-  $async.Future<$0.MsgEditValidatorResponse> editValidator_Pre(
+  $async.Future<$1.MsgEditValidatorResponse> editValidator_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.MsgEditValidator> request) async {
+      $async.Future<$1.MsgEditValidator> request) async {
     return editValidator(call, await request);
   }
 
-  $async.Future<$0.MsgDelegateResponse> delegate_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.MsgDelegate> request) async {
+  $async.Future<$1.MsgDelegateResponse> delegate_Pre(
+      $grpc.ServiceCall call, $async.Future<$1.MsgDelegate> request) async {
     return delegate(call, await request);
   }
 
-  $async.Future<$0.MsgBeginRedelegateResponse> beginRedelegate_Pre(
+  $async.Future<$1.MsgBeginRedelegateResponse> beginRedelegate_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.MsgBeginRedelegate> request) async {
+      $async.Future<$1.MsgBeginRedelegate> request) async {
     return beginRedelegate(call, await request);
   }
 
-  $async.Future<$0.MsgUndelegateResponse> undelegate_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.MsgUndelegate> request) async {
+  $async.Future<$1.MsgUndelegateResponse> undelegate_Pre(
+      $grpc.ServiceCall call, $async.Future<$1.MsgUndelegate> request) async {
     return undelegate(call, await request);
   }
 
-  $async.Future<$0.MsgCancelUnbondingDelegationResponse>
+  $async.Future<$1.MsgCancelUnbondingDelegationResponse>
       cancelUnbondingDelegation_Pre($grpc.ServiceCall call,
-          $async.Future<$0.MsgCancelUnbondingDelegation> request) async {
+          $async.Future<$1.MsgCancelUnbondingDelegation> request) async {
     return cancelUnbondingDelegation(call, await request);
   }
 
-  $async.Future<$0.MsgCreateValidatorResponse> createValidator(
-      $grpc.ServiceCall call, $0.MsgCreateValidator request);
-  $async.Future<$0.MsgEditValidatorResponse> editValidator(
-      $grpc.ServiceCall call, $0.MsgEditValidator request);
-  $async.Future<$0.MsgDelegateResponse> delegate(
-      $grpc.ServiceCall call, $0.MsgDelegate request);
-  $async.Future<$0.MsgBeginRedelegateResponse> beginRedelegate(
-      $grpc.ServiceCall call, $0.MsgBeginRedelegate request);
-  $async.Future<$0.MsgUndelegateResponse> undelegate(
-      $grpc.ServiceCall call, $0.MsgUndelegate request);
-  $async.Future<$0.MsgCancelUnbondingDelegationResponse>
+  $async.Future<$1.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$1.MsgUpdateParams> request) async {
+    return updateParams(call, await request);
+  }
+
+  $async.Future<$1.MsgCreateValidatorResponse> createValidator(
+      $grpc.ServiceCall call, $1.MsgCreateValidator request);
+  $async.Future<$1.MsgEditValidatorResponse> editValidator(
+      $grpc.ServiceCall call, $1.MsgEditValidator request);
+  $async.Future<$1.MsgDelegateResponse> delegate(
+      $grpc.ServiceCall call, $1.MsgDelegate request);
+  $async.Future<$1.MsgBeginRedelegateResponse> beginRedelegate(
+      $grpc.ServiceCall call, $1.MsgBeginRedelegate request);
+  $async.Future<$1.MsgUndelegateResponse> undelegate(
+      $grpc.ServiceCall call, $1.MsgUndelegate request);
+  $async.Future<$1.MsgCancelUnbondingDelegationResponse>
       cancelUnbondingDelegation(
-          $grpc.ServiceCall call, $0.MsgCancelUnbondingDelegation request);
+          $grpc.ServiceCall call, $1.MsgCancelUnbondingDelegation request);
+  $async.Future<$1.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $1.MsgUpdateParams request);
 }

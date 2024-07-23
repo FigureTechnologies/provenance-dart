@@ -136,6 +136,38 @@ class QueryClient extends $grpc.Client {
       ($1.QueryValidateManageFeesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $1.QueryValidateManageFeesResponse.fromBuffer(value));
+  static final _$getPayment =
+      $grpc.ClientMethod<$1.QueryGetPaymentRequest, $1.QueryGetPaymentResponse>(
+          '/provenance.exchange.v1.Query/GetPayment',
+          ($1.QueryGetPaymentRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.QueryGetPaymentResponse.fromBuffer(value));
+  static final _$getPaymentsWithSource = $grpc.ClientMethod<
+          $1.QueryGetPaymentsWithSourceRequest,
+          $1.QueryGetPaymentsWithSourceResponse>(
+      '/provenance.exchange.v1.Query/GetPaymentsWithSource',
+      ($1.QueryGetPaymentsWithSourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.QueryGetPaymentsWithSourceResponse.fromBuffer(value));
+  static final _$getPaymentsWithTarget = $grpc.ClientMethod<
+          $1.QueryGetPaymentsWithTargetRequest,
+          $1.QueryGetPaymentsWithTargetResponse>(
+      '/provenance.exchange.v1.Query/GetPaymentsWithTarget',
+      ($1.QueryGetPaymentsWithTargetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.QueryGetPaymentsWithTargetResponse.fromBuffer(value));
+  static final _$getAllPayments = $grpc.ClientMethod<
+          $1.QueryGetAllPaymentsRequest, $1.QueryGetAllPaymentsResponse>(
+      '/provenance.exchange.v1.Query/GetAllPayments',
+      ($1.QueryGetAllPaymentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.QueryGetAllPaymentsResponse.fromBuffer(value));
+  static final _$paymentFeeCalc = $grpc.ClientMethod<
+          $1.QueryPaymentFeeCalcRequest, $1.QueryPaymentFeeCalcResponse>(
+      '/provenance.exchange.v1.Query/PaymentFeeCalc',
+      ($1.QueryPaymentFeeCalcRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.QueryPaymentFeeCalcResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -250,6 +282,36 @@ class QueryClient extends $grpc.Client {
       $1.QueryValidateManageFeesRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$validateManageFees, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.QueryGetPaymentResponse> getPayment(
+      $1.QueryGetPaymentRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getPayment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.QueryGetPaymentsWithSourceResponse>
+      getPaymentsWithSource($1.QueryGetPaymentsWithSourceRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getPaymentsWithSource, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.QueryGetPaymentsWithTargetResponse>
+      getPaymentsWithTarget($1.QueryGetPaymentsWithTargetRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getPaymentsWithTarget, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.QueryGetAllPaymentsResponse> getAllPayments(
+      $1.QueryGetAllPaymentsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllPayments, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.QueryPaymentFeeCalcResponse> paymentFeeCalc(
+      $1.QueryPaymentFeeCalcRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$paymentFeeCalc, request, options: options);
   }
 }
 
@@ -422,6 +484,53 @@ abstract class QueryServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.QueryValidateManageFeesRequest.fromBuffer(value),
         ($1.QueryValidateManageFeesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.QueryGetPaymentRequest,
+            $1.QueryGetPaymentResponse>(
+        'GetPayment',
+        getPayment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.QueryGetPaymentRequest.fromBuffer(value),
+        ($1.QueryGetPaymentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.QueryGetPaymentsWithSourceRequest,
+            $1.QueryGetPaymentsWithSourceResponse>(
+        'GetPaymentsWithSource',
+        getPaymentsWithSource_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.QueryGetPaymentsWithSourceRequest.fromBuffer(value),
+        ($1.QueryGetPaymentsWithSourceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.QueryGetPaymentsWithTargetRequest,
+            $1.QueryGetPaymentsWithTargetResponse>(
+        'GetPaymentsWithTarget',
+        getPaymentsWithTarget_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.QueryGetPaymentsWithTargetRequest.fromBuffer(value),
+        ($1.QueryGetPaymentsWithTargetResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.QueryGetAllPaymentsRequest,
+            $1.QueryGetAllPaymentsResponse>(
+        'GetAllPayments',
+        getAllPayments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.QueryGetAllPaymentsRequest.fromBuffer(value),
+        ($1.QueryGetAllPaymentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.QueryPaymentFeeCalcRequest,
+            $1.QueryPaymentFeeCalcResponse>(
+        'PaymentFeeCalc',
+        paymentFeeCalc_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.QueryPaymentFeeCalcRequest.fromBuffer(value),
+        ($1.QueryPaymentFeeCalcResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.QueryOrderFeeCalcResponse> orderFeeCalc_Pre(
@@ -531,6 +640,36 @@ abstract class QueryServiceBase extends $grpc.Service {
     return validateManageFees(call, await request);
   }
 
+  $async.Future<$1.QueryGetPaymentResponse> getPayment_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.QueryGetPaymentRequest> request) async {
+    return getPayment(call, await request);
+  }
+
+  $async.Future<$1.QueryGetPaymentsWithSourceResponse>
+      getPaymentsWithSource_Pre($grpc.ServiceCall call,
+          $async.Future<$1.QueryGetPaymentsWithSourceRequest> request) async {
+    return getPaymentsWithSource(call, await request);
+  }
+
+  $async.Future<$1.QueryGetPaymentsWithTargetResponse>
+      getPaymentsWithTarget_Pre($grpc.ServiceCall call,
+          $async.Future<$1.QueryGetPaymentsWithTargetRequest> request) async {
+    return getPaymentsWithTarget(call, await request);
+  }
+
+  $async.Future<$1.QueryGetAllPaymentsResponse> getAllPayments_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.QueryGetAllPaymentsRequest> request) async {
+    return getAllPayments(call, await request);
+  }
+
+  $async.Future<$1.QueryPaymentFeeCalcResponse> paymentFeeCalc_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.QueryPaymentFeeCalcRequest> request) async {
+    return paymentFeeCalc(call, await request);
+  }
+
   $async.Future<$1.QueryOrderFeeCalcResponse> orderFeeCalc(
       $grpc.ServiceCall call, $1.QueryOrderFeeCalcRequest request);
   $async.Future<$1.QueryGetOrderResponse> getOrder(
@@ -568,4 +707,14 @@ abstract class QueryServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $1.QueryValidateMarketRequest request);
   $async.Future<$1.QueryValidateManageFeesResponse> validateManageFees(
       $grpc.ServiceCall call, $1.QueryValidateManageFeesRequest request);
+  $async.Future<$1.QueryGetPaymentResponse> getPayment(
+      $grpc.ServiceCall call, $1.QueryGetPaymentRequest request);
+  $async.Future<$1.QueryGetPaymentsWithSourceResponse> getPaymentsWithSource(
+      $grpc.ServiceCall call, $1.QueryGetPaymentsWithSourceRequest request);
+  $async.Future<$1.QueryGetPaymentsWithTargetResponse> getPaymentsWithTarget(
+      $grpc.ServiceCall call, $1.QueryGetPaymentsWithTargetRequest request);
+  $async.Future<$1.QueryGetAllPaymentsResponse> getAllPayments(
+      $grpc.ServiceCall call, $1.QueryGetAllPaymentsRequest request);
+  $async.Future<$1.QueryPaymentFeeCalcResponse> paymentFeeCalc(
+      $grpc.ServiceCall call, $1.QueryPaymentFeeCalcRequest request);
 }

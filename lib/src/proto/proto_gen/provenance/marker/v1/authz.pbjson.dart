@@ -33,7 +33,7 @@ const MarkerTransferAuthorization$json = {
 
 /// Descriptor for `MarkerTransferAuthorization`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List markerTransferAuthorizationDescriptor = $convert.base64Decode(
-    'ChtNYXJrZXJUcmFuc2ZlckF1dGhvcml6YXRpb24ScgoOdHJhbnNmZXJfbGltaXQYASADKAsyGS'
-    '5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29z'
-    'bW9zLXNkay90eXBlcy5Db2luc1INdHJhbnNmZXJMaW1pdBIdCgphbGxvd19saXN0GAIgAygJUg'
-    'lhbGxvd0xpc3Q6Ecq0LQ1BdXRob3JpemF0aW9u');
+    'ChtNYXJrZXJUcmFuc2ZlckF1dGhvcml6YXRpb24SiAEKDnRyYW5zZmVyX2xpbWl0GAEgAygLMh'
+    'kuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQkbI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nv'
+    'c21vcy1zZGsvdHlwZXMuQ29pbnOa57AqDGxlZ2FjeV9jb2luc6jnsCoBUg10cmFuc2ZlckxpbW'
+    'l0Eh0KCmFsbG93X2xpc3QYAiADKAlSCWFsbG93TGlzdDoRyrQtDUF1dGhvcml6YXRpb24=');

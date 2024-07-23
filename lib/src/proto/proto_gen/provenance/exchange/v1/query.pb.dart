@@ -20,6 +20,7 @@ import 'commitments.pb.dart' as $5;
 import 'market.pb.dart' as $6;
 import 'orders.pb.dart' as $2;
 import 'params.pb.dart' as $7;
+import 'payments.pb.dart' as $8;
 import 'tx.pb.dart' as $0;
 
 /// QueryOrderFeeCalcRequest is a request message for the OrderFeeCalc query.
@@ -2953,6 +2954,794 @@ class QueryValidateManageFeesResponse extends $pb.GeneratedMessage {
   $core.bool hasGovPropWillPass() => $_has(1);
   @$pb.TagNumber(2)
   void clearGovPropWillPass() => clearField(2);
+}
+
+/// QueryGetPaymentRequest is a request message for the GetPayment query.
+class QueryGetPaymentRequest extends $pb.GeneratedMessage {
+  factory QueryGetPaymentRequest({
+    $core.String? source,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  QueryGetPaymentRequest._() : super();
+  factory QueryGetPaymentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetPaymentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetPaymentRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentRequest clone() =>
+      QueryGetPaymentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentRequest copyWith(
+          void Function(QueryGetPaymentRequest) updates) =>
+      super.copyWith((message) => updates(message as QueryGetPaymentRequest))
+          as QueryGetPaymentRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentRequest create() => QueryGetPaymentRequest._();
+  QueryGetPaymentRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryGetPaymentRequest> createRepeated() =>
+      $pb.PbList<QueryGetPaymentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetPaymentRequest>(create);
+  static QueryGetPaymentRequest? _defaultInstance;
+
+  /// source is the source account of the payment to get.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// external_id is the external id of the payment to get.
+  @$pb.TagNumber(2)
+  $core.String get externalId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set externalId($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasExternalId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExternalId() => clearField(2);
+}
+
+/// QueryGetPaymentResponse is a response message for the GetPayment query.
+class QueryGetPaymentResponse extends $pb.GeneratedMessage {
+  factory QueryGetPaymentResponse({
+    $8.Payment? payment,
+  }) {
+    final $result = create();
+    if (payment != null) {
+      $result.payment = payment;
+    }
+    return $result;
+  }
+  QueryGetPaymentResponse._() : super();
+  factory QueryGetPaymentResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetPaymentResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetPaymentResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOM<$8.Payment>(1, _omitFieldNames ? '' : 'payment',
+        subBuilder: $8.Payment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentResponse clone() =>
+      QueryGetPaymentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentResponse copyWith(
+          void Function(QueryGetPaymentResponse) updates) =>
+      super.copyWith((message) => updates(message as QueryGetPaymentResponse))
+          as QueryGetPaymentResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentResponse create() => QueryGetPaymentResponse._();
+  QueryGetPaymentResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryGetPaymentResponse> createRepeated() =>
+      $pb.PbList<QueryGetPaymentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetPaymentResponse>(create);
+  static QueryGetPaymentResponse? _defaultInstance;
+
+  /// payment is the info on the requested payment.
+  @$pb.TagNumber(1)
+  $8.Payment get payment => $_getN(0);
+  @$pb.TagNumber(1)
+  set payment($8.Payment v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasPayment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPayment() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.Payment ensurePayment() => $_ensure(0);
+}
+
+/// QueryGetPaymentsWithSourceRequest is a request message for the GetPaymentsWithSource query.
+class QueryGetPaymentsWithSourceRequest extends $pb.GeneratedMessage {
+  factory QueryGetPaymentsWithSourceRequest({
+    $core.String? source,
+    $4.PageRequest? pagination,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryGetPaymentsWithSourceRequest._() : super();
+  factory QueryGetPaymentsWithSourceRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetPaymentsWithSourceRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetPaymentsWithSourceRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOM<$4.PageRequest>(99, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $4.PageRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithSourceRequest clone() =>
+      QueryGetPaymentsWithSourceRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithSourceRequest copyWith(
+          void Function(QueryGetPaymentsWithSourceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryGetPaymentsWithSourceRequest))
+          as QueryGetPaymentsWithSourceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithSourceRequest create() =>
+      QueryGetPaymentsWithSourceRequest._();
+  QueryGetPaymentsWithSourceRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryGetPaymentsWithSourceRequest> createRepeated() =>
+      $pb.PbList<QueryGetPaymentsWithSourceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithSourceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetPaymentsWithSourceRequest>(
+          create);
+  static QueryGetPaymentsWithSourceRequest? _defaultInstance;
+
+  /// source is the source account of the payments to get.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// pagination defines an optional pagination for the request.
+  @$pb.TagNumber(99)
+  $4.PageRequest get pagination => $_getN(1);
+  @$pb.TagNumber(99)
+  set pagination($4.PageRequest v) {
+    setField(99, v);
+  }
+
+  @$pb.TagNumber(99)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearPagination() => clearField(99);
+  @$pb.TagNumber(99)
+  $4.PageRequest ensurePagination() => $_ensure(1);
+}
+
+/// QueryGetPaymentsWithSourceResponse is a response message for the GetPaymentsWithSource query.
+class QueryGetPaymentsWithSourceResponse extends $pb.GeneratedMessage {
+  factory QueryGetPaymentsWithSourceResponse({
+    $core.Iterable<$8.Payment>? payments,
+    $4.PageResponse? pagination,
+  }) {
+    final $result = create();
+    if (payments != null) {
+      $result.payments.addAll(payments);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryGetPaymentsWithSourceResponse._() : super();
+  factory QueryGetPaymentsWithSourceResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetPaymentsWithSourceResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetPaymentsWithSourceResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..pc<$8.Payment>(1, _omitFieldNames ? '' : 'payments', $pb.PbFieldType.PM,
+        subBuilder: $8.Payment.create)
+    ..aOM<$4.PageResponse>(99, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $4.PageResponse.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithSourceResponse clone() =>
+      QueryGetPaymentsWithSourceResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithSourceResponse copyWith(
+          void Function(QueryGetPaymentsWithSourceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryGetPaymentsWithSourceResponse))
+          as QueryGetPaymentsWithSourceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithSourceResponse create() =>
+      QueryGetPaymentsWithSourceResponse._();
+  QueryGetPaymentsWithSourceResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryGetPaymentsWithSourceResponse> createRepeated() =>
+      $pb.PbList<QueryGetPaymentsWithSourceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithSourceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetPaymentsWithSourceResponse>(
+          create);
+  static QueryGetPaymentsWithSourceResponse? _defaultInstance;
+
+  /// payments is all the payments with the requested source.
+  @$pb.TagNumber(1)
+  $core.List<$8.Payment> get payments => $_getList(0);
+
+  /// pagination is the resulting pagination parameters.
+  @$pb.TagNumber(99)
+  $4.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(99)
+  set pagination($4.PageResponse v) {
+    setField(99, v);
+  }
+
+  @$pb.TagNumber(99)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearPagination() => clearField(99);
+  @$pb.TagNumber(99)
+  $4.PageResponse ensurePagination() => $_ensure(1);
+}
+
+/// QueryGetPaymentsWithTargetRequest is a request message for the GetPaymentsWithTarget query.
+class QueryGetPaymentsWithTargetRequest extends $pb.GeneratedMessage {
+  factory QueryGetPaymentsWithTargetRequest({
+    $core.String? target,
+    $4.PageRequest? pagination,
+  }) {
+    final $result = create();
+    if (target != null) {
+      $result.target = target;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryGetPaymentsWithTargetRequest._() : super();
+  factory QueryGetPaymentsWithTargetRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetPaymentsWithTargetRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetPaymentsWithTargetRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'target')
+    ..aOM<$4.PageRequest>(99, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $4.PageRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithTargetRequest clone() =>
+      QueryGetPaymentsWithTargetRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithTargetRequest copyWith(
+          void Function(QueryGetPaymentsWithTargetRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryGetPaymentsWithTargetRequest))
+          as QueryGetPaymentsWithTargetRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithTargetRequest create() =>
+      QueryGetPaymentsWithTargetRequest._();
+  QueryGetPaymentsWithTargetRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryGetPaymentsWithTargetRequest> createRepeated() =>
+      $pb.PbList<QueryGetPaymentsWithTargetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithTargetRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetPaymentsWithTargetRequest>(
+          create);
+  static QueryGetPaymentsWithTargetRequest? _defaultInstance;
+
+  /// target is the target account of the payments to get.
+  @$pb.TagNumber(1)
+  $core.String get target => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set target($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTarget() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTarget() => clearField(1);
+
+  /// pagination defines an optional pagination for the request.
+  @$pb.TagNumber(99)
+  $4.PageRequest get pagination => $_getN(1);
+  @$pb.TagNumber(99)
+  set pagination($4.PageRequest v) {
+    setField(99, v);
+  }
+
+  @$pb.TagNumber(99)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearPagination() => clearField(99);
+  @$pb.TagNumber(99)
+  $4.PageRequest ensurePagination() => $_ensure(1);
+}
+
+/// QueryGetPaymentsWithTargetResponse is a response message for the GetPaymentsWithTarget query.
+class QueryGetPaymentsWithTargetResponse extends $pb.GeneratedMessage {
+  factory QueryGetPaymentsWithTargetResponse({
+    $core.Iterable<$8.Payment>? payments,
+    $4.PageResponse? pagination,
+  }) {
+    final $result = create();
+    if (payments != null) {
+      $result.payments.addAll(payments);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryGetPaymentsWithTargetResponse._() : super();
+  factory QueryGetPaymentsWithTargetResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetPaymentsWithTargetResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetPaymentsWithTargetResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..pc<$8.Payment>(1, _omitFieldNames ? '' : 'payments', $pb.PbFieldType.PM,
+        subBuilder: $8.Payment.create)
+    ..aOM<$4.PageResponse>(99, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $4.PageResponse.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithTargetResponse clone() =>
+      QueryGetPaymentsWithTargetResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetPaymentsWithTargetResponse copyWith(
+          void Function(QueryGetPaymentsWithTargetResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryGetPaymentsWithTargetResponse))
+          as QueryGetPaymentsWithTargetResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithTargetResponse create() =>
+      QueryGetPaymentsWithTargetResponse._();
+  QueryGetPaymentsWithTargetResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryGetPaymentsWithTargetResponse> createRepeated() =>
+      $pb.PbList<QueryGetPaymentsWithTargetResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetPaymentsWithTargetResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetPaymentsWithTargetResponse>(
+          create);
+  static QueryGetPaymentsWithTargetResponse? _defaultInstance;
+
+  /// payments is all the payments with the requested target.
+  @$pb.TagNumber(1)
+  $core.List<$8.Payment> get payments => $_getList(0);
+
+  /// pagination is the resulting pagination parameters.
+  @$pb.TagNumber(99)
+  $4.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(99)
+  set pagination($4.PageResponse v) {
+    setField(99, v);
+  }
+
+  @$pb.TagNumber(99)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearPagination() => clearField(99);
+  @$pb.TagNumber(99)
+  $4.PageResponse ensurePagination() => $_ensure(1);
+}
+
+/// QueryGetAllPaymentsRequest is a request message for the GetAllPayments query.
+class QueryGetAllPaymentsRequest extends $pb.GeneratedMessage {
+  factory QueryGetAllPaymentsRequest({
+    $4.PageRequest? pagination,
+  }) {
+    final $result = create();
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryGetAllPaymentsRequest._() : super();
+  factory QueryGetAllPaymentsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetAllPaymentsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetAllPaymentsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOM<$4.PageRequest>(99, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $4.PageRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetAllPaymentsRequest clone() =>
+      QueryGetAllPaymentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetAllPaymentsRequest copyWith(
+          void Function(QueryGetAllPaymentsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryGetAllPaymentsRequest))
+          as QueryGetAllPaymentsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetAllPaymentsRequest create() => QueryGetAllPaymentsRequest._();
+  QueryGetAllPaymentsRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryGetAllPaymentsRequest> createRepeated() =>
+      $pb.PbList<QueryGetAllPaymentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetAllPaymentsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetAllPaymentsRequest>(create);
+  static QueryGetAllPaymentsRequest? _defaultInstance;
+
+  /// pagination defines an optional pagination for the request.
+  @$pb.TagNumber(99)
+  $4.PageRequest get pagination => $_getN(0);
+  @$pb.TagNumber(99)
+  set pagination($4.PageRequest v) {
+    setField(99, v);
+  }
+
+  @$pb.TagNumber(99)
+  $core.bool hasPagination() => $_has(0);
+  @$pb.TagNumber(99)
+  void clearPagination() => clearField(99);
+  @$pb.TagNumber(99)
+  $4.PageRequest ensurePagination() => $_ensure(0);
+}
+
+/// QueryGetAllPaymentsResponse is a response message for the GetAllPayments query.
+class QueryGetAllPaymentsResponse extends $pb.GeneratedMessage {
+  factory QueryGetAllPaymentsResponse({
+    $core.Iterable<$8.Payment>? payments,
+    $4.PageResponse? pagination,
+  }) {
+    final $result = create();
+    if (payments != null) {
+      $result.payments.addAll(payments);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryGetAllPaymentsResponse._() : super();
+  factory QueryGetAllPaymentsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryGetAllPaymentsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryGetAllPaymentsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..pc<$8.Payment>(1, _omitFieldNames ? '' : 'payments', $pb.PbFieldType.PM,
+        subBuilder: $8.Payment.create)
+    ..aOM<$4.PageResponse>(99, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $4.PageResponse.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryGetAllPaymentsResponse clone() =>
+      QueryGetAllPaymentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryGetAllPaymentsResponse copyWith(
+          void Function(QueryGetAllPaymentsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryGetAllPaymentsResponse))
+          as QueryGetAllPaymentsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryGetAllPaymentsResponse create() =>
+      QueryGetAllPaymentsResponse._();
+  QueryGetAllPaymentsResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryGetAllPaymentsResponse> createRepeated() =>
+      $pb.PbList<QueryGetAllPaymentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryGetAllPaymentsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryGetAllPaymentsResponse>(create);
+  static QueryGetAllPaymentsResponse? _defaultInstance;
+
+  /// payments is all the payments on this page of results.
+  @$pb.TagNumber(1)
+  $core.List<$8.Payment> get payments => $_getList(0);
+
+  /// pagination is the resulting pagination parameters.
+  @$pb.TagNumber(99)
+  $4.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(99)
+  set pagination($4.PageResponse v) {
+    setField(99, v);
+  }
+
+  @$pb.TagNumber(99)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearPagination() => clearField(99);
+  @$pb.TagNumber(99)
+  $4.PageResponse ensurePagination() => $_ensure(1);
+}
+
+/// QueryPaymentFeeCalcRequest is a request message for the PaymentFeeCalc query.
+class QueryPaymentFeeCalcRequest extends $pb.GeneratedMessage {
+  factory QueryPaymentFeeCalcRequest({
+    $8.Payment? payment,
+  }) {
+    final $result = create();
+    if (payment != null) {
+      $result.payment = payment;
+    }
+    return $result;
+  }
+  QueryPaymentFeeCalcRequest._() : super();
+  factory QueryPaymentFeeCalcRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryPaymentFeeCalcRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryPaymentFeeCalcRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOM<$8.Payment>(1, _omitFieldNames ? '' : 'payment',
+        subBuilder: $8.Payment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryPaymentFeeCalcRequest clone() =>
+      QueryPaymentFeeCalcRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryPaymentFeeCalcRequest copyWith(
+          void Function(QueryPaymentFeeCalcRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryPaymentFeeCalcRequest))
+          as QueryPaymentFeeCalcRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryPaymentFeeCalcRequest create() => QueryPaymentFeeCalcRequest._();
+  QueryPaymentFeeCalcRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryPaymentFeeCalcRequest> createRepeated() =>
+      $pb.PbList<QueryPaymentFeeCalcRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryPaymentFeeCalcRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryPaymentFeeCalcRequest>(create);
+  static QueryPaymentFeeCalcRequest? _defaultInstance;
+
+  /// payment is the details of the payment to create or accept.
+  @$pb.TagNumber(1)
+  $8.Payment get payment => $_getN(0);
+  @$pb.TagNumber(1)
+  set payment($8.Payment v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasPayment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPayment() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.Payment ensurePayment() => $_ensure(0);
+}
+
+/// QueryPaymentFeeCalcResponse is a response message for the PaymentFeeCalc query.
+class QueryPaymentFeeCalcResponse extends $pb.GeneratedMessage {
+  factory QueryPaymentFeeCalcResponse({
+    $core.Iterable<$3.Coin>? feeCreate,
+    $core.Iterable<$3.Coin>? feeAccept,
+  }) {
+    final $result = create();
+    if (feeCreate != null) {
+      $result.feeCreate.addAll(feeCreate);
+    }
+    if (feeAccept != null) {
+      $result.feeAccept.addAll(feeAccept);
+    }
+    return $result;
+  }
+  QueryPaymentFeeCalcResponse._() : super();
+  factory QueryPaymentFeeCalcResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryPaymentFeeCalcResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryPaymentFeeCalcResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..pc<$3.Coin>(1, _omitFieldNames ? '' : 'feeCreate', $pb.PbFieldType.PM,
+        subBuilder: $3.Coin.create)
+    ..pc<$3.Coin>(2, _omitFieldNames ? '' : 'feeAccept', $pb.PbFieldType.PM,
+        subBuilder: $3.Coin.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryPaymentFeeCalcResponse clone() =>
+      QueryPaymentFeeCalcResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryPaymentFeeCalcResponse copyWith(
+          void Function(QueryPaymentFeeCalcResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryPaymentFeeCalcResponse))
+          as QueryPaymentFeeCalcResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryPaymentFeeCalcResponse create() =>
+      QueryPaymentFeeCalcResponse._();
+  QueryPaymentFeeCalcResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryPaymentFeeCalcResponse> createRepeated() =>
+      $pb.PbList<QueryPaymentFeeCalcResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryPaymentFeeCalcResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryPaymentFeeCalcResponse>(create);
+  static QueryPaymentFeeCalcResponse? _defaultInstance;
+
+  /// fee_create is the fee required to create the provided payment.
+  @$pb.TagNumber(1)
+  $core.List<$3.Coin> get feeCreate => $_getList(0);
+
+  /// fee_accept is the fee required to accept the provided payment.
+  @$pb.TagNumber(2)
+  $core.List<$3.Coin> get feeAccept => $_getList(1);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

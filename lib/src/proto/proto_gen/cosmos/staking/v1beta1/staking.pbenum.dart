@@ -38,4 +38,26 @@ class BondStatus extends $pb.ProtobufEnum {
   const BondStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Infraction indicates the infraction a validator commited.
+class Infraction extends $pb.ProtobufEnum {
+  static const Infraction INFRACTION_UNSPECIFIED =
+      Infraction._(0, _omitEnumNames ? '' : 'INFRACTION_UNSPECIFIED');
+  static const Infraction INFRACTION_DOUBLE_SIGN =
+      Infraction._(1, _omitEnumNames ? '' : 'INFRACTION_DOUBLE_SIGN');
+  static const Infraction INFRACTION_DOWNTIME =
+      Infraction._(2, _omitEnumNames ? '' : 'INFRACTION_DOWNTIME');
+
+  static const $core.List<Infraction> values = <Infraction>[
+    INFRACTION_UNSPECIFIED,
+    INFRACTION_DOUBLE_SIGN,
+    INFRACTION_DOWNTIME,
+  ];
+
+  static final $core.Map<$core.int, Infraction> _byValue =
+      $pb.ProtobufEnum.initByValue(values);
+  static Infraction? valueOf($core.int value) => _byValue[value];
+
+  const Infraction._($core.int v, $core.String n) : super(v, n);
+}
+
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

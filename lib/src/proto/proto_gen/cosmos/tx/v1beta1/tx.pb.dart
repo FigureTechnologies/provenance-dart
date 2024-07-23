@@ -352,7 +352,7 @@ class SignDocDirectAux extends $pb.GeneratedMessage {
     $core.String? chainId,
     $fixnum.Int64? accountNumber,
     $fixnum.Int64? sequence,
-    Tip? tip,
+    @$core.Deprecated('This field is deprecated.') Tip? tip,
   }) {
     final $result = create();
     if (bodyBytes != null) {
@@ -371,6 +371,7 @@ class SignDocDirectAux extends $pb.GeneratedMessage {
       $result.sequence = sequence;
     }
     if (tip != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.tip = tip;
     }
     return $result;
@@ -495,23 +496,23 @@ class SignDocDirectAux extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearSequence() => clearField(5);
 
-  ///  Tip is the optional tip used for transactions fees paid in another denom.
-  ///  It should be left empty if the signer is not the tipper for this
-  ///  transaction.
-  ///
-  ///  This field is ignored if the chain didn't enable tips, i.e. didn't add the
-  ///  `TipDecorator` in its posthandler.
+  /// tips have been depreacted and should not be used
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   Tip get tip => $_getN(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   set tip(Tip v) {
     setField(6, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.bool hasTip() => $_has(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   void clearTip() => clearField(6);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   Tip ensureTip() => $_ensure(5);
 }
@@ -649,7 +650,7 @@ class AuthInfo extends $pb.GeneratedMessage {
   factory AuthInfo({
     $core.Iterable<SignerInfo>? signerInfos,
     Fee? fee,
-    Tip? tip,
+    @$core.Deprecated('This field is deprecated.') Tip? tip,
   }) {
     final $result = create();
     if (signerInfos != null) {
@@ -659,6 +660,7 @@ class AuthInfo extends $pb.GeneratedMessage {
       $result.fee = fee;
     }
     if (tip != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.tip = tip;
     }
     return $result;
@@ -735,17 +737,22 @@ class AuthInfo extends $pb.GeneratedMessage {
   ///  `TipDecorator` in its posthandler.
   ///
   ///  Since: cosmos-sdk 0.46
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   Tip get tip => $_getN(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set tip(Tip v) {
     setField(3, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasTip() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearTip() => clearField(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   Tip ensureTip() => $_ensure(2);
 }

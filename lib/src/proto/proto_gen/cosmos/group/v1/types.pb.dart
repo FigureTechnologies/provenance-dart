@@ -245,7 +245,7 @@ class MemberRequest extends $pb.GeneratedMessage {
 
 /// ThresholdDecisionPolicy is a decision policy where a proposal passes when it
 /// satisfies the two following conditions:
-/// 1. The sum of all `YES` voters' weights is greater or equal than the defined
+/// 1. The sum of all `YES` voter's weights is greater or equal than the defined
 ///    `threshold`.
 /// 2. The voting and execution periods of the proposal respect the parameters
 ///    given by `windows`.
@@ -399,7 +399,7 @@ class PercentageDecisionPolicy extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<PercentageDecisionPolicy>(create);
   static PercentageDecisionPolicy? _defaultInstance;
 
-  /// percentage is the minimum percentage the weighted sum of `YES` votes must
+  /// percentage is the minimum percentage of the weighted sum of `YES` votes must
   /// meet for a proposal to succeed.
   @$pb.TagNumber(1)
   $core.String get percentage => $_getSZ(0);
@@ -633,6 +633,7 @@ class GroupInfo extends $pb.GeneratedMessage {
   void clearAdmin() => clearField(2);
 
   /// metadata is any arbitrary metadata to attached to the group.
+  /// the recommended format of the metadata is to be found here: https://docs.cosmos.network/v0.47/modules/group#group-1
   @$pb.TagNumber(3)
   $core.String get metadata => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -897,7 +898,9 @@ class GroupPolicyInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAdmin() => clearField(3);
 
-  /// metadata is any arbitrary metadata to attached to the group policy.
+  /// metadata is any arbitrary metadata attached to the group policy.
+  /// the recommended format of the metadata is to be found here:
+  /// https://docs.cosmos.network/v0.47/modules/group#decision-policy-1
   @$pb.TagNumber(4)
   $core.String get metadata => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -973,6 +976,8 @@ class Proposal extends $pb.GeneratedMessage {
     $0.Timestamp? votingPeriodEnd,
     ProposalExecutorResult? executorResult,
     $core.Iterable<$2.Any>? messages,
+    $core.String? title,
+    $core.String? summary,
   }) {
     final $result = create();
     if (id != null) {
@@ -1010,6 +1015,12 @@ class Proposal extends $pb.GeneratedMessage {
     }
     if (messages != null) {
       $result.messages.addAll(messages);
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (summary != null) {
+      $result.summary = summary;
     }
     return $result;
   }
@@ -1055,6 +1066,8 @@ class Proposal extends $pb.GeneratedMessage {
         enumValues: ProposalExecutorResult.values)
     ..pc<$2.Any>(12, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM,
         subBuilder: $2.Any.create)
+    ..aOS(13, _omitFieldNames ? '' : 'title')
+    ..aOS(14, _omitFieldNames ? '' : 'summary')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1104,7 +1117,9 @@ class Proposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearGroupPolicyAddress() => clearField(2);
 
-  /// metadata is any arbitrary metadata to attached to the proposal.
+  /// metadata is any arbitrary metadata attached to the proposal.
+  /// the recommended format of the metadata is to be found here:
+  /// https://docs.cosmos.network/v0.47/modules/group#proposal-4
   @$pb.TagNumber(3)
   $core.String get metadata => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1198,7 +1213,7 @@ class Proposal extends $pb.GeneratedMessage {
   TallyResult ensureFinalTallyResult() => $_ensure(8);
 
   /// voting_period_end is the timestamp before which voting must be done.
-  /// Unless a successfull MsgExec is called before (to execute a proposal whose
+  /// Unless a successful MsgExec is called before (to execute a proposal whose
   /// tally is successful before the voting period ends), tallying will be done
   /// at this point, and the `final_tally_result`and `status` fields will be
   /// accordingly updated.
@@ -1232,6 +1247,36 @@ class Proposal extends $pb.GeneratedMessage {
   /// messages is a list of `sdk.Msg`s that will be executed if the proposal passes.
   @$pb.TagNumber(12)
   $core.List<$2.Any> get messages => $_getList(11);
+
+  ///  title is the title of the proposal
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(13)
+  $core.String get title => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set title($core.String v) {
+    $_setString(12, v);
+  }
+
+  @$pb.TagNumber(13)
+  $core.bool hasTitle() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTitle() => clearField(13);
+
+  ///  summary is a short summary of the proposal
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(14)
+  $core.String get summary => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set summary($core.String v) {
+    $_setString(13, v);
+  }
+
+  @$pb.TagNumber(14)
+  $core.bool hasSummary() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearSummary() => clearField(14);
 }
 
 /// TallyResult represents the sum of weighted votes for each vote option.
@@ -1351,7 +1396,7 @@ class TallyResult extends $pb.GeneratedMessage {
   void clearNoWithVetoCount() => clearField(4);
 }
 
-/// Vote represents a vote for a proposal.
+/// Vote represents a vote for a proposal.string metadata
 class Vote extends $pb.GeneratedMessage {
   factory Vote({
     $fixnum.Int64? proposalId,
@@ -1464,7 +1509,8 @@ class Vote extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearOption() => clearField(3);
 
-  /// metadata is any arbitrary metadata to attached to the vote.
+  /// metadata is any arbitrary metadata attached to the vote.
+  /// the recommended format of the metadata is to be found here: https://docs.cosmos.network/v0.47/modules/group#vote-2
   @$pb.TagNumber(4)
   $core.String get metadata => $_getSZ(3);
   @$pb.TagNumber(4)

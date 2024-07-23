@@ -290,6 +290,119 @@ class MsgRevokeAllowanceResponse extends $pb.GeneratedMessage {
   static MsgRevokeAllowanceResponse? _defaultInstance;
 }
 
+///  MsgPruneAllowances prunes expired fee allowances.
+///
+///  Since cosmos-sdk 0.50
+class MsgPruneAllowances extends $pb.GeneratedMessage {
+  factory MsgPruneAllowances({
+    $core.String? pruner,
+  }) {
+    final $result = create();
+    if (pruner != null) {
+      $result.pruner = pruner;
+    }
+    return $result;
+  }
+  MsgPruneAllowances._() : super();
+  factory MsgPruneAllowances.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgPruneAllowances.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgPruneAllowances',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'cosmos.feegrant.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pruner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgPruneAllowances clone() => MsgPruneAllowances()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgPruneAllowances copyWith(void Function(MsgPruneAllowances) updates) =>
+      super.copyWith((message) => updates(message as MsgPruneAllowances))
+          as MsgPruneAllowances;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgPruneAllowances create() => MsgPruneAllowances._();
+  MsgPruneAllowances createEmptyInstance() => create();
+  static $pb.PbList<MsgPruneAllowances> createRepeated() =>
+      $pb.PbList<MsgPruneAllowances>();
+  @$core.pragma('dart2js:noInline')
+  static MsgPruneAllowances getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgPruneAllowances>(create);
+  static MsgPruneAllowances? _defaultInstance;
+
+  /// pruner is the address of the user pruning expired allowances.
+  @$pb.TagNumber(1)
+  $core.String get pruner => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pruner($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasPruner() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPruner() => clearField(1);
+}
+
+///  MsgPruneAllowancesResponse defines the Msg/PruneAllowancesResponse response type.
+///
+///  Since cosmos-sdk 0.50
+class MsgPruneAllowancesResponse extends $pb.GeneratedMessage {
+  factory MsgPruneAllowancesResponse() => create();
+  MsgPruneAllowancesResponse._() : super();
+  factory MsgPruneAllowancesResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgPruneAllowancesResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgPruneAllowancesResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'cosmos.feegrant.v1beta1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgPruneAllowancesResponse clone() =>
+      MsgPruneAllowancesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgPruneAllowancesResponse copyWith(
+          void Function(MsgPruneAllowancesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgPruneAllowancesResponse))
+          as MsgPruneAllowancesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgPruneAllowancesResponse create() => MsgPruneAllowancesResponse._();
+  MsgPruneAllowancesResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgPruneAllowancesResponse> createRepeated() =>
+      $pb.PbList<MsgPruneAllowancesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgPruneAllowancesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgPruneAllowancesResponse>(create);
+  static MsgPruneAllowancesResponse? _defaultInstance;
+}
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

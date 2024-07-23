@@ -182,3 +182,39 @@ final $typed_data.Uint8List queryEscrowAddressResponseDescriptor =
     $convert.base64Decode(
         'ChpRdWVyeUVzY3Jvd0FkZHJlc3NSZXNwb25zZRIlCg5lc2Nyb3dfYWRkcmVzcxgBIAEoCVINZX'
         'Njcm93QWRkcmVzcw==');
+
+@$core.Deprecated('Use queryTotalEscrowForDenomRequestDescriptor instead')
+const QueryTotalEscrowForDenomRequest$json = {
+  '1': 'QueryTotalEscrowForDenomRequest',
+  '2': [
+    {'1': 'denom', '3': 1, '4': 1, '5': 9, '10': 'denom'},
+  ],
+};
+
+/// Descriptor for `QueryTotalEscrowForDenomRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryTotalEscrowForDenomRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9RdWVyeVRvdGFsRXNjcm93Rm9yRGVub21SZXF1ZXN0EhQKBWRlbm9tGAEgASgJUgVkZW5vbQ'
+        '==');
+
+@$core.Deprecated('Use queryTotalEscrowForDenomResponseDescriptor instead')
+const QueryTotalEscrowForDenomResponse$json = {
+  '1': 'QueryTotalEscrowForDenomResponse',
+  '2': [
+    {
+      '1': 'amount',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.Coin',
+      '8': {},
+      '10': 'amount'
+    },
+  ],
+};
+
+/// Descriptor for `QueryTotalEscrowForDenomResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryTotalEscrowForDenomResponseDescriptor =
+    $convert.base64Decode(
+        'CiBRdWVyeVRvdGFsRXNjcm93Rm9yRGVub21SZXNwb25zZRI3CgZhbW91bnQYASABKAsyGS5jb3'
+        'Ntb3MuYmFzZS52MWJldGExLkNvaW5CBMjeHwBSBmFtb3VudA==');

@@ -31,9 +31,9 @@ const MsgUnjail$json = {
 
 /// Descriptor for `MsgUnjail`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgUnjailDescriptor = $convert.base64Decode(
-    'CglNc2dVbmphaWwSSgoOdmFsaWRhdG9yX2FkZHIYASABKAlCI+reHwdhZGRyZXNz0rQtFGNvc2'
-    '1vcy5BZGRyZXNzU3RyaW5nUg12YWxpZGF0b3JBZGRyOhuIoB8AmKAfAYLnsCoOdmFsaWRhdG9y'
-    'X2FkZHI=');
+    'CglNc2dVbmphaWwSZAoOdmFsaWRhdG9yX2FkZHIYASABKAlCPereHwdhZGRyZXNz0rQtHWNvc2'
+    '1vcy5WYWxpZGF0b3JBZGRyZXNzU3RyaW5nouewKgdhZGRyZXNzqOewKgFSDXZhbGlkYXRvckFk'
+    'ZHI6MIigHwCC57AqDnZhbGlkYXRvcl9hZGRyiuewKhRjb3Ntb3Mtc2RrL01zZ1VuamFpbA==');
 
 @$core.Deprecated('Use msgUnjailResponseDescriptor instead')
 const MsgUnjailResponse$json = {
@@ -43,3 +43,37 @@ const MsgUnjailResponse$json = {
 /// Descriptor for `MsgUnjailResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgUnjailResponseDescriptor =
     $convert.base64Decode('ChFNc2dVbmphaWxSZXNwb25zZQ==');
+
+@$core.Deprecated('Use msgUpdateParamsDescriptor instead')
+const MsgUpdateParams$json = {
+  '1': 'MsgUpdateParams',
+  '2': [
+    {'1': 'authority', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'authority'},
+    {
+      '1': 'params',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.slashing.v1beta1.Params',
+      '8': {},
+      '10': 'params'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgUpdateParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsDescriptor = $convert.base64Decode(
+    'Cg9Nc2dVcGRhdGVQYXJhbXMSNgoJYXV0aG9yaXR5GAEgASgJQhjStC0UY29zbW9zLkFkZHJlc3'
+    'NTdHJpbmdSCWF1dGhvcml0eRJCCgZwYXJhbXMYAiABKAsyHy5jb3Ntb3Muc2xhc2hpbmcudjFi'
+    'ZXRhMS5QYXJhbXNCCcjeHwCo57AqAVIGcGFyYW1zOjiC57AqCWF1dGhvcml0eYrnsColY29zbW'
+    '9zLXNkay94L3NsYXNoaW5nL01zZ1VwZGF0ZVBhcmFtcw==');
+
+@$core.Deprecated('Use msgUpdateParamsResponseDescriptor instead')
+const MsgUpdateParamsResponse$json = {
+  '1': 'MsgUpdateParamsResponse',
+};
+
+/// Descriptor for `MsgUpdateParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsResponseDescriptor =
+    $convert.base64Decode('ChdNc2dVcGRhdGVQYXJhbXNSZXNwb25zZQ==');

@@ -44,7 +44,7 @@ final $typed_data.Uint8List msgCreateTriggerRequestDescriptor = $convert.base64D
     'ChdNc2dDcmVhdGVUcmlnZ2VyUmVxdWVzdBI6CgthdXRob3JpdGllcxgBIAMoCUIY0rQtFGNvc2'
     '1vcy5BZGRyZXNzU3RyaW5nUgthdXRob3JpdGllcxI9CgVldmVudBgCIAEoCzIULmdvb2dsZS5w'
     'cm90b2J1Zi5BbnlCEcq0LQ1UcmlnZ2VyRXZlbnRJUgVldmVudBIuCgdhY3Rpb25zGAMgAygLMh'
-    'QuZ29vZ2xlLnByb3RvYnVmLkFueVIHYWN0aW9uczoImKAfAeigHwE=');
+    'QuZ29vZ2xlLnByb3RvYnVmLkFueVIHYWN0aW9uczoU6KAfAYLnsCoLYXV0aG9yaXRpZXM=');
 
 @$core.Deprecated('Use msgCreateTriggerResponseDescriptor instead')
 const MsgCreateTriggerResponse$json = {
@@ -69,10 +69,10 @@ const MsgDestroyTriggerRequest$json = {
 };
 
 /// Descriptor for `MsgDestroyTriggerRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List msgDestroyTriggerRequestDescriptor =
-    $convert.base64Decode(
-        'ChhNc2dEZXN0cm95VHJpZ2dlclJlcXVlc3QSDgoCaWQYASABKARSAmlkEjYKCWF1dGhvcml0eR'
-        'gCIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUglhdXRob3JpdHk6CJigHwHooB8B');
+final $typed_data.Uint8List msgDestroyTriggerRequestDescriptor = $convert.base64Decode(
+    'ChhNc2dEZXN0cm95VHJpZ2dlclJlcXVlc3QSDgoCaWQYASABKARSAmlkEjYKCWF1dGhvcml0eR'
+    'gCIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUglhdXRob3JpdHk6EuigHwGC57AqCWF1'
+    'dGhvcml0eQ==');
 
 @$core.Deprecated('Use msgDestroyTriggerResponseDescriptor instead')
 const MsgDestroyTriggerResponse$json = {

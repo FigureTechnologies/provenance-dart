@@ -2036,6 +2036,105 @@ class EventSetNetAssetValue extends $pb.GeneratedMessage {
   void clearSource() => clearField(4);
 }
 
+/// EventMarkerParamsUpdated event emitted when marker params are updated.
+class EventMarkerParamsUpdated extends $pb.GeneratedMessage {
+  factory EventMarkerParamsUpdated({
+    $core.String? enableGovernance,
+    $core.String? unrestrictedDenomRegex,
+    $core.String? maxSupply,
+  }) {
+    final $result = create();
+    if (enableGovernance != null) {
+      $result.enableGovernance = enableGovernance;
+    }
+    if (unrestrictedDenomRegex != null) {
+      $result.unrestrictedDenomRegex = unrestrictedDenomRegex;
+    }
+    if (maxSupply != null) {
+      $result.maxSupply = maxSupply;
+    }
+    return $result;
+  }
+  EventMarkerParamsUpdated._() : super();
+  factory EventMarkerParamsUpdated.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventMarkerParamsUpdated.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventMarkerParamsUpdated',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.marker.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'enableGovernance')
+    ..aOS(2, _omitFieldNames ? '' : 'unrestrictedDenomRegex')
+    ..aOS(3, _omitFieldNames ? '' : 'maxSupply')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventMarkerParamsUpdated clone() =>
+      EventMarkerParamsUpdated()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventMarkerParamsUpdated copyWith(
+          void Function(EventMarkerParamsUpdated) updates) =>
+      super.copyWith((message) => updates(message as EventMarkerParamsUpdated))
+          as EventMarkerParamsUpdated;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventMarkerParamsUpdated create() => EventMarkerParamsUpdated._();
+  EventMarkerParamsUpdated createEmptyInstance() => create();
+  static $pb.PbList<EventMarkerParamsUpdated> createRepeated() =>
+      $pb.PbList<EventMarkerParamsUpdated>();
+  @$core.pragma('dart2js:noInline')
+  static EventMarkerParamsUpdated getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventMarkerParamsUpdated>(create);
+  static EventMarkerParamsUpdated? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get enableGovernance => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set enableGovernance($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasEnableGovernance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnableGovernance() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get unrestrictedDenomRegex => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set unrestrictedDenomRegex($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasUnrestrictedDenomRegex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnrestrictedDenomRegex() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get maxSupply => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set maxSupply($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasMaxSupply() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxSupply() => clearField(3);
+}
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -95,8 +95,8 @@ const Member$json = {
 final $typed_data.Uint8List memberDescriptor = $convert.base64Decode(
     'CgZNZW1iZXISMgoHYWRkcmVzcxgBIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUgdhZG'
     'RyZXNzEhYKBndlaWdodBgCIAEoCVIGd2VpZ2h0EhoKCG1ldGFkYXRhGAMgASgJUghtZXRhZGF0'
-    'YRI/CghhZGRlZF9hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x'
-    '8BUgdhZGRlZEF0');
+    'YRJECghhZGRlZF9hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCDcjeHwCQ3x'
+    '8BqOewKgFSB2FkZGVkQXQ=');
 
 @$core.Deprecated('Use memberRequestDescriptor instead')
 const MemberRequest$json = {
@@ -135,7 +135,8 @@ const ThresholdDecisionPolicy$json = {
 final $typed_data.Uint8List thresholdDecisionPolicyDescriptor = $convert.base64Decode(
     'ChdUaHJlc2hvbGREZWNpc2lvblBvbGljeRIcCgl0aHJlc2hvbGQYASABKAlSCXRocmVzaG9sZB'
     'JACgd3aW5kb3dzGAIgASgLMiYuY29zbW9zLmdyb3VwLnYxLkRlY2lzaW9uUG9saWN5V2luZG93'
-    'c1IHd2luZG93czoSyrQtDkRlY2lzaW9uUG9saWN5');
+    'c1IHd2luZG93czpJyrQtHmNvc21vcy5ncm91cC52MS5EZWNpc2lvblBvbGljeYrnsCoiY29zbW'
+    '9zLXNkay9UaHJlc2hvbGREZWNpc2lvblBvbGljeQ==');
 
 @$core.Deprecated('Use percentageDecisionPolicyDescriptor instead')
 const PercentageDecisionPolicy$json = {
@@ -158,7 +159,8 @@ const PercentageDecisionPolicy$json = {
 final $typed_data.Uint8List percentageDecisionPolicyDescriptor = $convert.base64Decode(
     'ChhQZXJjZW50YWdlRGVjaXNpb25Qb2xpY3kSHgoKcGVyY2VudGFnZRgBIAEoCVIKcGVyY2VudG'
     'FnZRJACgd3aW5kb3dzGAIgASgLMiYuY29zbW9zLmdyb3VwLnYxLkRlY2lzaW9uUG9saWN5V2lu'
-    'ZG93c1IHd2luZG93czoSyrQtDkRlY2lzaW9uUG9saWN5');
+    'ZG93c1IHd2luZG93czpKyrQtHmNvc21vcy5ncm91cC52MS5EZWNpc2lvblBvbGljeYrnsCojY2'
+    '9zbW9zLXNkay9QZXJjZW50YWdlRGVjaXNpb25Qb2xpY3k=');
 
 @$core.Deprecated('Use decisionPolicyWindowsDescriptor instead')
 const DecisionPolicyWindows$json = {
@@ -187,10 +189,10 @@ const DecisionPolicyWindows$json = {
 
 /// Descriptor for `DecisionPolicyWindows`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List decisionPolicyWindowsDescriptor = $convert.base64Decode(
-    'ChVEZWNpc2lvblBvbGljeVdpbmRvd3MSSAoNdm90aW5nX3BlcmlvZBgBIAEoCzIZLmdvb2dsZS'
-    '5wcm90b2J1Zi5EdXJhdGlvbkIIyN4fAJjfHwFSDHZvdGluZ1BlcmlvZBJVChRtaW5fZXhlY3V0'
-    'aW9uX3BlcmlvZBgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbkIIyN4fAJjfHwFSEm'
-    '1pbkV4ZWN1dGlvblBlcmlvZA==');
+    'ChVEZWNpc2lvblBvbGljeVdpbmRvd3MSTQoNdm90aW5nX3BlcmlvZBgBIAEoCzIZLmdvb2dsZS'
+    '5wcm90b2J1Zi5EdXJhdGlvbkINyN4fAJjfHwGo57AqAVIMdm90aW5nUGVyaW9kEloKFG1pbl9l'
+    'eGVjdXRpb25fcGVyaW9kGAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uQg3I3h8AmN'
+    '8fAajnsCoBUhJtaW5FeGVjdXRpb25QZXJpb2Q=');
 
 @$core.Deprecated('Use groupInfoDescriptor instead')
 const GroupInfo$json = {
@@ -217,9 +219,9 @@ const GroupInfo$json = {
 final $typed_data.Uint8List groupInfoDescriptor = $convert.base64Decode(
     'CglHcm91cEluZm8SDgoCaWQYASABKARSAmlkEi4KBWFkbWluGAIgASgJQhjStC0UY29zbW9zLk'
     'FkZHJlc3NTdHJpbmdSBWFkbWluEhoKCG1ldGFkYXRhGAMgASgJUghtZXRhZGF0YRIYCgd2ZXJz'
-    'aW9uGAQgASgEUgd2ZXJzaW9uEiEKDHRvdGFsX3dlaWdodBgFIAEoCVILdG90YWxXZWlnaHQSQw'
-    'oKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x8B'
-    'UgljcmVhdGVkQXQ=');
+    'aW9uGAQgASgEUgd2ZXJzaW9uEiEKDHRvdGFsX3dlaWdodBgFIAEoCVILdG90YWxXZWlnaHQSSA'
+    'oKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCDcjeHwCQ3x8B'
+    'qOewKgFSCWNyZWF0ZWRBdA==');
 
 @$core.Deprecated('Use groupMemberDescriptor instead')
 const GroupMember$json = {
@@ -280,8 +282,8 @@ final $typed_data.Uint8List groupPolicyInfoDescriptor = $convert.base64Decode(
     'QhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSBWFkbWluEhoKCG1ldGFkYXRhGAQgASgJUghtZX'
     'RhZGF0YRIYCgd2ZXJzaW9uGAUgASgEUgd2ZXJzaW9uEmEKD2RlY2lzaW9uX3BvbGljeRgGIAEo'
     'CzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCIsq0LR5jb3Ntb3MuZ3JvdXAudjEuRGVjaXNpb25Qb2'
-    'xpY3lSDmRlY2lzaW9uUG9saWN5EkMKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9i'
-    'dWYuVGltZXN0YW1wQgjI3h8AkN8fAVIJY3JlYXRlZEF0OgiIoB8A6KAfAQ==');
+    'xpY3lSDmRlY2lzaW9uUG9saWN5EkgKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9i'
+    'dWYuVGltZXN0YW1wQg3I3h8AkN8fAajnsCoBUgljcmVhdGVkQXQ6CIigHwDooB8B');
 
 @$core.Deprecated('Use proposalDescriptor instead')
 const Proposal$json = {
@@ -357,6 +359,8 @@ const Proposal$json = {
       '6': '.google.protobuf.Any',
       '10': 'messages'
     },
+    {'1': 'title', '3': 13, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 14, '4': 1, '5': 9, '10': 'summary'},
   ],
   '7': {},
 };
@@ -366,16 +370,17 @@ final $typed_data.Uint8List proposalDescriptor = $convert.base64Decode(
     'CghQcm9wb3NhbBIOCgJpZBgBIAEoBFICaWQSSgoUZ3JvdXBfcG9saWN5X2FkZHJlc3MYAiABKA'
     'lCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1ISZ3JvdXBQb2xpY3lBZGRyZXNzEhoKCG1ldGFk'
     'YXRhGAMgASgJUghtZXRhZGF0YRI2Cglwcm9wb3NlcnMYBCADKAlCGNK0LRRjb3Ntb3MuQWRkcm'
-    'Vzc1N0cmluZ1IJcHJvcG9zZXJzEkUKC3N1Ym1pdF90aW1lGAUgASgLMhouZ29vZ2xlLnByb3Rv'
-    'YnVmLlRpbWVzdGFtcEIIyN4fAJDfHwFSCnN1Ym1pdFRpbWUSIwoNZ3JvdXBfdmVyc2lvbhgGIA'
-    'EoBFIMZ3JvdXBWZXJzaW9uEjAKFGdyb3VwX3BvbGljeV92ZXJzaW9uGAcgASgEUhJncm91cFBv'
-    'bGljeVZlcnNpb24SNwoGc3RhdHVzGAggASgOMh8uY29zbW9zLmdyb3VwLnYxLlByb3Bvc2FsU3'
-    'RhdHVzUgZzdGF0dXMSUAoSZmluYWxfdGFsbHlfcmVzdWx0GAkgASgLMhwuY29zbW9zLmdyb3Vw'
-    'LnYxLlRhbGx5UmVzdWx0QgTI3h8AUhBmaW5hbFRhbGx5UmVzdWx0ElAKEXZvdGluZ19wZXJpb2'
-    'RfZW5kGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIIyN4fAJDfHwFSD3ZvdGlu'
-    'Z1BlcmlvZEVuZBJQCg9leGVjdXRvcl9yZXN1bHQYCyABKA4yJy5jb3Ntb3MuZ3JvdXAudjEuUH'
-    'JvcG9zYWxFeGVjdXRvclJlc3VsdFIOZXhlY3V0b3JSZXN1bHQSMAoIbWVzc2FnZXMYDCADKAsy'
-    'FC5nb29nbGUucHJvdG9idWYuQW55UghtZXNzYWdlczoEiKAfAA==');
+    'Vzc1N0cmluZ1IJcHJvcG9zZXJzEkoKC3N1Ym1pdF90aW1lGAUgASgLMhouZ29vZ2xlLnByb3Rv'
+    'YnVmLlRpbWVzdGFtcEINyN4fAJDfHwGo57AqAVIKc3VibWl0VGltZRIjCg1ncm91cF92ZXJzaW'
+    '9uGAYgASgEUgxncm91cFZlcnNpb24SMAoUZ3JvdXBfcG9saWN5X3ZlcnNpb24YByABKARSEmdy'
+    'b3VwUG9saWN5VmVyc2lvbhI3CgZzdGF0dXMYCCABKA4yHy5jb3Ntb3MuZ3JvdXAudjEuUHJvcG'
+    '9zYWxTdGF0dXNSBnN0YXR1cxJVChJmaW5hbF90YWxseV9yZXN1bHQYCSABKAsyHC5jb3Ntb3Mu'
+    'Z3JvdXAudjEuVGFsbHlSZXN1bHRCCcjeHwCo57AqAVIQZmluYWxUYWxseVJlc3VsdBJVChF2b3'
+    'RpbmdfcGVyaW9kX2VuZBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCDcjeHwCQ'
+    '3x8BqOewKgFSD3ZvdGluZ1BlcmlvZEVuZBJQCg9leGVjdXRvcl9yZXN1bHQYCyABKA4yJy5jb3'
+    'Ntb3MuZ3JvdXAudjEuUHJvcG9zYWxFeGVjdXRvclJlc3VsdFIOZXhlY3V0b3JSZXN1bHQSMAoI'
+    'bWVzc2FnZXMYDCADKAsyFC5nb29nbGUucHJvdG9idWYuQW55UghtZXNzYWdlcxIUCgV0aXRsZR'
+    'gNIAEoCVIFdGl0bGUSGAoHc3VtbWFyeRgOIAEoCVIHc3VtbWFyeToEiKAfAA==');
 
 @$core.Deprecated('Use tallyResultDescriptor instead')
 const TallyResult$json = {
@@ -433,5 +438,5 @@ final $typed_data.Uint8List voteDescriptor = $convert.base64Decode(
     'CgRWb3RlEh8KC3Byb3Bvc2FsX2lkGAEgASgEUgpwcm9wb3NhbElkEi4KBXZvdGVyGAIgASgJQh'
     'jStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSBXZvdGVyEjMKBm9wdGlvbhgDIAEoDjIbLmNvc21v'
     'cy5ncm91cC52MS5Wb3RlT3B0aW9uUgZvcHRpb24SGgoIbWV0YWRhdGEYBCABKAlSCG1ldGFkYX'
-    'RhEkUKC3N1Ym1pdF90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIIyN4f'
-    'AJDfHwFSCnN1Ym1pdFRpbWU=');
+    'RhEkoKC3N1Ym1pdF90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEINyN4f'
+    'AJDfHwGo57AqAVIKc3VibWl0VGltZQ==');

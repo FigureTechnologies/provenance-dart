@@ -44,42 +44,42 @@ class _TestAuthServer extends auth.QueryServiceBase {
   @override
   Future<QueryAccountAddressByIDResponse> accountAddressByID(
       ServiceCall call, QueryAccountAddressByIDRequest request) {
-    // TODO: implement accountAddressByID
     throw UnimplementedError();
   }
 
   @override
   Future<AddressBytesToStringResponse> addressBytesToString(
       ServiceCall call, AddressBytesToStringRequest request) {
-    // TODO: implement addressBytesToString
     throw UnimplementedError();
   }
 
   @override
   Future<AddressStringToBytesResponse> addressStringToBytes(
       ServiceCall call, AddressStringToBytesRequest request) {
-    // TODO: implement addressStringToBytes
     throw UnimplementedError();
   }
 
   @override
   Future<Bech32PrefixResponse> bech32Prefix(
       ServiceCall call, Bech32PrefixRequest request) {
-    // TODO: implement bech32Prefix
     throw UnimplementedError();
   }
 
   @override
   Future<QueryModuleAccountsResponse> moduleAccounts(
       ServiceCall call, QueryModuleAccountsRequest request) {
-    // TODO: implement moduleAccounts
     throw UnimplementedError();
   }
 
   @override
   Future<QueryModuleAccountByNameResponse> moduleAccountByName(
       ServiceCall call, QueryModuleAccountByNameRequest request) {
-    // TODO: implement moduleAccountByName
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<QueryAccountInfoResponse> accountInfo(
+      ServiceCall call, QueryAccountInfoRequest request) {
     throw UnimplementedError();
   }
 }
@@ -117,6 +117,30 @@ class _TestTxServer extends tx.ServiceBase {
   @override
   Future<proto.GetBlockWithTxsResponse> getBlockWithTxs(
       ServiceCall call, proto.GetBlockWithTxsRequest request) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<proto.TxDecodeResponse> txDecode(
+      ServiceCall call, proto.TxDecodeRequest request) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<proto.TxDecodeAminoResponse> txDecodeAmino(
+      ServiceCall call, proto.TxDecodeAminoRequest request) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<proto.TxEncodeResponse> txEncode(
+      ServiceCall call, proto.TxEncodeRequest request) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<proto.TxEncodeAminoResponse> txEncodeAmino(
+      ServiceCall call, proto.TxEncodeAminoRequest request) {
     throw UnimplementedError();
   }
 }

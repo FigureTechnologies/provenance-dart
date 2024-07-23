@@ -27,8 +27,8 @@ const MsgWriteScopeRequest$json = {
       '10': 'scope'
     },
     {'1': 'signers', '3': 2, '4': 3, '5': 9, '10': 'signers'},
-    {'1': 'scope_uuid', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'scopeUuid'},
-    {'1': 'spec_uuid', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'specUuid'},
+    {'1': 'scope_uuid', '3': 3, '4': 1, '5': 9, '10': 'scopeUuid'},
+    {'1': 'spec_uuid', '3': 4, '4': 1, '5': 9, '10': 'specUuid'},
     {'1': 'usd_mills', '3': 5, '4': 1, '5': 4, '10': 'usdMills'},
   ],
   '7': {},
@@ -37,10 +37,9 @@ const MsgWriteScopeRequest$json = {
 /// Descriptor for `MsgWriteScopeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgWriteScopeRequestDescriptor = $convert.base64Decode(
     'ChRNc2dXcml0ZVNjb3BlUmVxdWVzdBI5CgVzY29wZRgBIAEoCzIdLnByb3ZlbmFuY2UubWV0YW'
-    'RhdGEudjEuU2NvcGVCBMjeHwBSBXNjb3BlEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnMSNAoK'
-    'c2NvcGVfdXVpZBgDIAEoCUIV8t4fEXlhbWw6InNjb3BlX3V1aWQiUglzY29wZVV1aWQSMQoJc3'
-    'BlY191dWlkGAQgASgJQhTy3h8QeWFtbDoic3BlY191dWlkIlIIc3BlY1V1aWQSGwoJdXNkX21p'
-    'bGxzGAUgASgEUgh1c2RNaWxsczoMiKAfAJigHwHooB8A');
+    'RhdGEudjEuU2NvcGVCBMjeHwBSBXNjb3BlEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnMSHQoK'
+    'c2NvcGVfdXVpZBgDIAEoCVIJc2NvcGVVdWlkEhsKCXNwZWNfdXVpZBgEIAEoCVIIc3BlY1V1aW'
+    'QSGwoJdXNkX21pbGxzGAUgASgEUgh1c2RNaWxsczoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgWriteScopeResponseDescriptor instead')
 const MsgWriteScopeResponse$json = {
@@ -52,7 +51,6 @@ const MsgWriteScopeResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.ScopeIdInfo',
-      '8': {},
       '10': 'scopeIdInfo'
     },
   ],
@@ -60,9 +58,8 @@ const MsgWriteScopeResponse$json = {
 
 /// Descriptor for `MsgWriteScopeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgWriteScopeResponseDescriptor = $convert.base64Decode(
-    'ChVNc2dXcml0ZVNjb3BlUmVzcG9uc2USYQoNc2NvcGVfaWRfaW5mbxgBIAEoCzIjLnByb3Zlbm'
-    'FuY2UubWV0YWRhdGEudjEuU2NvcGVJZEluZm9CGPLeHxR5YW1sOiJzY29wZV9pZF9pbmZvIlIL'
-    'c2NvcGVJZEluZm8=');
+    'ChVNc2dXcml0ZVNjb3BlUmVzcG9uc2USRwoNc2NvcGVfaWRfaW5mbxgBIAEoCzIjLnByb3Zlbm'
+    'FuY2UubWV0YWRhdGEudjEuU2NvcGVJZEluZm9SC3Njb3BlSWRJbmZv');
 
 @$core.Deprecated('Use msgDeleteScopeRequestDescriptor instead')
 const MsgDeleteScopeRequest$json = {
@@ -76,9 +73,9 @@ const MsgDeleteScopeRequest$json = {
 
 /// Descriptor for `MsgDeleteScopeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteScopeRequestDescriptor = $convert.base64Decode(
-    'ChVNc2dEZWxldGVTY29wZVJlcXVlc3QSRQoIc2NvcGVfaWQYASABKAxCKsjeHwDa3h8PTWV0YW'
-    'RhdGFBZGRyZXNz8t4fD3lhbWw6InNjb3BlX2lkIlIHc2NvcGVJZBIYCgdzaWduZXJzGAIgAygJ'
-    'UgdzaWduZXJzOgyIoB8AmKAfAeigHwA=');
+    'ChVNc2dEZWxldGVTY29wZVJlcXVlc3QSMgoIc2NvcGVfaWQYASABKAxCF8jeHwDa3h8PTWV0YW'
+    'RhdGFBZGRyZXNzUgdzY29wZUlkEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnM6FIigHwDooB8A'
+    'guewKgdzaWduZXJz');
 
 @$core.Deprecated('Use msgDeleteScopeResponseDescriptor instead')
 const MsgDeleteScopeResponse$json = {
@@ -94,7 +91,7 @@ const MsgAddScopeDataAccessRequest$json = {
   '1': 'MsgAddScopeDataAccessRequest',
   '2': [
     {'1': 'scope_id', '3': 1, '4': 1, '5': 12, '8': {}, '10': 'scopeId'},
-    {'1': 'data_access', '3': 2, '4': 3, '5': 9, '8': {}, '10': 'dataAccess'},
+    {'1': 'data_access', '3': 2, '4': 3, '5': 9, '10': 'dataAccess'},
     {'1': 'signers', '3': 3, '4': 3, '5': 9, '10': 'signers'},
   ],
   '7': {},
@@ -102,10 +99,9 @@ const MsgAddScopeDataAccessRequest$json = {
 
 /// Descriptor for `MsgAddScopeDataAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgAddScopeDataAccessRequestDescriptor = $convert.base64Decode(
-    'ChxNc2dBZGRTY29wZURhdGFBY2Nlc3NSZXF1ZXN0EkUKCHNjb3BlX2lkGAEgASgMQirI3h8A2t'
-    '4fD01ldGFkYXRhQWRkcmVzc/LeHw95YW1sOiJzY29wZV9pZCJSB3Njb3BlSWQSNwoLZGF0YV9h'
-    'Y2Nlc3MYAiADKAlCFvLeHxJ5YW1sOiJkYXRhX2FjY2VzcyJSCmRhdGFBY2Nlc3MSGAoHc2lnbm'
-    'VycxgDIAMoCVIHc2lnbmVyczoMiKAfAJigHwHooB8A');
+    'ChxNc2dBZGRTY29wZURhdGFBY2Nlc3NSZXF1ZXN0EjIKCHNjb3BlX2lkGAEgASgMQhfI3h8A2t'
+    '4fD01ldGFkYXRhQWRkcmVzc1IHc2NvcGVJZBIfCgtkYXRhX2FjY2VzcxgCIAMoCVIKZGF0YUFj'
+    'Y2VzcxIYCgdzaWduZXJzGAMgAygJUgdzaWduZXJzOhSIoB8A6KAfAILnsCoHc2lnbmVycw==');
 
 @$core.Deprecated('Use msgAddScopeDataAccessResponseDescriptor instead')
 const MsgAddScopeDataAccessResponse$json = {
@@ -121,7 +117,7 @@ const MsgDeleteScopeDataAccessRequest$json = {
   '1': 'MsgDeleteScopeDataAccessRequest',
   '2': [
     {'1': 'scope_id', '3': 1, '4': 1, '5': 12, '8': {}, '10': 'scopeId'},
-    {'1': 'data_access', '3': 2, '4': 3, '5': 9, '8': {}, '10': 'dataAccess'},
+    {'1': 'data_access', '3': 2, '4': 3, '5': 9, '10': 'dataAccess'},
     {'1': 'signers', '3': 3, '4': 3, '5': 9, '10': 'signers'},
   ],
   '7': {},
@@ -130,10 +126,10 @@ const MsgDeleteScopeDataAccessRequest$json = {
 /// Descriptor for `MsgDeleteScopeDataAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteScopeDataAccessRequestDescriptor =
     $convert.base64Decode(
-        'Ch9Nc2dEZWxldGVTY29wZURhdGFBY2Nlc3NSZXF1ZXN0EkUKCHNjb3BlX2lkGAEgASgMQirI3h'
-        '8A2t4fD01ldGFkYXRhQWRkcmVzc/LeHw95YW1sOiJzY29wZV9pZCJSB3Njb3BlSWQSNwoLZGF0'
-        'YV9hY2Nlc3MYAiADKAlCFvLeHxJ5YW1sOiJkYXRhX2FjY2VzcyJSCmRhdGFBY2Nlc3MSGAoHc2'
-        'lnbmVycxgDIAMoCVIHc2lnbmVyczoMiKAfAJigHwHooB8A');
+        'Ch9Nc2dEZWxldGVTY29wZURhdGFBY2Nlc3NSZXF1ZXN0EjIKCHNjb3BlX2lkGAEgASgMQhfI3h'
+        '8A2t4fD01ldGFkYXRhQWRkcmVzc1IHc2NvcGVJZBIfCgtkYXRhX2FjY2VzcxgCIAMoCVIKZGF0'
+        'YUFjY2VzcxIYCgdzaWduZXJzGAMgAygJUgdzaWduZXJzOhSIoB8A6KAfAILnsCoHc2lnbmVycw'
+        '==');
 
 @$core.Deprecated('Use msgDeleteScopeDataAccessResponseDescriptor instead')
 const MsgDeleteScopeDataAccessResponse$json = {
@@ -165,10 +161,10 @@ const MsgAddScopeOwnerRequest$json = {
 
 /// Descriptor for `MsgAddScopeOwnerRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgAddScopeOwnerRequestDescriptor = $convert.base64Decode(
-    'ChdNc2dBZGRTY29wZU93bmVyUmVxdWVzdBJFCghzY29wZV9pZBgBIAEoDEIqyN4fANreHw9NZX'
-    'RhZGF0YUFkZHJlc3Py3h8PeWFtbDoic2NvcGVfaWQiUgdzY29wZUlkEkwKBm93bmVycxgCIAMo'
-    'CzIdLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuUGFydHlCFcjeHwDy3h8NeWFtbDoib3duZXJzIl'
-    'IGb3duZXJzEhgKB3NpZ25lcnMYAyADKAlSB3NpZ25lcnM6DIigHwCYoB8B6KAfAA==');
+    'ChdNc2dBZGRTY29wZU93bmVyUmVxdWVzdBIyCghzY29wZV9pZBgBIAEoDEIXyN4fANreHw9NZX'
+    'RhZGF0YUFkZHJlc3NSB3Njb3BlSWQSOwoGb3duZXJzGAIgAygLMh0ucHJvdmVuYW5jZS5tZXRh'
+    'ZGF0YS52MS5QYXJ0eUIEyN4fAFIGb3duZXJzEhgKB3NpZ25lcnMYAyADKAlSB3NpZ25lcnM6FI'
+    'igHwDooB8AguewKgdzaWduZXJz');
 
 @$core.Deprecated('Use msgAddScopeOwnerResponseDescriptor instead')
 const MsgAddScopeOwnerResponse$json = {
@@ -184,18 +180,18 @@ const MsgDeleteScopeOwnerRequest$json = {
   '1': 'MsgDeleteScopeOwnerRequest',
   '2': [
     {'1': 'scope_id', '3': 1, '4': 1, '5': 12, '8': {}, '10': 'scopeId'},
-    {'1': 'owners', '3': 2, '4': 3, '5': 9, '8': {}, '10': 'owners'},
+    {'1': 'owners', '3': 2, '4': 3, '5': 9, '10': 'owners'},
     {'1': 'signers', '3': 3, '4': 3, '5': 9, '10': 'signers'},
   ],
   '7': {},
 };
 
 /// Descriptor for `MsgDeleteScopeOwnerRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List msgDeleteScopeOwnerRequestDescriptor = $convert.base64Decode(
-    'ChpNc2dEZWxldGVTY29wZU93bmVyUmVxdWVzdBJFCghzY29wZV9pZBgBIAEoDEIqyN4fANreHw'
-    '9NZXRhZGF0YUFkZHJlc3Py3h8PeWFtbDoic2NvcGVfaWQiUgdzY29wZUlkEikKBm93bmVycxgC'
-    'IAMoCUIR8t4fDXlhbWw6Im93bmVycyJSBm93bmVycxIYCgdzaWduZXJzGAMgAygJUgdzaWduZX'
-    'JzOgyIoB8AmKAfAeigHwA=');
+final $typed_data.Uint8List msgDeleteScopeOwnerRequestDescriptor =
+    $convert.base64Decode(
+        'ChpNc2dEZWxldGVTY29wZU93bmVyUmVxdWVzdBIyCghzY29wZV9pZBgBIAEoDEIXyN4fANreHw'
+        '9NZXRhZGF0YUFkZHJlc3NSB3Njb3BlSWQSFgoGb3duZXJzGAIgAygJUgZvd25lcnMSGAoHc2ln'
+        'bmVycxgDIAMoCVIHc2lnbmVyczoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgDeleteScopeOwnerResponseDescriptor instead')
 const MsgDeleteScopeOwnerResponse$json = {
@@ -216,7 +212,6 @@ const MsgUpdateValueOwnersRequest$json = {
       '3': 2,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'valueOwnerAddress'
     },
     {'1': 'signers', '3': 3, '4': 3, '5': 9, '10': 'signers'},
@@ -226,11 +221,10 @@ const MsgUpdateValueOwnersRequest$json = {
 
 /// Descriptor for `MsgUpdateValueOwnersRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgUpdateValueOwnersRequestDescriptor = $convert.base64Decode(
-    'ChtNc2dVcGRhdGVWYWx1ZU93bmVyc1JlcXVlc3QSSAoJc2NvcGVfaWRzGAEgAygMQivI3h8A2t'
-    '4fD01ldGFkYXRhQWRkcmVzc/LeHxB5YW1sOiJzY29wZV9pZHMiUghzY29wZUlkcxJOChN2YWx1'
-    'ZV9vd25lcl9hZGRyZXNzGAIgASgJQh7y3h8aeWFtbDoidmFsdWVfb3duZXJfYWRkcmVzcyJSEX'
-    'ZhbHVlT3duZXJBZGRyZXNzEhgKB3NpZ25lcnMYAyADKAlSB3NpZ25lcnM6DIigHwCYoB8B6KAf'
-    'AA==');
+    'ChtNc2dVcGRhdGVWYWx1ZU93bmVyc1JlcXVlc3QSNAoJc2NvcGVfaWRzGAEgAygMQhfI3h8A2t'
+    '4fD01ldGFkYXRhQWRkcmVzc1IIc2NvcGVJZHMSLgoTdmFsdWVfb3duZXJfYWRkcmVzcxgCIAEo'
+    'CVIRdmFsdWVPd25lckFkZHJlc3MSGAoHc2lnbmVycxgDIAMoCVIHc2lnbmVyczoUiKAfAOigHw'
+    'CC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgUpdateValueOwnersResponseDescriptor instead')
 const MsgUpdateValueOwnersResponse$json = {
@@ -257,7 +251,7 @@ final $typed_data.Uint8List msgMigrateValueOwnerRequestDescriptor =
     $convert.base64Decode(
         'ChtNc2dNaWdyYXRlVmFsdWVPd25lclJlcXVlc3QSGgoIZXhpc3RpbmcYASABKAlSCGV4aXN0aW'
         '5nEhoKCHByb3Bvc2VkGAIgASgJUghwcm9wb3NlZBIYCgdzaWduZXJzGAMgAygJUgdzaWduZXJz'
-        'OgyIoB8AmKAfAeigHwA=');
+        'OhSIoB8A6KAfAILnsCoHc2lnbmVycw==');
 
 @$core.Deprecated('Use msgMigrateValueOwnerResponseDescriptor instead')
 const MsgMigrateValueOwnerResponse$json = {
@@ -288,10 +282,9 @@ const MsgWriteSessionRequest$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.SessionIdComponents',
-      '8': {},
       '10': 'sessionIdComponents'
     },
-    {'1': 'spec_uuid', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'specUuid'},
+    {'1': 'spec_uuid', '3': 4, '4': 1, '5': 9, '10': 'specUuid'},
   ],
   '7': {},
 };
@@ -300,34 +293,17 @@ const MsgWriteSessionRequest$json = {
 final $typed_data.Uint8List msgWriteSessionRequestDescriptor = $convert.base64Decode(
     'ChZNc2dXcml0ZVNlc3Npb25SZXF1ZXN0Ej8KB3Nlc3Npb24YASABKAsyHy5wcm92ZW5hbmNlLm'
     '1ldGFkYXRhLnYxLlNlc3Npb25CBMjeHwBSB3Nlc3Npb24SGAoHc2lnbmVycxgCIAMoCVIHc2ln'
-    'bmVycxKBAQoVc2Vzc2lvbl9pZF9jb21wb25lbnRzGAMgASgLMisucHJvdmVuYW5jZS5tZXRhZG'
-    'F0YS52MS5TZXNzaW9uSWRDb21wb25lbnRzQiDy3h8ceWFtbDoic2Vzc2lvbl9pZF9jb21wb25l'
-    'bnRzIlITc2Vzc2lvbklkQ29tcG9uZW50cxIxCglzcGVjX3V1aWQYBCABKAlCFPLeHxB5YW1sOi'
-    'JzcGVjX3V1aWQiUghzcGVjVXVpZDoMiKAfAJigHwHooB8A');
+    'bmVycxJfChVzZXNzaW9uX2lkX2NvbXBvbmVudHMYAyABKAsyKy5wcm92ZW5hbmNlLm1ldGFkYX'
+    'RhLnYxLlNlc3Npb25JZENvbXBvbmVudHNSE3Nlc3Npb25JZENvbXBvbmVudHMSGwoJc3BlY191'
+    'dWlkGAQgASgJUghzcGVjVXVpZDoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use sessionIdComponentsDescriptor instead')
 const SessionIdComponents$json = {
   '1': 'SessionIdComponents',
   '2': [
-    {
-      '1': 'scope_uuid',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '9': 0,
-      '10': 'scopeUuid'
-    },
-    {
-      '1': 'scope_addr',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '9': 0,
-      '10': 'scopeAddr'
-    },
-    {'1': 'session_uuid', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'sessionUuid'},
+    {'1': 'scope_uuid', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'scopeUuid'},
+    {'1': 'scope_addr', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'scopeAddr'},
+    {'1': 'session_uuid', '3': 3, '4': 1, '5': 9, '10': 'sessionUuid'},
   ],
   '8': [
     {'1': 'scope_identifier'},
@@ -336,10 +312,9 @@ const SessionIdComponents$json = {
 
 /// Descriptor for `SessionIdComponents`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sessionIdComponentsDescriptor = $convert.base64Decode(
-    'ChNTZXNzaW9uSWRDb21wb25lbnRzEjYKCnNjb3BlX3V1aWQYASABKAlCFfLeHxF5YW1sOiJzY2'
-    '9wZV91dWlkIkgAUglzY29wZVV1aWQSNgoKc2NvcGVfYWRkchgCIAEoCUIV8t4fEXlhbWw6InNj'
-    'b3BlX2FkZHIiSABSCXNjb3BlQWRkchI6CgxzZXNzaW9uX3V1aWQYAyABKAlCF/LeHxN5YW1sOi'
-    'JzZXNzaW9uX3V1aWQiUgtzZXNzaW9uVXVpZEISChBzY29wZV9pZGVudGlmaWVy');
+    'ChNTZXNzaW9uSWRDb21wb25lbnRzEh8KCnNjb3BlX3V1aWQYASABKAlIAFIJc2NvcGVVdWlkEh'
+    '8KCnNjb3BlX2FkZHIYAiABKAlIAFIJc2NvcGVBZGRyEiEKDHNlc3Npb25fdXVpZBgDIAEoCVIL'
+    'c2Vzc2lvblV1aWRCEgoQc2NvcGVfaWRlbnRpZmllcg==');
 
 @$core.Deprecated('Use msgWriteSessionResponseDescriptor instead')
 const MsgWriteSessionResponse$json = {
@@ -351,17 +326,16 @@ const MsgWriteSessionResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.SessionIdInfo',
-      '8': {},
       '10': 'sessionIdInfo'
     },
   ],
 };
 
 /// Descriptor for `MsgWriteSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List msgWriteSessionResponseDescriptor = $convert.base64Decode(
-    'ChdNc2dXcml0ZVNlc3Npb25SZXNwb25zZRJpCg9zZXNzaW9uX2lkX2luZm8YASABKAsyJS5wcm'
-    '92ZW5hbmNlLm1ldGFkYXRhLnYxLlNlc3Npb25JZEluZm9CGvLeHxZ5YW1sOiJzZXNzaW9uX2lk'
-    'X2luZm8iUg1zZXNzaW9uSWRJbmZv');
+final $typed_data.Uint8List msgWriteSessionResponseDescriptor =
+    $convert.base64Decode(
+        'ChdNc2dXcml0ZVNlc3Npb25SZXNwb25zZRJNCg9zZXNzaW9uX2lkX2luZm8YASABKAsyJS5wcm'
+        '92ZW5hbmNlLm1ldGFkYXRhLnYxLlNlc3Npb25JZEluZm9SDXNlc3Npb25JZEluZm8=');
 
 @$core.Deprecated('Use msgWriteRecordRequestDescriptor instead')
 const MsgWriteRecordRequest$json = {
@@ -383,7 +357,6 @@ const MsgWriteRecordRequest$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.SessionIdComponents',
-      '8': {},
       '10': 'sessionIdComponents'
     },
     {
@@ -391,7 +364,6 @@ const MsgWriteRecordRequest$json = {
       '3': 4,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'contractSpecUuid'
     },
     {
@@ -411,12 +383,11 @@ const MsgWriteRecordRequest$json = {
 final $typed_data.Uint8List msgWriteRecordRequestDescriptor = $convert.base64Decode(
     'ChVNc2dXcml0ZVJlY29yZFJlcXVlc3QSPAoGcmVjb3JkGAEgASgLMh4ucHJvdmVuYW5jZS5tZX'
     'RhZGF0YS52MS5SZWNvcmRCBMjeHwBSBnJlY29yZBIYCgdzaWduZXJzGAIgAygJUgdzaWduZXJz'
-    'EoEBChVzZXNzaW9uX2lkX2NvbXBvbmVudHMYAyABKAsyKy5wcm92ZW5hbmNlLm1ldGFkYXRhLn'
-    'YxLlNlc3Npb25JZENvbXBvbmVudHNCIPLeHxx5YW1sOiJzZXNzaW9uX2lkX2NvbXBvbmVudHMi'
-    'UhNzZXNzaW9uSWRDb21wb25lbnRzEksKEmNvbnRyYWN0X3NwZWNfdXVpZBgEIAEoCUId8t4fGX'
-    'lhbWw6ImNvbnRyYWN0X3NwZWNfdXVpZCJSEGNvbnRyYWN0U3BlY1V1aWQSPQoHcGFydGllcxgF'
-    'IAMoCzIdLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuUGFydHlCBMjeHwBSB3BhcnRpZXM6DIigHw'
-    'CYoB8B6KAfAA==');
+    'El8KFXNlc3Npb25faWRfY29tcG9uZW50cxgDIAEoCzIrLnByb3ZlbmFuY2UubWV0YWRhdGEudj'
+    'EuU2Vzc2lvbklkQ29tcG9uZW50c1ITc2Vzc2lvbklkQ29tcG9uZW50cxIsChJjb250cmFjdF9z'
+    'cGVjX3V1aWQYBCABKAlSEGNvbnRyYWN0U3BlY1V1aWQSPQoHcGFydGllcxgFIAMoCzIdLnByb3'
+    'ZlbmFuY2UubWV0YWRhdGEudjEuUGFydHlCBMjeHwBSB3BhcnRpZXM6FIigHwDooB8AguewKgdz'
+    'aWduZXJz');
 
 @$core.Deprecated('Use msgWriteRecordResponseDescriptor instead')
 const MsgWriteRecordResponse$json = {
@@ -428,17 +399,16 @@ const MsgWriteRecordResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.RecordIdInfo',
-      '8': {},
       '10': 'recordIdInfo'
     },
   ],
 };
 
 /// Descriptor for `MsgWriteRecordResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List msgWriteRecordResponseDescriptor = $convert.base64Decode(
-    'ChZNc2dXcml0ZVJlY29yZFJlc3BvbnNlEmUKDnJlY29yZF9pZF9pbmZvGAEgASgLMiQucHJvdm'
-    'VuYW5jZS5tZXRhZGF0YS52MS5SZWNvcmRJZEluZm9CGfLeHxV5YW1sOiJyZWNvcmRfaWRfaW5m'
-    'byJSDHJlY29yZElkSW5mbw==');
+final $typed_data.Uint8List msgWriteRecordResponseDescriptor =
+    $convert.base64Decode(
+        'ChZNc2dXcml0ZVJlY29yZFJlc3BvbnNlEkoKDnJlY29yZF9pZF9pbmZvGAEgASgLMiQucHJvdm'
+        'VuYW5jZS5tZXRhZGF0YS52MS5SZWNvcmRJZEluZm9SDHJlY29yZElkSW5mbw==');
 
 @$core.Deprecated('Use msgDeleteRecordRequestDescriptor instead')
 const MsgDeleteRecordRequest$json = {
@@ -452,9 +422,9 @@ const MsgDeleteRecordRequest$json = {
 
 /// Descriptor for `MsgDeleteRecordRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteRecordRequestDescriptor = $convert.base64Decode(
-    'ChZNc2dEZWxldGVSZWNvcmRSZXF1ZXN0EkgKCXJlY29yZF9pZBgBIAEoDEIryN4fANreHw9NZX'
-    'RhZGF0YUFkZHJlc3Py3h8QeWFtbDoicmVjb3JkX2lkIlIIcmVjb3JkSWQSGAoHc2lnbmVycxgC'
-    'IAMoCVIHc2lnbmVyczoMiKAfAJigHwHooB8A');
+    'ChZNc2dEZWxldGVSZWNvcmRSZXF1ZXN0EjQKCXJlY29yZF9pZBgBIAEoDEIXyN4fANreHw9NZX'
+    'RhZGF0YUFkZHJlc3NSCHJlY29yZElkEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnM6FIigHwDo'
+    'oB8AguewKgdzaWduZXJz');
 
 @$core.Deprecated('Use msgDeleteRecordResponseDescriptor instead')
 const MsgDeleteRecordResponse$json = {
@@ -479,7 +449,7 @@ const MsgWriteScopeSpecificationRequest$json = {
       '10': 'specification'
     },
     {'1': 'signers', '3': 2, '4': 3, '5': 9, '10': 'signers'},
-    {'1': 'spec_uuid', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'specUuid'},
+    {'1': 'spec_uuid', '3': 3, '4': 1, '5': 9, '10': 'specUuid'},
   ],
   '7': {},
 };
@@ -489,8 +459,8 @@ final $typed_data.Uint8List msgWriteScopeSpecificationRequestDescriptor =
     $convert.base64Decode(
         'CiFNc2dXcml0ZVNjb3BlU3BlY2lmaWNhdGlvblJlcXVlc3QSVgoNc3BlY2lmaWNhdGlvbhgBIA'
         'EoCzIqLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuU2NvcGVTcGVjaWZpY2F0aW9uQgTI3h8AUg1z'
-        'cGVjaWZpY2F0aW9uEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnMSMQoJc3BlY191dWlkGAMgAS'
-        'gJQhTy3h8QeWFtbDoic3BlY191dWlkIlIIc3BlY1V1aWQ6DIigHwCYoB8B6KAfAA==');
+        'cGVjaWZpY2F0aW9uEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnMSGwoJc3BlY191dWlkGAMgAS'
+        'gJUghzcGVjVXVpZDoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgWriteScopeSpecificationResponseDescriptor instead')
 const MsgWriteScopeSpecificationResponse$json = {
@@ -502,7 +472,6 @@ const MsgWriteScopeSpecificationResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.ScopeSpecIdInfo',
-      '8': {},
       '10': 'scopeSpecIdInfo'
     },
   ],
@@ -511,9 +480,9 @@ const MsgWriteScopeSpecificationResponse$json = {
 /// Descriptor for `MsgWriteScopeSpecificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgWriteScopeSpecificationResponseDescriptor =
     $convert.base64Decode(
-        'CiJNc2dXcml0ZVNjb3BlU3BlY2lmaWNhdGlvblJlc3BvbnNlEnMKEnNjb3BlX3NwZWNfaWRfaW'
-        '5mbxgBIAEoCzInLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuU2NvcGVTcGVjSWRJbmZvQh3y3h8Z'
-        'eWFtbDoic2NvcGVfc3BlY19pZF9pbmZvIlIPc2NvcGVTcGVjSWRJbmZv');
+        'CiJNc2dXcml0ZVNjb3BlU3BlY2lmaWNhdGlvblJlc3BvbnNlElQKEnNjb3BlX3NwZWNfaWRfaW'
+        '5mbxgBIAEoCzInLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuU2NvcGVTcGVjSWRJbmZvUg9zY29w'
+        'ZVNwZWNJZEluZm8=');
 
 @$core.Deprecated('Use msgDeleteScopeSpecificationRequestDescriptor instead')
 const MsgDeleteScopeSpecificationRequest$json = {
@@ -535,10 +504,9 @@ const MsgDeleteScopeSpecificationRequest$json = {
 /// Descriptor for `MsgDeleteScopeSpecificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteScopeSpecificationRequestDescriptor =
     $convert.base64Decode(
-        'CiJNc2dEZWxldGVTY29wZVNwZWNpZmljYXRpb25SZXF1ZXN0El0KEHNwZWNpZmljYXRpb25faW'
-        'QYASABKAxCMsjeHwDa3h8PTWV0YWRhdGFBZGRyZXNz8t4fF3lhbWw6InNwZWNpZmljYXRpb25f'
-        'aWQiUg9zcGVjaWZpY2F0aW9uSWQSGAoHc2lnbmVycxgCIAMoCVIHc2lnbmVyczoMiKAfAJigHw'
-        'HooB8A');
+        'CiJNc2dEZWxldGVTY29wZVNwZWNpZmljYXRpb25SZXF1ZXN0EkIKEHNwZWNpZmljYXRpb25faW'
+        'QYASABKAxCF8jeHwDa3h8PTWV0YWRhdGFBZGRyZXNzUg9zcGVjaWZpY2F0aW9uSWQSGAoHc2ln'
+        'bmVycxgCIAMoCVIHc2lnbmVyczoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgDeleteScopeSpecificationResponseDescriptor instead')
 const MsgDeleteScopeSpecificationResponse$json = {
@@ -564,7 +532,7 @@ const MsgWriteContractSpecificationRequest$json = {
       '10': 'specification'
     },
     {'1': 'signers', '3': 2, '4': 3, '5': 9, '10': 'signers'},
-    {'1': 'spec_uuid', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'specUuid'},
+    {'1': 'spec_uuid', '3': 3, '4': 1, '5': 9, '10': 'specUuid'},
   ],
   '7': {},
 };
@@ -574,8 +542,8 @@ final $typed_data.Uint8List msgWriteContractSpecificationRequestDescriptor =
     $convert.base64Decode(
         'CiRNc2dXcml0ZUNvbnRyYWN0U3BlY2lmaWNhdGlvblJlcXVlc3QSWQoNc3BlY2lmaWNhdGlvbh'
         'gBIAEoCzItLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuQ29udHJhY3RTcGVjaWZpY2F0aW9uQgTI'
-        '3h8AUg1zcGVjaWZpY2F0aW9uEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnMSMQoJc3BlY191dW'
-        'lkGAMgASgJQhTy3h8QeWFtbDoic3BlY191dWlkIlIIc3BlY1V1aWQ6DIigHwCYoB8B6KAfAA==');
+        '3h8AUg1zcGVjaWZpY2F0aW9uEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnMSGwoJc3BlY191dW'
+        'lkGAMgASgJUghzcGVjVXVpZDoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgWriteContractSpecificationResponseDescriptor instead')
 const MsgWriteContractSpecificationResponse$json = {
@@ -587,7 +555,6 @@ const MsgWriteContractSpecificationResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.ContractSpecIdInfo',
-      '8': {},
       '10': 'contractSpecIdInfo'
     },
   ],
@@ -596,10 +563,9 @@ const MsgWriteContractSpecificationResponse$json = {
 /// Descriptor for `MsgWriteContractSpecificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgWriteContractSpecificationResponseDescriptor =
     $convert.base64Decode(
-        'CiVNc2dXcml0ZUNvbnRyYWN0U3BlY2lmaWNhdGlvblJlc3BvbnNlEn8KFWNvbnRyYWN0X3NwZW'
+        'CiVNc2dXcml0ZUNvbnRyYWN0U3BlY2lmaWNhdGlvblJlc3BvbnNlEl0KFWNvbnRyYWN0X3NwZW'
         'NfaWRfaW5mbxgBIAEoCzIqLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuQ29udHJhY3RTcGVjSWRJ'
-        'bmZvQiDy3h8ceWFtbDoiY29udHJhY3Rfc3BlY19pZF9pbmZvIlISY29udHJhY3RTcGVjSWRJbm'
-        'Zv');
+        'bmZvUhJjb250cmFjdFNwZWNJZEluZm8=');
 
 @$core.Deprecated('Use msgAddContractSpecToScopeSpecRequestDescriptor instead')
 const MsgAddContractSpecToScopeSpecRequest$json = {
@@ -627,13 +593,13 @@ const MsgAddContractSpecToScopeSpecRequest$json = {
 };
 
 /// Descriptor for `MsgAddContractSpecToScopeSpecRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List msgAddContractSpecToScopeSpecRequestDescriptor = $convert.base64Decode(
-    'CiRNc2dBZGRDb250cmFjdFNwZWNUb1Njb3BlU3BlY1JlcXVlc3QSbgoZY29udHJhY3Rfc3BlY2'
-    'lmaWNhdGlvbl9pZBgBIAEoDEIyyN4fANreHw9NZXRhZGF0YUFkZHJlc3Py3h8XeWFtbDoic3Bl'
-    'Y2lmaWNhdGlvbl9pZCJSF2NvbnRyYWN0U3BlY2lmaWNhdGlvbklkEmgKFnNjb3BlX3NwZWNpZm'
-    'ljYXRpb25faWQYAiABKAxCMsjeHwDa3h8PTWV0YWRhdGFBZGRyZXNz8t4fF3lhbWw6InNwZWNp'
-    'ZmljYXRpb25faWQiUhRzY29wZVNwZWNpZmljYXRpb25JZBIYCgdzaWduZXJzGAMgAygJUgdzaW'
-    'duZXJzOgyIoB8AmKAfAeigHwA=');
+final $typed_data.Uint8List msgAddContractSpecToScopeSpecRequestDescriptor =
+    $convert.base64Decode(
+        'CiRNc2dBZGRDb250cmFjdFNwZWNUb1Njb3BlU3BlY1JlcXVlc3QSUwoZY29udHJhY3Rfc3BlY2'
+        'lmaWNhdGlvbl9pZBgBIAEoDEIXyN4fANreHw9NZXRhZGF0YUFkZHJlc3NSF2NvbnRyYWN0U3Bl'
+        'Y2lmaWNhdGlvbklkEk0KFnNjb3BlX3NwZWNpZmljYXRpb25faWQYAiABKAxCF8jeHwDa3h8PTW'
+        'V0YWRhdGFBZGRyZXNzUhRzY29wZVNwZWNpZmljYXRpb25JZBIYCgdzaWduZXJzGAMgAygJUgdz'
+        'aWduZXJzOhSIoB8A6KAfAILnsCoHc2lnbmVycw==');
 
 @$core.Deprecated('Use msgAddContractSpecToScopeSpecResponseDescriptor instead')
 const MsgAddContractSpecToScopeSpecResponse$json = {
@@ -674,12 +640,11 @@ const MsgDeleteContractSpecFromScopeSpecRequest$json = {
 /// Descriptor for `MsgDeleteContractSpecFromScopeSpecRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List
     msgDeleteContractSpecFromScopeSpecRequestDescriptor = $convert.base64Decode(
-        'CilNc2dEZWxldGVDb250cmFjdFNwZWNGcm9tU2NvcGVTcGVjUmVxdWVzdBJuChljb250cmFjdF'
-        '9zcGVjaWZpY2F0aW9uX2lkGAEgASgMQjLI3h8A2t4fD01ldGFkYXRhQWRkcmVzc/LeHxd5YW1s'
-        'OiJzcGVjaWZpY2F0aW9uX2lkIlIXY29udHJhY3RTcGVjaWZpY2F0aW9uSWQSaAoWc2NvcGVfc3'
-        'BlY2lmaWNhdGlvbl9pZBgCIAEoDEIyyN4fANreHw9NZXRhZGF0YUFkZHJlc3Py3h8XeWFtbDoi'
-        'c3BlY2lmaWNhdGlvbl9pZCJSFHNjb3BlU3BlY2lmaWNhdGlvbklkEhgKB3NpZ25lcnMYAyADKA'
-        'lSB3NpZ25lcnM6DIigHwCYoB8B6KAfAA==');
+        'CilNc2dEZWxldGVDb250cmFjdFNwZWNGcm9tU2NvcGVTcGVjUmVxdWVzdBJTChljb250cmFjdF'
+        '9zcGVjaWZpY2F0aW9uX2lkGAEgASgMQhfI3h8A2t4fD01ldGFkYXRhQWRkcmVzc1IXY29udHJh'
+        'Y3RTcGVjaWZpY2F0aW9uSWQSTQoWc2NvcGVfc3BlY2lmaWNhdGlvbl9pZBgCIAEoDEIXyN4fAN'
+        'reHw9NZXRhZGF0YUFkZHJlc3NSFHNjb3BlU3BlY2lmaWNhdGlvbklkEhgKB3NpZ25lcnMYAyAD'
+        'KAlSB3NpZ25lcnM6FIigHwDooB8AguewKgdzaWduZXJz');
 
 @$core.Deprecated(
     'Use msgDeleteContractSpecFromScopeSpecResponseDescriptor instead')
@@ -713,10 +678,9 @@ const MsgDeleteContractSpecificationRequest$json = {
 /// Descriptor for `MsgDeleteContractSpecificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteContractSpecificationRequestDescriptor =
     $convert.base64Decode(
-        'CiVNc2dEZWxldGVDb250cmFjdFNwZWNpZmljYXRpb25SZXF1ZXN0El0KEHNwZWNpZmljYXRpb2'
-        '5faWQYASABKAxCMsjeHwDa3h8PTWV0YWRhdGFBZGRyZXNz8t4fF3lhbWw6InNwZWNpZmljYXRp'
-        'b25faWQiUg9zcGVjaWZpY2F0aW9uSWQSGAoHc2lnbmVycxgCIAMoCVIHc2lnbmVyczoMiKAfAJ'
-        'igHwHooB8A');
+        'CiVNc2dEZWxldGVDb250cmFjdFNwZWNpZmljYXRpb25SZXF1ZXN0EkIKEHNwZWNpZmljYXRpb2'
+        '5faWQYASABKAxCF8jeHwDa3h8PTWV0YWRhdGFBZGRyZXNzUg9zcGVjaWZpY2F0aW9uSWQSGAoH'
+        'c2lnbmVycxgCIAMoCVIHc2lnbmVyczoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core
     .Deprecated('Use msgDeleteContractSpecificationResponseDescriptor instead')
@@ -748,7 +712,6 @@ const MsgWriteRecordSpecificationRequest$json = {
       '3': 3,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'contractSpecUuid'
     },
   ],
@@ -760,9 +723,8 @@ final $typed_data.Uint8List msgWriteRecordSpecificationRequestDescriptor =
     $convert.base64Decode(
         'CiJNc2dXcml0ZVJlY29yZFNwZWNpZmljYXRpb25SZXF1ZXN0ElcKDXNwZWNpZmljYXRpb24YAS'
         'ABKAsyKy5wcm92ZW5hbmNlLm1ldGFkYXRhLnYxLlJlY29yZFNwZWNpZmljYXRpb25CBMjeHwBS'
-        'DXNwZWNpZmljYXRpb24SGAoHc2lnbmVycxgCIAMoCVIHc2lnbmVycxJLChJjb250cmFjdF9zcG'
-        'VjX3V1aWQYAyABKAlCHfLeHxl5YW1sOiJjb250cmFjdF9zcGVjX3V1aWQiUhBjb250cmFjdFNw'
-        'ZWNVdWlkOgyIoB8AmKAfAeigHwA=');
+        'DXNwZWNpZmljYXRpb24SGAoHc2lnbmVycxgCIAMoCVIHc2lnbmVycxIsChJjb250cmFjdF9zcG'
+        'VjX3V1aWQYAyABKAlSEGNvbnRyYWN0U3BlY1V1aWQ6FIigHwDooB8AguewKgdzaWduZXJz');
 
 @$core.Deprecated('Use msgWriteRecordSpecificationResponseDescriptor instead')
 const MsgWriteRecordSpecificationResponse$json = {
@@ -774,7 +736,6 @@ const MsgWriteRecordSpecificationResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.RecordSpecIdInfo',
-      '8': {},
       '10': 'recordSpecIdInfo'
     },
   ],
@@ -783,9 +744,9 @@ const MsgWriteRecordSpecificationResponse$json = {
 /// Descriptor for `MsgWriteRecordSpecificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgWriteRecordSpecificationResponseDescriptor =
     $convert.base64Decode(
-        'CiNNc2dXcml0ZVJlY29yZFNwZWNpZmljYXRpb25SZXNwb25zZRJ3ChNyZWNvcmRfc3BlY19pZF'
-        '9pbmZvGAEgASgLMigucHJvdmVuYW5jZS5tZXRhZGF0YS52MS5SZWNvcmRTcGVjSWRJbmZvQh7y'
-        '3h8aeWFtbDoicmVjb3JkX3NwZWNfaWRfaW5mbyJSEHJlY29yZFNwZWNJZEluZm8=');
+        'CiNNc2dXcml0ZVJlY29yZFNwZWNpZmljYXRpb25SZXNwb25zZRJXChNyZWNvcmRfc3BlY19pZF'
+        '9pbmZvGAEgASgLMigucHJvdmVuYW5jZS5tZXRhZGF0YS52MS5SZWNvcmRTcGVjSWRJbmZvUhBy'
+        'ZWNvcmRTcGVjSWRJbmZv');
 
 @$core.Deprecated('Use msgDeleteRecordSpecificationRequestDescriptor instead')
 const MsgDeleteRecordSpecificationRequest$json = {
@@ -807,10 +768,9 @@ const MsgDeleteRecordSpecificationRequest$json = {
 /// Descriptor for `MsgDeleteRecordSpecificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteRecordSpecificationRequestDescriptor =
     $convert.base64Decode(
-        'CiNNc2dEZWxldGVSZWNvcmRTcGVjaWZpY2F0aW9uUmVxdWVzdBJdChBzcGVjaWZpY2F0aW9uX2'
-        'lkGAEgASgMQjLI3h8A2t4fD01ldGFkYXRhQWRkcmVzc/LeHxd5YW1sOiJzcGVjaWZpY2F0aW9u'
-        'X2lkIlIPc3BlY2lmaWNhdGlvbklkEhgKB3NpZ25lcnMYAiADKAlSB3NpZ25lcnM6DIigHwCYoB'
-        '8B6KAfAA==');
+        'CiNNc2dEZWxldGVSZWNvcmRTcGVjaWZpY2F0aW9uUmVxdWVzdBJCChBzcGVjaWZpY2F0aW9uX2'
+        'lkGAEgASgMQhfI3h8A2t4fD01ldGFkYXRhQWRkcmVzc1IPc3BlY2lmaWNhdGlvbklkEhgKB3Np'
+        'Z25lcnMYAiADKAlSB3NpZ25lcnM6FIigHwDooB8AguewKgdzaWduZXJz');
 
 @$core.Deprecated('Use msgDeleteRecordSpecificationResponseDescriptor instead')
 const MsgDeleteRecordSpecificationResponse$json = {
@@ -842,7 +802,8 @@ const MsgBindOSLocatorRequest$json = {
 /// Descriptor for `MsgBindOSLocatorRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgBindOSLocatorRequestDescriptor = $convert.base64Decode(
     'ChdNc2dCaW5kT1NMb2NhdG9yUmVxdWVzdBJKCgdsb2NhdG9yGAEgASgLMioucHJvdmVuYW5jZS'
-    '5tZXRhZGF0YS52MS5PYmplY3RTdG9yZUxvY2F0b3JCBMjeHwBSB2xvY2F0b3I6CIigHwDooB8A');
+    '5tZXRhZGF0YS52MS5PYmplY3RTdG9yZUxvY2F0b3JCBMjeHwBSB2xvY2F0b3I6FIigHwDooB8A'
+    'guewKgdsb2NhdG9y');
 
 @$core.Deprecated('Use msgBindOSLocatorResponseDescriptor instead')
 const MsgBindOSLocatorResponse$json = {
@@ -886,8 +847,8 @@ const MsgDeleteOSLocatorRequest$json = {
 /// Descriptor for `MsgDeleteOSLocatorRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgDeleteOSLocatorRequestDescriptor = $convert.base64Decode(
     'ChlNc2dEZWxldGVPU0xvY2F0b3JSZXF1ZXN0EkoKB2xvY2F0b3IYASABKAsyKi5wcm92ZW5hbm'
-    'NlLm1ldGFkYXRhLnYxLk9iamVjdFN0b3JlTG9jYXRvckIEyN4fAFIHbG9jYXRvcjoIiKAfAOig'
-    'HwA=');
+    'NlLm1ldGFkYXRhLnYxLk9iamVjdFN0b3JlTG9jYXRvckIEyN4fAFIHbG9jYXRvcjoUiKAfAOig'
+    'HwCC57AqB2xvY2F0b3I=');
 
 @$core.Deprecated('Use msgDeleteOSLocatorResponseDescriptor instead')
 const MsgDeleteOSLocatorResponse$json = {
@@ -931,8 +892,8 @@ const MsgModifyOSLocatorRequest$json = {
 /// Descriptor for `MsgModifyOSLocatorRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgModifyOSLocatorRequestDescriptor = $convert.base64Decode(
     'ChlNc2dNb2RpZnlPU0xvY2F0b3JSZXF1ZXN0EkoKB2xvY2F0b3IYASABKAsyKi5wcm92ZW5hbm'
-    'NlLm1ldGFkYXRhLnYxLk9iamVjdFN0b3JlTG9jYXRvckIEyN4fAFIHbG9jYXRvcjoIiKAfAOig'
-    'HwA=');
+    'NlLm1ldGFkYXRhLnYxLk9iamVjdFN0b3JlTG9jYXRvckIEyN4fAFIHbG9jYXRvcjoUiKAfAOig'
+    'HwCC57AqB2xvY2F0b3I=');
 
 @$core.Deprecated('Use msgModifyOSLocatorResponseDescriptor instead')
 const MsgModifyOSLocatorResponse$json = {
@@ -976,10 +937,9 @@ const MsgSetAccountDataRequest$json = {
 
 /// Descriptor for `MsgSetAccountDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgSetAccountDataRequestDescriptor = $convert.base64Decode(
-    'ChhNc2dTZXRBY2NvdW50RGF0YVJlcXVlc3QSVAoNbWV0YWRhdGFfYWRkchgBIAEoDEIvyN4fAN'
-    'reHw9NZXRhZGF0YUFkZHJlc3Py3h8UeWFtbDoibWV0YWRhdGFfYWRkciJSDG1ldGFkYXRhQWRk'
-    'chIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUSGAoHc2lnbmVycxgDIAMoCVIHc2lnbmVyczoMiKAfAJ'
-    'igHwHooB8A');
+    'ChhNc2dTZXRBY2NvdW50RGF0YVJlcXVlc3QSPAoNbWV0YWRhdGFfYWRkchgBIAEoDEIXyN4fAN'
+    'reHw9NZXRhZGF0YUFkZHJlc3NSDG1ldGFkYXRhQWRkchIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUS'
+    'GAoHc2lnbmVycxgDIAMoCVIHc2lnbmVyczoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgSetAccountDataResponseDescriptor instead')
 const MsgSetAccountDataResponse$json = {
@@ -1025,7 +985,6 @@ const MsgWriteP8eContractSpecResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.ContractSpecIdInfo',
-      '8': {},
       '10': 'contractSpecIdInfo'
     },
     {
@@ -1034,7 +993,6 @@ const MsgWriteP8eContractSpecResponse$json = {
       '4': 3,
       '5': 11,
       '6': '.provenance.metadata.v1.RecordSpecIdInfo',
-      '8': {},
       '10': 'recordSpecIdInfos'
     },
   ],
@@ -1043,12 +1001,11 @@ const MsgWriteP8eContractSpecResponse$json = {
 
 /// Descriptor for `MsgWriteP8eContractSpecResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgWriteP8eContractSpecResponseDescriptor = $convert.base64Decode(
-    'Ch9Nc2dXcml0ZVA4ZUNvbnRyYWN0U3BlY1Jlc3BvbnNlEn8KFWNvbnRyYWN0X3NwZWNfaWRfaW'
-    '5mbxgBIAEoCzIqLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuQ29udHJhY3RTcGVjSWRJbmZvQiDy'
-    '3h8ceWFtbDoiY29udHJhY3Rfc3BlY19pZF9pbmZvIlISY29udHJhY3RTcGVjSWRJbmZvEnoKFH'
-    'JlY29yZF9zcGVjX2lkX2luZm9zGAIgAygLMigucHJvdmVuYW5jZS5tZXRhZGF0YS52MS5SZWNv'
-    'cmRTcGVjSWRJbmZvQh/y3h8beWFtbDoicmVjb3JkX3NwZWNfaWRfaW5mb3MiUhFyZWNvcmRTcG'
-    'VjSWRJbmZvczoGGAGIoB8A');
+    'Ch9Nc2dXcml0ZVA4ZUNvbnRyYWN0U3BlY1Jlc3BvbnNlEl0KFWNvbnRyYWN0X3NwZWNfaWRfaW'
+    '5mbxgBIAEoCzIqLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuQ29udHJhY3RTcGVjSWRJbmZvUhJj'
+    'b250cmFjdFNwZWNJZEluZm8SWQoUcmVjb3JkX3NwZWNfaWRfaW5mb3MYAiADKAsyKC5wcm92ZW'
+    '5hbmNlLm1ldGFkYXRhLnYxLlJlY29yZFNwZWNJZEluZm9SEXJlY29yZFNwZWNJZEluZm9zOgYY'
+    'AYigHwA=');
 
 @$core.Deprecated('Use msgP8eMemorializeContractRequestDescriptor instead')
 const MsgP8eMemorializeContractRequest$json = {
@@ -1112,7 +1069,6 @@ const MsgP8eMemorializeContractResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.ScopeIdInfo',
-      '8': {},
       '10': 'scopeIdInfo'
     },
     {
@@ -1121,7 +1077,6 @@ const MsgP8eMemorializeContractResponse$json = {
       '4': 1,
       '5': 11,
       '6': '.provenance.metadata.v1.SessionIdInfo',
-      '8': {},
       '10': 'sessionIdInfo'
     },
     {
@@ -1130,7 +1085,6 @@ const MsgP8eMemorializeContractResponse$json = {
       '4': 3,
       '5': 11,
       '6': '.provenance.metadata.v1.RecordIdInfo',
-      '8': {},
       '10': 'recordIdInfos'
     },
   ],
@@ -1139,13 +1093,11 @@ const MsgP8eMemorializeContractResponse$json = {
 
 /// Descriptor for `MsgP8eMemorializeContractResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgP8eMemorializeContractResponseDescriptor = $convert.base64Decode(
-    'CiFNc2dQOGVNZW1vcmlhbGl6ZUNvbnRyYWN0UmVzcG9uc2USYQoNc2NvcGVfaWRfaW5mbxgBIA'
-    'EoCzIjLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuU2NvcGVJZEluZm9CGPLeHxR5YW1sOiJzY29w'
-    'ZV9pZF9pbmZvIlILc2NvcGVJZEluZm8SaQoPc2Vzc2lvbl9pZF9pbmZvGAIgASgLMiUucHJvdm'
-    'VuYW5jZS5tZXRhZGF0YS52MS5TZXNzaW9uSWRJbmZvQhry3h8WeWFtbDoic2Vzc2lvbl9pZF9p'
-    'bmZvIlINc2Vzc2lvbklkSW5mbxJoCg9yZWNvcmRfaWRfaW5mb3MYAyADKAsyJC5wcm92ZW5hbm'
-    'NlLm1ldGFkYXRhLnYxLlJlY29yZElkSW5mb0Ia8t4fFnlhbWw6InJlY29yZF9pZF9pbmZvcyJS'
-    'DXJlY29yZElkSW5mb3M6BhgBiKAfAA==');
+    'CiFNc2dQOGVNZW1vcmlhbGl6ZUNvbnRyYWN0UmVzcG9uc2USRwoNc2NvcGVfaWRfaW5mbxgBIA'
+    'EoCzIjLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuU2NvcGVJZEluZm9SC3Njb3BlSWRJbmZvEk0K'
+    'D3Nlc3Npb25faWRfaW5mbxgCIAEoCzIlLnByb3ZlbmFuY2UubWV0YWRhdGEudjEuU2Vzc2lvbk'
+    'lkSW5mb1INc2Vzc2lvbklkSW5mbxJMCg9yZWNvcmRfaWRfaW5mb3MYAyADKAsyJC5wcm92ZW5h'
+    'bmNlLm1ldGFkYXRhLnYxLlJlY29yZElkSW5mb1INcmVjb3JkSWRJbmZvczoGGAGIoB8A');
 
 @$core.Deprecated('Use msgAddNetAssetValuesRequestDescriptor instead')
 const MsgAddNetAssetValuesRequest$json = {
@@ -1171,7 +1123,7 @@ final $typed_data.Uint8List msgAddNetAssetValuesRequestDescriptor = $convert.bas
     'ChtNc2dBZGROZXRBc3NldFZhbHVlc1JlcXVlc3QSGQoIc2NvcGVfaWQYASABKAlSB3Njb3BlSW'
     'QSGAoHc2lnbmVycxgCIAMoCVIHc2lnbmVycxJVChBuZXRfYXNzZXRfdmFsdWVzGAMgAygLMiUu'
     'cHJvdmVuYW5jZS5tZXRhZGF0YS52MS5OZXRBc3NldFZhbHVlQgTI3h8AUg5uZXRBc3NldFZhbH'
-    'VlczoMiKAfAJigHwHooB8A');
+    'VlczoUiKAfAOigHwCC57AqB3NpZ25lcnM=');
 
 @$core.Deprecated('Use msgAddNetAssetValuesResponseDescriptor instead')
 const MsgAddNetAssetValuesResponse$json = {

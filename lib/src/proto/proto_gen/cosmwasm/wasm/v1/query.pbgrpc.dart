@@ -89,6 +89,12 @@ class QueryClient extends $grpc.Client {
       ($0.QueryContractsByCreatorRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.QueryContractsByCreatorResponse.fromBuffer(value));
+  static final _$buildAddress = $grpc.ClientMethod<$0.QueryBuildAddressRequest,
+          $0.QueryBuildAddressResponse>(
+      '/cosmwasm.wasm.v1.Query/BuildAddress',
+      ($0.QueryBuildAddressRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryBuildAddressResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -158,6 +164,12 @@ class QueryClient extends $grpc.Client {
       $0.QueryContractsByCreatorRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$contractsByCreator, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryBuildAddressResponse> buildAddress(
+      $0.QueryBuildAddressRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$buildAddress, request, options: options);
   }
 }
 
@@ -261,6 +273,15 @@ abstract class QueryServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.QueryContractsByCreatorRequest.fromBuffer(value),
         ($0.QueryContractsByCreatorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryBuildAddressRequest,
+            $0.QueryBuildAddressResponse>(
+        'BuildAddress',
+        buildAddress_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryBuildAddressRequest.fromBuffer(value),
+        ($0.QueryBuildAddressResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryContractInfoResponse> contractInfo_Pre(
@@ -326,6 +347,12 @@ abstract class QueryServiceBase extends $grpc.Service {
     return contractsByCreator(call, await request);
   }
 
+  $async.Future<$0.QueryBuildAddressResponse> buildAddress_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryBuildAddressRequest> request) async {
+    return buildAddress(call, await request);
+  }
+
   $async.Future<$0.QueryContractInfoResponse> contractInfo(
       $grpc.ServiceCall call, $0.QueryContractInfoRequest request);
   $async.Future<$0.QueryContractHistoryResponse> contractHistory(
@@ -348,4 +375,6 @@ abstract class QueryServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.QueryParamsRequest request);
   $async.Future<$0.QueryContractsByCreatorResponse> contractsByCreator(
       $grpc.ServiceCall call, $0.QueryContractsByCreatorRequest request);
+  $async.Future<$0.QueryBuildAddressResponse> buildAddress(
+      $grpc.ServiceCall call, $0.QueryBuildAddressRequest request);
 }

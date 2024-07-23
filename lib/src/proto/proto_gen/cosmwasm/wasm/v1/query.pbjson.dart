@@ -17,20 +17,21 @@ import 'dart:typed_data' as $typed_data;
 const QueryContractInfoRequest$json = {
   '1': 'QueryContractInfoRequest',
   '2': [
-    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
   ],
 };
 
 /// Descriptor for `QueryContractInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractInfoRequestDescriptor =
     $convert.base64Decode(
-        'ChhRdWVyeUNvbnRyYWN0SW5mb1JlcXVlc3QSGAoHYWRkcmVzcxgBIAEoCVIHYWRkcmVzcw==');
+        'ChhRdWVyeUNvbnRyYWN0SW5mb1JlcXVlc3QSMgoHYWRkcmVzcxgBIAEoCUIY0rQtFGNvc21vcy'
+        '5BZGRyZXNzU3RyaW5nUgdhZGRyZXNz');
 
 @$core.Deprecated('Use queryContractInfoResponseDescriptor instead')
 const QueryContractInfoResponse$json = {
   '1': 'QueryContractInfoResponse',
   '2': [
-    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
     {
       '1': 'contract_info',
       '3': 2,
@@ -46,15 +47,16 @@ const QueryContractInfoResponse$json = {
 
 /// Descriptor for `QueryContractInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractInfoResponseDescriptor = $convert.base64Decode(
-    'ChlRdWVyeUNvbnRyYWN0SW5mb1Jlc3BvbnNlEhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3MSUQ'
-    'oNY29udHJhY3RfaW5mbxgCIAEoCzIeLmNvc213YXNtLndhc20udjEuQ29udHJhY3RJbmZvQgzI'
-    '3h8A0N4fAereHwBSDGNvbnRyYWN0SW5mbzoE6KAfAQ==');
+    'ChlRdWVyeUNvbnRyYWN0SW5mb1Jlc3BvbnNlEjIKB2FkZHJlc3MYASABKAlCGNK0LRRjb3Ntb3'
+    'MuQWRkcmVzc1N0cmluZ1IHYWRkcmVzcxJWCg1jb250cmFjdF9pbmZvGAIgASgLMh4uY29zbXdh'
+    'c20ud2FzbS52MS5Db250cmFjdEluZm9CEcjeHwDQ3h8B6t4fAKjnsCoBUgxjb250cmFjdEluZm'
+    '86BOigHwE=');
 
 @$core.Deprecated('Use queryContractHistoryRequestDescriptor instead')
 const QueryContractHistoryRequest$json = {
   '1': 'QueryContractHistoryRequest',
   '2': [
-    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
     {
       '1': 'pagination',
       '3': 2,
@@ -69,9 +71,9 @@ const QueryContractHistoryRequest$json = {
 /// Descriptor for `QueryContractHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractHistoryRequestDescriptor =
     $convert.base64Decode(
-        'ChtRdWVyeUNvbnRyYWN0SGlzdG9yeVJlcXVlc3QSGAoHYWRkcmVzcxgBIAEoCVIHYWRkcmVzcx'
-        'JGCgpwYWdpbmF0aW9uGAIgASgLMiYuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVx'
-        'dWVzdFIKcGFnaW5hdGlvbg==');
+        'ChtRdWVyeUNvbnRyYWN0SGlzdG9yeVJlcXVlc3QSMgoHYWRkcmVzcxgBIAEoCUIY0rQtFGNvc2'
+        '1vcy5BZGRyZXNzU3RyaW5nUgdhZGRyZXNzEkYKCnBhZ2luYXRpb24YAiABKAsyJi5jb3Ntb3Mu'
+        'YmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use queryContractHistoryResponseDescriptor instead')
 const QueryContractHistoryResponse$json = {
@@ -99,10 +101,10 @@ const QueryContractHistoryResponse$json = {
 
 /// Descriptor for `QueryContractHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractHistoryResponseDescriptor = $convert.base64Decode(
-    'ChxRdWVyeUNvbnRyYWN0SGlzdG9yeVJlc3BvbnNlEkoKB2VudHJpZXMYASADKAsyKi5jb3Ntd2'
-    'FzbS53YXNtLnYxLkNvbnRyYWN0Q29kZUhpc3RvcnlFbnRyeUIEyN4fAFIHZW50cmllcxJHCgpw'
-    'YWdpbmF0aW9uGAIgASgLMicuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2'
-    'VSCnBhZ2luYXRpb24=');
+    'ChxRdWVyeUNvbnRyYWN0SGlzdG9yeVJlc3BvbnNlEk8KB2VudHJpZXMYASADKAsyKi5jb3Ntd2'
+    'FzbS53YXNtLnYxLkNvbnRyYWN0Q29kZUhpc3RvcnlFbnRyeUIJyN4fAKjnsCoBUgdlbnRyaWVz'
+    'EkcKCnBhZ2luYXRpb24YAiABKAsyJy5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZX'
+    'Nwb25zZVIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use queryContractsByCodeRequestDescriptor instead')
 const QueryContractsByCodeRequest$json = {
@@ -131,7 +133,7 @@ final $typed_data.Uint8List queryContractsByCodeRequestDescriptor =
 const QueryContractsByCodeResponse$json = {
   '1': 'QueryContractsByCodeResponse',
   '2': [
-    {'1': 'contracts', '3': 1, '4': 3, '5': 9, '10': 'contracts'},
+    {'1': 'contracts', '3': 1, '4': 3, '5': 9, '8': {}, '10': 'contracts'},
     {
       '1': 'pagination',
       '3': 2,
@@ -146,15 +148,15 @@ const QueryContractsByCodeResponse$json = {
 /// Descriptor for `QueryContractsByCodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractsByCodeResponseDescriptor =
     $convert.base64Decode(
-        'ChxRdWVyeUNvbnRyYWN0c0J5Q29kZVJlc3BvbnNlEhwKCWNvbnRyYWN0cxgBIAMoCVIJY29udH'
-        'JhY3RzEkcKCnBhZ2luYXRpb24YAiABKAsyJy5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBh'
-        'Z2VSZXNwb25zZVIKcGFnaW5hdGlvbg==');
+        'ChxRdWVyeUNvbnRyYWN0c0J5Q29kZVJlc3BvbnNlEjYKCWNvbnRyYWN0cxgBIAMoCUIY0rQtFG'
+        'Nvc21vcy5BZGRyZXNzU3RyaW5nUgljb250cmFjdHMSRwoKcGFnaW5hdGlvbhgCIAEoCzInLmNv'
+        'c21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlc3BvbnNlUgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use queryAllContractStateRequestDescriptor instead')
 const QueryAllContractStateRequest$json = {
   '1': 'QueryAllContractStateRequest',
   '2': [
-    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
     {
       '1': 'pagination',
       '3': 2,
@@ -169,9 +171,9 @@ const QueryAllContractStateRequest$json = {
 /// Descriptor for `QueryAllContractStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryAllContractStateRequestDescriptor =
     $convert.base64Decode(
-        'ChxRdWVyeUFsbENvbnRyYWN0U3RhdGVSZXF1ZXN0EhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3'
-        'MSRgoKcGFnaW5hdGlvbhgCIAEoCzImLmNvc21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJl'
-        'cXVlc3RSCnBhZ2luYXRpb24=');
+        'ChxRdWVyeUFsbENvbnRyYWN0U3RhdGVSZXF1ZXN0EjIKB2FkZHJlc3MYASABKAlCGNK0LRRjb3'
+        'Ntb3MuQWRkcmVzc1N0cmluZ1IHYWRkcmVzcxJGCgpwYWdpbmF0aW9uGAIgASgLMiYuY29zbW9z'
+        'LmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use queryAllContractStateResponseDescriptor instead')
 const QueryAllContractStateResponse$json = {
@@ -198,17 +200,16 @@ const QueryAllContractStateResponse$json = {
 };
 
 /// Descriptor for `QueryAllContractStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List queryAllContractStateResponseDescriptor =
-    $convert.base64Decode(
-        'Ch1RdWVyeUFsbENvbnRyYWN0U3RhdGVSZXNwb25zZRI1CgZtb2RlbHMYASADKAsyFy5jb3Ntd2'
-        'FzbS53YXNtLnYxLk1vZGVsQgTI3h8AUgZtb2RlbHMSRwoKcGFnaW5hdGlvbhgCIAEoCzInLmNv'
-        'c21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlc3BvbnNlUgpwYWdpbmF0aW9u');
+final $typed_data.Uint8List queryAllContractStateResponseDescriptor = $convert.base64Decode(
+    'Ch1RdWVyeUFsbENvbnRyYWN0U3RhdGVSZXNwb25zZRI6CgZtb2RlbHMYASADKAsyFy5jb3Ntd2'
+    'FzbS53YXNtLnYxLk1vZGVsQgnI3h8AqOewKgFSBm1vZGVscxJHCgpwYWdpbmF0aW9uGAIgASgL'
+    'MicuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2VSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use queryRawContractStateRequestDescriptor instead')
 const QueryRawContractStateRequest$json = {
   '1': 'QueryRawContractStateRequest',
   '2': [
-    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
     {'1': 'query_data', '3': 2, '4': 1, '5': 12, '10': 'queryData'},
   ],
 };
@@ -216,8 +217,9 @@ const QueryRawContractStateRequest$json = {
 /// Descriptor for `QueryRawContractStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryRawContractStateRequestDescriptor =
     $convert.base64Decode(
-        'ChxRdWVyeVJhd0NvbnRyYWN0U3RhdGVSZXF1ZXN0EhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3'
-        'MSHQoKcXVlcnlfZGF0YRgCIAEoDFIJcXVlcnlEYXRh');
+        'ChxRdWVyeVJhd0NvbnRyYWN0U3RhdGVSZXF1ZXN0EjIKB2FkZHJlc3MYASABKAlCGNK0LRRjb3'
+        'Ntb3MuQWRkcmVzc1N0cmluZ1IHYWRkcmVzcxIdCgpxdWVyeV9kYXRhGAIgASgMUglxdWVyeURh'
+        'dGE=');
 
 @$core.Deprecated('Use queryRawContractStateResponseDescriptor instead')
 const QueryRawContractStateResponse$json = {
@@ -236,7 +238,7 @@ final $typed_data.Uint8List queryRawContractStateResponseDescriptor =
 const QuerySmartContractStateRequest$json = {
   '1': 'QuerySmartContractStateRequest',
   '2': [
-    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
     {'1': 'query_data', '3': 2, '4': 1, '5': 12, '8': {}, '10': 'queryData'},
   ],
 };
@@ -244,9 +246,9 @@ const QuerySmartContractStateRequest$json = {
 /// Descriptor for `QuerySmartContractStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List querySmartContractStateRequestDescriptor =
     $convert.base64Decode(
-        'Ch5RdWVyeVNtYXJ0Q29udHJhY3RTdGF0ZVJlcXVlc3QSGAoHYWRkcmVzcxgBIAEoCVIHYWRkcm'
-        'VzcxI1CgpxdWVyeV9kYXRhGAIgASgMQhb63h8SUmF3Q29udHJhY3RNZXNzYWdlUglxdWVyeURh'
-        'dGE=');
+        'Ch5RdWVyeVNtYXJ0Q29udHJhY3RTdGF0ZVJlcXVlc3QSMgoHYWRkcmVzcxgBIAEoCUIY0rQtFG'
+        'Nvc21vcy5BZGRyZXNzU3RyaW5nUgdhZGRyZXNzEkUKCnF1ZXJ5X2RhdGEYAiABKAxCJvreHxJS'
+        'YXdDb250cmFjdE1lc3NhZ2Wa57AqC2lubGluZV9qc29uUglxdWVyeURhdGE=');
 
 @$core.Deprecated('Use querySmartContractStateResponseDescriptor instead')
 const QuerySmartContractStateResponse$json = {
@@ -259,8 +261,8 @@ const QuerySmartContractStateResponse$json = {
 /// Descriptor for `QuerySmartContractStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List querySmartContractStateResponseDescriptor =
     $convert.base64Decode(
-        'Ch9RdWVyeVNtYXJ0Q29udHJhY3RTdGF0ZVJlc3BvbnNlEioKBGRhdGEYASABKAxCFvreHxJSYX'
-        'dDb250cmFjdE1lc3NhZ2VSBGRhdGE=');
+        'Ch9RdWVyeVNtYXJ0Q29udHJhY3RTdGF0ZVJlc3BvbnNlEjoKBGRhdGEYASABKAxCJvreHxJSYX'
+        'dDb250cmFjdE1lc3NhZ2Wa57AqC2lubGluZV9qc29uUgRkYXRh');
 
 @$core.Deprecated('Use queryCodeRequestDescriptor instead')
 const QueryCodeRequest$json = {
@@ -279,7 +281,7 @@ const CodeInfoResponse$json = {
   '1': 'CodeInfoResponse',
   '2': [
     {'1': 'code_id', '3': 1, '4': 1, '5': 4, '8': {}, '10': 'codeId'},
-    {'1': 'creator', '3': 2, '4': 1, '5': 9, '10': 'creator'},
+    {'1': 'creator', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'creator'},
     {'1': 'data_hash', '3': 3, '4': 1, '5': 12, '8': {}, '10': 'dataHash'},
     {
       '1': 'instantiate_permission',
@@ -301,11 +303,11 @@ const CodeInfoResponse$json = {
 /// Descriptor for `CodeInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List codeInfoResponseDescriptor = $convert.base64Decode(
     'ChBDb2RlSW5mb1Jlc3BvbnNlEikKB2NvZGVfaWQYASABKARCEOLeHwZDb2RlSUTq3h8CaWRSBm'
-    'NvZGVJZBIYCgdjcmVhdG9yGAIgASgJUgdjcmVhdG9yElUKCWRhdGFfaGFzaBgDIAEoDEI4+t4f'
-    'NGdpdGh1Yi5jb20vdGVuZGVybWludC90ZW5kZXJtaW50L2xpYnMvYnl0ZXMuSGV4Qnl0ZXNSCG'
-    'RhdGFIYXNoElsKFmluc3RhbnRpYXRlX3Blcm1pc3Npb24YBiABKAsyHi5jb3Ntd2FzbS53YXNt'
-    'LnYxLkFjY2Vzc0NvbmZpZ0IEyN4fAFIVaW5zdGFudGlhdGVQZXJtaXNzaW9uOgTooB8BSgQIBB'
-    'AFSgQIBRAG');
+    'NvZGVJZBIyCgdjcmVhdG9yGAIgASgJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSB2NyZWF0'
+    'b3ISUQoJZGF0YV9oYXNoGAMgASgMQjT63h8wZ2l0aHViLmNvbS9jb21ldGJmdC9jb21ldGJmdC'
+    '9saWJzL2J5dGVzLkhleEJ5dGVzUghkYXRhSGFzaBJgChZpbnN0YW50aWF0ZV9wZXJtaXNzaW9u'
+    'GAYgASgLMh4uY29zbXdhc20ud2FzbS52MS5BY2Nlc3NDb25maWdCCcjeHwCo57AqAVIVaW5zdG'
+    'FudGlhdGVQZXJtaXNzaW9uOgTooB8BSgQIBBAFSgQIBRAG');
 
 @$core.Deprecated('Use queryCodeResponseDescriptor instead')
 const QueryCodeResponse$json = {
@@ -377,10 +379,10 @@ const QueryCodesResponse$json = {
 
 /// Descriptor for `QueryCodesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryCodesResponseDescriptor = $convert.base64Decode(
-    'ChJRdWVyeUNvZGVzUmVzcG9uc2USRwoKY29kZV9pbmZvcxgBIAMoCzIiLmNvc213YXNtLndhc2'
-    '0udjEuQ29kZUluZm9SZXNwb25zZUIEyN4fAFIJY29kZUluZm9zEkcKCnBhZ2luYXRpb24YAiAB'
-    'KAsyJy5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXNwb25zZVIKcGFnaW5hdGlvbg'
-    '==');
+    'ChJRdWVyeUNvZGVzUmVzcG9uc2USTAoKY29kZV9pbmZvcxgBIAMoCzIiLmNvc213YXNtLndhc2'
+    '0udjEuQ29kZUluZm9SZXNwb25zZUIJyN4fAKjnsCoBUgljb2RlSW5mb3MSRwoKcGFnaW5hdGlv'
+    'bhgCIAEoCzInLmNvc21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlc3BvbnNlUgpwYWdpbm'
+    'F0aW9u');
 
 @$core.Deprecated('Use queryPinnedCodesRequestDescriptor instead')
 const QueryPinnedCodesRequest$json = {
@@ -421,9 +423,9 @@ const QueryPinnedCodesResponse$json = {
 
 /// Descriptor for `QueryPinnedCodesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryPinnedCodesResponseDescriptor = $convert.base64Decode(
-    'ChhRdWVyeVBpbm5lZENvZGVzUmVzcG9uc2USKgoIY29kZV9pZHMYASADKARCD8jeHwDi3h8HQ2'
-    '9kZUlEc1IHY29kZUlkcxJHCgpwYWdpbmF0aW9uGAIgASgLMicuY29zbW9zLmJhc2UucXVlcnku'
-    'djFiZXRhMS5QYWdlUmVzcG9uc2VSCnBhZ2luYXRpb24=');
+    'ChhRdWVyeVBpbm5lZENvZGVzUmVzcG9uc2USJgoIY29kZV9pZHMYASADKARCC+LeHwdDb2RlSU'
+    'RzUgdjb2RlSWRzEkcKCnBhZ2luYXRpb24YAiABKAsyJy5jb3Ntb3MuYmFzZS5xdWVyeS52MWJl'
+    'dGExLlBhZ2VSZXNwb25zZVIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use queryParamsRequestDescriptor instead')
 const QueryParamsRequest$json = {
@@ -452,14 +454,21 @@ const QueryParamsResponse$json = {
 
 /// Descriptor for `QueryParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryParamsResponseDescriptor = $convert.base64Decode(
-    'ChNRdWVyeVBhcmFtc1Jlc3BvbnNlEjYKBnBhcmFtcxgBIAEoCzIYLmNvc213YXNtLndhc20udj'
-    'EuUGFyYW1zQgTI3h8AUgZwYXJhbXM=');
+    'ChNRdWVyeVBhcmFtc1Jlc3BvbnNlEjsKBnBhcmFtcxgBIAEoCzIYLmNvc213YXNtLndhc20udj'
+    'EuUGFyYW1zQgnI3h8AqOewKgFSBnBhcmFtcw==');
 
 @$core.Deprecated('Use queryContractsByCreatorRequestDescriptor instead')
 const QueryContractsByCreatorRequest$json = {
   '1': 'QueryContractsByCreatorRequest',
   '2': [
-    {'1': 'creator_address', '3': 1, '4': 1, '5': 9, '10': 'creatorAddress'},
+    {
+      '1': 'creator_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'creatorAddress'
+    },
     {
       '1': 'pagination',
       '3': 2,
@@ -474,9 +483,10 @@ const QueryContractsByCreatorRequest$json = {
 /// Descriptor for `QueryContractsByCreatorRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractsByCreatorRequestDescriptor =
     $convert.base64Decode(
-        'Ch5RdWVyeUNvbnRyYWN0c0J5Q3JlYXRvclJlcXVlc3QSJwoPY3JlYXRvcl9hZGRyZXNzGAEgAS'
-        'gJUg5jcmVhdG9yQWRkcmVzcxJGCgpwYWdpbmF0aW9uGAIgASgLMiYuY29zbW9zLmJhc2UucXVl'
-        'cnkudjFiZXRhMS5QYWdlUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+        'Ch5RdWVyeUNvbnRyYWN0c0J5Q3JlYXRvclJlcXVlc3QSQQoPY3JlYXRvcl9hZGRyZXNzGAEgAS'
+        'gJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSDmNyZWF0b3JBZGRyZXNzEkYKCnBhZ2luYXRp'
+        'b24YAiABKAsyJi5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXF1ZXN0UgpwYWdpbm'
+        'F0aW9u');
 
 @$core.Deprecated('Use queryContractsByCreatorResponseDescriptor instead')
 const QueryContractsByCreatorResponse$json = {
@@ -487,6 +497,7 @@ const QueryContractsByCreatorResponse$json = {
       '3': 1,
       '4': 3,
       '5': 9,
+      '8': {},
       '10': 'contractAddresses'
     },
     {
@@ -503,6 +514,46 @@ const QueryContractsByCreatorResponse$json = {
 /// Descriptor for `QueryContractsByCreatorResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryContractsByCreatorResponseDescriptor =
     $convert.base64Decode(
-        'Ch9RdWVyeUNvbnRyYWN0c0J5Q3JlYXRvclJlc3BvbnNlEi0KEmNvbnRyYWN0X2FkZHJlc3Nlcx'
-        'gBIAMoCVIRY29udHJhY3RBZGRyZXNzZXMSRwoKcGFnaW5hdGlvbhgCIAEoCzInLmNvc21vcy5i'
-        'YXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlc3BvbnNlUgpwYWdpbmF0aW9u');
+        'Ch9RdWVyeUNvbnRyYWN0c0J5Q3JlYXRvclJlc3BvbnNlEkcKEmNvbnRyYWN0X2FkZHJlc3Nlcx'
+        'gBIAMoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUhFjb250cmFjdEFkZHJlc3NlcxJHCgpw'
+        'YWdpbmF0aW9uGAIgASgLMicuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2'
+        'VSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use queryBuildAddressRequestDescriptor instead')
+const QueryBuildAddressRequest$json = {
+  '1': 'QueryBuildAddressRequest',
+  '2': [
+    {'1': 'code_hash', '3': 1, '4': 1, '5': 9, '10': 'codeHash'},
+    {
+      '1': 'creator_address',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'creatorAddress'
+    },
+    {'1': 'salt', '3': 3, '4': 1, '5': 9, '10': 'salt'},
+    {'1': 'init_args', '3': 4, '4': 1, '5': 12, '10': 'initArgs'},
+  ],
+};
+
+/// Descriptor for `QueryBuildAddressRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryBuildAddressRequestDescriptor = $convert.base64Decode(
+    'ChhRdWVyeUJ1aWxkQWRkcmVzc1JlcXVlc3QSGwoJY29kZV9oYXNoGAEgASgJUghjb2RlSGFzaB'
+    'JBCg9jcmVhdG9yX2FkZHJlc3MYAiABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1IOY3Jl'
+    'YXRvckFkZHJlc3MSEgoEc2FsdBgDIAEoCVIEc2FsdBIbCglpbml0X2FyZ3MYBCABKAxSCGluaX'
+    'RBcmdz');
+
+@$core.Deprecated('Use queryBuildAddressResponseDescriptor instead')
+const QueryBuildAddressResponse$json = {
+  '1': 'QueryBuildAddressResponse',
+  '2': [
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'address'},
+  ],
+};
+
+/// Descriptor for `QueryBuildAddressResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryBuildAddressResponseDescriptor =
+    $convert.base64Decode(
+        'ChlRdWVyeUJ1aWxkQWRkcmVzc1Jlc3BvbnNlEjIKB2FkZHJlc3MYASABKAlCGNK0LRRjb3Ntb3'
+        'MuQWRkcmVzc1N0cmluZ1IHYWRkcmVzcw==');

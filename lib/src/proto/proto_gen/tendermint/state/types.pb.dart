@@ -16,19 +16,20 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $5;
 import '../abci/types.pb.dart' as $0;
-import '../types/params.pb.dart' as $2;
+import '../types/params.pb.dart' as $1;
 import '../types/types.pb.dart' as $4;
-import '../types/validator.pb.dart' as $1;
+import '../types/validator.pb.dart' as $2;
 import '../version/types.pb.dart' as $3;
 
-/// ABCIResponses retains the responses
-/// of the various ABCI calls during block processing.
-/// It is persisted to disk for each height before calling Commit.
-class ABCIResponses extends $pb.GeneratedMessage {
-  factory ABCIResponses({
-    $core.Iterable<$0.ResponseDeliverTx>? deliverTxs,
-    $0.ResponseEndBlock? endBlock,
-    $0.ResponseBeginBlock? beginBlock,
+/// LegacyABCIResponses retains the responses
+/// of the legacy ABCI calls during block processing.
+/// Note ReponseDeliverTx is renamed to ExecTxResult but they are semantically the same
+/// Kept for backwards compatibility for versions prior to v0.38
+class LegacyABCIResponses extends $pb.GeneratedMessage {
+  factory LegacyABCIResponses({
+    $core.Iterable<$0.ExecTxResult>? deliverTxs,
+    ResponseEndBlock? endBlock,
+    ResponseBeginBlock? beginBlock,
   }) {
     final $result = create();
     if (deliverTxs != null) {
@@ -42,58 +43,58 @@ class ABCIResponses extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ABCIResponses._() : super();
-  factory ABCIResponses.fromBuffer($core.List<$core.int> i,
+  LegacyABCIResponses._() : super();
+  factory LegacyABCIResponses.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory ABCIResponses.fromJson($core.String i,
+  factory LegacyABCIResponses.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ABCIResponses',
+      _omitMessageNames ? '' : 'LegacyABCIResponses',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.state'),
       createEmptyInstance: create)
-    ..pc<$0.ResponseDeliverTx>(
+    ..pc<$0.ExecTxResult>(
         1, _omitFieldNames ? '' : 'deliverTxs', $pb.PbFieldType.PM,
-        subBuilder: $0.ResponseDeliverTx.create)
-    ..aOM<$0.ResponseEndBlock>(2, _omitFieldNames ? '' : 'endBlock',
-        subBuilder: $0.ResponseEndBlock.create)
-    ..aOM<$0.ResponseBeginBlock>(3, _omitFieldNames ? '' : 'beginBlock',
-        subBuilder: $0.ResponseBeginBlock.create)
+        subBuilder: $0.ExecTxResult.create)
+    ..aOM<ResponseEndBlock>(2, _omitFieldNames ? '' : 'endBlock',
+        subBuilder: ResponseEndBlock.create)
+    ..aOM<ResponseBeginBlock>(3, _omitFieldNames ? '' : 'beginBlock',
+        subBuilder: ResponseBeginBlock.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  ABCIResponses clone() => ABCIResponses()..mergeFromMessage(this);
+  LegacyABCIResponses clone() => LegacyABCIResponses()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  ABCIResponses copyWith(void Function(ABCIResponses) updates) =>
-      super.copyWith((message) => updates(message as ABCIResponses))
-          as ABCIResponses;
+  LegacyABCIResponses copyWith(void Function(LegacyABCIResponses) updates) =>
+      super.copyWith((message) => updates(message as LegacyABCIResponses))
+          as LegacyABCIResponses;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ABCIResponses create() => ABCIResponses._();
-  ABCIResponses createEmptyInstance() => create();
-  static $pb.PbList<ABCIResponses> createRepeated() =>
-      $pb.PbList<ABCIResponses>();
+  static LegacyABCIResponses create() => LegacyABCIResponses._();
+  LegacyABCIResponses createEmptyInstance() => create();
+  static $pb.PbList<LegacyABCIResponses> createRepeated() =>
+      $pb.PbList<LegacyABCIResponses>();
   @$core.pragma('dart2js:noInline')
-  static ABCIResponses getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ABCIResponses>(create);
-  static ABCIResponses? _defaultInstance;
+  static LegacyABCIResponses getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacyABCIResponses>(create);
+  static LegacyABCIResponses? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$0.ResponseDeliverTx> get deliverTxs => $_getList(0);
+  $core.List<$0.ExecTxResult> get deliverTxs => $_getList(0);
 
   @$pb.TagNumber(2)
-  $0.ResponseEndBlock get endBlock => $_getN(1);
+  ResponseEndBlock get endBlock => $_getN(1);
   @$pb.TagNumber(2)
-  set endBlock($0.ResponseEndBlock v) {
+  set endBlock(ResponseEndBlock v) {
     setField(2, v);
   }
 
@@ -102,12 +103,12 @@ class ABCIResponses extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearEndBlock() => clearField(2);
   @$pb.TagNumber(2)
-  $0.ResponseEndBlock ensureEndBlock() => $_ensure(1);
+  ResponseEndBlock ensureEndBlock() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $0.ResponseBeginBlock get beginBlock => $_getN(2);
+  ResponseBeginBlock get beginBlock => $_getN(2);
   @$pb.TagNumber(3)
-  set beginBlock($0.ResponseBeginBlock v) {
+  set beginBlock(ResponseBeginBlock v) {
     setField(3, v);
   }
 
@@ -116,13 +117,153 @@ class ABCIResponses extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearBeginBlock() => clearField(3);
   @$pb.TagNumber(3)
-  $0.ResponseBeginBlock ensureBeginBlock() => $_ensure(2);
+  ResponseBeginBlock ensureBeginBlock() => $_ensure(2);
+}
+
+/// ResponseBeginBlock is kept for backwards compatibility for versions prior to v0.38
+class ResponseBeginBlock extends $pb.GeneratedMessage {
+  factory ResponseBeginBlock({
+    $core.Iterable<$0.Event>? events,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    return $result;
+  }
+  ResponseBeginBlock._() : super();
+  factory ResponseBeginBlock.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ResponseBeginBlock.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResponseBeginBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.state'),
+      createEmptyInstance: create)
+    ..pc<$0.Event>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
+        subBuilder: $0.Event.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ResponseBeginBlock clone() => ResponseBeginBlock()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ResponseBeginBlock copyWith(void Function(ResponseBeginBlock) updates) =>
+      super.copyWith((message) => updates(message as ResponseBeginBlock))
+          as ResponseBeginBlock;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResponseBeginBlock create() => ResponseBeginBlock._();
+  ResponseBeginBlock createEmptyInstance() => create();
+  static $pb.PbList<ResponseBeginBlock> createRepeated() =>
+      $pb.PbList<ResponseBeginBlock>();
+  @$core.pragma('dart2js:noInline')
+  static ResponseBeginBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponseBeginBlock>(create);
+  static ResponseBeginBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$0.Event> get events => $_getList(0);
+}
+
+/// ResponseEndBlock is kept for backwards compatibility for versions prior to v0.38
+class ResponseEndBlock extends $pb.GeneratedMessage {
+  factory ResponseEndBlock({
+    $core.Iterable<$0.ValidatorUpdate>? validatorUpdates,
+    $1.ConsensusParams? consensusParamUpdates,
+    $core.Iterable<$0.Event>? events,
+  }) {
+    final $result = create();
+    if (validatorUpdates != null) {
+      $result.validatorUpdates.addAll(validatorUpdates);
+    }
+    if (consensusParamUpdates != null) {
+      $result.consensusParamUpdates = consensusParamUpdates;
+    }
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    return $result;
+  }
+  ResponseEndBlock._() : super();
+  factory ResponseEndBlock.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ResponseEndBlock.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResponseEndBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.state'),
+      createEmptyInstance: create)
+    ..pc<$0.ValidatorUpdate>(
+        1, _omitFieldNames ? '' : 'validatorUpdates', $pb.PbFieldType.PM,
+        subBuilder: $0.ValidatorUpdate.create)
+    ..aOM<$1.ConsensusParams>(2, _omitFieldNames ? '' : 'consensusParamUpdates',
+        subBuilder: $1.ConsensusParams.create)
+    ..pc<$0.Event>(3, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
+        subBuilder: $0.Event.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ResponseEndBlock clone() => ResponseEndBlock()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ResponseEndBlock copyWith(void Function(ResponseEndBlock) updates) =>
+      super.copyWith((message) => updates(message as ResponseEndBlock))
+          as ResponseEndBlock;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResponseEndBlock create() => ResponseEndBlock._();
+  ResponseEndBlock createEmptyInstance() => create();
+  static $pb.PbList<ResponseEndBlock> createRepeated() =>
+      $pb.PbList<ResponseEndBlock>();
+  @$core.pragma('dart2js:noInline')
+  static ResponseEndBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponseEndBlock>(create);
+  static ResponseEndBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$0.ValidatorUpdate> get validatorUpdates => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $1.ConsensusParams get consensusParamUpdates => $_getN(1);
+  @$pb.TagNumber(2)
+  set consensusParamUpdates($1.ConsensusParams v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasConsensusParamUpdates() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConsensusParamUpdates() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ConsensusParams ensureConsensusParamUpdates() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$0.Event> get events => $_getList(2);
 }
 
 /// ValidatorsInfo represents the latest validator set, or the last height it changed
 class ValidatorsInfo extends $pb.GeneratedMessage {
   factory ValidatorsInfo({
-    $1.ValidatorSet? validatorSet,
+    $2.ValidatorSet? validatorSet,
     $fixnum.Int64? lastHeightChanged,
   }) {
     final $result = create();
@@ -147,8 +288,8 @@ class ValidatorsInfo extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.state'),
       createEmptyInstance: create)
-    ..aOM<$1.ValidatorSet>(1, _omitFieldNames ? '' : 'validatorSet',
-        subBuilder: $1.ValidatorSet.create)
+    ..aOM<$2.ValidatorSet>(1, _omitFieldNames ? '' : 'validatorSet',
+        subBuilder: $2.ValidatorSet.create)
     ..aInt64(2, _omitFieldNames ? '' : 'lastHeightChanged')
     ..hasRequiredFields = false;
 
@@ -176,9 +317,9 @@ class ValidatorsInfo extends $pb.GeneratedMessage {
   static ValidatorsInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.ValidatorSet get validatorSet => $_getN(0);
+  $2.ValidatorSet get validatorSet => $_getN(0);
   @$pb.TagNumber(1)
-  set validatorSet($1.ValidatorSet v) {
+  set validatorSet($2.ValidatorSet v) {
     setField(1, v);
   }
 
@@ -187,7 +328,7 @@ class ValidatorsInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearValidatorSet() => clearField(1);
   @$pb.TagNumber(1)
-  $1.ValidatorSet ensureValidatorSet() => $_ensure(0);
+  $2.ValidatorSet ensureValidatorSet() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get lastHeightChanged => $_getI64(1);
@@ -205,7 +346,7 @@ class ValidatorsInfo extends $pb.GeneratedMessage {
 /// ConsensusParamsInfo represents the latest consensus params, or the last height it changed
 class ConsensusParamsInfo extends $pb.GeneratedMessage {
   factory ConsensusParamsInfo({
-    $2.ConsensusParams? consensusParams,
+    $1.ConsensusParams? consensusParams,
     $fixnum.Int64? lastHeightChanged,
   }) {
     final $result = create();
@@ -230,8 +371,8 @@ class ConsensusParamsInfo extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.state'),
       createEmptyInstance: create)
-    ..aOM<$2.ConsensusParams>(1, _omitFieldNames ? '' : 'consensusParams',
-        subBuilder: $2.ConsensusParams.create)
+    ..aOM<$1.ConsensusParams>(1, _omitFieldNames ? '' : 'consensusParams',
+        subBuilder: $1.ConsensusParams.create)
     ..aInt64(2, _omitFieldNames ? '' : 'lastHeightChanged')
     ..hasRequiredFields = false;
 
@@ -259,9 +400,9 @@ class ConsensusParamsInfo extends $pb.GeneratedMessage {
   static ConsensusParamsInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.ConsensusParams get consensusParams => $_getN(0);
+  $1.ConsensusParams get consensusParams => $_getN(0);
   @$pb.TagNumber(1)
-  set consensusParams($2.ConsensusParams v) {
+  set consensusParams($1.ConsensusParams v) {
     setField(1, v);
   }
 
@@ -270,7 +411,7 @@ class ConsensusParamsInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearConsensusParams() => clearField(1);
   @$pb.TagNumber(1)
-  $2.ConsensusParams ensureConsensusParams() => $_ensure(0);
+  $1.ConsensusParams ensureConsensusParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get lastHeightChanged => $_getI64(1);
@@ -287,15 +428,19 @@ class ConsensusParamsInfo extends $pb.GeneratedMessage {
 
 class ABCIResponsesInfo extends $pb.GeneratedMessage {
   factory ABCIResponsesInfo({
-    ABCIResponses? abciResponses,
+    LegacyABCIResponses? legacyAbciResponses,
     $fixnum.Int64? height,
+    $0.ResponseFinalizeBlock? responseFinalizeBlock,
   }) {
     final $result = create();
-    if (abciResponses != null) {
-      $result.abciResponses = abciResponses;
+    if (legacyAbciResponses != null) {
+      $result.legacyAbciResponses = legacyAbciResponses;
     }
     if (height != null) {
       $result.height = height;
+    }
+    if (responseFinalizeBlock != null) {
+      $result.responseFinalizeBlock = responseFinalizeBlock;
     }
     return $result;
   }
@@ -312,9 +457,12 @@ class ABCIResponsesInfo extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.state'),
       createEmptyInstance: create)
-    ..aOM<ABCIResponses>(1, _omitFieldNames ? '' : 'abciResponses',
-        subBuilder: ABCIResponses.create)
+    ..aOM<LegacyABCIResponses>(1, _omitFieldNames ? '' : 'legacyAbciResponses',
+        subBuilder: LegacyABCIResponses.create)
     ..aInt64(2, _omitFieldNames ? '' : 'height')
+    ..aOM<$0.ResponseFinalizeBlock>(
+        3, _omitFieldNames ? '' : 'responseFinalizeBlock',
+        subBuilder: $0.ResponseFinalizeBlock.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -341,18 +489,18 @@ class ABCIResponsesInfo extends $pb.GeneratedMessage {
   static ABCIResponsesInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
-  ABCIResponses get abciResponses => $_getN(0);
+  LegacyABCIResponses get legacyAbciResponses => $_getN(0);
   @$pb.TagNumber(1)
-  set abciResponses(ABCIResponses v) {
+  set legacyAbciResponses(LegacyABCIResponses v) {
     setField(1, v);
   }
 
   @$pb.TagNumber(1)
-  $core.bool hasAbciResponses() => $_has(0);
+  $core.bool hasLegacyAbciResponses() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAbciResponses() => clearField(1);
+  void clearLegacyAbciResponses() => clearField(1);
   @$pb.TagNumber(1)
-  ABCIResponses ensureAbciResponses() => $_ensure(0);
+  LegacyABCIResponses ensureLegacyAbciResponses() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get height => $_getI64(1);
@@ -365,6 +513,20 @@ class ABCIResponsesInfo extends $pb.GeneratedMessage {
   $core.bool hasHeight() => $_has(1);
   @$pb.TagNumber(2)
   void clearHeight() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $0.ResponseFinalizeBlock get responseFinalizeBlock => $_getN(2);
+  @$pb.TagNumber(3)
+  set responseFinalizeBlock($0.ResponseFinalizeBlock v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasResponseFinalizeBlock() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResponseFinalizeBlock() => clearField(3);
+  @$pb.TagNumber(3)
+  $0.ResponseFinalizeBlock ensureResponseFinalizeBlock() => $_ensure(2);
 }
 
 class Version extends $pb.GeneratedMessage {
@@ -454,11 +616,11 @@ class State extends $pb.GeneratedMessage {
     $fixnum.Int64? lastBlockHeight,
     $4.BlockID? lastBlockId,
     $5.Timestamp? lastBlockTime,
-    $1.ValidatorSet? nextValidators,
-    $1.ValidatorSet? validators,
-    $1.ValidatorSet? lastValidators,
+    $2.ValidatorSet? nextValidators,
+    $2.ValidatorSet? validators,
+    $2.ValidatorSet? lastValidators,
     $fixnum.Int64? lastHeightValidatorsChanged,
-    $2.ConsensusParams? consensusParams,
+    $1.ConsensusParams? consensusParams,
     $fixnum.Int64? lastHeightConsensusParamsChanged,
     $core.List<$core.int>? lastResultsHash,
     $core.List<$core.int>? appHash,
@@ -531,15 +693,15 @@ class State extends $pb.GeneratedMessage {
         subBuilder: $4.BlockID.create)
     ..aOM<$5.Timestamp>(5, _omitFieldNames ? '' : 'lastBlockTime',
         subBuilder: $5.Timestamp.create)
-    ..aOM<$1.ValidatorSet>(6, _omitFieldNames ? '' : 'nextValidators',
-        subBuilder: $1.ValidatorSet.create)
-    ..aOM<$1.ValidatorSet>(7, _omitFieldNames ? '' : 'validators',
-        subBuilder: $1.ValidatorSet.create)
-    ..aOM<$1.ValidatorSet>(8, _omitFieldNames ? '' : 'lastValidators',
-        subBuilder: $1.ValidatorSet.create)
+    ..aOM<$2.ValidatorSet>(6, _omitFieldNames ? '' : 'nextValidators',
+        subBuilder: $2.ValidatorSet.create)
+    ..aOM<$2.ValidatorSet>(7, _omitFieldNames ? '' : 'validators',
+        subBuilder: $2.ValidatorSet.create)
+    ..aOM<$2.ValidatorSet>(8, _omitFieldNames ? '' : 'lastValidators',
+        subBuilder: $2.ValidatorSet.create)
     ..aInt64(9, _omitFieldNames ? '' : 'lastHeightValidatorsChanged')
-    ..aOM<$2.ConsensusParams>(10, _omitFieldNames ? '' : 'consensusParams',
-        subBuilder: $2.ConsensusParams.create)
+    ..aOM<$1.ConsensusParams>(10, _omitFieldNames ? '' : 'consensusParams',
+        subBuilder: $1.ConsensusParams.create)
     ..aInt64(11, _omitFieldNames ? '' : 'lastHeightConsensusParamsChanged')
     ..a<$core.List<$core.int>>(
         12, _omitFieldNames ? '' : 'lastResultsHash', $pb.PbFieldType.OY)
@@ -644,9 +806,9 @@ class State extends $pb.GeneratedMessage {
   /// we set s.LastHeightValidatorsChanged = s.LastBlockHeight + 1 + 1
   /// Extra +1 due to nextValSet delay.
   @$pb.TagNumber(6)
-  $1.ValidatorSet get nextValidators => $_getN(5);
+  $2.ValidatorSet get nextValidators => $_getN(5);
   @$pb.TagNumber(6)
-  set nextValidators($1.ValidatorSet v) {
+  set nextValidators($2.ValidatorSet v) {
     setField(6, v);
   }
 
@@ -655,12 +817,12 @@ class State extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearNextValidators() => clearField(6);
   @$pb.TagNumber(6)
-  $1.ValidatorSet ensureNextValidators() => $_ensure(5);
+  $2.ValidatorSet ensureNextValidators() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $1.ValidatorSet get validators => $_getN(6);
+  $2.ValidatorSet get validators => $_getN(6);
   @$pb.TagNumber(7)
-  set validators($1.ValidatorSet v) {
+  set validators($2.ValidatorSet v) {
     setField(7, v);
   }
 
@@ -669,12 +831,12 @@ class State extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearValidators() => clearField(7);
   @$pb.TagNumber(7)
-  $1.ValidatorSet ensureValidators() => $_ensure(6);
+  $2.ValidatorSet ensureValidators() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $1.ValidatorSet get lastValidators => $_getN(7);
+  $2.ValidatorSet get lastValidators => $_getN(7);
   @$pb.TagNumber(8)
-  set lastValidators($1.ValidatorSet v) {
+  set lastValidators($2.ValidatorSet v) {
     setField(8, v);
   }
 
@@ -683,7 +845,7 @@ class State extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearLastValidators() => clearField(8);
   @$pb.TagNumber(8)
-  $1.ValidatorSet ensureLastValidators() => $_ensure(7);
+  $2.ValidatorSet ensureLastValidators() => $_ensure(7);
 
   @$pb.TagNumber(9)
   $fixnum.Int64 get lastHeightValidatorsChanged => $_getI64(8);
@@ -700,9 +862,9 @@ class State extends $pb.GeneratedMessage {
   /// Consensus parameters used for validating blocks.
   /// Changes returned by EndBlock and updated after Commit.
   @$pb.TagNumber(10)
-  $2.ConsensusParams get consensusParams => $_getN(9);
+  $1.ConsensusParams get consensusParams => $_getN(9);
   @$pb.TagNumber(10)
-  set consensusParams($2.ConsensusParams v) {
+  set consensusParams($1.ConsensusParams v) {
     setField(10, v);
   }
 
@@ -711,7 +873,7 @@ class State extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearConsensusParams() => clearField(10);
   @$pb.TagNumber(10)
-  $2.ConsensusParams ensureConsensusParams() => $_ensure(9);
+  $1.ConsensusParams ensureConsensusParams() => $_ensure(9);
 
   @$pb.TagNumber(11)
   $fixnum.Int64 get lastHeightConsensusParamsChanged => $_getI64(10);

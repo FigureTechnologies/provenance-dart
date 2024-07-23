@@ -129,7 +129,7 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.List<$0.Proposal> get proposals => $_getList(3);
 
-  /// params defines all the paramaters of related to deposit.
+  /// deposit_params defines all the parameters related to deposit.
   @$pb.TagNumber(5)
   $0.DepositParams get depositParams => $_getN(4);
   @$pb.TagNumber(5)
@@ -144,7 +144,7 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $0.DepositParams ensureDepositParams() => $_ensure(4);
 
-  /// params defines all the paramaters of related to voting.
+  /// voting_params defines all the parameters related to voting.
   @$pb.TagNumber(6)
   $0.VotingParams get votingParams => $_getN(5);
   @$pb.TagNumber(6)
@@ -159,7 +159,7 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $0.VotingParams ensureVotingParams() => $_ensure(5);
 
-  /// params defines all the paramaters of related to tally.
+  /// tally_params defines all the parameters related to tally.
   @$pb.TagNumber(7)
   $0.TallyParams get tallyParams => $_getN(6);
   @$pb.TagNumber(7)

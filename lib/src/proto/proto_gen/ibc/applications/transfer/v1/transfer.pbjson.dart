@@ -31,20 +31,12 @@ final $typed_data.Uint8List denomTraceDescriptor = $convert.base64Decode(
 const Params$json = {
   '1': 'Params',
   '2': [
-    {'1': 'send_enabled', '3': 1, '4': 1, '5': 8, '8': {}, '10': 'sendEnabled'},
-    {
-      '1': 'receive_enabled',
-      '3': 2,
-      '4': 1,
-      '5': 8,
-      '8': {},
-      '10': 'receiveEnabled'
-    },
+    {'1': 'send_enabled', '3': 1, '4': 1, '5': 8, '10': 'sendEnabled'},
+    {'1': 'receive_enabled', '3': 2, '4': 1, '5': 8, '10': 'receiveEnabled'},
   ],
 };
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSOgoMc2VuZF9lbmFibGVkGAEgASgIQhfy3h8TeWFtbDoic2VuZF9lbmFibGVkIl'
-    'ILc2VuZEVuYWJsZWQSQwoPcmVjZWl2ZV9lbmFibGVkGAIgASgIQhry3h8WeWFtbDoicmVjZWl2'
-    'ZV9lbmFibGVkIlIOcmVjZWl2ZUVuYWJsZWQ=');
+    'CgZQYXJhbXMSIQoMc2VuZF9lbmFibGVkGAEgASgIUgtzZW5kRW5hYmxlZBInCg9yZWNlaXZlX2'
+    'VuYWJsZWQYAiABKAhSDnJlY2VpdmVFbmFibGVk');

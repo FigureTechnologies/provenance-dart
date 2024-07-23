@@ -14,8 +14,68 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../cosmos/base/v1beta1/coin.pb.dart' as $1;
-import '../../../google/protobuf/any.pb.dart' as $0;
+import '../../../cosmos/base/v1beta1/coin.pb.dart' as $2;
+import '../../../google/protobuf/any.pb.dart' as $1;
+import 'types.pb.dart' as $0;
+
+/// StoreCodeAuthorization defines authorization for wasm code upload.
+/// Since: wasmd 0.42
+class StoreCodeAuthorization extends $pb.GeneratedMessage {
+  factory StoreCodeAuthorization({
+    $core.Iterable<CodeGrant>? grants,
+  }) {
+    final $result = create();
+    if (grants != null) {
+      $result.grants.addAll(grants);
+    }
+    return $result;
+  }
+  StoreCodeAuthorization._() : super();
+  factory StoreCodeAuthorization.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory StoreCodeAuthorization.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StoreCodeAuthorization',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
+      createEmptyInstance: create)
+    ..pc<CodeGrant>(1, _omitFieldNames ? '' : 'grants', $pb.PbFieldType.PM,
+        subBuilder: CodeGrant.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  StoreCodeAuthorization clone() =>
+      StoreCodeAuthorization()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  StoreCodeAuthorization copyWith(
+          void Function(StoreCodeAuthorization) updates) =>
+      super.copyWith((message) => updates(message as StoreCodeAuthorization))
+          as StoreCodeAuthorization;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StoreCodeAuthorization create() => StoreCodeAuthorization._();
+  StoreCodeAuthorization createEmptyInstance() => create();
+  static $pb.PbList<StoreCodeAuthorization> createRepeated() =>
+      $pb.PbList<StoreCodeAuthorization>();
+  @$core.pragma('dart2js:noInline')
+  static StoreCodeAuthorization getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StoreCodeAuthorization>(create);
+  static StoreCodeAuthorization? _defaultInstance;
+
+  /// Grants for code upload
+  @$pb.TagNumber(1)
+  $core.List<CodeGrant> get grants => $_getList(0);
+}
 
 /// ContractExecutionAuthorization defines authorization for wasm execute.
 /// Since: wasmd 0.30
@@ -139,13 +199,100 @@ class ContractMigrationAuthorization extends $pb.GeneratedMessage {
   $core.List<ContractGrant> get grants => $_getList(0);
 }
 
+/// CodeGrant a granted permission for a single code
+class CodeGrant extends $pb.GeneratedMessage {
+  factory CodeGrant({
+    $core.List<$core.int>? codeHash,
+    $0.AccessConfig? instantiatePermission,
+  }) {
+    final $result = create();
+    if (codeHash != null) {
+      $result.codeHash = codeHash;
+    }
+    if (instantiatePermission != null) {
+      $result.instantiatePermission = instantiatePermission;
+    }
+    return $result;
+  }
+  CodeGrant._() : super();
+  factory CodeGrant.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory CodeGrant.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CodeGrant',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'codeHash', $pb.PbFieldType.OY)
+    ..aOM<$0.AccessConfig>(2, _omitFieldNames ? '' : 'instantiatePermission',
+        subBuilder: $0.AccessConfig.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  CodeGrant clone() => CodeGrant()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  CodeGrant copyWith(void Function(CodeGrant) updates) =>
+      super.copyWith((message) => updates(message as CodeGrant)) as CodeGrant;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CodeGrant create() => CodeGrant._();
+  CodeGrant createEmptyInstance() => create();
+  static $pb.PbList<CodeGrant> createRepeated() => $pb.PbList<CodeGrant>();
+  @$core.pragma('dart2js:noInline')
+  static CodeGrant getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CodeGrant>(create);
+  static CodeGrant? _defaultInstance;
+
+  /// CodeHash is the unique identifier created by wasmvm
+  /// Wildcard "*" is used to specify any kind of grant.
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get codeHash => $_getN(0);
+  @$pb.TagNumber(1)
+  set codeHash($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasCodeHash() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCodeHash() => clearField(1);
+
+  /// InstantiatePermission is the superset access control to apply
+  /// on contract creation.
+  /// Optional
+  @$pb.TagNumber(2)
+  $0.AccessConfig get instantiatePermission => $_getN(1);
+  @$pb.TagNumber(2)
+  set instantiatePermission($0.AccessConfig v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasInstantiatePermission() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInstantiatePermission() => clearField(2);
+  @$pb.TagNumber(2)
+  $0.AccessConfig ensureInstantiatePermission() => $_ensure(1);
+}
+
 /// ContractGrant a granted permission for a single contract
 /// Since: wasmd 0.30
 class ContractGrant extends $pb.GeneratedMessage {
   factory ContractGrant({
     $core.String? contract,
-    $0.Any? limit,
-    $0.Any? filter,
+    $1.Any? limit,
+    $1.Any? filter,
   }) {
     final $result = create();
     if (contract != null) {
@@ -173,8 +320,8 @@ class ContractGrant extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contract')
-    ..aOM<$0.Any>(2, _omitFieldNames ? '' : 'limit', subBuilder: $0.Any.create)
-    ..aOM<$0.Any>(3, _omitFieldNames ? '' : 'filter', subBuilder: $0.Any.create)
+    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'limit', subBuilder: $1.Any.create)
+    ..aOM<$1.Any>(3, _omitFieldNames ? '' : 'filter', subBuilder: $1.Any.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -216,9 +363,9 @@ class ContractGrant extends $pb.GeneratedMessage {
   /// Limit defines execution limits that are enforced and updated when the grant
   /// is applied. When the limit lapsed the grant is removed.
   @$pb.TagNumber(2)
-  $0.Any get limit => $_getN(1);
+  $1.Any get limit => $_getN(1);
   @$pb.TagNumber(2)
-  set limit($0.Any v) {
+  set limit($1.Any v) {
     setField(2, v);
   }
 
@@ -227,15 +374,15 @@ class ContractGrant extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearLimit() => clearField(2);
   @$pb.TagNumber(2)
-  $0.Any ensureLimit() => $_ensure(1);
+  $1.Any ensureLimit() => $_ensure(1);
 
   /// Filter define more fine-grained control on the message payload passed
   /// to the contract in the operation. When no filter applies on execution, the
   /// operation is prohibited.
   @$pb.TagNumber(3)
-  $0.Any get filter => $_getN(2);
+  $1.Any get filter => $_getN(2);
   @$pb.TagNumber(3)
-  set filter($0.Any v) {
+  set filter($1.Any v) {
     setField(3, v);
   }
 
@@ -244,7 +391,7 @@ class ContractGrant extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFilter() => clearField(3);
   @$pb.TagNumber(3)
-  $0.Any ensureFilter() => $_ensure(2);
+  $1.Any ensureFilter() => $_ensure(2);
 }
 
 /// MaxCallsLimit limited number of calls to the contract. No funds transferable.
@@ -318,7 +465,7 @@ class MaxCallsLimit extends $pb.GeneratedMessage {
 /// Since: wasmd 0.30
 class MaxFundsLimit extends $pb.GeneratedMessage {
   factory MaxFundsLimit({
-    $core.Iterable<$1.Coin>? amounts,
+    $core.Iterable<$2.Coin>? amounts,
   }) {
     final $result = create();
     if (amounts != null) {
@@ -339,8 +486,8 @@ class MaxFundsLimit extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
       createEmptyInstance: create)
-    ..pc<$1.Coin>(1, _omitFieldNames ? '' : 'amounts', $pb.PbFieldType.PM,
-        subBuilder: $1.Coin.create)
+    ..pc<$2.Coin>(1, _omitFieldNames ? '' : 'amounts', $pb.PbFieldType.PM,
+        subBuilder: $2.Coin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -368,7 +515,7 @@ class MaxFundsLimit extends $pb.GeneratedMessage {
 
   /// Amounts is the maximal amount of tokens transferable to the contract.
   @$pb.TagNumber(1)
-  $core.List<$1.Coin> get amounts => $_getList(0);
+  $core.List<$2.Coin> get amounts => $_getList(0);
 }
 
 /// CombinedLimit defines the maximal amounts that can be sent to a contract and
@@ -377,7 +524,7 @@ class MaxFundsLimit extends $pb.GeneratedMessage {
 class CombinedLimit extends $pb.GeneratedMessage {
   factory CombinedLimit({
     $fixnum.Int64? callsRemaining,
-    $core.Iterable<$1.Coin>? amounts,
+    $core.Iterable<$2.Coin>? amounts,
   }) {
     final $result = create();
     if (callsRemaining != null) {
@@ -404,8 +551,8 @@ class CombinedLimit extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(
         1, _omitFieldNames ? '' : 'callsRemaining', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
-    ..pc<$1.Coin>(2, _omitFieldNames ? '' : 'amounts', $pb.PbFieldType.PM,
-        subBuilder: $1.Coin.create)
+    ..pc<$2.Coin>(2, _omitFieldNames ? '' : 'amounts', $pb.PbFieldType.PM,
+        subBuilder: $2.Coin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -446,7 +593,7 @@ class CombinedLimit extends $pb.GeneratedMessage {
 
   /// Amounts is the maximal amount of tokens transferable to the contract.
   @$pb.TagNumber(2)
-  $core.List<$1.Coin> get amounts => $_getList(1);
+  $core.List<$2.Coin> get amounts => $_getList(1);
 }
 
 /// AllowAllMessagesFilter is a wildcard to allow any type of contract payload

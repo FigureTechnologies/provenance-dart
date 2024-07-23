@@ -89,15 +89,11 @@ class AccessTypeParam extends $pb.GeneratedMessage {
 class AccessConfig extends $pb.GeneratedMessage {
   factory AccessConfig({
     AccessType? permission,
-    $core.String? address,
     $core.Iterable<$core.String>? addresses,
   }) {
     final $result = create();
     if (permission != null) {
       $result.permission = permission;
-    }
-    if (address != null) {
-      $result.address = address;
     }
     if (addresses != null) {
       $result.addresses.addAll(addresses);
@@ -121,7 +117,6 @@ class AccessConfig extends $pb.GeneratedMessage {
         defaultOrMaker: AccessType.ACCESS_TYPE_UNSPECIFIED,
         valueOf: AccessType.valueOf,
         enumValues: AccessType.values)
-    ..aOS(2, _omitFieldNames ? '' : 'address')
     ..pPS(3, _omitFieldNames ? '' : 'addresses')
     ..hasRequiredFields = false;
 
@@ -160,22 +155,8 @@ class AccessConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPermission() => clearField(1);
 
-  /// Address
-  /// Deprecated: replaced by addresses
-  @$pb.TagNumber(2)
-  $core.String get address => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set address($core.String v) {
-    $_setString(1, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasAddress() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearAddress() => clearField(2);
-
   @$pb.TagNumber(3)
-  $core.List<$core.String> get addresses => $_getList(2);
+  $core.List<$core.String> get addresses => $_getList(1);
 }
 
 /// Params defines the set of wasm parameters.

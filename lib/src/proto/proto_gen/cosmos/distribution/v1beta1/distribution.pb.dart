@@ -20,7 +20,9 @@ import '../../base/v1beta1/coin.pb.dart' as $0;
 class Params extends $pb.GeneratedMessage {
   factory Params({
     $core.String? communityTax,
+    @$core.Deprecated('This field is deprecated.')
     $core.String? baseProposerReward,
+    @$core.Deprecated('This field is deprecated.')
     $core.String? bonusProposerReward,
     $core.bool? withdrawAddrEnabled,
   }) {
@@ -29,9 +31,11 @@ class Params extends $pb.GeneratedMessage {
       $result.communityTax = communityTax;
     }
     if (baseProposerReward != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.baseProposerReward = baseProposerReward;
     }
     if (bonusProposerReward != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.bonusProposerReward = bonusProposerReward;
     }
     if (withdrawAddrEnabled != null) {
@@ -91,27 +95,39 @@ class Params extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearCommunityTax() => clearField(1);
 
+  /// Deprecated: The base_proposer_reward field is deprecated and is no longer used
+  /// in the x/distribution module's reward mechanism.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.String get baseProposerReward => $_getSZ(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   set baseProposerReward($core.String v) {
     $_setString(1, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasBaseProposerReward() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   void clearBaseProposerReward() => clearField(2);
 
+  /// Deprecated: The bonus_proposer_reward field is deprecated and is no longer used
+  /// in the x/distribution module's reward mechanism.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.String get bonusProposerReward => $_getSZ(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set bonusProposerReward($core.String v) {
     $_setString(2, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasBonusProposerReward() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearBonusProposerReward() => clearField(3);
 
@@ -609,9 +625,14 @@ class FeePool extends $pb.GeneratedMessage {
   $core.List<$0.DecCoin> get communityPool => $_getList(0);
 }
 
-/// CommunityPoolSpendProposal details a proposal for use of community funds,
-/// together with how many coins are proposed to be spent, and to which
-/// recipient account.
+///  CommunityPoolSpendProposal details a proposal for use of community funds,
+///  together with how many coins are proposed to be spent, and to which
+///  recipient account.
+///
+///  Deprecated: Do not use. As of the Cosmos SDK release v0.47.x, there is no
+///  longer a need for an explicit CommunityPoolSpendProposal. To spend community
+///  pool funds, a simple MsgCommunityPoolSpend can be invoked from the x/gov
+///  module via a v1 governance proposal.
 class CommunityPoolSpendProposal extends $pb.GeneratedMessage {
   factory CommunityPoolSpendProposal({
     $core.String? title,

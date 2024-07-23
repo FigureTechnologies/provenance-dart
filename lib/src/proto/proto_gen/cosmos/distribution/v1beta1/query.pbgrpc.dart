@@ -27,6 +27,13 @@ class QueryClient extends $grpc.Client {
           ($0.QueryParamsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.QueryParamsResponse.fromBuffer(value));
+  static final _$validatorDistributionInfo = $grpc.ClientMethod<
+          $0.QueryValidatorDistributionInfoRequest,
+          $0.QueryValidatorDistributionInfoResponse>(
+      '/cosmos.distribution.v1beta1.Query/ValidatorDistributionInfo',
+      ($0.QueryValidatorDistributionInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryValidatorDistributionInfoResponse.fromBuffer(value));
   static final _$validatorOutstandingRewards = $grpc.ClientMethod<
           $0.QueryValidatorOutstandingRewardsRequest,
           $0.QueryValidatorOutstandingRewardsResponse>(
@@ -91,6 +98,14 @@ class QueryClient extends $grpc.Client {
       $0.QueryParamsRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$params, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryValidatorDistributionInfoResponse>
+      validatorDistributionInfo(
+          $0.QueryValidatorDistributionInfoRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$validatorDistributionInfo, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.QueryValidatorOutstandingRewardsResponse>
@@ -160,6 +175,16 @@ abstract class QueryServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.QueryParamsRequest.fromBuffer(value),
             ($0.QueryParamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryValidatorDistributionInfoRequest,
+            $0.QueryValidatorDistributionInfoResponse>(
+        'ValidatorDistributionInfo',
+        validatorDistributionInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryValidatorDistributionInfoRequest.fromBuffer(value),
+        ($0.QueryValidatorDistributionInfoResponse value) =>
+            value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.QueryValidatorOutstandingRewardsRequest,
             $0.QueryValidatorOutstandingRewardsResponse>(
         'ValidatorOutstandingRewards',
@@ -242,6 +267,14 @@ abstract class QueryServiceBase extends $grpc.Service {
     return params(call, await request);
   }
 
+  $async.Future<$0.QueryValidatorDistributionInfoResponse>
+      validatorDistributionInfo_Pre(
+          $grpc.ServiceCall call,
+          $async.Future<$0.QueryValidatorDistributionInfoRequest>
+              request) async {
+    return validatorDistributionInfo(call, await request);
+  }
+
   $async.Future<$0.QueryValidatorOutstandingRewardsResponse>
       validatorOutstandingRewards_Pre(
           $grpc.ServiceCall call,
@@ -296,6 +329,9 @@ abstract class QueryServiceBase extends $grpc.Service {
 
   $async.Future<$0.QueryParamsResponse> params(
       $grpc.ServiceCall call, $0.QueryParamsRequest request);
+  $async.Future<$0.QueryValidatorDistributionInfoResponse>
+      validatorDistributionInfo($grpc.ServiceCall call,
+          $0.QueryValidatorDistributionInfoRequest request);
   $async.Future<$0.QueryValidatorOutstandingRewardsResponse>
       validatorOutstandingRewards($grpc.ServiceCall call,
           $0.QueryValidatorOutstandingRewardsRequest request);

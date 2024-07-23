@@ -1050,11 +1050,16 @@ class AddressStringToBytesResponse extends $pb.GeneratedMessage {
 ///  Since: cosmos-sdk 0.46.2
 class QueryAccountAddressByIDRequest extends $pb.GeneratedMessage {
   factory QueryAccountAddressByIDRequest({
-    $fixnum.Int64? id,
+    @$core.Deprecated('This field is deprecated.') $fixnum.Int64? id,
+    $fixnum.Int64? accountId,
   }) {
     final $result = create();
     if (id != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.id = id;
+    }
+    if (accountId != null) {
+      $result.accountId = accountId;
     }
     return $result;
   }
@@ -1072,6 +1077,9 @@ class QueryAccountAddressByIDRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.auth.v1beta1'),
       createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..a<$fixnum.Int64>(
+        2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1101,20 +1109,41 @@ class QueryAccountAddressByIDRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryAccountAddressByIDRequest>(create);
   static QueryAccountAddressByIDRequest? _defaultInstance;
 
-  /// id is the account number of the address to be queried. This field
-  /// should have been an uint64 (like all account numbers), and will be
-  /// updated to uint64 in a future version of the auth query.
+  ///  Deprecated, use account_id instead
+  ///
+  ///  id is the account number of the address to be queried. This field
+  ///  should have been an uint64 (like all account numbers), and will be
+  ///  updated to uint64 in a future version of the auth query.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set id($fixnum.Int64 v) {
     $_setInt64(0, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  ///  account_id is the account number of the address to be queried.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get accountId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set accountId($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => clearField(2);
 }
 
 ///  QueryAccountAddressByIDResponse is the response type for AccountAddressByID rpc method
@@ -1185,6 +1214,145 @@ class QueryAccountAddressByIDResponse extends $pb.GeneratedMessage {
   $core.bool hasAccountAddress() => $_has(0);
   @$pb.TagNumber(1)
   void clearAccountAddress() => clearField(1);
+}
+
+///  QueryAccountInfoRequest is the Query/AccountInfo request type.
+///
+///  Since: cosmos-sdk 0.47
+class QueryAccountInfoRequest extends $pb.GeneratedMessage {
+  factory QueryAccountInfoRequest({
+    $core.String? address,
+  }) {
+    final $result = create();
+    if (address != null) {
+      $result.address = address;
+    }
+    return $result;
+  }
+  QueryAccountInfoRequest._() : super();
+  factory QueryAccountInfoRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryAccountInfoRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryAccountInfoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.auth.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'address')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryAccountInfoRequest clone() =>
+      QueryAccountInfoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryAccountInfoRequest copyWith(
+          void Function(QueryAccountInfoRequest) updates) =>
+      super.copyWith((message) => updates(message as QueryAccountInfoRequest))
+          as QueryAccountInfoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryAccountInfoRequest create() => QueryAccountInfoRequest._();
+  QueryAccountInfoRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryAccountInfoRequest> createRepeated() =>
+      $pb.PbList<QueryAccountInfoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryAccountInfoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryAccountInfoRequest>(create);
+  static QueryAccountInfoRequest? _defaultInstance;
+
+  /// address is the account address string.
+  @$pb.TagNumber(1)
+  $core.String get address => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set address($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAddress() => clearField(1);
+}
+
+///  QueryAccountInfoResponse is the Query/AccountInfo response type.
+///
+///  Since: cosmos-sdk 0.47
+class QueryAccountInfoResponse extends $pb.GeneratedMessage {
+  factory QueryAccountInfoResponse({
+    $3.BaseAccount? info,
+  }) {
+    final $result = create();
+    if (info != null) {
+      $result.info = info;
+    }
+    return $result;
+  }
+  QueryAccountInfoResponse._() : super();
+  factory QueryAccountInfoResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryAccountInfoResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryAccountInfoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.auth.v1beta1'),
+      createEmptyInstance: create)
+    ..aOM<$3.BaseAccount>(1, _omitFieldNames ? '' : 'info',
+        subBuilder: $3.BaseAccount.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryAccountInfoResponse clone() =>
+      QueryAccountInfoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryAccountInfoResponse copyWith(
+          void Function(QueryAccountInfoResponse) updates) =>
+      super.copyWith((message) => updates(message as QueryAccountInfoResponse))
+          as QueryAccountInfoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryAccountInfoResponse create() => QueryAccountInfoResponse._();
+  QueryAccountInfoResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryAccountInfoResponse> createRepeated() =>
+      $pb.PbList<QueryAccountInfoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryAccountInfoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryAccountInfoResponse>(create);
+  static QueryAccountInfoResponse? _defaultInstance;
+
+  /// info is the account info which is represented by BaseAccount.
+  @$pb.TagNumber(1)
+  $3.BaseAccount get info => $_getN(0);
+  @$pb.TagNumber(1)
+  set info($3.BaseAccount v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasInfo() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInfo() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.BaseAccount ensureInfo() => $_ensure(0);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

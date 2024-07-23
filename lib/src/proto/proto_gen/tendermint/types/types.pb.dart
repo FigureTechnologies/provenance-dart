@@ -19,6 +19,7 @@ import '../crypto/proof.pb.dart' as $0;
 import '../version/types.pb.dart' as $1;
 import 'types.pbenum.dart';
 import 'validator.pb.dart' as $3;
+import 'validator.pbenum.dart' as $3;
 
 export 'types.pbenum.dart';
 
@@ -644,7 +645,7 @@ class Data extends $pb.GeneratedMessage {
   $core.List<$core.List<$core.int>> get txs => $_getList(0);
 }
 
-/// Vote represents a prevote, precommit, or commit vote from validators for
+/// Vote represents a prevote or precommit vote from validators for
 /// consensus.
 class Vote extends $pb.GeneratedMessage {
   factory Vote({
@@ -656,6 +657,8 @@ class Vote extends $pb.GeneratedMessage {
     $core.List<$core.int>? validatorAddress,
     $core.int? validatorIndex,
     $core.List<$core.int>? signature,
+    $core.List<$core.int>? extension_9,
+    $core.List<$core.int>? extensionSignature,
   }) {
     final $result = create();
     if (type != null) {
@@ -681,6 +684,12 @@ class Vote extends $pb.GeneratedMessage {
     }
     if (signature != null) {
       $result.signature = signature;
+    }
+    if (extension_9 != null) {
+      $result.extension_9 = extension_9;
+    }
+    if (extensionSignature != null) {
+      $result.extensionSignature = extensionSignature;
     }
     return $result;
   }
@@ -713,6 +722,10 @@ class Vote extends $pb.GeneratedMessage {
         7, _omitFieldNames ? '' : 'validatorIndex', $pb.PbFieldType.O3)
     ..a<$core.List<$core.int>>(
         8, _omitFieldNames ? '' : 'signature', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        9, _omitFieldNames ? '' : 'extension', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        10, _omitFieldNames ? '' : 'extensionSignature', $pb.PbFieldType.OY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -824,6 +837,8 @@ class Vote extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearValidatorIndex() => clearField(7);
 
+  /// Vote signature by the validator if they participated in consensus for the
+  /// associated block.
   @$pb.TagNumber(8)
   $core.List<$core.int> get signature => $_getN(7);
   @$pb.TagNumber(8)
@@ -835,6 +850,35 @@ class Vote extends $pb.GeneratedMessage {
   $core.bool hasSignature() => $_has(7);
   @$pb.TagNumber(8)
   void clearSignature() => clearField(8);
+
+  /// Vote extension provided by the application. Only valid for precommit
+  /// messages.
+  @$pb.TagNumber(9)
+  $core.List<$core.int> get extension_9 => $_getN(8);
+  @$pb.TagNumber(9)
+  set extension_9($core.List<$core.int> v) {
+    $_setBytes(8, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasExtension_9() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearExtension_9() => clearField(9);
+
+  /// Vote extension signature by the validator if they participated in
+  /// consensus for the associated block.
+  /// Only valid for precommit messages.
+  @$pb.TagNumber(10)
+  $core.List<$core.int> get extensionSignature => $_getN(9);
+  @$pb.TagNumber(10)
+  set extensionSignature($core.List<$core.int> v) {
+    $_setBytes(9, v);
+  }
+
+  @$pb.TagNumber(10)
+  $core.bool hasExtensionSignature() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExtensionSignature() => clearField(10);
 }
 
 /// Commit contains the evidence that a block was committed by a set of validators.
@@ -947,7 +991,7 @@ class Commit extends $pb.GeneratedMessage {
 /// CommitSig is a part of the Vote included in a Commit.
 class CommitSig extends $pb.GeneratedMessage {
   factory CommitSig({
-    BlockIDFlag? blockIdFlag,
+    $3.BlockIDFlag? blockIdFlag,
     $core.List<$core.int>? validatorAddress,
     $2.Timestamp? timestamp,
     $core.List<$core.int>? signature,
@@ -980,11 +1024,11 @@ class CommitSig extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.types'),
       createEmptyInstance: create)
-    ..e<BlockIDFlag>(
+    ..e<$3.BlockIDFlag>(
         1, _omitFieldNames ? '' : 'blockIdFlag', $pb.PbFieldType.OE,
-        defaultOrMaker: BlockIDFlag.BLOCK_ID_FLAG_UNKNOWN,
-        valueOf: BlockIDFlag.valueOf,
-        enumValues: BlockIDFlag.values)
+        defaultOrMaker: $3.BlockIDFlag.BLOCK_ID_FLAG_UNKNOWN,
+        valueOf: $3.BlockIDFlag.valueOf,
+        enumValues: $3.BlockIDFlag.values)
     ..a<$core.List<$core.int>>(
         2, _omitFieldNames ? '' : 'validatorAddress', $pb.PbFieldType.OY)
     ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timestamp',
@@ -1015,9 +1059,9 @@ class CommitSig extends $pb.GeneratedMessage {
   static CommitSig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  BlockIDFlag get blockIdFlag => $_getN(0);
+  $3.BlockIDFlag get blockIdFlag => $_getN(0);
   @$pb.TagNumber(1)
-  set blockIdFlag(BlockIDFlag v) {
+  set blockIdFlag($3.BlockIDFlag v) {
     setField(1, v);
   }
 
@@ -1063,6 +1107,278 @@ class CommitSig extends $pb.GeneratedMessage {
   $core.bool hasSignature() => $_has(3);
   @$pb.TagNumber(4)
   void clearSignature() => clearField(4);
+}
+
+class ExtendedCommit extends $pb.GeneratedMessage {
+  factory ExtendedCommit({
+    $fixnum.Int64? height,
+    $core.int? round,
+    BlockID? blockId,
+    $core.Iterable<ExtendedCommitSig>? extendedSignatures,
+  }) {
+    final $result = create();
+    if (height != null) {
+      $result.height = height;
+    }
+    if (round != null) {
+      $result.round = round;
+    }
+    if (blockId != null) {
+      $result.blockId = blockId;
+    }
+    if (extendedSignatures != null) {
+      $result.extendedSignatures.addAll(extendedSignatures);
+    }
+    return $result;
+  }
+  ExtendedCommit._() : super();
+  factory ExtendedCommit.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ExtendedCommit.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExtendedCommit',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.types'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'height')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'round', $pb.PbFieldType.O3)
+    ..aOM<BlockID>(3, _omitFieldNames ? '' : 'blockId',
+        subBuilder: BlockID.create)
+    ..pc<ExtendedCommitSig>(
+        4, _omitFieldNames ? '' : 'extendedSignatures', $pb.PbFieldType.PM,
+        subBuilder: ExtendedCommitSig.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ExtendedCommit clone() => ExtendedCommit()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ExtendedCommit copyWith(void Function(ExtendedCommit) updates) =>
+      super.copyWith((message) => updates(message as ExtendedCommit))
+          as ExtendedCommit;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtendedCommit create() => ExtendedCommit._();
+  ExtendedCommit createEmptyInstance() => create();
+  static $pb.PbList<ExtendedCommit> createRepeated() =>
+      $pb.PbList<ExtendedCommit>();
+  @$core.pragma('dart2js:noInline')
+  static ExtendedCommit getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExtendedCommit>(create);
+  static ExtendedCommit? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get height => $_getI64(0);
+  @$pb.TagNumber(1)
+  set height($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasHeight() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeight() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get round => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set round($core.int v) {
+    $_setSignedInt32(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasRound() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRound() => clearField(2);
+
+  @$pb.TagNumber(3)
+  BlockID get blockId => $_getN(2);
+  @$pb.TagNumber(3)
+  set blockId(BlockID v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasBlockId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBlockId() => clearField(3);
+  @$pb.TagNumber(3)
+  BlockID ensureBlockId() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.List<ExtendedCommitSig> get extendedSignatures => $_getList(3);
+}
+
+/// ExtendedCommitSig retains all the same fields as CommitSig but adds vote
+/// extension-related fields. We use two signatures to ensure backwards compatibility.
+/// That is the digest of the original signature is still the same in prior versions
+class ExtendedCommitSig extends $pb.GeneratedMessage {
+  factory ExtendedCommitSig({
+    $3.BlockIDFlag? blockIdFlag,
+    $core.List<$core.int>? validatorAddress,
+    $2.Timestamp? timestamp,
+    $core.List<$core.int>? signature,
+    $core.List<$core.int>? extension_5,
+    $core.List<$core.int>? extensionSignature,
+  }) {
+    final $result = create();
+    if (blockIdFlag != null) {
+      $result.blockIdFlag = blockIdFlag;
+    }
+    if (validatorAddress != null) {
+      $result.validatorAddress = validatorAddress;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (signature != null) {
+      $result.signature = signature;
+    }
+    if (extension_5 != null) {
+      $result.extension_5 = extension_5;
+    }
+    if (extensionSignature != null) {
+      $result.extensionSignature = extensionSignature;
+    }
+    return $result;
+  }
+  ExtendedCommitSig._() : super();
+  factory ExtendedCommitSig.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ExtendedCommitSig.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExtendedCommitSig',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.types'),
+      createEmptyInstance: create)
+    ..e<$3.BlockIDFlag>(
+        1, _omitFieldNames ? '' : 'blockIdFlag', $pb.PbFieldType.OE,
+        defaultOrMaker: $3.BlockIDFlag.BLOCK_ID_FLAG_UNKNOWN,
+        valueOf: $3.BlockIDFlag.valueOf,
+        enumValues: $3.BlockIDFlag.values)
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'validatorAddress', $pb.PbFieldType.OY)
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timestamp',
+        subBuilder: $2.Timestamp.create)
+    ..a<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'signature', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        5, _omitFieldNames ? '' : 'extension', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        6, _omitFieldNames ? '' : 'extensionSignature', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ExtendedCommitSig clone() => ExtendedCommitSig()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ExtendedCommitSig copyWith(void Function(ExtendedCommitSig) updates) =>
+      super.copyWith((message) => updates(message as ExtendedCommitSig))
+          as ExtendedCommitSig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtendedCommitSig create() => ExtendedCommitSig._();
+  ExtendedCommitSig createEmptyInstance() => create();
+  static $pb.PbList<ExtendedCommitSig> createRepeated() =>
+      $pb.PbList<ExtendedCommitSig>();
+  @$core.pragma('dart2js:noInline')
+  static ExtendedCommitSig getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExtendedCommitSig>(create);
+  static ExtendedCommitSig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.BlockIDFlag get blockIdFlag => $_getN(0);
+  @$pb.TagNumber(1)
+  set blockIdFlag($3.BlockIDFlag v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasBlockIdFlag() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlockIdFlag() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get validatorAddress => $_getN(1);
+  @$pb.TagNumber(2)
+  set validatorAddress($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasValidatorAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValidatorAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $2.Timestamp get timestamp => $_getN(2);
+  @$pb.TagNumber(3)
+  set timestamp($2.Timestamp v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasTimestamp() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTimestamp() => clearField(3);
+  @$pb.TagNumber(3)
+  $2.Timestamp ensureTimestamp() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get signature => $_getN(3);
+  @$pb.TagNumber(4)
+  set signature($core.List<$core.int> v) {
+    $_setBytes(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasSignature() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSignature() => clearField(4);
+
+  /// Vote extension data
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get extension_5 => $_getN(4);
+  @$pb.TagNumber(5)
+  set extension_5($core.List<$core.int> v) {
+    $_setBytes(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasExtension_5() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExtension_5() => clearField(5);
+
+  /// Vote extension signature
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get extensionSignature => $_getN(5);
+  @$pb.TagNumber(6)
+  set extensionSignature($core.List<$core.int> v) {
+    $_setBytes(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasExtensionSignature() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExtensionSignature() => clearField(6);
 }
 
 class Proposal extends $pb.GeneratedMessage {

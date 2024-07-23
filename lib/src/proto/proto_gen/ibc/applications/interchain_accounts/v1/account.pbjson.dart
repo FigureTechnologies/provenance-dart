@@ -26,21 +26,14 @@ const InterchainAccount$json = {
       '8': {},
       '10': 'baseAccount'
     },
-    {
-      '1': 'account_owner',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'accountOwner'
-    },
+    {'1': 'account_owner', '3': 2, '4': 1, '5': 9, '10': 'accountOwner'},
   ],
   '7': {},
 };
 
 /// Descriptor for `InterchainAccount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List interchainAccountDescriptor = $convert.base64Decode(
-    'ChFJbnRlcmNoYWluQWNjb3VudBJgCgxiYXNlX2FjY291bnQYASABKAsyIC5jb3Ntb3MuYXV0aC'
-    '52MWJldGExLkJhc2VBY2NvdW50QhvQ3h8B8t4fE3lhbWw6ImJhc2VfYWNjb3VudCJSC2Jhc2VB'
-    'Y2NvdW50Ej0KDWFjY291bnRfb3duZXIYAiABKAlCGPLeHxR5YW1sOiJhY2NvdW50X293bmVyIl'
-    'IMYWNjb3VudE93bmVyOh6IoB8AmKAfAMq0LRJJbnRlcmNoYWluQWNjb3VudEk=');
+    'ChFJbnRlcmNoYWluQWNjb3VudBJJCgxiYXNlX2FjY291bnQYASABKAsyIC5jb3Ntb3MuYXV0aC'
+    '52MWJldGExLkJhc2VBY2NvdW50QgTQ3h8BUgtiYXNlQWNjb3VudBIjCg1hY2NvdW50X293bmVy'
+    'GAIgASgJUgxhY2NvdW50T3duZXI6RoigHwCYoB8AyrQtOmliYy5hcHBsaWNhdGlvbnMuaW50ZX'
+    'JjaGFpbl9hY2NvdW50cy52MS5JbnRlcmNoYWluQWNjb3VudEk=');

@@ -34,9 +34,9 @@ const Commitment$json = {
 /// Descriptor for `Commitment`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List commitmentDescriptor = $convert.base64Decode(
     'CgpDb21taXRtZW50EhgKB2FjY291bnQYASABKAlSB2FjY291bnQSGwoJbWFya2V0X2lkGAIgAS'
-    'gNUghtYXJrZXRJZBJjCgZhbW91bnQYAyADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5C'
-    'MMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IGYW1vdW'
-    '50');
+    'gNUghtYXJrZXRJZBJ5CgZhbW91bnQYAyADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5C'
+    'RsjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc5rnsCoMbG'
+    'VnYWN5X2NvaW5zqOewKgFSBmFtb3VudA==');
 
 @$core.Deprecated('Use accountAmountDescriptor instead')
 const AccountAmount$json = {
@@ -59,9 +59,9 @@ const AccountAmount$json = {
 /// Descriptor for `AccountAmount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List accountAmountDescriptor = $convert.base64Decode(
     'Cg1BY2NvdW50QW1vdW50EjIKB2FjY291bnQYASABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cm'
-    'luZ1IHYWNjb3VudBJjCgZhbW91bnQYAiADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5C'
-    'MMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IGYW1vdW'
-    '50OgSYoB8A');
+    'luZ1IHYWNjb3VudBJ5CgZhbW91bnQYAiADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5C'
+    'RsjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc5rnsCoMbG'
+    'VnYWN5X2NvaW5zqOewKgFSBmFtb3VudDoEmKAfAA==');
 
 @$core.Deprecated('Use marketAmountDescriptor instead')
 const MarketAmount$json = {
@@ -83,9 +83,10 @@ const MarketAmount$json = {
 
 /// Descriptor for `MarketAmount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List marketAmountDescriptor = $convert.base64Decode(
-    'CgxNYXJrZXRBbW91bnQSGwoJbWFya2V0X2lkGAEgASgNUghtYXJrZXRJZBJjCgZhbW91bnQYAi'
-    'ADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Nt'
-    'b3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IGYW1vdW50OgSYoB8A');
+    'CgxNYXJrZXRBbW91bnQSGwoJbWFya2V0X2lkGAEgASgNUghtYXJrZXRJZBJ5CgZhbW91bnQYAi'
+    'ADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CRsjeHwCq3x8oZ2l0aHViLmNvbS9jb3Nt'
+    'b3MvY29zbW9zLXNkay90eXBlcy5Db2luc5rnsCoMbGVnYWN5X2NvaW5zqOewKgFSBmFtb3VudD'
+    'oEmKAfAA==');
 
 @$core.Deprecated('Use netAssetPriceDescriptor instead')
 const NetAssetPrice$json = {

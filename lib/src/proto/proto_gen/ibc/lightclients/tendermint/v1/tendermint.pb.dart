@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../../cosmos/ics23/v1/proofs.pb.dart' as $2;
 import '../../../../google/protobuf/duration.pb.dart' as $0;
 import '../../../../google/protobuf/timestamp.pb.dart' as $3;
-import '../../../../proofs.pb.dart' as $2;
 import '../../../../tendermint/types/types.pb.dart' as $5;
 import '../../../../tendermint/types/validator.pb.dart' as $6;
 import '../../../core/client/v1/client.pb.dart' as $1;
@@ -396,12 +396,13 @@ class ConsensusState extends $pb.GeneratedMessage {
 /// that implements Misbehaviour interface expected by ICS-02
 class Misbehaviour extends $pb.GeneratedMessage {
   factory Misbehaviour({
-    $core.String? clientId,
+    @$core.Deprecated('This field is deprecated.') $core.String? clientId,
     Header? header1,
     Header? header2,
   }) {
     final $result = create();
     if (clientId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.clientId = clientId;
     }
     if (header1 != null) {
@@ -455,15 +456,20 @@ class Misbehaviour extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<Misbehaviour>(create);
   static Misbehaviour? _defaultInstance;
 
+  /// ClientID is deprecated
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get clientId => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set clientId($core.String v) {
     $_setString(0, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasClientId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearClientId() => clearField(1);
 

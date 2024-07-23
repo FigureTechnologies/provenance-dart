@@ -143,9 +143,10 @@ const CalculateTxFeesResponse$json = {
 
 /// Descriptor for `CalculateTxFeesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List calculateTxFeesResponseDescriptor = $convert.base64Decode(
-    'ChdDYWxjdWxhdGVUeEZlZXNSZXNwb25zZRJ0Cg9hZGRpdGlvbmFsX2ZlZXMYASADKAsyGS5jb3'
-    'Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9z'
-    'LXNkay90eXBlcy5Db2luc1IOYWRkaXRpb25hbEZlZXMSagoKdG90YWxfZmVlcxgCIAMoCzIZLm'
-    'Nvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkIwyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Nt'
-    'b3Mtc2RrL3R5cGVzLkNvaW5zUgl0b3RhbEZlZXMSIwoNZXN0aW1hdGVkX2dhcxgDIAEoBFIMZX'
-    'N0aW1hdGVkR2Fz');
+    'ChdDYWxjdWxhdGVUeEZlZXNSZXNwb25zZRKKAQoPYWRkaXRpb25hbF9mZWVzGAEgAygLMhkuY2'
+    '9zbW9zLmJhc2UudjFiZXRhMS5Db2luQkbI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21v'
+    'cy1zZGsvdHlwZXMuQ29pbnOa57AqDGxlZ2FjeV9jb2luc6jnsCoBUg5hZGRpdGlvbmFsRmVlcx'
+    'KAAQoKdG90YWxfZmVlcxgCIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkJGyN4fAKrf'
+    'HyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zmuewKgxsZWdhY3lfY2'
+    '9pbnOo57AqAVIJdG90YWxGZWVzEiMKDWVzdGltYXRlZF9nYXMYAyABKARSDGVzdGltYXRlZEdh'
+    'cw==');

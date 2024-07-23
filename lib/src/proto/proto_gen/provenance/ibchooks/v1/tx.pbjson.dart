@@ -17,44 +17,62 @@ import 'dart:typed_data' as $typed_data;
 const MsgEmitIBCAck$json = {
   '1': 'MsgEmitIBCAck',
   '2': [
-    {'1': 'sender', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'sender'},
-    {
-      '1': 'packet_sequence',
-      '3': 2,
-      '4': 1,
-      '5': 4,
-      '8': {},
-      '10': 'packetSequence'
-    },
-    {'1': 'channel', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'channel'},
+    {'1': 'sender', '3': 1, '4': 1, '5': 9, '10': 'sender'},
+    {'1': 'packet_sequence', '3': 2, '4': 1, '5': 4, '10': 'packetSequence'},
+    {'1': 'channel', '3': 3, '4': 1, '5': 9, '10': 'channel'},
   ],
+  '7': {},
 };
 
 /// Descriptor for `MsgEmitIBCAck`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgEmitIBCAckDescriptor = $convert.base64Decode(
-    'Cg1Nc2dFbWl0SUJDQWNrEikKBnNlbmRlchgBIAEoCUIR8t4fDXlhbWw6InNlbmRlciJSBnNlbm'
-    'RlchJDCg9wYWNrZXRfc2VxdWVuY2UYAiABKARCGvLeHxZ5YW1sOiJwYWNrZXRfc2VxdWVuY2Ui'
-    'Ug5wYWNrZXRTZXF1ZW5jZRIsCgdjaGFubmVsGAMgASgJQhLy3h8OeWFtbDoiY2hhbm5lbCJSB2'
-    'NoYW5uZWw=');
+    'Cg1Nc2dFbWl0SUJDQWNrEhYKBnNlbmRlchgBIAEoCVIGc2VuZGVyEicKD3BhY2tldF9zZXF1ZW'
+    '5jZRgCIAEoBFIOcGFja2V0U2VxdWVuY2USGAoHY2hhbm5lbBgDIAEoCVIHY2hhbm5lbDoLguew'
+    'KgZzZW5kZXI=');
 
 @$core.Deprecated('Use msgEmitIBCAckResponseDescriptor instead')
 const MsgEmitIBCAckResponse$json = {
   '1': 'MsgEmitIBCAckResponse',
   '2': [
-    {
-      '1': 'contract_result',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'contractResult'
-    },
-    {'1': 'ibc_ack', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'ibcAck'},
+    {'1': 'contract_result', '3': 1, '4': 1, '5': 9, '10': 'contractResult'},
+    {'1': 'ibc_ack', '3': 2, '4': 1, '5': 9, '10': 'ibcAck'},
   ],
 };
 
 /// Descriptor for `MsgEmitIBCAckResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgEmitIBCAckResponseDescriptor = $convert.base64Decode(
-    'ChVNc2dFbWl0SUJDQWNrUmVzcG9uc2USQwoPY29udHJhY3RfcmVzdWx0GAEgASgJQhry3h8WeW'
-    'FtbDoiY29udHJhY3RfcmVzdWx0IlIOY29udHJhY3RSZXN1bHQSKwoHaWJjX2FjaxgCIAEoCUIS'
-    '8t4fDnlhbWw6ImliY19hY2siUgZpYmNBY2s=');
+    'ChVNc2dFbWl0SUJDQWNrUmVzcG9uc2USJwoPY29udHJhY3RfcmVzdWx0GAEgASgJUg5jb250cm'
+    'FjdFJlc3VsdBIXCgdpYmNfYWNrGAIgASgJUgZpYmNBY2s=');
+
+@$core.Deprecated('Use msgUpdateParamsRequestDescriptor instead')
+const MsgUpdateParamsRequest$json = {
+  '1': 'MsgUpdateParamsRequest',
+  '2': [
+    {'1': 'authority', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'authority'},
+    {
+      '1': 'params',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.provenance.ibchooks.v1.Params',
+      '8': {},
+      '10': 'params'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgUpdateParamsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsRequestDescriptor = $convert.base64Decode(
+    'ChZNc2dVcGRhdGVQYXJhbXNSZXF1ZXN0EjYKCWF1dGhvcml0eRgBIAEoCUIY0rQtFGNvc21vcy'
+    '5BZGRyZXNzU3RyaW5nUglhdXRob3JpdHkSPAoGcGFyYW1zGAIgASgLMh4ucHJvdmVuYW5jZS5p'
+    'YmNob29rcy52MS5QYXJhbXNCBMjeHwBSBnBhcmFtczoOguewKglhdXRob3JpdHk=');
+
+@$core.Deprecated('Use msgUpdateParamsResponseDescriptor instead')
+const MsgUpdateParamsResponse$json = {
+  '1': 'MsgUpdateParamsResponse',
+};
+
+/// Descriptor for `MsgUpdateParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsResponseDescriptor =
+    $convert.base64Decode('ChdNc2dVcGRhdGVQYXJhbXNSZXNwb25zZQ==');

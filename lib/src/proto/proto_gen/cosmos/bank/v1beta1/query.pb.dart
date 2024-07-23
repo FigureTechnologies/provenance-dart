@@ -172,6 +172,7 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
   factory QueryAllBalancesRequest({
     $core.String? address,
     $2.PageRequest? pagination,
+    $core.bool? resolveDenom,
   }) {
     final $result = create();
     if (address != null) {
@@ -179,6 +180,9 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
     }
     if (pagination != null) {
       $result.pagination = pagination;
+    }
+    if (resolveDenom != null) {
+      $result.resolveDenom = resolveDenom;
     }
     return $result;
   }
@@ -198,6 +202,7 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'address')
     ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
         subBuilder: $2.PageRequest.create)
+    ..aOB(3, _omitFieldNames ? '' : 'resolveDenom')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -252,6 +257,21 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
   $2.PageRequest ensurePagination() => $_ensure(1);
+
+  ///  resolve_denom is the flag to resolve the denom into a human-readable form from the metadata.
+  ///
+  ///  Since: cosmos-sdk 0.50
+  @$pb.TagNumber(3)
+  $core.bool get resolveDenom => $_getBF(2);
+  @$pb.TagNumber(3)
+  set resolveDenom($core.bool v) {
+    $_setBool(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasResolveDenom() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResolveDenom() => clearField(3);
 }
 
 /// QueryAllBalancesResponse is the response type for the Query/AllBalances RPC
@@ -508,6 +528,173 @@ class QuerySpendableBalancesResponse extends $pb.GeneratedMessage {
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
   $2.PageResponse ensurePagination() => $_ensure(1);
+}
+
+///  QuerySpendableBalanceByDenomRequest defines the gRPC request structure for
+///  querying an account's spendable balance for a specific denom.
+///
+///  Since: cosmos-sdk 0.47
+class QuerySpendableBalanceByDenomRequest extends $pb.GeneratedMessage {
+  factory QuerySpendableBalanceByDenomRequest({
+    $core.String? address,
+    $core.String? denom,
+  }) {
+    final $result = create();
+    if (address != null) {
+      $result.address = address;
+    }
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    return $result;
+  }
+  QuerySpendableBalanceByDenomRequest._() : super();
+  factory QuerySpendableBalanceByDenomRequest.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QuerySpendableBalanceByDenomRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QuerySpendableBalanceByDenomRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.bank.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'address')
+    ..aOS(2, _omitFieldNames ? '' : 'denom')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QuerySpendableBalanceByDenomRequest clone() =>
+      QuerySpendableBalanceByDenomRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QuerySpendableBalanceByDenomRequest copyWith(
+          void Function(QuerySpendableBalanceByDenomRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as QuerySpendableBalanceByDenomRequest))
+          as QuerySpendableBalanceByDenomRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuerySpendableBalanceByDenomRequest create() =>
+      QuerySpendableBalanceByDenomRequest._();
+  QuerySpendableBalanceByDenomRequest createEmptyInstance() => create();
+  static $pb.PbList<QuerySpendableBalanceByDenomRequest> createRepeated() =>
+      $pb.PbList<QuerySpendableBalanceByDenomRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QuerySpendableBalanceByDenomRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          QuerySpendableBalanceByDenomRequest>(create);
+  static QuerySpendableBalanceByDenomRequest? _defaultInstance;
+
+  /// address is the address to query balances for.
+  @$pb.TagNumber(1)
+  $core.String get address => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set address($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAddress() => clearField(1);
+
+  /// denom is the coin denom to query balances for.
+  @$pb.TagNumber(2)
+  $core.String get denom => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set denom($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasDenom() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDenom() => clearField(2);
+}
+
+///  QuerySpendableBalanceByDenomResponse defines the gRPC response structure for
+///  querying an account's spendable balance for a specific denom.
+///
+///  Since: cosmos-sdk 0.47
+class QuerySpendableBalanceByDenomResponse extends $pb.GeneratedMessage {
+  factory QuerySpendableBalanceByDenomResponse({
+    $1.Coin? balance,
+  }) {
+    final $result = create();
+    if (balance != null) {
+      $result.balance = balance;
+    }
+    return $result;
+  }
+  QuerySpendableBalanceByDenomResponse._() : super();
+  factory QuerySpendableBalanceByDenomResponse.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QuerySpendableBalanceByDenomResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QuerySpendableBalanceByDenomResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.bank.v1beta1'),
+      createEmptyInstance: create)
+    ..aOM<$1.Coin>(1, _omitFieldNames ? '' : 'balance',
+        subBuilder: $1.Coin.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QuerySpendableBalanceByDenomResponse clone() =>
+      QuerySpendableBalanceByDenomResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QuerySpendableBalanceByDenomResponse copyWith(
+          void Function(QuerySpendableBalanceByDenomResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as QuerySpendableBalanceByDenomResponse))
+          as QuerySpendableBalanceByDenomResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuerySpendableBalanceByDenomResponse create() =>
+      QuerySpendableBalanceByDenomResponse._();
+  QuerySpendableBalanceByDenomResponse createEmptyInstance() => create();
+  static $pb.PbList<QuerySpendableBalanceByDenomResponse> createRepeated() =>
+      $pb.PbList<QuerySpendableBalanceByDenomResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QuerySpendableBalanceByDenomResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          QuerySpendableBalanceByDenomResponse>(create);
+  static QuerySpendableBalanceByDenomResponse? _defaultInstance;
+
+  /// balance is the balance of the coin.
+  @$pb.TagNumber(1)
+  $1.Coin get balance => $_getN(0);
+  @$pb.TagNumber(1)
+  set balance($1.Coin v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasBalance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBalance() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.Coin ensureBalance() => $_ensure(0);
 }
 
 /// QueryTotalSupplyRequest is the request type for the Query/TotalSupply RPC
@@ -891,6 +1078,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryParamsResponse>(create);
   static QueryParamsResponse? _defaultInstance;
 
+  /// params provides the parameters of the bank module.
   @$pb.TagNumber(1)
   $3.Params get params => $_getN(0);
   @$pb.TagNumber(1)
@@ -1195,6 +1383,151 @@ class QueryDenomMetadataResponse extends $pb.GeneratedMessage {
   $3.Metadata ensureMetadata() => $_ensure(0);
 }
 
+/// QueryDenomMetadataByQueryStringRequest is the request type for the Query/DenomMetadata RPC method.
+/// Identical with QueryDenomMetadataRequest but receives denom as query string.
+class QueryDenomMetadataByQueryStringRequest extends $pb.GeneratedMessage {
+  factory QueryDenomMetadataByQueryStringRequest({
+    $core.String? denom,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    return $result;
+  }
+  QueryDenomMetadataByQueryStringRequest._() : super();
+  factory QueryDenomMetadataByQueryStringRequest.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryDenomMetadataByQueryStringRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryDenomMetadataByQueryStringRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.bank.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryDenomMetadataByQueryStringRequest clone() =>
+      QueryDenomMetadataByQueryStringRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryDenomMetadataByQueryStringRequest copyWith(
+          void Function(QueryDenomMetadataByQueryStringRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryDenomMetadataByQueryStringRequest))
+          as QueryDenomMetadataByQueryStringRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomMetadataByQueryStringRequest create() =>
+      QueryDenomMetadataByQueryStringRequest._();
+  QueryDenomMetadataByQueryStringRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryDenomMetadataByQueryStringRequest> createRepeated() =>
+      $pb.PbList<QueryDenomMetadataByQueryStringRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomMetadataByQueryStringRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          QueryDenomMetadataByQueryStringRequest>(create);
+  static QueryDenomMetadataByQueryStringRequest? _defaultInstance;
+
+  /// denom is the coin denom to query the metadata for.
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+}
+
+/// QueryDenomMetadataByQueryStringResponse is the response type for the Query/DenomMetadata RPC
+/// method. Identical with QueryDenomMetadataResponse but receives denom as query string in request.
+class QueryDenomMetadataByQueryStringResponse extends $pb.GeneratedMessage {
+  factory QueryDenomMetadataByQueryStringResponse({
+    $3.Metadata? metadata,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
+  QueryDenomMetadataByQueryStringResponse._() : super();
+  factory QueryDenomMetadataByQueryStringResponse.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryDenomMetadataByQueryStringResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryDenomMetadataByQueryStringResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.bank.v1beta1'),
+      createEmptyInstance: create)
+    ..aOM<$3.Metadata>(1, _omitFieldNames ? '' : 'metadata',
+        subBuilder: $3.Metadata.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryDenomMetadataByQueryStringResponse clone() =>
+      QueryDenomMetadataByQueryStringResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryDenomMetadataByQueryStringResponse copyWith(
+          void Function(QueryDenomMetadataByQueryStringResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryDenomMetadataByQueryStringResponse))
+          as QueryDenomMetadataByQueryStringResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomMetadataByQueryStringResponse create() =>
+      QueryDenomMetadataByQueryStringResponse._();
+  QueryDenomMetadataByQueryStringResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryDenomMetadataByQueryStringResponse> createRepeated() =>
+      $pb.PbList<QueryDenomMetadataByQueryStringResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomMetadataByQueryStringResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          QueryDenomMetadataByQueryStringResponse>(create);
+  static QueryDenomMetadataByQueryStringResponse? _defaultInstance;
+
+  /// metadata describes and provides all the client information for the requested token.
+  @$pb.TagNumber(1)
+  $3.Metadata get metadata => $_getN(0);
+  @$pb.TagNumber(1)
+  set metadata($3.Metadata v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasMetadata() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetadata() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.Metadata ensureMetadata() => $_ensure(0);
+}
+
 /// QueryDenomOwnersRequest defines the request type for the DenomOwners RPC query,
 /// which queries for a paginated set of all account holders of a particular
 /// denomination.
@@ -1452,6 +1785,183 @@ class QueryDenomOwnersResponse extends $pb.GeneratedMessage {
   $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
+///  QueryDenomOwnersByQueryRequest defines the request type for the DenomOwnersByQuery RPC query,
+///  which queries for a paginated set of all account holders of a particular
+///  denomination.
+///
+///  Since: cosmos-sdk 0.50.3
+class QueryDenomOwnersByQueryRequest extends $pb.GeneratedMessage {
+  factory QueryDenomOwnersByQueryRequest({
+    $core.String? denom,
+    $2.PageRequest? pagination,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryDenomOwnersByQueryRequest._() : super();
+  factory QueryDenomOwnersByQueryRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryDenomOwnersByQueryRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryDenomOwnersByQueryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.bank.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryDenomOwnersByQueryRequest clone() =>
+      QueryDenomOwnersByQueryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryDenomOwnersByQueryRequest copyWith(
+          void Function(QueryDenomOwnersByQueryRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryDenomOwnersByQueryRequest))
+          as QueryDenomOwnersByQueryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomOwnersByQueryRequest create() =>
+      QueryDenomOwnersByQueryRequest._();
+  QueryDenomOwnersByQueryRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryDenomOwnersByQueryRequest> createRepeated() =>
+      $pb.PbList<QueryDenomOwnersByQueryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomOwnersByQueryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryDenomOwnersByQueryRequest>(create);
+  static QueryDenomOwnersByQueryRequest? _defaultInstance;
+
+  /// denom defines the coin denomination to query all account holders for.
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+
+  /// pagination defines an optional pagination for the request.
+  @$pb.TagNumber(2)
+  $2.PageRequest get pagination => $_getN(1);
+  @$pb.TagNumber(2)
+  set pagination($2.PageRequest v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPagination() => clearField(2);
+  @$pb.TagNumber(2)
+  $2.PageRequest ensurePagination() => $_ensure(1);
+}
+
+///  QueryDenomOwnersByQueryResponse defines the RPC response of a DenomOwnersByQuery RPC query.
+///
+///  Since: cosmos-sdk 0.50.3
+class QueryDenomOwnersByQueryResponse extends $pb.GeneratedMessage {
+  factory QueryDenomOwnersByQueryResponse({
+    $core.Iterable<DenomOwner>? denomOwners,
+    $2.PageResponse? pagination,
+  }) {
+    final $result = create();
+    if (denomOwners != null) {
+      $result.denomOwners.addAll(denomOwners);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  QueryDenomOwnersByQueryResponse._() : super();
+  factory QueryDenomOwnersByQueryResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryDenomOwnersByQueryResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryDenomOwnersByQueryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.bank.v1beta1'),
+      createEmptyInstance: create)
+    ..pc<DenomOwner>(
+        1, _omitFieldNames ? '' : 'denomOwners', $pb.PbFieldType.PM,
+        subBuilder: DenomOwner.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryDenomOwnersByQueryResponse clone() =>
+      QueryDenomOwnersByQueryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryDenomOwnersByQueryResponse copyWith(
+          void Function(QueryDenomOwnersByQueryResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryDenomOwnersByQueryResponse))
+          as QueryDenomOwnersByQueryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomOwnersByQueryResponse create() =>
+      QueryDenomOwnersByQueryResponse._();
+  QueryDenomOwnersByQueryResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryDenomOwnersByQueryResponse> createRepeated() =>
+      $pb.PbList<QueryDenomOwnersByQueryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryDenomOwnersByQueryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryDenomOwnersByQueryResponse>(
+          create);
+  static QueryDenomOwnersByQueryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<DenomOwner> get denomOwners => $_getList(0);
+
+  /// pagination defines the pagination in the response.
+  @$pb.TagNumber(2)
+  $2.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(2)
+  set pagination($2.PageResponse v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPagination() => clearField(2);
+  @$pb.TagNumber(2)
+  $2.PageResponse ensurePagination() => $_ensure(1);
+}
+
 ///  QuerySendEnabledRequest defines the RPC request for looking up SendEnabled entries.
 ///
 ///  Since: cosmos-sdk 0.47
@@ -1516,7 +2026,8 @@ class QuerySendEnabledRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.List<$core.String> get denoms => $_getList(0);
 
-  /// pagination defines an optional pagination for the request.
+  /// pagination defines an optional pagination for the request. This field is
+  /// only read if the denoms field is empty.
   @$pb.TagNumber(99)
   $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(99)
@@ -1597,7 +2108,8 @@ class QuerySendEnabledResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.List<$3.SendEnabled> get sendEnabled => $_getList(0);
 
-  /// pagination defines the pagination in the response.
+  /// pagination defines the pagination in the response. This field is only
+  /// populated if the denoms field in the request is empty.
   @$pb.TagNumber(99)
   $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(99)

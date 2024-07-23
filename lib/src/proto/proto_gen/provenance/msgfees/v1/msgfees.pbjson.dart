@@ -43,7 +43,7 @@ final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
     'CgZQYXJhbXMSRwoPZmxvb3JfZ2FzX3ByaWNlGAIgASgLMhkuY29zbW9zLmJhc2UudjFiZXRhMS'
     '5Db2luQgTI3h8AUg1mbG9vckdhc1ByaWNlEikKEW5oYXNoX3Blcl91c2RfbWlsGAMgASgEUg5u'
     'aGFzaFBlclVzZE1pbBIwChRjb252ZXJzaW9uX2ZlZV9kZW5vbRgEIAEoCVISY29udmVyc2lvbk'
-    'ZlZURlbm9tOgiYoB8B6KAfAA==');
+    'ZlZURlbm9tOgTooB8A');
 
 @$core.Deprecated('Use msgFeeDescriptor instead')
 const MsgFee$json = {

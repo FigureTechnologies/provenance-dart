@@ -24,6 +24,7 @@ class ConsensusParams extends $pb.GeneratedMessage {
     EvidenceParams? evidence,
     ValidatorParams? validator,
     VersionParams? version,
+    ABCIParams? abci,
   }) {
     final $result = create();
     if (block != null) {
@@ -37,6 +38,9 @@ class ConsensusParams extends $pb.GeneratedMessage {
     }
     if (version != null) {
       $result.version = version;
+    }
+    if (abci != null) {
+      $result.abci = abci;
     }
     return $result;
   }
@@ -61,6 +65,8 @@ class ConsensusParams extends $pb.GeneratedMessage {
         subBuilder: ValidatorParams.create)
     ..aOM<VersionParams>(4, _omitFieldNames ? '' : 'version',
         subBuilder: VersionParams.create)
+    ..aOM<ABCIParams>(5, _omitFieldNames ? '' : 'abci',
+        subBuilder: ABCIParams.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -141,6 +147,20 @@ class ConsensusParams extends $pb.GeneratedMessage {
   void clearVersion() => clearField(4);
   @$pb.TagNumber(4)
   VersionParams ensureVersion() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  ABCIParams get abci => $_getN(4);
+  @$pb.TagNumber(5)
+  set abci(ABCIParams v) {
+    setField(5, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasAbci() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAbci() => clearField(5);
+  @$pb.TagNumber(5)
+  ABCIParams ensureAbci() => $_ensure(4);
 }
 
 /// BlockParams contains limits on the block size.
@@ -148,7 +168,6 @@ class BlockParams extends $pb.GeneratedMessage {
   factory BlockParams({
     $fixnum.Int64? maxBytes,
     $fixnum.Int64? maxGas,
-    $fixnum.Int64? timeIotaMs,
   }) {
     final $result = create();
     if (maxBytes != null) {
@@ -156,9 +175,6 @@ class BlockParams extends $pb.GeneratedMessage {
     }
     if (maxGas != null) {
       $result.maxGas = maxGas;
-    }
-    if (timeIotaMs != null) {
-      $result.timeIotaMs = timeIotaMs;
     }
     return $result;
   }
@@ -177,7 +193,6 @@ class BlockParams extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'maxBytes')
     ..aInt64(2, _omitFieldNames ? '' : 'maxGas')
-    ..aInt64(3, _omitFieldNames ? '' : 'timeIotaMs')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -229,22 +244,6 @@ class BlockParams extends $pb.GeneratedMessage {
   $core.bool hasMaxGas() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaxGas() => clearField(2);
-
-  ///  Minimum time increment between consecutive blocks (in milliseconds) If the
-  ///  block header timestamp is ahead of the system clock, decrease this value.
-  ///
-  ///  Not exposed to the application.
-  @$pb.TagNumber(3)
-  $fixnum.Int64 get timeIotaMs => $_getI64(2);
-  @$pb.TagNumber(3)
-  set timeIotaMs($fixnum.Int64 v) {
-    $_setInt64(2, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasTimeIotaMs() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearTimeIotaMs() => clearField(3);
 }
 
 /// EvidenceParams determine how we handle evidence of malfeasance.
@@ -417,11 +416,11 @@ class ValidatorParams extends $pb.GeneratedMessage {
 /// VersionParams contains the ABCI application version.
 class VersionParams extends $pb.GeneratedMessage {
   factory VersionParams({
-    $fixnum.Int64? appVersion,
+    $fixnum.Int64? app,
   }) {
     final $result = create();
-    if (appVersion != null) {
-      $result.appVersion = appVersion;
+    if (app != null) {
+      $result.app = app;
     }
     return $result;
   }
@@ -438,8 +437,7 @@ class VersionParams extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.types'),
       createEmptyInstance: create)
-    ..a<$fixnum.Int64>(
-        1, _omitFieldNames ? '' : 'appVersion', $pb.PbFieldType.OU6,
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'app', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
@@ -467,16 +465,16 @@ class VersionParams extends $pb.GeneratedMessage {
   static VersionParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get appVersion => $_getI64(0);
+  $fixnum.Int64 get app => $_getI64(0);
   @$pb.TagNumber(1)
-  set appVersion($fixnum.Int64 v) {
+  set app($fixnum.Int64 v) {
     $_setInt64(0, v);
   }
 
   @$pb.TagNumber(1)
-  $core.bool hasAppVersion() => $_has(0);
+  $core.bool hasApp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppVersion() => clearField(1);
+  void clearApp() => clearField(1);
 }
 
 ///  HashedParams is a subset of ConsensusParams.
@@ -559,6 +557,76 @@ class HashedParams extends $pb.GeneratedMessage {
   $core.bool hasBlockMaxGas() => $_has(1);
   @$pb.TagNumber(2)
   void clearBlockMaxGas() => clearField(2);
+}
+
+/// ABCIParams configure functionality specific to the Application Blockchain Interface.
+class ABCIParams extends $pb.GeneratedMessage {
+  factory ABCIParams({
+    $fixnum.Int64? voteExtensionsEnableHeight,
+  }) {
+    final $result = create();
+    if (voteExtensionsEnableHeight != null) {
+      $result.voteExtensionsEnableHeight = voteExtensionsEnableHeight;
+    }
+    return $result;
+  }
+  ABCIParams._() : super();
+  factory ABCIParams.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ABCIParams.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ABCIParams',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.types'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'voteExtensionsEnableHeight')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ABCIParams clone() => ABCIParams()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ABCIParams copyWith(void Function(ABCIParams) updates) =>
+      super.copyWith((message) => updates(message as ABCIParams)) as ABCIParams;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ABCIParams create() => ABCIParams._();
+  ABCIParams createEmptyInstance() => create();
+  static $pb.PbList<ABCIParams> createRepeated() => $pb.PbList<ABCIParams>();
+  @$core.pragma('dart2js:noInline')
+  static ABCIParams getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ABCIParams>(create);
+  static ABCIParams? _defaultInstance;
+
+  ///  vote_extensions_enable_height configures the first height during which
+  ///  vote extensions will be enabled. During this specified height, and for all
+  ///  subsequent heights, precommit messages that do not contain valid extension data
+  ///  will be considered invalid. Prior to this height, vote extensions will not
+  ///  be used or accepted by validators on the network.
+  ///
+  ///  Once enabled, vote extensions will be created by the application in ExtendVote,
+  ///  passed to the application for validation in VerifyVoteExtension and given
+  ///  to the application to use when proposing a block during PrepareProposal.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get voteExtensionsEnableHeight => $_getI64(0);
+  @$pb.TagNumber(1)
+  set voteExtensionsEnableHeight($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasVoteExtensionsEnableHeight() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVoteExtensionsEnableHeight() => clearField(1);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

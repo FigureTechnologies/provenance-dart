@@ -22,7 +22,6 @@ const Params$json = {
       '3': 1,
       '4': 3,
       '5': 9,
-      '8': {},
       '10': 'allowedAsyncAckContracts'
     },
   ],
@@ -30,5 +29,5 @@ const Params$json = {
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSZQobYWxsb3dlZF9hc3luY19hY2tfY29udHJhY3RzGAEgAygJQiby3h8ieWFtbD'
-    'oiYWxsb3dlZF9hc3luY19hY2tfY29udHJhY3RzIlIYYWxsb3dlZEFzeW5jQWNrQ29udHJhY3Rz');
+    'CgZQYXJhbXMSPQobYWxsb3dlZF9hc3luY19hY2tfY29udHJhY3RzGAEgAygJUhhhbGxvd2VkQX'
+    'N5bmNBY2tDb250cmFjdHM=');

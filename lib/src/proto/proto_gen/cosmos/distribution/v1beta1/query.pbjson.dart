@@ -40,8 +40,74 @@ const QueryParamsResponse$json = {
 
 /// Descriptor for `QueryParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryParamsResponseDescriptor = $convert.base64Decode(
-    'ChNRdWVyeVBhcmFtc1Jlc3BvbnNlEkEKBnBhcmFtcxgBIAEoCzIjLmNvc21vcy5kaXN0cmlidX'
-    'Rpb24udjFiZXRhMS5QYXJhbXNCBMjeHwBSBnBhcmFtcw==');
+    'ChNRdWVyeVBhcmFtc1Jlc3BvbnNlEkYKBnBhcmFtcxgBIAEoCzIjLmNvc21vcy5kaXN0cmlidX'
+    'Rpb24udjFiZXRhMS5QYXJhbXNCCcjeHwCo57AqAVIGcGFyYW1z');
+
+@$core.Deprecated('Use queryValidatorDistributionInfoRequestDescriptor instead')
+const QueryValidatorDistributionInfoRequest$json = {
+  '1': 'QueryValidatorDistributionInfoRequest',
+  '2': [
+    {
+      '1': 'validator_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'validatorAddress'
+    },
+  ],
+};
+
+/// Descriptor for `QueryValidatorDistributionInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryValidatorDistributionInfoRequestDescriptor =
+    $convert.base64Decode(
+        'CiVRdWVyeVZhbGlkYXRvckRpc3RyaWJ1dGlvbkluZm9SZXF1ZXN0Ek4KEXZhbGlkYXRvcl9hZG'
+        'RyZXNzGAEgASgJQiHStC0dY29zbW9zLlZhbGlkYXRvckFkZHJlc3NTdHJpbmdSEHZhbGlkYXRv'
+        'ckFkZHJlc3M=');
+
+@$core
+    .Deprecated('Use queryValidatorDistributionInfoResponseDescriptor instead')
+const QueryValidatorDistributionInfoResponse$json = {
+  '1': 'QueryValidatorDistributionInfoResponse',
+  '2': [
+    {
+      '1': 'operator_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'operatorAddress'
+    },
+    {
+      '1': 'self_bond_rewards',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.DecCoin',
+      '8': {},
+      '10': 'selfBondRewards'
+    },
+    {
+      '1': 'commission',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.DecCoin',
+      '8': {},
+      '10': 'commission'
+    },
+  ],
+};
+
+/// Descriptor for `QueryValidatorDistributionInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryValidatorDistributionInfoResponseDescriptor = $convert.base64Decode(
+    'CiZRdWVyeVZhbGlkYXRvckRpc3RyaWJ1dGlvbkluZm9SZXNwb25zZRJMChBvcGVyYXRvcl9hZG'
+    'RyZXNzGAEgASgJQiHStC0dY29zbW9zLlZhbGlkYXRvckFkZHJlc3NTdHJpbmdSD29wZXJhdG9y'
+    'QWRkcmVzcxKCAQoRc2VsZl9ib25kX3Jld2FyZHMYAiADKAsyHC5jb3Ntb3MuYmFzZS52MWJldG'
+    'ExLkRlY0NvaW5COMjeHwCq3x8rZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5E'
+    'ZWNDb2luc6jnsCoBUg9zZWxmQm9uZFJld2FyZHMScQoKY29tbWlzc2lvbhgDIAMoCzIcLmNvc2'
+    '1vcy5iYXNlLnYxYmV0YTEuRGVjQ29pbkIzyN4fAKrfHytnaXRodWIuY29tL2Nvc21vcy9jb3Nt'
+    'b3Mtc2RrL3R5cGVzLkRlY0NvaW5zUgpjb21taXNzaW9u');
 
 @$core
     .Deprecated('Use queryValidatorOutstandingRewardsRequestDescriptor instead')
@@ -62,9 +128,9 @@ const QueryValidatorOutstandingRewardsRequest$json = {
 /// Descriptor for `QueryValidatorOutstandingRewardsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryValidatorOutstandingRewardsRequestDescriptor =
     $convert.base64Decode(
-        'CidRdWVyeVZhbGlkYXRvck91dHN0YW5kaW5nUmV3YXJkc1JlcXVlc3QSRQoRdmFsaWRhdG9yX2'
-        'FkZHJlc3MYASABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1IQdmFsaWRhdG9yQWRkcmVz'
-        'cw==');
+        'CidRdWVyeVZhbGlkYXRvck91dHN0YW5kaW5nUmV3YXJkc1JlcXVlc3QSTgoRdmFsaWRhdG9yX2'
+        'FkZHJlc3MYASABKAlCIdK0LR1jb3Ntb3MuVmFsaWRhdG9yQWRkcmVzc1N0cmluZ1IQdmFsaWRh'
+        'dG9yQWRkcmVzcw==');
 
 @$core.Deprecated(
     'Use queryValidatorOutstandingRewardsResponseDescriptor instead')
@@ -86,9 +152,9 @@ const QueryValidatorOutstandingRewardsResponse$json = {
 /// Descriptor for `QueryValidatorOutstandingRewardsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryValidatorOutstandingRewardsResponseDescriptor =
     $convert.base64Decode(
-        'CihRdWVyeVZhbGlkYXRvck91dHN0YW5kaW5nUmV3YXJkc1Jlc3BvbnNlElgKB3Jld2FyZHMYAS'
+        'CihRdWVyeVZhbGlkYXRvck91dHN0YW5kaW5nUmV3YXJkc1Jlc3BvbnNlEl0KB3Jld2FyZHMYAS'
         'ABKAsyOC5jb3Ntb3MuZGlzdHJpYnV0aW9uLnYxYmV0YTEuVmFsaWRhdG9yT3V0c3RhbmRpbmdS'
-        'ZXdhcmRzQgTI3h8AUgdyZXdhcmRz');
+        'ZXdhcmRzQgnI3h8AqOewKgFSB3Jld2FyZHM=');
 
 @$core.Deprecated('Use queryValidatorCommissionRequestDescriptor instead')
 const QueryValidatorCommissionRequest$json = {
@@ -108,8 +174,9 @@ const QueryValidatorCommissionRequest$json = {
 /// Descriptor for `QueryValidatorCommissionRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryValidatorCommissionRequestDescriptor =
     $convert.base64Decode(
-        'Ch9RdWVyeVZhbGlkYXRvckNvbW1pc3Npb25SZXF1ZXN0EkUKEXZhbGlkYXRvcl9hZGRyZXNzGA'
-        'EgASgJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSEHZhbGlkYXRvckFkZHJlc3M=');
+        'Ch9RdWVyeVZhbGlkYXRvckNvbW1pc3Npb25SZXF1ZXN0Ek4KEXZhbGlkYXRvcl9hZGRyZXNzGA'
+        'EgASgJQiHStC0dY29zbW9zLlZhbGlkYXRvckFkZHJlc3NTdHJpbmdSEHZhbGlkYXRvckFkZHJl'
+        'c3M=');
 
 @$core.Deprecated('Use queryValidatorCommissionResponseDescriptor instead')
 const QueryValidatorCommissionResponse$json = {
@@ -130,9 +197,9 @@ const QueryValidatorCommissionResponse$json = {
 /// Descriptor for `QueryValidatorCommissionResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryValidatorCommissionResponseDescriptor =
     $convert.base64Decode(
-        'CiBRdWVyeVZhbGlkYXRvckNvbW1pc3Npb25SZXNwb25zZRJhCgpjb21taXNzaW9uGAEgASgLMj'
+        'CiBRdWVyeVZhbGlkYXRvckNvbW1pc3Npb25SZXNwb25zZRJmCgpjb21taXNzaW9uGAEgASgLMj'
         'suY29zbW9zLmRpc3RyaWJ1dGlvbi52MWJldGExLlZhbGlkYXRvckFjY3VtdWxhdGVkQ29tbWlz'
-        'c2lvbkIEyN4fAFIKY29tbWlzc2lvbg==');
+        'c2lvbkIJyN4fAKjnsCoBUgpjb21taXNzaW9u');
 
 @$core.Deprecated('Use queryValidatorSlashesRequestDescriptor instead')
 const QueryValidatorSlashesRequest$json = {
@@ -162,11 +229,11 @@ const QueryValidatorSlashesRequest$json = {
 
 /// Descriptor for `QueryValidatorSlashesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryValidatorSlashesRequestDescriptor = $convert.base64Decode(
-    'ChxRdWVyeVZhbGlkYXRvclNsYXNoZXNSZXF1ZXN0EkUKEXZhbGlkYXRvcl9hZGRyZXNzGAEgAS'
-    'gJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSEHZhbGlkYXRvckFkZHJlc3MSJwoPc3RhcnRp'
-    'bmdfaGVpZ2h0GAIgASgEUg5zdGFydGluZ0hlaWdodBIjCg1lbmRpbmdfaGVpZ2h0GAMgASgEUg'
-    'xlbmRpbmdIZWlnaHQSRgoKcGFnaW5hdGlvbhgEIAEoCzImLmNvc21vcy5iYXNlLnF1ZXJ5LnYx'
-    'YmV0YTEuUGFnZVJlcXVlc3RSCnBhZ2luYXRpb246CIigHwCYoB8B');
+    'ChxRdWVyeVZhbGlkYXRvclNsYXNoZXNSZXF1ZXN0Ek4KEXZhbGlkYXRvcl9hZGRyZXNzGAEgAS'
+    'gJQiHStC0dY29zbW9zLlZhbGlkYXRvckFkZHJlc3NTdHJpbmdSEHZhbGlkYXRvckFkZHJlc3MS'
+    'JwoPc3RhcnRpbmdfaGVpZ2h0GAIgASgEUg5zdGFydGluZ0hlaWdodBIjCg1lbmRpbmdfaGVpZ2'
+    'h0GAMgASgEUgxlbmRpbmdIZWlnaHQSRgoKcGFnaW5hdGlvbhgEIAEoCzImLmNvc21vcy5iYXNl'
+    'LnF1ZXJ5LnYxYmV0YTEuUGFnZVJlcXVlc3RSCnBhZ2luYXRpb246BIigHwA=');
 
 @$core.Deprecated('Use queryValidatorSlashesResponseDescriptor instead')
 const QueryValidatorSlashesResponse$json = {
@@ -194,10 +261,10 @@ const QueryValidatorSlashesResponse$json = {
 
 /// Descriptor for `QueryValidatorSlashesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryValidatorSlashesResponseDescriptor = $convert.base64Decode(
-    'Ch1RdWVyeVZhbGlkYXRvclNsYXNoZXNSZXNwb25zZRJQCgdzbGFzaGVzGAEgAygLMjAuY29zbW'
-    '9zLmRpc3RyaWJ1dGlvbi52MWJldGExLlZhbGlkYXRvclNsYXNoRXZlbnRCBMjeHwBSB3NsYXNo'
-    'ZXMSRwoKcGFnaW5hdGlvbhgCIAEoCzInLmNvc21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZV'
-    'Jlc3BvbnNlUgpwYWdpbmF0aW9u');
+    'Ch1RdWVyeVZhbGlkYXRvclNsYXNoZXNSZXNwb25zZRJVCgdzbGFzaGVzGAEgAygLMjAuY29zbW'
+    '9zLmRpc3RyaWJ1dGlvbi52MWJldGExLlZhbGlkYXRvclNsYXNoRXZlbnRCCcjeHwCo57AqAVIH'
+    'c2xhc2hlcxJHCgpwYWdpbmF0aW9uGAIgASgLMicuY29zbW9zLmJhc2UucXVlcnkudjFiZXRhMS'
+    '5QYWdlUmVzcG9uc2VSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use queryDelegationRewardsRequestDescriptor instead')
 const QueryDelegationRewardsRequest$json = {
@@ -226,9 +293,9 @@ const QueryDelegationRewardsRequest$json = {
 /// Descriptor for `QueryDelegationRewardsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryDelegationRewardsRequestDescriptor = $convert.base64Decode(
     'Ch1RdWVyeURlbGVnYXRpb25SZXdhcmRzUmVxdWVzdBJFChFkZWxlZ2F0b3JfYWRkcmVzcxgBIA'
-    'EoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUhBkZWxlZ2F0b3JBZGRyZXNzEkUKEXZhbGlk'
-    'YXRvcl9hZGRyZXNzGAIgASgJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSEHZhbGlkYXRvck'
-    'FkZHJlc3M6CIigHwDooB8A');
+    'EoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUhBkZWxlZ2F0b3JBZGRyZXNzEk4KEXZhbGlk'
+    'YXRvcl9hZGRyZXNzGAIgASgJQiHStC0dY29zbW9zLlZhbGlkYXRvckFkZHJlc3NTdHJpbmdSEH'
+    'ZhbGlkYXRvckFkZHJlc3M6CIigHwDooB8A');
 
 @$core.Deprecated('Use queryDelegationRewardsResponseDescriptor instead')
 const QueryDelegationRewardsResponse$json = {
@@ -249,9 +316,9 @@ const QueryDelegationRewardsResponse$json = {
 /// Descriptor for `QueryDelegationRewardsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryDelegationRewardsResponseDescriptor =
     $convert.base64Decode(
-        'Ch5RdWVyeURlbGVnYXRpb25SZXdhcmRzUmVzcG9uc2USawoHcmV3YXJkcxgBIAMoCzIcLmNvc2'
-        '1vcy5iYXNlLnYxYmV0YTEuRGVjQ29pbkIzyN4fAKrfHytnaXRodWIuY29tL2Nvc21vcy9jb3Nt'
-        'b3Mtc2RrL3R5cGVzLkRlY0NvaW5zUgdyZXdhcmRz');
+        'Ch5RdWVyeURlbGVnYXRpb25SZXdhcmRzUmVzcG9uc2UScAoHcmV3YXJkcxgBIAMoCzIcLmNvc2'
+        '1vcy5iYXNlLnYxYmV0YTEuRGVjQ29pbkI4yN4fAKrfHytnaXRodWIuY29tL2Nvc21vcy9jb3Nt'
+        'b3Mtc2RrL3R5cGVzLkRlY0NvaW5zqOewKgFSB3Jld2FyZHM=');
 
 @$core.Deprecated('Use queryDelegationTotalRewardsRequestDescriptor instead')
 const QueryDelegationTotalRewardsRequest$json = {
@@ -304,11 +371,11 @@ const QueryDelegationTotalRewardsResponse$json = {
 /// Descriptor for `QueryDelegationTotalRewardsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryDelegationTotalRewardsResponseDescriptor =
     $convert.base64Decode(
-        'CiNRdWVyeURlbGVnYXRpb25Ub3RhbFJld2FyZHNSZXNwb25zZRJWCgdyZXdhcmRzGAEgAygLMj'
+        'CiNRdWVyeURlbGVnYXRpb25Ub3RhbFJld2FyZHNSZXNwb25zZRJbCgdyZXdhcmRzGAEgAygLMj'
         'YuY29zbW9zLmRpc3RyaWJ1dGlvbi52MWJldGExLkRlbGVnYXRpb25EZWxlZ2F0b3JSZXdhcmRC'
-        'BMjeHwBSB3Jld2FyZHMSZwoFdG90YWwYAiADKAsyHC5jb3Ntb3MuYmFzZS52MWJldGExLkRlY0'
-        'NvaW5CM8jeHwCq3x8rZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5EZWNDb2lu'
-        'c1IFdG90YWw=');
+        'CcjeHwCo57AqAVIHcmV3YXJkcxJsCgV0b3RhbBgCIAMoCzIcLmNvc21vcy5iYXNlLnYxYmV0YT'
+        'EuRGVjQ29pbkI4yN4fAKrfHytnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkRl'
+        'Y0NvaW5zqOewKgFSBXRvdGFs');
 
 @$core.Deprecated('Use queryDelegatorValidatorsRequestDescriptor instead')
 const QueryDelegatorValidatorsRequest$json = {
@@ -422,6 +489,6 @@ const QueryCommunityPoolResponse$json = {
 /// Descriptor for `QueryCommunityPoolResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryCommunityPoolResponseDescriptor =
     $convert.base64Decode(
-        'ChpRdWVyeUNvbW11bml0eVBvb2xSZXNwb25zZRJlCgRwb29sGAEgAygLMhwuY29zbW9zLmJhc2'
-        'UudjFiZXRhMS5EZWNDb2luQjPI3h8Aqt8fK2dpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsv'
-        'dHlwZXMuRGVjQ29pbnNSBHBvb2w=');
+        'ChpRdWVyeUNvbW11bml0eVBvb2xSZXNwb25zZRJqCgRwb29sGAEgAygLMhwuY29zbW9zLmJhc2'
+        'UudjFiZXRhMS5EZWNDb2luQjjI3h8Aqt8fK2dpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsv'
+        'dHlwZXMuRGVjQ29pbnOo57AqAVIEcG9vbA==');

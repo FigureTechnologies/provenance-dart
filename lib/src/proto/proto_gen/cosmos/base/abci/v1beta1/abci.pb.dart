@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/any.pb.dart' as $1;
 import '../../../../tendermint/abci/types.pb.dart' as $0;
+import '../../../../tendermint/types/block.pb.dart' as $2;
 
 /// TxResponse defines a structure containing relevant tx data and metadata. The
 /// tags are stringified and the log is JSON decoded.
@@ -1115,6 +1116,152 @@ class SearchTxsResult extends $pb.GeneratedMessage {
   /// List of txs in current page
   @$pb.TagNumber(6)
   $core.List<TxResponse> get txs => $_getList(5);
+}
+
+/// SearchBlocksResult defines a structure for querying blocks pageable
+class SearchBlocksResult extends $pb.GeneratedMessage {
+  factory SearchBlocksResult({
+    $fixnum.Int64? totalCount,
+    $fixnum.Int64? count,
+    $fixnum.Int64? pageNumber,
+    $fixnum.Int64? pageTotal,
+    $fixnum.Int64? limit,
+    $core.Iterable<$2.Block>? blocks,
+  }) {
+    final $result = create();
+    if (totalCount != null) {
+      $result.totalCount = totalCount;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    if (pageNumber != null) {
+      $result.pageNumber = pageNumber;
+    }
+    if (pageTotal != null) {
+      $result.pageTotal = pageTotal;
+    }
+    if (limit != null) {
+      $result.limit = limit;
+    }
+    if (blocks != null) {
+      $result.blocks.addAll(blocks);
+    }
+    return $result;
+  }
+  SearchBlocksResult._() : super();
+  factory SearchBlocksResult.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory SearchBlocksResult.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchBlocksResult',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'cosmos.base.abci.v1beta1'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'totalCount')
+    ..aInt64(2, _omitFieldNames ? '' : 'count')
+    ..aInt64(3, _omitFieldNames ? '' : 'pageNumber')
+    ..aInt64(4, _omitFieldNames ? '' : 'pageTotal')
+    ..aInt64(5, _omitFieldNames ? '' : 'limit')
+    ..pc<$2.Block>(6, _omitFieldNames ? '' : 'blocks', $pb.PbFieldType.PM,
+        subBuilder: $2.Block.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  SearchBlocksResult clone() => SearchBlocksResult()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  SearchBlocksResult copyWith(void Function(SearchBlocksResult) updates) =>
+      super.copyWith((message) => updates(message as SearchBlocksResult))
+          as SearchBlocksResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchBlocksResult create() => SearchBlocksResult._();
+  SearchBlocksResult createEmptyInstance() => create();
+  static $pb.PbList<SearchBlocksResult> createRepeated() =>
+      $pb.PbList<SearchBlocksResult>();
+  @$core.pragma('dart2js:noInline')
+  static SearchBlocksResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchBlocksResult>(create);
+  static SearchBlocksResult? _defaultInstance;
+
+  /// Count of all blocks
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get totalCount => $_getI64(0);
+  @$pb.TagNumber(1)
+  set totalCount($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTotalCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTotalCount() => clearField(1);
+
+  /// Count of blocks in current page
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get count => $_getI64(1);
+  @$pb.TagNumber(2)
+  set count($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => clearField(2);
+
+  /// Index of current page, start from 1
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get pageNumber => $_getI64(2);
+  @$pb.TagNumber(3)
+  set pageNumber($fixnum.Int64 v) {
+    $_setInt64(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasPageNumber() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageNumber() => clearField(3);
+
+  /// Count of total pages
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get pageTotal => $_getI64(3);
+  @$pb.TagNumber(4)
+  set pageTotal($fixnum.Int64 v) {
+    $_setInt64(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasPageTotal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPageTotal() => clearField(4);
+
+  /// Max count blocks per page
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get limit => $_getI64(4);
+  @$pb.TagNumber(5)
+  set limit($fixnum.Int64 v) {
+    $_setInt64(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasLimit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLimit() => clearField(5);
+
+  /// List of blocks in current page
+  @$pb.TagNumber(6)
+  $core.List<$2.Block> get blocks => $_getList(5);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

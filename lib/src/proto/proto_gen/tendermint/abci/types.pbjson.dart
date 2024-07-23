@@ -27,9 +27,9 @@ final $typed_data.Uint8List checkTxTypeDescriptor = $convert.base64Decode(
     'CgtDaGVja1R4VHlwZRIQCgNORVcQABoHip0gA05ldxIYCgdSRUNIRUNLEAEaC4qdIAdSZWNoZW'
     'Nr');
 
-@$core.Deprecated('Use evidenceTypeDescriptor instead')
-const EvidenceType$json = {
-  '1': 'EvidenceType',
+@$core.Deprecated('Use misbehaviorTypeDescriptor instead')
+const MisbehaviorType$json = {
+  '1': 'MisbehaviorType',
   '2': [
     {'1': 'UNKNOWN', '2': 0},
     {'1': 'DUPLICATE_VOTE', '2': 1},
@@ -37,10 +37,10 @@ const EvidenceType$json = {
   ],
 };
 
-/// Descriptor for `EvidenceType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List evidenceTypeDescriptor = $convert.base64Decode(
-    'CgxFdmlkZW5jZVR5cGUSCwoHVU5LTk9XThAAEhIKDkRVUExJQ0FURV9WT1RFEAESFwoTTElHSF'
-    'RfQ0xJRU5UX0FUVEFDSxAC');
+/// Descriptor for `MisbehaviorType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List misbehaviorTypeDescriptor = $convert.base64Decode(
+    'Cg9NaXNiZWhhdmlvclR5cGUSCwoHVU5LTk9XThAAEhIKDkRVUExJQ0FURV9WT1RFEAESFwoTTE'
+    'lHSFRfQ0xJRU5UX0FUVEFDSxAC');
 
 @$core.Deprecated('Use requestDescriptor instead')
 const Request$json = {
@@ -74,15 +74,6 @@ const Request$json = {
       '10': 'info'
     },
     {
-      '1': 'set_option',
-      '3': 4,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.RequestSetOption',
-      '9': 0,
-      '10': 'setOption'
-    },
-    {
       '1': 'init_chain',
       '3': 5,
       '4': 1,
@@ -101,15 +92,6 @@ const Request$json = {
       '10': 'query'
     },
     {
-      '1': 'begin_block',
-      '3': 7,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.RequestBeginBlock',
-      '9': 0,
-      '10': 'beginBlock'
-    },
-    {
       '1': 'check_tx',
       '3': 8,
       '4': 1,
@@ -117,24 +99,6 @@ const Request$json = {
       '6': '.tendermint.abci.RequestCheckTx',
       '9': 0,
       '10': 'checkTx'
-    },
-    {
-      '1': 'deliver_tx',
-      '3': 9,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.RequestDeliverTx',
-      '9': 0,
-      '10': 'deliverTx'
-    },
-    {
-      '1': 'end_block',
-      '3': 10,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.RequestEndBlock',
-      '9': 0,
-      '10': 'endBlock'
     },
     {
       '1': 'commit',
@@ -181,9 +145,60 @@ const Request$json = {
       '9': 0,
       '10': 'applySnapshotChunk'
     },
+    {
+      '1': 'prepare_proposal',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.RequestPrepareProposal',
+      '9': 0,
+      '10': 'prepareProposal'
+    },
+    {
+      '1': 'process_proposal',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.RequestProcessProposal',
+      '9': 0,
+      '10': 'processProposal'
+    },
+    {
+      '1': 'extend_vote',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.RequestExtendVote',
+      '9': 0,
+      '10': 'extendVote'
+    },
+    {
+      '1': 'verify_vote_extension',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.RequestVerifyVoteExtension',
+      '9': 0,
+      '10': 'verifyVoteExtension'
+    },
+    {
+      '1': 'finalize_block',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.RequestFinalizeBlock',
+      '9': 0,
+      '10': 'finalizeBlock'
+    },
   ],
   '8': [
     {'1': 'value'},
+  ],
+  '9': [
+    {'1': 4, '2': 5},
+    {'1': 7, '2': 8},
+    {'1': 9, '2': 10},
+    {'1': 10, '2': 11},
   ],
 };
 
@@ -192,22 +207,25 @@ final $typed_data.Uint8List requestDescriptor = $convert.base64Decode(
     'CgdSZXF1ZXN0EjIKBGVjaG8YASABKAsyHC50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdEVjaG9IAF'
     'IEZWNobxI1CgVmbHVzaBgCIAEoCzIdLnRlbmRlcm1pbnQuYWJjaS5SZXF1ZXN0Rmx1c2hIAFIF'
     'Zmx1c2gSMgoEaW5mbxgDIAEoCzIcLnRlbmRlcm1pbnQuYWJjaS5SZXF1ZXN0SW5mb0gAUgRpbm'
-    'ZvEkIKCnNldF9vcHRpb24YBCABKAsyIS50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdFNldE9wdGlv'
-    'bkgAUglzZXRPcHRpb24SQgoKaW5pdF9jaGFpbhgFIAEoCzIhLnRlbmRlcm1pbnQuYWJjaS5SZX'
-    'F1ZXN0SW5pdENoYWluSABSCWluaXRDaGFpbhI1CgVxdWVyeRgGIAEoCzIdLnRlbmRlcm1pbnQu'
-    'YWJjaS5SZXF1ZXN0UXVlcnlIAFIFcXVlcnkSRQoLYmVnaW5fYmxvY2sYByABKAsyIi50ZW5kZX'
-    'JtaW50LmFiY2kuUmVxdWVzdEJlZ2luQmxvY2tIAFIKYmVnaW5CbG9jaxI8CghjaGVja190eBgI'
-    'IAEoCzIfLnRlbmRlcm1pbnQuYWJjaS5SZXF1ZXN0Q2hlY2tUeEgAUgdjaGVja1R4EkIKCmRlbG'
-    'l2ZXJfdHgYCSABKAsyIS50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdERlbGl2ZXJUeEgAUglkZWxp'
-    'dmVyVHgSPwoJZW5kX2Jsb2NrGAogASgLMiAudGVuZGVybWludC5hYmNpLlJlcXVlc3RFbmRCbG'
-    '9ja0gAUghlbmRCbG9jaxI4CgZjb21taXQYCyABKAsyHi50ZW5kZXJtaW50LmFiY2kuUmVxdWVz'
-    'dENvbW1pdEgAUgZjb21taXQSTgoObGlzdF9zbmFwc2hvdHMYDCABKAsyJS50ZW5kZXJtaW50Lm'
-    'FiY2kuUmVxdWVzdExpc3RTbmFwc2hvdHNIAFINbGlzdFNuYXBzaG90cxJOCg5vZmZlcl9zbmFw'
-    'c2hvdBgNIAEoCzIlLnRlbmRlcm1pbnQuYWJjaS5SZXF1ZXN0T2ZmZXJTbmFwc2hvdEgAUg1vZm'
-    'ZlclNuYXBzaG90ElsKE2xvYWRfc25hcHNob3RfY2h1bmsYDiABKAsyKS50ZW5kZXJtaW50LmFi'
-    'Y2kuUmVxdWVzdExvYWRTbmFwc2hvdENodW5rSABSEWxvYWRTbmFwc2hvdENodW5rEl4KFGFwcG'
-    'x5X3NuYXBzaG90X2NodW5rGA8gASgLMioudGVuZGVybWludC5hYmNpLlJlcXVlc3RBcHBseVNu'
-    'YXBzaG90Q2h1bmtIAFISYXBwbHlTbmFwc2hvdENodW5rQgcKBXZhbHVl');
+    'ZvEkIKCmluaXRfY2hhaW4YBSABKAsyIS50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdEluaXRDaGFp'
+    'bkgAUglpbml0Q2hhaW4SNQoFcXVlcnkYBiABKAsyHS50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdF'
+    'F1ZXJ5SABSBXF1ZXJ5EjwKCGNoZWNrX3R4GAggASgLMh8udGVuZGVybWludC5hYmNpLlJlcXVl'
+    'c3RDaGVja1R4SABSB2NoZWNrVHgSOAoGY29tbWl0GAsgASgLMh4udGVuZGVybWludC5hYmNpLl'
+    'JlcXVlc3RDb21taXRIAFIGY29tbWl0Ek4KDmxpc3Rfc25hcHNob3RzGAwgASgLMiUudGVuZGVy'
+    'bWludC5hYmNpLlJlcXVlc3RMaXN0U25hcHNob3RzSABSDWxpc3RTbmFwc2hvdHMSTgoOb2ZmZX'
+    'Jfc25hcHNob3QYDSABKAsyJS50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdE9mZmVyU25hcHNob3RI'
+    'AFINb2ZmZXJTbmFwc2hvdBJbChNsb2FkX3NuYXBzaG90X2NodW5rGA4gASgLMikudGVuZGVybW'
+    'ludC5hYmNpLlJlcXVlc3RMb2FkU25hcHNob3RDaHVua0gAUhFsb2FkU25hcHNob3RDaHVuaxJe'
+    'ChRhcHBseV9zbmFwc2hvdF9jaHVuaxgPIAEoCzIqLnRlbmRlcm1pbnQuYWJjaS5SZXF1ZXN0QX'
+    'BwbHlTbmFwc2hvdENodW5rSABSEmFwcGx5U25hcHNob3RDaHVuaxJUChBwcmVwYXJlX3Byb3Bv'
+    'c2FsGBAgASgLMicudGVuZGVybWludC5hYmNpLlJlcXVlc3RQcmVwYXJlUHJvcG9zYWxIAFIPcH'
+    'JlcGFyZVByb3Bvc2FsElQKEHByb2Nlc3NfcHJvcG9zYWwYESABKAsyJy50ZW5kZXJtaW50LmFi'
+    'Y2kuUmVxdWVzdFByb2Nlc3NQcm9wb3NhbEgAUg9wcm9jZXNzUHJvcG9zYWwSRQoLZXh0ZW5kX3'
+    'ZvdGUYEiABKAsyIi50ZW5kZXJtaW50LmFiY2kuUmVxdWVzdEV4dGVuZFZvdGVIAFIKZXh0ZW5k'
+    'Vm90ZRJhChV2ZXJpZnlfdm90ZV9leHRlbnNpb24YEyABKAsyKy50ZW5kZXJtaW50LmFiY2kuUm'
+    'VxdWVzdFZlcmlmeVZvdGVFeHRlbnNpb25IAFITdmVyaWZ5Vm90ZUV4dGVuc2lvbhJOCg5maW5h'
+    'bGl6ZV9ibG9jaxgUIAEoCzIlLnRlbmRlcm1pbnQuYWJjaS5SZXF1ZXN0RmluYWxpemVCbG9ja0'
+    'gAUg1maW5hbGl6ZUJsb2NrQgcKBXZhbHVlSgQIBBAFSgQIBxAISgQICRAKSgQIChAL');
 
 @$core.Deprecated('Use requestEchoDescriptor instead')
 const RequestEcho$json = {
@@ -237,27 +255,15 @@ const RequestInfo$json = {
     {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
     {'1': 'block_version', '3': 2, '4': 1, '5': 4, '10': 'blockVersion'},
     {'1': 'p2p_version', '3': 3, '4': 1, '5': 4, '10': 'p2pVersion'},
+    {'1': 'abci_version', '3': 4, '4': 1, '5': 9, '10': 'abciVersion'},
   ],
 };
 
 /// Descriptor for `RequestInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List requestInfoDescriptor = $convert.base64Decode(
     'CgtSZXF1ZXN0SW5mbxIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEiMKDWJsb2NrX3ZlcnNpb2'
-    '4YAiABKARSDGJsb2NrVmVyc2lvbhIfCgtwMnBfdmVyc2lvbhgDIAEoBFIKcDJwVmVyc2lvbg==');
-
-@$core.Deprecated('Use requestSetOptionDescriptor instead')
-const RequestSetOption$json = {
-  '1': 'RequestSetOption',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
-  ],
-};
-
-/// Descriptor for `RequestSetOption`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List requestSetOptionDescriptor = $convert.base64Decode(
-    'ChBSZXF1ZXN0U2V0T3B0aW9uEhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YW'
-    'x1ZQ==');
+    '4YAiABKARSDGJsb2NrVmVyc2lvbhIfCgtwMnBfdmVyc2lvbhgDIAEoBFIKcDJwVmVyc2lvbhIh'
+    'CgxhYmNpX3ZlcnNpb24YBCABKAlSC2FiY2lWZXJzaW9u');
 
 @$core.Deprecated('Use requestInitChainDescriptor instead')
 const RequestInitChain$json = {
@@ -278,7 +284,7 @@ const RequestInitChain$json = {
       '3': 3,
       '4': 1,
       '5': 11,
-      '6': '.tendermint.abci.ConsensusParams',
+      '6': '.tendermint.types.ConsensusParams',
       '10': 'consensusParams'
     },
     {
@@ -298,11 +304,11 @@ const RequestInitChain$json = {
 /// Descriptor for `RequestInitChain`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List requestInitChainDescriptor = $convert.base64Decode(
     'ChBSZXF1ZXN0SW5pdENoYWluEjgKBHRpbWUYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZX'
-    'N0YW1wQgjI3h8AkN8fAVIEdGltZRIZCghjaGFpbl9pZBgCIAEoCVIHY2hhaW5JZBJLChBjb25z'
-    'ZW5zdXNfcGFyYW1zGAMgASgLMiAudGVuZGVybWludC5hYmNpLkNvbnNlbnN1c1BhcmFtc1IPY2'
-    '9uc2Vuc3VzUGFyYW1zEkYKCnZhbGlkYXRvcnMYBCADKAsyIC50ZW5kZXJtaW50LmFiY2kuVmFs'
-    'aWRhdG9yVXBkYXRlQgTI3h8AUgp2YWxpZGF0b3JzEiYKD2FwcF9zdGF0ZV9ieXRlcxgFIAEoDF'
-    'INYXBwU3RhdGVCeXRlcxIlCg5pbml0aWFsX2hlaWdodBgGIAEoA1INaW5pdGlhbEhlaWdodA==');
+    'N0YW1wQgjI3h8AkN8fAVIEdGltZRIZCghjaGFpbl9pZBgCIAEoCVIHY2hhaW5JZBJMChBjb25z'
+    'ZW5zdXNfcGFyYW1zGAMgASgLMiEudGVuZGVybWludC50eXBlcy5Db25zZW5zdXNQYXJhbXNSD2'
+    'NvbnNlbnN1c1BhcmFtcxJGCgp2YWxpZGF0b3JzGAQgAygLMiAudGVuZGVybWludC5hYmNpLlZh'
+    'bGlkYXRvclVwZGF0ZUIEyN4fAFIKdmFsaWRhdG9ycxImCg9hcHBfc3RhdGVfYnl0ZXMYBSABKA'
+    'xSDWFwcFN0YXRlQnl0ZXMSJQoOaW5pdGlhbF9oZWlnaHQYBiABKANSDWluaXRpYWxIZWlnaHQ=');
 
 @$core.Deprecated('Use requestQueryDescriptor instead')
 const RequestQuery$json = {
@@ -319,49 +325,6 @@ const RequestQuery$json = {
 final $typed_data.Uint8List requestQueryDescriptor = $convert.base64Decode(
     'CgxSZXF1ZXN0UXVlcnkSEgoEZGF0YRgBIAEoDFIEZGF0YRISCgRwYXRoGAIgASgJUgRwYXRoEh'
     'YKBmhlaWdodBgDIAEoA1IGaGVpZ2h0EhQKBXByb3ZlGAQgASgIUgVwcm92ZQ==');
-
-@$core.Deprecated('Use requestBeginBlockDescriptor instead')
-const RequestBeginBlock$json = {
-  '1': 'RequestBeginBlock',
-  '2': [
-    {'1': 'hash', '3': 1, '4': 1, '5': 12, '10': 'hash'},
-    {
-      '1': 'header',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.types.Header',
-      '8': {},
-      '10': 'header'
-    },
-    {
-      '1': 'last_commit_info',
-      '3': 3,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.LastCommitInfo',
-      '8': {},
-      '10': 'lastCommitInfo'
-    },
-    {
-      '1': 'byzantine_validators',
-      '3': 4,
-      '4': 3,
-      '5': 11,
-      '6': '.tendermint.abci.Evidence',
-      '8': {},
-      '10': 'byzantineValidators'
-    },
-  ],
-};
-
-/// Descriptor for `RequestBeginBlock`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List requestBeginBlockDescriptor = $convert.base64Decode(
-    'ChFSZXF1ZXN0QmVnaW5CbG9jaxISCgRoYXNoGAEgASgMUgRoYXNoEjYKBmhlYWRlchgCIAEoCz'
-    'IYLnRlbmRlcm1pbnQudHlwZXMuSGVhZGVyQgTI3h8AUgZoZWFkZXISTwoQbGFzdF9jb21taXRf'
-    'aW5mbxgDIAEoCzIfLnRlbmRlcm1pbnQuYWJjaS5MYXN0Q29tbWl0SW5mb0IEyN4fAFIObGFzdE'
-    'NvbW1pdEluZm8SUgoUYnl6YW50aW5lX3ZhbGlkYXRvcnMYBCADKAsyGS50ZW5kZXJtaW50LmFi'
-    'Y2kuRXZpZGVuY2VCBMjeHwBSE2J5emFudGluZVZhbGlkYXRvcnM=');
 
 @$core.Deprecated('Use requestCheckTxDescriptor instead')
 const RequestCheckTx$json = {
@@ -383,30 +346,6 @@ const RequestCheckTx$json = {
 final $typed_data.Uint8List requestCheckTxDescriptor = $convert.base64Decode(
     'Cg5SZXF1ZXN0Q2hlY2tUeBIOCgJ0eBgBIAEoDFICdHgSMAoEdHlwZRgCIAEoDjIcLnRlbmRlcm'
     '1pbnQuYWJjaS5DaGVja1R4VHlwZVIEdHlwZQ==');
-
-@$core.Deprecated('Use requestDeliverTxDescriptor instead')
-const RequestDeliverTx$json = {
-  '1': 'RequestDeliverTx',
-  '2': [
-    {'1': 'tx', '3': 1, '4': 1, '5': 12, '10': 'tx'},
-  ],
-};
-
-/// Descriptor for `RequestDeliverTx`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List requestDeliverTxDescriptor =
-    $convert.base64Decode('ChBSZXF1ZXN0RGVsaXZlclR4Eg4KAnR4GAEgASgMUgJ0eA==');
-
-@$core.Deprecated('Use requestEndBlockDescriptor instead')
-const RequestEndBlock$json = {
-  '1': 'RequestEndBlock',
-  '2': [
-    {'1': 'height', '3': 1, '4': 1, '5': 3, '10': 'height'},
-  ],
-};
-
-/// Descriptor for `RequestEndBlock`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List requestEndBlockDescriptor = $convert
-    .base64Decode('Cg9SZXF1ZXN0RW5kQmxvY2sSFgoGaGVpZ2h0GAEgASgDUgZoZWlnaHQ=');
 
 @$core.Deprecated('Use requestCommitDescriptor instead')
 const RequestCommit$json = {
@@ -479,6 +418,253 @@ final $typed_data.Uint8List requestApplySnapshotChunkDescriptor =
         'ChlSZXF1ZXN0QXBwbHlTbmFwc2hvdENodW5rEhQKBWluZGV4GAEgASgNUgVpbmRleBIUCgVjaH'
         'VuaxgCIAEoDFIFY2h1bmsSFgoGc2VuZGVyGAMgASgJUgZzZW5kZXI=');
 
+@$core.Deprecated('Use requestPrepareProposalDescriptor instead')
+const RequestPrepareProposal$json = {
+  '1': 'RequestPrepareProposal',
+  '2': [
+    {'1': 'max_tx_bytes', '3': 1, '4': 1, '5': 3, '10': 'maxTxBytes'},
+    {'1': 'txs', '3': 2, '4': 3, '5': 12, '10': 'txs'},
+    {
+      '1': 'local_last_commit',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.ExtendedCommitInfo',
+      '8': {},
+      '10': 'localLastCommit'
+    },
+    {
+      '1': 'misbehavior',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.abci.Misbehavior',
+      '8': {},
+      '10': 'misbehavior'
+    },
+    {'1': 'height', '3': 5, '4': 1, '5': 3, '10': 'height'},
+    {
+      '1': 'time',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'time'
+    },
+    {
+      '1': 'next_validators_hash',
+      '3': 7,
+      '4': 1,
+      '5': 12,
+      '10': 'nextValidatorsHash'
+    },
+    {'1': 'proposer_address', '3': 8, '4': 1, '5': 12, '10': 'proposerAddress'},
+  ],
+};
+
+/// Descriptor for `RequestPrepareProposal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestPrepareProposalDescriptor = $convert.base64Decode(
+    'ChZSZXF1ZXN0UHJlcGFyZVByb3Bvc2FsEiAKDG1heF90eF9ieXRlcxgBIAEoA1IKbWF4VHhCeX'
+    'RlcxIQCgN0eHMYAiADKAxSA3R4cxJVChFsb2NhbF9sYXN0X2NvbW1pdBgDIAEoCzIjLnRlbmRl'
+    'cm1pbnQuYWJjaS5FeHRlbmRlZENvbW1pdEluZm9CBMjeHwBSD2xvY2FsTGFzdENvbW1pdBJECg'
+    'ttaXNiZWhhdmlvchgEIAMoCzIcLnRlbmRlcm1pbnQuYWJjaS5NaXNiZWhhdmlvckIEyN4fAFIL'
+    'bWlzYmVoYXZpb3ISFgoGaGVpZ2h0GAUgASgDUgZoZWlnaHQSOAoEdGltZRgGIAEoCzIaLmdvb2'
+    'dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x8BUgR0aW1lEjAKFG5leHRfdmFsaWRhdG9y'
+    'c19oYXNoGAcgASgMUhJuZXh0VmFsaWRhdG9yc0hhc2gSKQoQcHJvcG9zZXJfYWRkcmVzcxgIIA'
+    'EoDFIPcHJvcG9zZXJBZGRyZXNz');
+
+@$core.Deprecated('Use requestProcessProposalDescriptor instead')
+const RequestProcessProposal$json = {
+  '1': 'RequestProcessProposal',
+  '2': [
+    {'1': 'txs', '3': 1, '4': 3, '5': 12, '10': 'txs'},
+    {
+      '1': 'proposed_last_commit',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.CommitInfo',
+      '8': {},
+      '10': 'proposedLastCommit'
+    },
+    {
+      '1': 'misbehavior',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.abci.Misbehavior',
+      '8': {},
+      '10': 'misbehavior'
+    },
+    {'1': 'hash', '3': 4, '4': 1, '5': 12, '10': 'hash'},
+    {'1': 'height', '3': 5, '4': 1, '5': 3, '10': 'height'},
+    {
+      '1': 'time',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'time'
+    },
+    {
+      '1': 'next_validators_hash',
+      '3': 7,
+      '4': 1,
+      '5': 12,
+      '10': 'nextValidatorsHash'
+    },
+    {'1': 'proposer_address', '3': 8, '4': 1, '5': 12, '10': 'proposerAddress'},
+  ],
+};
+
+/// Descriptor for `RequestProcessProposal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestProcessProposalDescriptor = $convert.base64Decode(
+    'ChZSZXF1ZXN0UHJvY2Vzc1Byb3Bvc2FsEhAKA3R4cxgBIAMoDFIDdHhzElMKFHByb3Bvc2VkX2'
+    'xhc3RfY29tbWl0GAIgASgLMhsudGVuZGVybWludC5hYmNpLkNvbW1pdEluZm9CBMjeHwBSEnBy'
+    'b3Bvc2VkTGFzdENvbW1pdBJECgttaXNiZWhhdmlvchgDIAMoCzIcLnRlbmRlcm1pbnQuYWJjaS'
+    '5NaXNiZWhhdmlvckIEyN4fAFILbWlzYmVoYXZpb3ISEgoEaGFzaBgEIAEoDFIEaGFzaBIWCgZo'
+    'ZWlnaHQYBSABKANSBmhlaWdodBI4CgR0aW1lGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcEIIyN4fAJDfHwFSBHRpbWUSMAoUbmV4dF92YWxpZGF0b3JzX2hhc2gYByABKAxSEm5l'
+    'eHRWYWxpZGF0b3JzSGFzaBIpChBwcm9wb3Nlcl9hZGRyZXNzGAggASgMUg9wcm9wb3NlckFkZH'
+    'Jlc3M=');
+
+@$core.Deprecated('Use requestExtendVoteDescriptor instead')
+const RequestExtendVote$json = {
+  '1': 'RequestExtendVote',
+  '2': [
+    {'1': 'hash', '3': 1, '4': 1, '5': 12, '10': 'hash'},
+    {'1': 'height', '3': 2, '4': 1, '5': 3, '10': 'height'},
+    {
+      '1': 'time',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'time'
+    },
+    {'1': 'txs', '3': 4, '4': 3, '5': 12, '10': 'txs'},
+    {
+      '1': 'proposed_last_commit',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.CommitInfo',
+      '8': {},
+      '10': 'proposedLastCommit'
+    },
+    {
+      '1': 'misbehavior',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.abci.Misbehavior',
+      '8': {},
+      '10': 'misbehavior'
+    },
+    {
+      '1': 'next_validators_hash',
+      '3': 7,
+      '4': 1,
+      '5': 12,
+      '10': 'nextValidatorsHash'
+    },
+    {'1': 'proposer_address', '3': 8, '4': 1, '5': 12, '10': 'proposerAddress'},
+  ],
+};
+
+/// Descriptor for `RequestExtendVote`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestExtendVoteDescriptor = $convert.base64Decode(
+    'ChFSZXF1ZXN0RXh0ZW5kVm90ZRISCgRoYXNoGAEgASgMUgRoYXNoEhYKBmhlaWdodBgCIAEoA1'
+    'IGaGVpZ2h0EjgKBHRpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgjI3h8A'
+    'kN8fAVIEdGltZRIQCgN0eHMYBCADKAxSA3R4cxJTChRwcm9wb3NlZF9sYXN0X2NvbW1pdBgFIA'
+    'EoCzIbLnRlbmRlcm1pbnQuYWJjaS5Db21taXRJbmZvQgTI3h8AUhJwcm9wb3NlZExhc3RDb21t'
+    'aXQSRAoLbWlzYmVoYXZpb3IYBiADKAsyHC50ZW5kZXJtaW50LmFiY2kuTWlzYmVoYXZpb3JCBM'
+    'jeHwBSC21pc2JlaGF2aW9yEjAKFG5leHRfdmFsaWRhdG9yc19oYXNoGAcgASgMUhJuZXh0VmFs'
+    'aWRhdG9yc0hhc2gSKQoQcHJvcG9zZXJfYWRkcmVzcxgIIAEoDFIPcHJvcG9zZXJBZGRyZXNz');
+
+@$core.Deprecated('Use requestVerifyVoteExtensionDescriptor instead')
+const RequestVerifyVoteExtension$json = {
+  '1': 'RequestVerifyVoteExtension',
+  '2': [
+    {'1': 'hash', '3': 1, '4': 1, '5': 12, '10': 'hash'},
+    {
+      '1': 'validator_address',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '10': 'validatorAddress'
+    },
+    {'1': 'height', '3': 3, '4': 1, '5': 3, '10': 'height'},
+    {'1': 'vote_extension', '3': 4, '4': 1, '5': 12, '10': 'voteExtension'},
+  ],
+};
+
+/// Descriptor for `RequestVerifyVoteExtension`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestVerifyVoteExtensionDescriptor =
+    $convert.base64Decode(
+        'ChpSZXF1ZXN0VmVyaWZ5Vm90ZUV4dGVuc2lvbhISCgRoYXNoGAEgASgMUgRoYXNoEisKEXZhbG'
+        'lkYXRvcl9hZGRyZXNzGAIgASgMUhB2YWxpZGF0b3JBZGRyZXNzEhYKBmhlaWdodBgDIAEoA1IG'
+        'aGVpZ2h0EiUKDnZvdGVfZXh0ZW5zaW9uGAQgASgMUg12b3RlRXh0ZW5zaW9u');
+
+@$core.Deprecated('Use requestFinalizeBlockDescriptor instead')
+const RequestFinalizeBlock$json = {
+  '1': 'RequestFinalizeBlock',
+  '2': [
+    {'1': 'txs', '3': 1, '4': 3, '5': 12, '10': 'txs'},
+    {
+      '1': 'decided_last_commit',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.CommitInfo',
+      '8': {},
+      '10': 'decidedLastCommit'
+    },
+    {
+      '1': 'misbehavior',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.abci.Misbehavior',
+      '8': {},
+      '10': 'misbehavior'
+    },
+    {'1': 'hash', '3': 4, '4': 1, '5': 12, '10': 'hash'},
+    {'1': 'height', '3': 5, '4': 1, '5': 3, '10': 'height'},
+    {
+      '1': 'time',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'time'
+    },
+    {
+      '1': 'next_validators_hash',
+      '3': 7,
+      '4': 1,
+      '5': 12,
+      '10': 'nextValidatorsHash'
+    },
+    {'1': 'proposer_address', '3': 8, '4': 1, '5': 12, '10': 'proposerAddress'},
+  ],
+};
+
+/// Descriptor for `RequestFinalizeBlock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestFinalizeBlockDescriptor = $convert.base64Decode(
+    'ChRSZXF1ZXN0RmluYWxpemVCbG9jaxIQCgN0eHMYASADKAxSA3R4cxJRChNkZWNpZGVkX2xhc3'
+    'RfY29tbWl0GAIgASgLMhsudGVuZGVybWludC5hYmNpLkNvbW1pdEluZm9CBMjeHwBSEWRlY2lk'
+    'ZWRMYXN0Q29tbWl0EkQKC21pc2JlaGF2aW9yGAMgAygLMhwudGVuZGVybWludC5hYmNpLk1pc2'
+    'JlaGF2aW9yQgTI3h8AUgttaXNiZWhhdmlvchISCgRoYXNoGAQgASgMUgRoYXNoEhYKBmhlaWdo'
+    'dBgFIAEoA1IGaGVpZ2h0EjgKBHRpbWUYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW'
+    '1wQgjI3h8AkN8fAVIEdGltZRIwChRuZXh0X3ZhbGlkYXRvcnNfaGFzaBgHIAEoDFISbmV4dFZh'
+    'bGlkYXRvcnNIYXNoEikKEHByb3Bvc2VyX2FkZHJlc3MYCCABKAxSD3Byb3Bvc2VyQWRkcmVzcw'
+    '==');
+
 @$core.Deprecated('Use responseDescriptor instead')
 const Response$json = {
   '1': 'Response',
@@ -520,15 +706,6 @@ const Response$json = {
       '10': 'info'
     },
     {
-      '1': 'set_option',
-      '3': 5,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.ResponseSetOption',
-      '9': 0,
-      '10': 'setOption'
-    },
-    {
       '1': 'init_chain',
       '3': 6,
       '4': 1,
@@ -547,15 +724,6 @@ const Response$json = {
       '10': 'query'
     },
     {
-      '1': 'begin_block',
-      '3': 8,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.ResponseBeginBlock',
-      '9': 0,
-      '10': 'beginBlock'
-    },
-    {
       '1': 'check_tx',
       '3': 9,
       '4': 1,
@@ -563,24 +731,6 @@ const Response$json = {
       '6': '.tendermint.abci.ResponseCheckTx',
       '9': 0,
       '10': 'checkTx'
-    },
-    {
-      '1': 'deliver_tx',
-      '3': 10,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.ResponseDeliverTx',
-      '9': 0,
-      '10': 'deliverTx'
-    },
-    {
-      '1': 'end_block',
-      '3': 11,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.ResponseEndBlock',
-      '9': 0,
-      '10': 'endBlock'
     },
     {
       '1': 'commit',
@@ -627,9 +777,60 @@ const Response$json = {
       '9': 0,
       '10': 'applySnapshotChunk'
     },
+    {
+      '1': 'prepare_proposal',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.ResponsePrepareProposal',
+      '9': 0,
+      '10': 'prepareProposal'
+    },
+    {
+      '1': 'process_proposal',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.ResponseProcessProposal',
+      '9': 0,
+      '10': 'processProposal'
+    },
+    {
+      '1': 'extend_vote',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.ResponseExtendVote',
+      '9': 0,
+      '10': 'extendVote'
+    },
+    {
+      '1': 'verify_vote_extension',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.ResponseVerifyVoteExtension',
+      '9': 0,
+      '10': 'verifyVoteExtension'
+    },
+    {
+      '1': 'finalize_block',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.ResponseFinalizeBlock',
+      '9': 0,
+      '10': 'finalizeBlock'
+    },
   ],
   '8': [
     {'1': 'value'},
+  ],
+  '9': [
+    {'1': 5, '2': 6},
+    {'1': 8, '2': 9},
+    {'1': 10, '2': 11},
+    {'1': 11, '2': 12},
   ],
 };
 
@@ -639,23 +840,26 @@ final $typed_data.Uint8List responseDescriptor = $convert.base64Decode(
     'VFeGNlcHRpb25IAFIJZXhjZXB0aW9uEjMKBGVjaG8YAiABKAsyHS50ZW5kZXJtaW50LmFiY2ku'
     'UmVzcG9uc2VFY2hvSABSBGVjaG8SNgoFZmx1c2gYAyABKAsyHi50ZW5kZXJtaW50LmFiY2kuUm'
     'VzcG9uc2VGbHVzaEgAUgVmbHVzaBIzCgRpbmZvGAQgASgLMh0udGVuZGVybWludC5hYmNpLlJl'
-    'c3BvbnNlSW5mb0gAUgRpbmZvEkMKCnNldF9vcHRpb24YBSABKAsyIi50ZW5kZXJtaW50LmFiY2'
-    'kuUmVzcG9uc2VTZXRPcHRpb25IAFIJc2V0T3B0aW9uEkMKCmluaXRfY2hhaW4YBiABKAsyIi50'
-    'ZW5kZXJtaW50LmFiY2kuUmVzcG9uc2VJbml0Q2hhaW5IAFIJaW5pdENoYWluEjYKBXF1ZXJ5GA'
-    'cgASgLMh4udGVuZGVybWludC5hYmNpLlJlc3BvbnNlUXVlcnlIAFIFcXVlcnkSRgoLYmVnaW5f'
-    'YmxvY2sYCCABKAsyIy50ZW5kZXJtaW50LmFiY2kuUmVzcG9uc2VCZWdpbkJsb2NrSABSCmJlZ2'
-    'luQmxvY2sSPQoIY2hlY2tfdHgYCSABKAsyIC50ZW5kZXJtaW50LmFiY2kuUmVzcG9uc2VDaGVj'
-    'a1R4SABSB2NoZWNrVHgSQwoKZGVsaXZlcl90eBgKIAEoCzIiLnRlbmRlcm1pbnQuYWJjaS5SZX'
-    'Nwb25zZURlbGl2ZXJUeEgAUglkZWxpdmVyVHgSQAoJZW5kX2Jsb2NrGAsgASgLMiEudGVuZGVy'
-    'bWludC5hYmNpLlJlc3BvbnNlRW5kQmxvY2tIAFIIZW5kQmxvY2sSOQoGY29tbWl0GAwgASgLMh'
-    '8udGVuZGVybWludC5hYmNpLlJlc3BvbnNlQ29tbWl0SABSBmNvbW1pdBJPCg5saXN0X3NuYXBz'
-    'aG90cxgNIAEoCzImLnRlbmRlcm1pbnQuYWJjaS5SZXNwb25zZUxpc3RTbmFwc2hvdHNIAFINbG'
-    'lzdFNuYXBzaG90cxJPCg5vZmZlcl9zbmFwc2hvdBgOIAEoCzImLnRlbmRlcm1pbnQuYWJjaS5S'
-    'ZXNwb25zZU9mZmVyU25hcHNob3RIAFINb2ZmZXJTbmFwc2hvdBJcChNsb2FkX3NuYXBzaG90X2'
-    'NodW5rGA8gASgLMioudGVuZGVybWludC5hYmNpLlJlc3BvbnNlTG9hZFNuYXBzaG90Q2h1bmtI'
-    'AFIRbG9hZFNuYXBzaG90Q2h1bmsSXwoUYXBwbHlfc25hcHNob3RfY2h1bmsYECABKAsyKy50ZW'
-    '5kZXJtaW50LmFiY2kuUmVzcG9uc2VBcHBseVNuYXBzaG90Q2h1bmtIAFISYXBwbHlTbmFwc2hv'
-    'dENodW5rQgcKBXZhbHVl');
+    'c3BvbnNlSW5mb0gAUgRpbmZvEkMKCmluaXRfY2hhaW4YBiABKAsyIi50ZW5kZXJtaW50LmFiY2'
+    'kuUmVzcG9uc2VJbml0Q2hhaW5IAFIJaW5pdENoYWluEjYKBXF1ZXJ5GAcgASgLMh4udGVuZGVy'
+    'bWludC5hYmNpLlJlc3BvbnNlUXVlcnlIAFIFcXVlcnkSPQoIY2hlY2tfdHgYCSABKAsyIC50ZW'
+    '5kZXJtaW50LmFiY2kuUmVzcG9uc2VDaGVja1R4SABSB2NoZWNrVHgSOQoGY29tbWl0GAwgASgL'
+    'Mh8udGVuZGVybWludC5hYmNpLlJlc3BvbnNlQ29tbWl0SABSBmNvbW1pdBJPCg5saXN0X3NuYX'
+    'BzaG90cxgNIAEoCzImLnRlbmRlcm1pbnQuYWJjaS5SZXNwb25zZUxpc3RTbmFwc2hvdHNIAFIN'
+    'bGlzdFNuYXBzaG90cxJPCg5vZmZlcl9zbmFwc2hvdBgOIAEoCzImLnRlbmRlcm1pbnQuYWJjaS'
+    '5SZXNwb25zZU9mZmVyU25hcHNob3RIAFINb2ZmZXJTbmFwc2hvdBJcChNsb2FkX3NuYXBzaG90'
+    'X2NodW5rGA8gASgLMioudGVuZGVybWludC5hYmNpLlJlc3BvbnNlTG9hZFNuYXBzaG90Q2h1bm'
+    'tIAFIRbG9hZFNuYXBzaG90Q2h1bmsSXwoUYXBwbHlfc25hcHNob3RfY2h1bmsYECABKAsyKy50'
+    'ZW5kZXJtaW50LmFiY2kuUmVzcG9uc2VBcHBseVNuYXBzaG90Q2h1bmtIAFISYXBwbHlTbmFwc2'
+    'hvdENodW5rElUKEHByZXBhcmVfcHJvcG9zYWwYESABKAsyKC50ZW5kZXJtaW50LmFiY2kuUmVz'
+    'cG9uc2VQcmVwYXJlUHJvcG9zYWxIAFIPcHJlcGFyZVByb3Bvc2FsElUKEHByb2Nlc3NfcHJvcG'
+    '9zYWwYEiABKAsyKC50ZW5kZXJtaW50LmFiY2kuUmVzcG9uc2VQcm9jZXNzUHJvcG9zYWxIAFIP'
+    'cHJvY2Vzc1Byb3Bvc2FsEkYKC2V4dGVuZF92b3RlGBMgASgLMiMudGVuZGVybWludC5hYmNpLl'
+    'Jlc3BvbnNlRXh0ZW5kVm90ZUgAUgpleHRlbmRWb3RlEmIKFXZlcmlmeV92b3RlX2V4dGVuc2lv'
+    'bhgUIAEoCzIsLnRlbmRlcm1pbnQuYWJjaS5SZXNwb25zZVZlcmlmeVZvdGVFeHRlbnNpb25IAF'
+    'ITdmVyaWZ5Vm90ZUV4dGVuc2lvbhJPCg5maW5hbGl6ZV9ibG9jaxgVIAEoCzImLnRlbmRlcm1p'
+    'bnQuYWJjaS5SZXNwb25zZUZpbmFsaXplQmxvY2tIAFINZmluYWxpemVCbG9ja0IHCgV2YWx1ZU'
+    'oECAUQBkoECAgQCUoECAoQC0oECAsQDA==');
 
 @$core.Deprecated('Use responseExceptionDescriptor instead')
 const ResponseException$json = {
@@ -715,21 +919,6 @@ final $typed_data.Uint8List responseInfoDescriptor = $convert.base64Decode(
     'Z2h0GAQgASgDUg9sYXN0QmxvY2tIZWlnaHQSLQoTbGFzdF9ibG9ja19hcHBfaGFzaBgFIAEoDF'
     'IQbGFzdEJsb2NrQXBwSGFzaA==');
 
-@$core.Deprecated('Use responseSetOptionDescriptor instead')
-const ResponseSetOption$json = {
-  '1': 'ResponseSetOption',
-  '2': [
-    {'1': 'code', '3': 1, '4': 1, '5': 13, '10': 'code'},
-    {'1': 'log', '3': 3, '4': 1, '5': 9, '10': 'log'},
-    {'1': 'info', '3': 4, '4': 1, '5': 9, '10': 'info'},
-  ],
-};
-
-/// Descriptor for `ResponseSetOption`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseSetOptionDescriptor = $convert.base64Decode(
-    'ChFSZXNwb25zZVNldE9wdGlvbhISCgRjb2RlGAEgASgNUgRjb2RlEhAKA2xvZxgDIAEoCVIDbG'
-    '9nEhIKBGluZm8YBCABKAlSBGluZm8=');
-
 @$core.Deprecated('Use responseInitChainDescriptor instead')
 const ResponseInitChain$json = {
   '1': 'ResponseInitChain',
@@ -739,7 +928,7 @@ const ResponseInitChain$json = {
       '3': 1,
       '4': 1,
       '5': 11,
-      '6': '.tendermint.abci.ConsensusParams',
+      '6': '.tendermint.types.ConsensusParams',
       '10': 'consensusParams'
     },
     {
@@ -757,10 +946,10 @@ const ResponseInitChain$json = {
 
 /// Descriptor for `ResponseInitChain`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List responseInitChainDescriptor = $convert.base64Decode(
-    'ChFSZXNwb25zZUluaXRDaGFpbhJLChBjb25zZW5zdXNfcGFyYW1zGAEgASgLMiAudGVuZGVybW'
-    'ludC5hYmNpLkNvbnNlbnN1c1BhcmFtc1IPY29uc2Vuc3VzUGFyYW1zEkYKCnZhbGlkYXRvcnMY'
-    'AiADKAsyIC50ZW5kZXJtaW50LmFiY2kuVmFsaWRhdG9yVXBkYXRlQgTI3h8AUgp2YWxpZGF0b3'
-    'JzEhkKCGFwcF9oYXNoGAMgASgMUgdhcHBIYXNo');
+    'ChFSZXNwb25zZUluaXRDaGFpbhJMChBjb25zZW5zdXNfcGFyYW1zGAEgASgLMiEudGVuZGVybW'
+    'ludC50eXBlcy5Db25zZW5zdXNQYXJhbXNSD2NvbnNlbnN1c1BhcmFtcxJGCgp2YWxpZGF0b3Jz'
+    'GAIgAygLMiAudGVuZGVybWludC5hYmNpLlZhbGlkYXRvclVwZGF0ZUIEyN4fAFIKdmFsaWRhdG'
+    '9ycxIZCghhcHBfaGFzaBgDIAEoDFIHYXBwSGFzaA==');
 
 @$core.Deprecated('Use responseQueryDescriptor instead')
 const ResponseQuery$json = {
@@ -793,27 +982,6 @@ final $typed_data.Uint8List responseQueryDescriptor = $convert.base64Decode(
     'QuY3J5cHRvLlByb29mT3BzUghwcm9vZk9wcxIWCgZoZWlnaHQYCSABKANSBmhlaWdodBIcCglj'
     'b2Rlc3BhY2UYCiABKAlSCWNvZGVzcGFjZQ==');
 
-@$core.Deprecated('Use responseBeginBlockDescriptor instead')
-const ResponseBeginBlock$json = {
-  '1': 'ResponseBeginBlock',
-  '2': [
-    {
-      '1': 'events',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.tendermint.abci.Event',
-      '8': {},
-      '10': 'events'
-    },
-  ],
-};
-
-/// Descriptor for `ResponseBeginBlock`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseBeginBlockDescriptor = $convert.base64Decode(
-    'ChJSZXNwb25zZUJlZ2luQmxvY2sSSAoGZXZlbnRzGAEgAygLMhYudGVuZGVybWludC5hYmNpLk'
-    'V2ZW50QhjI3h8A6t4fEGV2ZW50cyxvbWl0ZW1wdHlSBmV2ZW50cw==');
-
 @$core.Deprecated('Use responseCheckTxDescriptor instead')
 const ResponseCheckTx$json = {
   '1': 'ResponseCheckTx',
@@ -834,10 +1002,11 @@ const ResponseCheckTx$json = {
       '10': 'events'
     },
     {'1': 'codespace', '3': 8, '4': 1, '5': 9, '10': 'codespace'},
-    {'1': 'sender', '3': 9, '4': 1, '5': 9, '10': 'sender'},
-    {'1': 'priority', '3': 10, '4': 1, '5': 3, '10': 'priority'},
-    {'1': 'mempool_error', '3': 11, '4': 1, '5': 9, '10': 'mempoolError'},
   ],
+  '9': [
+    {'1': 9, '2': 12},
+  ],
+  '10': ['sender', 'priority', 'mempool_error'],
 };
 
 /// Descriptor for `ResponseCheckTx`. Decode as a `google.protobuf.DescriptorProto`.
@@ -846,95 +1015,25 @@ final $typed_data.Uint8List responseCheckTxDescriptor = $convert.base64Decode(
     'RhEhAKA2xvZxgDIAEoCVIDbG9nEhIKBGluZm8YBCABKAlSBGluZm8SHgoKZ2FzX3dhbnRlZBgF'
     'IAEoA1IKZ2FzX3dhbnRlZBIaCghnYXNfdXNlZBgGIAEoA1IIZ2FzX3VzZWQSSAoGZXZlbnRzGA'
     'cgAygLMhYudGVuZGVybWludC5hYmNpLkV2ZW50QhjI3h8A6t4fEGV2ZW50cyxvbWl0ZW1wdHlS'
-    'BmV2ZW50cxIcCgljb2Rlc3BhY2UYCCABKAlSCWNvZGVzcGFjZRIWCgZzZW5kZXIYCSABKAlSBn'
-    'NlbmRlchIaCghwcmlvcml0eRgKIAEoA1IIcHJpb3JpdHkSIwoNbWVtcG9vbF9lcnJvchgLIAEo'
-    'CVIMbWVtcG9vbEVycm9y');
-
-@$core.Deprecated('Use responseDeliverTxDescriptor instead')
-const ResponseDeliverTx$json = {
-  '1': 'ResponseDeliverTx',
-  '2': [
-    {'1': 'code', '3': 1, '4': 1, '5': 13, '10': 'code'},
-    {'1': 'data', '3': 2, '4': 1, '5': 12, '10': 'data'},
-    {'1': 'log', '3': 3, '4': 1, '5': 9, '10': 'log'},
-    {'1': 'info', '3': 4, '4': 1, '5': 9, '10': 'info'},
-    {'1': 'gas_wanted', '3': 5, '4': 1, '5': 3, '10': 'gas_wanted'},
-    {'1': 'gas_used', '3': 6, '4': 1, '5': 3, '10': 'gas_used'},
-    {
-      '1': 'events',
-      '3': 7,
-      '4': 3,
-      '5': 11,
-      '6': '.tendermint.abci.Event',
-      '8': {},
-      '10': 'events'
-    },
-    {'1': 'codespace', '3': 8, '4': 1, '5': 9, '10': 'codespace'},
-  ],
-};
-
-/// Descriptor for `ResponseDeliverTx`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseDeliverTxDescriptor = $convert.base64Decode(
-    'ChFSZXNwb25zZURlbGl2ZXJUeBISCgRjb2RlGAEgASgNUgRjb2RlEhIKBGRhdGEYAiABKAxSBG'
-    'RhdGESEAoDbG9nGAMgASgJUgNsb2cSEgoEaW5mbxgEIAEoCVIEaW5mbxIeCgpnYXNfd2FudGVk'
-    'GAUgASgDUgpnYXNfd2FudGVkEhoKCGdhc191c2VkGAYgASgDUghnYXNfdXNlZBJICgZldmVudH'
-    'MYByADKAsyFi50ZW5kZXJtaW50LmFiY2kuRXZlbnRCGMjeHwDq3h8QZXZlbnRzLG9taXRlbXB0'
-    'eVIGZXZlbnRzEhwKCWNvZGVzcGFjZRgIIAEoCVIJY29kZXNwYWNl');
-
-@$core.Deprecated('Use responseEndBlockDescriptor instead')
-const ResponseEndBlock$json = {
-  '1': 'ResponseEndBlock',
-  '2': [
-    {
-      '1': 'validator_updates',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.tendermint.abci.ValidatorUpdate',
-      '8': {},
-      '10': 'validatorUpdates'
-    },
-    {
-      '1': 'consensus_param_updates',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.tendermint.abci.ConsensusParams',
-      '10': 'consensusParamUpdates'
-    },
-    {
-      '1': 'events',
-      '3': 3,
-      '4': 3,
-      '5': 11,
-      '6': '.tendermint.abci.Event',
-      '8': {},
-      '10': 'events'
-    },
-  ],
-};
-
-/// Descriptor for `ResponseEndBlock`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseEndBlockDescriptor = $convert.base64Decode(
-    'ChBSZXNwb25zZUVuZEJsb2NrElMKEXZhbGlkYXRvcl91cGRhdGVzGAEgAygLMiAudGVuZGVybW'
-    'ludC5hYmNpLlZhbGlkYXRvclVwZGF0ZUIEyN4fAFIQdmFsaWRhdG9yVXBkYXRlcxJYChdjb25z'
-    'ZW5zdXNfcGFyYW1fdXBkYXRlcxgCIAEoCzIgLnRlbmRlcm1pbnQuYWJjaS5Db25zZW5zdXNQYX'
-    'JhbXNSFWNvbnNlbnN1c1BhcmFtVXBkYXRlcxJICgZldmVudHMYAyADKAsyFi50ZW5kZXJtaW50'
-    'LmFiY2kuRXZlbnRCGMjeHwDq3h8QZXZlbnRzLG9taXRlbXB0eVIGZXZlbnRz');
+    'BmV2ZW50cxIcCgljb2Rlc3BhY2UYCCABKAlSCWNvZGVzcGFjZUoECAkQDFIGc2VuZGVyUghwcm'
+    'lvcml0eVINbWVtcG9vbF9lcnJvcg==');
 
 @$core.Deprecated('Use responseCommitDescriptor instead')
 const ResponseCommit$json = {
   '1': 'ResponseCommit',
   '2': [
-    {'1': 'data', '3': 2, '4': 1, '5': 12, '10': 'data'},
     {'1': 'retain_height', '3': 3, '4': 1, '5': 3, '10': 'retainHeight'},
+  ],
+  '9': [
+    {'1': 1, '2': 2},
+    {'1': 2, '2': 3},
   ],
 };
 
 /// Descriptor for `ResponseCommit`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List responseCommitDescriptor = $convert.base64Decode(
-    'Cg5SZXNwb25zZUNvbW1pdBISCgRkYXRhGAIgASgMUgRkYXRhEiMKDXJldGFpbl9oZWlnaHQYAy'
-    'ABKANSDHJldGFpbkhlaWdodA==');
+    'Cg5SZXNwb25zZUNvbW1pdBIjCg1yZXRhaW5faGVpZ2h0GAMgASgDUgxyZXRhaW5IZWlnaHRKBA'
+    'gBEAJKBAgCEAM=');
 
 @$core.Deprecated('Use responseListSnapshotsDescriptor instead')
 const ResponseListSnapshots$json = {
@@ -1045,70 +1144,151 @@ final $typed_data.Uint8List responseApplySnapshotChunkDescriptor = $convert.base
     'Qk9SVBACEgkKBVJFVFJZEAMSEgoOUkVUUllfU05BUFNIT1QQBBITCg9SRUpFQ1RfU05BUFNIT1'
     'QQBQ==');
 
-@$core.Deprecated('Use consensusParamsDescriptor instead')
-const ConsensusParams$json = {
-  '1': 'ConsensusParams',
+@$core.Deprecated('Use responsePrepareProposalDescriptor instead')
+const ResponsePrepareProposal$json = {
+  '1': 'ResponsePrepareProposal',
+  '2': [
+    {'1': 'txs', '3': 1, '4': 3, '5': 12, '10': 'txs'},
+  ],
+};
+
+/// Descriptor for `ResponsePrepareProposal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List responsePrepareProposalDescriptor =
+    $convert.base64Decode(
+        'ChdSZXNwb25zZVByZXBhcmVQcm9wb3NhbBIQCgN0eHMYASADKAxSA3R4cw==');
+
+@$core.Deprecated('Use responseProcessProposalDescriptor instead')
+const ResponseProcessProposal$json = {
+  '1': 'ResponseProcessProposal',
   '2': [
     {
-      '1': 'block',
+      '1': 'status',
       '3': 1,
       '4': 1,
+      '5': 14,
+      '6': '.tendermint.abci.ResponseProcessProposal.ProposalStatus',
+      '10': 'status'
+    },
+  ],
+  '4': [ResponseProcessProposal_ProposalStatus$json],
+};
+
+@$core.Deprecated('Use responseProcessProposalDescriptor instead')
+const ResponseProcessProposal_ProposalStatus$json = {
+  '1': 'ProposalStatus',
+  '2': [
+    {'1': 'UNKNOWN', '2': 0},
+    {'1': 'ACCEPT', '2': 1},
+    {'1': 'REJECT', '2': 2},
+  ],
+};
+
+/// Descriptor for `ResponseProcessProposal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List responseProcessProposalDescriptor = $convert.base64Decode(
+    'ChdSZXNwb25zZVByb2Nlc3NQcm9wb3NhbBJPCgZzdGF0dXMYASABKA4yNy50ZW5kZXJtaW50Lm'
+    'FiY2kuUmVzcG9uc2VQcm9jZXNzUHJvcG9zYWwuUHJvcG9zYWxTdGF0dXNSBnN0YXR1cyI1Cg5Q'
+    'cm9wb3NhbFN0YXR1cxILCgdVTktOT1dOEAASCgoGQUNDRVBUEAESCgoGUkVKRUNUEAI=');
+
+@$core.Deprecated('Use responseExtendVoteDescriptor instead')
+const ResponseExtendVote$json = {
+  '1': 'ResponseExtendVote',
+  '2': [
+    {'1': 'vote_extension', '3': 1, '4': 1, '5': 12, '10': 'voteExtension'},
+  ],
+};
+
+/// Descriptor for `ResponseExtendVote`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List responseExtendVoteDescriptor = $convert.base64Decode(
+    'ChJSZXNwb25zZUV4dGVuZFZvdGUSJQoOdm90ZV9leHRlbnNpb24YASABKAxSDXZvdGVFeHRlbn'
+    'Npb24=');
+
+@$core.Deprecated('Use responseVerifyVoteExtensionDescriptor instead')
+const ResponseVerifyVoteExtension$json = {
+  '1': 'ResponseVerifyVoteExtension',
+  '2': [
+    {
+      '1': 'status',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.tendermint.abci.ResponseVerifyVoteExtension.VerifyStatus',
+      '10': 'status'
+    },
+  ],
+  '4': [ResponseVerifyVoteExtension_VerifyStatus$json],
+};
+
+@$core.Deprecated('Use responseVerifyVoteExtensionDescriptor instead')
+const ResponseVerifyVoteExtension_VerifyStatus$json = {
+  '1': 'VerifyStatus',
+  '2': [
+    {'1': 'UNKNOWN', '2': 0},
+    {'1': 'ACCEPT', '2': 1},
+    {'1': 'REJECT', '2': 2},
+  ],
+};
+
+/// Descriptor for `ResponseVerifyVoteExtension`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List responseVerifyVoteExtensionDescriptor = $convert.base64Decode(
+    'ChtSZXNwb25zZVZlcmlmeVZvdGVFeHRlbnNpb24SUQoGc3RhdHVzGAEgASgOMjkudGVuZGVybW'
+    'ludC5hYmNpLlJlc3BvbnNlVmVyaWZ5Vm90ZUV4dGVuc2lvbi5WZXJpZnlTdGF0dXNSBnN0YXR1'
+    'cyIzCgxWZXJpZnlTdGF0dXMSCwoHVU5LTk9XThAAEgoKBkFDQ0VQVBABEgoKBlJFSkVDVBAC');
+
+@$core.Deprecated('Use responseFinalizeBlockDescriptor instead')
+const ResponseFinalizeBlock$json = {
+  '1': 'ResponseFinalizeBlock',
+  '2': [
+    {
+      '1': 'events',
+      '3': 1,
+      '4': 3,
       '5': 11,
-      '6': '.tendermint.abci.BlockParams',
-      '10': 'block'
+      '6': '.tendermint.abci.Event',
+      '8': {},
+      '10': 'events'
     },
     {
-      '1': 'evidence',
+      '1': 'tx_results',
       '3': 2,
-      '4': 1,
+      '4': 3,
       '5': 11,
-      '6': '.tendermint.types.EvidenceParams',
-      '10': 'evidence'
+      '6': '.tendermint.abci.ExecTxResult',
+      '10': 'txResults'
     },
     {
-      '1': 'validator',
+      '1': 'validator_updates',
       '3': 3,
-      '4': 1,
+      '4': 3,
       '5': 11,
-      '6': '.tendermint.types.ValidatorParams',
-      '10': 'validator'
+      '6': '.tendermint.abci.ValidatorUpdate',
+      '8': {},
+      '10': 'validatorUpdates'
     },
     {
-      '1': 'version',
+      '1': 'consensus_param_updates',
       '3': 4,
       '4': 1,
       '5': 11,
-      '6': '.tendermint.types.VersionParams',
-      '10': 'version'
+      '6': '.tendermint.types.ConsensusParams',
+      '10': 'consensusParamUpdates'
     },
+    {'1': 'app_hash', '3': 5, '4': 1, '5': 12, '10': 'appHash'},
   ],
 };
 
-/// Descriptor for `ConsensusParams`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List consensusParamsDescriptor = $convert.base64Decode(
-    'Cg9Db25zZW5zdXNQYXJhbXMSMgoFYmxvY2sYASABKAsyHC50ZW5kZXJtaW50LmFiY2kuQmxvY2'
-    'tQYXJhbXNSBWJsb2NrEjwKCGV2aWRlbmNlGAIgASgLMiAudGVuZGVybWludC50eXBlcy5Fdmlk'
-    'ZW5jZVBhcmFtc1IIZXZpZGVuY2USPwoJdmFsaWRhdG9yGAMgASgLMiEudGVuZGVybWludC50eX'
-    'Blcy5WYWxpZGF0b3JQYXJhbXNSCXZhbGlkYXRvchI5Cgd2ZXJzaW9uGAQgASgLMh8udGVuZGVy'
-    'bWludC50eXBlcy5WZXJzaW9uUGFyYW1zUgd2ZXJzaW9u');
+/// Descriptor for `ResponseFinalizeBlock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List responseFinalizeBlockDescriptor = $convert.base64Decode(
+    'ChVSZXNwb25zZUZpbmFsaXplQmxvY2sSSAoGZXZlbnRzGAEgAygLMhYudGVuZGVybWludC5hYm'
+    'NpLkV2ZW50QhjI3h8A6t4fEGV2ZW50cyxvbWl0ZW1wdHlSBmV2ZW50cxI8Cgp0eF9yZXN1bHRz'
+    'GAIgAygLMh0udGVuZGVybWludC5hYmNpLkV4ZWNUeFJlc3VsdFIJdHhSZXN1bHRzElMKEXZhbG'
+    'lkYXRvcl91cGRhdGVzGAMgAygLMiAudGVuZGVybWludC5hYmNpLlZhbGlkYXRvclVwZGF0ZUIE'
+    'yN4fAFIQdmFsaWRhdG9yVXBkYXRlcxJZChdjb25zZW5zdXNfcGFyYW1fdXBkYXRlcxgEIAEoCz'
+    'IhLnRlbmRlcm1pbnQudHlwZXMuQ29uc2Vuc3VzUGFyYW1zUhVjb25zZW5zdXNQYXJhbVVwZGF0'
+    'ZXMSGQoIYXBwX2hhc2gYBSABKAxSB2FwcEhhc2g=');
 
-@$core.Deprecated('Use blockParamsDescriptor instead')
-const BlockParams$json = {
-  '1': 'BlockParams',
-  '2': [
-    {'1': 'max_bytes', '3': 1, '4': 1, '5': 3, '10': 'maxBytes'},
-    {'1': 'max_gas', '3': 2, '4': 1, '5': 3, '10': 'maxGas'},
-  ],
-};
-
-/// Descriptor for `BlockParams`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List blockParamsDescriptor = $convert.base64Decode(
-    'CgtCbG9ja1BhcmFtcxIbCgltYXhfYnl0ZXMYASABKANSCG1heEJ5dGVzEhcKB21heF9nYXMYAi'
-    'ABKANSBm1heEdhcw==');
-
-@$core.Deprecated('Use lastCommitInfoDescriptor instead')
-const LastCommitInfo$json = {
-  '1': 'LastCommitInfo',
+@$core.Deprecated('Use commitInfoDescriptor instead')
+const CommitInfo$json = {
+  '1': 'CommitInfo',
   '2': [
     {'1': 'round', '3': 1, '4': 1, '5': 5, '10': 'round'},
     {
@@ -1123,10 +1303,32 @@ const LastCommitInfo$json = {
   ],
 };
 
-/// Descriptor for `LastCommitInfo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List lastCommitInfoDescriptor = $convert.base64Decode(
-    'Cg5MYXN0Q29tbWl0SW5mbxIUCgVyb3VuZBgBIAEoBVIFcm91bmQSNQoFdm90ZXMYAiADKAsyGS'
-    '50ZW5kZXJtaW50LmFiY2kuVm90ZUluZm9CBMjeHwBSBXZvdGVz');
+/// Descriptor for `CommitInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commitInfoDescriptor = $convert.base64Decode(
+    'CgpDb21taXRJbmZvEhQKBXJvdW5kGAEgASgFUgVyb3VuZBI1CgV2b3RlcxgCIAMoCzIZLnRlbm'
+    'Rlcm1pbnQuYWJjaS5Wb3RlSW5mb0IEyN4fAFIFdm90ZXM=');
+
+@$core.Deprecated('Use extendedCommitInfoDescriptor instead')
+const ExtendedCommitInfo$json = {
+  '1': 'ExtendedCommitInfo',
+  '2': [
+    {'1': 'round', '3': 1, '4': 1, '5': 5, '10': 'round'},
+    {
+      '1': 'votes',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.abci.ExtendedVoteInfo',
+      '8': {},
+      '10': 'votes'
+    },
+  ],
+};
+
+/// Descriptor for `ExtendedCommitInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extendedCommitInfoDescriptor = $convert.base64Decode(
+    'ChJFeHRlbmRlZENvbW1pdEluZm8SFAoFcm91bmQYASABKAVSBXJvdW5kEj0KBXZvdGVzGAIgAy'
+    'gLMiEudGVuZGVybWludC5hYmNpLkV4dGVuZGVkVm90ZUluZm9CBMjeHwBSBXZvdGVz');
 
 @$core.Deprecated('Use eventDescriptor instead')
 const Event$json = {
@@ -1155,16 +1357,47 @@ final $typed_data.Uint8List eventDescriptor = $convert.base64Decode(
 const EventAttribute$json = {
   '1': 'EventAttribute',
   '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 12, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 12, '10': 'value'},
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
     {'1': 'index', '3': 3, '4': 1, '5': 8, '10': 'index'},
   ],
 };
 
 /// Descriptor for `EventAttribute`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List eventAttributeDescriptor = $convert.base64Decode(
-    'Cg5FdmVudEF0dHJpYnV0ZRIQCgNrZXkYASABKAxSA2tleRIUCgV2YWx1ZRgCIAEoDFIFdmFsdW'
+    'Cg5FdmVudEF0dHJpYnV0ZRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdW'
     'USFAoFaW5kZXgYAyABKAhSBWluZGV4');
+
+@$core.Deprecated('Use execTxResultDescriptor instead')
+const ExecTxResult$json = {
+  '1': 'ExecTxResult',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 13, '10': 'code'},
+    {'1': 'data', '3': 2, '4': 1, '5': 12, '10': 'data'},
+    {'1': 'log', '3': 3, '4': 1, '5': 9, '10': 'log'},
+    {'1': 'info', '3': 4, '4': 1, '5': 9, '10': 'info'},
+    {'1': 'gas_wanted', '3': 5, '4': 1, '5': 3, '10': 'gas_wanted'},
+    {'1': 'gas_used', '3': 6, '4': 1, '5': 3, '10': 'gas_used'},
+    {
+      '1': 'events',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.abci.Event',
+      '8': {},
+      '10': 'events'
+    },
+    {'1': 'codespace', '3': 8, '4': 1, '5': 9, '10': 'codespace'},
+  ],
+};
+
+/// Descriptor for `ExecTxResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List execTxResultDescriptor = $convert.base64Decode(
+    'CgxFeGVjVHhSZXN1bHQSEgoEY29kZRgBIAEoDVIEY29kZRISCgRkYXRhGAIgASgMUgRkYXRhEh'
+    'AKA2xvZxgDIAEoCVIDbG9nEhIKBGluZm8YBCABKAlSBGluZm8SHgoKZ2FzX3dhbnRlZBgFIAEo'
+    'A1IKZ2FzX3dhbnRlZBIaCghnYXNfdXNlZBgGIAEoA1IIZ2FzX3VzZWQSSAoGZXZlbnRzGAcgAy'
+    'gLMhYudGVuZGVybWludC5hYmNpLkV2ZW50QhjI3h8A6t4fEGV2ZW50cyxvbWl0ZW1wdHlSBmV2'
+    'ZW50cxIcCgljb2Rlc3BhY2UYCCABKAlSCWNvZGVzcGFjZQ==');
 
 @$core.Deprecated('Use txResultDescriptor instead')
 const TxResult$json = {
@@ -1178,7 +1411,7 @@ const TxResult$json = {
       '3': 4,
       '4': 1,
       '5': 11,
-      '6': '.tendermint.abci.ResponseDeliverTx',
+      '6': '.tendermint.abci.ExecTxResult',
       '8': {},
       '10': 'result'
     },
@@ -1188,8 +1421,8 @@ const TxResult$json = {
 /// Descriptor for `TxResult`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List txResultDescriptor = $convert.base64Decode(
     'CghUeFJlc3VsdBIWCgZoZWlnaHQYASABKANSBmhlaWdodBIUCgVpbmRleBgCIAEoDVIFaW5kZX'
-    'gSDgoCdHgYAyABKAxSAnR4EkAKBnJlc3VsdBgEIAEoCzIiLnRlbmRlcm1pbnQuYWJjaS5SZXNw'
-    'b25zZURlbGl2ZXJUeEIEyN4fAFIGcmVzdWx0');
+    'gSDgoCdHgYAyABKAxSAnR4EjsKBnJlc3VsdBgEIAEoCzIdLnRlbmRlcm1pbnQuYWJjaS5FeGVj'
+    'VHhSZXN1bHRCBMjeHwBSBnJlc3VsdA==');
 
 @$core.Deprecated('Use validatorDescriptor instead')
 const Validator$json = {
@@ -1240,26 +1473,79 @@ const VoteInfo$json = {
       '8': {},
       '10': 'validator'
     },
-    {'1': 'signed_last_block', '3': 2, '4': 1, '5': 8, '10': 'signedLastBlock'},
+    {
+      '1': 'block_id_flag',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.tendermint.types.BlockIDFlag',
+      '10': 'blockIdFlag'
+    },
+  ],
+  '9': [
+    {'1': 2, '2': 3},
   ],
 };
 
 /// Descriptor for `VoteInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List voteInfoDescriptor = $convert.base64Decode(
     'CghWb3RlSW5mbxI+Cgl2YWxpZGF0b3IYASABKAsyGi50ZW5kZXJtaW50LmFiY2kuVmFsaWRhdG'
-    '9yQgTI3h8AUgl2YWxpZGF0b3ISKgoRc2lnbmVkX2xhc3RfYmxvY2sYAiABKAhSD3NpZ25lZExh'
-    'c3RCbG9jaw==');
+    '9yQgTI3h8AUgl2YWxpZGF0b3ISQQoNYmxvY2tfaWRfZmxhZxgDIAEoDjIdLnRlbmRlcm1pbnQu'
+    'dHlwZXMuQmxvY2tJREZsYWdSC2Jsb2NrSWRGbGFnSgQIAhAD');
 
-@$core.Deprecated('Use evidenceDescriptor instead')
-const Evidence$json = {
-  '1': 'Evidence',
+@$core.Deprecated('Use extendedVoteInfoDescriptor instead')
+const ExtendedVoteInfo$json = {
+  '1': 'ExtendedVoteInfo',
+  '2': [
+    {
+      '1': 'validator',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.tendermint.abci.Validator',
+      '8': {},
+      '10': 'validator'
+    },
+    {'1': 'vote_extension', '3': 3, '4': 1, '5': 12, '10': 'voteExtension'},
+    {
+      '1': 'extension_signature',
+      '3': 4,
+      '4': 1,
+      '5': 12,
+      '10': 'extensionSignature'
+    },
+    {
+      '1': 'block_id_flag',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.tendermint.types.BlockIDFlag',
+      '10': 'blockIdFlag'
+    },
+  ],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+};
+
+/// Descriptor for `ExtendedVoteInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extendedVoteInfoDescriptor = $convert.base64Decode(
+    'ChBFeHRlbmRlZFZvdGVJbmZvEj4KCXZhbGlkYXRvchgBIAEoCzIaLnRlbmRlcm1pbnQuYWJjaS'
+    '5WYWxpZGF0b3JCBMjeHwBSCXZhbGlkYXRvchIlCg52b3RlX2V4dGVuc2lvbhgDIAEoDFINdm90'
+    'ZUV4dGVuc2lvbhIvChNleHRlbnNpb25fc2lnbmF0dXJlGAQgASgMUhJleHRlbnNpb25TaWduYX'
+    'R1cmUSQQoNYmxvY2tfaWRfZmxhZxgFIAEoDjIdLnRlbmRlcm1pbnQudHlwZXMuQmxvY2tJREZs'
+    'YWdSC2Jsb2NrSWRGbGFnSgQIAhAD');
+
+@$core.Deprecated('Use misbehaviorDescriptor instead')
+const Misbehavior$json = {
+  '1': 'Misbehavior',
   '2': [
     {
       '1': 'type',
       '3': 1,
       '4': 1,
       '5': 14,
-      '6': '.tendermint.abci.EvidenceType',
+      '6': '.tendermint.abci.MisbehaviorType',
       '10': 'type'
     },
     {
@@ -1291,13 +1577,13 @@ const Evidence$json = {
   ],
 };
 
-/// Descriptor for `Evidence`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List evidenceDescriptor = $convert.base64Decode(
-    'CghFdmlkZW5jZRIxCgR0eXBlGAEgASgOMh0udGVuZGVybWludC5hYmNpLkV2aWRlbmNlVHlwZV'
-    'IEdHlwZRI+Cgl2YWxpZGF0b3IYAiABKAsyGi50ZW5kZXJtaW50LmFiY2kuVmFsaWRhdG9yQgTI'
-    '3h8AUgl2YWxpZGF0b3ISFgoGaGVpZ2h0GAMgASgDUgZoZWlnaHQSOAoEdGltZRgEIAEoCzIaLm'
-    'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x8BUgR0aW1lEiwKEnRvdGFsX3ZvdGlu'
-    'Z19wb3dlchgFIAEoA1IQdG90YWxWb3RpbmdQb3dlcg==');
+/// Descriptor for `Misbehavior`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List misbehaviorDescriptor = $convert.base64Decode(
+    'CgtNaXNiZWhhdmlvchI0CgR0eXBlGAEgASgOMiAudGVuZGVybWludC5hYmNpLk1pc2JlaGF2aW'
+    '9yVHlwZVIEdHlwZRI+Cgl2YWxpZGF0b3IYAiABKAsyGi50ZW5kZXJtaW50LmFiY2kuVmFsaWRh'
+    'dG9yQgTI3h8AUgl2YWxpZGF0b3ISFgoGaGVpZ2h0GAMgASgDUgZoZWlnaHQSOAoEdGltZRgEIA'
+    'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x8BUgR0aW1lEiwKEnRvdGFs'
+    'X3ZvdGluZ19wb3dlchgFIAEoA1IQdG90YWxWb3RpbmdQb3dlcg==');
 
 @$core.Deprecated('Use snapshotDescriptor instead')
 const Snapshot$json = {

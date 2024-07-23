@@ -250,9 +250,9 @@ const QueryEscrowResponse$json = {
 
 /// Descriptor for `QueryEscrowResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryEscrowResponseDescriptor = $convert.base64Decode(
-    'ChNRdWVyeUVzY3Jvd1Jlc3BvbnNlEmMKBmVzY3JvdxgBIAMoCzIZLmNvc21vcy5iYXNlLnYxYm'
-    'V0YTEuQ29pbkIwyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNv'
-    'aW5zUgZlc2Nyb3c=');
+    'ChNRdWVyeUVzY3Jvd1Jlc3BvbnNlEnkKBmVzY3JvdxgBIAMoCzIZLmNvc21vcy5iYXNlLnYxYm'
+    'V0YTEuQ29pbkJGyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNv'
+    'aW5zmuewKgxsZWdhY3lfY29pbnOo57AqAVIGZXNjcm93');
 
 @$core.Deprecated('Use queryAccessRequestDescriptor instead')
 const QueryAccessRequest$json = {
@@ -368,9 +368,10 @@ const Balance$json = {
 
 /// Descriptor for `Balance`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List balanceDescriptor = $convert.base64Decode(
-    'CgdCYWxhbmNlEhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3MSYQoFY29pbnMYAiADKAsyGS5jb3'
-    'Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9z'
-    'LXNkay90eXBlcy5Db2luc1IFY29pbnM6CIigHwDooB8A');
+    'CgdCYWxhbmNlEhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3MSdwoFY29pbnMYAiADKAsyGS5jb3'
+    'Ntb3MuYmFzZS52MWJldGExLkNvaW5CRsjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9z'
+    'LXNkay90eXBlcy5Db2luc5rnsCoMbGVnYWN5X2NvaW5zqOewKgFSBWNvaW5zOgiIoB8A6KAfAA'
+    '==');
 
 @$core.Deprecated('Use queryNetAssetValuesRequestDescriptor instead')
 const QueryNetAssetValuesRequest$json = {

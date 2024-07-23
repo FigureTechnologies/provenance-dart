@@ -32,6 +32,6 @@ const AccountHold$json = {
 
 /// Descriptor for `AccountHold`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List accountHoldDescriptor = $convert.base64Decode(
-    'CgtBY2NvdW50SG9sZBIYCgdhZGRyZXNzGAEgASgJUgdhZGRyZXNzEmMKBmFtb3VudBgCIAMoCz'
-    'IZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkIwyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9j'
-    'b3Ntb3Mtc2RrL3R5cGVzLkNvaW5zUgZhbW91bnQ=');
+    'CgtBY2NvdW50SG9sZBIYCgdhZGRyZXNzGAEgASgJUgdhZGRyZXNzEnkKBmFtb3VudBgCIAMoCz'
+    'IZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkJGyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9j'
+    'b3Ntb3Mtc2RrL3R5cGVzLkNvaW5zmuewKgxsZWdhY3lfY29pbnOo57AqAVIGYW1vdW50');

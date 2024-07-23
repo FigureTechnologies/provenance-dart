@@ -19,91 +19,97 @@ import 'types.pb.dart' as $0;
 
 export 'types.pb.dart';
 
-@$pb.GrpcServiceName('tendermint.abci.ABCIApplication')
-class ABCIApplicationClient extends $grpc.Client {
+@$pb.GrpcServiceName('tendermint.abci.ABCI')
+class ABCIClient extends $grpc.Client {
   static final _$echo = $grpc.ClientMethod<$0.RequestEcho, $0.ResponseEcho>(
-      '/tendermint.abci.ABCIApplication/Echo',
+      '/tendermint.abci.ABCI/Echo',
       ($0.RequestEcho value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ResponseEcho.fromBuffer(value));
   static final _$flush = $grpc.ClientMethod<$0.RequestFlush, $0.ResponseFlush>(
-      '/tendermint.abci.ABCIApplication/Flush',
+      '/tendermint.abci.ABCI/Flush',
       ($0.RequestFlush value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ResponseFlush.fromBuffer(value));
   static final _$info = $grpc.ClientMethod<$0.RequestInfo, $0.ResponseInfo>(
-      '/tendermint.abci.ABCIApplication/Info',
+      '/tendermint.abci.ABCI/Info',
       ($0.RequestInfo value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ResponseInfo.fromBuffer(value));
-  static final _$setOption =
-      $grpc.ClientMethod<$0.RequestSetOption, $0.ResponseSetOption>(
-          '/tendermint.abci.ABCIApplication/SetOption',
-          ($0.RequestSetOption value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.ResponseSetOption.fromBuffer(value));
-  static final _$deliverTx =
-      $grpc.ClientMethod<$0.RequestDeliverTx, $0.ResponseDeliverTx>(
-          '/tendermint.abci.ABCIApplication/DeliverTx',
-          ($0.RequestDeliverTx value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.ResponseDeliverTx.fromBuffer(value));
   static final _$checkTx =
       $grpc.ClientMethod<$0.RequestCheckTx, $0.ResponseCheckTx>(
-          '/tendermint.abci.ABCIApplication/CheckTx',
+          '/tendermint.abci.ABCI/CheckTx',
           ($0.RequestCheckTx value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ResponseCheckTx.fromBuffer(value));
   static final _$query = $grpc.ClientMethod<$0.RequestQuery, $0.ResponseQuery>(
-      '/tendermint.abci.ABCIApplication/Query',
+      '/tendermint.abci.ABCI/Query',
       ($0.RequestQuery value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ResponseQuery.fromBuffer(value));
   static final _$commit =
       $grpc.ClientMethod<$0.RequestCommit, $0.ResponseCommit>(
-          '/tendermint.abci.ABCIApplication/Commit',
+          '/tendermint.abci.ABCI/Commit',
           ($0.RequestCommit value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.ResponseCommit.fromBuffer(value));
   static final _$initChain =
       $grpc.ClientMethod<$0.RequestInitChain, $0.ResponseInitChain>(
-          '/tendermint.abci.ABCIApplication/InitChain',
+          '/tendermint.abci.ABCI/InitChain',
           ($0.RequestInitChain value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ResponseInitChain.fromBuffer(value));
-  static final _$beginBlock =
-      $grpc.ClientMethod<$0.RequestBeginBlock, $0.ResponseBeginBlock>(
-          '/tendermint.abci.ABCIApplication/BeginBlock',
-          ($0.RequestBeginBlock value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.ResponseBeginBlock.fromBuffer(value));
-  static final _$endBlock =
-      $grpc.ClientMethod<$0.RequestEndBlock, $0.ResponseEndBlock>(
-          '/tendermint.abci.ABCIApplication/EndBlock',
-          ($0.RequestEndBlock value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.ResponseEndBlock.fromBuffer(value));
   static final _$listSnapshots =
       $grpc.ClientMethod<$0.RequestListSnapshots, $0.ResponseListSnapshots>(
-          '/tendermint.abci.ABCIApplication/ListSnapshots',
+          '/tendermint.abci.ABCI/ListSnapshots',
           ($0.RequestListSnapshots value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ResponseListSnapshots.fromBuffer(value));
   static final _$offerSnapshot =
       $grpc.ClientMethod<$0.RequestOfferSnapshot, $0.ResponseOfferSnapshot>(
-          '/tendermint.abci.ABCIApplication/OfferSnapshot',
+          '/tendermint.abci.ABCI/OfferSnapshot',
           ($0.RequestOfferSnapshot value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ResponseOfferSnapshot.fromBuffer(value));
   static final _$loadSnapshotChunk = $grpc.ClientMethod<
           $0.RequestLoadSnapshotChunk, $0.ResponseLoadSnapshotChunk>(
-      '/tendermint.abci.ABCIApplication/LoadSnapshotChunk',
+      '/tendermint.abci.ABCI/LoadSnapshotChunk',
       ($0.RequestLoadSnapshotChunk value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.ResponseLoadSnapshotChunk.fromBuffer(value));
   static final _$applySnapshotChunk = $grpc.ClientMethod<
           $0.RequestApplySnapshotChunk, $0.ResponseApplySnapshotChunk>(
-      '/tendermint.abci.ABCIApplication/ApplySnapshotChunk',
+      '/tendermint.abci.ABCI/ApplySnapshotChunk',
       ($0.RequestApplySnapshotChunk value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.ResponseApplySnapshotChunk.fromBuffer(value));
+  static final _$prepareProposal =
+      $grpc.ClientMethod<$0.RequestPrepareProposal, $0.ResponsePrepareProposal>(
+          '/tendermint.abci.ABCI/PrepareProposal',
+          ($0.RequestPrepareProposal value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.ResponsePrepareProposal.fromBuffer(value));
+  static final _$processProposal =
+      $grpc.ClientMethod<$0.RequestProcessProposal, $0.ResponseProcessProposal>(
+          '/tendermint.abci.ABCI/ProcessProposal',
+          ($0.RequestProcessProposal value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.ResponseProcessProposal.fromBuffer(value));
+  static final _$extendVote =
+      $grpc.ClientMethod<$0.RequestExtendVote, $0.ResponseExtendVote>(
+          '/tendermint.abci.ABCI/ExtendVote',
+          ($0.RequestExtendVote value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.ResponseExtendVote.fromBuffer(value));
+  static final _$verifyVoteExtension = $grpc.ClientMethod<
+          $0.RequestVerifyVoteExtension, $0.ResponseVerifyVoteExtension>(
+      '/tendermint.abci.ABCI/VerifyVoteExtension',
+      ($0.RequestVerifyVoteExtension value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.ResponseVerifyVoteExtension.fromBuffer(value));
+  static final _$finalizeBlock =
+      $grpc.ClientMethod<$0.RequestFinalizeBlock, $0.ResponseFinalizeBlock>(
+          '/tendermint.abci.ABCI/FinalizeBlock',
+          ($0.RequestFinalizeBlock value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.ResponseFinalizeBlock.fromBuffer(value));
 
-  ABCIApplicationClient($grpc.ClientChannel channel,
+  ABCIClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
@@ -121,18 +127,6 @@ class ABCIApplicationClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.ResponseInfo> info($0.RequestInfo request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$info, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.ResponseSetOption> setOption(
-      $0.RequestSetOption request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$setOption, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.ResponseDeliverTx> deliverTx(
-      $0.RequestDeliverTx request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$deliverTx, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ResponseCheckTx> checkTx($0.RequestCheckTx request,
@@ -154,17 +148,6 @@ class ABCIApplicationClient extends $grpc.Client {
       $0.RequestInitChain request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$initChain, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.ResponseBeginBlock> beginBlock(
-      $0.RequestBeginBlock request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$beginBlock, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.ResponseEndBlock> endBlock($0.RequestEndBlock request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$endBlock, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ResponseListSnapshots> listSnapshots(
@@ -190,13 +173,43 @@ class ABCIApplicationClient extends $grpc.Client {
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$applySnapshotChunk, request, options: options);
   }
+
+  $grpc.ResponseFuture<$0.ResponsePrepareProposal> prepareProposal(
+      $0.RequestPrepareProposal request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$prepareProposal, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResponseProcessProposal> processProposal(
+      $0.RequestProcessProposal request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$processProposal, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResponseExtendVote> extendVote(
+      $0.RequestExtendVote request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$extendVote, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResponseVerifyVoteExtension> verifyVoteExtension(
+      $0.RequestVerifyVoteExtension request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$verifyVoteExtension, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResponseFinalizeBlock> finalizeBlock(
+      $0.RequestFinalizeBlock request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$finalizeBlock, request, options: options);
+  }
 }
 
-@$pb.GrpcServiceName('tendermint.abci.ABCIApplication')
-abstract class ABCIApplicationServiceBase extends $grpc.Service {
-  $core.String get $name => 'tendermint.abci.ABCIApplication';
+@$pb.GrpcServiceName('tendermint.abci.ABCI')
+abstract class ABCIServiceBase extends $grpc.Service {
+  $core.String get $name => 'tendermint.abci.ABCI';
 
-  ABCIApplicationServiceBase() {
+  ABCIServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.RequestEcho, $0.ResponseEcho>(
         'Echo',
         echo_Pre,
@@ -218,20 +231,6 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RequestInfo.fromBuffer(value),
         ($0.ResponseInfo value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RequestSetOption, $0.ResponseSetOption>(
-        'SetOption',
-        setOption_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.RequestSetOption.fromBuffer(value),
-        ($0.ResponseSetOption value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RequestDeliverTx, $0.ResponseDeliverTx>(
-        'DeliverTx',
-        deliverTx_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.RequestDeliverTx.fromBuffer(value),
-        ($0.ResponseDeliverTx value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.RequestCheckTx, $0.ResponseCheckTx>(
         'CheckTx',
         checkTx_Pre,
@@ -260,20 +259,6 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RequestInitChain.fromBuffer(value),
         ($0.ResponseInitChain value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RequestBeginBlock, $0.ResponseBeginBlock>(
-        'BeginBlock',
-        beginBlock_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.RequestBeginBlock.fromBuffer(value),
-        ($0.ResponseBeginBlock value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RequestEndBlock, $0.ResponseEndBlock>(
-        'EndBlock',
-        endBlock_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.RequestEndBlock.fromBuffer(value),
-        ($0.ResponseEndBlock value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.RequestListSnapshots, $0.ResponseListSnapshots>(
             'ListSnapshots',
@@ -310,6 +295,49 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RequestApplySnapshotChunk.fromBuffer(value),
         ($0.ResponseApplySnapshotChunk value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestPrepareProposal,
+            $0.ResponsePrepareProposal>(
+        'PrepareProposal',
+        prepareProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestPrepareProposal.fromBuffer(value),
+        ($0.ResponsePrepareProposal value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestProcessProposal,
+            $0.ResponseProcessProposal>(
+        'ProcessProposal',
+        processProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestProcessProposal.fromBuffer(value),
+        ($0.ResponseProcessProposal value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestExtendVote, $0.ResponseExtendVote>(
+        'ExtendVote',
+        extendVote_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RequestExtendVote.fromBuffer(value),
+        ($0.ResponseExtendVote value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestVerifyVoteExtension,
+            $0.ResponseVerifyVoteExtension>(
+        'VerifyVoteExtension',
+        verifyVoteExtension_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestVerifyVoteExtension.fromBuffer(value),
+        ($0.ResponseVerifyVoteExtension value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.RequestFinalizeBlock, $0.ResponseFinalizeBlock>(
+            'FinalizeBlock',
+            finalizeBlock_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.RequestFinalizeBlock.fromBuffer(value),
+            ($0.ResponseFinalizeBlock value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ResponseEcho> echo_Pre(
@@ -325,16 +353,6 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
   $async.Future<$0.ResponseInfo> info_Pre(
       $grpc.ServiceCall call, $async.Future<$0.RequestInfo> request) async {
     return info(call, await request);
-  }
-
-  $async.Future<$0.ResponseSetOption> setOption_Pre($grpc.ServiceCall call,
-      $async.Future<$0.RequestSetOption> request) async {
-    return setOption(call, await request);
-  }
-
-  $async.Future<$0.ResponseDeliverTx> deliverTx_Pre($grpc.ServiceCall call,
-      $async.Future<$0.RequestDeliverTx> request) async {
-    return deliverTx(call, await request);
   }
 
   $async.Future<$0.ResponseCheckTx> checkTx_Pre(
@@ -355,16 +373,6 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
   $async.Future<$0.ResponseInitChain> initChain_Pre($grpc.ServiceCall call,
       $async.Future<$0.RequestInitChain> request) async {
     return initChain(call, await request);
-  }
-
-  $async.Future<$0.ResponseBeginBlock> beginBlock_Pre($grpc.ServiceCall call,
-      $async.Future<$0.RequestBeginBlock> request) async {
-    return beginBlock(call, await request);
-  }
-
-  $async.Future<$0.ResponseEndBlock> endBlock_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.RequestEndBlock> request) async {
-    return endBlock(call, await request);
   }
 
   $async.Future<$0.ResponseListSnapshots> listSnapshots_Pre(
@@ -391,16 +399,41 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
     return applySnapshotChunk(call, await request);
   }
 
+  $async.Future<$0.ResponsePrepareProposal> prepareProposal_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.RequestPrepareProposal> request) async {
+    return prepareProposal(call, await request);
+  }
+
+  $async.Future<$0.ResponseProcessProposal> processProposal_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.RequestProcessProposal> request) async {
+    return processProposal(call, await request);
+  }
+
+  $async.Future<$0.ResponseExtendVote> extendVote_Pre($grpc.ServiceCall call,
+      $async.Future<$0.RequestExtendVote> request) async {
+    return extendVote(call, await request);
+  }
+
+  $async.Future<$0.ResponseVerifyVoteExtension> verifyVoteExtension_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.RequestVerifyVoteExtension> request) async {
+    return verifyVoteExtension(call, await request);
+  }
+
+  $async.Future<$0.ResponseFinalizeBlock> finalizeBlock_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.RequestFinalizeBlock> request) async {
+    return finalizeBlock(call, await request);
+  }
+
   $async.Future<$0.ResponseEcho> echo(
       $grpc.ServiceCall call, $0.RequestEcho request);
   $async.Future<$0.ResponseFlush> flush(
       $grpc.ServiceCall call, $0.RequestFlush request);
   $async.Future<$0.ResponseInfo> info(
       $grpc.ServiceCall call, $0.RequestInfo request);
-  $async.Future<$0.ResponseSetOption> setOption(
-      $grpc.ServiceCall call, $0.RequestSetOption request);
-  $async.Future<$0.ResponseDeliverTx> deliverTx(
-      $grpc.ServiceCall call, $0.RequestDeliverTx request);
   $async.Future<$0.ResponseCheckTx> checkTx(
       $grpc.ServiceCall call, $0.RequestCheckTx request);
   $async.Future<$0.ResponseQuery> query(
@@ -409,10 +442,6 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.RequestCommit request);
   $async.Future<$0.ResponseInitChain> initChain(
       $grpc.ServiceCall call, $0.RequestInitChain request);
-  $async.Future<$0.ResponseBeginBlock> beginBlock(
-      $grpc.ServiceCall call, $0.RequestBeginBlock request);
-  $async.Future<$0.ResponseEndBlock> endBlock(
-      $grpc.ServiceCall call, $0.RequestEndBlock request);
   $async.Future<$0.ResponseListSnapshots> listSnapshots(
       $grpc.ServiceCall call, $0.RequestListSnapshots request);
   $async.Future<$0.ResponseOfferSnapshot> offerSnapshot(
@@ -421,4 +450,14 @@ abstract class ABCIApplicationServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.RequestLoadSnapshotChunk request);
   $async.Future<$0.ResponseApplySnapshotChunk> applySnapshotChunk(
       $grpc.ServiceCall call, $0.RequestApplySnapshotChunk request);
+  $async.Future<$0.ResponsePrepareProposal> prepareProposal(
+      $grpc.ServiceCall call, $0.RequestPrepareProposal request);
+  $async.Future<$0.ResponseProcessProposal> processProposal(
+      $grpc.ServiceCall call, $0.RequestProcessProposal request);
+  $async.Future<$0.ResponseExtendVote> extendVote(
+      $grpc.ServiceCall call, $0.RequestExtendVote request);
+  $async.Future<$0.ResponseVerifyVoteExtension> verifyVoteExtension(
+      $grpc.ServiceCall call, $0.RequestVerifyVoteExtension request);
+  $async.Future<$0.ResponseFinalizeBlock> finalizeBlock(
+      $grpc.ServiceCall call, $0.RequestFinalizeBlock request);
 }

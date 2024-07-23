@@ -81,7 +81,7 @@ class GenesisState extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<GenesisState>(create);
   static GenesisState? _defaultInstance;
 
-  /// params defines all the paramaters of related to deposit.
+  /// params defines all the parameters of the module.
   @$pb.TagNumber(1)
   $0.Params get params => $_getN(0);
   @$pb.TagNumber(1)

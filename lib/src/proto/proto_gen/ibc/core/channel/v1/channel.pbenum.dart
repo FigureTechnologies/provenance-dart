@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 /// State defines if a channel is in one of the following states:
-/// CLOSED, INIT, TRYOPEN, OPEN or UNINITIALIZED.
+/// CLOSED, INIT, TRYOPEN, OPEN, FLUSHING, FLUSHCOMPLETE or UNINITIALIZED.
 class State extends $pb.ProtobufEnum {
   static const State STATE_UNINITIALIZED_UNSPECIFIED =
       State._(0, _omitEnumNames ? '' : 'STATE_UNINITIALIZED_UNSPECIFIED');
@@ -26,6 +26,10 @@ class State extends $pb.ProtobufEnum {
       State._(3, _omitEnumNames ? '' : 'STATE_OPEN');
   static const State STATE_CLOSED =
       State._(4, _omitEnumNames ? '' : 'STATE_CLOSED');
+  static const State STATE_FLUSHING =
+      State._(5, _omitEnumNames ? '' : 'STATE_FLUSHING');
+  static const State STATE_FLUSHCOMPLETE =
+      State._(6, _omitEnumNames ? '' : 'STATE_FLUSHCOMPLETE');
 
   static const $core.List<State> values = <State>[
     STATE_UNINITIALIZED_UNSPECIFIED,
@@ -33,6 +37,8 @@ class State extends $pb.ProtobufEnum {
     STATE_TRYOPEN,
     STATE_OPEN,
     STATE_CLOSED,
+    STATE_FLUSHING,
+    STATE_FLUSHCOMPLETE,
   ];
 
   static final $core.Map<$core.int, State> _byValue =

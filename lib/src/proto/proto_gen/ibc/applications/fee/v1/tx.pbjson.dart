@@ -17,8 +17,8 @@ import 'dart:typed_data' as $typed_data;
 const MsgRegisterPayee$json = {
   '1': 'MsgRegisterPayee',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'relayer', '3': 3, '4': 1, '5': 9, '10': 'relayer'},
     {'1': 'payee', '3': 4, '4': 1, '5': 9, '10': 'payee'},
   ],
@@ -27,10 +27,10 @@ const MsgRegisterPayee$json = {
 
 /// Descriptor for `MsgRegisterPayee`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgRegisterPayeeDescriptor = $convert.base64Decode(
-    'ChBNc2dSZWdpc3RlclBheWVlEisKB3BvcnRfaWQYASABKAlCEvLeHw55YW1sOiJwb3J0X2lkIl'
-    'IGcG9ydElkEjQKCmNoYW5uZWxfaWQYAiABKAlCFfLeHxF5YW1sOiJjaGFubmVsX2lkIlIJY2hh'
-    'bm5lbElkEhgKB3JlbGF5ZXIYAyABKAlSB3JlbGF5ZXISFAoFcGF5ZWUYBCABKAlSBXBheWVlOg'
-    'iIoB8A6KAfAA==');
+    'ChBNc2dSZWdpc3RlclBheWVlEhcKB3BvcnRfaWQYASABKAlSBnBvcnRJZBIdCgpjaGFubmVsX2'
+    'lkGAIgASgJUgljaGFubmVsSWQSGAoHcmVsYXllchgDIAEoCVIHcmVsYXllchIUCgVwYXllZRgE'
+    'IAEoCVIFcGF5ZWU6MIigHwCC57AqB3JlbGF5ZXKK57AqG2Nvc21vcy1zZGsvTXNnUmVnaXN0ZX'
+    'JQYXllZQ==');
 
 @$core.Deprecated('Use msgRegisterPayeeResponseDescriptor instead')
 const MsgRegisterPayeeResponse$json = {
@@ -45,15 +45,14 @@ final $typed_data.Uint8List msgRegisterPayeeResponseDescriptor =
 const MsgRegisterCounterpartyPayee$json = {
   '1': 'MsgRegisterCounterpartyPayee',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'relayer', '3': 3, '4': 1, '5': 9, '10': 'relayer'},
     {
       '1': 'counterparty_payee',
       '3': 4,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'counterpartyPayee'
     },
   ],
@@ -62,11 +61,10 @@ const MsgRegisterCounterpartyPayee$json = {
 
 /// Descriptor for `MsgRegisterCounterpartyPayee`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgRegisterCounterpartyPayeeDescriptor = $convert.base64Decode(
-    'ChxNc2dSZWdpc3RlckNvdW50ZXJwYXJ0eVBheWVlEisKB3BvcnRfaWQYASABKAlCEvLeHw55YW'
-    '1sOiJwb3J0X2lkIlIGcG9ydElkEjQKCmNoYW5uZWxfaWQYAiABKAlCFfLeHxF5YW1sOiJjaGFu'
-    'bmVsX2lkIlIJY2hhbm5lbElkEhgKB3JlbGF5ZXIYAyABKAlSB3JlbGF5ZXISTAoSY291bnRlcn'
-    'BhcnR5X3BheWVlGAQgASgJQh3y3h8ZeWFtbDoiY291bnRlcnBhcnR5X3BheWVlIlIRY291bnRl'
-    'cnBhcnR5UGF5ZWU6CIigHwDooB8A');
+    'ChxNc2dSZWdpc3RlckNvdW50ZXJwYXJ0eVBheWVlEhcKB3BvcnRfaWQYASABKAlSBnBvcnRJZB'
+    'IdCgpjaGFubmVsX2lkGAIgASgJUgljaGFubmVsSWQSGAoHcmVsYXllchgDIAEoCVIHcmVsYXll'
+    'chItChJjb3VudGVycGFydHlfcGF5ZWUYBCABKAlSEWNvdW50ZXJwYXJ0eVBheWVlOjyIoB8Agu'
+    'ewKgdyZWxheWVyiuewKidjb3Ntb3Mtc2RrL01zZ1JlZ2lzdGVyQ291bnRlcnBhcnR5UGF5ZWU=');
 
 @$core.Deprecated('Use msgRegisterCounterpartyPayeeResponseDescriptor instead')
 const MsgRegisterCounterpartyPayeeResponse$json = {
@@ -91,22 +89,8 @@ const MsgPayPacketFee$json = {
       '8': {},
       '10': 'fee'
     },
-    {
-      '1': 'source_port_id',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'sourcePortId'
-    },
-    {
-      '1': 'source_channel_id',
-      '3': 3,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'sourceChannelId'
-    },
+    {'1': 'source_port_id', '3': 2, '4': 1, '5': 9, '10': 'sourcePortId'},
+    {'1': 'source_channel_id', '3': 3, '4': 1, '5': 9, '10': 'sourceChannelId'},
     {'1': 'signer', '3': 4, '4': 1, '5': 9, '10': 'signer'},
     {'1': 'relayers', '3': 5, '4': 3, '5': 9, '10': 'relayers'},
   ],
@@ -115,11 +99,11 @@ const MsgPayPacketFee$json = {
 
 /// Descriptor for `MsgPayPacketFee`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgPayPacketFeeDescriptor = $convert.base64Decode(
-    'Cg9Nc2dQYXlQYWNrZXRGZWUSNAoDZmVlGAEgASgLMhwuaWJjLmFwcGxpY2F0aW9ucy5mZWUudj'
-    'EuRmVlQgTI3h8AUgNmZWUSPwoOc291cmNlX3BvcnRfaWQYAiABKAlCGfLeHxV5YW1sOiJzb3Vy'
-    'Y2VfcG9ydF9pZCJSDHNvdXJjZVBvcnRJZBJIChFzb3VyY2VfY2hhbm5lbF9pZBgDIAEoCUIc8t'
-    '4fGHlhbWw6InNvdXJjZV9jaGFubmVsX2lkIlIPc291cmNlQ2hhbm5lbElkEhYKBnNpZ25lchgE'
-    'IAEoCVIGc2lnbmVyEhoKCHJlbGF5ZXJzGAUgAygJUghyZWxheWVyczoIiKAfAOigHwA=');
+    'Cg9Nc2dQYXlQYWNrZXRGZWUSOQoDZmVlGAEgASgLMhwuaWJjLmFwcGxpY2F0aW9ucy5mZWUudj'
+    'EuRmVlQgnI3h8AqOewKgFSA2ZlZRIkCg5zb3VyY2VfcG9ydF9pZBgCIAEoCVIMc291cmNlUG9y'
+    'dElkEioKEXNvdXJjZV9jaGFubmVsX2lkGAMgASgJUg9zb3VyY2VDaGFubmVsSWQSFgoGc2lnbm'
+    'VyGAQgASgJUgZzaWduZXISGgoIcmVsYXllcnMYBSADKAlSCHJlbGF5ZXJzOi6IoB8AguewKgZz'
+    'aWduZXKK57AqGmNvc21vcy1zZGsvTXNnUGF5UGFja2V0RmVl');
 
 @$core.Deprecated('Use msgPayPacketFeeResponseDescriptor instead')
 const MsgPayPacketFeeResponse$json = {
@@ -158,10 +142,11 @@ const MsgPayPacketFeeAsync$json = {
 
 /// Descriptor for `MsgPayPacketFeeAsync`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgPayPacketFeeAsyncDescriptor = $convert.base64Decode(
-    'ChRNc2dQYXlQYWNrZXRGZWVBc3luYxJUCglwYWNrZXRfaWQYASABKAsyHS5pYmMuY29yZS5jaG'
-    'FubmVsLnYxLlBhY2tldElkQhjI3h8A8t4fEHlhbWw6InBhY2tldF9pZCJSCHBhY2tldElkElwK'
-    'CnBhY2tldF9mZWUYAiABKAsyIi5pYmMuYXBwbGljYXRpb25zLmZlZS52MS5QYWNrZXRGZWVCGc'
-    'jeHwDy3h8ReWFtbDoicGFja2V0X2ZlZSJSCXBhY2tldEZlZToIiKAfAOigHwA=');
+    'ChRNc2dQYXlQYWNrZXRGZWVBc3luYxJFCglwYWNrZXRfaWQYASABKAsyHS5pYmMuY29yZS5jaG'
+    'FubmVsLnYxLlBhY2tldElkQgnI3h8AqOewKgFSCHBhY2tldElkEkwKCnBhY2tldF9mZWUYAiAB'
+    'KAsyIi5pYmMuYXBwbGljYXRpb25zLmZlZS52MS5QYWNrZXRGZWVCCcjeHwCo57AqAVIJcGFja2'
+    'V0RmVlOjeIoB8AguewKgpwYWNrZXRfZmVliuewKh9jb3Ntb3Mtc2RrL01zZ1BheVBhY2tldEZl'
+    'ZUFzeW5j');
 
 @$core.Deprecated('Use msgPayPacketFeeAsyncResponseDescriptor instead')
 const MsgPayPacketFeeAsyncResponse$json = {

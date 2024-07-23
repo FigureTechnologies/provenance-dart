@@ -76,6 +76,7 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.List<$0.Class> get classes => $_getList(0);
 
+  /// entry defines all nft owned by a person.
   @$pb.TagNumber(2)
   $core.List<Entry> get entries => $_getList(1);
 }

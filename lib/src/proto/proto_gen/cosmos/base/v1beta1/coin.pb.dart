@@ -176,6 +176,7 @@ class DecCoin extends $pb.GeneratedMessage {
 }
 
 /// IntProto defines a Protobuf wrapper around an Int object.
+/// Deprecated: Prefer to use math.Int directly. It supports binary Marshal and Unmarshal.
 class IntProto extends $pb.GeneratedMessage {
   factory IntProto({
     $core.String? int_1,
@@ -237,6 +238,7 @@ class IntProto extends $pb.GeneratedMessage {
 }
 
 /// DecProto defines a Protobuf wrapper around a Dec object.
+/// Deprecated: Prefer to use math.LegacyDec directly. It supports binary Marshal and Unmarshal.
 class DecProto extends $pb.GeneratedMessage {
   factory DecProto({
     $core.String? dec,

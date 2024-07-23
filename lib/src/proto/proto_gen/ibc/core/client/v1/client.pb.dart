@@ -273,255 +273,6 @@ class ClientConsensusStates extends $pb.GeneratedMessage {
   $core.List<ConsensusStateWithHeight> get consensusStates => $_getList(1);
 }
 
-/// ClientUpdateProposal is a governance proposal. If it passes, the substitute
-/// client's latest consensus state is copied over to the subject client. The proposal
-/// handler may fail if the subject and the substitute do not match in client and
-/// chain parameters (with exception to latest height, frozen height, and chain-id).
-class ClientUpdateProposal extends $pb.GeneratedMessage {
-  factory ClientUpdateProposal({
-    $core.String? title,
-    $core.String? description,
-    $core.String? subjectClientId,
-    $core.String? substituteClientId,
-  }) {
-    final $result = create();
-    if (title != null) {
-      $result.title = title;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (subjectClientId != null) {
-      $result.subjectClientId = subjectClientId;
-    }
-    if (substituteClientId != null) {
-      $result.substituteClientId = substituteClientId;
-    }
-    return $result;
-  }
-  ClientUpdateProposal._() : super();
-  factory ClientUpdateProposal.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory ClientUpdateProposal.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ClientUpdateProposal',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.client.v1'),
-      createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'title')
-    ..aOS(2, _omitFieldNames ? '' : 'description')
-    ..aOS(3, _omitFieldNames ? '' : 'subjectClientId')
-    ..aOS(4, _omitFieldNames ? '' : 'substituteClientId')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  ClientUpdateProposal clone() =>
-      ClientUpdateProposal()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ClientUpdateProposal copyWith(void Function(ClientUpdateProposal) updates) =>
-      super.copyWith((message) => updates(message as ClientUpdateProposal))
-          as ClientUpdateProposal;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ClientUpdateProposal create() => ClientUpdateProposal._();
-  ClientUpdateProposal createEmptyInstance() => create();
-  static $pb.PbList<ClientUpdateProposal> createRepeated() =>
-      $pb.PbList<ClientUpdateProposal>();
-  @$core.pragma('dart2js:noInline')
-  static ClientUpdateProposal getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ClientUpdateProposal>(create);
-  static ClientUpdateProposal? _defaultInstance;
-
-  /// the title of the update proposal
-  @$pb.TagNumber(1)
-  $core.String get title => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set title($core.String v) {
-    $_setString(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasTitle() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearTitle() => clearField(1);
-
-  /// the description of the proposal
-  @$pb.TagNumber(2)
-  $core.String get description => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set description($core.String v) {
-    $_setString(1, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasDescription() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearDescription() => clearField(2);
-
-  /// the client identifier for the client to be updated if the proposal passes
-  @$pb.TagNumber(3)
-  $core.String get subjectClientId => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set subjectClientId($core.String v) {
-    $_setString(2, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasSubjectClientId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearSubjectClientId() => clearField(3);
-
-  /// the substitute client identifier for the client standing in for the subject
-  /// client
-  @$pb.TagNumber(4)
-  $core.String get substituteClientId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set substituteClientId($core.String v) {
-    $_setString(3, v);
-  }
-
-  @$pb.TagNumber(4)
-  $core.bool hasSubstituteClientId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSubstituteClientId() => clearField(4);
-}
-
-/// UpgradeProposal is a gov Content type for initiating an IBC breaking
-/// upgrade.
-class UpgradeProposal extends $pb.GeneratedMessage {
-  factory UpgradeProposal({
-    $core.String? title,
-    $core.String? description,
-    $1.Plan? plan,
-    $0.Any? upgradedClientState,
-  }) {
-    final $result = create();
-    if (title != null) {
-      $result.title = title;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (plan != null) {
-      $result.plan = plan;
-    }
-    if (upgradedClientState != null) {
-      $result.upgradedClientState = upgradedClientState;
-    }
-    return $result;
-  }
-  UpgradeProposal._() : super();
-  factory UpgradeProposal.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory UpgradeProposal.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'UpgradeProposal',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.client.v1'),
-      createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'title')
-    ..aOS(2, _omitFieldNames ? '' : 'description')
-    ..aOM<$1.Plan>(3, _omitFieldNames ? '' : 'plan', subBuilder: $1.Plan.create)
-    ..aOM<$0.Any>(4, _omitFieldNames ? '' : 'upgradedClientState',
-        subBuilder: $0.Any.create)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  UpgradeProposal clone() => UpgradeProposal()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  UpgradeProposal copyWith(void Function(UpgradeProposal) updates) =>
-      super.copyWith((message) => updates(message as UpgradeProposal))
-          as UpgradeProposal;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static UpgradeProposal create() => UpgradeProposal._();
-  UpgradeProposal createEmptyInstance() => create();
-  static $pb.PbList<UpgradeProposal> createRepeated() =>
-      $pb.PbList<UpgradeProposal>();
-  @$core.pragma('dart2js:noInline')
-  static UpgradeProposal getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<UpgradeProposal>(create);
-  static UpgradeProposal? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get title => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set title($core.String v) {
-    $_setString(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasTitle() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearTitle() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get description => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set description($core.String v) {
-    $_setString(1, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasDescription() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearDescription() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $1.Plan get plan => $_getN(2);
-  @$pb.TagNumber(3)
-  set plan($1.Plan v) {
-    setField(3, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasPlan() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPlan() => clearField(3);
-  @$pb.TagNumber(3)
-  $1.Plan ensurePlan() => $_ensure(2);
-
-  /// An UpgradedClientState must be provided to perform an IBC breaking upgrade.
-  /// This will make the chain commit to the correct upgraded (self) client state
-  /// before the upgrade occurs, so that connecting chains can verify that the
-  /// new upgraded client is valid by verifying a proof on the previous version
-  /// of the chain. This will allow IBC connections to persist smoothly across
-  /// planned chain upgrades
-  @$pb.TagNumber(4)
-  $0.Any get upgradedClientState => $_getN(3);
-  @$pb.TagNumber(4)
-  set upgradedClientState($0.Any v) {
-    setField(4, v);
-  }
-
-  @$pb.TagNumber(4)
-  $core.bool hasUpgradedClientState() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearUpgradedClientState() => clearField(4);
-  @$pb.TagNumber(4)
-  $0.Any ensureUpgradedClientState() => $_ensure(3);
-}
-
 ///  Height is a monotonically increasing data type
 ///  that can be compared against another Height for the purposes of updating and
 ///  freezing clients
@@ -663,9 +414,264 @@ class Params extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Params>(create);
   static Params? _defaultInstance;
 
-  /// allowed_clients defines the list of allowed client state types.
+  /// allowed_clients defines the list of allowed client state types which can be created
+  /// and interacted with. If a client type is removed from the allowed clients list, usage
+  /// of this client will be disabled until it is added again to the list.
   @$pb.TagNumber(1)
   $core.List<$core.String> get allowedClients => $_getList(0);
+}
+
+///  ClientUpdateProposal is a legacy governance proposal. If it passes, the substitute
+///  client's latest consensus state is copied over to the subject client. The proposal
+///  handler may fail if the subject and the substitute do not match in client and
+///  chain parameters (with exception to latest height, frozen height, and chain-id).
+///
+///  Deprecated: Please use MsgRecoverClient in favour of this message type.
+class ClientUpdateProposal extends $pb.GeneratedMessage {
+  factory ClientUpdateProposal({
+    $core.String? title,
+    $core.String? description,
+    $core.String? subjectClientId,
+    $core.String? substituteClientId,
+  }) {
+    final $result = create();
+    if (title != null) {
+      $result.title = title;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (subjectClientId != null) {
+      $result.subjectClientId = subjectClientId;
+    }
+    if (substituteClientId != null) {
+      $result.substituteClientId = substituteClientId;
+    }
+    return $result;
+  }
+  ClientUpdateProposal._() : super();
+  factory ClientUpdateProposal.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ClientUpdateProposal.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ClientUpdateProposal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.client.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..aOS(3, _omitFieldNames ? '' : 'subjectClientId')
+    ..aOS(4, _omitFieldNames ? '' : 'substituteClientId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ClientUpdateProposal clone() =>
+      ClientUpdateProposal()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ClientUpdateProposal copyWith(void Function(ClientUpdateProposal) updates) =>
+      super.copyWith((message) => updates(message as ClientUpdateProposal))
+          as ClientUpdateProposal;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ClientUpdateProposal create() => ClientUpdateProposal._();
+  ClientUpdateProposal createEmptyInstance() => create();
+  static $pb.PbList<ClientUpdateProposal> createRepeated() =>
+      $pb.PbList<ClientUpdateProposal>();
+  @$core.pragma('dart2js:noInline')
+  static ClientUpdateProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ClientUpdateProposal>(create);
+  static ClientUpdateProposal? _defaultInstance;
+
+  /// the title of the update proposal
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => clearField(1);
+
+  /// the description of the proposal
+  @$pb.TagNumber(2)
+  $core.String get description => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set description($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasDescription() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDescription() => clearField(2);
+
+  /// the client identifier for the client to be updated if the proposal passes
+  @$pb.TagNumber(3)
+  $core.String get subjectClientId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set subjectClientId($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasSubjectClientId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubjectClientId() => clearField(3);
+
+  /// the substitute client identifier for the client standing in for the subject
+  /// client
+  @$pb.TagNumber(4)
+  $core.String get substituteClientId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set substituteClientId($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasSubstituteClientId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSubstituteClientId() => clearField(4);
+}
+
+///  UpgradeProposal is a gov Content type for initiating an IBC breaking
+///  upgrade.
+///
+///  Deprecated: Please use MsgIBCSoftwareUpgrade in favour of this message type.
+class UpgradeProposal extends $pb.GeneratedMessage {
+  factory UpgradeProposal({
+    $core.String? title,
+    $core.String? description,
+    $1.Plan? plan,
+    $0.Any? upgradedClientState,
+  }) {
+    final $result = create();
+    if (title != null) {
+      $result.title = title;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (plan != null) {
+      $result.plan = plan;
+    }
+    if (upgradedClientState != null) {
+      $result.upgradedClientState = upgradedClientState;
+    }
+    return $result;
+  }
+  UpgradeProposal._() : super();
+  factory UpgradeProposal.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory UpgradeProposal.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpgradeProposal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.client.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..aOM<$1.Plan>(3, _omitFieldNames ? '' : 'plan', subBuilder: $1.Plan.create)
+    ..aOM<$0.Any>(4, _omitFieldNames ? '' : 'upgradedClientState',
+        subBuilder: $0.Any.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  UpgradeProposal clone() => UpgradeProposal()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  UpgradeProposal copyWith(void Function(UpgradeProposal) updates) =>
+      super.copyWith((message) => updates(message as UpgradeProposal))
+          as UpgradeProposal;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpgradeProposal create() => UpgradeProposal._();
+  UpgradeProposal createEmptyInstance() => create();
+  static $pb.PbList<UpgradeProposal> createRepeated() =>
+      $pb.PbList<UpgradeProposal>();
+  @$core.pragma('dart2js:noInline')
+  static UpgradeProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpgradeProposal>(create);
+  static UpgradeProposal? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get description => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set description($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasDescription() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDescription() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Plan get plan => $_getN(2);
+  @$pb.TagNumber(3)
+  set plan($1.Plan v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasPlan() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlan() => clearField(3);
+  @$pb.TagNumber(3)
+  $1.Plan ensurePlan() => $_ensure(2);
+
+  /// An UpgradedClientState must be provided to perform an IBC breaking upgrade.
+  /// This will make the chain commit to the correct upgraded (self) client state
+  /// before the upgrade occurs, so that connecting chains can verify that the
+  /// new upgraded client is valid by verifying a proof on the previous version
+  /// of the chain. This will allow IBC connections to persist smoothly across
+  /// planned chain upgrades
+  @$pb.TagNumber(4)
+  $0.Any get upgradedClientState => $_getN(3);
+  @$pb.TagNumber(4)
+  set upgradedClientState($0.Any v) {
+    setField(4, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasUpgradedClientState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUpgradedClientState() => clearField(4);
+  @$pb.TagNumber(4)
+  $0.Any ensureUpgradedClientState() => $_ensure(3);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

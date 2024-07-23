@@ -49,6 +49,30 @@ class ServiceClient extends $grpc.Client {
           ($1.GetBlockWithTxsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.GetBlockWithTxsResponse.fromBuffer(value));
+  static final _$txDecode =
+      $grpc.ClientMethod<$1.TxDecodeRequest, $1.TxDecodeResponse>(
+          '/cosmos.tx.v1beta1.Service/TxDecode',
+          ($1.TxDecodeRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.TxDecodeResponse.fromBuffer(value));
+  static final _$txEncode =
+      $grpc.ClientMethod<$1.TxEncodeRequest, $1.TxEncodeResponse>(
+          '/cosmos.tx.v1beta1.Service/TxEncode',
+          ($1.TxEncodeRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.TxEncodeResponse.fromBuffer(value));
+  static final _$txEncodeAmino =
+      $grpc.ClientMethod<$1.TxEncodeAminoRequest, $1.TxEncodeAminoResponse>(
+          '/cosmos.tx.v1beta1.Service/TxEncodeAmino',
+          ($1.TxEncodeAminoRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.TxEncodeAminoResponse.fromBuffer(value));
+  static final _$txDecodeAmino =
+      $grpc.ClientMethod<$1.TxDecodeAminoRequest, $1.TxDecodeAminoResponse>(
+          '/cosmos.tx.v1beta1.Service/TxDecodeAmino',
+          ($1.TxDecodeAminoRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.TxDecodeAminoResponse.fromBuffer(value));
 
   ServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -81,6 +105,28 @@ class ServiceClient extends $grpc.Client {
       $1.GetBlockWithTxsRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getBlockWithTxs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.TxDecodeResponse> txDecode($1.TxDecodeRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$txDecode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.TxEncodeResponse> txEncode($1.TxEncodeRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$txEncode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.TxEncodeAminoResponse> txEncodeAmino(
+      $1.TxEncodeAminoRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$txEncodeAmino, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.TxDecodeAminoResponse> txDecodeAmino(
+      $1.TxDecodeAminoRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$txDecodeAmino, request, options: options);
   }
 }
 
@@ -130,6 +176,38 @@ abstract class ServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.GetBlockWithTxsRequest.fromBuffer(value),
         ($1.GetBlockWithTxsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.TxDecodeRequest, $1.TxDecodeResponse>(
+        'TxDecode',
+        txDecode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.TxDecodeRequest.fromBuffer(value),
+        ($1.TxDecodeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.TxEncodeRequest, $1.TxEncodeResponse>(
+        'TxEncode',
+        txEncode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.TxEncodeRequest.fromBuffer(value),
+        ($1.TxEncodeResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.TxEncodeAminoRequest, $1.TxEncodeAminoResponse>(
+            'TxEncodeAmino',
+            txEncodeAmino_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.TxEncodeAminoRequest.fromBuffer(value),
+            ($1.TxEncodeAminoResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.TxDecodeAminoRequest, $1.TxDecodeAminoResponse>(
+            'TxDecodeAmino',
+            txDecodeAmino_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.TxDecodeAminoRequest.fromBuffer(value),
+            ($1.TxDecodeAminoResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.SimulateResponse> simulate_Pre(
@@ -158,6 +236,28 @@ abstract class ServiceBase extends $grpc.Service {
     return getBlockWithTxs(call, await request);
   }
 
+  $async.Future<$1.TxDecodeResponse> txDecode_Pre(
+      $grpc.ServiceCall call, $async.Future<$1.TxDecodeRequest> request) async {
+    return txDecode(call, await request);
+  }
+
+  $async.Future<$1.TxEncodeResponse> txEncode_Pre(
+      $grpc.ServiceCall call, $async.Future<$1.TxEncodeRequest> request) async {
+    return txEncode(call, await request);
+  }
+
+  $async.Future<$1.TxEncodeAminoResponse> txEncodeAmino_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.TxEncodeAminoRequest> request) async {
+    return txEncodeAmino(call, await request);
+  }
+
+  $async.Future<$1.TxDecodeAminoResponse> txDecodeAmino_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.TxDecodeAminoRequest> request) async {
+    return txDecodeAmino(call, await request);
+  }
+
   $async.Future<$1.SimulateResponse> simulate(
       $grpc.ServiceCall call, $1.SimulateRequest request);
   $async.Future<$1.GetTxResponse> getTx(
@@ -168,4 +268,12 @@ abstract class ServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $1.GetTxsEventRequest request);
   $async.Future<$1.GetBlockWithTxsResponse> getBlockWithTxs(
       $grpc.ServiceCall call, $1.GetBlockWithTxsRequest request);
+  $async.Future<$1.TxDecodeResponse> txDecode(
+      $grpc.ServiceCall call, $1.TxDecodeRequest request);
+  $async.Future<$1.TxEncodeResponse> txEncode(
+      $grpc.ServiceCall call, $1.TxEncodeRequest request);
+  $async.Future<$1.TxEncodeAminoResponse> txEncodeAmino(
+      $grpc.ServiceCall call, $1.TxEncodeAminoRequest request);
+  $async.Future<$1.TxDecodeAminoResponse> txDecodeAmino(
+      $grpc.ServiceCall call, $1.TxDecodeAminoRequest request);
 }

@@ -131,7 +131,6 @@ class Plan extends $pb.GeneratedMessage {
   $0.Timestamp ensureTime() => $_ensure(1);
 
   /// The height at which the upgrade must be performed.
-  /// Only used if Time is not set.
   @$pb.TagNumber(3)
   $fixnum.Int64 get height => $_getI64(2);
   @$pb.TagNumber(3)
@@ -246,6 +245,7 @@ class SoftwareUpgradeProposal extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<SoftwareUpgradeProposal>(create);
   static SoftwareUpgradeProposal? _defaultInstance;
 
+  /// title of the proposal
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -258,6 +258,7 @@ class SoftwareUpgradeProposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearTitle() => clearField(1);
 
+  /// description of the proposal
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -270,6 +271,7 @@ class SoftwareUpgradeProposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDescription() => clearField(2);
 
+  /// plan of the proposal
   @$pb.TagNumber(3)
   Plan get plan => $_getN(2);
   @$pb.TagNumber(3)
@@ -347,6 +349,7 @@ class CancelSoftwareUpgradeProposal extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<CancelSoftwareUpgradeProposal>(create);
   static CancelSoftwareUpgradeProposal? _defaultInstance;
 
+  /// title of the proposal
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -359,6 +362,7 @@ class CancelSoftwareUpgradeProposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearTitle() => clearField(1);
 
+  /// description of the proposal
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)

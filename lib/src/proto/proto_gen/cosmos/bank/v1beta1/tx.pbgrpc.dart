@@ -31,6 +31,18 @@ class MsgClient extends $grpc.Client {
           ($0.MsgMultiSend value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MsgMultiSendResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/cosmos.bank.v1beta1.Msg/UpdateParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
+  static final _$setSendEnabled =
+      $grpc.ClientMethod<$0.MsgSetSendEnabled, $0.MsgSetSendEnabledResponse>(
+          '/cosmos.bank.v1beta1.Msg/SetSendEnabled',
+          ($0.MsgSetSendEnabled value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgSetSendEnabledResponse.fromBuffer(value));
   static final _$updateDenomMetadata = $grpc.ClientMethod<
           $0.MsgUpdateDenomMetadata, $0.MsgUpdateDenomMetadataResponse>(
       '/cosmos.bank.v1beta1.Msg/UpdateDenomMetadata',
@@ -52,6 +64,18 @@ class MsgClient extends $grpc.Client {
       $0.MsgMultiSend request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$multiSend, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgSetSendEnabledResponse> setSendEnabled(
+      $0.MsgSetSendEnabled request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setSendEnabled, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.MsgUpdateDenomMetadataResponse> updateDenomMetadata(
@@ -80,6 +104,24 @@ abstract class MsgServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MsgMultiSend.fromBuffer(value),
         ($0.MsgMultiSendResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateParams',
+            updateParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgSetSendEnabled, $0.MsgSetSendEnabledResponse>(
+            'SetSendEnabled',
+            setSendEnabled_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgSetSendEnabled.fromBuffer(value),
+            ($0.MsgSetSendEnabledResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.MsgUpdateDenomMetadata,
             $0.MsgUpdateDenomMetadataResponse>(
         'UpdateDenomMetadata',
@@ -101,6 +143,17 @@ abstract class MsgServiceBase extends $grpc.Service {
     return multiSend(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateParams(call, await request);
+  }
+
+  $async.Future<$0.MsgSetSendEnabledResponse> setSendEnabled_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgSetSendEnabled> request) async {
+    return setSendEnabled(call, await request);
+  }
+
   $async.Future<$0.MsgUpdateDenomMetadataResponse> updateDenomMetadata_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.MsgUpdateDenomMetadata> request) async {
@@ -111,6 +164,10 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgSend request);
   $async.Future<$0.MsgMultiSendResponse> multiSend(
       $grpc.ServiceCall call, $0.MsgMultiSend request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
+  $async.Future<$0.MsgSetSendEnabledResponse> setSendEnabled(
+      $grpc.ServiceCall call, $0.MsgSetSendEnabled request);
   $async.Future<$0.MsgUpdateDenomMetadataResponse> updateDenomMetadata(
       $grpc.ServiceCall call, $0.MsgUpdateDenomMetadata request);
 }

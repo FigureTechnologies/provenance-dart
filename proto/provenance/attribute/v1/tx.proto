@@ -7,12 +7,15 @@ option java_package        = "io.provenance.attribute.v1";
 option java_multiple_files = true;
 
 import "cosmos/msg/v1/msg.proto";
+import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
 import "provenance/attribute/v1/attribute.proto";
 
 // Msg defines the attribute module Msg service.
 service Msg {
+  option (cosmos.msg.v1.service) = true;
+
   // AddAttribute defines a method to verify a particular invariance.
   rpc AddAttribute(MsgAddAttributeRequest) returns (MsgAddAttributeResponse);
 
@@ -30,15 +33,15 @@ service Msg {
 
   // SetAccountData defines a method for setting/updating an account's accountdata attribute.
   rpc SetAccountData(MsgSetAccountDataRequest) returns (MsgSetAccountDataResponse);
+
+  // UpdateParams is a governance proposal endpoint for updating the attribute module's params.
+  rpc UpdateParams(MsgUpdateParamsRequest) returns (MsgUpdateParamsResponse);
 }
 
 // MsgAddAttributeRequest defines an sdk.Msg type that is used to add a new attribute to an account.
 // Attributes may only be set in an account by the account that the attribute name resolves to.
 message MsgAddAttributeRequest {
-  option (gogoproto.equal)            = false;
-  option (gogoproto.goproto_stringer) = false;
-  option (gogoproto.stringer)         = false;
-  option (gogoproto.goproto_getters)  = false;
+  option (cosmos.msg.v1.signer) = "owner";
 
   // The attribute name.
   string name = 1;
@@ -60,10 +63,7 @@ message MsgAddAttributeResponse {}
 // MsgUpdateAttributeRequest defines an sdk.Msg type that is used to update an existing attribute to an account.
 // Attributes may only be set in an account by the account that the attribute name resolves to.
 message MsgUpdateAttributeRequest {
-  option (gogoproto.equal)            = false;
-  option (gogoproto.goproto_stringer) = false;
-  option (gogoproto.stringer)         = false;
-  option (gogoproto.goproto_getters)  = false;
+  option (cosmos.msg.v1.signer) = "owner";
 
   // The attribute name.
   string name = 1;
@@ -87,9 +87,7 @@ message MsgUpdateAttributeResponse {}
 // MsgUpdateAttributeExpirationRequest defines an sdk.Msg type that is used to update an existing attribute's expiration
 // date
 message MsgUpdateAttributeExpirationRequest {
-  option (gogoproto.equal)            = true;
-  option (gogoproto.stringer)         = true;
-  option (gogoproto.goproto_stringer) = false;
+  option (cosmos.msg.v1.signer) = "owner";
 
   // The attribute name.
   string name = 1;
@@ -109,10 +107,7 @@ message MsgUpdateAttributeExpirationResponse {}
 // MsgDeleteAttributeRequest defines a message to delete an attribute from an account
 // Attributes may only be removed from an account by the account that the attribute name resolves to.
 message MsgDeleteAttributeRequest {
-  option (gogoproto.equal)            = false;
-  option (gogoproto.goproto_stringer) = false;
-  option (gogoproto.stringer)         = false;
-  option (gogoproto.goproto_getters)  = false;
+  option (cosmos.msg.v1.signer) = "owner";
 
   // The attribute name.
   string name = 1;
@@ -128,10 +123,7 @@ message MsgDeleteAttributeResponse {}
 // MsgDeleteDistinctAttributeRequest defines a message to delete an attribute with matching name, value, and type from
 // an account. Attributes may only be removed from an account by the account that the attribute name resolves to.
 message MsgDeleteDistinctAttributeRequest {
-  option (gogoproto.equal)            = false;
-  option (gogoproto.goproto_stringer) = false;
-  option (gogoproto.stringer)         = false;
-  option (gogoproto.goproto_getters)  = false;
+  option (cosmos.msg.v1.signer) = "owner";
 
   // The attribute name.
   string name = 1;
@@ -156,3 +148,17 @@ message MsgSetAccountDataRequest {
 
 // MsgSetAccountDataResponse defines the Msg/SetAccountData response type.
 message MsgSetAccountDataResponse {}
+
+// MsgUpdateParamsRequest is a request message for the UpdateParams endpoint.
+message MsgUpdateParamsRequest {
+  option (cosmos.msg.v1.signer) = "authority";
+
+  // authority should be the governance module account address.
+  string authority = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+
+  // params are the new param values to set.
+  Params params = 2 [(gogoproto.nullable) = false];
+}
+
+// MsgUpdateParamsResponse is a response message for the UpdateParams endpoint.
+message MsgUpdateParamsResponse {}

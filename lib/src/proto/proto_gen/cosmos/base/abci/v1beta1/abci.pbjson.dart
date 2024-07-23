@@ -290,3 +290,31 @@ final $typed_data.Uint8List searchTxsResultDescriptor = $convert.base64Decode(
     '91bnQYAiABKARSBWNvdW50Eh8KC3BhZ2VfbnVtYmVyGAMgASgEUgpwYWdlTnVtYmVyEh0KCnBh'
     'Z2VfdG90YWwYBCABKARSCXBhZ2VUb3RhbBIUCgVsaW1pdBgFIAEoBFIFbGltaXQSNgoDdHhzGA'
     'YgAygLMiQuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLlR4UmVzcG9uc2VSA3R4czoEgNwgAQ==');
+
+@$core.Deprecated('Use searchBlocksResultDescriptor instead')
+const SearchBlocksResult$json = {
+  '1': 'SearchBlocksResult',
+  '2': [
+    {'1': 'total_count', '3': 1, '4': 1, '5': 3, '10': 'totalCount'},
+    {'1': 'count', '3': 2, '4': 1, '5': 3, '10': 'count'},
+    {'1': 'page_number', '3': 3, '4': 1, '5': 3, '10': 'pageNumber'},
+    {'1': 'page_total', '3': 4, '4': 1, '5': 3, '10': 'pageTotal'},
+    {'1': 'limit', '3': 5, '4': 1, '5': 3, '10': 'limit'},
+    {
+      '1': 'blocks',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.tendermint.types.Block',
+      '10': 'blocks'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `SearchBlocksResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchBlocksResultDescriptor = $convert.base64Decode(
+    'ChJTZWFyY2hCbG9ja3NSZXN1bHQSHwoLdG90YWxfY291bnQYASABKANSCnRvdGFsQ291bnQSFA'
+    'oFY291bnQYAiABKANSBWNvdW50Eh8KC3BhZ2VfbnVtYmVyGAMgASgDUgpwYWdlTnVtYmVyEh0K'
+    'CnBhZ2VfdG90YWwYBCABKANSCXBhZ2VUb3RhbBIUCgVsaW1pdBgFIAEoA1IFbGltaXQSLwoGYm'
+    'xvY2tzGAYgAygLMhcudGVuZGVybWludC50eXBlcy5CbG9ja1IGYmxvY2tzOgSA3CAB');

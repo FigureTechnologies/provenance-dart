@@ -46,6 +46,25 @@ class MsgClient extends $grpc.Client {
       ($0.MsgFundCommunityPool value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgFundCommunityPoolResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/cosmos.distribution.v1beta1.Msg/UpdateParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
+  static final _$communityPoolSpend = $grpc.ClientMethod<
+          $0.MsgCommunityPoolSpend, $0.MsgCommunityPoolSpendResponse>(
+      '/cosmos.distribution.v1beta1.Msg/CommunityPoolSpend',
+      ($0.MsgCommunityPoolSpend value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgCommunityPoolSpendResponse.fromBuffer(value));
+  static final _$depositValidatorRewardsPool = $grpc.ClientMethod<
+          $0.MsgDepositValidatorRewardsPool,
+          $0.MsgDepositValidatorRewardsPoolResponse>(
+      '/cosmos.distribution.v1beta1.Msg/DepositValidatorRewardsPool',
+      ($0.MsgDepositValidatorRewardsPool value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgDepositValidatorRewardsPoolResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -76,6 +95,25 @@ class MsgClient extends $grpc.Client {
       $0.MsgFundCommunityPool request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$fundCommunityPool, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgCommunityPoolSpendResponse> communityPoolSpend(
+      $0.MsgCommunityPoolSpend request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$communityPoolSpend, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgDepositValidatorRewardsPoolResponse>
+      depositValidatorRewardsPool($0.MsgDepositValidatorRewardsPool request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$depositValidatorRewardsPool, request,
+        options: options);
   }
 }
 
@@ -122,6 +160,34 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgFundCommunityPool.fromBuffer(value),
         ($0.MsgFundCommunityPoolResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateParams',
+            updateParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgCommunityPoolSpend,
+            $0.MsgCommunityPoolSpendResponse>(
+        'CommunityPoolSpend',
+        communityPoolSpend_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgCommunityPoolSpend.fromBuffer(value),
+        ($0.MsgCommunityPoolSpendResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgDepositValidatorRewardsPool,
+            $0.MsgDepositValidatorRewardsPoolResponse>(
+        'DepositValidatorRewardsPool',
+        depositValidatorRewardsPool_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgDepositValidatorRewardsPool.fromBuffer(value),
+        ($0.MsgDepositValidatorRewardsPoolResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgSetWithdrawAddressResponse> setWithdrawAddress_Pre(
@@ -148,6 +214,23 @@ abstract class MsgServiceBase extends $grpc.Service {
     return fundCommunityPool(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateParams(call, await request);
+  }
+
+  $async.Future<$0.MsgCommunityPoolSpendResponse> communityPoolSpend_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgCommunityPoolSpend> request) async {
+    return communityPoolSpend(call, await request);
+  }
+
+  $async.Future<$0.MsgDepositValidatorRewardsPoolResponse>
+      depositValidatorRewardsPool_Pre($grpc.ServiceCall call,
+          $async.Future<$0.MsgDepositValidatorRewardsPool> request) async {
+    return depositValidatorRewardsPool(call, await request);
+  }
+
   $async.Future<$0.MsgSetWithdrawAddressResponse> setWithdrawAddress(
       $grpc.ServiceCall call, $0.MsgSetWithdrawAddress request);
   $async.Future<$0.MsgWithdrawDelegatorRewardResponse> withdrawDelegatorReward(
@@ -157,4 +240,11 @@ abstract class MsgServiceBase extends $grpc.Service {
           $grpc.ServiceCall call, $0.MsgWithdrawValidatorCommission request);
   $async.Future<$0.MsgFundCommunityPoolResponse> fundCommunityPool(
       $grpc.ServiceCall call, $0.MsgFundCommunityPool request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
+  $async.Future<$0.MsgCommunityPoolSpendResponse> communityPoolSpend(
+      $grpc.ServiceCall call, $0.MsgCommunityPoolSpend request);
+  $async.Future<$0.MsgDepositValidatorRewardsPoolResponse>
+      depositValidatorRewardsPool(
+          $grpc.ServiceCall call, $0.MsgDepositValidatorRewardsPool request);
 }

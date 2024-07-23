@@ -119,6 +119,13 @@ class MsgClient extends $grpc.Client {
       ($1.MsgSupplyIncreaseProposalRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $1.MsgSupplyIncreaseProposalResponse.fromBuffer(value));
+  static final _$supplyDecreaseProposal = $grpc.ClientMethod<
+          $1.MsgSupplyDecreaseProposalRequest,
+          $1.MsgSupplyDecreaseProposalResponse>(
+      '/provenance.marker.v1.Msg/SupplyDecreaseProposal',
+      ($1.MsgSupplyDecreaseProposalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.MsgSupplyDecreaseProposalResponse.fromBuffer(value));
   static final _$updateRequiredAttributes = $grpc.ClientMethod<
           $1.MsgUpdateRequiredAttributesRequest,
           $1.MsgUpdateRequiredAttributesResponse>(
@@ -151,6 +158,47 @@ class MsgClient extends $grpc.Client {
       ($1.MsgAddNetAssetValuesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $1.MsgAddNetAssetValuesResponse.fromBuffer(value));
+  static final _$setAdministratorProposal = $grpc.ClientMethod<
+          $1.MsgSetAdministratorProposalRequest,
+          $1.MsgSetAdministratorProposalResponse>(
+      '/provenance.marker.v1.Msg/SetAdministratorProposal',
+      ($1.MsgSetAdministratorProposalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.MsgSetAdministratorProposalResponse.fromBuffer(value));
+  static final _$removeAdministratorProposal = $grpc.ClientMethod<
+          $1.MsgRemoveAdministratorProposalRequest,
+          $1.MsgRemoveAdministratorProposalResponse>(
+      '/provenance.marker.v1.Msg/RemoveAdministratorProposal',
+      ($1.MsgRemoveAdministratorProposalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.MsgRemoveAdministratorProposalResponse.fromBuffer(value));
+  static final _$changeStatusProposal = $grpc.ClientMethod<
+          $1.MsgChangeStatusProposalRequest,
+          $1.MsgChangeStatusProposalResponse>(
+      '/provenance.marker.v1.Msg/ChangeStatusProposal',
+      ($1.MsgChangeStatusProposalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.MsgChangeStatusProposalResponse.fromBuffer(value));
+  static final _$withdrawEscrowProposal = $grpc.ClientMethod<
+          $1.MsgWithdrawEscrowProposalRequest,
+          $1.MsgWithdrawEscrowProposalResponse>(
+      '/provenance.marker.v1.Msg/WithdrawEscrowProposal',
+      ($1.MsgWithdrawEscrowProposalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.MsgWithdrawEscrowProposalResponse.fromBuffer(value));
+  static final _$setDenomMetadataProposal = $grpc.ClientMethod<
+          $1.MsgSetDenomMetadataProposalRequest,
+          $1.MsgSetDenomMetadataProposalResponse>(
+      '/provenance.marker.v1.Msg/SetDenomMetadataProposal',
+      ($1.MsgSetDenomMetadataProposalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $1.MsgSetDenomMetadataProposalResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$1.MsgUpdateParamsRequest, $1.MsgUpdateParamsResponse>(
+          '/provenance.marker.v1.Msg/UpdateParams',
+          ($1.MsgUpdateParamsRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -251,6 +299,13 @@ class MsgClient extends $grpc.Client {
         options: options);
   }
 
+  $grpc.ResponseFuture<$1.MsgSupplyDecreaseProposalResponse>
+      supplyDecreaseProposal($1.MsgSupplyDecreaseProposalRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$supplyDecreaseProposal, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$1.MsgUpdateRequiredAttributesResponse>
       updateRequiredAttributes($1.MsgUpdateRequiredAttributesRequest request,
           {$grpc.CallOptions? options}) {
@@ -280,6 +335,47 @@ class MsgClient extends $grpc.Client {
       $1.MsgAddNetAssetValuesRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addNetAssetValues, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgSetAdministratorProposalResponse>
+      setAdministratorProposal($1.MsgSetAdministratorProposalRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setAdministratorProposal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgRemoveAdministratorProposalResponse>
+      removeAdministratorProposal(
+          $1.MsgRemoveAdministratorProposalRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeAdministratorProposal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgChangeStatusProposalResponse> changeStatusProposal(
+      $1.MsgChangeStatusProposalRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$changeStatusProposal, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgWithdrawEscrowProposalResponse>
+      withdrawEscrowProposal($1.MsgWithdrawEscrowProposalRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$withdrawEscrowProposal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgSetDenomMetadataProposalResponse>
+      setDenomMetadataProposal($1.MsgSetDenomMetadataProposalRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setDenomMetadataProposal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$1.MsgUpdateParamsResponse> updateParams(
+      $1.MsgUpdateParamsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
   }
 }
 
@@ -425,6 +521,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.MsgSupplyIncreaseProposalRequest.fromBuffer(value),
         ($1.MsgSupplyIncreaseProposalResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgSupplyDecreaseProposalRequest,
+            $1.MsgSupplyDecreaseProposalResponse>(
+        'SupplyDecreaseProposal',
+        supplyDecreaseProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgSupplyDecreaseProposalRequest.fromBuffer(value),
+        ($1.MsgSupplyDecreaseProposalResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.MsgUpdateRequiredAttributesRequest,
             $1.MsgUpdateRequiredAttributesResponse>(
         'UpdateRequiredAttributes',
@@ -471,6 +576,63 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.MsgAddNetAssetValuesRequest.fromBuffer(value),
         ($1.MsgAddNetAssetValuesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgSetAdministratorProposalRequest,
+            $1.MsgSetAdministratorProposalResponse>(
+        'SetAdministratorProposal',
+        setAdministratorProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgSetAdministratorProposalRequest.fromBuffer(value),
+        ($1.MsgSetAdministratorProposalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgRemoveAdministratorProposalRequest,
+            $1.MsgRemoveAdministratorProposalResponse>(
+        'RemoveAdministratorProposal',
+        removeAdministratorProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgRemoveAdministratorProposalRequest.fromBuffer(value),
+        ($1.MsgRemoveAdministratorProposalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgChangeStatusProposalRequest,
+            $1.MsgChangeStatusProposalResponse>(
+        'ChangeStatusProposal',
+        changeStatusProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgChangeStatusProposalRequest.fromBuffer(value),
+        ($1.MsgChangeStatusProposalResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgWithdrawEscrowProposalRequest,
+            $1.MsgWithdrawEscrowProposalResponse>(
+        'WithdrawEscrowProposal',
+        withdrawEscrowProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgWithdrawEscrowProposalRequest.fromBuffer(value),
+        ($1.MsgWithdrawEscrowProposalResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgSetDenomMetadataProposalRequest,
+            $1.MsgSetDenomMetadataProposalResponse>(
+        'SetDenomMetadataProposal',
+        setDenomMetadataProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgSetDenomMetadataProposalRequest.fromBuffer(value),
+        ($1.MsgSetDenomMetadataProposalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.MsgUpdateParamsRequest,
+            $1.MsgUpdateParamsResponse>(
+        'UpdateParams',
+        updateParams_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.MsgUpdateParamsRequest.fromBuffer(value),
+        ($1.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.MsgFinalizeResponse> finalize_Pre($grpc.ServiceCall call,
@@ -559,6 +721,12 @@ abstract class MsgServiceBase extends $grpc.Service {
     return supplyIncreaseProposal(call, await request);
   }
 
+  $async.Future<$1.MsgSupplyDecreaseProposalResponse>
+      supplyDecreaseProposal_Pre($grpc.ServiceCall call,
+          $async.Future<$1.MsgSupplyDecreaseProposalRequest> request) async {
+    return supplyDecreaseProposal(call, await request);
+  }
+
   $async.Future<$1.MsgUpdateRequiredAttributesResponse>
       updateRequiredAttributes_Pre($grpc.ServiceCall call,
           $async.Future<$1.MsgUpdateRequiredAttributesRequest> request) async {
@@ -587,6 +755,44 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call,
       $async.Future<$1.MsgAddNetAssetValuesRequest> request) async {
     return addNetAssetValues(call, await request);
+  }
+
+  $async.Future<$1.MsgSetAdministratorProposalResponse>
+      setAdministratorProposal_Pre($grpc.ServiceCall call,
+          $async.Future<$1.MsgSetAdministratorProposalRequest> request) async {
+    return setAdministratorProposal(call, await request);
+  }
+
+  $async.Future<$1.MsgRemoveAdministratorProposalResponse>
+      removeAdministratorProposal_Pre(
+          $grpc.ServiceCall call,
+          $async.Future<$1.MsgRemoveAdministratorProposalRequest>
+              request) async {
+    return removeAdministratorProposal(call, await request);
+  }
+
+  $async.Future<$1.MsgChangeStatusProposalResponse> changeStatusProposal_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.MsgChangeStatusProposalRequest> request) async {
+    return changeStatusProposal(call, await request);
+  }
+
+  $async.Future<$1.MsgWithdrawEscrowProposalResponse>
+      withdrawEscrowProposal_Pre($grpc.ServiceCall call,
+          $async.Future<$1.MsgWithdrawEscrowProposalRequest> request) async {
+    return withdrawEscrowProposal(call, await request);
+  }
+
+  $async.Future<$1.MsgSetDenomMetadataProposalResponse>
+      setDenomMetadataProposal_Pre($grpc.ServiceCall call,
+          $async.Future<$1.MsgSetDenomMetadataProposalRequest> request) async {
+    return setDenomMetadataProposal(call, await request);
+  }
+
+  $async.Future<$1.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.MsgUpdateParamsRequest> request) async {
+    return updateParams(call, await request);
   }
 
   $async.Future<$1.MsgFinalizeResponse> finalize(
@@ -622,6 +828,8 @@ abstract class MsgServiceBase extends $grpc.Service {
           $1.MsgAddFinalizeActivateMarkerRequest request);
   $async.Future<$1.MsgSupplyIncreaseProposalResponse> supplyIncreaseProposal(
       $grpc.ServiceCall call, $1.MsgSupplyIncreaseProposalRequest request);
+  $async.Future<$1.MsgSupplyDecreaseProposalResponse> supplyDecreaseProposal(
+      $grpc.ServiceCall call, $1.MsgSupplyDecreaseProposalRequest request);
   $async.Future<$1.MsgUpdateRequiredAttributesResponse>
       updateRequiredAttributes($grpc.ServiceCall call,
           $1.MsgUpdateRequiredAttributesRequest request);
@@ -633,4 +841,19 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $1.MsgUpdateSendDenyListRequest request);
   $async.Future<$1.MsgAddNetAssetValuesResponse> addNetAssetValues(
       $grpc.ServiceCall call, $1.MsgAddNetAssetValuesRequest request);
+  $async.Future<$1.MsgSetAdministratorProposalResponse>
+      setAdministratorProposal($grpc.ServiceCall call,
+          $1.MsgSetAdministratorProposalRequest request);
+  $async.Future<$1.MsgRemoveAdministratorProposalResponse>
+      removeAdministratorProposal($grpc.ServiceCall call,
+          $1.MsgRemoveAdministratorProposalRequest request);
+  $async.Future<$1.MsgChangeStatusProposalResponse> changeStatusProposal(
+      $grpc.ServiceCall call, $1.MsgChangeStatusProposalRequest request);
+  $async.Future<$1.MsgWithdrawEscrowProposalResponse> withdrawEscrowProposal(
+      $grpc.ServiceCall call, $1.MsgWithdrawEscrowProposalRequest request);
+  $async.Future<$1.MsgSetDenomMetadataProposalResponse>
+      setDenomMetadataProposal($grpc.ServiceCall call,
+          $1.MsgSetDenomMetadataProposalRequest request);
+  $async.Future<$1.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $1.MsgUpdateParamsRequest request);
 }

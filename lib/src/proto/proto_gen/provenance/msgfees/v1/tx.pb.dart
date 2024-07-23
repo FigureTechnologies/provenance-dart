@@ -492,7 +492,7 @@ class MsgUpdateMsgFeeProposalRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Coin ensureAdditionalFee() => $_ensure(1);
 
-  /// optional recipient to recieve basis points
+  /// optional recipient to receive basis points
   @$pb.TagNumber(3)
   $core.String get recipient => $_getSZ(2);
   @$pb.TagNumber(3)

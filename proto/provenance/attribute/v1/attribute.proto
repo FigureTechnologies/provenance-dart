@@ -11,7 +11,6 @@ option java_multiple_files = true;
 
 // Params defines the set of params for the attribute module.
 message Params {
-  option (gogoproto.goproto_stringer) = false;
   // maximum length of data to allow in an attribute value
   uint32 max_value_length = 1;
 }
@@ -112,4 +111,9 @@ message EventAttributeExpired {
 // EventAccountDataUpdated event emitted when accountdata is set, updated, or deleted.
 message EventAccountDataUpdated {
   string account = 1;
+}
+
+// EventAttributeParamsUpdated event emitted when attribute params are updated.
+message EventAttributeParamsUpdated {
+  string max_value_length = 1;
 }

@@ -21,6 +21,7 @@ const MsgSendQueryOracleRequest$json = {
     {'1': 'channel', '3': 3, '4': 1, '5': 9, '10': 'channel'},
     {'1': 'authority', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'authority'},
   ],
+  '7': {},
 };
 
 /// Descriptor for `MsgSendQueryOracleRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -28,7 +29,7 @@ final $typed_data.Uint8List msgSendQueryOracleRequestDescriptor = $convert.base6
     'ChlNc2dTZW5kUXVlcnlPcmFjbGVSZXF1ZXN0ElMKBXF1ZXJ5GAEgASgMQj363h85Z2l0aHViLm'
     'NvbS9Db3NtV2FzbS93YXNtZC94L3dhc20vdHlwZXMuUmF3Q29udHJhY3RNZXNzYWdlUgVxdWVy'
     'eRIYCgdjaGFubmVsGAMgASgJUgdjaGFubmVsEjYKCWF1dGhvcml0eRgEIAEoCUIY0rQtFGNvc2'
-    '1vcy5BZGRyZXNzU3RyaW5nUglhdXRob3JpdHk=');
+    '1vcy5BZGRyZXNzU3RyaW5nUglhdXRob3JpdHk6DoLnsCoJYXV0aG9yaXR5');
 
 @$core.Deprecated('Use msgSendQueryOracleResponseDescriptor instead')
 const MsgSendQueryOracleResponse$json = {
@@ -58,7 +59,7 @@ const MsgUpdateOracleRequest$json = {
 final $typed_data.Uint8List msgUpdateOracleRequestDescriptor = $convert.base64Decode(
     'ChZNc2dVcGRhdGVPcmFjbGVSZXF1ZXN0EjIKB2FkZHJlc3MYASABKAlCGNK0LRRjb3Ntb3MuQW'
     'RkcmVzc1N0cmluZ1IHYWRkcmVzcxI2CglhdXRob3JpdHkYAiABKAlCGNK0LRRjb3Ntb3MuQWRk'
-    'cmVzc1N0cmluZ1IJYXV0aG9yaXR5OgiYoB8B6KAfAQ==');
+    'cmVzc1N0cmluZ1IJYXV0aG9yaXR5OhLooB8BguewKglhdXRob3JpdHk=');
 
 @$core.Deprecated('Use msgUpdateOracleResponseDescriptor instead')
 const MsgUpdateOracleResponse$json = {
