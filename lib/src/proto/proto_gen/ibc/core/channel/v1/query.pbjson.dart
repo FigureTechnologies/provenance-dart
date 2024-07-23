@@ -685,3 +685,174 @@ final $typed_data.Uint8List queryNextSequenceReceiveResponseDescriptor =
         'VpdmUYASABKARSE25leHRTZXF1ZW5jZVJlY2VpdmUSFAoFcHJvb2YYAiABKAxSBXByb29mEkMK'
         'DHByb29mX2hlaWdodBgDIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHwBSC3'
         'Byb29mSGVpZ2h0');
+
+@$core.Deprecated('Use queryNextSequenceSendRequestDescriptor instead')
+const QueryNextSequenceSendRequest$json = {
+  '1': 'QueryNextSequenceSendRequest',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+  ],
+};
+
+/// Descriptor for `QueryNextSequenceSendRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryNextSequenceSendRequestDescriptor =
+    $convert.base64Decode(
+        'ChxRdWVyeU5leHRTZXF1ZW5jZVNlbmRSZXF1ZXN0EhcKB3BvcnRfaWQYASABKAlSBnBvcnRJZB'
+        'IdCgpjaGFubmVsX2lkGAIgASgJUgljaGFubmVsSWQ=');
+
+@$core.Deprecated('Use queryNextSequenceSendResponseDescriptor instead')
+const QueryNextSequenceSendResponse$json = {
+  '1': 'QueryNextSequenceSendResponse',
+  '2': [
+    {
+      '1': 'next_sequence_send',
+      '3': 1,
+      '4': 1,
+      '5': 4,
+      '10': 'nextSequenceSend'
+    },
+    {'1': 'proof', '3': 2, '4': 1, '5': 12, '10': 'proof'},
+    {
+      '1': 'proof_height',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+  ],
+};
+
+/// Descriptor for `QueryNextSequenceSendResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryNextSequenceSendResponseDescriptor = $convert.base64Decode(
+    'Ch1RdWVyeU5leHRTZXF1ZW5jZVNlbmRSZXNwb25zZRIsChJuZXh0X3NlcXVlbmNlX3NlbmQYAS'
+    'ABKARSEG5leHRTZXF1ZW5jZVNlbmQSFAoFcHJvb2YYAiABKAxSBXByb29mEkMKDHByb29mX2hl'
+    'aWdodBgDIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHwBSC3Byb29mSGVpZ2'
+    'h0');
+
+@$core.Deprecated('Use queryUpgradeErrorRequestDescriptor instead')
+const QueryUpgradeErrorRequest$json = {
+  '1': 'QueryUpgradeErrorRequest',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+  ],
+};
+
+/// Descriptor for `QueryUpgradeErrorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryUpgradeErrorRequestDescriptor =
+    $convert.base64Decode(
+        'ChhRdWVyeVVwZ3JhZGVFcnJvclJlcXVlc3QSFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCm'
+        'NoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZA==');
+
+@$core.Deprecated('Use queryUpgradeErrorResponseDescriptor instead')
+const QueryUpgradeErrorResponse$json = {
+  '1': 'QueryUpgradeErrorResponse',
+  '2': [
+    {
+      '1': 'error_receipt',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.ErrorReceipt',
+      '8': {},
+      '10': 'errorReceipt'
+    },
+    {'1': 'proof', '3': 2, '4': 1, '5': 12, '10': 'proof'},
+    {
+      '1': 'proof_height',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+  ],
+};
+
+/// Descriptor for `QueryUpgradeErrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryUpgradeErrorResponseDescriptor = $convert.base64Decode(
+    'ChlRdWVyeVVwZ3JhZGVFcnJvclJlc3BvbnNlEkwKDWVycm9yX3JlY2VpcHQYASABKAsyIS5pYm'
+    'MuY29yZS5jaGFubmVsLnYxLkVycm9yUmVjZWlwdEIEyN4fAFIMZXJyb3JSZWNlaXB0EhQKBXBy'
+    'b29mGAIgASgMUgVwcm9vZhJDCgxwcm9vZl9oZWlnaHQYAyABKAsyGi5pYmMuY29yZS5jbGllbn'
+    'QudjEuSGVpZ2h0QgTI3h8AUgtwcm9vZkhlaWdodA==');
+
+@$core.Deprecated('Use queryUpgradeRequestDescriptor instead')
+const QueryUpgradeRequest$json = {
+  '1': 'QueryUpgradeRequest',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+  ],
+};
+
+/// Descriptor for `QueryUpgradeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryUpgradeRequestDescriptor = $convert.base64Decode(
+    'ChNRdWVyeVVwZ3JhZGVSZXF1ZXN0EhcKB3BvcnRfaWQYASABKAlSBnBvcnRJZBIdCgpjaGFubm'
+    'VsX2lkGAIgASgJUgljaGFubmVsSWQ=');
+
+@$core.Deprecated('Use queryUpgradeResponseDescriptor instead')
+const QueryUpgradeResponse$json = {
+  '1': 'QueryUpgradeResponse',
+  '2': [
+    {
+      '1': 'upgrade',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Upgrade',
+      '8': {},
+      '10': 'upgrade'
+    },
+    {'1': 'proof', '3': 2, '4': 1, '5': 12, '10': 'proof'},
+    {
+      '1': 'proof_height',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+  ],
+};
+
+/// Descriptor for `QueryUpgradeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryUpgradeResponseDescriptor = $convert.base64Decode(
+    'ChRRdWVyeVVwZ3JhZGVSZXNwb25zZRI8Cgd1cGdyYWRlGAEgASgLMhwuaWJjLmNvcmUuY2hhbm'
+    '5lbC52MS5VcGdyYWRlQgTI3h8AUgd1cGdyYWRlEhQKBXByb29mGAIgASgMUgVwcm9vZhJDCgxw'
+    'cm9vZl9oZWlnaHQYAyABKAsyGi5pYmMuY29yZS5jbGllbnQudjEuSGVpZ2h0QgTI3h8AUgtwcm'
+    '9vZkhlaWdodA==');
+
+@$core.Deprecated('Use queryChannelParamsRequestDescriptor instead')
+const QueryChannelParamsRequest$json = {
+  '1': 'QueryChannelParamsRequest',
+};
+
+/// Descriptor for `QueryChannelParamsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryChannelParamsRequestDescriptor =
+    $convert.base64Decode('ChlRdWVyeUNoYW5uZWxQYXJhbXNSZXF1ZXN0');
+
+@$core.Deprecated('Use queryChannelParamsResponseDescriptor instead')
+const QueryChannelParamsResponse$json = {
+  '1': 'QueryChannelParamsResponse',
+  '2': [
+    {
+      '1': 'params',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Params',
+      '10': 'params'
+    },
+  ],
+};
+
+/// Descriptor for `QueryChannelParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryChannelParamsResponseDescriptor =
+    $convert.base64Decode(
+        'ChpRdWVyeUNoYW5uZWxQYXJhbXNSZXNwb25zZRIzCgZwYXJhbXMYASABKAsyGy5pYmMuY29yZS'
+        '5jaGFubmVsLnYxLlBhcmFtc1IGcGFyYW1z');

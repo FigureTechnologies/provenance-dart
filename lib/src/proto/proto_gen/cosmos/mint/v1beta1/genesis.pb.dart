@@ -87,7 +87,7 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.Minter ensureMinter() => $_ensure(0);
 
-  /// params defines all the paramaters of the module.
+  /// params defines all the parameters of the module.
   @$pb.TagNumber(2)
   $0.Params get params => $_getN(1);
   @$pb.TagNumber(2)

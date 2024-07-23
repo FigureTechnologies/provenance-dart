@@ -17,6 +17,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../cosmos/base/v1beta1/coin.pb.dart' as $0;
 
 /// AddMsgFeeProposal defines a governance proposal to add additional msg based fee
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgAddMsgFeeProposalRequest in a governance proposal.
 class AddMsgFeeProposal extends $pb.GeneratedMessage {
   factory AddMsgFeeProposal({
     $core.String? title,
@@ -174,6 +177,9 @@ class AddMsgFeeProposal extends $pb.GeneratedMessage {
 }
 
 /// UpdateMsgFeeProposal defines a governance proposal to update a current msg based fee
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgUpdateMsgFeeProposalRequest in a governance proposal.
 class UpdateMsgFeeProposal extends $pb.GeneratedMessage {
   factory UpdateMsgFeeProposal({
     $core.String? title,
@@ -332,6 +338,9 @@ class UpdateMsgFeeProposal extends $pb.GeneratedMessage {
 }
 
 /// RemoveMsgFeeProposal defines a governance proposal to delete a current msg based fee
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgRemoveMsgFeeProposalRequest in a governance proposal.
 class RemoveMsgFeeProposal extends $pb.GeneratedMessage {
   factory RemoveMsgFeeProposal({
     $core.String? title,
@@ -433,6 +442,9 @@ class RemoveMsgFeeProposal extends $pb.GeneratedMessage {
 }
 
 /// UpdateNhashPerUsdMilProposal defines a governance proposal to update the nhash per usd mil param
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgUpdateNhashPerUsdMilProposalRequest in a governance proposal.
 class UpdateNhashPerUsdMilProposal extends $pb.GeneratedMessage {
   factory UpdateNhashPerUsdMilProposal({
     $core.String? title,
@@ -537,6 +549,9 @@ class UpdateNhashPerUsdMilProposal extends $pb.GeneratedMessage {
 }
 
 /// UpdateConversionFeeDenomProposal defines a governance proposal to update the msg fee conversion denom
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgUpdateConversionFeeDenomProposalRequest in a governance proposal.
 class UpdateConversionFeeDenomProposal extends $pb.GeneratedMessage {
   factory UpdateConversionFeeDenomProposal({
     $core.String? title,

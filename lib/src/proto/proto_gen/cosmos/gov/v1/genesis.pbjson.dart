@@ -54,7 +54,8 @@ const GenesisState$json = {
       '4': 1,
       '5': 11,
       '6': '.cosmos.gov.v1.DepositParams',
-      '10': 'depositParams'
+      '8': {'3': true},
+      '10': 'depositParams',
     },
     {
       '1': 'voting_params',
@@ -62,7 +63,8 @@ const GenesisState$json = {
       '4': 1,
       '5': 11,
       '6': '.cosmos.gov.v1.VotingParams',
-      '10': 'votingParams'
+      '8': {'3': true},
+      '10': 'votingParams',
     },
     {
       '1': 'tally_params',
@@ -70,8 +72,18 @@ const GenesisState$json = {
       '4': 1,
       '5': 11,
       '6': '.cosmos.gov.v1.TallyParams',
-      '10': 'tallyParams'
+      '8': {'3': true},
+      '10': 'tallyParams',
     },
+    {
+      '1': 'params',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.gov.v1.Params',
+      '10': 'params'
+    },
+    {'1': 'constitution', '3': 9, '4': 1, '5': 9, '10': 'constitution'},
   ],
 };
 
@@ -80,8 +92,10 @@ final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
     'CgxHZW5lc2lzU3RhdGUSMAoUc3RhcnRpbmdfcHJvcG9zYWxfaWQYASABKARSEnN0YXJ0aW5nUH'
     'JvcG9zYWxJZBIyCghkZXBvc2l0cxgCIAMoCzIWLmNvc21vcy5nb3YudjEuRGVwb3NpdFIIZGVw'
     'b3NpdHMSKQoFdm90ZXMYAyADKAsyEy5jb3Ntb3MuZ292LnYxLlZvdGVSBXZvdGVzEjUKCXByb3'
-    'Bvc2FscxgEIAMoCzIXLmNvc21vcy5nb3YudjEuUHJvcG9zYWxSCXByb3Bvc2FscxJDCg5kZXBv'
-    'c2l0X3BhcmFtcxgFIAEoCzIcLmNvc21vcy5nb3YudjEuRGVwb3NpdFBhcmFtc1INZGVwb3NpdF'
-    'BhcmFtcxJACg12b3RpbmdfcGFyYW1zGAYgASgLMhsuY29zbW9zLmdvdi52MS5Wb3RpbmdQYXJh'
-    'bXNSDHZvdGluZ1BhcmFtcxI9Cgx0YWxseV9wYXJhbXMYByABKAsyGi5jb3Ntb3MuZ292LnYxLl'
-    'RhbGx5UGFyYW1zUgt0YWxseVBhcmFtcw==');
+    'Bvc2FscxgEIAMoCzIXLmNvc21vcy5nb3YudjEuUHJvcG9zYWxSCXByb3Bvc2FscxJHCg5kZXBv'
+    'c2l0X3BhcmFtcxgFIAEoCzIcLmNvc21vcy5nb3YudjEuRGVwb3NpdFBhcmFtc0ICGAFSDWRlcG'
+    '9zaXRQYXJhbXMSRAoNdm90aW5nX3BhcmFtcxgGIAEoCzIbLmNvc21vcy5nb3YudjEuVm90aW5n'
+    'UGFyYW1zQgIYAVIMdm90aW5nUGFyYW1zEkEKDHRhbGx5X3BhcmFtcxgHIAEoCzIaLmNvc21vcy'
+    '5nb3YudjEuVGFsbHlQYXJhbXNCAhgBUgt0YWxseVBhcmFtcxItCgZwYXJhbXMYCCABKAsyFS5j'
+    'b3Ntb3MuZ292LnYxLlBhcmFtc1IGcGFyYW1zEiIKDGNvbnN0aXR1dGlvbhgJIAEoCVIMY29uc3'
+    'RpdHV0aW9u');

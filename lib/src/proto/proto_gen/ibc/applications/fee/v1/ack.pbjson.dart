@@ -22,7 +22,6 @@ const IncentivizedAcknowledgement$json = {
       '3': 1,
       '4': 1,
       '5': 12,
-      '8': {},
       '10': 'appAcknowledgement'
     },
     {
@@ -30,7 +29,6 @@ const IncentivizedAcknowledgement$json = {
       '3': 2,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'forwardRelayerAddress'
     },
     {
@@ -38,7 +36,6 @@ const IncentivizedAcknowledgement$json = {
       '3': 3,
       '4': 1,
       '5': 8,
-      '8': {},
       '10': 'underlyingAppSuccess'
     },
   ],
@@ -46,9 +43,7 @@ const IncentivizedAcknowledgement$json = {
 
 /// Descriptor for `IncentivizedAcknowledgement`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List incentivizedAcknowledgementDescriptor = $convert.base64Decode(
-    'ChtJbmNlbnRpdml6ZWRBY2tub3dsZWRnZW1lbnQSTwoTYXBwX2Fja25vd2xlZGdlbWVudBgBIA'
-    'EoDEIe8t4fGnlhbWw6ImFwcF9hY2tub3dsZWRnZW1lbnQiUhJhcHBBY2tub3dsZWRnZW1lbnQS'
-    'WgoXZm9yd2FyZF9yZWxheWVyX2FkZHJlc3MYAiABKAlCIvLeHx55YW1sOiJmb3J3YXJkX3JlbG'
-    'F5ZXJfYWRkcmVzcyJSFWZvcndhcmRSZWxheWVyQWRkcmVzcxJYChZ1bmRlcmx5aW5nX2FwcF9z'
-    'dWNjZXNzGAMgASgIQiLy3h8eeWFtbDoidW5kZXJseWluZ19hcHBfc3VjY2Vzc2wiUhR1bmRlcm'
-    'x5aW5nQXBwU3VjY2Vzcw==');
+    'ChtJbmNlbnRpdml6ZWRBY2tub3dsZWRnZW1lbnQSLwoTYXBwX2Fja25vd2xlZGdlbWVudBgBIA'
+    'EoDFISYXBwQWNrbm93bGVkZ2VtZW50EjYKF2ZvcndhcmRfcmVsYXllcl9hZGRyZXNzGAIgASgJ'
+    'UhVmb3J3YXJkUmVsYXllckFkZHJlc3MSNAoWdW5kZXJseWluZ19hcHBfc3VjY2VzcxgDIAEoCF'
+    'IUdW5kZXJseWluZ0FwcFN1Y2Nlc3M=');

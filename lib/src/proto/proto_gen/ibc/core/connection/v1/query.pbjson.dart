@@ -164,22 +164,15 @@ final $typed_data.Uint8List queryClientConnectionsResponseDescriptor =
 const QueryConnectionClientStateRequest$json = {
   '1': 'QueryConnectionClientStateRequest',
   '2': [
-    {
-      '1': 'connection_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'connectionId'
-    },
+    {'1': 'connection_id', '3': 1, '4': 1, '5': 9, '10': 'connectionId'},
   ],
 };
 
 /// Descriptor for `QueryConnectionClientStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryConnectionClientStateRequestDescriptor =
     $convert.base64Decode(
-        'CiFRdWVyeUNvbm5lY3Rpb25DbGllbnRTdGF0ZVJlcXVlc3QSPQoNY29ubmVjdGlvbl9pZBgBIA'
-        'EoCUIY8t4fFHlhbWw6ImNvbm5lY3Rpb25faWQiUgxjb25uZWN0aW9uSWQ=');
+        'CiFRdWVyeUNvbm5lY3Rpb25DbGllbnRTdGF0ZVJlcXVlc3QSIwoNY29ubmVjdGlvbl9pZBgBIA'
+        'EoCVIMY29ubmVjdGlvbklk');
 
 @$core.Deprecated('Use queryConnectionClientStateResponseDescriptor instead')
 const QueryConnectionClientStateResponse$json = {
@@ -219,14 +212,7 @@ final $typed_data.Uint8List queryConnectionClientStateResponseDescriptor =
 const QueryConnectionConsensusStateRequest$json = {
   '1': 'QueryConnectionConsensusStateRequest',
   '2': [
-    {
-      '1': 'connection_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'connectionId'
-    },
+    {'1': 'connection_id', '3': 1, '4': 1, '5': 9, '10': 'connectionId'},
     {'1': 'revision_number', '3': 2, '4': 1, '5': 4, '10': 'revisionNumber'},
     {'1': 'revision_height', '3': 3, '4': 1, '5': 4, '10': 'revisionHeight'},
   ],
@@ -235,10 +221,9 @@ const QueryConnectionConsensusStateRequest$json = {
 /// Descriptor for `QueryConnectionConsensusStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryConnectionConsensusStateRequestDescriptor =
     $convert.base64Decode(
-        'CiRRdWVyeUNvbm5lY3Rpb25Db25zZW5zdXNTdGF0ZVJlcXVlc3QSPQoNY29ubmVjdGlvbl9pZB'
-        'gBIAEoCUIY8t4fFHlhbWw6ImNvbm5lY3Rpb25faWQiUgxjb25uZWN0aW9uSWQSJwoPcmV2aXNp'
-        'b25fbnVtYmVyGAIgASgEUg5yZXZpc2lvbk51bWJlchInCg9yZXZpc2lvbl9oZWlnaHQYAyABKA'
-        'RSDnJldmlzaW9uSGVpZ2h0');
+        'CiRRdWVyeUNvbm5lY3Rpb25Db25zZW5zdXNTdGF0ZVJlcXVlc3QSIwoNY29ubmVjdGlvbl9pZB'
+        'gBIAEoCVIMY29ubmVjdGlvbklkEicKD3JldmlzaW9uX251bWJlchgCIAEoBFIOcmV2aXNpb25O'
+        'dW1iZXISJwoPcmV2aXNpb25faGVpZ2h0GAMgASgEUg5yZXZpc2lvbkhlaWdodA==');
 
 @$core.Deprecated('Use queryConnectionConsensusStateResponseDescriptor instead')
 const QueryConnectionConsensusStateResponse$json = {

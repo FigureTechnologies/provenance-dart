@@ -13,6 +13,25 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use blockIDFlagDescriptor instead')
+const BlockIDFlag$json = {
+  '1': 'BlockIDFlag',
+  '2': [
+    {'1': 'BLOCK_ID_FLAG_UNKNOWN', '2': 0, '3': {}},
+    {'1': 'BLOCK_ID_FLAG_ABSENT', '2': 1, '3': {}},
+    {'1': 'BLOCK_ID_FLAG_COMMIT', '2': 2, '3': {}},
+    {'1': 'BLOCK_ID_FLAG_NIL', '2': 3, '3': {}},
+  ],
+  '3': {},
+};
+
+/// Descriptor for `BlockIDFlag`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List blockIDFlagDescriptor = $convert.base64Decode(
+    'CgtCbG9ja0lERmxhZxIxChVCTE9DS19JRF9GTEFHX1VOS05PV04QABoWip0gEkJsb2NrSURGbG'
+    'FnVW5rbm93bhIvChRCTE9DS19JRF9GTEFHX0FCU0VOVBABGhWKnSARQmxvY2tJREZsYWdBYnNl'
+    'bnQSLwoUQkxPQ0tfSURfRkxBR19DT01NSVQQAhoVip0gEUJsb2NrSURGbGFnQ29tbWl0EikKEU'
+    'JMT0NLX0lEX0ZMQUdfTklMEAMaEoqdIA5CbG9ja0lERmxhZ05pbBoIiKMeAKikHgE=');
+
 @$core.Deprecated('Use validatorSetDescriptor instead')
 const ValidatorSet$json = {
   '1': 'ValidatorSet',

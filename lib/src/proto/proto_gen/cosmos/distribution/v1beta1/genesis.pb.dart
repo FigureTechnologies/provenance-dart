@@ -178,7 +178,7 @@ class ValidatorOutstandingRewardsRecord extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearValidatorAddress() => clearField(1);
 
-  /// outstanding_rewards represents the oustanding rewards of a validator.
+  /// outstanding_rewards represents the outstanding rewards of a validator.
   @$pb.TagNumber(2)
   $core.List<$0.DecCoin> get outstandingRewards => $_getList(1);
 }
@@ -666,7 +666,7 @@ class ValidatorSlashEventRecord extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearValidatorAddress() => clearField(1);
 
-  /// height defines the block height at which the slash event occured.
+  /// height defines the block height at which the slash event occurred.
   @$pb.TagNumber(2)
   $fixnum.Int64 get height => $_getI64(1);
   @$pb.TagNumber(2)
@@ -824,7 +824,7 @@ class GenesisState extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<GenesisState>(create);
   static GenesisState? _defaultInstance;
 
-  /// params defines all the paramaters of the module.
+  /// params defines all the parameters of the module.
   @$pb.TagNumber(1)
   $1.Params get params => $_getN(0);
   @$pb.TagNumber(1)
@@ -876,7 +876,7 @@ class GenesisState extends $pb.GeneratedMessage {
   $core.List<ValidatorOutstandingRewardsRecord> get outstandingRewards =>
       $_getList(4);
 
-  /// fee_pool defines the accumulated commisions of all validators at genesis.
+  /// fee_pool defines the accumulated commissions of all validators at genesis.
   @$pb.TagNumber(6)
   $core.List<ValidatorAccumulatedCommissionRecord>
       get validatorAccumulatedCommissions => $_getList(5);

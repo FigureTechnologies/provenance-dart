@@ -67,40 +67,36 @@ const GenesisState$json = {
 
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
-    'CgxHZW5lc2lzU3RhdGUSdgoPaWRlbnRpZmllZF9mZWVzGAEgAygLMi0uaWJjLmFwcGxpY2F0aW'
-    '9ucy5mZWUudjEuSWRlbnRpZmllZFBhY2tldEZlZXNCHsjeHwDy3h8WeWFtbDoiaWRlbnRpZmll'
-    'ZF9mZWVzIlIOaWRlbnRpZmllZEZlZXMSgQEKFGZlZV9lbmFibGVkX2NoYW5uZWxzGAIgAygLMi'
-    'ouaWJjLmFwcGxpY2F0aW9ucy5mZWUudjEuRmVlRW5hYmxlZENoYW5uZWxCI8jeHwDy3h8beWFt'
-    'bDoiZmVlX2VuYWJsZWRfY2hhbm5lbHMiUhJmZWVFbmFibGVkQ2hhbm5lbHMSdwoRcmVnaXN0ZX'
-    'JlZF9wYXllZXMYAyADKAsyKC5pYmMuYXBwbGljYXRpb25zLmZlZS52MS5SZWdpc3RlcmVkUGF5'
-    'ZWVCIMjeHwDy3h8YeWFtbDoicmVnaXN0ZXJlZF9wYXllZXMiUhByZWdpc3RlcmVkUGF5ZWVzEq'
-    'kBCh5yZWdpc3RlcmVkX2NvdW50ZXJwYXJ0eV9wYXllZXMYBCADKAsyNC5pYmMuYXBwbGljYXRp'
-    'b25zLmZlZS52MS5SZWdpc3RlcmVkQ291bnRlcnBhcnR5UGF5ZWVCLcjeHwDy3h8leWFtbDoicm'
-    'VnaXN0ZXJlZF9jb3VudGVycGFydHlfcGF5ZWVzIlIccmVnaXN0ZXJlZENvdW50ZXJwYXJ0eVBh'
-    'eWVlcxJ6ChBmb3J3YXJkX3JlbGF5ZXJzGAUgAygLMi4uaWJjLmFwcGxpY2F0aW9ucy5mZWUudj'
-    'EuRm9yd2FyZFJlbGF5ZXJBZGRyZXNzQh/I3h8A8t4fF3lhbWw6ImZvcndhcmRfcmVsYXllcnMi'
-    'Ug9mb3J3YXJkUmVsYXllcnM=');
+    'CgxHZW5lc2lzU3RhdGUSXAoPaWRlbnRpZmllZF9mZWVzGAEgAygLMi0uaWJjLmFwcGxpY2F0aW'
+    '9ucy5mZWUudjEuSWRlbnRpZmllZFBhY2tldEZlZXNCBMjeHwBSDmlkZW50aWZpZWRGZWVzEmIK'
+    'FGZlZV9lbmFibGVkX2NoYW5uZWxzGAIgAygLMiouaWJjLmFwcGxpY2F0aW9ucy5mZWUudjEuRm'
+    'VlRW5hYmxlZENoYW5uZWxCBMjeHwBSEmZlZUVuYWJsZWRDaGFubmVscxJbChFyZWdpc3RlcmVk'
+    'X3BheWVlcxgDIAMoCzIoLmliYy5hcHBsaWNhdGlvbnMuZmVlLnYxLlJlZ2lzdGVyZWRQYXllZU'
+    'IEyN4fAFIQcmVnaXN0ZXJlZFBheWVlcxKAAQoecmVnaXN0ZXJlZF9jb3VudGVycGFydHlfcGF5'
+    'ZWVzGAQgAygLMjQuaWJjLmFwcGxpY2F0aW9ucy5mZWUudjEuUmVnaXN0ZXJlZENvdW50ZXJwYX'
+    'J0eVBheWVlQgTI3h8AUhxyZWdpc3RlcmVkQ291bnRlcnBhcnR5UGF5ZWVzEl8KEGZvcndhcmRf'
+    'cmVsYXllcnMYBSADKAsyLi5pYmMuYXBwbGljYXRpb25zLmZlZS52MS5Gb3J3YXJkUmVsYXllck'
+    'FkZHJlc3NCBMjeHwBSD2ZvcndhcmRSZWxheWVycw==');
 
 @$core.Deprecated('Use feeEnabledChannelDescriptor instead')
 const FeeEnabledChannel$json = {
   '1': 'FeeEnabledChannel',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
   ],
 };
 
 /// Descriptor for `FeeEnabledChannel`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List feeEnabledChannelDescriptor = $convert.base64Decode(
-    'ChFGZWVFbmFibGVkQ2hhbm5lbBIrCgdwb3J0X2lkGAEgASgJQhLy3h8OeWFtbDoicG9ydF9pZC'
-    'JSBnBvcnRJZBI0CgpjaGFubmVsX2lkGAIgASgJQhXy3h8ReWFtbDoiY2hhbm5lbF9pZCJSCWNo'
-    'YW5uZWxJZA==');
+    'ChFGZWVFbmFibGVkQ2hhbm5lbBIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSHQoKY2hhbm5lbF'
+    '9pZBgCIAEoCVIJY2hhbm5lbElk');
 
 @$core.Deprecated('Use registeredPayeeDescriptor instead')
 const RegisteredPayee$json = {
   '1': 'RegisteredPayee',
   '2': [
-    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'relayer', '3': 2, '4': 1, '5': 9, '10': 'relayer'},
     {'1': 'payee', '3': 3, '4': 1, '5': 9, '10': 'payee'},
   ],
@@ -108,33 +104,31 @@ const RegisteredPayee$json = {
 
 /// Descriptor for `RegisteredPayee`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List registeredPayeeDescriptor = $convert.base64Decode(
-    'Cg9SZWdpc3RlcmVkUGF5ZWUSNAoKY2hhbm5lbF9pZBgBIAEoCUIV8t4fEXlhbWw6ImNoYW5uZW'
-    'xfaWQiUgljaGFubmVsSWQSGAoHcmVsYXllchgCIAEoCVIHcmVsYXllchIUCgVwYXllZRgDIAEo'
-    'CVIFcGF5ZWU=');
+    'Cg9SZWdpc3RlcmVkUGF5ZWUSHQoKY2hhbm5lbF9pZBgBIAEoCVIJY2hhbm5lbElkEhgKB3JlbG'
+    'F5ZXIYAiABKAlSB3JlbGF5ZXISFAoFcGF5ZWUYAyABKAlSBXBheWVl');
 
 @$core.Deprecated('Use registeredCounterpartyPayeeDescriptor instead')
 const RegisteredCounterpartyPayee$json = {
   '1': 'RegisteredCounterpartyPayee',
   '2': [
-    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'relayer', '3': 2, '4': 1, '5': 9, '10': 'relayer'},
     {
       '1': 'counterparty_payee',
       '3': 3,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'counterpartyPayee'
     },
   ],
 };
 
 /// Descriptor for `RegisteredCounterpartyPayee`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List registeredCounterpartyPayeeDescriptor = $convert.base64Decode(
-    'ChtSZWdpc3RlcmVkQ291bnRlcnBhcnR5UGF5ZWUSNAoKY2hhbm5lbF9pZBgBIAEoCUIV8t4fEX'
-    'lhbWw6ImNoYW5uZWxfaWQiUgljaGFubmVsSWQSGAoHcmVsYXllchgCIAEoCVIHcmVsYXllchJM'
-    'ChJjb3VudGVycGFydHlfcGF5ZWUYAyABKAlCHfLeHxl5YW1sOiJjb3VudGVycGFydHlfcGF5ZW'
-    'UiUhFjb3VudGVycGFydHlQYXllZQ==');
+final $typed_data.Uint8List registeredCounterpartyPayeeDescriptor =
+    $convert.base64Decode(
+        'ChtSZWdpc3RlcmVkQ291bnRlcnBhcnR5UGF5ZWUSHQoKY2hhbm5lbF9pZBgBIAEoCVIJY2hhbm'
+        '5lbElkEhgKB3JlbGF5ZXIYAiABKAlSB3JlbGF5ZXISLQoSY291bnRlcnBhcnR5X3BheWVlGAMg'
+        'ASgJUhFjb3VudGVycGFydHlQYXllZQ==');
 
 @$core.Deprecated('Use forwardRelayerAddressDescriptor instead')
 const ForwardRelayerAddress$json = {
@@ -155,6 +149,6 @@ const ForwardRelayerAddress$json = {
 
 /// Descriptor for `ForwardRelayerAddress`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List forwardRelayerAddressDescriptor = $convert.base64Decode(
-    'ChVGb3J3YXJkUmVsYXllckFkZHJlc3MSGAoHYWRkcmVzcxgBIAEoCVIHYWRkcmVzcxJUCglwYW'
-    'NrZXRfaWQYAiABKAsyHS5pYmMuY29yZS5jaGFubmVsLnYxLlBhY2tldElkQhjI3h8A8t4fEHlh'
-    'bWw6InBhY2tldF9pZCJSCHBhY2tldElk');
+    'ChVGb3J3YXJkUmVsYXllckFkZHJlc3MSGAoHYWRkcmVzcxgBIAEoCVIHYWRkcmVzcxJACglwYW'
+    'NrZXRfaWQYAiABKAsyHS5pYmMuY29yZS5jaGFubmVsLnYxLlBhY2tldElkQgTI3h8AUghwYWNr'
+    'ZXRJZA==');

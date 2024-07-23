@@ -54,6 +54,15 @@ const GenesisState$json = {
       '8': {},
       '10': 'commitments'
     },
+    {
+      '1': 'payments',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.provenance.exchange.v1.Payment',
+      '8': {},
+      '10': 'payments'
+    },
   ],
   '7': {},
 };
@@ -66,4 +75,5 @@ final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
     'NoYW5nZS52MS5PcmRlckIEyN4fAFIGb3JkZXJzEiQKDmxhc3RfbWFya2V0X2lkGAQgASgNUgxs'
     'YXN0TWFya2V0SWQSIgoNbGFzdF9vcmRlcl9pZBgFIAEoBFILbGFzdE9yZGVySWQSSgoLY29tbW'
     'l0bWVudHMYBiADKAsyIi5wcm92ZW5hbmNlLmV4Y2hhbmdlLnYxLkNvbW1pdG1lbnRCBMjeHwBS'
-    'C2NvbW1pdG1lbnRzOgiIoB8A6KAfAA==');
+    'C2NvbW1pdG1lbnRzEkEKCHBheW1lbnRzGAcgAygLMh8ucHJvdmVuYW5jZS5leGNoYW5nZS52MS'
+    '5QYXltZW50QgTI3h8AUghwYXltZW50czoIiKAfAOigHwA=');

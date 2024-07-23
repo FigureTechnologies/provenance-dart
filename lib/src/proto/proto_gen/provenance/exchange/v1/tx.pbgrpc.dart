@@ -146,6 +146,42 @@ class MsgClient extends $grpc.Client {
       ($0.MsgMarketManageReqAttrsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgMarketManageReqAttrsResponse.fromBuffer(value));
+  static final _$createPayment = $grpc.ClientMethod<$0.MsgCreatePaymentRequest,
+          $0.MsgCreatePaymentResponse>(
+      '/provenance.exchange.v1.Msg/CreatePayment',
+      ($0.MsgCreatePaymentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgCreatePaymentResponse.fromBuffer(value));
+  static final _$acceptPayment = $grpc.ClientMethod<$0.MsgAcceptPaymentRequest,
+          $0.MsgAcceptPaymentResponse>(
+      '/provenance.exchange.v1.Msg/AcceptPayment',
+      ($0.MsgAcceptPaymentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgAcceptPaymentResponse.fromBuffer(value));
+  static final _$rejectPayment = $grpc.ClientMethod<$0.MsgRejectPaymentRequest,
+          $0.MsgRejectPaymentResponse>(
+      '/provenance.exchange.v1.Msg/RejectPayment',
+      ($0.MsgRejectPaymentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgRejectPaymentResponse.fromBuffer(value));
+  static final _$rejectPayments = $grpc.ClientMethod<
+          $0.MsgRejectPaymentsRequest, $0.MsgRejectPaymentsResponse>(
+      '/provenance.exchange.v1.Msg/RejectPayments',
+      ($0.MsgRejectPaymentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgRejectPaymentsResponse.fromBuffer(value));
+  static final _$cancelPayments = $grpc.ClientMethod<
+          $0.MsgCancelPaymentsRequest, $0.MsgCancelPaymentsResponse>(
+      '/provenance.exchange.v1.Msg/CancelPayments',
+      ($0.MsgCancelPaymentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgCancelPaymentsResponse.fromBuffer(value));
+  static final _$changePaymentTarget = $grpc.ClientMethod<
+          $0.MsgChangePaymentTargetRequest, $0.MsgChangePaymentTargetResponse>(
+      '/provenance.exchange.v1.Msg/ChangePaymentTarget',
+      ($0.MsgChangePaymentTargetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChangePaymentTargetResponse.fromBuffer(value));
   static final _$govCreateMarket = $grpc.ClientMethod<
           $0.MsgGovCreateMarketRequest, $0.MsgGovCreateMarketResponse>(
       '/provenance.exchange.v1.Msg/GovCreateMarket',
@@ -170,6 +206,12 @@ class MsgClient extends $grpc.Client {
       ($0.MsgGovUpdateParamsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgGovUpdateParamsResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParamsRequest, $0.MsgUpdateParamsResponse>(
+          '/provenance.exchange.v1.Msg/UpdateParams',
+          ($0.MsgUpdateParamsRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -301,6 +343,42 @@ class MsgClient extends $grpc.Client {
     return $createUnaryCall(_$marketManageReqAttrs, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.MsgCreatePaymentResponse> createPayment(
+      $0.MsgCreatePaymentRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createPayment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgAcceptPaymentResponse> acceptPayment(
+      $0.MsgAcceptPaymentRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$acceptPayment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgRejectPaymentResponse> rejectPayment(
+      $0.MsgRejectPaymentRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$rejectPayment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgRejectPaymentsResponse> rejectPayments(
+      $0.MsgRejectPaymentsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$rejectPayments, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgCancelPaymentsResponse> cancelPayments(
+      $0.MsgCancelPaymentsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$cancelPayments, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChangePaymentTargetResponse> changePaymentTarget(
+      $0.MsgChangePaymentTargetRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$changePaymentTarget, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.MsgGovCreateMarketResponse> govCreateMarket(
       $0.MsgGovCreateMarketRequest request,
       {$grpc.CallOptions? options}) {
@@ -323,6 +401,12 @@ class MsgClient extends $grpc.Client {
       $0.MsgGovUpdateParamsRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$govUpdateParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParamsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
   }
 }
 
@@ -509,6 +593,60 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgMarketManageReqAttrsRequest.fromBuffer(value),
         ($0.MsgMarketManageReqAttrsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgCreatePaymentRequest,
+            $0.MsgCreatePaymentResponse>(
+        'CreatePayment',
+        createPayment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgCreatePaymentRequest.fromBuffer(value),
+        ($0.MsgCreatePaymentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgAcceptPaymentRequest,
+            $0.MsgAcceptPaymentResponse>(
+        'AcceptPayment',
+        acceptPayment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgAcceptPaymentRequest.fromBuffer(value),
+        ($0.MsgAcceptPaymentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgRejectPaymentRequest,
+            $0.MsgRejectPaymentResponse>(
+        'RejectPayment',
+        rejectPayment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgRejectPaymentRequest.fromBuffer(value),
+        ($0.MsgRejectPaymentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgRejectPaymentsRequest,
+            $0.MsgRejectPaymentsResponse>(
+        'RejectPayments',
+        rejectPayments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgRejectPaymentsRequest.fromBuffer(value),
+        ($0.MsgRejectPaymentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgCancelPaymentsRequest,
+            $0.MsgCancelPaymentsResponse>(
+        'CancelPayments',
+        cancelPayments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgCancelPaymentsRequest.fromBuffer(value),
+        ($0.MsgCancelPaymentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChangePaymentTargetRequest,
+            $0.MsgChangePaymentTargetResponse>(
+        'ChangePaymentTarget',
+        changePaymentTarget_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChangePaymentTargetRequest.fromBuffer(value),
+        ($0.MsgChangePaymentTargetResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.MsgGovCreateMarketRequest,
             $0.MsgGovCreateMarketResponse>(
         'GovCreateMarket',
@@ -545,6 +683,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgGovUpdateParamsRequest.fromBuffer(value),
         ($0.MsgGovUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgUpdateParamsRequest,
+            $0.MsgUpdateParamsResponse>(
+        'UpdateParams',
+        updateParams_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgUpdateParamsRequest.fromBuffer(value),
+        ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgCreateAskResponse> createAsk_Pre($grpc.ServiceCall call,
@@ -663,6 +810,42 @@ abstract class MsgServiceBase extends $grpc.Service {
     return marketManageReqAttrs(call, await request);
   }
 
+  $async.Future<$0.MsgCreatePaymentResponse> createPayment_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgCreatePaymentRequest> request) async {
+    return createPayment(call, await request);
+  }
+
+  $async.Future<$0.MsgAcceptPaymentResponse> acceptPayment_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgAcceptPaymentRequest> request) async {
+    return acceptPayment(call, await request);
+  }
+
+  $async.Future<$0.MsgRejectPaymentResponse> rejectPayment_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgRejectPaymentRequest> request) async {
+    return rejectPayment(call, await request);
+  }
+
+  $async.Future<$0.MsgRejectPaymentsResponse> rejectPayments_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgRejectPaymentsRequest> request) async {
+    return rejectPayments(call, await request);
+  }
+
+  $async.Future<$0.MsgCancelPaymentsResponse> cancelPayments_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgCancelPaymentsRequest> request) async {
+    return cancelPayments(call, await request);
+  }
+
+  $async.Future<$0.MsgChangePaymentTargetResponse> changePaymentTarget_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChangePaymentTargetRequest> request) async {
+    return changePaymentTarget(call, await request);
+  }
+
   $async.Future<$0.MsgGovCreateMarketResponse> govCreateMarket_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.MsgGovCreateMarketRequest> request) async {
@@ -685,6 +868,12 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call,
       $async.Future<$0.MsgGovUpdateParamsRequest> request) async {
     return govUpdateParams(call, await request);
+  }
+
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgUpdateParamsRequest> request) async {
+    return updateParams(call, await request);
   }
 
   $async.Future<$0.MsgCreateAskResponse> createAsk(
@@ -730,6 +919,18 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgMarketManagePermissionsRequest request);
   $async.Future<$0.MsgMarketManageReqAttrsResponse> marketManageReqAttrs(
       $grpc.ServiceCall call, $0.MsgMarketManageReqAttrsRequest request);
+  $async.Future<$0.MsgCreatePaymentResponse> createPayment(
+      $grpc.ServiceCall call, $0.MsgCreatePaymentRequest request);
+  $async.Future<$0.MsgAcceptPaymentResponse> acceptPayment(
+      $grpc.ServiceCall call, $0.MsgAcceptPaymentRequest request);
+  $async.Future<$0.MsgRejectPaymentResponse> rejectPayment(
+      $grpc.ServiceCall call, $0.MsgRejectPaymentRequest request);
+  $async.Future<$0.MsgRejectPaymentsResponse> rejectPayments(
+      $grpc.ServiceCall call, $0.MsgRejectPaymentsRequest request);
+  $async.Future<$0.MsgCancelPaymentsResponse> cancelPayments(
+      $grpc.ServiceCall call, $0.MsgCancelPaymentsRequest request);
+  $async.Future<$0.MsgChangePaymentTargetResponse> changePaymentTarget(
+      $grpc.ServiceCall call, $0.MsgChangePaymentTargetRequest request);
   $async.Future<$0.MsgGovCreateMarketResponse> govCreateMarket(
       $grpc.ServiceCall call, $0.MsgGovCreateMarketRequest request);
   $async.Future<$0.MsgGovManageFeesResponse> govManageFees(
@@ -738,4 +939,6 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgGovCloseMarketRequest request);
   $async.Future<$0.MsgGovUpdateParamsResponse> govUpdateParams(
       $grpc.ServiceCall call, $0.MsgGovUpdateParamsRequest request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParamsRequest request);
 }

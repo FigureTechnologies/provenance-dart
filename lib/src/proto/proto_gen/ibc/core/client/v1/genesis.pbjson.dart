@@ -58,15 +58,14 @@ const GenesisState$json = {
       '3': 5,
       '4': 1,
       '5': 8,
-      '8': {},
-      '10': 'createLocalhost'
+      '8': {'3': true},
+      '10': 'createLocalhost',
     },
     {
       '1': 'next_client_sequence',
       '3': 6,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'nextClientSequence'
     },
   ],
@@ -76,15 +75,13 @@ const GenesisState$json = {
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
     'CgxHZW5lc2lzU3RhdGUSYwoHY2xpZW50cxgBIAMoCzIpLmliYy5jb3JlLmNsaWVudC52MS5JZG'
     'VudGlmaWVkQ2xpZW50U3RhdGVCHsjeHwCq3x8WSWRlbnRpZmllZENsaWVudFN0YXRlc1IHY2xp'
-    'ZW50cxKSAQoRY2xpZW50c19jb25zZW5zdXMYAiADKAsyKS5pYmMuY29yZS5jbGllbnQudjEuQ2'
-    'xpZW50Q29uc2Vuc3VzU3RhdGVzQjrI3h8A8t4fGHlhbWw6ImNsaWVudHNfY29uc2Vuc3VzIqrf'
-    'HxZDbGllbnRzQ29uc2Vuc3VzU3RhdGVzUhBjbGllbnRzQ29uc2Vuc3VzEnkKEGNsaWVudHNfbW'
-    'V0YWRhdGEYAyADKAsyLS5pYmMuY29yZS5jbGllbnQudjEuSWRlbnRpZmllZEdlbmVzaXNNZXRh'
-    'ZGF0YUIfyN4fAPLeHxd5YW1sOiJjbGllbnRzX21ldGFkYXRhIlIPY2xpZW50c01ldGFkYXRhEj'
-    'gKBnBhcmFtcxgEIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5QYXJhbXNCBMjeHwBSBnBhcmFt'
-    'cxJGChBjcmVhdGVfbG9jYWxob3N0GAUgASgIQhvy3h8XeWFtbDoiY3JlYXRlX2xvY2FsaG9zdC'
-    'JSD2NyZWF0ZUxvY2FsaG9zdBJRChRuZXh0X2NsaWVudF9zZXF1ZW5jZRgGIAEoBEIf8t4fG3lh'
-    'bWw6Im5leHRfY2xpZW50X3NlcXVlbmNlIlISbmV4dENsaWVudFNlcXVlbmNl');
+    'ZW50cxJ2ChFjbGllbnRzX2NvbnNlbnN1cxgCIAMoCzIpLmliYy5jb3JlLmNsaWVudC52MS5DbG'
+    'llbnRDb25zZW5zdXNTdGF0ZXNCHsjeHwCq3x8WQ2xpZW50c0NvbnNlbnN1c1N0YXRlc1IQY2xp'
+    'ZW50c0NvbnNlbnN1cxJeChBjbGllbnRzX21ldGFkYXRhGAMgAygLMi0uaWJjLmNvcmUuY2xpZW'
+    '50LnYxLklkZW50aWZpZWRHZW5lc2lzTWV0YWRhdGFCBMjeHwBSD2NsaWVudHNNZXRhZGF0YRI4'
+    'CgZwYXJhbXMYBCABKAsyGi5pYmMuY29yZS5jbGllbnQudjEuUGFyYW1zQgTI3h8AUgZwYXJhbX'
+    'MSLQoQY3JlYXRlX2xvY2FsaG9zdBgFIAEoCEICGAFSD2NyZWF0ZUxvY2FsaG9zdBIwChRuZXh0'
+    'X2NsaWVudF9zZXF1ZW5jZRgGIAEoBFISbmV4dENsaWVudFNlcXVlbmNl');
 
 @$core.Deprecated('Use genesisMetadataDescriptor instead')
 const GenesisMetadata$json = {
@@ -105,7 +102,7 @@ final $typed_data.Uint8List genesisMetadataDescriptor = $convert.base64Decode(
 const IdentifiedGenesisMetadata$json = {
   '1': 'IdentifiedGenesisMetadata',
   '2': [
-    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'clientId'},
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
     {
       '1': 'client_metadata',
       '3': 2,
@@ -120,7 +117,6 @@ const IdentifiedGenesisMetadata$json = {
 
 /// Descriptor for `IdentifiedGenesisMetadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List identifiedGenesisMetadataDescriptor = $convert.base64Decode(
-    'ChlJZGVudGlmaWVkR2VuZXNpc01ldGFkYXRhEjEKCWNsaWVudF9pZBgBIAEoCUIU8t4fEHlhbW'
-    'w6ImNsaWVudF9pZCJSCGNsaWVudElkEmwKD2NsaWVudF9tZXRhZGF0YRgCIAMoCzIjLmliYy5j'
-    'b3JlLmNsaWVudC52MS5HZW5lc2lzTWV0YWRhdGFCHsjeHwDy3h8WeWFtbDoiY2xpZW50X21ldG'
-    'FkYXRhIlIOY2xpZW50TWV0YWRhdGE=');
+    'ChlJZGVudGlmaWVkR2VuZXNpc01ldGFkYXRhEhsKCWNsaWVudF9pZBgBIAEoCVIIY2xpZW50SW'
+    'QSUgoPY2xpZW50X21ldGFkYXRhGAIgAygLMiMuaWJjLmNvcmUuY2xpZW50LnYxLkdlbmVzaXNN'
+    'ZXRhZGF0YUIEyN4fAFIOY2xpZW50TWV0YWRhdGE=');

@@ -24,8 +24,9 @@ const GenericAuthorization$json = {
 
 /// Descriptor for `GenericAuthorization`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genericAuthorizationDescriptor = $convert.base64Decode(
-    'ChRHZW5lcmljQXV0aG9yaXphdGlvbhIQCgNtc2cYASABKAlSA21zZzoRyrQtDUF1dGhvcml6YX'
-    'Rpb24=');
+    'ChRHZW5lcmljQXV0aG9yaXphdGlvbhIQCgNtc2cYASABKAlSA21zZzpKyrQtImNvc21vcy5hdX'
+    'Roei52MWJldGExLkF1dGhvcml6YXRpb26K57AqH2Nvc21vcy1zZGsvR2VuZXJpY0F1dGhvcml6'
+    'YXRpb24=');
 
 @$core.Deprecated('Use countAuthorizationDescriptor instead')
 const CountAuthorization$json = {
@@ -46,8 +47,9 @@ const CountAuthorization$json = {
 /// Descriptor for `CountAuthorization`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List countAuthorizationDescriptor = $convert.base64Decode(
     'ChJDb3VudEF1dGhvcml6YXRpb24SEAoDbXNnGAEgASgJUgNtc2cSNQoWYWxsb3dlZF9hdXRob3'
-    'JpemF0aW9ucxgCIAEoBVIVYWxsb3dlZEF1dGhvcml6YXRpb25zOhHKtC0NQXV0aG9yaXphdGlv'
-    'bg==');
+    'JpemF0aW9ucxgCIAEoBVIVYWxsb3dlZEF1dGhvcml6YXRpb25zOkjKtC0iY29zbW9zLmF1dGh6'
+    'LnYxYmV0YTEuQXV0aG9yaXphdGlvbornsCodY29zbW9zLXNkay9Db3VudEF1dGhvcml6YXRpb2'
+    '4=');
 
 @$core.Deprecated('Use grantDescriptor instead')
 const Grant$json = {
@@ -76,9 +78,10 @@ const Grant$json = {
 
 /// Descriptor for `Grant`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List grantDescriptor = $convert.base64Decode(
-    'CgVHcmFudBJNCg1hdXRob3JpemF0aW9uGAEgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueUIRyr'
-    'QtDUF1dGhvcml6YXRpb25SDWF1dGhvcml6YXRpb24SRAoKZXhwaXJhdGlvbhgCIAEoCzIaLmdv'
-    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwGQ3x8BUgpleHBpcmF0aW9u');
+    'CgVHcmFudBJiCg1hdXRob3JpemF0aW9uGAEgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueUImyr'
+    'QtImNvc21vcy5hdXRoei52MWJldGExLkF1dGhvcml6YXRpb25SDWF1dGhvcml6YXRpb24SRAoK'
+    'ZXhwaXJhdGlvbhgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwGQ3x8BUg'
+    'pleHBpcmF0aW9u');
 
 @$core.Deprecated('Use grantAuthorizationDescriptor instead')
 const GrantAuthorization$json = {
@@ -111,9 +114,10 @@ const GrantAuthorization$json = {
 final $typed_data.Uint8List grantAuthorizationDescriptor = $convert.base64Decode(
     'ChJHcmFudEF1dGhvcml6YXRpb24SMgoHZ3JhbnRlchgBIAEoCUIY0rQtFGNvc21vcy5BZGRyZX'
     'NzU3RyaW5nUgdncmFudGVyEjIKB2dyYW50ZWUYAiABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0'
-    'cmluZ1IHZ3JhbnRlZRJNCg1hdXRob3JpemF0aW9uGAMgASgLMhQuZ29vZ2xlLnByb3RvYnVmLk'
-    'FueUIRyrQtDUF1dGhvcml6YXRpb25SDWF1dGhvcml6YXRpb24SQAoKZXhwaXJhdGlvbhgEIAEo'
-    'CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCBJDfHwFSCmV4cGlyYXRpb24=');
+    'cmluZ1IHZ3JhbnRlZRJiCg1hdXRob3JpemF0aW9uGAMgASgLMhQuZ29vZ2xlLnByb3RvYnVmLk'
+    'FueUImyrQtImNvc21vcy5hdXRoei52MWJldGExLkF1dGhvcml6YXRpb25SDWF1dGhvcml6YXRp'
+    'b24SQAoKZXhwaXJhdGlvbhgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCBJDfHw'
+    'FSCmV4cGlyYXRpb24=');
 
 @$core.Deprecated('Use grantQueueItemDescriptor instead')
 const GrantQueueItem$json = {

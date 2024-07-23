@@ -94,7 +94,7 @@ class Minter extends $pb.GeneratedMessage {
   void clearAnnualProvisions() => clearField(2);
 }
 
-/// Params holds parameters for the mint module.
+/// Params defines the parameters for the x/mint module.
 class Params extends $pb.GeneratedMessage {
   factory Params({
     $core.String? mintDenom,

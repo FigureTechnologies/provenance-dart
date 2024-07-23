@@ -14,145 +14,15 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'tx.pb.dart' as $0;
-import 'types.pb.dart' as $1;
-
-enum GenesisState_GenMsgs_Sum {
-  storeCode,
-  instantiateContract,
-  executeContract,
-  notSet
-}
-
-/// GenMsgs define the messages that can be executed during genesis phase in
-/// order. The intention is to have more human readable data that is auditable.
-class GenesisState_GenMsgs extends $pb.GeneratedMessage {
-  factory GenesisState_GenMsgs({
-    $0.MsgStoreCode? storeCode,
-    $0.MsgInstantiateContract? instantiateContract,
-    $0.MsgExecuteContract? executeContract,
-  }) {
-    final $result = create();
-    if (storeCode != null) {
-      $result.storeCode = storeCode;
-    }
-    if (instantiateContract != null) {
-      $result.instantiateContract = instantiateContract;
-    }
-    if (executeContract != null) {
-      $result.executeContract = executeContract;
-    }
-    return $result;
-  }
-  GenesisState_GenMsgs._() : super();
-  factory GenesisState_GenMsgs.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory GenesisState_GenMsgs.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static const $core.Map<$core.int, GenesisState_GenMsgs_Sum>
-      _GenesisState_GenMsgs_SumByTag = {
-    1: GenesisState_GenMsgs_Sum.storeCode,
-    2: GenesisState_GenMsgs_Sum.instantiateContract,
-    3: GenesisState_GenMsgs_Sum.executeContract,
-    0: GenesisState_GenMsgs_Sum.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'GenesisState.GenMsgs',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
-      createEmptyInstance: create)
-    ..oo(0, [1, 2, 3])
-    ..aOM<$0.MsgStoreCode>(1, _omitFieldNames ? '' : 'storeCode',
-        subBuilder: $0.MsgStoreCode.create)
-    ..aOM<$0.MsgInstantiateContract>(
-        2, _omitFieldNames ? '' : 'instantiateContract',
-        subBuilder: $0.MsgInstantiateContract.create)
-    ..aOM<$0.MsgExecuteContract>(3, _omitFieldNames ? '' : 'executeContract',
-        subBuilder: $0.MsgExecuteContract.create)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  GenesisState_GenMsgs clone() =>
-      GenesisState_GenMsgs()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  GenesisState_GenMsgs copyWith(void Function(GenesisState_GenMsgs) updates) =>
-      super.copyWith((message) => updates(message as GenesisState_GenMsgs))
-          as GenesisState_GenMsgs;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GenesisState_GenMsgs create() => GenesisState_GenMsgs._();
-  GenesisState_GenMsgs createEmptyInstance() => create();
-  static $pb.PbList<GenesisState_GenMsgs> createRepeated() =>
-      $pb.PbList<GenesisState_GenMsgs>();
-  @$core.pragma('dart2js:noInline')
-  static GenesisState_GenMsgs getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GenesisState_GenMsgs>(create);
-  static GenesisState_GenMsgs? _defaultInstance;
-
-  GenesisState_GenMsgs_Sum whichSum() =>
-      _GenesisState_GenMsgs_SumByTag[$_whichOneof(0)]!;
-  void clearSum() => clearField($_whichOneof(0));
-
-  @$pb.TagNumber(1)
-  $0.MsgStoreCode get storeCode => $_getN(0);
-  @$pb.TagNumber(1)
-  set storeCode($0.MsgStoreCode v) {
-    setField(1, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasStoreCode() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearStoreCode() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.MsgStoreCode ensureStoreCode() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $0.MsgInstantiateContract get instantiateContract => $_getN(1);
-  @$pb.TagNumber(2)
-  set instantiateContract($0.MsgInstantiateContract v) {
-    setField(2, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasInstantiateContract() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearInstantiateContract() => clearField(2);
-  @$pb.TagNumber(2)
-  $0.MsgInstantiateContract ensureInstantiateContract() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $0.MsgExecuteContract get executeContract => $_getN(2);
-  @$pb.TagNumber(3)
-  set executeContract($0.MsgExecuteContract v) {
-    setField(3, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasExecuteContract() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearExecuteContract() => clearField(3);
-  @$pb.TagNumber(3)
-  $0.MsgExecuteContract ensureExecuteContract() => $_ensure(2);
-}
+import 'types.pb.dart' as $0;
 
 /// GenesisState - genesis state of x/wasm
 class GenesisState extends $pb.GeneratedMessage {
   factory GenesisState({
-    $1.Params? params,
+    $0.Params? params,
     $core.Iterable<Code>? codes,
     $core.Iterable<Contract>? contracts,
     $core.Iterable<Sequence>? sequences,
-    $core.Iterable<GenesisState_GenMsgs>? genMsgs,
   }) {
     final $result = create();
     if (params != null) {
@@ -166,9 +36,6 @@ class GenesisState extends $pb.GeneratedMessage {
     }
     if (sequences != null) {
       $result.sequences.addAll(sequences);
-    }
-    if (genMsgs != null) {
-      $result.genMsgs.addAll(genMsgs);
     }
     return $result;
   }
@@ -185,17 +52,14 @@ class GenesisState extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
       createEmptyInstance: create)
-    ..aOM<$1.Params>(1, _omitFieldNames ? '' : 'params',
-        subBuilder: $1.Params.create)
+    ..aOM<$0.Params>(1, _omitFieldNames ? '' : 'params',
+        subBuilder: $0.Params.create)
     ..pc<Code>(2, _omitFieldNames ? '' : 'codes', $pb.PbFieldType.PM,
         subBuilder: Code.create)
     ..pc<Contract>(3, _omitFieldNames ? '' : 'contracts', $pb.PbFieldType.PM,
         subBuilder: Contract.create)
     ..pc<Sequence>(4, _omitFieldNames ? '' : 'sequences', $pb.PbFieldType.PM,
         subBuilder: Sequence.create)
-    ..pc<GenesisState_GenMsgs>(
-        5, _omitFieldNames ? '' : 'genMsgs', $pb.PbFieldType.PM,
-        subBuilder: GenesisState_GenMsgs.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -222,9 +86,9 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.Params get params => $_getN(0);
+  $0.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($1.Params v) {
+  set params($0.Params v) {
     setField(1, v);
   }
 
@@ -233,7 +97,7 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $1.Params ensureParams() => $_ensure(0);
+  $0.Params ensureParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<Code> get codes => $_getList(1);
@@ -243,16 +107,13 @@ class GenesisState extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<Sequence> get sequences => $_getList(3);
-
-  @$pb.TagNumber(5)
-  $core.List<GenesisState_GenMsgs> get genMsgs => $_getList(4);
 }
 
 /// Code struct encompasses CodeInfo and CodeBytes
 class Code extends $pb.GeneratedMessage {
   factory Code({
     $fixnum.Int64? codeId,
-    $1.CodeInfo? codeInfo,
+    $0.CodeInfo? codeInfo,
     $core.List<$core.int>? codeBytes,
     $core.bool? pinned,
   }) {
@@ -286,8 +147,8 @@ class Code extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'codeId', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$1.CodeInfo>(2, _omitFieldNames ? '' : 'codeInfo',
-        subBuilder: $1.CodeInfo.create)
+    ..aOM<$0.CodeInfo>(2, _omitFieldNames ? '' : 'codeInfo',
+        subBuilder: $0.CodeInfo.create)
     ..a<$core.List<$core.int>>(
         3, _omitFieldNames ? '' : 'codeBytes', $pb.PbFieldType.OY)
     ..aOB(4, _omitFieldNames ? '' : 'pinned')
@@ -327,9 +188,9 @@ class Code extends $pb.GeneratedMessage {
   void clearCodeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $1.CodeInfo get codeInfo => $_getN(1);
+  $0.CodeInfo get codeInfo => $_getN(1);
   @$pb.TagNumber(2)
-  set codeInfo($1.CodeInfo v) {
+  set codeInfo($0.CodeInfo v) {
     setField(2, v);
   }
 
@@ -338,7 +199,7 @@ class Code extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearCodeInfo() => clearField(2);
   @$pb.TagNumber(2)
-  $1.CodeInfo ensureCodeInfo() => $_ensure(1);
+  $0.CodeInfo ensureCodeInfo() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.List<$core.int> get codeBytes => $_getN(2);
@@ -370,9 +231,9 @@ class Code extends $pb.GeneratedMessage {
 class Contract extends $pb.GeneratedMessage {
   factory Contract({
     $core.String? contractAddress,
-    $1.ContractInfo? contractInfo,
-    $core.Iterable<$1.Model>? contractState,
-    $core.Iterable<$1.ContractCodeHistoryEntry>? contractCodeHistory,
+    $0.ContractInfo? contractInfo,
+    $core.Iterable<$0.Model>? contractState,
+    $core.Iterable<$0.ContractCodeHistoryEntry>? contractCodeHistory,
   }) {
     final $result = create();
     if (contractAddress != null) {
@@ -403,14 +264,14 @@ class Contract extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contractAddress')
-    ..aOM<$1.ContractInfo>(2, _omitFieldNames ? '' : 'contractInfo',
-        subBuilder: $1.ContractInfo.create)
-    ..pc<$1.Model>(
+    ..aOM<$0.ContractInfo>(2, _omitFieldNames ? '' : 'contractInfo',
+        subBuilder: $0.ContractInfo.create)
+    ..pc<$0.Model>(
         3, _omitFieldNames ? '' : 'contractState', $pb.PbFieldType.PM,
-        subBuilder: $1.Model.create)
-    ..pc<$1.ContractCodeHistoryEntry>(
+        subBuilder: $0.Model.create)
+    ..pc<$0.ContractCodeHistoryEntry>(
         4, _omitFieldNames ? '' : 'contractCodeHistory', $pb.PbFieldType.PM,
-        subBuilder: $1.ContractCodeHistoryEntry.create)
+        subBuilder: $0.ContractCodeHistoryEntry.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -447,9 +308,9 @@ class Contract extends $pb.GeneratedMessage {
   void clearContractAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $1.ContractInfo get contractInfo => $_getN(1);
+  $0.ContractInfo get contractInfo => $_getN(1);
   @$pb.TagNumber(2)
-  set contractInfo($1.ContractInfo v) {
+  set contractInfo($0.ContractInfo v) {
     setField(2, v);
   }
 
@@ -458,13 +319,13 @@ class Contract extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearContractInfo() => clearField(2);
   @$pb.TagNumber(2)
-  $1.ContractInfo ensureContractInfo() => $_ensure(1);
+  $0.ContractInfo ensureContractInfo() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.List<$1.Model> get contractState => $_getList(2);
+  $core.List<$0.Model> get contractState => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$1.ContractCodeHistoryEntry> get contractCodeHistory =>
+  $core.List<$0.ContractCodeHistoryEntry> get contractCodeHistory =>
       $_getList(3);
 }
 

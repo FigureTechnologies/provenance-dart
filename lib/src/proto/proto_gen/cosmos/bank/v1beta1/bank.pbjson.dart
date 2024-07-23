@@ -41,7 +41,7 @@ const Params$json = {
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
     'CgZQYXJhbXMSRwoMc2VuZF9lbmFibGVkGAEgAygLMiAuY29zbW9zLmJhbmsudjFiZXRhMS5TZW'
     '5kRW5hYmxlZEICGAFSC3NlbmRFbmFibGVkEjAKFGRlZmF1bHRfc2VuZF9lbmFibGVkGAIgASgI'
-    'UhJkZWZhdWx0U2VuZEVuYWJsZWQ6BJigHwA=');
+    'UhJkZWZhdWx0U2VuZEVuYWJsZWQ6HYrnsCoYY29zbW9zLXNkay94L2JhbmsvUGFyYW1z');
 
 @$core.Deprecated('Use sendEnabledDescriptor instead')
 const SendEnabled$json = {
@@ -56,7 +56,7 @@ const SendEnabled$json = {
 /// Descriptor for `SendEnabled`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sendEnabledDescriptor = $convert.base64Decode(
     'CgtTZW5kRW5hYmxlZBIUCgVkZW5vbRgBIAEoCVIFZGVub20SGAoHZW5hYmxlZBgCIAEoCFIHZW'
-    '5hYmxlZDoImKAfAOigHwE=');
+    '5hYmxlZDoE6KAfAQ==');
 
 @$core.Deprecated('Use inputDescriptor instead')
 const Input$json = {
@@ -79,9 +79,9 @@ const Input$json = {
 /// Descriptor for `Input`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List inputDescriptor = $convert.base64Decode(
     'CgVJbnB1dBIyCgdhZGRyZXNzGAEgASgJQhjStC0UY29zbW9zLkFkZHJlc3NTdHJpbmdSB2FkZH'
-    'Jlc3MSYQoFY29pbnMYAiADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8o'
-    'Z2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IFY29pbnM6FIigHwDooB'
-    '8AguewKgdhZGRyZXNz');
+    'Jlc3MSdwoFY29pbnMYAiADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CRsjeHwCq3x8o'
+    'Z2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc5rnsCoMbGVnYWN5X2NvaW'
+    '5zqOewKgFSBWNvaW5zOhSIoB8A6KAfAILnsCoHYWRkcmVzcw==');
 
 @$core.Deprecated('Use outputDescriptor instead')
 const Output$json = {
@@ -104,9 +104,9 @@ const Output$json = {
 /// Descriptor for `Output`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List outputDescriptor = $convert.base64Decode(
     'CgZPdXRwdXQSMgoHYWRkcmVzcxgBIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUgdhZG'
-    'RyZXNzEmEKBWNvaW5zGAIgAygLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQjDI3h8Aqt8f'
-    'KGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbnNSBWNvaW5zOgiIoB8A6K'
-    'AfAA==');
+    'RyZXNzEncKBWNvaW5zGAIgAygLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQkbI3h8Aqt8f'
+    'KGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuQ29pbnOa57AqDGxlZ2FjeV9jb2'
+    'luc6jnsCoBUgVjb2luczoIiKAfAOigHwA=');
 
 @$core.Deprecated('Use supplyDescriptor instead')
 const Supply$json = {
@@ -127,10 +127,10 @@ const Supply$json = {
 
 /// Descriptor for `Supply`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List supplyDescriptor = $convert.base64Decode(
-    'CgZTdXBwbHkSYQoFdG90YWwYASADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHw'
-    'Cq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IFdG90YWw6ShgB'
-    'iKAfAOigHwHKtC08KmdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsveC9iYW5rL21pZ3JhdG'
-    'lvbnMvdjA0MC5TdXBwbHlJ');
+    'CgZTdXBwbHkSdwoFdG90YWwYASADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CRsjeHw'
+    'Cq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc5rnsCoMbGVnYWN5'
+    'X2NvaW5zqOewKgFSBXRvdGFsOikYAYigHwDooB8ByrQtG2Nvc21vcy5iYW5rLnYxYmV0YTEuU3'
+    'VwcGx5SQ==');
 
 @$core.Deprecated('Use denomUnitDescriptor instead')
 const DenomUnit$json = {

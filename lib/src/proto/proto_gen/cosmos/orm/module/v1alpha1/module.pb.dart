@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 /// Module defines the ORM module which adds providers to the app container for
-/// module-scoped DB's. In the future it may provide gRPC services for interacting
-/// with ORM data.
+/// ORM ModuleDB's and in the future will automatically register query
+/// services for modules that use the ORM.
 class Module extends $pb.GeneratedMessage {
   factory Module() => create();
   Module._() : super();

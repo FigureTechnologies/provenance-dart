@@ -35,7 +35,7 @@ final $typed_data.Uint8List stateDescriptor = $convert.base64Decode(
 const ConnectionEnd$json = {
   '1': 'ConnectionEnd',
   '2': [
-    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'clientId'},
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
     {
       '1': 'versions',
       '3': 2,
@@ -61,26 +61,26 @@ const ConnectionEnd$json = {
       '8': {},
       '10': 'counterparty'
     },
-    {'1': 'delay_period', '3': 5, '4': 1, '5': 4, '8': {}, '10': 'delayPeriod'},
+    {'1': 'delay_period', '3': 5, '4': 1, '5': 4, '10': 'delayPeriod'},
   ],
   '7': {},
 };
 
 /// Descriptor for `ConnectionEnd`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List connectionEndDescriptor = $convert.base64Decode(
-    'Cg1Db25uZWN0aW9uRW5kEjEKCWNsaWVudF9pZBgBIAEoCUIU8t4fEHlhbWw6ImNsaWVudF9pZC'
-    'JSCGNsaWVudElkEjsKCHZlcnNpb25zGAIgAygLMh8uaWJjLmNvcmUuY29ubmVjdGlvbi52MS5W'
-    'ZXJzaW9uUgh2ZXJzaW9ucxIzCgVzdGF0ZRgDIAEoDjIdLmliYy5jb3JlLmNvbm5lY3Rpb24udj'
-    'EuU3RhdGVSBXN0YXRlEk4KDGNvdW50ZXJwYXJ0eRgEIAEoCzIkLmliYy5jb3JlLmNvbm5lY3Rp'
-    'b24udjEuQ291bnRlcnBhcnR5QgTI3h8AUgxjb3VudGVycGFydHkSOgoMZGVsYXlfcGVyaW9kGA'
-    'UgASgEQhfy3h8TeWFtbDoiZGVsYXlfcGVyaW9kIlILZGVsYXlQZXJpb2Q6BIigHwA=');
+    'Cg1Db25uZWN0aW9uRW5kEhsKCWNsaWVudF9pZBgBIAEoCVIIY2xpZW50SWQSOwoIdmVyc2lvbn'
+    'MYAiADKAsyHy5pYmMuY29yZS5jb25uZWN0aW9uLnYxLlZlcnNpb25SCHZlcnNpb25zEjMKBXN0'
+    'YXRlGAMgASgOMh0uaWJjLmNvcmUuY29ubmVjdGlvbi52MS5TdGF0ZVIFc3RhdGUSTgoMY291bn'
+    'RlcnBhcnR5GAQgASgLMiQuaWJjLmNvcmUuY29ubmVjdGlvbi52MS5Db3VudGVycGFydHlCBMje'
+    'HwBSDGNvdW50ZXJwYXJ0eRIhCgxkZWxheV9wZXJpb2QYBSABKARSC2RlbGF5UGVyaW9kOgSIoB'
+    '8A');
 
 @$core.Deprecated('Use identifiedConnectionDescriptor instead')
 const IdentifiedConnection$json = {
   '1': 'IdentifiedConnection',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'id'},
-    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'clientId'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '10': 'clientId'},
     {
       '1': 'versions',
       '3': 3,
@@ -106,34 +106,26 @@ const IdentifiedConnection$json = {
       '8': {},
       '10': 'counterparty'
     },
-    {'1': 'delay_period', '3': 6, '4': 1, '5': 4, '8': {}, '10': 'delayPeriod'},
+    {'1': 'delay_period', '3': 6, '4': 1, '5': 4, '10': 'delayPeriod'},
   ],
   '7': {},
 };
 
 /// Descriptor for `IdentifiedConnection`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List identifiedConnectionDescriptor = $convert.base64Decode(
-    'ChRJZGVudGlmaWVkQ29ubmVjdGlvbhIdCgJpZBgBIAEoCUIN8t4fCXlhbWw6ImlkIlICaWQSMQ'
-    'oJY2xpZW50X2lkGAIgASgJQhTy3h8QeWFtbDoiY2xpZW50X2lkIlIIY2xpZW50SWQSOwoIdmVy'
-    'c2lvbnMYAyADKAsyHy5pYmMuY29yZS5jb25uZWN0aW9uLnYxLlZlcnNpb25SCHZlcnNpb25zEj'
-    'MKBXN0YXRlGAQgASgOMh0uaWJjLmNvcmUuY29ubmVjdGlvbi52MS5TdGF0ZVIFc3RhdGUSTgoM'
-    'Y291bnRlcnBhcnR5GAUgASgLMiQuaWJjLmNvcmUuY29ubmVjdGlvbi52MS5Db3VudGVycGFydH'
-    'lCBMjeHwBSDGNvdW50ZXJwYXJ0eRI6CgxkZWxheV9wZXJpb2QYBiABKARCF/LeHxN5YW1sOiJk'
-    'ZWxheV9wZXJpb2QiUgtkZWxheVBlcmlvZDoEiKAfAA==');
+    'ChRJZGVudGlmaWVkQ29ubmVjdGlvbhIOCgJpZBgBIAEoCVICaWQSGwoJY2xpZW50X2lkGAIgAS'
+    'gJUghjbGllbnRJZBI7Cgh2ZXJzaW9ucxgDIAMoCzIfLmliYy5jb3JlLmNvbm5lY3Rpb24udjEu'
+    'VmVyc2lvblIIdmVyc2lvbnMSMwoFc3RhdGUYBCABKA4yHS5pYmMuY29yZS5jb25uZWN0aW9uLn'
+    'YxLlN0YXRlUgVzdGF0ZRJOCgxjb3VudGVycGFydHkYBSABKAsyJC5pYmMuY29yZS5jb25uZWN0'
+    'aW9uLnYxLkNvdW50ZXJwYXJ0eUIEyN4fAFIMY291bnRlcnBhcnR5EiEKDGRlbGF5X3BlcmlvZB'
+    'gGIAEoBFILZGVsYXlQZXJpb2Q6BIigHwA=');
 
 @$core.Deprecated('Use counterpartyDescriptor instead')
 const Counterparty$json = {
   '1': 'Counterparty',
   '2': [
-    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'clientId'},
-    {
-      '1': 'connection_id',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'connectionId'
-    },
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'connection_id', '3': 2, '4': 1, '5': 9, '10': 'connectionId'},
     {
       '1': 'prefix',
       '3': 3,
@@ -149,10 +141,9 @@ const Counterparty$json = {
 
 /// Descriptor for `Counterparty`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List counterpartyDescriptor = $convert.base64Decode(
-    'CgxDb3VudGVycGFydHkSMQoJY2xpZW50X2lkGAEgASgJQhTy3h8QeWFtbDoiY2xpZW50X2lkIl'
-    'IIY2xpZW50SWQSPQoNY29ubmVjdGlvbl9pZBgCIAEoCUIY8t4fFHlhbWw6ImNvbm5lY3Rpb25f'
-    'aWQiUgxjb25uZWN0aW9uSWQSQgoGcHJlZml4GAMgASgLMiQuaWJjLmNvcmUuY29tbWl0bWVudC'
-    '52MS5NZXJrbGVQcmVmaXhCBMjeHwBSBnByZWZpeDoEiKAfAA==');
+    'CgxDb3VudGVycGFydHkSGwoJY2xpZW50X2lkGAEgASgJUghjbGllbnRJZBIjCg1jb25uZWN0aW'
+    '9uX2lkGAIgASgJUgxjb25uZWN0aW9uSWQSQgoGcHJlZml4GAMgASgLMiQuaWJjLmNvcmUuY29t'
+    'bWl0bWVudC52MS5NZXJrbGVQcmVmaXhCBMjeHwBSBnByZWZpeDoEiKAfAA==');
 
 @$core.Deprecated('Use clientPathsDescriptor instead')
 const ClientPaths$json = {
@@ -170,15 +161,15 @@ final $typed_data.Uint8List clientPathsDescriptor =
 const ConnectionPaths$json = {
   '1': 'ConnectionPaths',
   '2': [
-    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'clientId'},
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
     {'1': 'paths', '3': 2, '4': 3, '5': 9, '10': 'paths'},
   ],
 };
 
 /// Descriptor for `ConnectionPaths`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List connectionPathsDescriptor = $convert.base64Decode(
-    'Cg9Db25uZWN0aW9uUGF0aHMSMQoJY2xpZW50X2lkGAEgASgJQhTy3h8QeWFtbDoiY2xpZW50X2'
-    'lkIlIIY2xpZW50SWQSFAoFcGF0aHMYAiADKAlSBXBhdGhz');
+    'Cg9Db25uZWN0aW9uUGF0aHMSGwoJY2xpZW50X2lkGAEgASgJUghjbGllbnRJZBIUCgVwYXRocx'
+    'gCIAMoCVIFcGF0aHM=');
 
 @$core.Deprecated('Use versionDescriptor instead')
 const Version$json = {
@@ -204,7 +195,6 @@ const Params$json = {
       '3': 1,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'maxExpectedTimePerBlock'
     },
   ],
@@ -212,5 +202,5 @@ const Params$json = {
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSZAobbWF4X2V4cGVjdGVkX3RpbWVfcGVyX2Jsb2NrGAEgASgEQiby3h8ieWFtbD'
-    'oibWF4X2V4cGVjdGVkX3RpbWVfcGVyX2Jsb2NrIlIXbWF4RXhwZWN0ZWRUaW1lUGVyQmxvY2s=');
+    'CgZQYXJhbXMSPAobbWF4X2V4cGVjdGVkX3RpbWVfcGVyX2Jsb2NrGAEgASgEUhdtYXhFeHBlY3'
+    'RlZFRpbWVQZXJCbG9jaw==');

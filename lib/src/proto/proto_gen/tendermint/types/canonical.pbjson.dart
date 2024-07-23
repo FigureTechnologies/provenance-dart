@@ -142,3 +142,20 @@ final $typed_data.Uint8List canonicalVoteDescriptor = $convert.base64Decode(
     'lEQgvi3h8HQmxvY2tJRFIHYmxvY2tJZBJCCgl0aW1lc3RhbXAYBSABKAsyGi5nb29nbGUucHJv'
     'dG9idWYuVGltZXN0YW1wQgjI3h8AkN8fAVIJdGltZXN0YW1wEiYKCGNoYWluX2lkGAYgASgJQg'
     'vi3h8HQ2hhaW5JRFIHY2hhaW5JZA==');
+
+@$core.Deprecated('Use canonicalVoteExtensionDescriptor instead')
+const CanonicalVoteExtension$json = {
+  '1': 'CanonicalVoteExtension',
+  '2': [
+    {'1': 'extension', '3': 1, '4': 1, '5': 12, '10': 'extension'},
+    {'1': 'height', '3': 2, '4': 1, '5': 16, '10': 'height'},
+    {'1': 'round', '3': 3, '4': 1, '5': 16, '10': 'round'},
+    {'1': 'chain_id', '3': 4, '4': 1, '5': 9, '10': 'chainId'},
+  ],
+};
+
+/// Descriptor for `CanonicalVoteExtension`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List canonicalVoteExtensionDescriptor = $convert.base64Decode(
+    'ChZDYW5vbmljYWxWb3RlRXh0ZW5zaW9uEhwKCWV4dGVuc2lvbhgBIAEoDFIJZXh0ZW5zaW9uEh'
+    'YKBmhlaWdodBgCIAEoEFIGaGVpZ2h0EhQKBXJvdW5kGAMgASgQUgVyb3VuZBIZCghjaGFpbl9p'
+    'ZBgEIAEoCVIHY2hhaW5JZA==');

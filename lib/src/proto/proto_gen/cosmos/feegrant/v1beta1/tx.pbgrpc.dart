@@ -33,6 +33,12 @@ class MsgClient extends $grpc.Client {
           ($0.MsgRevokeAllowance value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MsgRevokeAllowanceResponse.fromBuffer(value));
+  static final _$pruneAllowances =
+      $grpc.ClientMethod<$0.MsgPruneAllowances, $0.MsgPruneAllowancesResponse>(
+          '/cosmos.feegrant.v1beta1.Msg/PruneAllowances',
+          ($0.MsgPruneAllowances value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgPruneAllowancesResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -49,6 +55,12 @@ class MsgClient extends $grpc.Client {
       $0.MsgRevokeAllowance request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$revokeAllowance, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgPruneAllowancesResponse> pruneAllowances(
+      $0.MsgPruneAllowances request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pruneAllowances, request, options: options);
   }
 }
 
@@ -75,6 +87,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgRevokeAllowance.fromBuffer(value),
         ($0.MsgRevokeAllowanceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgPruneAllowances,
+            $0.MsgPruneAllowancesResponse>(
+        'PruneAllowances',
+        pruneAllowances_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgPruneAllowances.fromBuffer(value),
+        ($0.MsgPruneAllowancesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgGrantAllowanceResponse> grantAllowance_Pre(
@@ -89,8 +110,16 @@ abstract class MsgServiceBase extends $grpc.Service {
     return revokeAllowance(call, await request);
   }
 
+  $async.Future<$0.MsgPruneAllowancesResponse> pruneAllowances_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgPruneAllowances> request) async {
+    return pruneAllowances(call, await request);
+  }
+
   $async.Future<$0.MsgGrantAllowanceResponse> grantAllowance(
       $grpc.ServiceCall call, $0.MsgGrantAllowance request);
   $async.Future<$0.MsgRevokeAllowanceResponse> revokeAllowance(
       $grpc.ServiceCall call, $0.MsgRevokeAllowance request);
+  $async.Future<$0.MsgPruneAllowancesResponse> pruneAllowances(
+      $grpc.ServiceCall call, $0.MsgPruneAllowances request);
 }

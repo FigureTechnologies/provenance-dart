@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/any.pb.dart' as $1;
+import '../../../google/protobuf/timestamp.pb.dart' as $4;
 import '../../base/v1beta1/coin.pb.dart' as $2;
 import 'gov.pb.dart' as $3;
 import 'gov.pbenum.dart' as $3;
@@ -27,6 +28,9 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
     $core.Iterable<$2.Coin>? initialDeposit,
     $core.String? proposer,
     $core.String? metadata,
+    $core.String? title,
+    $core.String? summary,
+    $core.bool? expedited,
   }) {
     final $result = create();
     if (messages != null) {
@@ -40,6 +44,15 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
     }
     if (metadata != null) {
       $result.metadata = metadata;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (expedited != null) {
+      $result.expedited = expedited;
     }
     return $result;
   }
@@ -62,6 +75,9 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
         subBuilder: $2.Coin.create)
     ..aOS(3, _omitFieldNames ? '' : 'proposer')
     ..aOS(4, _omitFieldNames ? '' : 'metadata')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'summary')
+    ..aOB(7, _omitFieldNames ? '' : 'expedited')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -87,12 +103,15 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgSubmitProposal>(create);
   static MsgSubmitProposal? _defaultInstance;
 
+  /// messages are the arbitrary messages to be executed if proposal passes.
   @$pb.TagNumber(1)
   $core.List<$1.Any> get messages => $_getList(0);
 
+  /// initial_deposit is the deposit value that must be paid at proposal submission.
   @$pb.TagNumber(2)
   $core.List<$2.Coin> get initialDeposit => $_getList(1);
 
+  /// proposer is the account address of the proposer.
   @$pb.TagNumber(3)
   $core.String get proposer => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -117,6 +136,51 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
   $core.bool hasMetadata() => $_has(3);
   @$pb.TagNumber(4)
   void clearMetadata() => clearField(4);
+
+  ///  title is the title of the proposal.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String v) {
+    $_setString(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => clearField(5);
+
+  ///  summary is the summary of the proposal
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(6)
+  $core.String get summary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set summary($core.String v) {
+    $_setString(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSummary() => clearField(6);
+
+  ///  expedited defines if the proposal is expedited or not
+  ///
+  ///  Since: cosmos-sdk 0.50
+  @$pb.TagNumber(7)
+  $core.bool get expedited => $_getBF(6);
+  @$pb.TagNumber(7)
+  set expedited($core.bool v) {
+    $_setBool(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasExpedited() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpedited() => clearField(7);
 }
 
 /// MsgSubmitProposalResponse defines the Msg/SubmitProposal response type.
@@ -172,6 +236,7 @@ class MsgSubmitProposalResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgSubmitProposalResponse>(create);
   static MsgSubmitProposalResponse? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -383,6 +448,7 @@ class MsgVote extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgVote>(create);
   static MsgVote? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -395,6 +461,7 @@ class MsgVote extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// voter is the voter address for the proposal.
   @$pb.TagNumber(2)
   $core.String get voter => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -407,6 +474,7 @@ class MsgVote extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearVoter() => clearField(2);
 
+  /// option defines the vote option.
   @$pb.TagNumber(3)
   $3.VoteOption get option => $_getN(2);
   @$pb.TagNumber(3)
@@ -419,6 +487,7 @@ class MsgVote extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearOption() => clearField(3);
 
+  /// metadata is any arbitrary metadata attached to the Vote.
   @$pb.TagNumber(4)
   $core.String get metadata => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -541,6 +610,7 @@ class MsgVoteWeighted extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgVoteWeighted>(create);
   static MsgVoteWeighted? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -553,6 +623,7 @@ class MsgVoteWeighted extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// voter is the voter address for the proposal.
   @$pb.TagNumber(2)
   $core.String get voter => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -565,9 +636,11 @@ class MsgVoteWeighted extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearVoter() => clearField(2);
 
+  /// options defines the weighted vote options.
   @$pb.TagNumber(3)
   $core.List<$3.WeightedVoteOption> get options => $_getList(2);
 
+  /// metadata is any arbitrary metadata attached to the VoteWeighted.
   @$pb.TagNumber(4)
   $core.String get metadata => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -684,6 +757,7 @@ class MsgDeposit extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgDeposit>(create);
   static MsgDeposit? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -696,6 +770,7 @@ class MsgDeposit extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// depositor defines the deposit addresses from the proposals.
   @$pb.TagNumber(2)
   $core.String get depositor => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -708,6 +783,7 @@ class MsgDeposit extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDepositor() => clearField(2);
 
+  /// amount to be deposited by depositor.
   @$pb.TagNumber(3)
   $core.List<$2.Coin> get amount => $_getList(2);
 }
@@ -751,6 +827,336 @@ class MsgDepositResponse extends $pb.GeneratedMessage {
   static MsgDepositResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<MsgDepositResponse>(create);
   static MsgDepositResponse? _defaultInstance;
+}
+
+///  MsgUpdateParams is the Msg/UpdateParams request type.
+///
+///  Since: cosmos-sdk 0.47
+class MsgUpdateParams extends $pb.GeneratedMessage {
+  factory MsgUpdateParams({
+    $core.String? authority,
+    $3.Params? params,
+  }) {
+    final $result = create();
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
+  MsgUpdateParams._() : super();
+  factory MsgUpdateParams.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParams.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParams',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.gov.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authority')
+    ..aOM<$3.Params>(2, _omitFieldNames ? '' : 'params',
+        subBuilder: $3.Params.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParams clone() => MsgUpdateParams()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParams copyWith(void Function(MsgUpdateParams) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParams))
+          as MsgUpdateParams;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParams create() => MsgUpdateParams._();
+  MsgUpdateParams createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParams> createRepeated() =>
+      $pb.PbList<MsgUpdateParams>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParams getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParams>(create);
+  static MsgUpdateParams? _defaultInstance;
+
+  /// authority is the address that controls the module (defaults to x/gov unless overwritten).
+  @$pb.TagNumber(1)
+  $core.String get authority => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authority($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAuthority() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthority() => clearField(1);
+
+  ///  params defines the x/gov parameters to update.
+  ///
+  ///  NOTE: All parameters must be supplied.
+  @$pb.TagNumber(2)
+  $3.Params get params => $_getN(1);
+  @$pb.TagNumber(2)
+  set params($3.Params v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasParams() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParams() => clearField(2);
+  @$pb.TagNumber(2)
+  $3.Params ensureParams() => $_ensure(1);
+}
+
+///  MsgUpdateParamsResponse defines the response structure for executing a
+///  MsgUpdateParams message.
+///
+///  Since: cosmos-sdk 0.47
+class MsgUpdateParamsResponse extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsResponse() => create();
+  MsgUpdateParamsResponse._() : super();
+  factory MsgUpdateParamsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.gov.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse clone() =>
+      MsgUpdateParamsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse copyWith(
+          void Function(MsgUpdateParamsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsResponse))
+          as MsgUpdateParamsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse create() => MsgUpdateParamsResponse._();
+  MsgUpdateParamsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsResponse> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsResponse>(create);
+  static MsgUpdateParamsResponse? _defaultInstance;
+}
+
+///  MsgCancelProposal is the Msg/CancelProposal request type.
+///
+///  Since: cosmos-sdk 0.50
+class MsgCancelProposal extends $pb.GeneratedMessage {
+  factory MsgCancelProposal({
+    $fixnum.Int64? proposalId,
+    $core.String? proposer,
+  }) {
+    final $result = create();
+    if (proposalId != null) {
+      $result.proposalId = proposalId;
+    }
+    if (proposer != null) {
+      $result.proposer = proposer;
+    }
+    return $result;
+  }
+  MsgCancelProposal._() : super();
+  factory MsgCancelProposal.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgCancelProposal.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgCancelProposal',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.gov.v1'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(
+        1, _omitFieldNames ? '' : 'proposalId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'proposer')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgCancelProposal clone() => MsgCancelProposal()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgCancelProposal copyWith(void Function(MsgCancelProposal) updates) =>
+      super.copyWith((message) => updates(message as MsgCancelProposal))
+          as MsgCancelProposal;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelProposal create() => MsgCancelProposal._();
+  MsgCancelProposal createEmptyInstance() => create();
+  static $pb.PbList<MsgCancelProposal> createRepeated() =>
+      $pb.PbList<MsgCancelProposal>();
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgCancelProposal>(create);
+  static MsgCancelProposal? _defaultInstance;
+
+  /// proposal_id defines the unique id of the proposal.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get proposalId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set proposalId($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasProposalId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposalId() => clearField(1);
+
+  /// proposer is the account address of the proposer.
+  @$pb.TagNumber(2)
+  $core.String get proposer => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set proposer($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasProposer() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProposer() => clearField(2);
+}
+
+///  MsgCancelProposalResponse defines the response structure for executing a
+///  MsgCancelProposal message.
+///
+///  Since: cosmos-sdk 0.50
+class MsgCancelProposalResponse extends $pb.GeneratedMessage {
+  factory MsgCancelProposalResponse({
+    $fixnum.Int64? proposalId,
+    $4.Timestamp? canceledTime,
+    $fixnum.Int64? canceledHeight,
+  }) {
+    final $result = create();
+    if (proposalId != null) {
+      $result.proposalId = proposalId;
+    }
+    if (canceledTime != null) {
+      $result.canceledTime = canceledTime;
+    }
+    if (canceledHeight != null) {
+      $result.canceledHeight = canceledHeight;
+    }
+    return $result;
+  }
+  MsgCancelProposalResponse._() : super();
+  factory MsgCancelProposalResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgCancelProposalResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgCancelProposalResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.gov.v1'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(
+        1, _omitFieldNames ? '' : 'proposalId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<$4.Timestamp>(2, _omitFieldNames ? '' : 'canceledTime',
+        subBuilder: $4.Timestamp.create)
+    ..a<$fixnum.Int64>(
+        3, _omitFieldNames ? '' : 'canceledHeight', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgCancelProposalResponse clone() =>
+      MsgCancelProposalResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgCancelProposalResponse copyWith(
+          void Function(MsgCancelProposalResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgCancelProposalResponse))
+          as MsgCancelProposalResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelProposalResponse create() => MsgCancelProposalResponse._();
+  MsgCancelProposalResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgCancelProposalResponse> createRepeated() =>
+      $pb.PbList<MsgCancelProposalResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelProposalResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgCancelProposalResponse>(create);
+  static MsgCancelProposalResponse? _defaultInstance;
+
+  /// proposal_id defines the unique id of the proposal.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get proposalId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set proposalId($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasProposalId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposalId() => clearField(1);
+
+  /// canceled_time is the time when proposal is canceled.
+  @$pb.TagNumber(2)
+  $4.Timestamp get canceledTime => $_getN(1);
+  @$pb.TagNumber(2)
+  set canceledTime($4.Timestamp v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasCanceledTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanceledTime() => clearField(2);
+  @$pb.TagNumber(2)
+  $4.Timestamp ensureCanceledTime() => $_ensure(1);
+
+  /// canceled_height defines the block height at which the proposal is canceled.
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get canceledHeight => $_getI64(2);
+  @$pb.TagNumber(3)
+  set canceledHeight($fixnum.Int64 v) {
+    $_setInt64(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasCanceledHeight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCanceledHeight() => clearField(3);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

@@ -45,6 +45,12 @@ class MsgClient extends $grpc.Client {
       ($0.MsgCreateRootNameRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.MsgCreateRootNameResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParamsRequest, $0.MsgUpdateParamsResponse>(
+          '/provenance.name.v1.Msg/UpdateParams',
+          ($0.MsgUpdateParamsRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -73,6 +79,12 @@ class MsgClient extends $grpc.Client {
       $0.MsgCreateRootNameRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createRootName, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParamsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
   }
 }
 
@@ -117,6 +129,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgCreateRootNameRequest.fromBuffer(value),
         ($0.MsgCreateRootNameResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgUpdateParamsRequest,
+            $0.MsgUpdateParamsResponse>(
+        'UpdateParams',
+        updateParams_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgUpdateParamsRequest.fromBuffer(value),
+        ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgBindNameResponse> bindName_Pre($grpc.ServiceCall call,
@@ -140,6 +161,12 @@ abstract class MsgServiceBase extends $grpc.Service {
     return createRootName(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgUpdateParamsRequest> request) async {
+    return updateParams(call, await request);
+  }
+
   $async.Future<$0.MsgBindNameResponse> bindName(
       $grpc.ServiceCall call, $0.MsgBindNameRequest request);
   $async.Future<$0.MsgDeleteNameResponse> deleteName(
@@ -148,4 +175,6 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgModifyNameRequest request);
   $async.Future<$0.MsgCreateRootNameResponse> createRootName(
       $grpc.ServiceCall call, $0.MsgCreateRootNameRequest request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParamsRequest request);
 }

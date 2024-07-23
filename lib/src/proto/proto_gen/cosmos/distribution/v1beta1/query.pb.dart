@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../base/query/v1beta1/pagination.pb.dart' as $2;
-import '../../base/v1beta1/coin.pb.dart' as $3;
+import '../../base/query/v1beta1/pagination.pb.dart' as $3;
+import '../../base/v1beta1/coin.pb.dart' as $2;
 import 'distribution.pb.dart' as $1;
 
 /// QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -125,6 +125,167 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
   $1.Params ensureParams() => $_ensure(0);
+}
+
+/// QueryValidatorDistributionInfoRequest is the request type for the Query/ValidatorDistributionInfo RPC method.
+class QueryValidatorDistributionInfoRequest extends $pb.GeneratedMessage {
+  factory QueryValidatorDistributionInfoRequest({
+    $core.String? validatorAddress,
+  }) {
+    final $result = create();
+    if (validatorAddress != null) {
+      $result.validatorAddress = validatorAddress;
+    }
+    return $result;
+  }
+  QueryValidatorDistributionInfoRequest._() : super();
+  factory QueryValidatorDistributionInfoRequest.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryValidatorDistributionInfoRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryValidatorDistributionInfoRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'cosmos.distribution.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'validatorAddress')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryValidatorDistributionInfoRequest clone() =>
+      QueryValidatorDistributionInfoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryValidatorDistributionInfoRequest copyWith(
+          void Function(QueryValidatorDistributionInfoRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryValidatorDistributionInfoRequest))
+          as QueryValidatorDistributionInfoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryValidatorDistributionInfoRequest create() =>
+      QueryValidatorDistributionInfoRequest._();
+  QueryValidatorDistributionInfoRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryValidatorDistributionInfoRequest> createRepeated() =>
+      $pb.PbList<QueryValidatorDistributionInfoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryValidatorDistributionInfoRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          QueryValidatorDistributionInfoRequest>(create);
+  static QueryValidatorDistributionInfoRequest? _defaultInstance;
+
+  /// validator_address defines the validator address to query for.
+  @$pb.TagNumber(1)
+  $core.String get validatorAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set validatorAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasValidatorAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValidatorAddress() => clearField(1);
+}
+
+/// QueryValidatorDistributionInfoResponse is the response type for the Query/ValidatorDistributionInfo RPC method.
+class QueryValidatorDistributionInfoResponse extends $pb.GeneratedMessage {
+  factory QueryValidatorDistributionInfoResponse({
+    $core.String? operatorAddress,
+    $core.Iterable<$2.DecCoin>? selfBondRewards,
+    $core.Iterable<$2.DecCoin>? commission,
+  }) {
+    final $result = create();
+    if (operatorAddress != null) {
+      $result.operatorAddress = operatorAddress;
+    }
+    if (selfBondRewards != null) {
+      $result.selfBondRewards.addAll(selfBondRewards);
+    }
+    if (commission != null) {
+      $result.commission.addAll(commission);
+    }
+    return $result;
+  }
+  QueryValidatorDistributionInfoResponse._() : super();
+  factory QueryValidatorDistributionInfoResponse.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryValidatorDistributionInfoResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryValidatorDistributionInfoResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'cosmos.distribution.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'operatorAddress')
+    ..pc<$2.DecCoin>(
+        2, _omitFieldNames ? '' : 'selfBondRewards', $pb.PbFieldType.PM,
+        subBuilder: $2.DecCoin.create)
+    ..pc<$2.DecCoin>(3, _omitFieldNames ? '' : 'commission', $pb.PbFieldType.PM,
+        subBuilder: $2.DecCoin.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryValidatorDistributionInfoResponse clone() =>
+      QueryValidatorDistributionInfoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryValidatorDistributionInfoResponse copyWith(
+          void Function(QueryValidatorDistributionInfoResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as QueryValidatorDistributionInfoResponse))
+          as QueryValidatorDistributionInfoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryValidatorDistributionInfoResponse create() =>
+      QueryValidatorDistributionInfoResponse._();
+  QueryValidatorDistributionInfoResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryValidatorDistributionInfoResponse> createRepeated() =>
+      $pb.PbList<QueryValidatorDistributionInfoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryValidatorDistributionInfoResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          QueryValidatorDistributionInfoResponse>(create);
+  static QueryValidatorDistributionInfoResponse? _defaultInstance;
+
+  /// operator_address defines the validator operator address.
+  @$pb.TagNumber(1)
+  $core.String get operatorAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set operatorAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasOperatorAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOperatorAddress() => clearField(1);
+
+  /// self_bond_rewards defines the self delegations rewards.
+  @$pb.TagNumber(2)
+  $core.List<$2.DecCoin> get selfBondRewards => $_getList(1);
+
+  /// commission defines the commission the validator received.
+  @$pb.TagNumber(3)
+  $core.List<$2.DecCoin> get commission => $_getList(2);
 }
 
 /// QueryValidatorOutstandingRewardsRequest is the request type for the
@@ -400,7 +561,7 @@ class QueryValidatorCommissionResponse extends $pb.GeneratedMessage {
           create);
   static QueryValidatorCommissionResponse? _defaultInstance;
 
-  /// commission defines the commision the validator received.
+  /// commission defines the commission the validator received.
   @$pb.TagNumber(1)
   $1.ValidatorAccumulatedCommission get commission => $_getN(0);
   @$pb.TagNumber(1)
@@ -423,7 +584,7 @@ class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
     $core.String? validatorAddress,
     $fixnum.Int64? startingHeight,
     $fixnum.Int64? endingHeight,
-    $2.PageRequest? pagination,
+    $3.PageRequest? pagination,
   }) {
     final $result = create();
     if (validatorAddress != null) {
@@ -460,8 +621,8 @@ class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(
         3, _omitFieldNames ? '' : 'endingHeight', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$2.PageRequest>(4, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $2.PageRequest.create)
+    ..aOM<$3.PageRequest>(4, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $3.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -532,9 +693,9 @@ class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(4)
-  $2.PageRequest get pagination => $_getN(3);
+  $3.PageRequest get pagination => $_getN(3);
   @$pb.TagNumber(4)
-  set pagination($2.PageRequest v) {
+  set pagination($3.PageRequest v) {
     setField(4, v);
   }
 
@@ -543,7 +704,7 @@ class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearPagination() => clearField(4);
   @$pb.TagNumber(4)
-  $2.PageRequest ensurePagination() => $_ensure(3);
+  $3.PageRequest ensurePagination() => $_ensure(3);
 }
 
 /// QueryValidatorSlashesResponse is the response type for the
@@ -551,7 +712,7 @@ class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
 class QueryValidatorSlashesResponse extends $pb.GeneratedMessage {
   factory QueryValidatorSlashesResponse({
     $core.Iterable<$1.ValidatorSlashEvent>? slashes,
-    $2.PageResponse? pagination,
+    $3.PageResponse? pagination,
   }) {
     final $result = create();
     if (slashes != null) {
@@ -578,8 +739,8 @@ class QueryValidatorSlashesResponse extends $pb.GeneratedMessage {
     ..pc<$1.ValidatorSlashEvent>(
         1, _omitFieldNames ? '' : 'slashes', $pb.PbFieldType.PM,
         subBuilder: $1.ValidatorSlashEvent.create)
-    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $2.PageResponse.create)
+    ..aOM<$3.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $3.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -615,9 +776,9 @@ class QueryValidatorSlashesResponse extends $pb.GeneratedMessage {
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $2.PageResponse get pagination => $_getN(1);
+  $3.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($2.PageResponse v) {
+  set pagination($3.PageResponse v) {
     setField(2, v);
   }
 
@@ -626,7 +787,7 @@ class QueryValidatorSlashesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $2.PageResponse ensurePagination() => $_ensure(1);
+  $3.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegationRewardsRequest is the request type for the
@@ -720,7 +881,7 @@ class QueryDelegationRewardsRequest extends $pb.GeneratedMessage {
 /// Query/DelegationRewards RPC method.
 class QueryDelegationRewardsResponse extends $pb.GeneratedMessage {
   factory QueryDelegationRewardsResponse({
-    $core.Iterable<$3.DecCoin>? rewards,
+    $core.Iterable<$2.DecCoin>? rewards,
   }) {
     final $result = create();
     if (rewards != null) {
@@ -741,8 +902,8 @@ class QueryDelegationRewardsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.distribution.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$3.DecCoin>(1, _omitFieldNames ? '' : 'rewards', $pb.PbFieldType.PM,
-        subBuilder: $3.DecCoin.create)
+    ..pc<$2.DecCoin>(1, _omitFieldNames ? '' : 'rewards', $pb.PbFieldType.PM,
+        subBuilder: $2.DecCoin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -774,7 +935,7 @@ class QueryDelegationRewardsResponse extends $pb.GeneratedMessage {
 
   /// rewards defines the rewards accrued by a delegation.
   @$pb.TagNumber(1)
-  $core.List<$3.DecCoin> get rewards => $_getList(0);
+  $core.List<$2.DecCoin> get rewards => $_getList(0);
 }
 
 /// QueryDelegationTotalRewardsRequest is the request type for the
@@ -852,7 +1013,7 @@ class QueryDelegationTotalRewardsRequest extends $pb.GeneratedMessage {
 class QueryDelegationTotalRewardsResponse extends $pb.GeneratedMessage {
   factory QueryDelegationTotalRewardsResponse({
     $core.Iterable<$1.DelegationDelegatorReward>? rewards,
-    $core.Iterable<$3.DecCoin>? total,
+    $core.Iterable<$2.DecCoin>? total,
   }) {
     final $result = create();
     if (rewards != null) {
@@ -880,8 +1041,8 @@ class QueryDelegationTotalRewardsResponse extends $pb.GeneratedMessage {
     ..pc<$1.DelegationDelegatorReward>(
         1, _omitFieldNames ? '' : 'rewards', $pb.PbFieldType.PM,
         subBuilder: $1.DelegationDelegatorReward.create)
-    ..pc<$3.DecCoin>(2, _omitFieldNames ? '' : 'total', $pb.PbFieldType.PM,
-        subBuilder: $3.DecCoin.create)
+    ..pc<$2.DecCoin>(2, _omitFieldNames ? '' : 'total', $pb.PbFieldType.PM,
+        subBuilder: $2.DecCoin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -918,7 +1079,7 @@ class QueryDelegationTotalRewardsResponse extends $pb.GeneratedMessage {
 
   /// total defines the sum of all the rewards.
   @$pb.TagNumber(2)
-  $core.List<$3.DecCoin> get total => $_getList(1);
+  $core.List<$2.DecCoin> get total => $_getList(1);
 }
 
 /// QueryDelegatorValidatorsRequest is the request type for the
@@ -1243,7 +1404,7 @@ class QueryCommunityPoolRequest extends $pb.GeneratedMessage {
 /// RPC method.
 class QueryCommunityPoolResponse extends $pb.GeneratedMessage {
   factory QueryCommunityPoolResponse({
-    $core.Iterable<$3.DecCoin>? pool,
+    $core.Iterable<$2.DecCoin>? pool,
   }) {
     final $result = create();
     if (pool != null) {
@@ -1264,8 +1425,8 @@ class QueryCommunityPoolResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.distribution.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$3.DecCoin>(1, _omitFieldNames ? '' : 'pool', $pb.PbFieldType.PM,
-        subBuilder: $3.DecCoin.create)
+    ..pc<$2.DecCoin>(1, _omitFieldNames ? '' : 'pool', $pb.PbFieldType.PM,
+        subBuilder: $2.DecCoin.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1296,7 +1457,7 @@ class QueryCommunityPoolResponse extends $pb.GeneratedMessage {
 
   /// pool defines community pool's coins.
   @$pb.TagNumber(1)
-  $core.List<$3.DecCoin> get pool => $_getList(0);
+  $core.List<$2.DecCoin> get pool => $_getList(0);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

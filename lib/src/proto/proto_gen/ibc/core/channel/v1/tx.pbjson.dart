@@ -20,6 +20,7 @@ const ResponseResultType$json = {
     {'1': 'RESPONSE_RESULT_TYPE_UNSPECIFIED', '2': 0, '3': {}},
     {'1': 'RESPONSE_RESULT_TYPE_NOOP', '2': 1, '3': {}},
     {'1': 'RESPONSE_RESULT_TYPE_SUCCESS', '2': 2, '3': {}},
+    {'1': 'RESPONSE_RESULT_TYPE_FAILURE', '2': 3, '3': {}},
   ],
   '3': {},
 };
@@ -28,14 +29,14 @@ const ResponseResultType$json = {
 final $typed_data.Uint8List responseResultTypeDescriptor = $convert.base64Decode(
     'ChJSZXNwb25zZVJlc3VsdFR5cGUSNQogUkVTUE9OU0VfUkVTVUxUX1RZUEVfVU5TUEVDSUZJRU'
     'QQABoPip0gC1VOU1BFQ0lGSUVEEicKGVJFU1BPTlNFX1JFU1VMVF9UWVBFX05PT1AQARoIip0g'
-    'BE5PT1ASLQocUkVTUE9OU0VfUkVTVUxUX1RZUEVfU1VDQ0VTUxACGguKnSAHU1VDQ0VTUxoEiK'
-    'MeAA==');
+    'BE5PT1ASLQocUkVTUE9OU0VfUkVTVUxUX1RZUEVfU1VDQ0VTUxACGguKnSAHU1VDQ0VTUxItCh'
+    'xSRVNQT05TRV9SRVNVTFRfVFlQRV9GQUlMVVJFEAMaC4qdIAdGQUlMVVJFGgSIox4A');
 
 @$core.Deprecated('Use msgChannelOpenInitDescriptor instead')
 const MsgChannelOpenInit$json = {
   '1': 'MsgChannelOpenInit',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
     {
       '1': 'channel',
       '3': 2,
@@ -52,30 +53,31 @@ const MsgChannelOpenInit$json = {
 
 /// Descriptor for `MsgChannelOpenInit`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelOpenInitDescriptor = $convert.base64Decode(
-    'ChJNc2dDaGFubmVsT3BlbkluaXQSKwoHcG9ydF9pZBgBIAEoCUIS8t4fDnlhbWw6InBvcnRfaW'
-    'QiUgZwb3J0SWQSPAoHY2hhbm5lbBgCIAEoCzIcLmliYy5jb3JlLmNoYW5uZWwudjEuQ2hhbm5l'
-    'bEIEyN4fAFIHY2hhbm5lbBIWCgZzaWduZXIYAyABKAlSBnNpZ25lcjoIiKAfAOigHwA=');
+    'ChJNc2dDaGFubmVsT3BlbkluaXQSFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEjwKB2NoYW5uZW'
+    'wYAiABKAsyHC5pYmMuY29yZS5jaGFubmVsLnYxLkNoYW5uZWxCBMjeHwBSB2NoYW5uZWwSFgoG'
+    'c2lnbmVyGAMgASgJUgZzaWduZXI6D4igHwCC57AqBnNpZ25lcg==');
 
 @$core.Deprecated('Use msgChannelOpenInitResponseDescriptor instead')
 const MsgChannelOpenInitResponse$json = {
   '1': 'MsgChannelOpenInitResponse',
   '2': [
-    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
   ],
+  '7': {},
 };
 
 /// Descriptor for `MsgChannelOpenInitResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelOpenInitResponseDescriptor =
     $convert.base64Decode(
-        'ChpNc2dDaGFubmVsT3BlbkluaXRSZXNwb25zZRI0CgpjaGFubmVsX2lkGAEgASgJQhXy3h8ReW'
-        'FtbDoiY2hhbm5lbF9pZCJSCWNoYW5uZWxJZBIYCgd2ZXJzaW9uGAIgASgJUgd2ZXJzaW9u');
+        'ChpNc2dDaGFubmVsT3BlbkluaXRSZXNwb25zZRIdCgpjaGFubmVsX2lkGAEgASgJUgljaGFubm'
+        'VsSWQSGAoHdmVyc2lvbhgCIAEoCVIHdmVyc2lvbjoEiKAfAA==');
 
 @$core.Deprecated('Use msgChannelOpenTryDescriptor instead')
 const MsgChannelOpenTry$json = {
   '1': 'MsgChannelOpenTry',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
     {
       '1': 'previous_channel_id',
       '3': 2,
@@ -98,10 +100,9 @@ const MsgChannelOpenTry$json = {
       '3': 4,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'counterpartyVersion'
     },
-    {'1': 'proof_init', '3': 5, '4': 1, '5': 12, '8': {}, '10': 'proofInit'},
+    {'1': 'proof_init', '3': 5, '4': 1, '5': 12, '10': 'proofInit'},
     {
       '1': 'proof_height',
       '3': 6,
@@ -118,41 +119,41 @@ const MsgChannelOpenTry$json = {
 
 /// Descriptor for `MsgChannelOpenTry`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelOpenTryDescriptor = $convert.base64Decode(
-    'ChFNc2dDaGFubmVsT3BlblRyeRIrCgdwb3J0X2lkGAEgASgJQhLy3h8OeWFtbDoicG9ydF9pZC'
-    'JSBnBvcnRJZBJQChNwcmV2aW91c19jaGFubmVsX2lkGAIgASgJQiAYAfLeHxp5YW1sOiJwcmV2'
-    'aW91c19jaGFubmVsX2lkIlIRcHJldmlvdXNDaGFubmVsSWQSPAoHY2hhbm5lbBgDIAEoCzIcLm'
-    'liYy5jb3JlLmNoYW5uZWwudjEuQ2hhbm5lbEIEyN4fAFIHY2hhbm5lbBJSChRjb3VudGVycGFy'
-    'dHlfdmVyc2lvbhgEIAEoCUIf8t4fG3lhbWw6ImNvdW50ZXJwYXJ0eV92ZXJzaW9uIlITY291bn'
-    'RlcnBhcnR5VmVyc2lvbhI0Cgpwcm9vZl9pbml0GAUgASgMQhXy3h8ReWFtbDoicHJvb2ZfaW5p'
-    'dCJSCXByb29mSW5pdBJaCgxwcm9vZl9oZWlnaHQYBiABKAsyGi5pYmMuY29yZS5jbGllbnQudj'
-    'EuSGVpZ2h0QhvI3h8A8t4fE3lhbWw6InByb29mX2hlaWdodCJSC3Byb29mSGVpZ2h0EhYKBnNp'
-    'Z25lchgHIAEoCVIGc2lnbmVyOgiIoB8A6KAfAA==');
+    'ChFNc2dDaGFubmVsT3BlblRyeRIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSMgoTcHJldmlvdX'
+    'NfY2hhbm5lbF9pZBgCIAEoCUICGAFSEXByZXZpb3VzQ2hhbm5lbElkEjwKB2NoYW5uZWwYAyAB'
+    'KAsyHC5pYmMuY29yZS5jaGFubmVsLnYxLkNoYW5uZWxCBMjeHwBSB2NoYW5uZWwSMQoUY291bn'
+    'RlcnBhcnR5X3ZlcnNpb24YBCABKAlSE2NvdW50ZXJwYXJ0eVZlcnNpb24SHQoKcHJvb2ZfaW5p'
+    'dBgFIAEoDFIJcHJvb2ZJbml0EkMKDHByb29mX2hlaWdodBgGIAEoCzIaLmliYy5jb3JlLmNsaW'
+    'VudC52MS5IZWlnaHRCBMjeHwBSC3Byb29mSGVpZ2h0EhYKBnNpZ25lchgHIAEoCVIGc2lnbmVy'
+    'Og+IoB8AguewKgZzaWduZXI=');
 
 @$core.Deprecated('Use msgChannelOpenTryResponseDescriptor instead')
 const MsgChannelOpenTryResponse$json = {
   '1': 'MsgChannelOpenTryResponse',
   '2': [
     {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
   ],
+  '7': {},
 };
 
 /// Descriptor for `MsgChannelOpenTryResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelOpenTryResponseDescriptor =
     $convert.base64Decode(
-        'ChlNc2dDaGFubmVsT3BlblRyeVJlc3BvbnNlEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24=');
+        'ChlNc2dDaGFubmVsT3BlblRyeVJlc3BvbnNlEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SHQ'
+        'oKY2hhbm5lbF9pZBgCIAEoCVIJY2hhbm5lbElkOgSIoB8A');
 
 @$core.Deprecated('Use msgChannelOpenAckDescriptor instead')
 const MsgChannelOpenAck$json = {
   '1': 'MsgChannelOpenAck',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
     {
       '1': 'counterparty_channel_id',
       '3': 3,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'counterpartyChannelId'
     },
     {
@@ -160,10 +161,9 @@ const MsgChannelOpenAck$json = {
       '3': 4,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'counterpartyVersion'
     },
-    {'1': 'proof_try', '3': 5, '4': 1, '5': 12, '8': {}, '10': 'proofTry'},
+    {'1': 'proof_try', '3': 5, '4': 1, '5': 12, '10': 'proofTry'},
     {
       '1': 'proof_height',
       '3': 6,
@@ -180,15 +180,12 @@ const MsgChannelOpenAck$json = {
 
 /// Descriptor for `MsgChannelOpenAck`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelOpenAckDescriptor = $convert.base64Decode(
-    'ChFNc2dDaGFubmVsT3BlbkFjaxIrCgdwb3J0X2lkGAEgASgJQhLy3h8OeWFtbDoicG9ydF9pZC'
-    'JSBnBvcnRJZBI0CgpjaGFubmVsX2lkGAIgASgJQhXy3h8ReWFtbDoiY2hhbm5lbF9pZCJSCWNo'
-    'YW5uZWxJZBJaChdjb3VudGVycGFydHlfY2hhbm5lbF9pZBgDIAEoCUIi8t4fHnlhbWw6ImNvdW'
-    '50ZXJwYXJ0eV9jaGFubmVsX2lkIlIVY291bnRlcnBhcnR5Q2hhbm5lbElkElIKFGNvdW50ZXJw'
-    'YXJ0eV92ZXJzaW9uGAQgASgJQh/y3h8beWFtbDoiY291bnRlcnBhcnR5X3ZlcnNpb24iUhNjb3'
-    'VudGVycGFydHlWZXJzaW9uEjEKCXByb29mX3RyeRgFIAEoDEIU8t4fEHlhbWw6InByb29mX3Ry'
-    'eSJSCHByb29mVHJ5EloKDHByb29mX2hlaWdodBgGIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS'
-    '5IZWlnaHRCG8jeHwDy3h8TeWFtbDoicHJvb2ZfaGVpZ2h0IlILcHJvb2ZIZWlnaHQSFgoGc2ln'
-    'bmVyGAcgASgJUgZzaWduZXI6CIigHwDooB8A');
+    'ChFNc2dDaGFubmVsT3BlbkFjaxIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSHQoKY2hhbm5lbF'
+    '9pZBgCIAEoCVIJY2hhbm5lbElkEjYKF2NvdW50ZXJwYXJ0eV9jaGFubmVsX2lkGAMgASgJUhVj'
+    'b3VudGVycGFydHlDaGFubmVsSWQSMQoUY291bnRlcnBhcnR5X3ZlcnNpb24YBCABKAlSE2NvdW'
+    '50ZXJwYXJ0eVZlcnNpb24SGwoJcHJvb2ZfdHJ5GAUgASgMUghwcm9vZlRyeRJDCgxwcm9vZl9o'
+    'ZWlnaHQYBiABKAsyGi5pYmMuY29yZS5jbGllbnQudjEuSGVpZ2h0QgTI3h8AUgtwcm9vZkhlaW'
+    'dodBIWCgZzaWduZXIYByABKAlSBnNpZ25lcjoPiKAfAILnsCoGc2lnbmVy');
 
 @$core.Deprecated('Use msgChannelOpenAckResponseDescriptor instead')
 const MsgChannelOpenAckResponse$json = {
@@ -203,9 +200,9 @@ final $typed_data.Uint8List msgChannelOpenAckResponseDescriptor =
 const MsgChannelOpenConfirm$json = {
   '1': 'MsgChannelOpenConfirm',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
-    {'1': 'proof_ack', '3': 3, '4': 1, '5': 12, '8': {}, '10': 'proofAck'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {'1': 'proof_ack', '3': 3, '4': 1, '5': 12, '10': 'proofAck'},
     {
       '1': 'proof_height',
       '3': 4,
@@ -222,12 +219,10 @@ const MsgChannelOpenConfirm$json = {
 
 /// Descriptor for `MsgChannelOpenConfirm`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelOpenConfirmDescriptor = $convert.base64Decode(
-    'ChVNc2dDaGFubmVsT3BlbkNvbmZpcm0SKwoHcG9ydF9pZBgBIAEoCUIS8t4fDnlhbWw6InBvcn'
-    'RfaWQiUgZwb3J0SWQSNAoKY2hhbm5lbF9pZBgCIAEoCUIV8t4fEXlhbWw6ImNoYW5uZWxfaWQi'
-    'UgljaGFubmVsSWQSMQoJcHJvb2ZfYWNrGAMgASgMQhTy3h8QeWFtbDoicHJvb2ZfYWNrIlIIcH'
-    'Jvb2ZBY2sSWgoMcHJvb2ZfaGVpZ2h0GAQgASgLMhouaWJjLmNvcmUuY2xpZW50LnYxLkhlaWdo'
-    'dEIbyN4fAPLeHxN5YW1sOiJwcm9vZl9oZWlnaHQiUgtwcm9vZkhlaWdodBIWCgZzaWduZXIYBS'
-    'ABKAlSBnNpZ25lcjoIiKAfAOigHwA=');
+    'ChVNc2dDaGFubmVsT3BlbkNvbmZpcm0SFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCmNoYW'
+    '5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBIbCglwcm9vZl9hY2sYAyABKAxSCHByb29mQWNrEkMK'
+    'DHByb29mX2hlaWdodBgEIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHwBSC3'
+    'Byb29mSGVpZ2h0EhYKBnNpZ25lchgFIAEoCVIGc2lnbmVyOg+IoB8AguewKgZzaWduZXI=');
 
 @$core.Deprecated('Use msgChannelOpenConfirmResponseDescriptor instead')
 const MsgChannelOpenConfirmResponse$json = {
@@ -242,8 +237,8 @@ final $typed_data.Uint8List msgChannelOpenConfirmResponseDescriptor =
 const MsgChannelCloseInit$json = {
   '1': 'MsgChannelCloseInit',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'signer', '3': 3, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': {},
@@ -251,9 +246,9 @@ const MsgChannelCloseInit$json = {
 
 /// Descriptor for `MsgChannelCloseInit`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelCloseInitDescriptor = $convert.base64Decode(
-    'ChNNc2dDaGFubmVsQ2xvc2VJbml0EisKB3BvcnRfaWQYASABKAlCEvLeHw55YW1sOiJwb3J0X2'
-    'lkIlIGcG9ydElkEjQKCmNoYW5uZWxfaWQYAiABKAlCFfLeHxF5YW1sOiJjaGFubmVsX2lkIlIJ'
-    'Y2hhbm5lbElkEhYKBnNpZ25lchgDIAEoCVIGc2lnbmVyOgiIoB8A6KAfAA==');
+    'ChNNc2dDaGFubmVsQ2xvc2VJbml0EhcKB3BvcnRfaWQYASABKAlSBnBvcnRJZBIdCgpjaGFubm'
+    'VsX2lkGAIgASgJUgljaGFubmVsSWQSFgoGc2lnbmVyGAMgASgJUgZzaWduZXI6D4igHwCC57Aq'
+    'BnNpZ25lcg==');
 
 @$core.Deprecated('Use msgChannelCloseInitResponseDescriptor instead')
 const MsgChannelCloseInitResponse$json = {
@@ -268,9 +263,9 @@ final $typed_data.Uint8List msgChannelCloseInitResponseDescriptor =
 const MsgChannelCloseConfirm$json = {
   '1': 'MsgChannelCloseConfirm',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
-    {'1': 'proof_init', '3': 3, '4': 1, '5': 12, '8': {}, '10': 'proofInit'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {'1': 'proof_init', '3': 3, '4': 1, '5': 12, '10': 'proofInit'},
     {
       '1': 'proof_height',
       '3': 4,
@@ -281,18 +276,25 @@ const MsgChannelCloseConfirm$json = {
       '10': 'proofHeight'
     },
     {'1': 'signer', '3': 5, '4': 1, '5': 9, '10': 'signer'},
+    {
+      '1': 'counterparty_upgrade_sequence',
+      '3': 6,
+      '4': 1,
+      '5': 4,
+      '10': 'counterpartyUpgradeSequence'
+    },
   ],
   '7': {},
 };
 
 /// Descriptor for `MsgChannelCloseConfirm`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgChannelCloseConfirmDescriptor = $convert.base64Decode(
-    'ChZNc2dDaGFubmVsQ2xvc2VDb25maXJtEisKB3BvcnRfaWQYASABKAlCEvLeHw55YW1sOiJwb3'
-    'J0X2lkIlIGcG9ydElkEjQKCmNoYW5uZWxfaWQYAiABKAlCFfLeHxF5YW1sOiJjaGFubmVsX2lk'
-    'IlIJY2hhbm5lbElkEjQKCnByb29mX2luaXQYAyABKAxCFfLeHxF5YW1sOiJwcm9vZl9pbml0Il'
-    'IJcHJvb2ZJbml0EloKDHByb29mX2hlaWdodBgEIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5I'
-    'ZWlnaHRCG8jeHwDy3h8TeWFtbDoicHJvb2ZfaGVpZ2h0IlILcHJvb2ZIZWlnaHQSFgoGc2lnbm'
-    'VyGAUgASgJUgZzaWduZXI6CIigHwDooB8A');
+    'ChZNc2dDaGFubmVsQ2xvc2VDb25maXJtEhcKB3BvcnRfaWQYASABKAlSBnBvcnRJZBIdCgpjaG'
+    'FubmVsX2lkGAIgASgJUgljaGFubmVsSWQSHQoKcHJvb2ZfaW5pdBgDIAEoDFIJcHJvb2ZJbml0'
+    'EkMKDHByb29mX2hlaWdodBgEIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHw'
+    'BSC3Byb29mSGVpZ2h0EhYKBnNpZ25lchgFIAEoCVIGc2lnbmVyEkIKHWNvdW50ZXJwYXJ0eV91'
+    'cGdyYWRlX3NlcXVlbmNlGAYgASgEUhtjb3VudGVycGFydHlVcGdyYWRlU2VxdWVuY2U6D4igHw'
+    'CC57AqBnNpZ25lcg==');
 
 @$core.Deprecated('Use msgChannelCloseConfirmResponseDescriptor instead')
 const MsgChannelCloseConfirmResponse$json = {
@@ -316,14 +318,7 @@ const MsgRecvPacket$json = {
       '8': {},
       '10': 'packet'
     },
-    {
-      '1': 'proof_commitment',
-      '3': 2,
-      '4': 1,
-      '5': 12,
-      '8': {},
-      '10': 'proofCommitment'
-    },
+    {'1': 'proof_commitment', '3': 2, '4': 1, '5': 12, '10': 'proofCommitment'},
     {
       '1': 'proof_height',
       '3': 3,
@@ -341,10 +336,10 @@ const MsgRecvPacket$json = {
 /// Descriptor for `MsgRecvPacket`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgRecvPacketDescriptor = $convert.base64Decode(
     'Cg1Nc2dSZWN2UGFja2V0EjkKBnBhY2tldBgBIAEoCzIbLmliYy5jb3JlLmNoYW5uZWwudjEuUG'
-    'Fja2V0QgTI3h8AUgZwYWNrZXQSRgoQcHJvb2ZfY29tbWl0bWVudBgCIAEoDEIb8t4fF3lhbWw6'
-    'InByb29mX2NvbW1pdG1lbnQiUg9wcm9vZkNvbW1pdG1lbnQSWgoMcHJvb2ZfaGVpZ2h0GAMgAS'
-    'gLMhouaWJjLmNvcmUuY2xpZW50LnYxLkhlaWdodEIbyN4fAPLeHxN5YW1sOiJwcm9vZl9oZWln'
-    'aHQiUgtwcm9vZkhlaWdodBIWCgZzaWduZXIYBCABKAlSBnNpZ25lcjoIiKAfAOigHwA=');
+    'Fja2V0QgTI3h8AUgZwYWNrZXQSKQoQcHJvb2ZfY29tbWl0bWVudBgCIAEoDFIPcHJvb2ZDb21t'
+    'aXRtZW50EkMKDHByb29mX2hlaWdodBgDIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaH'
+    'RCBMjeHwBSC3Byb29mSGVpZ2h0EhYKBnNpZ25lchgEIAEoCVIGc2lnbmVyOg+IoB8AguewKgZz'
+    'aWduZXI=');
 
 @$core.Deprecated('Use msgRecvPacketResponseDescriptor instead')
 const MsgRecvPacketResponse$json = {
@@ -380,14 +375,7 @@ const MsgTimeout$json = {
       '8': {},
       '10': 'packet'
     },
-    {
-      '1': 'proof_unreceived',
-      '3': 2,
-      '4': 1,
-      '5': 12,
-      '8': {},
-      '10': 'proofUnreceived'
-    },
+    {'1': 'proof_unreceived', '3': 2, '4': 1, '5': 12, '10': 'proofUnreceived'},
     {
       '1': 'proof_height',
       '3': 3,
@@ -402,7 +390,6 @@ const MsgTimeout$json = {
       '3': 4,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'nextSequenceRecv'
     },
     {'1': 'signer', '3': 5, '4': 1, '5': 9, '10': 'signer'},
@@ -413,12 +400,10 @@ const MsgTimeout$json = {
 /// Descriptor for `MsgTimeout`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgTimeoutDescriptor = $convert.base64Decode(
     'CgpNc2dUaW1lb3V0EjkKBnBhY2tldBgBIAEoCzIbLmliYy5jb3JlLmNoYW5uZWwudjEuUGFja2'
-    'V0QgTI3h8AUgZwYWNrZXQSRgoQcHJvb2ZfdW5yZWNlaXZlZBgCIAEoDEIb8t4fF3lhbWw6InBy'
-    'b29mX3VucmVjZWl2ZWQiUg9wcm9vZlVucmVjZWl2ZWQSWgoMcHJvb2ZfaGVpZ2h0GAMgASgLMh'
-    'ouaWJjLmNvcmUuY2xpZW50LnYxLkhlaWdodEIbyN4fAPLeHxN5YW1sOiJwcm9vZl9oZWlnaHQi'
-    'Ugtwcm9vZkhlaWdodBJLChJuZXh0X3NlcXVlbmNlX3JlY3YYBCABKARCHfLeHxl5YW1sOiJuZX'
-    'h0X3NlcXVlbmNlX3JlY3YiUhBuZXh0U2VxdWVuY2VSZWN2EhYKBnNpZ25lchgFIAEoCVIGc2ln'
-    'bmVyOgiIoB8A6KAfAA==');
+    'V0QgTI3h8AUgZwYWNrZXQSKQoQcHJvb2ZfdW5yZWNlaXZlZBgCIAEoDFIPcHJvb2ZVbnJlY2Vp'
+    'dmVkEkMKDHByb29mX2hlaWdodBgDIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBM'
+    'jeHwBSC3Byb29mSGVpZ2h0EiwKEm5leHRfc2VxdWVuY2VfcmVjdhgEIAEoBFIQbmV4dFNlcXVl'
+    'bmNlUmVjdhIWCgZzaWduZXIYBSABKAlSBnNpZ25lcjoPiKAfAILnsCoGc2lnbmVy');
 
 @$core.Deprecated('Use msgTimeoutResponseDescriptor instead')
 const MsgTimeoutResponse$json = {
@@ -454,15 +439,8 @@ const MsgTimeoutOnClose$json = {
       '8': {},
       '10': 'packet'
     },
-    {
-      '1': 'proof_unreceived',
-      '3': 2,
-      '4': 1,
-      '5': 12,
-      '8': {},
-      '10': 'proofUnreceived'
-    },
-    {'1': 'proof_close', '3': 3, '4': 1, '5': 12, '8': {}, '10': 'proofClose'},
+    {'1': 'proof_unreceived', '3': 2, '4': 1, '5': 12, '10': 'proofUnreceived'},
+    {'1': 'proof_close', '3': 3, '4': 1, '5': 12, '10': 'proofClose'},
     {
       '1': 'proof_height',
       '3': 4,
@@ -477,10 +455,16 @@ const MsgTimeoutOnClose$json = {
       '3': 5,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'nextSequenceRecv'
     },
     {'1': 'signer', '3': 6, '4': 1, '5': 9, '10': 'signer'},
+    {
+      '1': 'counterparty_upgrade_sequence',
+      '3': 7,
+      '4': 1,
+      '5': 4,
+      '10': 'counterpartyUpgradeSequence'
+    },
   ],
   '7': {},
 };
@@ -488,13 +472,12 @@ const MsgTimeoutOnClose$json = {
 /// Descriptor for `MsgTimeoutOnClose`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgTimeoutOnCloseDescriptor = $convert.base64Decode(
     'ChFNc2dUaW1lb3V0T25DbG9zZRI5CgZwYWNrZXQYASABKAsyGy5pYmMuY29yZS5jaGFubmVsLn'
-    'YxLlBhY2tldEIEyN4fAFIGcGFja2V0EkYKEHByb29mX3VucmVjZWl2ZWQYAiABKAxCG/LeHxd5'
-    'YW1sOiJwcm9vZl91bnJlY2VpdmVkIlIPcHJvb2ZVbnJlY2VpdmVkEjcKC3Byb29mX2Nsb3NlGA'
-    'MgASgMQhby3h8SeWFtbDoicHJvb2ZfY2xvc2UiUgpwcm9vZkNsb3NlEloKDHByb29mX2hlaWdo'
-    'dBgEIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCG8jeHwDy3h8TeWFtbDoicHJvb2'
-    'ZfaGVpZ2h0IlILcHJvb2ZIZWlnaHQSSwoSbmV4dF9zZXF1ZW5jZV9yZWN2GAUgASgEQh3y3h8Z'
-    'eWFtbDoibmV4dF9zZXF1ZW5jZV9yZWN2IlIQbmV4dFNlcXVlbmNlUmVjdhIWCgZzaWduZXIYBi'
-    'ABKAlSBnNpZ25lcjoIiKAfAOigHwA=');
+    'YxLlBhY2tldEIEyN4fAFIGcGFja2V0EikKEHByb29mX3VucmVjZWl2ZWQYAiABKAxSD3Byb29m'
+    'VW5yZWNlaXZlZBIfCgtwcm9vZl9jbG9zZRgDIAEoDFIKcHJvb2ZDbG9zZRJDCgxwcm9vZl9oZW'
+    'lnaHQYBCABKAsyGi5pYmMuY29yZS5jbGllbnQudjEuSGVpZ2h0QgTI3h8AUgtwcm9vZkhlaWdo'
+    'dBIsChJuZXh0X3NlcXVlbmNlX3JlY3YYBSABKARSEG5leHRTZXF1ZW5jZVJlY3YSFgoGc2lnbm'
+    'VyGAYgASgJUgZzaWduZXISQgodY291bnRlcnBhcnR5X3VwZ3JhZGVfc2VxdWVuY2UYByABKARS'
+    'G2NvdW50ZXJwYXJ0eVVwZ3JhZGVTZXF1ZW5jZToPiKAfAILnsCoGc2lnbmVy');
 
 @$core.Deprecated('Use msgTimeoutOnCloseResponseDescriptor instead')
 const MsgTimeoutOnCloseResponse$json = {
@@ -532,7 +515,7 @@ const MsgAcknowledgement$json = {
       '10': 'packet'
     },
     {'1': 'acknowledgement', '3': 2, '4': 1, '5': 12, '10': 'acknowledgement'},
-    {'1': 'proof_acked', '3': 3, '4': 1, '5': 12, '8': {}, '10': 'proofAcked'},
+    {'1': 'proof_acked', '3': 3, '4': 1, '5': 12, '10': 'proofAcked'},
     {
       '1': 'proof_height',
       '3': 4,
@@ -551,10 +534,9 @@ const MsgAcknowledgement$json = {
 final $typed_data.Uint8List msgAcknowledgementDescriptor = $convert.base64Decode(
     'ChJNc2dBY2tub3dsZWRnZW1lbnQSOQoGcGFja2V0GAEgASgLMhsuaWJjLmNvcmUuY2hhbm5lbC'
     '52MS5QYWNrZXRCBMjeHwBSBnBhY2tldBIoCg9hY2tub3dsZWRnZW1lbnQYAiABKAxSD2Fja25v'
-    'd2xlZGdlbWVudBI3Cgtwcm9vZl9hY2tlZBgDIAEoDEIW8t4fEnlhbWw6InByb29mX2Fja2VkIl'
-    'IKcHJvb2ZBY2tlZBJaCgxwcm9vZl9oZWlnaHQYBCABKAsyGi5pYmMuY29yZS5jbGllbnQudjEu'
-    'SGVpZ2h0QhvI3h8A8t4fE3lhbWw6InByb29mX2hlaWdodCJSC3Byb29mSGVpZ2h0EhYKBnNpZ2'
-    '5lchgFIAEoCVIGc2lnbmVyOgiIoB8A6KAfAA==');
+    'd2xlZGdlbWVudBIfCgtwcm9vZl9hY2tlZBgDIAEoDFIKcHJvb2ZBY2tlZBJDCgxwcm9vZl9oZW'
+    'lnaHQYBCABKAsyGi5pYmMuY29yZS5jbGllbnQudjEuSGVpZ2h0QgTI3h8AUgtwcm9vZkhlaWdo'
+    'dBIWCgZzaWduZXIYBSABKAlSBnNpZ25lcjoPiKAfAILnsCoGc2lnbmVy');
 
 @$core.Deprecated('Use msgAcknowledgementResponseDescriptor instead')
 const MsgAcknowledgementResponse$json = {
@@ -577,3 +559,517 @@ final $typed_data.Uint8List msgAcknowledgementResponseDescriptor =
     $convert.base64Decode(
         'ChpNc2dBY2tub3dsZWRnZW1lbnRSZXNwb25zZRI/CgZyZXN1bHQYASABKA4yJy5pYmMuY29yZS'
         '5jaGFubmVsLnYxLlJlc3BvbnNlUmVzdWx0VHlwZVIGcmVzdWx0OgSIoB8A');
+
+@$core.Deprecated('Use msgChannelUpgradeInitDescriptor instead')
+const MsgChannelUpgradeInit$json = {
+  '1': 'MsgChannelUpgradeInit',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'fields',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.UpgradeFields',
+      '8': {},
+      '10': 'fields'
+    },
+    {'1': 'signer', '3': 4, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeInit`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeInitDescriptor = $convert.base64Decode(
+    'ChVNc2dDaGFubmVsVXBncmFkZUluaXQSFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCmNoYW'
+    '5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBJACgZmaWVsZHMYAyABKAsyIi5pYmMuY29yZS5jaGFu'
+    'bmVsLnYxLlVwZ3JhZGVGaWVsZHNCBMjeHwBSBmZpZWxkcxIWCgZzaWduZXIYBCABKAlSBnNpZ2'
+    '5lcjoPiKAfAILnsCoGc2lnbmVy');
+
+@$core.Deprecated('Use msgChannelUpgradeInitResponseDescriptor instead')
+const MsgChannelUpgradeInitResponse$json = {
+  '1': 'MsgChannelUpgradeInitResponse',
+  '2': [
+    {
+      '1': 'upgrade',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Upgrade',
+      '8': {},
+      '10': 'upgrade'
+    },
+    {'1': 'upgrade_sequence', '3': 2, '4': 1, '5': 4, '10': 'upgradeSequence'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeInitResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeInitResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1Nc2dDaGFubmVsVXBncmFkZUluaXRSZXNwb25zZRI8Cgd1cGdyYWRlGAEgASgLMhwuaWJjLm'
+        'NvcmUuY2hhbm5lbC52MS5VcGdyYWRlQgTI3h8AUgd1cGdyYWRlEikKEHVwZ3JhZGVfc2VxdWVu'
+        'Y2UYAiABKARSD3VwZ3JhZGVTZXF1ZW5jZToEiKAfAA==');
+
+@$core.Deprecated('Use msgChannelUpgradeTryDescriptor instead')
+const MsgChannelUpgradeTry$json = {
+  '1': 'MsgChannelUpgradeTry',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'proposed_upgrade_connection_hops',
+      '3': 3,
+      '4': 3,
+      '5': 9,
+      '10': 'proposedUpgradeConnectionHops'
+    },
+    {
+      '1': 'counterparty_upgrade_fields',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.UpgradeFields',
+      '8': {},
+      '10': 'counterpartyUpgradeFields'
+    },
+    {
+      '1': 'counterparty_upgrade_sequence',
+      '3': 5,
+      '4': 1,
+      '5': 4,
+      '10': 'counterpartyUpgradeSequence'
+    },
+    {'1': 'proof_channel', '3': 6, '4': 1, '5': 12, '10': 'proofChannel'},
+    {'1': 'proof_upgrade', '3': 7, '4': 1, '5': 12, '10': 'proofUpgrade'},
+    {
+      '1': 'proof_height',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {'1': 'signer', '3': 9, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeTry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeTryDescriptor = $convert.base64Decode(
+    'ChRNc2dDaGFubmVsVXBncmFkZVRyeRIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSHQoKY2hhbm'
+    '5lbF9pZBgCIAEoCVIJY2hhbm5lbElkEkcKIHByb3Bvc2VkX3VwZ3JhZGVfY29ubmVjdGlvbl9o'
+    'b3BzGAMgAygJUh1wcm9wb3NlZFVwZ3JhZGVDb25uZWN0aW9uSG9wcxJoChtjb3VudGVycGFydH'
+    'lfdXBncmFkZV9maWVsZHMYBCABKAsyIi5pYmMuY29yZS5jaGFubmVsLnYxLlVwZ3JhZGVGaWVs'
+    'ZHNCBMjeHwBSGWNvdW50ZXJwYXJ0eVVwZ3JhZGVGaWVsZHMSQgodY291bnRlcnBhcnR5X3VwZ3'
+    'JhZGVfc2VxdWVuY2UYBSABKARSG2NvdW50ZXJwYXJ0eVVwZ3JhZGVTZXF1ZW5jZRIjCg1wcm9v'
+    'Zl9jaGFubmVsGAYgASgMUgxwcm9vZkNoYW5uZWwSIwoNcHJvb2ZfdXBncmFkZRgHIAEoDFIMcH'
+    'Jvb2ZVcGdyYWRlEkMKDHByb29mX2hlaWdodBgIIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5I'
+    'ZWlnaHRCBMjeHwBSC3Byb29mSGVpZ2h0EhYKBnNpZ25lchgJIAEoCVIGc2lnbmVyOg+IoB8Agu'
+    'ewKgZzaWduZXI=');
+
+@$core.Deprecated('Use msgChannelUpgradeTryResponseDescriptor instead')
+const MsgChannelUpgradeTryResponse$json = {
+  '1': 'MsgChannelUpgradeTryResponse',
+  '2': [
+    {
+      '1': 'upgrade',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Upgrade',
+      '8': {},
+      '10': 'upgrade'
+    },
+    {'1': 'upgrade_sequence', '3': 2, '4': 1, '5': 4, '10': 'upgradeSequence'},
+    {
+      '1': 'result',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.ResponseResultType',
+      '10': 'result'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeTryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeTryResponseDescriptor = $convert.base64Decode(
+    'ChxNc2dDaGFubmVsVXBncmFkZVRyeVJlc3BvbnNlEjwKB3VwZ3JhZGUYASABKAsyHC5pYmMuY2'
+    '9yZS5jaGFubmVsLnYxLlVwZ3JhZGVCBMjeHwBSB3VwZ3JhZGUSKQoQdXBncmFkZV9zZXF1ZW5j'
+    'ZRgCIAEoBFIPdXBncmFkZVNlcXVlbmNlEj8KBnJlc3VsdBgDIAEoDjInLmliYy5jb3JlLmNoYW'
+    '5uZWwudjEuUmVzcG9uc2VSZXN1bHRUeXBlUgZyZXN1bHQ6BIigHwA=');
+
+@$core.Deprecated('Use msgChannelUpgradeAckDescriptor instead')
+const MsgChannelUpgradeAck$json = {
+  '1': 'MsgChannelUpgradeAck',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'counterparty_upgrade',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Upgrade',
+      '8': {},
+      '10': 'counterpartyUpgrade'
+    },
+    {'1': 'proof_channel', '3': 4, '4': 1, '5': 12, '10': 'proofChannel'},
+    {'1': 'proof_upgrade', '3': 5, '4': 1, '5': 12, '10': 'proofUpgrade'},
+    {
+      '1': 'proof_height',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {'1': 'signer', '3': 7, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeAck`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeAckDescriptor = $convert.base64Decode(
+    'ChRNc2dDaGFubmVsVXBncmFkZUFjaxIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSHQoKY2hhbm'
+    '5lbF9pZBgCIAEoCVIJY2hhbm5lbElkElUKFGNvdW50ZXJwYXJ0eV91cGdyYWRlGAMgASgLMhwu'
+    'aWJjLmNvcmUuY2hhbm5lbC52MS5VcGdyYWRlQgTI3h8AUhNjb3VudGVycGFydHlVcGdyYWRlEi'
+    'MKDXByb29mX2NoYW5uZWwYBCABKAxSDHByb29mQ2hhbm5lbBIjCg1wcm9vZl91cGdyYWRlGAUg'
+    'ASgMUgxwcm9vZlVwZ3JhZGUSQwoMcHJvb2ZfaGVpZ2h0GAYgASgLMhouaWJjLmNvcmUuY2xpZW'
+    '50LnYxLkhlaWdodEIEyN4fAFILcHJvb2ZIZWlnaHQSFgoGc2lnbmVyGAcgASgJUgZzaWduZXI6'
+    'D4igHwCC57AqBnNpZ25lcg==');
+
+@$core.Deprecated('Use msgChannelUpgradeAckResponseDescriptor instead')
+const MsgChannelUpgradeAckResponse$json = {
+  '1': 'MsgChannelUpgradeAckResponse',
+  '2': [
+    {
+      '1': 'result',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.ResponseResultType',
+      '10': 'result'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeAckResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeAckResponseDescriptor =
+    $convert.base64Decode(
+        'ChxNc2dDaGFubmVsVXBncmFkZUFja1Jlc3BvbnNlEj8KBnJlc3VsdBgBIAEoDjInLmliYy5jb3'
+        'JlLmNoYW5uZWwudjEuUmVzcG9uc2VSZXN1bHRUeXBlUgZyZXN1bHQ6BIigHwA=');
+
+@$core.Deprecated('Use msgChannelUpgradeConfirmDescriptor instead')
+const MsgChannelUpgradeConfirm$json = {
+  '1': 'MsgChannelUpgradeConfirm',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'counterparty_channel_state',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.State',
+      '10': 'counterpartyChannelState'
+    },
+    {
+      '1': 'counterparty_upgrade',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Upgrade',
+      '8': {},
+      '10': 'counterpartyUpgrade'
+    },
+    {'1': 'proof_channel', '3': 5, '4': 1, '5': 12, '10': 'proofChannel'},
+    {'1': 'proof_upgrade', '3': 6, '4': 1, '5': 12, '10': 'proofUpgrade'},
+    {
+      '1': 'proof_height',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {'1': 'signer', '3': 8, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeConfirm`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeConfirmDescriptor = $convert.base64Decode(
+    'ChhNc2dDaGFubmVsVXBncmFkZUNvbmZpcm0SFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCm'
+    'NoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBJYChpjb3VudGVycGFydHlfY2hhbm5lbF9zdGF0'
+    'ZRgDIAEoDjIaLmliYy5jb3JlLmNoYW5uZWwudjEuU3RhdGVSGGNvdW50ZXJwYXJ0eUNoYW5uZW'
+    'xTdGF0ZRJVChRjb3VudGVycGFydHlfdXBncmFkZRgEIAEoCzIcLmliYy5jb3JlLmNoYW5uZWwu'
+    'djEuVXBncmFkZUIEyN4fAFITY291bnRlcnBhcnR5VXBncmFkZRIjCg1wcm9vZl9jaGFubmVsGA'
+    'UgASgMUgxwcm9vZkNoYW5uZWwSIwoNcHJvb2ZfdXBncmFkZRgGIAEoDFIMcHJvb2ZVcGdyYWRl'
+    'EkMKDHByb29mX2hlaWdodBgHIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHw'
+    'BSC3Byb29mSGVpZ2h0EhYKBnNpZ25lchgIIAEoCVIGc2lnbmVyOg+IoB8AguewKgZzaWduZXI=');
+
+@$core.Deprecated('Use msgChannelUpgradeConfirmResponseDescriptor instead')
+const MsgChannelUpgradeConfirmResponse$json = {
+  '1': 'MsgChannelUpgradeConfirmResponse',
+  '2': [
+    {
+      '1': 'result',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.ResponseResultType',
+      '10': 'result'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeConfirmResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeConfirmResponseDescriptor =
+    $convert.base64Decode(
+        'CiBNc2dDaGFubmVsVXBncmFkZUNvbmZpcm1SZXNwb25zZRI/CgZyZXN1bHQYASABKA4yJy5pYm'
+        'MuY29yZS5jaGFubmVsLnYxLlJlc3BvbnNlUmVzdWx0VHlwZVIGcmVzdWx0OgSIoB8A');
+
+@$core.Deprecated('Use msgChannelUpgradeOpenDescriptor instead')
+const MsgChannelUpgradeOpen$json = {
+  '1': 'MsgChannelUpgradeOpen',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'counterparty_channel_state',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.State',
+      '10': 'counterpartyChannelState'
+    },
+    {
+      '1': 'counterparty_upgrade_sequence',
+      '3': 4,
+      '4': 1,
+      '5': 4,
+      '10': 'counterpartyUpgradeSequence'
+    },
+    {'1': 'proof_channel', '3': 5, '4': 1, '5': 12, '10': 'proofChannel'},
+    {
+      '1': 'proof_height',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {'1': 'signer', '3': 7, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeOpen`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeOpenDescriptor = $convert.base64Decode(
+    'ChVNc2dDaGFubmVsVXBncmFkZU9wZW4SFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCmNoYW'
+    '5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBJYChpjb3VudGVycGFydHlfY2hhbm5lbF9zdGF0ZRgD'
+    'IAEoDjIaLmliYy5jb3JlLmNoYW5uZWwudjEuU3RhdGVSGGNvdW50ZXJwYXJ0eUNoYW5uZWxTdG'
+    'F0ZRJCCh1jb3VudGVycGFydHlfdXBncmFkZV9zZXF1ZW5jZRgEIAEoBFIbY291bnRlcnBhcnR5'
+    'VXBncmFkZVNlcXVlbmNlEiMKDXByb29mX2NoYW5uZWwYBSABKAxSDHByb29mQ2hhbm5lbBJDCg'
+    'xwcm9vZl9oZWlnaHQYBiABKAsyGi5pYmMuY29yZS5jbGllbnQudjEuSGVpZ2h0QgTI3h8AUgtw'
+    'cm9vZkhlaWdodBIWCgZzaWduZXIYByABKAlSBnNpZ25lcjoPiKAfAILnsCoGc2lnbmVy');
+
+@$core.Deprecated('Use msgChannelUpgradeOpenResponseDescriptor instead')
+const MsgChannelUpgradeOpenResponse$json = {
+  '1': 'MsgChannelUpgradeOpenResponse',
+};
+
+/// Descriptor for `MsgChannelUpgradeOpenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeOpenResponseDescriptor =
+    $convert.base64Decode('Ch1Nc2dDaGFubmVsVXBncmFkZU9wZW5SZXNwb25zZQ==');
+
+@$core.Deprecated('Use msgChannelUpgradeTimeoutDescriptor instead')
+const MsgChannelUpgradeTimeout$json = {
+  '1': 'MsgChannelUpgradeTimeout',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'counterparty_channel',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Channel',
+      '8': {},
+      '10': 'counterpartyChannel'
+    },
+    {'1': 'proof_channel', '3': 4, '4': 1, '5': 12, '10': 'proofChannel'},
+    {
+      '1': 'proof_height',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {'1': 'signer', '3': 6, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeTimeout`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeTimeoutDescriptor = $convert.base64Decode(
+    'ChhNc2dDaGFubmVsVXBncmFkZVRpbWVvdXQSFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCm'
+    'NoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBJVChRjb3VudGVycGFydHlfY2hhbm5lbBgDIAEo'
+    'CzIcLmliYy5jb3JlLmNoYW5uZWwudjEuQ2hhbm5lbEIEyN4fAFITY291bnRlcnBhcnR5Q2hhbm'
+    '5lbBIjCg1wcm9vZl9jaGFubmVsGAQgASgMUgxwcm9vZkNoYW5uZWwSQwoMcHJvb2ZfaGVpZ2h0'
+    'GAUgASgLMhouaWJjLmNvcmUuY2xpZW50LnYxLkhlaWdodEIEyN4fAFILcHJvb2ZIZWlnaHQSFg'
+    'oGc2lnbmVyGAYgASgJUgZzaWduZXI6D4igHwCC57AqBnNpZ25lcg==');
+
+@$core.Deprecated('Use msgChannelUpgradeTimeoutResponseDescriptor instead')
+const MsgChannelUpgradeTimeoutResponse$json = {
+  '1': 'MsgChannelUpgradeTimeoutResponse',
+};
+
+/// Descriptor for `MsgChannelUpgradeTimeoutResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeTimeoutResponseDescriptor =
+    $convert.base64Decode('CiBNc2dDaGFubmVsVXBncmFkZVRpbWVvdXRSZXNwb25zZQ==');
+
+@$core.Deprecated('Use msgChannelUpgradeCancelDescriptor instead')
+const MsgChannelUpgradeCancel$json = {
+  '1': 'MsgChannelUpgradeCancel',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {
+      '1': 'error_receipt',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.ErrorReceipt',
+      '8': {},
+      '10': 'errorReceipt'
+    },
+    {
+      '1': 'proof_error_receipt',
+      '3': 4,
+      '4': 1,
+      '5': 12,
+      '10': 'proofErrorReceipt'
+    },
+    {
+      '1': 'proof_height',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {'1': 'signer', '3': 6, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgChannelUpgradeCancel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeCancelDescriptor = $convert.base64Decode(
+    'ChdNc2dDaGFubmVsVXBncmFkZUNhbmNlbBIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSHQoKY2'
+    'hhbm5lbF9pZBgCIAEoCVIJY2hhbm5lbElkEkwKDWVycm9yX3JlY2VpcHQYAyABKAsyIS5pYmMu'
+    'Y29yZS5jaGFubmVsLnYxLkVycm9yUmVjZWlwdEIEyN4fAFIMZXJyb3JSZWNlaXB0Ei4KE3Byb2'
+    '9mX2Vycm9yX3JlY2VpcHQYBCABKAxSEXByb29mRXJyb3JSZWNlaXB0EkMKDHByb29mX2hlaWdo'
+    'dBgFIAEoCzIaLmliYy5jb3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHwBSC3Byb29mSGVpZ2h0Eh'
+    'YKBnNpZ25lchgGIAEoCVIGc2lnbmVyOg+IoB8AguewKgZzaWduZXI=');
+
+@$core.Deprecated('Use msgChannelUpgradeCancelResponseDescriptor instead')
+const MsgChannelUpgradeCancelResponse$json = {
+  '1': 'MsgChannelUpgradeCancelResponse',
+};
+
+/// Descriptor for `MsgChannelUpgradeCancelResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgChannelUpgradeCancelResponseDescriptor =
+    $convert.base64Decode('Ch9Nc2dDaGFubmVsVXBncmFkZUNhbmNlbFJlc3BvbnNl');
+
+@$core.Deprecated('Use msgUpdateParamsDescriptor instead')
+const MsgUpdateParams$json = {
+  '1': 'MsgUpdateParams',
+  '2': [
+    {'1': 'authority', '3': 1, '4': 1, '5': 9, '10': 'authority'},
+    {
+      '1': 'params',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Params',
+      '8': {},
+      '10': 'params'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgUpdateParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsDescriptor = $convert.base64Decode(
+    'Cg9Nc2dVcGRhdGVQYXJhbXMSHAoJYXV0aG9yaXR5GAEgASgJUglhdXRob3JpdHkSOQoGcGFyYW'
+    '1zGAIgASgLMhsuaWJjLmNvcmUuY2hhbm5lbC52MS5QYXJhbXNCBMjeHwBSBnBhcmFtczoSiKAf'
+    'AILnsCoJYXV0aG9yaXR5');
+
+@$core.Deprecated('Use msgUpdateParamsResponseDescriptor instead')
+const MsgUpdateParamsResponse$json = {
+  '1': 'MsgUpdateParamsResponse',
+};
+
+/// Descriptor for `MsgUpdateParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsResponseDescriptor =
+    $convert.base64Decode('ChdNc2dVcGRhdGVQYXJhbXNSZXNwb25zZQ==');
+
+@$core.Deprecated('Use msgPruneAcknowledgementsDescriptor instead')
+const MsgPruneAcknowledgements$json = {
+  '1': 'MsgPruneAcknowledgements',
+  '2': [
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {'1': 'limit', '3': 3, '4': 1, '5': 4, '10': 'limit'},
+    {'1': 'signer', '3': 4, '4': 1, '5': 9, '10': 'signer'},
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgPruneAcknowledgements`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgPruneAcknowledgementsDescriptor = $convert.base64Decode(
+    'ChhNc2dQcnVuZUFja25vd2xlZGdlbWVudHMSFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkEh0KCm'
+    'NoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBIUCgVsaW1pdBgDIAEoBFIFbGltaXQSFgoGc2ln'
+    'bmVyGAQgASgJUgZzaWduZXI6D4igHwCC57AqBnNpZ25lcg==');
+
+@$core.Deprecated('Use msgPruneAcknowledgementsResponseDescriptor instead')
+const MsgPruneAcknowledgementsResponse$json = {
+  '1': 'MsgPruneAcknowledgementsResponse',
+  '2': [
+    {
+      '1': 'total_pruned_sequences',
+      '3': 1,
+      '4': 1,
+      '5': 4,
+      '10': 'totalPrunedSequences'
+    },
+    {
+      '1': 'total_remaining_sequences',
+      '3': 2,
+      '4': 1,
+      '5': 4,
+      '10': 'totalRemainingSequences'
+    },
+  ],
+};
+
+/// Descriptor for `MsgPruneAcknowledgementsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgPruneAcknowledgementsResponseDescriptor =
+    $convert.base64Decode(
+        'CiBNc2dQcnVuZUFja25vd2xlZGdlbWVudHNSZXNwb25zZRI0ChZ0b3RhbF9wcnVuZWRfc2VxdW'
+        'VuY2VzGAEgASgEUhR0b3RhbFBydW5lZFNlcXVlbmNlcxI6Chl0b3RhbF9yZW1haW5pbmdfc2Vx'
+        'dWVuY2VzGAIgASgEUhd0b3RhbFJlbWFpbmluZ1NlcXVlbmNlcw==');

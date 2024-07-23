@@ -1120,6 +1120,73 @@ class EventAccountDataUpdated extends $pb.GeneratedMessage {
   void clearAccount() => clearField(1);
 }
 
+/// EventAttributeParamsUpdated event emitted when attribute params are updated.
+class EventAttributeParamsUpdated extends $pb.GeneratedMessage {
+  factory EventAttributeParamsUpdated({
+    $core.String? maxValueLength,
+  }) {
+    final $result = create();
+    if (maxValueLength != null) {
+      $result.maxValueLength = maxValueLength;
+    }
+    return $result;
+  }
+  EventAttributeParamsUpdated._() : super();
+  factory EventAttributeParamsUpdated.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventAttributeParamsUpdated.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventAttributeParamsUpdated',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.attribute.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'maxValueLength')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventAttributeParamsUpdated clone() =>
+      EventAttributeParamsUpdated()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventAttributeParamsUpdated copyWith(
+          void Function(EventAttributeParamsUpdated) updates) =>
+      super.copyWith(
+              (message) => updates(message as EventAttributeParamsUpdated))
+          as EventAttributeParamsUpdated;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventAttributeParamsUpdated create() =>
+      EventAttributeParamsUpdated._();
+  EventAttributeParamsUpdated createEmptyInstance() => create();
+  static $pb.PbList<EventAttributeParamsUpdated> createRepeated() =>
+      $pb.PbList<EventAttributeParamsUpdated>();
+  @$core.pragma('dart2js:noInline')
+  static EventAttributeParamsUpdated getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventAttributeParamsUpdated>(create);
+  static EventAttributeParamsUpdated? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get maxValueLength => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set maxValueLength($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasMaxValueLength() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMaxValueLength() => clearField(1);
+}
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

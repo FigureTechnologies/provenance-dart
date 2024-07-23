@@ -116,10 +116,14 @@ class QueryIncentivizedPacketsRequest extends $pb.GeneratedMessage {
 class QueryIncentivizedPacketsResponse extends $pb.GeneratedMessage {
   factory QueryIncentivizedPacketsResponse({
     $core.Iterable<$2.IdentifiedPacketFees>? incentivizedPackets,
+    $1.PageResponse? pagination,
   }) {
     final $result = create();
     if (incentivizedPackets != null) {
       $result.incentivizedPackets.addAll(incentivizedPackets);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
     }
     return $result;
   }
@@ -139,6 +143,8 @@ class QueryIncentivizedPacketsResponse extends $pb.GeneratedMessage {
     ..pc<$2.IdentifiedPacketFees>(
         1, _omitFieldNames ? '' : 'incentivizedPackets', $pb.PbFieldType.PM,
         subBuilder: $2.IdentifiedPacketFees.create)
+    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $1.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -172,6 +178,21 @@ class QueryIncentivizedPacketsResponse extends $pb.GeneratedMessage {
   /// list of identified fees for incentivized packets
   @$pb.TagNumber(1)
   $core.List<$2.IdentifiedPacketFees> get incentivizedPackets => $_getList(0);
+
+  /// pagination defines the pagination in the response.
+  @$pb.TagNumber(2)
+  $1.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(2)
+  set pagination($1.PageResponse v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPagination() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryIncentivizedPacketRequest defines the request type for the IncentivizedPacket rpc
@@ -471,10 +492,14 @@ class QueryIncentivizedPacketsForChannelRequest extends $pb.GeneratedMessage {
 class QueryIncentivizedPacketsForChannelResponse extends $pb.GeneratedMessage {
   factory QueryIncentivizedPacketsForChannelResponse({
     $core.Iterable<$2.IdentifiedPacketFees>? incentivizedPackets,
+    $1.PageResponse? pagination,
   }) {
     final $result = create();
     if (incentivizedPackets != null) {
       $result.incentivizedPackets.addAll(incentivizedPackets);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
     }
     return $result;
   }
@@ -495,6 +520,8 @@ class QueryIncentivizedPacketsForChannelResponse extends $pb.GeneratedMessage {
     ..pc<$2.IdentifiedPacketFees>(
         1, _omitFieldNames ? '' : 'incentivizedPackets', $pb.PbFieldType.PM,
         subBuilder: $2.IdentifiedPacketFees.create)
+    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $1.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -529,6 +556,21 @@ class QueryIncentivizedPacketsForChannelResponse extends $pb.GeneratedMessage {
   /// Map of all incentivized_packets
   @$pb.TagNumber(1)
   $core.List<$2.IdentifiedPacketFees> get incentivizedPackets => $_getList(0);
+
+  /// pagination defines the pagination in the response.
+  @$pb.TagNumber(2)
+  $1.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(2)
+  set pagination($1.PageResponse v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPagination() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryTotalRecvFeesRequest defines the request type for the TotalRecvFees rpc
@@ -1312,10 +1354,14 @@ class QueryFeeEnabledChannelsRequest extends $pb.GeneratedMessage {
 class QueryFeeEnabledChannelsResponse extends $pb.GeneratedMessage {
   factory QueryFeeEnabledChannelsResponse({
     $core.Iterable<$5.FeeEnabledChannel>? feeEnabledChannels,
+    $1.PageResponse? pagination,
   }) {
     final $result = create();
     if (feeEnabledChannels != null) {
       $result.feeEnabledChannels.addAll(feeEnabledChannels);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
     }
     return $result;
   }
@@ -1335,6 +1381,8 @@ class QueryFeeEnabledChannelsResponse extends $pb.GeneratedMessage {
     ..pc<$5.FeeEnabledChannel>(
         1, _omitFieldNames ? '' : 'feeEnabledChannels', $pb.PbFieldType.PM,
         subBuilder: $5.FeeEnabledChannel.create)
+    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $1.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1368,6 +1416,21 @@ class QueryFeeEnabledChannelsResponse extends $pb.GeneratedMessage {
   /// list of fee enabled channels
   @$pb.TagNumber(1)
   $core.List<$5.FeeEnabledChannel> get feeEnabledChannels => $_getList(0);
+
+  /// pagination defines the pagination in the response.
+  @$pb.TagNumber(2)
+  $1.PageResponse get pagination => $_getN(1);
+  @$pb.TagNumber(2)
+  set pagination($1.PageResponse v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPagination() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryFeeEnabledChannelRequest defines the request type for the FeeEnabledChannel rpc

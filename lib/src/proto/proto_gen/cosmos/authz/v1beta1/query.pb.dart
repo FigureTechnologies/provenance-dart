@@ -379,7 +379,7 @@ class QueryGranterGrantsResponse extends $pb.GeneratedMessage {
   $1.PageResponse ensurePagination() => $_ensure(1);
 }
 
-/// QueryGranteeGrantsRequest is the request type for the Query/IssuedGrants RPC method.
+/// QueryGranteeGrantsRequest is the request type for the Query/GranteeGrants RPC method.
 class QueryGranteeGrantsRequest extends $pb.GeneratedMessage {
   factory QueryGranteeGrantsRequest({
     $core.String? grantee,

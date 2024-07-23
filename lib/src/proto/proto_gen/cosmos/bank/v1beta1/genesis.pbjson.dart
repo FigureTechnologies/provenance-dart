@@ -67,14 +67,14 @@ const GenesisState$json = {
 
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
-    'CgxHZW5lc2lzU3RhdGUSOQoGcGFyYW1zGAEgASgLMhsuY29zbW9zLmJhbmsudjFiZXRhMS5QYX'
-    'JhbXNCBMjeHwBSBnBhcmFtcxI+CghiYWxhbmNlcxgCIAMoCzIcLmNvc21vcy5iYW5rLnYxYmV0'
-    'YTEuQmFsYW5jZUIEyN4fAFIIYmFsYW5jZXMSYwoGc3VwcGx5GAMgAygLMhkuY29zbW9zLmJhc2'
-    'UudjFiZXRhMS5Db2luQjDI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsvdHlw'
-    'ZXMuQ29pbnNSBnN1cHBseRJKCg5kZW5vbV9tZXRhZGF0YRgEIAMoCzIdLmNvc21vcy5iYW5rLn'
-    'YxYmV0YTEuTWV0YWRhdGFCBMjeHwBSDWRlbm9tTWV0YWRhdGESSQoMc2VuZF9lbmFibGVkGAUg'
-    'AygLMiAuY29zbW9zLmJhbmsudjFiZXRhMS5TZW5kRW5hYmxlZEIEyN4fAFILc2VuZEVuYWJsZW'
-    'Q=');
+    'CgxHZW5lc2lzU3RhdGUSPgoGcGFyYW1zGAEgASgLMhsuY29zbW9zLmJhbmsudjFiZXRhMS5QYX'
+    'JhbXNCCcjeHwCo57AqAVIGcGFyYW1zEkMKCGJhbGFuY2VzGAIgAygLMhwuY29zbW9zLmJhbmsu'
+    'djFiZXRhMS5CYWxhbmNlQgnI3h8AqOewKgFSCGJhbGFuY2VzEnkKBnN1cHBseRgDIAMoCzIZLm'
+    'Nvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkJGyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Nt'
+    'b3Mtc2RrL3R5cGVzLkNvaW5zmuewKgxsZWdhY3lfY29pbnOo57AqAVIGc3VwcGx5Ek8KDmRlbm'
+    '9tX21ldGFkYXRhGAQgAygLMh0uY29zbW9zLmJhbmsudjFiZXRhMS5NZXRhZGF0YUIJyN4fAKjn'
+    'sCoBUg1kZW5vbU1ldGFkYXRhEk4KDHNlbmRfZW5hYmxlZBgFIAMoCzIgLmNvc21vcy5iYW5rLn'
+    'YxYmV0YTEuU2VuZEVuYWJsZWRCCcjeHwCo57AqAVILc2VuZEVuYWJsZWQ=');
 
 @$core.Deprecated('Use balanceDescriptor instead')
 const Balance$json = {
@@ -97,6 +97,6 @@ const Balance$json = {
 /// Descriptor for `Balance`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List balanceDescriptor = $convert.base64Decode(
     'CgdCYWxhbmNlEjIKB2FkZHJlc3MYASABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1IHYW'
-    'RkcmVzcxJhCgVjb2lucxgCIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkIwyN4fAKrf'
-    'HyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zUgVjb2luczoIiKAfAO'
-    'igHwA=');
+    'RkcmVzcxJ3CgVjb2lucxgCIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkJGyN4fAKrf'
+    'HyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zmuewKgxsZWdhY3lfY2'
+    '9pbnOo57AqAVIFY29pbnM6CIigHwDooB8A');

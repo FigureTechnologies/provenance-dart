@@ -30,28 +30,25 @@ final $typed_data.Uint8List merkleRootDescriptor = $convert
 const MerklePrefix$json = {
   '1': 'MerklePrefix',
   '2': [
-    {'1': 'key_prefix', '3': 1, '4': 1, '5': 12, '8': {}, '10': 'keyPrefix'},
+    {'1': 'key_prefix', '3': 1, '4': 1, '5': 12, '10': 'keyPrefix'},
   ],
 };
 
 /// Descriptor for `MerklePrefix`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List merklePrefixDescriptor = $convert.base64Decode(
-    'CgxNZXJrbGVQcmVmaXgSNAoKa2V5X3ByZWZpeBgBIAEoDEIV8t4fEXlhbWw6ImtleV9wcmVmaX'
-    'giUglrZXlQcmVmaXg=');
+    'CgxNZXJrbGVQcmVmaXgSHQoKa2V5X3ByZWZpeBgBIAEoDFIJa2V5UHJlZml4');
 
 @$core.Deprecated('Use merklePathDescriptor instead')
 const MerklePath$json = {
   '1': 'MerklePath',
   '2': [
-    {'1': 'key_path', '3': 1, '4': 3, '5': 9, '8': {}, '10': 'keyPath'},
+    {'1': 'key_path', '3': 1, '4': 3, '5': 9, '10': 'keyPath'},
   ],
-  '7': {},
 };
 
 /// Descriptor for `MerklePath`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List merklePathDescriptor = $convert.base64Decode(
-    'CgpNZXJrbGVQYXRoEi4KCGtleV9wYXRoGAEgAygJQhPy3h8PeWFtbDoia2V5X3BhdGgiUgdrZX'
-    'lQYXRoOgSYoB8A');
+final $typed_data.Uint8List merklePathDescriptor = $convert
+    .base64Decode('CgpNZXJrbGVQYXRoEhkKCGtleV9wYXRoGAEgAygJUgdrZXlQYXRo');
 
 @$core.Deprecated('Use merkleProofDescriptor instead')
 const MerkleProof$json = {
@@ -62,7 +59,7 @@ const MerkleProof$json = {
       '3': 1,
       '4': 3,
       '5': 11,
-      '6': '.ics23.CommitmentProof',
+      '6': '.cosmos.ics23.v1.CommitmentProof',
       '10': 'proofs'
     },
   ],
@@ -70,5 +67,5 @@ const MerkleProof$json = {
 
 /// Descriptor for `MerkleProof`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List merkleProofDescriptor = $convert.base64Decode(
-    'CgtNZXJrbGVQcm9vZhIuCgZwcm9vZnMYASADKAsyFi5pY3MyMy5Db21taXRtZW50UHJvb2ZSBn'
-    'Byb29mcw==');
+    'CgtNZXJrbGVQcm9vZhI4CgZwcm9vZnMYASADKAsyIC5jb3Ntb3MuaWNzMjMudjEuQ29tbWl0bW'
+    'VudFByb29mUgZwcm9vZnM=');

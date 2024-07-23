@@ -45,7 +45,7 @@ final $typed_data.Uint8List triggerDescriptor = $convert.base64Decode(
     'CgdUcmlnZ2VyEg4KAmlkGAEgASgEUgJpZBIuCgVvd25lchgCIAEoCUIY0rQtFGNvc21vcy5BZG'
     'RyZXNzU3RyaW5nUgVvd25lchI9CgVldmVudBgDIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlC'
     'Ecq0LQ1UcmlnZ2VyRXZlbnRJUgVldmVudBIuCgdhY3Rpb25zGAQgAygLMhQuZ29vZ2xlLnByb3'
-    'RvYnVmLkFueVIHYWN0aW9uczoImKAfAeigHwE=');
+    'RvYnVmLkFueVIHYWN0aW9uczoE6KAfAQ==');
 
 @$core.Deprecated('Use queuedTriggerDescriptor instead')
 const QueuedTrigger$json = {
@@ -79,7 +79,7 @@ final $typed_data.Uint8List queuedTriggerDescriptor = $convert.base64Decode(
     'Cg1RdWV1ZWRUcmlnZ2VyEiEKDGJsb2NrX2hlaWdodBgBIAEoBFILYmxvY2tIZWlnaHQSOAoEdG'
     'ltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCMjeHwCQ3x8BUgR0aW1lEj4K'
     'B3RyaWdnZXIYAyABKAsyHi5wcm92ZW5hbmNlLnRyaWdnZXIudjEuVHJpZ2dlckIEyN4fAFIHdH'
-    'JpZ2dlcjoImKAfAeigHwE=');
+    'JpZ2dlcjoE6KAfAQ==');
 
 @$core.Deprecated('Use blockHeightEventDescriptor instead')
 const BlockHeightEvent$json = {
@@ -92,8 +92,8 @@ const BlockHeightEvent$json = {
 
 /// Descriptor for `BlockHeightEvent`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List blockHeightEventDescriptor = $convert.base64Decode(
-    'ChBCbG9ja0hlaWdodEV2ZW50EiEKDGJsb2NrX2hlaWdodBgBIAEoBFILYmxvY2tIZWlnaHQ6GZ'
-    'igHwHooB8ByrQtDVRyaWdnZXJFdmVudEk=');
+    'ChBCbG9ja0hlaWdodEV2ZW50EiEKDGJsb2NrX2hlaWdodBgBIAEoBFILYmxvY2tIZWlnaHQ6Fe'
+    'igHwHKtC0NVHJpZ2dlckV2ZW50SQ==');
 
 @$core.Deprecated('Use blockTimeEventDescriptor instead')
 const BlockTimeEvent$json = {
@@ -115,7 +115,7 @@ const BlockTimeEvent$json = {
 /// Descriptor for `BlockTimeEvent`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List blockTimeEventDescriptor = $convert.base64Decode(
     'Cg5CbG9ja1RpbWVFdmVudBI4CgR0aW1lGAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
-    'FtcEIIyN4fAJDfHwFSBHRpbWU6GZigHwHooB8ByrQtDVRyaWdnZXJFdmVudEk=');
+    'FtcEIIyN4fAJDfHwFSBHRpbWU6FeigHwHKtC0NVHJpZ2dlckV2ZW50SQ==');
 
 @$core.Deprecated('Use transactionEventDescriptor instead')
 const TransactionEvent$json = {
@@ -139,7 +139,7 @@ const TransactionEvent$json = {
 final $typed_data.Uint8List transactionEventDescriptor = $convert.base64Decode(
     'ChBUcmFuc2FjdGlvbkV2ZW50EhIKBG5hbWUYASABKAlSBG5hbWUSRgoKYXR0cmlidXRlcxgCIA'
     'MoCzIgLnByb3ZlbmFuY2UudHJpZ2dlci52MS5BdHRyaWJ1dGVCBMjeHwBSCmF0dHJpYnV0ZXM6'
-    'GZigHwHooB8ByrQtDVRyaWdnZXJFdmVudEk=');
+    'FeigHwHKtC0NVHJpZ2dlckV2ZW50SQ==');
 
 @$core.Deprecated('Use attributeDescriptor instead')
 const Attribute$json = {
@@ -153,5 +153,5 @@ const Attribute$json = {
 
 /// Descriptor for `Attribute`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List attributeDescriptor = $convert.base64Decode(
-    'CglBdHRyaWJ1dGUSEgoEbmFtZRgBIAEoCVIEbmFtZRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6CJ'
-    'igHwHooB8B');
+    'CglBdHRyaWJ1dGUSEgoEbmFtZRgBIAEoCVIEbmFtZRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6BO'
+    'igHwE=');

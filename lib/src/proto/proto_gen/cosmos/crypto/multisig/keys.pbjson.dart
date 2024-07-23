@@ -33,6 +33,7 @@ const LegacyAminoPubKey$json = {
 
 /// Descriptor for `LegacyAminoPubKey`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List legacyAminoPubKeyDescriptor = $convert.base64Decode(
-    'ChFMZWdhY3lBbWlub1B1YktleRIcCgl0aHJlc2hvbGQYASABKA1SCXRocmVzaG9sZBJCCgtwdW'
-    'JsaWNfa2V5cxgCIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCC+LeHwdQdWJLZXlzUgpwdWJs'
-    'aWNLZXlzOgSIoB8A');
+    'ChFMZWdhY3lBbWlub1B1YktleRIcCgl0aHJlc2hvbGQYASABKA1SCXRocmVzaG9sZBJOCgtwdW'
+    'JsaWNfa2V5cxgCIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCF+LeHwdQdWJLZXlzouewKgdw'
+    'dWJrZXlzUgpwdWJsaWNLZXlzOkCIoB8AiuewKiJ0ZW5kZXJtaW50L1B1YktleU11bHRpc2lnVG'
+    'hyZXNob2xkkuewKhB0aHJlc2hvbGRfc3RyaW5n');

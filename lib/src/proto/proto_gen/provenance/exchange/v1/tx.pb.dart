@@ -18,7 +18,8 @@ import '../../../cosmos/base/v1beta1/coin.pb.dart' as $2;
 import 'commitments.pb.dart' as $3;
 import 'market.pb.dart' as $4;
 import 'orders.pb.dart' as $1;
-import 'params.pb.dart' as $5;
+import 'params.pb.dart' as $6;
+import 'payments.pb.dart' as $5;
 
 /// MsgCreateAskRequest is a request message for the CreateAsk endpoint.
 class MsgCreateAskRequest extends $pb.GeneratedMessage {
@@ -3169,6 +3170,766 @@ class MsgMarketManageReqAttrsResponse extends $pb.GeneratedMessage {
   static MsgMarketManageReqAttrsResponse? _defaultInstance;
 }
 
+/// MsgCreatePaymentRequest is a request message for the CreatePayment endpoint.
+class MsgCreatePaymentRequest extends $pb.GeneratedMessage {
+  factory MsgCreatePaymentRequest({
+    $5.Payment? payment,
+  }) {
+    final $result = create();
+    if (payment != null) {
+      $result.payment = payment;
+    }
+    return $result;
+  }
+  MsgCreatePaymentRequest._() : super();
+  factory MsgCreatePaymentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgCreatePaymentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgCreatePaymentRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOM<$5.Payment>(1, _omitFieldNames ? '' : 'payment',
+        subBuilder: $5.Payment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgCreatePaymentRequest clone() =>
+      MsgCreatePaymentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgCreatePaymentRequest copyWith(
+          void Function(MsgCreatePaymentRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgCreatePaymentRequest))
+          as MsgCreatePaymentRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgCreatePaymentRequest create() => MsgCreatePaymentRequest._();
+  MsgCreatePaymentRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgCreatePaymentRequest> createRepeated() =>
+      $pb.PbList<MsgCreatePaymentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgCreatePaymentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgCreatePaymentRequest>(create);
+  static MsgCreatePaymentRequest? _defaultInstance;
+
+  /// payment is the details of the payment to create.
+  @$pb.TagNumber(1)
+  $5.Payment get payment => $_getN(0);
+  @$pb.TagNumber(1)
+  set payment($5.Payment v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasPayment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPayment() => clearField(1);
+  @$pb.TagNumber(1)
+  $5.Payment ensurePayment() => $_ensure(0);
+}
+
+/// MsgCreatePaymentResponse is a response message for the CreatePayment endpoint.
+class MsgCreatePaymentResponse extends $pb.GeneratedMessage {
+  factory MsgCreatePaymentResponse() => create();
+  MsgCreatePaymentResponse._() : super();
+  factory MsgCreatePaymentResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgCreatePaymentResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgCreatePaymentResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgCreatePaymentResponse clone() =>
+      MsgCreatePaymentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgCreatePaymentResponse copyWith(
+          void Function(MsgCreatePaymentResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgCreatePaymentResponse))
+          as MsgCreatePaymentResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgCreatePaymentResponse create() => MsgCreatePaymentResponse._();
+  MsgCreatePaymentResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgCreatePaymentResponse> createRepeated() =>
+      $pb.PbList<MsgCreatePaymentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgCreatePaymentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgCreatePaymentResponse>(create);
+  static MsgCreatePaymentResponse? _defaultInstance;
+}
+
+/// MsgAcceptPaymentRequest is a request message for the AcceptPayment endpoint.
+class MsgAcceptPaymentRequest extends $pb.GeneratedMessage {
+  factory MsgAcceptPaymentRequest({
+    $5.Payment? payment,
+  }) {
+    final $result = create();
+    if (payment != null) {
+      $result.payment = payment;
+    }
+    return $result;
+  }
+  MsgAcceptPaymentRequest._() : super();
+  factory MsgAcceptPaymentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgAcceptPaymentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgAcceptPaymentRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOM<$5.Payment>(1, _omitFieldNames ? '' : 'payment',
+        subBuilder: $5.Payment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgAcceptPaymentRequest clone() =>
+      MsgAcceptPaymentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgAcceptPaymentRequest copyWith(
+          void Function(MsgAcceptPaymentRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgAcceptPaymentRequest))
+          as MsgAcceptPaymentRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgAcceptPaymentRequest create() => MsgAcceptPaymentRequest._();
+  MsgAcceptPaymentRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgAcceptPaymentRequest> createRepeated() =>
+      $pb.PbList<MsgAcceptPaymentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgAcceptPaymentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgAcceptPaymentRequest>(create);
+  static MsgAcceptPaymentRequest? _defaultInstance;
+
+  /// payment is the details of the payment to accept.
+  @$pb.TagNumber(1)
+  $5.Payment get payment => $_getN(0);
+  @$pb.TagNumber(1)
+  set payment($5.Payment v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasPayment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPayment() => clearField(1);
+  @$pb.TagNumber(1)
+  $5.Payment ensurePayment() => $_ensure(0);
+}
+
+/// MsgAcceptPaymentResponse is a response message for the AcceptPayment endpoint.
+class MsgAcceptPaymentResponse extends $pb.GeneratedMessage {
+  factory MsgAcceptPaymentResponse() => create();
+  MsgAcceptPaymentResponse._() : super();
+  factory MsgAcceptPaymentResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgAcceptPaymentResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgAcceptPaymentResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgAcceptPaymentResponse clone() =>
+      MsgAcceptPaymentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgAcceptPaymentResponse copyWith(
+          void Function(MsgAcceptPaymentResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgAcceptPaymentResponse))
+          as MsgAcceptPaymentResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgAcceptPaymentResponse create() => MsgAcceptPaymentResponse._();
+  MsgAcceptPaymentResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgAcceptPaymentResponse> createRepeated() =>
+      $pb.PbList<MsgAcceptPaymentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgAcceptPaymentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgAcceptPaymentResponse>(create);
+  static MsgAcceptPaymentResponse? _defaultInstance;
+}
+
+/// MsgRejectPaymentRequest is a request message for the RejectPayment endpoint.
+class MsgRejectPaymentRequest extends $pb.GeneratedMessage {
+  factory MsgRejectPaymentRequest({
+    $core.String? target,
+    $core.String? source,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (target != null) {
+      $result.target = target;
+    }
+    if (source != null) {
+      $result.source = source;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  MsgRejectPaymentRequest._() : super();
+  factory MsgRejectPaymentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgRejectPaymentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgRejectPaymentRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'target')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..aOS(3, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentRequest clone() =>
+      MsgRejectPaymentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentRequest copyWith(
+          void Function(MsgRejectPaymentRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgRejectPaymentRequest))
+          as MsgRejectPaymentRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentRequest create() => MsgRejectPaymentRequest._();
+  MsgRejectPaymentRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgRejectPaymentRequest> createRepeated() =>
+      $pb.PbList<MsgRejectPaymentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgRejectPaymentRequest>(create);
+  static MsgRejectPaymentRequest? _defaultInstance;
+
+  /// target is the target account of the payment to reject.
+  @$pb.TagNumber(1)
+  $core.String get target => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set target($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTarget() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTarget() => clearField(1);
+
+  /// source is the source account of the payment to reject.
+  @$pb.TagNumber(2)
+  $core.String get source => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set source($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasSource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSource() => clearField(2);
+
+  /// external_id is the external id of the payment to reject.
+  @$pb.TagNumber(3)
+  $core.String get externalId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set externalId($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasExternalId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalId() => clearField(3);
+}
+
+/// MsgRejectPaymentResponse is a response message for the RejectPayment endpoint.
+class MsgRejectPaymentResponse extends $pb.GeneratedMessage {
+  factory MsgRejectPaymentResponse() => create();
+  MsgRejectPaymentResponse._() : super();
+  factory MsgRejectPaymentResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgRejectPaymentResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgRejectPaymentResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentResponse clone() =>
+      MsgRejectPaymentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentResponse copyWith(
+          void Function(MsgRejectPaymentResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgRejectPaymentResponse))
+          as MsgRejectPaymentResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentResponse create() => MsgRejectPaymentResponse._();
+  MsgRejectPaymentResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgRejectPaymentResponse> createRepeated() =>
+      $pb.PbList<MsgRejectPaymentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgRejectPaymentResponse>(create);
+  static MsgRejectPaymentResponse? _defaultInstance;
+}
+
+/// MsgRejectPaymentsRequest is a request message for the RejectPayments endpoint.
+class MsgRejectPaymentsRequest extends $pb.GeneratedMessage {
+  factory MsgRejectPaymentsRequest({
+    $core.String? target,
+    $core.Iterable<$core.String>? sources,
+  }) {
+    final $result = create();
+    if (target != null) {
+      $result.target = target;
+    }
+    if (sources != null) {
+      $result.sources.addAll(sources);
+    }
+    return $result;
+  }
+  MsgRejectPaymentsRequest._() : super();
+  factory MsgRejectPaymentsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgRejectPaymentsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgRejectPaymentsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'target')
+    ..pPS(2, _omitFieldNames ? '' : 'sources')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentsRequest clone() =>
+      MsgRejectPaymentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentsRequest copyWith(
+          void Function(MsgRejectPaymentsRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgRejectPaymentsRequest))
+          as MsgRejectPaymentsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentsRequest create() => MsgRejectPaymentsRequest._();
+  MsgRejectPaymentsRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgRejectPaymentsRequest> createRepeated() =>
+      $pb.PbList<MsgRejectPaymentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgRejectPaymentsRequest>(create);
+  static MsgRejectPaymentsRequest? _defaultInstance;
+
+  /// target is the account that wishes to reject some payments.
+  @$pb.TagNumber(1)
+  $core.String get target => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set target($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTarget() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTarget() => clearField(1);
+
+  /// sources is the source accounts of the payments to reject.
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get sources => $_getList(1);
+}
+
+/// MsgRejectPaymentsResponse is a response message for the RejectPayments endpoint.
+class MsgRejectPaymentsResponse extends $pb.GeneratedMessage {
+  factory MsgRejectPaymentsResponse() => create();
+  MsgRejectPaymentsResponse._() : super();
+  factory MsgRejectPaymentsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgRejectPaymentsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgRejectPaymentsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentsResponse clone() =>
+      MsgRejectPaymentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgRejectPaymentsResponse copyWith(
+          void Function(MsgRejectPaymentsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgRejectPaymentsResponse))
+          as MsgRejectPaymentsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentsResponse create() => MsgRejectPaymentsResponse._();
+  MsgRejectPaymentsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgRejectPaymentsResponse> createRepeated() =>
+      $pb.PbList<MsgRejectPaymentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgRejectPaymentsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgRejectPaymentsResponse>(create);
+  static MsgRejectPaymentsResponse? _defaultInstance;
+}
+
+/// MsgCancelPaymentsRequest is a request message for the CancelPayments endpoint.
+class MsgCancelPaymentsRequest extends $pb.GeneratedMessage {
+  factory MsgCancelPaymentsRequest({
+    $core.String? source,
+    $core.Iterable<$core.String>? externalIds,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (externalIds != null) {
+      $result.externalIds.addAll(externalIds);
+    }
+    return $result;
+  }
+  MsgCancelPaymentsRequest._() : super();
+  factory MsgCancelPaymentsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgCancelPaymentsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgCancelPaymentsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..pPS(2, _omitFieldNames ? '' : 'externalIds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgCancelPaymentsRequest clone() =>
+      MsgCancelPaymentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgCancelPaymentsRequest copyWith(
+          void Function(MsgCancelPaymentsRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgCancelPaymentsRequest))
+          as MsgCancelPaymentsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelPaymentsRequest create() => MsgCancelPaymentsRequest._();
+  MsgCancelPaymentsRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgCancelPaymentsRequest> createRepeated() =>
+      $pb.PbList<MsgCancelPaymentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelPaymentsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgCancelPaymentsRequest>(create);
+  static MsgCancelPaymentsRequest? _defaultInstance;
+
+  /// source is the account that wishes to cancel some of their payments.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// external_ids is all of the external ids of the payments to cancel.
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get externalIds => $_getList(1);
+}
+
+/// MsgCancelPaymentsResponse is a response message for the CancelPayments endpoint.
+class MsgCancelPaymentsResponse extends $pb.GeneratedMessage {
+  factory MsgCancelPaymentsResponse() => create();
+  MsgCancelPaymentsResponse._() : super();
+  factory MsgCancelPaymentsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgCancelPaymentsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgCancelPaymentsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgCancelPaymentsResponse clone() =>
+      MsgCancelPaymentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgCancelPaymentsResponse copyWith(
+          void Function(MsgCancelPaymentsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgCancelPaymentsResponse))
+          as MsgCancelPaymentsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelPaymentsResponse create() => MsgCancelPaymentsResponse._();
+  MsgCancelPaymentsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgCancelPaymentsResponse> createRepeated() =>
+      $pb.PbList<MsgCancelPaymentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgCancelPaymentsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgCancelPaymentsResponse>(create);
+  static MsgCancelPaymentsResponse? _defaultInstance;
+}
+
+/// MsgChangePaymentTargetRequest is a request message for the ChangePaymentTarget endpoint.
+class MsgChangePaymentTargetRequest extends $pb.GeneratedMessage {
+  factory MsgChangePaymentTargetRequest({
+    $core.String? source,
+    $core.String? externalId,
+    $core.String? newTarget,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    if (newTarget != null) {
+      $result.newTarget = newTarget;
+    }
+    return $result;
+  }
+  MsgChangePaymentTargetRequest._() : super();
+  factory MsgChangePaymentTargetRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgChangePaymentTargetRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgChangePaymentTargetRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'externalId')
+    ..aOS(3, _omitFieldNames ? '' : 'newTarget')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgChangePaymentTargetRequest clone() =>
+      MsgChangePaymentTargetRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgChangePaymentTargetRequest copyWith(
+          void Function(MsgChangePaymentTargetRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgChangePaymentTargetRequest))
+          as MsgChangePaymentTargetRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgChangePaymentTargetRequest create() =>
+      MsgChangePaymentTargetRequest._();
+  MsgChangePaymentTargetRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgChangePaymentTargetRequest> createRepeated() =>
+      $pb.PbList<MsgChangePaymentTargetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgChangePaymentTargetRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgChangePaymentTargetRequest>(create);
+  static MsgChangePaymentTargetRequest? _defaultInstance;
+
+  /// source is the account that wishes to update the target of one of their payments.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// external_id is the external id of the payment to update.
+  @$pb.TagNumber(2)
+  $core.String get externalId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set externalId($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasExternalId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExternalId() => clearField(2);
+
+  /// new_target is the new target account of the payment.
+  @$pb.TagNumber(3)
+  $core.String get newTarget => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set newTarget($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasNewTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNewTarget() => clearField(3);
+}
+
+/// MsgChangePaymentTargetResponse is a response message for the ChangePaymentTarget endpoint.
+class MsgChangePaymentTargetResponse extends $pb.GeneratedMessage {
+  factory MsgChangePaymentTargetResponse() => create();
+  MsgChangePaymentTargetResponse._() : super();
+  factory MsgChangePaymentTargetResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgChangePaymentTargetResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgChangePaymentTargetResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgChangePaymentTargetResponse clone() =>
+      MsgChangePaymentTargetResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgChangePaymentTargetResponse copyWith(
+          void Function(MsgChangePaymentTargetResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as MsgChangePaymentTargetResponse))
+          as MsgChangePaymentTargetResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgChangePaymentTargetResponse create() =>
+      MsgChangePaymentTargetResponse._();
+  MsgChangePaymentTargetResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgChangePaymentTargetResponse> createRepeated() =>
+      $pb.PbList<MsgChangePaymentTargetResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgChangePaymentTargetResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgChangePaymentTargetResponse>(create);
+  static MsgChangePaymentTargetResponse? _defaultInstance;
+}
+
 /// MsgGovCreateMarketRequest is a request message for the GovCreateMarket endpoint.
 class MsgGovCreateMarketRequest extends $pb.GeneratedMessage {
   factory MsgGovCreateMarketRequest({
@@ -3762,10 +4523,11 @@ class MsgGovCloseMarketResponse extends $pb.GeneratedMessage {
 }
 
 /// MsgGovUpdateParamsRequest is a request message for the GovUpdateParams endpoint.
+/// Deprecated: Use MsgUpdateParamsRequest instead.
 class MsgGovUpdateParamsRequest extends $pb.GeneratedMessage {
   factory MsgGovUpdateParamsRequest({
     $core.String? authority,
-    $5.Params? params,
+    $6.Params? params,
   }) {
     final $result = create();
     if (authority != null) {
@@ -3790,8 +4552,8 @@ class MsgGovUpdateParamsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'provenance.exchange.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'authority')
-    ..aOM<$5.Params>(2, _omitFieldNames ? '' : 'params',
-        subBuilder: $5.Params.create)
+    ..aOM<$6.Params>(2, _omitFieldNames ? '' : 'params',
+        subBuilder: $6.Params.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -3834,9 +4596,9 @@ class MsgGovUpdateParamsRequest extends $pb.GeneratedMessage {
 
   /// params are the new param values to set
   @$pb.TagNumber(2)
-  $5.Params get params => $_getN(1);
+  $6.Params get params => $_getN(1);
   @$pb.TagNumber(2)
-  set params($5.Params v) {
+  set params($6.Params v) {
     setField(2, v);
   }
 
@@ -3845,10 +4607,11 @@ class MsgGovUpdateParamsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearParams() => clearField(2);
   @$pb.TagNumber(2)
-  $5.Params ensureParams() => $_ensure(1);
+  $6.Params ensureParams() => $_ensure(1);
 }
 
 /// MsgGovUpdateParamsResponse is a response message for the GovUpdateParams endpoint.
+/// Deprecated: Use MsgUpdateParamsResponse instead.
 class MsgGovUpdateParamsResponse extends $pb.GeneratedMessage {
   factory MsgGovUpdateParamsResponse() => create();
   MsgGovUpdateParamsResponse._() : super();
@@ -3891,6 +4654,137 @@ class MsgGovUpdateParamsResponse extends $pb.GeneratedMessage {
   static MsgGovUpdateParamsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<MsgGovUpdateParamsResponse>(create);
   static MsgGovUpdateParamsResponse? _defaultInstance;
+}
+
+/// MsgGovUpdateParamsRequest is a request message for the GovUpdateParams endpoint.
+class MsgUpdateParamsRequest extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsRequest({
+    $core.String? authority,
+    $6.Params? params,
+  }) {
+    final $result = create();
+    if (authority != null) {
+      $result.authority = authority;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
+  MsgUpdateParamsRequest._() : super();
+  factory MsgUpdateParamsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authority')
+    ..aOM<$6.Params>(2, _omitFieldNames ? '' : 'params',
+        subBuilder: $6.Params.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsRequest clone() =>
+      MsgUpdateParamsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsRequest copyWith(
+          void Function(MsgUpdateParamsRequest) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsRequest))
+          as MsgUpdateParamsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsRequest create() => MsgUpdateParamsRequest._();
+  MsgUpdateParamsRequest createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsRequest> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsRequest>(create);
+  static MsgUpdateParamsRequest? _defaultInstance;
+
+  /// authority should be the governance module account address.
+  @$pb.TagNumber(1)
+  $core.String get authority => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authority($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAuthority() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthority() => clearField(1);
+
+  /// params are the new param values to set
+  @$pb.TagNumber(2)
+  $6.Params get params => $_getN(1);
+  @$pb.TagNumber(2)
+  set params($6.Params v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasParams() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParams() => clearField(2);
+  @$pb.TagNumber(2)
+  $6.Params ensureParams() => $_ensure(1);
+}
+
+/// MsgUpdateParamsResponse is a response message for the GovUpdateParams endpoint.
+class MsgUpdateParamsResponse extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsResponse() => create();
+  MsgUpdateParamsResponse._() : super();
+  factory MsgUpdateParamsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse clone() =>
+      MsgUpdateParamsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse copyWith(
+          void Function(MsgUpdateParamsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsResponse))
+          as MsgUpdateParamsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse create() => MsgUpdateParamsResponse._();
+  MsgUpdateParamsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsResponse> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsResponse>(create);
+  static MsgUpdateParamsResponse? _defaultInstance;
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

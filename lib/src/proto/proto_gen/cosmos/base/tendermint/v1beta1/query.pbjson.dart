@@ -445,5 +445,5 @@ const ProofOps$json = {
 
 /// Descriptor for `ProofOps`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List proofOpsDescriptor = $convert.base64Decode(
-    'CghQcm9vZk9wcxI/CgNvcHMYASADKAsyJy5jb3Ntb3MuYmFzZS50ZW5kZXJtaW50LnYxYmV0YT'
-    'EuUHJvb2ZPcEIEyN4fAFIDb3Bz');
+    'CghQcm9vZk9wcxJECgNvcHMYASADKAsyJy5jb3Ntb3MuYmFzZS50ZW5kZXJtaW50LnYxYmV0YT'
+    'EuUHJvb2ZPcEIJyN4fAKjnsCoBUgNvcHM=');

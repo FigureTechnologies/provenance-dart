@@ -17,15 +17,8 @@ import 'dart:typed_data' as $typed_data;
 const MsgTransfer$json = {
   '1': 'MsgTransfer',
   '2': [
-    {'1': 'source_port', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'sourcePort'},
-    {
-      '1': 'source_channel',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'sourceChannel'
-    },
+    {'1': 'source_port', '3': 1, '4': 1, '5': 9, '10': 'sourcePort'},
+    {'1': 'source_channel', '3': 2, '4': 1, '5': 9, '10': 'sourceChannel'},
     {
       '1': 'token',
       '3': 3,
@@ -51,7 +44,6 @@ const MsgTransfer$json = {
       '3': 7,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'timeoutTimestamp'
     },
     {'1': 'memo', '3': 8, '4': 1, '5': 9, '10': 'memo'},
@@ -61,15 +53,13 @@ const MsgTransfer$json = {
 
 /// Descriptor for `MsgTransfer`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgTransferDescriptor = $convert.base64Decode(
-    'CgtNc2dUcmFuc2ZlchI3Cgtzb3VyY2VfcG9ydBgBIAEoCUIW8t4fEnlhbWw6InNvdXJjZV9wb3'
-    'J0IlIKc291cmNlUG9ydBJACg5zb3VyY2VfY2hhbm5lbBgCIAEoCUIZ8t4fFXlhbWw6InNvdXJj'
-    'ZV9jaGFubmVsIlINc291cmNlQ2hhbm5lbBI1CgV0b2tlbhgDIAEoCzIZLmNvc21vcy5iYXNlLn'
-    'YxYmV0YTEuQ29pbkIEyN4fAFIFdG9rZW4SFgoGc2VuZGVyGAQgASgJUgZzZW5kZXISGgoIcmVj'
-    'ZWl2ZXIYBSABKAlSCHJlY2VpdmVyEmAKDnRpbWVvdXRfaGVpZ2h0GAYgASgLMhouaWJjLmNvcm'
-    'UuY2xpZW50LnYxLkhlaWdodEIdyN4fAPLeHxV5YW1sOiJ0aW1lb3V0X2hlaWdodCJSDXRpbWVv'
-    'dXRIZWlnaHQSSQoRdGltZW91dF90aW1lc3RhbXAYByABKARCHPLeHxh5YW1sOiJ0aW1lb3V0X3'
-    'RpbWVzdGFtcCJSEHRpbWVvdXRUaW1lc3RhbXASEgoEbWVtbxgIIAEoCVIEbWVtbzoIiKAfAOig'
-    'HwA=');
+    'CgtNc2dUcmFuc2ZlchIfCgtzb3VyY2VfcG9ydBgBIAEoCVIKc291cmNlUG9ydBIlCg5zb3VyY2'
+    'VfY2hhbm5lbBgCIAEoCVINc291cmNlQ2hhbm5lbBI6CgV0b2tlbhgDIAEoCzIZLmNvc21vcy5i'
+    'YXNlLnYxYmV0YTEuQ29pbkIJyN4fAKjnsCoBUgV0b2tlbhIWCgZzZW5kZXIYBCABKAlSBnNlbm'
+    'RlchIaCghyZWNlaXZlchgFIAEoCVIIcmVjZWl2ZXISTAoOdGltZW91dF9oZWlnaHQYBiABKAsy'
+    'Gi5pYmMuY29yZS5jbGllbnQudjEuSGVpZ2h0QgnI3h8AqOewKgFSDXRpbWVvdXRIZWlnaHQSKw'
+    'oRdGltZW91dF90aW1lc3RhbXAYByABKARSEHRpbWVvdXRUaW1lc3RhbXASEgoEbWVtbxgIIAEo'
+    'CVIEbWVtbzoqiKAfAILnsCoGc2VuZGVyiuewKhZjb3Ntb3Mtc2RrL01zZ1RyYW5zZmVy');
 
 @$core.Deprecated('Use msgTransferResponseDescriptor instead')
 const MsgTransferResponse$json = {
@@ -77,9 +67,43 @@ const MsgTransferResponse$json = {
   '2': [
     {'1': 'sequence', '3': 1, '4': 1, '5': 4, '10': 'sequence'},
   ],
+  '7': {},
 };
 
 /// Descriptor for `MsgTransferResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List msgTransferResponseDescriptor =
-    $convert.base64Decode(
-        'ChNNc2dUcmFuc2ZlclJlc3BvbnNlEhoKCHNlcXVlbmNlGAEgASgEUghzZXF1ZW5jZQ==');
+final $typed_data.Uint8List msgTransferResponseDescriptor = $convert.base64Decode(
+    'ChNNc2dUcmFuc2ZlclJlc3BvbnNlEhoKCHNlcXVlbmNlGAEgASgEUghzZXF1ZW5jZToEiKAfAA'
+    '==');
+
+@$core.Deprecated('Use msgUpdateParamsDescriptor instead')
+const MsgUpdateParams$json = {
+  '1': 'MsgUpdateParams',
+  '2': [
+    {'1': 'signer', '3': 1, '4': 1, '5': 9, '10': 'signer'},
+    {
+      '1': 'params',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.applications.transfer.v1.Params',
+      '8': {},
+      '10': 'params'
+    },
+  ],
+  '7': {},
+};
+
+/// Descriptor for `MsgUpdateParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsDescriptor = $convert.base64Decode(
+    'Cg9Nc2dVcGRhdGVQYXJhbXMSFgoGc2lnbmVyGAEgASgJUgZzaWduZXISQgoGcGFyYW1zGAIgAS'
+    'gLMiQuaWJjLmFwcGxpY2F0aW9ucy50cmFuc2Zlci52MS5QYXJhbXNCBMjeHwBSBnBhcmFtczoP'
+    'iKAfAILnsCoGc2lnbmVy');
+
+@$core.Deprecated('Use msgUpdateParamsResponseDescriptor instead')
+const MsgUpdateParamsResponse$json = {
+  '1': 'MsgUpdateParamsResponse',
+};
+
+/// Descriptor for `MsgUpdateParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgUpdateParamsResponseDescriptor =
+    $convert.base64Decode('ChdNc2dVcGRhdGVQYXJhbXNSZXNwb25zZQ==');

@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../cosmos/base/v1beta1/coin.pb.dart' as $1;
 import '../../../core/client/v1/client.pb.dart' as $2;
+import 'transfer.pb.dart' as $3;
 
 /// MsgTransfer defines a msg to transfer fungible tokens (i.e Coins) between
 /// ICS20 enabled chains. See ICS Spec here:
@@ -282,6 +283,138 @@ class MsgTransferResponse extends $pb.GeneratedMessage {
   $core.bool hasSequence() => $_has(0);
   @$pb.TagNumber(1)
   void clearSequence() => clearField(1);
+}
+
+/// MsgUpdateParams is the Msg/UpdateParams request type.
+class MsgUpdateParams extends $pb.GeneratedMessage {
+  factory MsgUpdateParams({
+    $core.String? signer,
+    $3.Params? params,
+  }) {
+    final $result = create();
+    if (signer != null) {
+      $result.signer = signer;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
+  MsgUpdateParams._() : super();
+  factory MsgUpdateParams.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParams.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParams',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'ibc.applications.transfer.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'signer')
+    ..aOM<$3.Params>(2, _omitFieldNames ? '' : 'params',
+        subBuilder: $3.Params.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParams clone() => MsgUpdateParams()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParams copyWith(void Function(MsgUpdateParams) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParams))
+          as MsgUpdateParams;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParams create() => MsgUpdateParams._();
+  MsgUpdateParams createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParams> createRepeated() =>
+      $pb.PbList<MsgUpdateParams>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParams getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParams>(create);
+  static MsgUpdateParams? _defaultInstance;
+
+  /// signer address
+  @$pb.TagNumber(1)
+  $core.String get signer => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set signer($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSigner() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSigner() => clearField(1);
+
+  ///  params defines the transfer parameters to update.
+  ///
+  ///  NOTE: All parameters must be supplied.
+  @$pb.TagNumber(2)
+  $3.Params get params => $_getN(1);
+  @$pb.TagNumber(2)
+  set params($3.Params v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasParams() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParams() => clearField(2);
+  @$pb.TagNumber(2)
+  $3.Params ensureParams() => $_ensure(1);
+}
+
+/// MsgUpdateParamsResponse defines the response structure for executing a
+/// MsgUpdateParams message.
+class MsgUpdateParamsResponse extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsResponse() => create();
+  MsgUpdateParamsResponse._() : super();
+  factory MsgUpdateParamsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'ibc.applications.transfer.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse clone() =>
+      MsgUpdateParamsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse copyWith(
+          void Function(MsgUpdateParamsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsResponse))
+          as MsgUpdateParamsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse create() => MsgUpdateParamsResponse._();
+  MsgUpdateParamsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsResponse> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsResponse>(create);
+  static MsgUpdateParamsResponse? _defaultInstance;
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

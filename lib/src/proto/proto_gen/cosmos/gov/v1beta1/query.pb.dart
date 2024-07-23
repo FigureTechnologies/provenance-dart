@@ -340,6 +340,7 @@ class QueryProposalsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryProposalsResponse>(create);
   static QueryProposalsResponse? _defaultInstance;
 
+  /// proposals defines all the requested governance proposals.
   @$pb.TagNumber(1)
   $core.List<$1.Proposal> get proposals => $_getList(0);
 
@@ -493,7 +494,7 @@ class QueryVoteResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryVoteResponse>(create);
   static QueryVoteResponse? _defaultInstance;
 
-  /// vote defined the queried vote.
+  /// vote defines the queried vote.
   @$pb.TagNumber(1)
   $1.Vote get vote => $_getN(0);
   @$pb.TagNumber(1)
@@ -653,7 +654,7 @@ class QueryVotesResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryVotesResponse>(create);
   static QueryVotesResponse? _defaultInstance;
 
-  /// votes defined the queried votes.
+  /// votes defines the queried votes.
   @$pb.TagNumber(1)
   $core.List<$1.Vote> get votes => $_getList(0);
 
@@ -1146,6 +1147,7 @@ class QueryDepositsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryDepositsResponse>(create);
   static QueryDepositsResponse? _defaultInstance;
 
+  /// deposits defines the requested deposits.
   @$pb.TagNumber(1)
   $core.List<$1.Deposit> get deposits => $_getList(0);
 

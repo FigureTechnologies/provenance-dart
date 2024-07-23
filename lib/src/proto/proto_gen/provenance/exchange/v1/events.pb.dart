@@ -2221,6 +2221,636 @@ class EventParamsUpdated extends $pb.GeneratedMessage {
   static EventParamsUpdated? _defaultInstance;
 }
 
+/// EventPaymentCreated is an event emitted when a payment is created.
+class EventPaymentCreated extends $pb.GeneratedMessage {
+  factory EventPaymentCreated({
+    $core.String? source,
+    $core.String? sourceAmount,
+    $core.String? target,
+    $core.String? targetAmount,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (sourceAmount != null) {
+      $result.sourceAmount = sourceAmount;
+    }
+    if (target != null) {
+      $result.target = target;
+    }
+    if (targetAmount != null) {
+      $result.targetAmount = targetAmount;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  EventPaymentCreated._() : super();
+  factory EventPaymentCreated.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventPaymentCreated.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventPaymentCreated',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceAmount')
+    ..aOS(3, _omitFieldNames ? '' : 'target')
+    ..aOS(4, _omitFieldNames ? '' : 'targetAmount')
+    ..aOS(5, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventPaymentCreated clone() => EventPaymentCreated()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventPaymentCreated copyWith(void Function(EventPaymentCreated) updates) =>
+      super.copyWith((message) => updates(message as EventPaymentCreated))
+          as EventPaymentCreated;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentCreated create() => EventPaymentCreated._();
+  EventPaymentCreated createEmptyInstance() => create();
+  static $pb.PbList<EventPaymentCreated> createRepeated() =>
+      $pb.PbList<EventPaymentCreated>();
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentCreated getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventPaymentCreated>(create);
+  static EventPaymentCreated? _defaultInstance;
+
+  /// source is the account that created the Payment.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// source_amount is the coins amount string of the funds that the source will pay (to the target).
+  @$pb.TagNumber(2)
+  $core.String get sourceAmount => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceAmount($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasSourceAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceAmount() => clearField(2);
+
+  /// target is the account that can accept the Payment.
+  @$pb.TagNumber(3)
+  $core.String get target => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set target($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTarget() => clearField(3);
+
+  /// target_amount is the coins amount string of the funds that the target will pay (to the source).
+  @$pb.TagNumber(4)
+  $core.String get targetAmount => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set targetAmount($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasTargetAmount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetAmount() => clearField(4);
+
+  /// external_id is used along with the source to uniquely identify this Payment.
+  @$pb.TagNumber(5)
+  $core.String get externalId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set externalId($core.String v) {
+    $_setString(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasExternalId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExternalId() => clearField(5);
+}
+
+/// EventPaymentUpdated is an event emitted when a payment is updated.
+class EventPaymentUpdated extends $pb.GeneratedMessage {
+  factory EventPaymentUpdated({
+    $core.String? source,
+    $core.String? sourceAmount,
+    $core.String? oldTarget,
+    $core.String? newTarget,
+    $core.String? targetAmount,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (sourceAmount != null) {
+      $result.sourceAmount = sourceAmount;
+    }
+    if (oldTarget != null) {
+      $result.oldTarget = oldTarget;
+    }
+    if (newTarget != null) {
+      $result.newTarget = newTarget;
+    }
+    if (targetAmount != null) {
+      $result.targetAmount = targetAmount;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  EventPaymentUpdated._() : super();
+  factory EventPaymentUpdated.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventPaymentUpdated.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventPaymentUpdated',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceAmount')
+    ..aOS(3, _omitFieldNames ? '' : 'oldTarget')
+    ..aOS(4, _omitFieldNames ? '' : 'newTarget')
+    ..aOS(5, _omitFieldNames ? '' : 'targetAmount')
+    ..aOS(6, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventPaymentUpdated clone() => EventPaymentUpdated()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventPaymentUpdated copyWith(void Function(EventPaymentUpdated) updates) =>
+      super.copyWith((message) => updates(message as EventPaymentUpdated))
+          as EventPaymentUpdated;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentUpdated create() => EventPaymentUpdated._();
+  EventPaymentUpdated createEmptyInstance() => create();
+  static $pb.PbList<EventPaymentUpdated> createRepeated() =>
+      $pb.PbList<EventPaymentUpdated>();
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentUpdated getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventPaymentUpdated>(create);
+  static EventPaymentUpdated? _defaultInstance;
+
+  /// source is the account that updated (and previously created) the Payment.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// source_amount is the coins amount string of the funds that the source will pay (to the target).
+  @$pb.TagNumber(2)
+  $core.String get sourceAmount => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceAmount($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasSourceAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceAmount() => clearField(2);
+
+  /// old_target is the account that used to be able to accept the Payment (but not any more).
+  @$pb.TagNumber(3)
+  $core.String get oldTarget => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set oldTarget($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasOldTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOldTarget() => clearField(3);
+
+  /// new_target is the account that is now able to accept the Payment.
+  @$pb.TagNumber(4)
+  $core.String get newTarget => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set newTarget($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasNewTarget() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNewTarget() => clearField(4);
+
+  /// target_amount is the coins amount string of the funds that the target will pay (to the source).
+  @$pb.TagNumber(5)
+  $core.String get targetAmount => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set targetAmount($core.String v) {
+    $_setString(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasTargetAmount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTargetAmount() => clearField(5);
+
+  /// external_id is used along with the source to uniquely identify this Payment.
+  @$pb.TagNumber(6)
+  $core.String get externalId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set externalId($core.String v) {
+    $_setString(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasExternalId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExternalId() => clearField(6);
+}
+
+/// EventPaymentAccepted is an event emitted when a payment is accepted.
+class EventPaymentAccepted extends $pb.GeneratedMessage {
+  factory EventPaymentAccepted({
+    $core.String? source,
+    $core.String? sourceAmount,
+    $core.String? target,
+    $core.String? targetAmount,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (sourceAmount != null) {
+      $result.sourceAmount = sourceAmount;
+    }
+    if (target != null) {
+      $result.target = target;
+    }
+    if (targetAmount != null) {
+      $result.targetAmount = targetAmount;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  EventPaymentAccepted._() : super();
+  factory EventPaymentAccepted.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventPaymentAccepted.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventPaymentAccepted',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceAmount')
+    ..aOS(3, _omitFieldNames ? '' : 'target')
+    ..aOS(4, _omitFieldNames ? '' : 'targetAmount')
+    ..aOS(5, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventPaymentAccepted clone() =>
+      EventPaymentAccepted()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventPaymentAccepted copyWith(void Function(EventPaymentAccepted) updates) =>
+      super.copyWith((message) => updates(message as EventPaymentAccepted))
+          as EventPaymentAccepted;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentAccepted create() => EventPaymentAccepted._();
+  EventPaymentAccepted createEmptyInstance() => create();
+  static $pb.PbList<EventPaymentAccepted> createRepeated() =>
+      $pb.PbList<EventPaymentAccepted>();
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentAccepted getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventPaymentAccepted>(create);
+  static EventPaymentAccepted? _defaultInstance;
+
+  /// source is the account that created the Payment.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// source_amount is the coins amount string of the funds that the source will pay (to the target).
+  @$pb.TagNumber(2)
+  $core.String get sourceAmount => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceAmount($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasSourceAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceAmount() => clearField(2);
+
+  /// target is the account that accepted the Payment.
+  @$pb.TagNumber(3)
+  $core.String get target => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set target($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTarget() => clearField(3);
+
+  /// target_amount is the coins amount string of the funds that the target will pay (to the source).
+  @$pb.TagNumber(4)
+  $core.String get targetAmount => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set targetAmount($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasTargetAmount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetAmount() => clearField(4);
+
+  /// external_id is used along with the source to uniquely identify this Payment.
+  @$pb.TagNumber(5)
+  $core.String get externalId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set externalId($core.String v) {
+    $_setString(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasExternalId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExternalId() => clearField(5);
+}
+
+/// EventPaymentRejected is an event emitted when a payment is rejected (by the target).
+class EventPaymentRejected extends $pb.GeneratedMessage {
+  factory EventPaymentRejected({
+    $core.String? source,
+    $core.String? target,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (target != null) {
+      $result.target = target;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  EventPaymentRejected._() : super();
+  factory EventPaymentRejected.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventPaymentRejected.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventPaymentRejected',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'target')
+    ..aOS(3, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventPaymentRejected clone() =>
+      EventPaymentRejected()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventPaymentRejected copyWith(void Function(EventPaymentRejected) updates) =>
+      super.copyWith((message) => updates(message as EventPaymentRejected))
+          as EventPaymentRejected;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentRejected create() => EventPaymentRejected._();
+  EventPaymentRejected createEmptyInstance() => create();
+  static $pb.PbList<EventPaymentRejected> createRepeated() =>
+      $pb.PbList<EventPaymentRejected>();
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentRejected getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventPaymentRejected>(create);
+  static EventPaymentRejected? _defaultInstance;
+
+  /// source is the account that created the Payment.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// target is the account that rejected the Payment.
+  @$pb.TagNumber(2)
+  $core.String get target => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set target($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasTarget() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTarget() => clearField(2);
+
+  /// external_id is used along with the source to uniquely identify this Payment.
+  @$pb.TagNumber(3)
+  $core.String get externalId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set externalId($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasExternalId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalId() => clearField(3);
+}
+
+/// EventPaymentCancelled is an event emitted when a payment is cancelled (by the source).
+class EventPaymentCancelled extends $pb.GeneratedMessage {
+  factory EventPaymentCancelled({
+    $core.String? source,
+    $core.String? target,
+    $core.String? externalId,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    if (target != null) {
+      $result.target = target;
+    }
+    if (externalId != null) {
+      $result.externalId = externalId;
+    }
+    return $result;
+  }
+  EventPaymentCancelled._() : super();
+  factory EventPaymentCancelled.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory EventPaymentCancelled.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EventPaymentCancelled',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'provenance.exchange.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'target')
+    ..aOS(3, _omitFieldNames ? '' : 'externalId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  EventPaymentCancelled clone() =>
+      EventPaymentCancelled()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  EventPaymentCancelled copyWith(
+          void Function(EventPaymentCancelled) updates) =>
+      super.copyWith((message) => updates(message as EventPaymentCancelled))
+          as EventPaymentCancelled;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentCancelled create() => EventPaymentCancelled._();
+  EventPaymentCancelled createEmptyInstance() => create();
+  static $pb.PbList<EventPaymentCancelled> createRepeated() =>
+      $pb.PbList<EventPaymentCancelled>();
+  @$core.pragma('dart2js:noInline')
+  static EventPaymentCancelled getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EventPaymentCancelled>(create);
+  static EventPaymentCancelled? _defaultInstance;
+
+  /// source is the account that cancelled (and created) the Payment.
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  /// target is the account that could have accepted the Payment.
+  @$pb.TagNumber(2)
+  $core.String get target => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set target($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasTarget() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTarget() => clearField(2);
+
+  /// external_id is used along with the source to uniquely identify this Payment.
+  @$pb.TagNumber(3)
+  $core.String get externalId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set externalId($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasExternalId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalId() => clearField(3);
+}
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -20,16 +20,13 @@ const StorageType$json = {
     {'1': 'STORAGE_TYPE_DEFAULT_UNSPECIFIED', '2': 0},
     {'1': 'STORAGE_TYPE_MEMORY', '2': 1},
     {'1': 'STORAGE_TYPE_TRANSIENT', '2': 2},
-    {'1': 'STORAGE_TYPE_INDEX', '2': 3},
-    {'1': 'STORAGE_TYPE_COMMITMENT', '2': 4},
   ],
 };
 
 /// Descriptor for `StorageType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List storageTypeDescriptor = $convert.base64Decode(
     'CgtTdG9yYWdlVHlwZRIkCiBTVE9SQUdFX1RZUEVfREVGQVVMVF9VTlNQRUNJRklFRBAAEhcKE1'
-    'NUT1JBR0VfVFlQRV9NRU1PUlkQARIaChZTVE9SQUdFX1RZUEVfVFJBTlNJRU5UEAISFgoSU1RP'
-    'UkFHRV9UWVBFX0lOREVYEAMSGwoXU1RPUkFHRV9UWVBFX0NPTU1JVE1FTlQQBA==');
+    'NUT1JBR0VfVFlQRV9NRU1PUlkQARIaChZTVE9SQUdFX1RZUEVfVFJBTlNJRU5UEAI=');
 
 @$core.Deprecated('Use moduleSchemaDescriptorDescriptor instead')
 const ModuleSchemaDescriptor$json = {

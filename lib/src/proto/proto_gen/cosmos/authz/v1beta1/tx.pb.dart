@@ -115,59 +115,46 @@ class MsgGrant extends $pb.GeneratedMessage {
   $1.Grant ensureGrant() => $_ensure(2);
 }
 
-/// MsgExecResponse defines the Msg/MsgExecResponse response type.
-class MsgExecResponse extends $pb.GeneratedMessage {
-  factory MsgExecResponse({
-    $core.Iterable<$core.List<$core.int>>? results,
-  }) {
-    final $result = create();
-    if (results != null) {
-      $result.results.addAll(results);
-    }
-    return $result;
-  }
-  MsgExecResponse._() : super();
-  factory MsgExecResponse.fromBuffer($core.List<$core.int> i,
+/// MsgGrantResponse defines the Msg/MsgGrant response type.
+class MsgGrantResponse extends $pb.GeneratedMessage {
+  factory MsgGrantResponse() => create();
+  MsgGrantResponse._() : super();
+  factory MsgGrantResponse.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory MsgExecResponse.fromJson($core.String i,
+  factory MsgGrantResponse.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'MsgExecResponse',
+      _omitMessageNames ? '' : 'MsgGrantResponse',
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.authz.v1beta1'),
       createEmptyInstance: create)
-    ..p<$core.List<$core.int>>(
-        1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  MsgExecResponse clone() => MsgExecResponse()..mergeFromMessage(this);
+  MsgGrantResponse clone() => MsgGrantResponse()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  MsgExecResponse copyWith(void Function(MsgExecResponse) updates) =>
-      super.copyWith((message) => updates(message as MsgExecResponse))
-          as MsgExecResponse;
+  MsgGrantResponse copyWith(void Function(MsgGrantResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgGrantResponse))
+          as MsgGrantResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static MsgExecResponse create() => MsgExecResponse._();
-  MsgExecResponse createEmptyInstance() => create();
-  static $pb.PbList<MsgExecResponse> createRepeated() =>
-      $pb.PbList<MsgExecResponse>();
+  static MsgGrantResponse create() => MsgGrantResponse._();
+  MsgGrantResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgGrantResponse> createRepeated() =>
+      $pb.PbList<MsgGrantResponse>();
   @$core.pragma('dart2js:noInline')
-  static MsgExecResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<MsgExecResponse>(create);
-  static MsgExecResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$core.List<$core.int>> get results => $_getList(0);
+  static MsgGrantResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgGrantResponse>(create);
+  static MsgGrantResponse? _defaultInstance;
 }
 
 /// MsgExec attempts to execute the provided messages using
@@ -238,53 +225,66 @@ class MsgExec extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearGrantee() => clearField(1);
 
-  /// Authorization Msg requests to execute. Each msg must implement Authorization interface
+  /// Execute Msg.
   /// The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
   /// triple and validate it.
   @$pb.TagNumber(2)
   $core.List<$2.Any> get msgs => $_getList(1);
 }
 
-/// MsgGrantResponse defines the Msg/MsgGrant response type.
-class MsgGrantResponse extends $pb.GeneratedMessage {
-  factory MsgGrantResponse() => create();
-  MsgGrantResponse._() : super();
-  factory MsgGrantResponse.fromBuffer($core.List<$core.int> i,
+/// MsgExecResponse defines the Msg/MsgExecResponse response type.
+class MsgExecResponse extends $pb.GeneratedMessage {
+  factory MsgExecResponse({
+    $core.Iterable<$core.List<$core.int>>? results,
+  }) {
+    final $result = create();
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
+  MsgExecResponse._() : super();
+  factory MsgExecResponse.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory MsgGrantResponse.fromJson($core.String i,
+  factory MsgExecResponse.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'MsgGrantResponse',
+      _omitMessageNames ? '' : 'MsgExecResponse',
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.authz.v1beta1'),
       createEmptyInstance: create)
+    ..p<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  MsgGrantResponse clone() => MsgGrantResponse()..mergeFromMessage(this);
+  MsgExecResponse clone() => MsgExecResponse()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  MsgGrantResponse copyWith(void Function(MsgGrantResponse) updates) =>
-      super.copyWith((message) => updates(message as MsgGrantResponse))
-          as MsgGrantResponse;
+  MsgExecResponse copyWith(void Function(MsgExecResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgExecResponse))
+          as MsgExecResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static MsgGrantResponse create() => MsgGrantResponse._();
-  MsgGrantResponse createEmptyInstance() => create();
-  static $pb.PbList<MsgGrantResponse> createRepeated() =>
-      $pb.PbList<MsgGrantResponse>();
+  static MsgExecResponse create() => MsgExecResponse._();
+  MsgExecResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgExecResponse> createRepeated() =>
+      $pb.PbList<MsgExecResponse>();
   @$core.pragma('dart2js:noInline')
-  static MsgGrantResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<MsgGrantResponse>(create);
-  static MsgGrantResponse? _defaultInstance;
+  static MsgExecResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgExecResponse>(create);
+  static MsgExecResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.List<$core.int>> get results => $_getList(0);
 }
 
 /// MsgRevoke revokes any authorization with the provided sdk.Msg type on the

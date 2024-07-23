@@ -105,6 +105,30 @@ class QueryClient extends $grpc.Client {
       ($0.QueryNextSequenceReceiveRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.QueryNextSequenceReceiveResponse.fromBuffer(value));
+  static final _$nextSequenceSend = $grpc.ClientMethod<
+          $0.QueryNextSequenceSendRequest, $0.QueryNextSequenceSendResponse>(
+      '/ibc.core.channel.v1.Query/NextSequenceSend',
+      ($0.QueryNextSequenceSendRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryNextSequenceSendResponse.fromBuffer(value));
+  static final _$upgradeError = $grpc.ClientMethod<$0.QueryUpgradeErrorRequest,
+          $0.QueryUpgradeErrorResponse>(
+      '/ibc.core.channel.v1.Query/UpgradeError',
+      ($0.QueryUpgradeErrorRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryUpgradeErrorResponse.fromBuffer(value));
+  static final _$upgrade =
+      $grpc.ClientMethod<$0.QueryUpgradeRequest, $0.QueryUpgradeResponse>(
+          '/ibc.core.channel.v1.Query/Upgrade',
+          ($0.QueryUpgradeRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.QueryUpgradeResponse.fromBuffer(value));
+  static final _$channelParams = $grpc.ClientMethod<
+          $0.QueryChannelParamsRequest, $0.QueryChannelParamsResponse>(
+      '/ibc.core.channel.v1.Query/ChannelParams',
+      ($0.QueryChannelParamsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryChannelParamsResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -188,6 +212,30 @@ class QueryClient extends $grpc.Client {
       $0.QueryNextSequenceReceiveRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$nextSequenceReceive, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryNextSequenceSendResponse> nextSequenceSend(
+      $0.QueryNextSequenceSendRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$nextSequenceSend, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryUpgradeErrorResponse> upgradeError(
+      $0.QueryUpgradeErrorRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$upgradeError, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryUpgradeResponse> upgrade(
+      $0.QueryUpgradeRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$upgrade, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryChannelParamsResponse> channelParams(
+      $0.QueryChannelParamsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelParams, request, options: options);
   }
 }
 
@@ -316,6 +364,42 @@ abstract class QueryServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.QueryNextSequenceReceiveRequest.fromBuffer(value),
         ($0.QueryNextSequenceReceiveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryNextSequenceSendRequest,
+            $0.QueryNextSequenceSendResponse>(
+        'NextSequenceSend',
+        nextSequenceSend_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryNextSequenceSendRequest.fromBuffer(value),
+        ($0.QueryNextSequenceSendResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryUpgradeErrorRequest,
+            $0.QueryUpgradeErrorResponse>(
+        'UpgradeError',
+        upgradeError_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryUpgradeErrorRequest.fromBuffer(value),
+        ($0.QueryUpgradeErrorResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.QueryUpgradeRequest, $0.QueryUpgradeResponse>(
+            'Upgrade',
+            upgrade_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.QueryUpgradeRequest.fromBuffer(value),
+            ($0.QueryUpgradeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryChannelParamsRequest,
+            $0.QueryChannelParamsResponse>(
+        'ChannelParams',
+        channelParams_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryChannelParamsRequest.fromBuffer(value),
+        ($0.QueryChannelParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryChannelResponse> channel_Pre($grpc.ServiceCall call,
@@ -394,6 +478,29 @@ abstract class QueryServiceBase extends $grpc.Service {
     return nextSequenceReceive(call, await request);
   }
 
+  $async.Future<$0.QueryNextSequenceSendResponse> nextSequenceSend_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryNextSequenceSendRequest> request) async {
+    return nextSequenceSend(call, await request);
+  }
+
+  $async.Future<$0.QueryUpgradeErrorResponse> upgradeError_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryUpgradeErrorRequest> request) async {
+    return upgradeError(call, await request);
+  }
+
+  $async.Future<$0.QueryUpgradeResponse> upgrade_Pre($grpc.ServiceCall call,
+      $async.Future<$0.QueryUpgradeRequest> request) async {
+    return upgrade(call, await request);
+  }
+
+  $async.Future<$0.QueryChannelParamsResponse> channelParams_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryChannelParamsRequest> request) async {
+    return channelParams(call, await request);
+  }
+
   $async.Future<$0.QueryChannelResponse> channel(
       $grpc.ServiceCall call, $0.QueryChannelRequest request);
   $async.Future<$0.QueryChannelsResponse> channels(
@@ -420,4 +527,12 @@ abstract class QueryServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.QueryUnreceivedAcksRequest request);
   $async.Future<$0.QueryNextSequenceReceiveResponse> nextSequenceReceive(
       $grpc.ServiceCall call, $0.QueryNextSequenceReceiveRequest request);
+  $async.Future<$0.QueryNextSequenceSendResponse> nextSequenceSend(
+      $grpc.ServiceCall call, $0.QueryNextSequenceSendRequest request);
+  $async.Future<$0.QueryUpgradeErrorResponse> upgradeError(
+      $grpc.ServiceCall call, $0.QueryUpgradeErrorRequest request);
+  $async.Future<$0.QueryUpgradeResponse> upgrade(
+      $grpc.ServiceCall call, $0.QueryUpgradeRequest request);
+  $async.Future<$0.QueryChannelParamsResponse> channelParams(
+      $grpc.ServiceCall call, $0.QueryChannelParamsRequest request);
 }

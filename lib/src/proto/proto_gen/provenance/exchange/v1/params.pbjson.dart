@@ -27,14 +27,35 @@ const Params$json = {
       '8': {},
       '10': 'denomSplits'
     },
+    {
+      '1': 'fee_create_payment_flat',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.Coin',
+      '8': {},
+      '10': 'feeCreatePaymentFlat'
+    },
+    {
+      '1': 'fee_accept_payment_flat',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.Coin',
+      '8': {},
+      '10': 'feeAcceptPaymentFlat'
+    },
   ],
 };
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSIwoNZGVmYXVsdF9zcGxpdBgBIAEoDVIMZGVmYXVsdFNwbGl0EksKDGRlbm9tX3'
-    'NwbGl0cxgCIAMoCzIiLnByb3ZlbmFuY2UuZXhjaGFuZ2UudjEuRGVub21TcGxpdEIEyN4fAFIL'
-    'ZGVub21TcGxpdHM=');
+    'CgZQYXJhbXMSIwoNZGVmYXVsdF9zcGxpdBgBIAEoDVIMZGVmYXVsdFNwbGl0ElAKDGRlbm9tX3'
+    'NwbGl0cxgCIAMoCzIiLnByb3ZlbmFuY2UuZXhjaGFuZ2UudjEuRGVub21TcGxpdEIJyN4fAKjn'
+    'sCoBUgtkZW5vbVNwbGl0cxJbChdmZWVfY3JlYXRlX3BheW1lbnRfZmxhdBgDIAMoCzIZLmNvc2'
+    '1vcy5iYXNlLnYxYmV0YTEuQ29pbkIJyN4fAKjnsCoBUhRmZWVDcmVhdGVQYXltZW50RmxhdBJb'
+    'ChdmZWVfYWNjZXB0X3BheW1lbnRfZmxhdBgEIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ2'
+    '9pbkIJyN4fAKjnsCoBUhRmZWVBY2NlcHRQYXltZW50RmxhdA==');
 
 @$core.Deprecated('Use denomSplitDescriptor instead')
 const DenomSplit$json = {

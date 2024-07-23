@@ -56,12 +56,12 @@ const ResponseBroadcastTx$json = {
       '10': 'checkTx'
     },
     {
-      '1': 'deliver_tx',
+      '1': 'tx_result',
       '3': 2,
       '4': 1,
       '5': 11,
-      '6': '.tendermint.abci.ResponseDeliverTx',
-      '10': 'deliverTx'
+      '6': '.tendermint.abci.ExecTxResult',
+      '10': 'txResult'
     },
   ],
 };
@@ -69,5 +69,5 @@ const ResponseBroadcastTx$json = {
 /// Descriptor for `ResponseBroadcastTx`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List responseBroadcastTxDescriptor = $convert.base64Decode(
     'ChNSZXNwb25zZUJyb2FkY2FzdFR4EjsKCGNoZWNrX3R4GAEgASgLMiAudGVuZGVybWludC5hYm'
-    'NpLlJlc3BvbnNlQ2hlY2tUeFIHY2hlY2tUeBJBCgpkZWxpdmVyX3R4GAIgASgLMiIudGVuZGVy'
-    'bWludC5hYmNpLlJlc3BvbnNlRGVsaXZlclR4UglkZWxpdmVyVHg=');
+    'NpLlJlc3BvbnNlQ2hlY2tUeFIHY2hlY2tUeBI6Cgl0eF9yZXN1bHQYAiABKAsyHS50ZW5kZXJt'
+    'aW50LmFiY2kuRXhlY1R4UmVzdWx0Ugh0eFJlc3VsdA==');

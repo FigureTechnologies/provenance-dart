@@ -22,7 +22,6 @@ const Params$json = {
       '3': 1,
       '4': 1,
       '5': 8,
-      '8': {},
       '10': 'controllerEnabled'
     },
   ],
@@ -30,5 +29,5 @@ const Params$json = {
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSTAoSY29udHJvbGxlcl9lbmFibGVkGAEgASgIQh3y3h8ZeWFtbDoiY29udHJvbG'
-    'xlcl9lbmFibGVkIlIRY29udHJvbGxlckVuYWJsZWQ=');
+    'CgZQYXJhbXMSLQoSY29udHJvbGxlcl9lbmFibGVkGAEgASgIUhFjb250cm9sbGVyRW5hYmxlZA'
+    '==');

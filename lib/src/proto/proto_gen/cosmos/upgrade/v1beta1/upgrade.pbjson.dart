@@ -44,10 +44,11 @@ const Plan$json = {
 
 /// Descriptor for `Plan`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List planDescriptor = $convert.base64Decode(
-    'CgRQbGFuEhIKBG5hbWUYASABKAlSBG5hbWUSOgoEdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2'
-    'J1Zi5UaW1lc3RhbXBCChgByN4fAJDfHwFSBHRpbWUSFgoGaGVpZ2h0GAMgASgDUgZoZWlnaHQS'
-    'EgoEaW5mbxgEIAEoCVIEaW5mbxJMChV1cGdyYWRlZF9jbGllbnRfc3RhdGUYBSABKAsyFC5nb2'
-    '9nbGUucHJvdG9idWYuQW55QgIYAVITdXBncmFkZWRDbGllbnRTdGF0ZToImKAfAOigHwE=');
+    'CgRQbGFuEhIKBG5hbWUYASABKAlSBG5hbWUSPwoEdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2'
+    'J1Zi5UaW1lc3RhbXBCDxgByN4fAJDfHwGo57AqAVIEdGltZRIWCgZoZWlnaHQYAyABKANSBmhl'
+    'aWdodBISCgRpbmZvGAQgASgJUgRpbmZvEkwKFXVwZ3JhZGVkX2NsaWVudF9zdGF0ZRgFIAEoCz'
+    'IULmdvb2dsZS5wcm90b2J1Zi5BbnlCAhgBUhN1cGdyYWRlZENsaWVudFN0YXRlOhjooB8Biuew'
+    'Kg9jb3Ntb3Mtc2RrL1BsYW4=');
 
 @$core.Deprecated('Use softwareUpgradeProposalDescriptor instead')
 const SoftwareUpgradeProposal$json = {
@@ -71,9 +72,9 @@ const SoftwareUpgradeProposal$json = {
 /// Descriptor for `SoftwareUpgradeProposal`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List softwareUpgradeProposalDescriptor = $convert.base64Decode(
     'ChdTb2Z0d2FyZVVwZ3JhZGVQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIAoLZGVzY3'
-    'JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEjYKBHBsYW4YAyABKAsyHC5jb3Ntb3MudXBncmFk'
-    'ZS52MWJldGExLlBsYW5CBMjeHwBSBHBsYW46KBgBmKAfAOigHwHKtC0aY29zbW9zLmdvdi52MW'
-    'JldGExLkNvbnRlbnQ=');
+    'JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEjsKBHBsYW4YAyABKAsyHC5jb3Ntb3MudXBncmFk'
+    'ZS52MWJldGExLlBsYW5CCcjeHwCo57AqAVIEcGxhbjpLGAHooB8ByrQtGmNvc21vcy5nb3Yudj'
+    'FiZXRhMS5Db250ZW50iuewKiJjb3Ntb3Mtc2RrL1NvZnR3YXJlVXBncmFkZVByb3Bvc2Fs');
 
 @$core.Deprecated('Use cancelSoftwareUpgradeProposalDescriptor instead')
 const CancelSoftwareUpgradeProposal$json = {
@@ -86,11 +87,11 @@ const CancelSoftwareUpgradeProposal$json = {
 };
 
 /// Descriptor for `CancelSoftwareUpgradeProposal`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List cancelSoftwareUpgradeProposalDescriptor =
-    $convert.base64Decode(
-        'Ch1DYW5jZWxTb2Z0d2FyZVVwZ3JhZGVQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIA'
-        'oLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uOigYAZigHwDooB8ByrQtGmNvc21vcy5n'
-        'b3YudjFiZXRhMS5Db250ZW50');
+final $typed_data.Uint8List cancelSoftwareUpgradeProposalDescriptor = $convert.base64Decode(
+    'Ch1DYW5jZWxTb2Z0d2FyZVVwZ3JhZGVQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIA'
+    'oLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uOlEYAeigHwHKtC0aY29zbW9zLmdvdi52'
+    'MWJldGExLkNvbnRlbnSK57AqKGNvc21vcy1zZGsvQ2FuY2VsU29mdHdhcmVVcGdyYWRlUHJvcG'
+    '9zYWw=');
 
 @$core.Deprecated('Use moduleVersionDescriptor instead')
 const ModuleVersion$json = {
@@ -105,4 +106,4 @@ const ModuleVersion$json = {
 /// Descriptor for `ModuleVersion`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moduleVersionDescriptor = $convert.base64Decode(
     'Cg1Nb2R1bGVWZXJzaW9uEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHdmVyc2lvbhgCIAEoBFIHdm'
-    'Vyc2lvbjoImKAfAeigHwE=');
+    'Vyc2lvbjoE6KAfAQ==');

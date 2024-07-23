@@ -29,6 +29,7 @@ class Channel extends $pb.GeneratedMessage {
     Counterparty? counterparty,
     $core.Iterable<$core.String>? connectionHops,
     $core.String? version,
+    $fixnum.Int64? upgradeSequence,
   }) {
     final $result = create();
     if (state != null) {
@@ -45,6 +46,9 @@ class Channel extends $pb.GeneratedMessage {
     }
     if (version != null) {
       $result.version = version;
+    }
+    if (upgradeSequence != null) {
+      $result.upgradeSequence = upgradeSequence;
     }
     return $result;
   }
@@ -73,6 +77,9 @@ class Channel extends $pb.GeneratedMessage {
         subBuilder: Counterparty.create)
     ..pPS(4, _omitFieldNames ? '' : 'connectionHops')
     ..aOS(5, _omitFieldNames ? '' : 'version')
+    ..a<$fixnum.Int64>(
+        6, _omitFieldNames ? '' : 'upgradeSequence', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -154,6 +161,20 @@ class Channel extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearVersion() => clearField(5);
+
+  /// upgrade sequence indicates the latest upgrade attempt performed by this channel
+  /// the value of 0 indicates the channel has never been upgraded
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get upgradeSequence => $_getI64(5);
+  @$pb.TagNumber(6)
+  set upgradeSequence($fixnum.Int64 v) {
+    $_setInt64(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasUpgradeSequence() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUpgradeSequence() => clearField(6);
 }
 
 /// IdentifiedChannel defines a channel with additional port and channel
@@ -167,6 +188,7 @@ class IdentifiedChannel extends $pb.GeneratedMessage {
     $core.String? version,
     $core.String? portId,
     $core.String? channelId,
+    $fixnum.Int64? upgradeSequence,
   }) {
     final $result = create();
     if (state != null) {
@@ -189,6 +211,9 @@ class IdentifiedChannel extends $pb.GeneratedMessage {
     }
     if (channelId != null) {
       $result.channelId = channelId;
+    }
+    if (upgradeSequence != null) {
+      $result.upgradeSequence = upgradeSequence;
     }
     return $result;
   }
@@ -219,6 +244,9 @@ class IdentifiedChannel extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'version')
     ..aOS(6, _omitFieldNames ? '' : 'portId')
     ..aOS(7, _omitFieldNames ? '' : 'channelId')
+    ..a<$fixnum.Int64>(
+        8, _omitFieldNames ? '' : 'upgradeSequence', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -328,6 +356,20 @@ class IdentifiedChannel extends $pb.GeneratedMessage {
   $core.bool hasChannelId() => $_has(6);
   @$pb.TagNumber(7)
   void clearChannelId() => clearField(7);
+
+  /// upgrade sequence indicates the latest upgrade attempt performed by this channel
+  /// the value of 0 indicates the channel has never been upgraded
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get upgradeSequence => $_getI64(7);
+  @$pb.TagNumber(8)
+  set upgradeSequence($fixnum.Int64 v) {
+    $_setInt64(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasUpgradeSequence() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpgradeSequence() => clearField(8);
 }
 
 /// Counterparty defines a channel end counterparty
@@ -933,6 +975,158 @@ class Acknowledgement extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(1);
   @$pb.TagNumber(22)
   void clearError() => clearField(22);
+}
+
+/// Timeout defines an execution deadline structure for 04-channel handlers.
+/// This includes packet lifecycle handlers as well as the upgrade handshake handlers.
+/// A valid Timeout contains either one or both of a timestamp and block height (sequence).
+class Timeout extends $pb.GeneratedMessage {
+  factory Timeout({
+    $0.Height? height,
+    $fixnum.Int64? timestamp,
+  }) {
+    final $result = create();
+    if (height != null) {
+      $result.height = height;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    return $result;
+  }
+  Timeout._() : super();
+  factory Timeout.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Timeout.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Timeout',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.channel.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.Height>(1, _omitFieldNames ? '' : 'height',
+        subBuilder: $0.Height.create)
+    ..a<$fixnum.Int64>(
+        2, _omitFieldNames ? '' : 'timestamp', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Timeout clone() => Timeout()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Timeout copyWith(void Function(Timeout) updates) =>
+      super.copyWith((message) => updates(message as Timeout)) as Timeout;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Timeout create() => Timeout._();
+  Timeout createEmptyInstance() => create();
+  static $pb.PbList<Timeout> createRepeated() => $pb.PbList<Timeout>();
+  @$core.pragma('dart2js:noInline')
+  static Timeout getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Timeout>(create);
+  static Timeout? _defaultInstance;
+
+  /// block height after which the packet or upgrade times out
+  @$pb.TagNumber(1)
+  $0.Height get height => $_getN(0);
+  @$pb.TagNumber(1)
+  set height($0.Height v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasHeight() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeight() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.Height ensureHeight() => $_ensure(0);
+
+  /// block timestamp (in nanoseconds) after which the packet or upgrade times out
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get timestamp => $_getI64(1);
+  @$pb.TagNumber(2)
+  set timestamp($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasTimestamp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimestamp() => clearField(2);
+}
+
+/// Params defines the set of IBC channel parameters.
+class Params extends $pb.GeneratedMessage {
+  factory Params({
+    Timeout? upgradeTimeout,
+  }) {
+    final $result = create();
+    if (upgradeTimeout != null) {
+      $result.upgradeTimeout = upgradeTimeout;
+    }
+    return $result;
+  }
+  Params._() : super();
+  factory Params.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Params.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Params',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.channel.v1'),
+      createEmptyInstance: create)
+    ..aOM<Timeout>(1, _omitFieldNames ? '' : 'upgradeTimeout',
+        subBuilder: Timeout.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Params clone() => Params()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Params copyWith(void Function(Params) updates) =>
+      super.copyWith((message) => updates(message as Params)) as Params;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Params create() => Params._();
+  Params createEmptyInstance() => create();
+  static $pb.PbList<Params> createRepeated() => $pb.PbList<Params>();
+  @$core.pragma('dart2js:noInline')
+  static Params getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Params>(create);
+  static Params? _defaultInstance;
+
+  /// the relative timeout after which channel upgrades will time out.
+  @$pb.TagNumber(1)
+  Timeout get upgradeTimeout => $_getN(0);
+  @$pb.TagNumber(1)
+  set upgradeTimeout(Timeout v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasUpgradeTimeout() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUpgradeTimeout() => clearField(1);
+  @$pb.TagNumber(1)
+  Timeout ensureUpgradeTimeout() => $_ensure(0);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

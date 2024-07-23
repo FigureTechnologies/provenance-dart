@@ -27,6 +27,7 @@ class GenesisState extends $pb.GeneratedMessage {
     $core.Iterable<PacketSequence>? recvSequences,
     $core.Iterable<PacketSequence>? ackSequences,
     $fixnum.Int64? nextChannelSequence,
+    $0.Params? params,
   }) {
     final $result = create();
     if (channels != null) {
@@ -52,6 +53,9 @@ class GenesisState extends $pb.GeneratedMessage {
     }
     if (nextChannelSequence != null) {
       $result.nextChannelSequence = nextChannelSequence;
+    }
+    if (params != null) {
+      $result.params = params;
     }
     return $result;
   }
@@ -92,6 +96,8 @@ class GenesisState extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(
         8, _omitFieldNames ? '' : 'nextChannelSequence', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<$0.Params>(9, _omitFieldNames ? '' : 'params',
+        subBuilder: $0.Params.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -150,6 +156,20 @@ class GenesisState extends $pb.GeneratedMessage {
   $core.bool hasNextChannelSequence() => $_has(7);
   @$pb.TagNumber(8)
   void clearNextChannelSequence() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $0.Params get params => $_getN(8);
+  @$pb.TagNumber(9)
+  set params($0.Params v) {
+    setField(9, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasParams() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearParams() => clearField(9);
+  @$pb.TagNumber(9)
+  $0.Params ensureParams() => $_ensure(8);
 }
 
 /// PacketSequence defines the genesis type necessary to retrieve and store

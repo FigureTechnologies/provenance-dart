@@ -58,14 +58,13 @@ const QueryAttributeRequest$json = {
       '10': 'pagination'
     },
   ],
-  '7': {},
 };
 
 /// Descriptor for `QueryAttributeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryAttributeRequestDescriptor = $convert.base64Decode(
     'ChVRdWVyeUF0dHJpYnV0ZVJlcXVlc3QSGAoHYWNjb3VudBgBIAEoCVIHYWNjb3VudBISCgRuYW'
     '1lGAIgASgJUgRuYW1lEkYKCnBhZ2luYXRpb24YAyABKAsyJi5jb3Ntb3MuYmFzZS5xdWVyeS52'
-    'MWJldGExLlBhZ2VSZXF1ZXN0UgpwYWdpbmF0aW9uOgiIoB8A6KAfAA==');
+    'MWJldGExLlBhZ2VSZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use queryAttributeResponseDescriptor instead')
 const QueryAttributeResponse$json = {
@@ -113,14 +112,13 @@ const QueryAttributesRequest$json = {
       '10': 'pagination'
     },
   ],
-  '7': {},
 };
 
 /// Descriptor for `QueryAttributesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryAttributesRequestDescriptor = $convert.base64Decode(
     'ChZRdWVyeUF0dHJpYnV0ZXNSZXF1ZXN0EhgKB2FjY291bnQYASABKAlSB2FjY291bnQSRgoKcG'
     'FnaW5hdGlvbhgCIAEoCzImLmNvc21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlcXVlc3RS'
-    'CnBhZ2luYXRpb246CIigHwDooB8A');
+    'CnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use queryAttributesResponseDescriptor instead')
 const QueryAttributesResponse$json = {
@@ -169,14 +167,13 @@ const QueryScanRequest$json = {
       '10': 'pagination'
     },
   ],
-  '7': {},
 };
 
 /// Descriptor for `QueryScanRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryScanRequestDescriptor = $convert.base64Decode(
     'ChBRdWVyeVNjYW5SZXF1ZXN0EhgKB2FjY291bnQYASABKAlSB2FjY291bnQSFgoGc3VmZml4GA'
     'IgASgJUgZzdWZmaXgSRgoKcGFnaW5hdGlvbhgDIAEoCzImLmNvc21vcy5iYXNlLnF1ZXJ5LnYx'
-    'YmV0YTEuUGFnZVJlcXVlc3RSCnBhZ2luYXRpb246CIigHwDooB8A');
+    'YmV0YTEuUGFnZVJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use queryScanResponseDescriptor instead')
 const QueryScanResponse$json = {

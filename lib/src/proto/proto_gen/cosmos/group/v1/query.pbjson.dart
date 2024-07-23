@@ -607,8 +607,8 @@ const QueryTallyResultResponse$json = {
 /// Descriptor for `QueryTallyResultResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryTallyResultResponseDescriptor =
     $convert.base64Decode(
-        'ChhRdWVyeVRhbGx5UmVzdWx0UmVzcG9uc2USOAoFdGFsbHkYASABKAsyHC5jb3Ntb3MuZ3JvdX'
-        'AudjEuVGFsbHlSZXN1bHRCBMjeHwBSBXRhbGx5');
+        'ChhRdWVyeVRhbGx5UmVzdWx0UmVzcG9uc2USPQoFdGFsbHkYASABKAsyHC5jb3Ntb3MuZ3JvdX'
+        'AudjEuVGFsbHlSZXN1bHRCCcjeHwCo57AqAVIFdGFsbHk=');
 
 @$core.Deprecated('Use queryGroupsRequestDescriptor instead')
 const QueryGroupsRequest$json = {

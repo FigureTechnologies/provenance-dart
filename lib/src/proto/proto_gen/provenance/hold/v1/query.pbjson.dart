@@ -45,9 +45,9 @@ const GetHoldsResponse$json = {
 
 /// Descriptor for `GetHoldsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getHoldsResponseDescriptor = $convert.base64Decode(
-    'ChBHZXRIb2xkc1Jlc3BvbnNlEmMKBmFtb3VudBgBIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YT'
-    'EuQ29pbkIwyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5z'
-    'UgZhbW91bnQ6CIigHwDooB8A');
+    'ChBHZXRIb2xkc1Jlc3BvbnNlEnkKBmFtb3VudBgBIAMoCzIZLmNvc21vcy5iYXNlLnYxYmV0YT'
+    'EuQ29pbkJGyN4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5z'
+    'muewKgxsZWdhY3lfY29pbnOo57AqAVIGYW1vdW50OgiIoB8A6KAfAA==');
 
 @$core.Deprecated('Use getAllHoldsRequestDescriptor instead')
 const GetAllHoldsRequest$json = {

@@ -72,6 +72,7 @@ class MsgSubmitEvidence extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgSubmitEvidence>(create);
   static MsgSubmitEvidence? _defaultInstance;
 
+  /// submitter is the signer account address of evidence.
   @$pb.TagNumber(1)
   $core.String get submitter => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -84,6 +85,7 @@ class MsgSubmitEvidence extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSubmitter() => clearField(1);
 
+  /// evidence defines the evidence of misbehavior.
   @$pb.TagNumber(2)
   $1.Any get evidence => $_getN(1);
   @$pb.TagNumber(2)

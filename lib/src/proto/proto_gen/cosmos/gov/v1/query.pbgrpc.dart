@@ -21,6 +21,12 @@ export 'query.pb.dart';
 
 @$pb.GrpcServiceName('cosmos.gov.v1.Query')
 class QueryClient extends $grpc.Client {
+  static final _$constitution = $grpc.ClientMethod<$0.QueryConstitutionRequest,
+          $0.QueryConstitutionResponse>(
+      '/cosmos.gov.v1.Query/Constitution',
+      ($0.QueryConstitutionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryConstitutionResponse.fromBuffer(value));
   static final _$proposal =
       $grpc.ClientMethod<$0.QueryProposalRequest, $0.QueryProposalResponse>(
           '/cosmos.gov.v1.Query/Proposal',
@@ -75,6 +81,12 @@ class QueryClient extends $grpc.Client {
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
+  $grpc.ResponseFuture<$0.QueryConstitutionResponse> constitution(
+      $0.QueryConstitutionRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$constitution, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.QueryProposalResponse> proposal(
       $0.QueryProposalRequest request,
       {$grpc.CallOptions? options}) {
@@ -128,6 +140,15 @@ abstract class QueryServiceBase extends $grpc.Service {
   $core.String get $name => 'cosmos.gov.v1.Query';
 
   QueryServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.QueryConstitutionRequest,
+            $0.QueryConstitutionResponse>(
+        'Constitution',
+        constitution_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryConstitutionRequest.fromBuffer(value),
+        ($0.QueryConstitutionResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.QueryProposalRequest, $0.QueryProposalResponse>(
             'Proposal',
@@ -198,6 +219,12 @@ abstract class QueryServiceBase extends $grpc.Service {
         ($0.QueryTallyResultResponse value) => value.writeToBuffer()));
   }
 
+  $async.Future<$0.QueryConstitutionResponse> constitution_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryConstitutionRequest> request) async {
+    return constitution(call, await request);
+  }
+
   $async.Future<$0.QueryProposalResponse> proposal_Pre($grpc.ServiceCall call,
       $async.Future<$0.QueryProposalRequest> request) async {
     return proposal(call, await request);
@@ -239,6 +266,8 @@ abstract class QueryServiceBase extends $grpc.Service {
     return tallyResult(call, await request);
   }
 
+  $async.Future<$0.QueryConstitutionResponse> constitution(
+      $grpc.ServiceCall call, $0.QueryConstitutionRequest request);
   $async.Future<$0.QueryProposalResponse> proposal(
       $grpc.ServiceCall call, $0.QueryProposalRequest request);
   $async.Future<$0.QueryProposalsResponse> proposals(

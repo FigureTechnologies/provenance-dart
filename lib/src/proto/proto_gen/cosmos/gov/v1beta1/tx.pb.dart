@@ -83,6 +83,7 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgSubmitProposal>(create);
   static MsgSubmitProposal? _defaultInstance;
 
+  /// content is the proposal's content.
   @$pb.TagNumber(1)
   $1.Any get content => $_getN(0);
   @$pb.TagNumber(1)
@@ -97,9 +98,11 @@ class MsgSubmitProposal extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.Any ensureContent() => $_ensure(0);
 
+  /// initial_deposit is the deposit value that must be paid at proposal submission.
   @$pb.TagNumber(2)
   $core.List<$2.Coin> get initialDeposit => $_getList(1);
 
+  /// proposer is the account address of the proposer.
   @$pb.TagNumber(3)
   $core.String get proposer => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -167,6 +170,7 @@ class MsgSubmitProposalResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgSubmitProposalResponse>(create);
   static MsgSubmitProposalResponse? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -243,6 +247,7 @@ class MsgVote extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgVote>(create);
   static MsgVote? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -255,6 +260,7 @@ class MsgVote extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// voter is the voter address for the proposal.
   @$pb.TagNumber(2)
   $core.String get voter => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -267,6 +273,7 @@ class MsgVote extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearVoter() => clearField(2);
 
+  /// option defines the vote option.
   @$pb.TagNumber(3)
   $3.VoteOption get option => $_getN(2);
   @$pb.TagNumber(3)
@@ -388,6 +395,7 @@ class MsgVoteWeighted extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgVoteWeighted>(create);
   static MsgVoteWeighted? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -400,6 +408,7 @@ class MsgVoteWeighted extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// voter is the voter address for the proposal.
   @$pb.TagNumber(2)
   $core.String get voter => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -412,6 +421,7 @@ class MsgVoteWeighted extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearVoter() => clearField(2);
 
+  /// options defines the weighted vote options.
   @$pb.TagNumber(3)
   $core.List<$3.WeightedVoteOption> get options => $_getList(2);
 }
@@ -523,6 +533,7 @@ class MsgDeposit extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgDeposit>(create);
   static MsgDeposit? _defaultInstance;
 
+  /// proposal_id defines the unique id of the proposal.
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -535,6 +546,7 @@ class MsgDeposit extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearProposalId() => clearField(1);
 
+  /// depositor defines the deposit addresses from the proposals.
   @$pb.TagNumber(2)
   $core.String get depositor => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -547,6 +559,7 @@ class MsgDeposit extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDepositor() => clearField(2);
 
+  /// amount to be deposited by depositor.
   @$pb.TagNumber(3)
   $core.List<$2.Coin> get amount => $_getList(2);
 }

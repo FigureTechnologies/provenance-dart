@@ -15,10 +15,10 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $1;
-import '../crypto/keys.pb.dart' as $5;
+import '../crypto/keys.pb.dart' as $4;
 import '../crypto/proof.pb.dart' as $3;
-import '../types/params.pb.dart' as $4;
-import '../types/types.pb.dart' as $2;
+import '../types/params.pb.dart' as $2;
+import '../types/validator.pbenum.dart' as $5;
 import 'types.pbenum.dart';
 
 export 'types.pbenum.dart';
@@ -27,18 +27,19 @@ enum Request_Value {
   echo,
   flush,
   info,
-  setOption,
   initChain,
   query,
-  beginBlock,
   checkTx,
-  deliverTx,
-  endBlock,
   commit,
   listSnapshots,
   offerSnapshot,
   loadSnapshotChunk,
   applySnapshotChunk,
+  prepareProposal,
+  processProposal,
+  extendVote,
+  verifyVoteExtension,
+  finalizeBlock,
   notSet
 }
 
@@ -47,18 +48,19 @@ class Request extends $pb.GeneratedMessage {
     RequestEcho? echo,
     RequestFlush? flush,
     RequestInfo? info,
-    RequestSetOption? setOption,
     RequestInitChain? initChain,
     RequestQuery? query,
-    RequestBeginBlock? beginBlock,
     RequestCheckTx? checkTx,
-    RequestDeliverTx? deliverTx,
-    RequestEndBlock? endBlock,
     RequestCommit? commit,
     RequestListSnapshots? listSnapshots,
     RequestOfferSnapshot? offerSnapshot,
     RequestLoadSnapshotChunk? loadSnapshotChunk,
     RequestApplySnapshotChunk? applySnapshotChunk,
+    RequestPrepareProposal? prepareProposal,
+    RequestProcessProposal? processProposal,
+    RequestExtendVote? extendVote,
+    RequestVerifyVoteExtension? verifyVoteExtension,
+    RequestFinalizeBlock? finalizeBlock,
   }) {
     final $result = create();
     if (echo != null) {
@@ -70,26 +72,14 @@ class Request extends $pb.GeneratedMessage {
     if (info != null) {
       $result.info = info;
     }
-    if (setOption != null) {
-      $result.setOption = setOption;
-    }
     if (initChain != null) {
       $result.initChain = initChain;
     }
     if (query != null) {
       $result.query = query;
     }
-    if (beginBlock != null) {
-      $result.beginBlock = beginBlock;
-    }
     if (checkTx != null) {
       $result.checkTx = checkTx;
-    }
-    if (deliverTx != null) {
-      $result.deliverTx = deliverTx;
-    }
-    if (endBlock != null) {
-      $result.endBlock = endBlock;
     }
     if (commit != null) {
       $result.commit = commit;
@@ -106,6 +96,21 @@ class Request extends $pb.GeneratedMessage {
     if (applySnapshotChunk != null) {
       $result.applySnapshotChunk = applySnapshotChunk;
     }
+    if (prepareProposal != null) {
+      $result.prepareProposal = prepareProposal;
+    }
+    if (processProposal != null) {
+      $result.processProposal = processProposal;
+    }
+    if (extendVote != null) {
+      $result.extendVote = extendVote;
+    }
+    if (verifyVoteExtension != null) {
+      $result.verifyVoteExtension = verifyVoteExtension;
+    }
+    if (finalizeBlock != null) {
+      $result.finalizeBlock = finalizeBlock;
+    }
     return $result;
   }
   Request._() : super();
@@ -120,18 +125,19 @@ class Request extends $pb.GeneratedMessage {
     1: Request_Value.echo,
     2: Request_Value.flush,
     3: Request_Value.info,
-    4: Request_Value.setOption,
     5: Request_Value.initChain,
     6: Request_Value.query,
-    7: Request_Value.beginBlock,
     8: Request_Value.checkTx,
-    9: Request_Value.deliverTx,
-    10: Request_Value.endBlock,
     11: Request_Value.commit,
     12: Request_Value.listSnapshots,
     13: Request_Value.offerSnapshot,
     14: Request_Value.loadSnapshotChunk,
     15: Request_Value.applySnapshotChunk,
+    16: Request_Value.prepareProposal,
+    17: Request_Value.processProposal,
+    18: Request_Value.extendVote,
+    19: Request_Value.verifyVoteExtension,
+    20: Request_Value.finalizeBlock,
     0: Request_Value.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
@@ -139,27 +145,19 @@ class Request extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+    ..oo(0, [1, 2, 3, 5, 6, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     ..aOM<RequestEcho>(1, _omitFieldNames ? '' : 'echo',
         subBuilder: RequestEcho.create)
     ..aOM<RequestFlush>(2, _omitFieldNames ? '' : 'flush',
         subBuilder: RequestFlush.create)
     ..aOM<RequestInfo>(3, _omitFieldNames ? '' : 'info',
         subBuilder: RequestInfo.create)
-    ..aOM<RequestSetOption>(4, _omitFieldNames ? '' : 'setOption',
-        subBuilder: RequestSetOption.create)
     ..aOM<RequestInitChain>(5, _omitFieldNames ? '' : 'initChain',
         subBuilder: RequestInitChain.create)
     ..aOM<RequestQuery>(6, _omitFieldNames ? '' : 'query',
         subBuilder: RequestQuery.create)
-    ..aOM<RequestBeginBlock>(7, _omitFieldNames ? '' : 'beginBlock',
-        subBuilder: RequestBeginBlock.create)
     ..aOM<RequestCheckTx>(8, _omitFieldNames ? '' : 'checkTx',
         subBuilder: RequestCheckTx.create)
-    ..aOM<RequestDeliverTx>(9, _omitFieldNames ? '' : 'deliverTx',
-        subBuilder: RequestDeliverTx.create)
-    ..aOM<RequestEndBlock>(10, _omitFieldNames ? '' : 'endBlock',
-        subBuilder: RequestEndBlock.create)
     ..aOM<RequestCommit>(11, _omitFieldNames ? '' : 'commit',
         subBuilder: RequestCommit.create)
     ..aOM<RequestListSnapshots>(12, _omitFieldNames ? '' : 'listSnapshots',
@@ -172,6 +170,17 @@ class Request extends $pb.GeneratedMessage {
     ..aOM<RequestApplySnapshotChunk>(
         15, _omitFieldNames ? '' : 'applySnapshotChunk',
         subBuilder: RequestApplySnapshotChunk.create)
+    ..aOM<RequestPrepareProposal>(16, _omitFieldNames ? '' : 'prepareProposal',
+        subBuilder: RequestPrepareProposal.create)
+    ..aOM<RequestProcessProposal>(17, _omitFieldNames ? '' : 'processProposal',
+        subBuilder: RequestProcessProposal.create)
+    ..aOM<RequestExtendVote>(18, _omitFieldNames ? '' : 'extendVote',
+        subBuilder: RequestExtendVote.create)
+    ..aOM<RequestVerifyVoteExtension>(
+        19, _omitFieldNames ? '' : 'verifyVoteExtension',
+        subBuilder: RequestVerifyVoteExtension.create)
+    ..aOM<RequestFinalizeBlock>(20, _omitFieldNames ? '' : 'finalizeBlock',
+        subBuilder: RequestFinalizeBlock.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -240,173 +249,187 @@ class Request extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   RequestInfo ensureInfo() => $_ensure(2);
 
-  @$pb.TagNumber(4)
-  RequestSetOption get setOption => $_getN(3);
-  @$pb.TagNumber(4)
-  set setOption(RequestSetOption v) {
-    setField(4, v);
-  }
-
-  @$pb.TagNumber(4)
-  $core.bool hasSetOption() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSetOption() => clearField(4);
-  @$pb.TagNumber(4)
-  RequestSetOption ensureSetOption() => $_ensure(3);
-
   @$pb.TagNumber(5)
-  RequestInitChain get initChain => $_getN(4);
+  RequestInitChain get initChain => $_getN(3);
   @$pb.TagNumber(5)
   set initChain(RequestInitChain v) {
     setField(5, v);
   }
 
   @$pb.TagNumber(5)
-  $core.bool hasInitChain() => $_has(4);
+  $core.bool hasInitChain() => $_has(3);
   @$pb.TagNumber(5)
   void clearInitChain() => clearField(5);
   @$pb.TagNumber(5)
-  RequestInitChain ensureInitChain() => $_ensure(4);
+  RequestInitChain ensureInitChain() => $_ensure(3);
 
   @$pb.TagNumber(6)
-  RequestQuery get query => $_getN(5);
+  RequestQuery get query => $_getN(4);
   @$pb.TagNumber(6)
   set query(RequestQuery v) {
     setField(6, v);
   }
 
   @$pb.TagNumber(6)
-  $core.bool hasQuery() => $_has(5);
+  $core.bool hasQuery() => $_has(4);
   @$pb.TagNumber(6)
   void clearQuery() => clearField(6);
   @$pb.TagNumber(6)
-  RequestQuery ensureQuery() => $_ensure(5);
-
-  @$pb.TagNumber(7)
-  RequestBeginBlock get beginBlock => $_getN(6);
-  @$pb.TagNumber(7)
-  set beginBlock(RequestBeginBlock v) {
-    setField(7, v);
-  }
-
-  @$pb.TagNumber(7)
-  $core.bool hasBeginBlock() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearBeginBlock() => clearField(7);
-  @$pb.TagNumber(7)
-  RequestBeginBlock ensureBeginBlock() => $_ensure(6);
+  RequestQuery ensureQuery() => $_ensure(4);
 
   @$pb.TagNumber(8)
-  RequestCheckTx get checkTx => $_getN(7);
+  RequestCheckTx get checkTx => $_getN(5);
   @$pb.TagNumber(8)
   set checkTx(RequestCheckTx v) {
     setField(8, v);
   }
 
   @$pb.TagNumber(8)
-  $core.bool hasCheckTx() => $_has(7);
+  $core.bool hasCheckTx() => $_has(5);
   @$pb.TagNumber(8)
   void clearCheckTx() => clearField(8);
   @$pb.TagNumber(8)
-  RequestCheckTx ensureCheckTx() => $_ensure(7);
-
-  @$pb.TagNumber(9)
-  RequestDeliverTx get deliverTx => $_getN(8);
-  @$pb.TagNumber(9)
-  set deliverTx(RequestDeliverTx v) {
-    setField(9, v);
-  }
-
-  @$pb.TagNumber(9)
-  $core.bool hasDeliverTx() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearDeliverTx() => clearField(9);
-  @$pb.TagNumber(9)
-  RequestDeliverTx ensureDeliverTx() => $_ensure(8);
-
-  @$pb.TagNumber(10)
-  RequestEndBlock get endBlock => $_getN(9);
-  @$pb.TagNumber(10)
-  set endBlock(RequestEndBlock v) {
-    setField(10, v);
-  }
-
-  @$pb.TagNumber(10)
-  $core.bool hasEndBlock() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearEndBlock() => clearField(10);
-  @$pb.TagNumber(10)
-  RequestEndBlock ensureEndBlock() => $_ensure(9);
+  RequestCheckTx ensureCheckTx() => $_ensure(5);
 
   @$pb.TagNumber(11)
-  RequestCommit get commit => $_getN(10);
+  RequestCommit get commit => $_getN(6);
   @$pb.TagNumber(11)
   set commit(RequestCommit v) {
     setField(11, v);
   }
 
   @$pb.TagNumber(11)
-  $core.bool hasCommit() => $_has(10);
+  $core.bool hasCommit() => $_has(6);
   @$pb.TagNumber(11)
   void clearCommit() => clearField(11);
   @$pb.TagNumber(11)
-  RequestCommit ensureCommit() => $_ensure(10);
+  RequestCommit ensureCommit() => $_ensure(6);
 
   @$pb.TagNumber(12)
-  RequestListSnapshots get listSnapshots => $_getN(11);
+  RequestListSnapshots get listSnapshots => $_getN(7);
   @$pb.TagNumber(12)
   set listSnapshots(RequestListSnapshots v) {
     setField(12, v);
   }
 
   @$pb.TagNumber(12)
-  $core.bool hasListSnapshots() => $_has(11);
+  $core.bool hasListSnapshots() => $_has(7);
   @$pb.TagNumber(12)
   void clearListSnapshots() => clearField(12);
   @$pb.TagNumber(12)
-  RequestListSnapshots ensureListSnapshots() => $_ensure(11);
+  RequestListSnapshots ensureListSnapshots() => $_ensure(7);
 
   @$pb.TagNumber(13)
-  RequestOfferSnapshot get offerSnapshot => $_getN(12);
+  RequestOfferSnapshot get offerSnapshot => $_getN(8);
   @$pb.TagNumber(13)
   set offerSnapshot(RequestOfferSnapshot v) {
     setField(13, v);
   }
 
   @$pb.TagNumber(13)
-  $core.bool hasOfferSnapshot() => $_has(12);
+  $core.bool hasOfferSnapshot() => $_has(8);
   @$pb.TagNumber(13)
   void clearOfferSnapshot() => clearField(13);
   @$pb.TagNumber(13)
-  RequestOfferSnapshot ensureOfferSnapshot() => $_ensure(12);
+  RequestOfferSnapshot ensureOfferSnapshot() => $_ensure(8);
 
   @$pb.TagNumber(14)
-  RequestLoadSnapshotChunk get loadSnapshotChunk => $_getN(13);
+  RequestLoadSnapshotChunk get loadSnapshotChunk => $_getN(9);
   @$pb.TagNumber(14)
   set loadSnapshotChunk(RequestLoadSnapshotChunk v) {
     setField(14, v);
   }
 
   @$pb.TagNumber(14)
-  $core.bool hasLoadSnapshotChunk() => $_has(13);
+  $core.bool hasLoadSnapshotChunk() => $_has(9);
   @$pb.TagNumber(14)
   void clearLoadSnapshotChunk() => clearField(14);
   @$pb.TagNumber(14)
-  RequestLoadSnapshotChunk ensureLoadSnapshotChunk() => $_ensure(13);
+  RequestLoadSnapshotChunk ensureLoadSnapshotChunk() => $_ensure(9);
 
   @$pb.TagNumber(15)
-  RequestApplySnapshotChunk get applySnapshotChunk => $_getN(14);
+  RequestApplySnapshotChunk get applySnapshotChunk => $_getN(10);
   @$pb.TagNumber(15)
   set applySnapshotChunk(RequestApplySnapshotChunk v) {
     setField(15, v);
   }
 
   @$pb.TagNumber(15)
-  $core.bool hasApplySnapshotChunk() => $_has(14);
+  $core.bool hasApplySnapshotChunk() => $_has(10);
   @$pb.TagNumber(15)
   void clearApplySnapshotChunk() => clearField(15);
   @$pb.TagNumber(15)
-  RequestApplySnapshotChunk ensureApplySnapshotChunk() => $_ensure(14);
+  RequestApplySnapshotChunk ensureApplySnapshotChunk() => $_ensure(10);
+
+  @$pb.TagNumber(16)
+  RequestPrepareProposal get prepareProposal => $_getN(11);
+  @$pb.TagNumber(16)
+  set prepareProposal(RequestPrepareProposal v) {
+    setField(16, v);
+  }
+
+  @$pb.TagNumber(16)
+  $core.bool hasPrepareProposal() => $_has(11);
+  @$pb.TagNumber(16)
+  void clearPrepareProposal() => clearField(16);
+  @$pb.TagNumber(16)
+  RequestPrepareProposal ensurePrepareProposal() => $_ensure(11);
+
+  @$pb.TagNumber(17)
+  RequestProcessProposal get processProposal => $_getN(12);
+  @$pb.TagNumber(17)
+  set processProposal(RequestProcessProposal v) {
+    setField(17, v);
+  }
+
+  @$pb.TagNumber(17)
+  $core.bool hasProcessProposal() => $_has(12);
+  @$pb.TagNumber(17)
+  void clearProcessProposal() => clearField(17);
+  @$pb.TagNumber(17)
+  RequestProcessProposal ensureProcessProposal() => $_ensure(12);
+
+  @$pb.TagNumber(18)
+  RequestExtendVote get extendVote => $_getN(13);
+  @$pb.TagNumber(18)
+  set extendVote(RequestExtendVote v) {
+    setField(18, v);
+  }
+
+  @$pb.TagNumber(18)
+  $core.bool hasExtendVote() => $_has(13);
+  @$pb.TagNumber(18)
+  void clearExtendVote() => clearField(18);
+  @$pb.TagNumber(18)
+  RequestExtendVote ensureExtendVote() => $_ensure(13);
+
+  @$pb.TagNumber(19)
+  RequestVerifyVoteExtension get verifyVoteExtension => $_getN(14);
+  @$pb.TagNumber(19)
+  set verifyVoteExtension(RequestVerifyVoteExtension v) {
+    setField(19, v);
+  }
+
+  @$pb.TagNumber(19)
+  $core.bool hasVerifyVoteExtension() => $_has(14);
+  @$pb.TagNumber(19)
+  void clearVerifyVoteExtension() => clearField(19);
+  @$pb.TagNumber(19)
+  RequestVerifyVoteExtension ensureVerifyVoteExtension() => $_ensure(14);
+
+  @$pb.TagNumber(20)
+  RequestFinalizeBlock get finalizeBlock => $_getN(15);
+  @$pb.TagNumber(20)
+  set finalizeBlock(RequestFinalizeBlock v) {
+    setField(20, v);
+  }
+
+  @$pb.TagNumber(20)
+  $core.bool hasFinalizeBlock() => $_has(15);
+  @$pb.TagNumber(20)
+  void clearFinalizeBlock() => clearField(20);
+  @$pb.TagNumber(20)
+  RequestFinalizeBlock ensureFinalizeBlock() => $_ensure(15);
 }
 
 class RequestEcho extends $pb.GeneratedMessage {
@@ -516,6 +539,7 @@ class RequestInfo extends $pb.GeneratedMessage {
     $core.String? version,
     $fixnum.Int64? blockVersion,
     $fixnum.Int64? p2pVersion,
+    $core.String? abciVersion,
   }) {
     final $result = create();
     if (version != null) {
@@ -526,6 +550,9 @@ class RequestInfo extends $pb.GeneratedMessage {
     }
     if (p2pVersion != null) {
       $result.p2pVersion = p2pVersion;
+    }
+    if (abciVersion != null) {
+      $result.abciVersion = abciVersion;
     }
     return $result;
   }
@@ -549,6 +576,7 @@ class RequestInfo extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(
         3, _omitFieldNames ? '' : 'p2pVersion', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, _omitFieldNames ? '' : 'abciVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -608,93 +636,25 @@ class RequestInfo extends $pb.GeneratedMessage {
   $core.bool hasP2pVersion() => $_has(2);
   @$pb.TagNumber(3)
   void clearP2pVersion() => clearField(3);
-}
 
-/// nondeterministic
-class RequestSetOption extends $pb.GeneratedMessage {
-  factory RequestSetOption({
-    $core.String? key,
-    $core.String? value,
-  }) {
-    final $result = create();
-    if (key != null) {
-      $result.key = key;
-    }
-    if (value != null) {
-      $result.value = value;
-    }
-    return $result;
-  }
-  RequestSetOption._() : super();
-  factory RequestSetOption.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory RequestSetOption.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RequestSetOption',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'key')
-    ..aOS(2, _omitFieldNames ? '' : 'value')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  RequestSetOption clone() => RequestSetOption()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  RequestSetOption copyWith(void Function(RequestSetOption) updates) =>
-      super.copyWith((message) => updates(message as RequestSetOption))
-          as RequestSetOption;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static RequestSetOption create() => RequestSetOption._();
-  RequestSetOption createEmptyInstance() => create();
-  static $pb.PbList<RequestSetOption> createRepeated() =>
-      $pb.PbList<RequestSetOption>();
-  @$core.pragma('dart2js:noInline')
-  static RequestSetOption getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RequestSetOption>(create);
-  static RequestSetOption? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get key => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set key($core.String v) {
-    $_setString(0, v);
+  @$pb.TagNumber(4)
+  $core.String get abciVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set abciVersion($core.String v) {
+    $_setString(3, v);
   }
 
-  @$pb.TagNumber(1)
-  $core.bool hasKey() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearKey() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get value => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set value($core.String v) {
-    $_setString(1, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasValue() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearValue() => clearField(2);
+  @$pb.TagNumber(4)
+  $core.bool hasAbciVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAbciVersion() => clearField(4);
 }
 
 class RequestInitChain extends $pb.GeneratedMessage {
   factory RequestInitChain({
     $1.Timestamp? time,
     $core.String? chainId,
-    ConsensusParams? consensusParams,
+    $2.ConsensusParams? consensusParams,
     $core.Iterable<ValidatorUpdate>? validators,
     $core.List<$core.int>? appStateBytes,
     $fixnum.Int64? initialHeight,
@@ -736,8 +696,8 @@ class RequestInitChain extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'time',
         subBuilder: $1.Timestamp.create)
     ..aOS(2, _omitFieldNames ? '' : 'chainId')
-    ..aOM<ConsensusParams>(3, _omitFieldNames ? '' : 'consensusParams',
-        subBuilder: ConsensusParams.create)
+    ..aOM<$2.ConsensusParams>(3, _omitFieldNames ? '' : 'consensusParams',
+        subBuilder: $2.ConsensusParams.create)
     ..pc<ValidatorUpdate>(
         4, _omitFieldNames ? '' : 'validators', $pb.PbFieldType.PM,
         subBuilder: ValidatorUpdate.create)
@@ -796,9 +756,9 @@ class RequestInitChain extends $pb.GeneratedMessage {
   void clearChainId() => clearField(2);
 
   @$pb.TagNumber(3)
-  ConsensusParams get consensusParams => $_getN(2);
+  $2.ConsensusParams get consensusParams => $_getN(2);
   @$pb.TagNumber(3)
-  set consensusParams(ConsensusParams v) {
+  set consensusParams($2.ConsensusParams v) {
     setField(3, v);
   }
 
@@ -807,7 +767,7 @@ class RequestInitChain extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearConsensusParams() => clearField(3);
   @$pb.TagNumber(3)
-  ConsensusParams ensureConsensusParams() => $_ensure(2);
+  $2.ConsensusParams ensureConsensusParams() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.List<ValidatorUpdate> get validators => $_getList(3);
@@ -951,119 +911,6 @@ class RequestQuery extends $pb.GeneratedMessage {
   void clearProve() => clearField(4);
 }
 
-class RequestBeginBlock extends $pb.GeneratedMessage {
-  factory RequestBeginBlock({
-    $core.List<$core.int>? hash,
-    $2.Header? header,
-    LastCommitInfo? lastCommitInfo,
-    $core.Iterable<Evidence>? byzantineValidators,
-  }) {
-    final $result = create();
-    if (hash != null) {
-      $result.hash = hash;
-    }
-    if (header != null) {
-      $result.header = header;
-    }
-    if (lastCommitInfo != null) {
-      $result.lastCommitInfo = lastCommitInfo;
-    }
-    if (byzantineValidators != null) {
-      $result.byzantineValidators.addAll(byzantineValidators);
-    }
-    return $result;
-  }
-  RequestBeginBlock._() : super();
-  factory RequestBeginBlock.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory RequestBeginBlock.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RequestBeginBlock',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(
-        1, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OY)
-    ..aOM<$2.Header>(2, _omitFieldNames ? '' : 'header',
-        subBuilder: $2.Header.create)
-    ..aOM<LastCommitInfo>(3, _omitFieldNames ? '' : 'lastCommitInfo',
-        subBuilder: LastCommitInfo.create)
-    ..pc<Evidence>(
-        4, _omitFieldNames ? '' : 'byzantineValidators', $pb.PbFieldType.PM,
-        subBuilder: Evidence.create)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  RequestBeginBlock clone() => RequestBeginBlock()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  RequestBeginBlock copyWith(void Function(RequestBeginBlock) updates) =>
-      super.copyWith((message) => updates(message as RequestBeginBlock))
-          as RequestBeginBlock;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static RequestBeginBlock create() => RequestBeginBlock._();
-  RequestBeginBlock createEmptyInstance() => create();
-  static $pb.PbList<RequestBeginBlock> createRepeated() =>
-      $pb.PbList<RequestBeginBlock>();
-  @$core.pragma('dart2js:noInline')
-  static RequestBeginBlock getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RequestBeginBlock>(create);
-  static RequestBeginBlock? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$core.int> get hash => $_getN(0);
-  @$pb.TagNumber(1)
-  set hash($core.List<$core.int> v) {
-    $_setBytes(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasHash() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearHash() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $2.Header get header => $_getN(1);
-  @$pb.TagNumber(2)
-  set header($2.Header v) {
-    setField(2, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasHeader() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearHeader() => clearField(2);
-  @$pb.TagNumber(2)
-  $2.Header ensureHeader() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  LastCommitInfo get lastCommitInfo => $_getN(2);
-  @$pb.TagNumber(3)
-  set lastCommitInfo(LastCommitInfo v) {
-    setField(3, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasLastCommitInfo() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearLastCommitInfo() => clearField(3);
-  @$pb.TagNumber(3)
-  LastCommitInfo ensureLastCommitInfo() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  $core.List<Evidence> get byzantineValidators => $_getList(3);
-}
-
 class RequestCheckTx extends $pb.GeneratedMessage {
   factory RequestCheckTx({
     $core.List<$core.int>? tx,
@@ -1145,131 +992,6 @@ class RequestCheckTx extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
   void clearType() => clearField(2);
-}
-
-class RequestDeliverTx extends $pb.GeneratedMessage {
-  factory RequestDeliverTx({
-    $core.List<$core.int>? tx,
-  }) {
-    final $result = create();
-    if (tx != null) {
-      $result.tx = tx;
-    }
-    return $result;
-  }
-  RequestDeliverTx._() : super();
-  factory RequestDeliverTx.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory RequestDeliverTx.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RequestDeliverTx',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(
-        1, _omitFieldNames ? '' : 'tx', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  RequestDeliverTx clone() => RequestDeliverTx()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  RequestDeliverTx copyWith(void Function(RequestDeliverTx) updates) =>
-      super.copyWith((message) => updates(message as RequestDeliverTx))
-          as RequestDeliverTx;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static RequestDeliverTx create() => RequestDeliverTx._();
-  RequestDeliverTx createEmptyInstance() => create();
-  static $pb.PbList<RequestDeliverTx> createRepeated() =>
-      $pb.PbList<RequestDeliverTx>();
-  @$core.pragma('dart2js:noInline')
-  static RequestDeliverTx getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RequestDeliverTx>(create);
-  static RequestDeliverTx? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$core.int> get tx => $_getN(0);
-  @$pb.TagNumber(1)
-  set tx($core.List<$core.int> v) {
-    $_setBytes(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasTx() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearTx() => clearField(1);
-}
-
-class RequestEndBlock extends $pb.GeneratedMessage {
-  factory RequestEndBlock({
-    $fixnum.Int64? height,
-  }) {
-    final $result = create();
-    if (height != null) {
-      $result.height = height;
-    }
-    return $result;
-  }
-  RequestEndBlock._() : super();
-  factory RequestEndBlock.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory RequestEndBlock.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RequestEndBlock',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'height')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  RequestEndBlock clone() => RequestEndBlock()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  RequestEndBlock copyWith(void Function(RequestEndBlock) updates) =>
-      super.copyWith((message) => updates(message as RequestEndBlock))
-          as RequestEndBlock;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static RequestEndBlock create() => RequestEndBlock._();
-  RequestEndBlock createEmptyInstance() => create();
-  static $pb.PbList<RequestEndBlock> createRepeated() =>
-      $pb.PbList<RequestEndBlock>();
-  @$core.pragma('dart2js:noInline')
-  static RequestEndBlock getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RequestEndBlock>(create);
-  static RequestEndBlock? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get height => $_getI64(0);
-  @$pb.TagNumber(1)
-  set height($fixnum.Int64 v) {
-    $_setInt64(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasHeight() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearHeight() => clearField(1);
 }
 
 class RequestCommit extends $pb.GeneratedMessage {
@@ -1641,23 +1363,863 @@ class RequestApplySnapshotChunk extends $pb.GeneratedMessage {
   void clearSender() => clearField(3);
 }
 
+class RequestPrepareProposal extends $pb.GeneratedMessage {
+  factory RequestPrepareProposal({
+    $fixnum.Int64? maxTxBytes,
+    $core.Iterable<$core.List<$core.int>>? txs,
+    ExtendedCommitInfo? localLastCommit,
+    $core.Iterable<Misbehavior>? misbehavior,
+    $fixnum.Int64? height,
+    $1.Timestamp? time,
+    $core.List<$core.int>? nextValidatorsHash,
+    $core.List<$core.int>? proposerAddress,
+  }) {
+    final $result = create();
+    if (maxTxBytes != null) {
+      $result.maxTxBytes = maxTxBytes;
+    }
+    if (txs != null) {
+      $result.txs.addAll(txs);
+    }
+    if (localLastCommit != null) {
+      $result.localLastCommit = localLastCommit;
+    }
+    if (misbehavior != null) {
+      $result.misbehavior.addAll(misbehavior);
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (nextValidatorsHash != null) {
+      $result.nextValidatorsHash = nextValidatorsHash;
+    }
+    if (proposerAddress != null) {
+      $result.proposerAddress = proposerAddress;
+    }
+    return $result;
+  }
+  RequestPrepareProposal._() : super();
+  factory RequestPrepareProposal.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RequestPrepareProposal.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestPrepareProposal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'maxTxBytes')
+    ..p<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'txs', $pb.PbFieldType.PY)
+    ..aOM<ExtendedCommitInfo>(3, _omitFieldNames ? '' : 'localLastCommit',
+        subBuilder: ExtendedCommitInfo.create)
+    ..pc<Misbehavior>(
+        4, _omitFieldNames ? '' : 'misbehavior', $pb.PbFieldType.PM,
+        subBuilder: Misbehavior.create)
+    ..aInt64(5, _omitFieldNames ? '' : 'height')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'time',
+        subBuilder: $1.Timestamp.create)
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'nextValidatorsHash', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        8, _omitFieldNames ? '' : 'proposerAddress', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  RequestPrepareProposal clone() =>
+      RequestPrepareProposal()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  RequestPrepareProposal copyWith(
+          void Function(RequestPrepareProposal) updates) =>
+      super.copyWith((message) => updates(message as RequestPrepareProposal))
+          as RequestPrepareProposal;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestPrepareProposal create() => RequestPrepareProposal._();
+  RequestPrepareProposal createEmptyInstance() => create();
+  static $pb.PbList<RequestPrepareProposal> createRepeated() =>
+      $pb.PbList<RequestPrepareProposal>();
+  @$core.pragma('dart2js:noInline')
+  static RequestPrepareProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestPrepareProposal>(create);
+  static RequestPrepareProposal? _defaultInstance;
+
+  /// the modified transactions cannot exceed this size.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get maxTxBytes => $_getI64(0);
+  @$pb.TagNumber(1)
+  set maxTxBytes($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasMaxTxBytes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMaxTxBytes() => clearField(1);
+
+  /// txs is an array of transactions that will be included in a block,
+  /// sent to the app for possible modifications.
+  @$pb.TagNumber(2)
+  $core.List<$core.List<$core.int>> get txs => $_getList(1);
+
+  @$pb.TagNumber(3)
+  ExtendedCommitInfo get localLastCommit => $_getN(2);
+  @$pb.TagNumber(3)
+  set localLastCommit(ExtendedCommitInfo v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasLocalLastCommit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLocalLastCommit() => clearField(3);
+  @$pb.TagNumber(3)
+  ExtendedCommitInfo ensureLocalLastCommit() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.List<Misbehavior> get misbehavior => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get height => $_getI64(4);
+  @$pb.TagNumber(5)
+  set height($fixnum.Int64 v) {
+    $_setInt64(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasHeight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHeight() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get time => $_getN(5);
+  @$pb.TagNumber(6)
+  set time($1.Timestamp v) {
+    setField(6, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTime() => clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureTime() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get nextValidatorsHash => $_getN(6);
+  @$pb.TagNumber(7)
+  set nextValidatorsHash($core.List<$core.int> v) {
+    $_setBytes(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasNextValidatorsHash() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNextValidatorsHash() => clearField(7);
+
+  /// address of the public key of the validator proposing the block.
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get proposerAddress => $_getN(7);
+  @$pb.TagNumber(8)
+  set proposerAddress($core.List<$core.int> v) {
+    $_setBytes(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasProposerAddress() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProposerAddress() => clearField(8);
+}
+
+class RequestProcessProposal extends $pb.GeneratedMessage {
+  factory RequestProcessProposal({
+    $core.Iterable<$core.List<$core.int>>? txs,
+    CommitInfo? proposedLastCommit,
+    $core.Iterable<Misbehavior>? misbehavior,
+    $core.List<$core.int>? hash,
+    $fixnum.Int64? height,
+    $1.Timestamp? time,
+    $core.List<$core.int>? nextValidatorsHash,
+    $core.List<$core.int>? proposerAddress,
+  }) {
+    final $result = create();
+    if (txs != null) {
+      $result.txs.addAll(txs);
+    }
+    if (proposedLastCommit != null) {
+      $result.proposedLastCommit = proposedLastCommit;
+    }
+    if (misbehavior != null) {
+      $result.misbehavior.addAll(misbehavior);
+    }
+    if (hash != null) {
+      $result.hash = hash;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (nextValidatorsHash != null) {
+      $result.nextValidatorsHash = nextValidatorsHash;
+    }
+    if (proposerAddress != null) {
+      $result.proposerAddress = proposerAddress;
+    }
+    return $result;
+  }
+  RequestProcessProposal._() : super();
+  factory RequestProcessProposal.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RequestProcessProposal.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestProcessProposal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..p<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'txs', $pb.PbFieldType.PY)
+    ..aOM<CommitInfo>(2, _omitFieldNames ? '' : 'proposedLastCommit',
+        subBuilder: CommitInfo.create)
+    ..pc<Misbehavior>(
+        3, _omitFieldNames ? '' : 'misbehavior', $pb.PbFieldType.PM,
+        subBuilder: Misbehavior.create)
+    ..a<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OY)
+    ..aInt64(5, _omitFieldNames ? '' : 'height')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'time',
+        subBuilder: $1.Timestamp.create)
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'nextValidatorsHash', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        8, _omitFieldNames ? '' : 'proposerAddress', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  RequestProcessProposal clone() =>
+      RequestProcessProposal()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  RequestProcessProposal copyWith(
+          void Function(RequestProcessProposal) updates) =>
+      super.copyWith((message) => updates(message as RequestProcessProposal))
+          as RequestProcessProposal;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestProcessProposal create() => RequestProcessProposal._();
+  RequestProcessProposal createEmptyInstance() => create();
+  static $pb.PbList<RequestProcessProposal> createRepeated() =>
+      $pb.PbList<RequestProcessProposal>();
+  @$core.pragma('dart2js:noInline')
+  static RequestProcessProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestProcessProposal>(create);
+  static RequestProcessProposal? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.List<$core.int>> get txs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  CommitInfo get proposedLastCommit => $_getN(1);
+  @$pb.TagNumber(2)
+  set proposedLastCommit(CommitInfo v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasProposedLastCommit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProposedLastCommit() => clearField(2);
+  @$pb.TagNumber(2)
+  CommitInfo ensureProposedLastCommit() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<Misbehavior> get misbehavior => $_getList(2);
+
+  /// hash is the merkle root hash of the fields of the proposed block.
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get hash => $_getN(3);
+  @$pb.TagNumber(4)
+  set hash($core.List<$core.int> v) {
+    $_setBytes(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasHash() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHash() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get height => $_getI64(4);
+  @$pb.TagNumber(5)
+  set height($fixnum.Int64 v) {
+    $_setInt64(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasHeight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHeight() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get time => $_getN(5);
+  @$pb.TagNumber(6)
+  set time($1.Timestamp v) {
+    setField(6, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTime() => clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureTime() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get nextValidatorsHash => $_getN(6);
+  @$pb.TagNumber(7)
+  set nextValidatorsHash($core.List<$core.int> v) {
+    $_setBytes(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasNextValidatorsHash() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNextValidatorsHash() => clearField(7);
+
+  /// address of the public key of the original proposer of the block.
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get proposerAddress => $_getN(7);
+  @$pb.TagNumber(8)
+  set proposerAddress($core.List<$core.int> v) {
+    $_setBytes(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasProposerAddress() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProposerAddress() => clearField(8);
+}
+
+/// Extends a vote with application-injected data
+class RequestExtendVote extends $pb.GeneratedMessage {
+  factory RequestExtendVote({
+    $core.List<$core.int>? hash,
+    $fixnum.Int64? height,
+    $1.Timestamp? time,
+    $core.Iterable<$core.List<$core.int>>? txs,
+    CommitInfo? proposedLastCommit,
+    $core.Iterable<Misbehavior>? misbehavior,
+    $core.List<$core.int>? nextValidatorsHash,
+    $core.List<$core.int>? proposerAddress,
+  }) {
+    final $result = create();
+    if (hash != null) {
+      $result.hash = hash;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (txs != null) {
+      $result.txs.addAll(txs);
+    }
+    if (proposedLastCommit != null) {
+      $result.proposedLastCommit = proposedLastCommit;
+    }
+    if (misbehavior != null) {
+      $result.misbehavior.addAll(misbehavior);
+    }
+    if (nextValidatorsHash != null) {
+      $result.nextValidatorsHash = nextValidatorsHash;
+    }
+    if (proposerAddress != null) {
+      $result.proposerAddress = proposerAddress;
+    }
+    return $result;
+  }
+  RequestExtendVote._() : super();
+  factory RequestExtendVote.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RequestExtendVote.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestExtendVote',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OY)
+    ..aInt64(2, _omitFieldNames ? '' : 'height')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'time',
+        subBuilder: $1.Timestamp.create)
+    ..p<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'txs', $pb.PbFieldType.PY)
+    ..aOM<CommitInfo>(5, _omitFieldNames ? '' : 'proposedLastCommit',
+        subBuilder: CommitInfo.create)
+    ..pc<Misbehavior>(
+        6, _omitFieldNames ? '' : 'misbehavior', $pb.PbFieldType.PM,
+        subBuilder: Misbehavior.create)
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'nextValidatorsHash', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        8, _omitFieldNames ? '' : 'proposerAddress', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  RequestExtendVote clone() => RequestExtendVote()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  RequestExtendVote copyWith(void Function(RequestExtendVote) updates) =>
+      super.copyWith((message) => updates(message as RequestExtendVote))
+          as RequestExtendVote;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestExtendVote create() => RequestExtendVote._();
+  RequestExtendVote createEmptyInstance() => create();
+  static $pb.PbList<RequestExtendVote> createRepeated() =>
+      $pb.PbList<RequestExtendVote>();
+  @$core.pragma('dart2js:noInline')
+  static RequestExtendVote getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestExtendVote>(create);
+  static RequestExtendVote? _defaultInstance;
+
+  /// the hash of the block that this vote may be referring to
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get hash => $_getN(0);
+  @$pb.TagNumber(1)
+  set hash($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasHash() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHash() => clearField(1);
+
+  /// the height of the extended vote
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get height => $_getI64(1);
+  @$pb.TagNumber(2)
+  set height($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasHeight() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHeight() => clearField(2);
+
+  /// info of the block that this vote may be referring to
+  @$pb.TagNumber(3)
+  $1.Timestamp get time => $_getN(2);
+  @$pb.TagNumber(3)
+  set time($1.Timestamp v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTime() => clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureTime() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.List<$core.int>> get txs => $_getList(3);
+
+  @$pb.TagNumber(5)
+  CommitInfo get proposedLastCommit => $_getN(4);
+  @$pb.TagNumber(5)
+  set proposedLastCommit(CommitInfo v) {
+    setField(5, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasProposedLastCommit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProposedLastCommit() => clearField(5);
+  @$pb.TagNumber(5)
+  CommitInfo ensureProposedLastCommit() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.List<Misbehavior> get misbehavior => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get nextValidatorsHash => $_getN(6);
+  @$pb.TagNumber(7)
+  set nextValidatorsHash($core.List<$core.int> v) {
+    $_setBytes(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasNextValidatorsHash() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNextValidatorsHash() => clearField(7);
+
+  /// address of the public key of the original proposer of the block.
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get proposerAddress => $_getN(7);
+  @$pb.TagNumber(8)
+  set proposerAddress($core.List<$core.int> v) {
+    $_setBytes(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasProposerAddress() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProposerAddress() => clearField(8);
+}
+
+/// Verify the vote extension
+class RequestVerifyVoteExtension extends $pb.GeneratedMessage {
+  factory RequestVerifyVoteExtension({
+    $core.List<$core.int>? hash,
+    $core.List<$core.int>? validatorAddress,
+    $fixnum.Int64? height,
+    $core.List<$core.int>? voteExtension,
+  }) {
+    final $result = create();
+    if (hash != null) {
+      $result.hash = hash;
+    }
+    if (validatorAddress != null) {
+      $result.validatorAddress = validatorAddress;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (voteExtension != null) {
+      $result.voteExtension = voteExtension;
+    }
+    return $result;
+  }
+  RequestVerifyVoteExtension._() : super();
+  factory RequestVerifyVoteExtension.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RequestVerifyVoteExtension.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestVerifyVoteExtension',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'validatorAddress', $pb.PbFieldType.OY)
+    ..aInt64(3, _omitFieldNames ? '' : 'height')
+    ..a<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'voteExtension', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  RequestVerifyVoteExtension clone() =>
+      RequestVerifyVoteExtension()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  RequestVerifyVoteExtension copyWith(
+          void Function(RequestVerifyVoteExtension) updates) =>
+      super.copyWith(
+              (message) => updates(message as RequestVerifyVoteExtension))
+          as RequestVerifyVoteExtension;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestVerifyVoteExtension create() => RequestVerifyVoteExtension._();
+  RequestVerifyVoteExtension createEmptyInstance() => create();
+  static $pb.PbList<RequestVerifyVoteExtension> createRepeated() =>
+      $pb.PbList<RequestVerifyVoteExtension>();
+  @$core.pragma('dart2js:noInline')
+  static RequestVerifyVoteExtension getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestVerifyVoteExtension>(create);
+  static RequestVerifyVoteExtension? _defaultInstance;
+
+  /// the hash of the block that this received vote corresponds to
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get hash => $_getN(0);
+  @$pb.TagNumber(1)
+  set hash($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasHash() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHash() => clearField(1);
+
+  /// the validator that signed the vote extension
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get validatorAddress => $_getN(1);
+  @$pb.TagNumber(2)
+  set validatorAddress($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasValidatorAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValidatorAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get height => $_getI64(2);
+  @$pb.TagNumber(3)
+  set height($fixnum.Int64 v) {
+    $_setInt64(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasHeight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHeight() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get voteExtension => $_getN(3);
+  @$pb.TagNumber(4)
+  set voteExtension($core.List<$core.int> v) {
+    $_setBytes(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasVoteExtension() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVoteExtension() => clearField(4);
+}
+
+class RequestFinalizeBlock extends $pb.GeneratedMessage {
+  factory RequestFinalizeBlock({
+    $core.Iterable<$core.List<$core.int>>? txs,
+    CommitInfo? decidedLastCommit,
+    $core.Iterable<Misbehavior>? misbehavior,
+    $core.List<$core.int>? hash,
+    $fixnum.Int64? height,
+    $1.Timestamp? time,
+    $core.List<$core.int>? nextValidatorsHash,
+    $core.List<$core.int>? proposerAddress,
+  }) {
+    final $result = create();
+    if (txs != null) {
+      $result.txs.addAll(txs);
+    }
+    if (decidedLastCommit != null) {
+      $result.decidedLastCommit = decidedLastCommit;
+    }
+    if (misbehavior != null) {
+      $result.misbehavior.addAll(misbehavior);
+    }
+    if (hash != null) {
+      $result.hash = hash;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (nextValidatorsHash != null) {
+      $result.nextValidatorsHash = nextValidatorsHash;
+    }
+    if (proposerAddress != null) {
+      $result.proposerAddress = proposerAddress;
+    }
+    return $result;
+  }
+  RequestFinalizeBlock._() : super();
+  factory RequestFinalizeBlock.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RequestFinalizeBlock.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestFinalizeBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..p<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'txs', $pb.PbFieldType.PY)
+    ..aOM<CommitInfo>(2, _omitFieldNames ? '' : 'decidedLastCommit',
+        subBuilder: CommitInfo.create)
+    ..pc<Misbehavior>(
+        3, _omitFieldNames ? '' : 'misbehavior', $pb.PbFieldType.PM,
+        subBuilder: Misbehavior.create)
+    ..a<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OY)
+    ..aInt64(5, _omitFieldNames ? '' : 'height')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'time',
+        subBuilder: $1.Timestamp.create)
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'nextValidatorsHash', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        8, _omitFieldNames ? '' : 'proposerAddress', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  RequestFinalizeBlock clone() =>
+      RequestFinalizeBlock()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  RequestFinalizeBlock copyWith(void Function(RequestFinalizeBlock) updates) =>
+      super.copyWith((message) => updates(message as RequestFinalizeBlock))
+          as RequestFinalizeBlock;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestFinalizeBlock create() => RequestFinalizeBlock._();
+  RequestFinalizeBlock createEmptyInstance() => create();
+  static $pb.PbList<RequestFinalizeBlock> createRepeated() =>
+      $pb.PbList<RequestFinalizeBlock>();
+  @$core.pragma('dart2js:noInline')
+  static RequestFinalizeBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestFinalizeBlock>(create);
+  static RequestFinalizeBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.List<$core.int>> get txs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  CommitInfo get decidedLastCommit => $_getN(1);
+  @$pb.TagNumber(2)
+  set decidedLastCommit(CommitInfo v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasDecidedLastCommit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDecidedLastCommit() => clearField(2);
+  @$pb.TagNumber(2)
+  CommitInfo ensureDecidedLastCommit() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<Misbehavior> get misbehavior => $_getList(2);
+
+  /// hash is the merkle root hash of the fields of the decided block.
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get hash => $_getN(3);
+  @$pb.TagNumber(4)
+  set hash($core.List<$core.int> v) {
+    $_setBytes(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasHash() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHash() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get height => $_getI64(4);
+  @$pb.TagNumber(5)
+  set height($fixnum.Int64 v) {
+    $_setInt64(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasHeight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHeight() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get time => $_getN(5);
+  @$pb.TagNumber(6)
+  set time($1.Timestamp v) {
+    setField(6, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTime() => clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureTime() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get nextValidatorsHash => $_getN(6);
+  @$pb.TagNumber(7)
+  set nextValidatorsHash($core.List<$core.int> v) {
+    $_setBytes(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasNextValidatorsHash() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNextValidatorsHash() => clearField(7);
+
+  /// proposer_address is the address of the public key of the original proposer of the block.
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get proposerAddress => $_getN(7);
+  @$pb.TagNumber(8)
+  set proposerAddress($core.List<$core.int> v) {
+    $_setBytes(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasProposerAddress() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProposerAddress() => clearField(8);
+}
+
 enum Response_Value {
   exception,
   echo,
   flush,
   info,
-  setOption,
   initChain,
   query,
-  beginBlock,
   checkTx,
-  deliverTx,
-  endBlock,
   commit,
   listSnapshots,
   offerSnapshot,
   loadSnapshotChunk,
   applySnapshotChunk,
+  prepareProposal,
+  processProposal,
+  extendVote,
+  verifyVoteExtension,
+  finalizeBlock,
   notSet
 }
 
@@ -1667,18 +2229,19 @@ class Response extends $pb.GeneratedMessage {
     ResponseEcho? echo,
     ResponseFlush? flush,
     ResponseInfo? info,
-    ResponseSetOption? setOption,
     ResponseInitChain? initChain,
     ResponseQuery? query,
-    ResponseBeginBlock? beginBlock,
     ResponseCheckTx? checkTx,
-    ResponseDeliverTx? deliverTx,
-    ResponseEndBlock? endBlock,
     ResponseCommit? commit,
     ResponseListSnapshots? listSnapshots,
     ResponseOfferSnapshot? offerSnapshot,
     ResponseLoadSnapshotChunk? loadSnapshotChunk,
     ResponseApplySnapshotChunk? applySnapshotChunk,
+    ResponsePrepareProposal? prepareProposal,
+    ResponseProcessProposal? processProposal,
+    ResponseExtendVote? extendVote,
+    ResponseVerifyVoteExtension? verifyVoteExtension,
+    ResponseFinalizeBlock? finalizeBlock,
   }) {
     final $result = create();
     if (exception != null) {
@@ -1693,26 +2256,14 @@ class Response extends $pb.GeneratedMessage {
     if (info != null) {
       $result.info = info;
     }
-    if (setOption != null) {
-      $result.setOption = setOption;
-    }
     if (initChain != null) {
       $result.initChain = initChain;
     }
     if (query != null) {
       $result.query = query;
     }
-    if (beginBlock != null) {
-      $result.beginBlock = beginBlock;
-    }
     if (checkTx != null) {
       $result.checkTx = checkTx;
-    }
-    if (deliverTx != null) {
-      $result.deliverTx = deliverTx;
-    }
-    if (endBlock != null) {
-      $result.endBlock = endBlock;
     }
     if (commit != null) {
       $result.commit = commit;
@@ -1729,6 +2280,21 @@ class Response extends $pb.GeneratedMessage {
     if (applySnapshotChunk != null) {
       $result.applySnapshotChunk = applySnapshotChunk;
     }
+    if (prepareProposal != null) {
+      $result.prepareProposal = prepareProposal;
+    }
+    if (processProposal != null) {
+      $result.processProposal = processProposal;
+    }
+    if (extendVote != null) {
+      $result.extendVote = extendVote;
+    }
+    if (verifyVoteExtension != null) {
+      $result.verifyVoteExtension = verifyVoteExtension;
+    }
+    if (finalizeBlock != null) {
+      $result.finalizeBlock = finalizeBlock;
+    }
     return $result;
   }
   Response._() : super();
@@ -1744,18 +2310,19 @@ class Response extends $pb.GeneratedMessage {
     2: Response_Value.echo,
     3: Response_Value.flush,
     4: Response_Value.info,
-    5: Response_Value.setOption,
     6: Response_Value.initChain,
     7: Response_Value.query,
-    8: Response_Value.beginBlock,
     9: Response_Value.checkTx,
-    10: Response_Value.deliverTx,
-    11: Response_Value.endBlock,
     12: Response_Value.commit,
     13: Response_Value.listSnapshots,
     14: Response_Value.offerSnapshot,
     15: Response_Value.loadSnapshotChunk,
     16: Response_Value.applySnapshotChunk,
+    17: Response_Value.prepareProposal,
+    18: Response_Value.processProposal,
+    19: Response_Value.extendVote,
+    20: Response_Value.verifyVoteExtension,
+    21: Response_Value.finalizeBlock,
     0: Response_Value.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
@@ -1763,7 +2330,7 @@ class Response extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+    ..oo(0, [1, 2, 3, 4, 6, 7, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
     ..aOM<ResponseException>(1, _omitFieldNames ? '' : 'exception',
         subBuilder: ResponseException.create)
     ..aOM<ResponseEcho>(2, _omitFieldNames ? '' : 'echo',
@@ -1772,20 +2339,12 @@ class Response extends $pb.GeneratedMessage {
         subBuilder: ResponseFlush.create)
     ..aOM<ResponseInfo>(4, _omitFieldNames ? '' : 'info',
         subBuilder: ResponseInfo.create)
-    ..aOM<ResponseSetOption>(5, _omitFieldNames ? '' : 'setOption',
-        subBuilder: ResponseSetOption.create)
     ..aOM<ResponseInitChain>(6, _omitFieldNames ? '' : 'initChain',
         subBuilder: ResponseInitChain.create)
     ..aOM<ResponseQuery>(7, _omitFieldNames ? '' : 'query',
         subBuilder: ResponseQuery.create)
-    ..aOM<ResponseBeginBlock>(8, _omitFieldNames ? '' : 'beginBlock',
-        subBuilder: ResponseBeginBlock.create)
     ..aOM<ResponseCheckTx>(9, _omitFieldNames ? '' : 'checkTx',
         subBuilder: ResponseCheckTx.create)
-    ..aOM<ResponseDeliverTx>(10, _omitFieldNames ? '' : 'deliverTx',
-        subBuilder: ResponseDeliverTx.create)
-    ..aOM<ResponseEndBlock>(11, _omitFieldNames ? '' : 'endBlock',
-        subBuilder: ResponseEndBlock.create)
     ..aOM<ResponseCommit>(12, _omitFieldNames ? '' : 'commit',
         subBuilder: ResponseCommit.create)
     ..aOM<ResponseListSnapshots>(13, _omitFieldNames ? '' : 'listSnapshots',
@@ -1798,6 +2357,17 @@ class Response extends $pb.GeneratedMessage {
     ..aOM<ResponseApplySnapshotChunk>(
         16, _omitFieldNames ? '' : 'applySnapshotChunk',
         subBuilder: ResponseApplySnapshotChunk.create)
+    ..aOM<ResponsePrepareProposal>(17, _omitFieldNames ? '' : 'prepareProposal',
+        subBuilder: ResponsePrepareProposal.create)
+    ..aOM<ResponseProcessProposal>(18, _omitFieldNames ? '' : 'processProposal',
+        subBuilder: ResponseProcessProposal.create)
+    ..aOM<ResponseExtendVote>(19, _omitFieldNames ? '' : 'extendVote',
+        subBuilder: ResponseExtendVote.create)
+    ..aOM<ResponseVerifyVoteExtension>(
+        20, _omitFieldNames ? '' : 'verifyVoteExtension',
+        subBuilder: ResponseVerifyVoteExtension.create)
+    ..aOM<ResponseFinalizeBlock>(21, _omitFieldNames ? '' : 'finalizeBlock',
+        subBuilder: ResponseFinalizeBlock.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1880,173 +2450,187 @@ class Response extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   ResponseInfo ensureInfo() => $_ensure(3);
 
-  @$pb.TagNumber(5)
-  ResponseSetOption get setOption => $_getN(4);
-  @$pb.TagNumber(5)
-  set setOption(ResponseSetOption v) {
-    setField(5, v);
-  }
-
-  @$pb.TagNumber(5)
-  $core.bool hasSetOption() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearSetOption() => clearField(5);
-  @$pb.TagNumber(5)
-  ResponseSetOption ensureSetOption() => $_ensure(4);
-
   @$pb.TagNumber(6)
-  ResponseInitChain get initChain => $_getN(5);
+  ResponseInitChain get initChain => $_getN(4);
   @$pb.TagNumber(6)
   set initChain(ResponseInitChain v) {
     setField(6, v);
   }
 
   @$pb.TagNumber(6)
-  $core.bool hasInitChain() => $_has(5);
+  $core.bool hasInitChain() => $_has(4);
   @$pb.TagNumber(6)
   void clearInitChain() => clearField(6);
   @$pb.TagNumber(6)
-  ResponseInitChain ensureInitChain() => $_ensure(5);
+  ResponseInitChain ensureInitChain() => $_ensure(4);
 
   @$pb.TagNumber(7)
-  ResponseQuery get query => $_getN(6);
+  ResponseQuery get query => $_getN(5);
   @$pb.TagNumber(7)
   set query(ResponseQuery v) {
     setField(7, v);
   }
 
   @$pb.TagNumber(7)
-  $core.bool hasQuery() => $_has(6);
+  $core.bool hasQuery() => $_has(5);
   @$pb.TagNumber(7)
   void clearQuery() => clearField(7);
   @$pb.TagNumber(7)
-  ResponseQuery ensureQuery() => $_ensure(6);
-
-  @$pb.TagNumber(8)
-  ResponseBeginBlock get beginBlock => $_getN(7);
-  @$pb.TagNumber(8)
-  set beginBlock(ResponseBeginBlock v) {
-    setField(8, v);
-  }
-
-  @$pb.TagNumber(8)
-  $core.bool hasBeginBlock() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearBeginBlock() => clearField(8);
-  @$pb.TagNumber(8)
-  ResponseBeginBlock ensureBeginBlock() => $_ensure(7);
+  ResponseQuery ensureQuery() => $_ensure(5);
 
   @$pb.TagNumber(9)
-  ResponseCheckTx get checkTx => $_getN(8);
+  ResponseCheckTx get checkTx => $_getN(6);
   @$pb.TagNumber(9)
   set checkTx(ResponseCheckTx v) {
     setField(9, v);
   }
 
   @$pb.TagNumber(9)
-  $core.bool hasCheckTx() => $_has(8);
+  $core.bool hasCheckTx() => $_has(6);
   @$pb.TagNumber(9)
   void clearCheckTx() => clearField(9);
   @$pb.TagNumber(9)
-  ResponseCheckTx ensureCheckTx() => $_ensure(8);
-
-  @$pb.TagNumber(10)
-  ResponseDeliverTx get deliverTx => $_getN(9);
-  @$pb.TagNumber(10)
-  set deliverTx(ResponseDeliverTx v) {
-    setField(10, v);
-  }
-
-  @$pb.TagNumber(10)
-  $core.bool hasDeliverTx() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearDeliverTx() => clearField(10);
-  @$pb.TagNumber(10)
-  ResponseDeliverTx ensureDeliverTx() => $_ensure(9);
-
-  @$pb.TagNumber(11)
-  ResponseEndBlock get endBlock => $_getN(10);
-  @$pb.TagNumber(11)
-  set endBlock(ResponseEndBlock v) {
-    setField(11, v);
-  }
-
-  @$pb.TagNumber(11)
-  $core.bool hasEndBlock() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearEndBlock() => clearField(11);
-  @$pb.TagNumber(11)
-  ResponseEndBlock ensureEndBlock() => $_ensure(10);
+  ResponseCheckTx ensureCheckTx() => $_ensure(6);
 
   @$pb.TagNumber(12)
-  ResponseCommit get commit => $_getN(11);
+  ResponseCommit get commit => $_getN(7);
   @$pb.TagNumber(12)
   set commit(ResponseCommit v) {
     setField(12, v);
   }
 
   @$pb.TagNumber(12)
-  $core.bool hasCommit() => $_has(11);
+  $core.bool hasCommit() => $_has(7);
   @$pb.TagNumber(12)
   void clearCommit() => clearField(12);
   @$pb.TagNumber(12)
-  ResponseCommit ensureCommit() => $_ensure(11);
+  ResponseCommit ensureCommit() => $_ensure(7);
 
   @$pb.TagNumber(13)
-  ResponseListSnapshots get listSnapshots => $_getN(12);
+  ResponseListSnapshots get listSnapshots => $_getN(8);
   @$pb.TagNumber(13)
   set listSnapshots(ResponseListSnapshots v) {
     setField(13, v);
   }
 
   @$pb.TagNumber(13)
-  $core.bool hasListSnapshots() => $_has(12);
+  $core.bool hasListSnapshots() => $_has(8);
   @$pb.TagNumber(13)
   void clearListSnapshots() => clearField(13);
   @$pb.TagNumber(13)
-  ResponseListSnapshots ensureListSnapshots() => $_ensure(12);
+  ResponseListSnapshots ensureListSnapshots() => $_ensure(8);
 
   @$pb.TagNumber(14)
-  ResponseOfferSnapshot get offerSnapshot => $_getN(13);
+  ResponseOfferSnapshot get offerSnapshot => $_getN(9);
   @$pb.TagNumber(14)
   set offerSnapshot(ResponseOfferSnapshot v) {
     setField(14, v);
   }
 
   @$pb.TagNumber(14)
-  $core.bool hasOfferSnapshot() => $_has(13);
+  $core.bool hasOfferSnapshot() => $_has(9);
   @$pb.TagNumber(14)
   void clearOfferSnapshot() => clearField(14);
   @$pb.TagNumber(14)
-  ResponseOfferSnapshot ensureOfferSnapshot() => $_ensure(13);
+  ResponseOfferSnapshot ensureOfferSnapshot() => $_ensure(9);
 
   @$pb.TagNumber(15)
-  ResponseLoadSnapshotChunk get loadSnapshotChunk => $_getN(14);
+  ResponseLoadSnapshotChunk get loadSnapshotChunk => $_getN(10);
   @$pb.TagNumber(15)
   set loadSnapshotChunk(ResponseLoadSnapshotChunk v) {
     setField(15, v);
   }
 
   @$pb.TagNumber(15)
-  $core.bool hasLoadSnapshotChunk() => $_has(14);
+  $core.bool hasLoadSnapshotChunk() => $_has(10);
   @$pb.TagNumber(15)
   void clearLoadSnapshotChunk() => clearField(15);
   @$pb.TagNumber(15)
-  ResponseLoadSnapshotChunk ensureLoadSnapshotChunk() => $_ensure(14);
+  ResponseLoadSnapshotChunk ensureLoadSnapshotChunk() => $_ensure(10);
 
   @$pb.TagNumber(16)
-  ResponseApplySnapshotChunk get applySnapshotChunk => $_getN(15);
+  ResponseApplySnapshotChunk get applySnapshotChunk => $_getN(11);
   @$pb.TagNumber(16)
   set applySnapshotChunk(ResponseApplySnapshotChunk v) {
     setField(16, v);
   }
 
   @$pb.TagNumber(16)
-  $core.bool hasApplySnapshotChunk() => $_has(15);
+  $core.bool hasApplySnapshotChunk() => $_has(11);
   @$pb.TagNumber(16)
   void clearApplySnapshotChunk() => clearField(16);
   @$pb.TagNumber(16)
-  ResponseApplySnapshotChunk ensureApplySnapshotChunk() => $_ensure(15);
+  ResponseApplySnapshotChunk ensureApplySnapshotChunk() => $_ensure(11);
+
+  @$pb.TagNumber(17)
+  ResponsePrepareProposal get prepareProposal => $_getN(12);
+  @$pb.TagNumber(17)
+  set prepareProposal(ResponsePrepareProposal v) {
+    setField(17, v);
+  }
+
+  @$pb.TagNumber(17)
+  $core.bool hasPrepareProposal() => $_has(12);
+  @$pb.TagNumber(17)
+  void clearPrepareProposal() => clearField(17);
+  @$pb.TagNumber(17)
+  ResponsePrepareProposal ensurePrepareProposal() => $_ensure(12);
+
+  @$pb.TagNumber(18)
+  ResponseProcessProposal get processProposal => $_getN(13);
+  @$pb.TagNumber(18)
+  set processProposal(ResponseProcessProposal v) {
+    setField(18, v);
+  }
+
+  @$pb.TagNumber(18)
+  $core.bool hasProcessProposal() => $_has(13);
+  @$pb.TagNumber(18)
+  void clearProcessProposal() => clearField(18);
+  @$pb.TagNumber(18)
+  ResponseProcessProposal ensureProcessProposal() => $_ensure(13);
+
+  @$pb.TagNumber(19)
+  ResponseExtendVote get extendVote => $_getN(14);
+  @$pb.TagNumber(19)
+  set extendVote(ResponseExtendVote v) {
+    setField(19, v);
+  }
+
+  @$pb.TagNumber(19)
+  $core.bool hasExtendVote() => $_has(14);
+  @$pb.TagNumber(19)
+  void clearExtendVote() => clearField(19);
+  @$pb.TagNumber(19)
+  ResponseExtendVote ensureExtendVote() => $_ensure(14);
+
+  @$pb.TagNumber(20)
+  ResponseVerifyVoteExtension get verifyVoteExtension => $_getN(15);
+  @$pb.TagNumber(20)
+  set verifyVoteExtension(ResponseVerifyVoteExtension v) {
+    setField(20, v);
+  }
+
+  @$pb.TagNumber(20)
+  $core.bool hasVerifyVoteExtension() => $_has(15);
+  @$pb.TagNumber(20)
+  void clearVerifyVoteExtension() => clearField(20);
+  @$pb.TagNumber(20)
+  ResponseVerifyVoteExtension ensureVerifyVoteExtension() => $_ensure(15);
+
+  @$pb.TagNumber(21)
+  ResponseFinalizeBlock get finalizeBlock => $_getN(16);
+  @$pb.TagNumber(21)
+  set finalizeBlock(ResponseFinalizeBlock v) {
+    setField(21, v);
+  }
+
+  @$pb.TagNumber(21)
+  $core.bool hasFinalizeBlock() => $_has(16);
+  @$pb.TagNumber(21)
+  void clearFinalizeBlock() => clearField(21);
+  @$pb.TagNumber(21)
+  ResponseFinalizeBlock ensureFinalizeBlock() => $_ensure(16);
 }
 
 /// nondeterministic
@@ -2348,107 +2932,9 @@ class ResponseInfo extends $pb.GeneratedMessage {
   void clearLastBlockAppHash() => clearField(5);
 }
 
-/// nondeterministic
-class ResponseSetOption extends $pb.GeneratedMessage {
-  factory ResponseSetOption({
-    $core.int? code,
-    $core.String? log,
-    $core.String? info,
-  }) {
-    final $result = create();
-    if (code != null) {
-      $result.code = code;
-    }
-    if (log != null) {
-      $result.log = log;
-    }
-    if (info != null) {
-      $result.info = info;
-    }
-    return $result;
-  }
-  ResponseSetOption._() : super();
-  factory ResponseSetOption.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory ResponseSetOption.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ResponseSetOption',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
-    ..aOS(3, _omitFieldNames ? '' : 'log')
-    ..aOS(4, _omitFieldNames ? '' : 'info')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  ResponseSetOption clone() => ResponseSetOption()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ResponseSetOption copyWith(void Function(ResponseSetOption) updates) =>
-      super.copyWith((message) => updates(message as ResponseSetOption))
-          as ResponseSetOption;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ResponseSetOption create() => ResponseSetOption._();
-  ResponseSetOption createEmptyInstance() => create();
-  static $pb.PbList<ResponseSetOption> createRepeated() =>
-      $pb.PbList<ResponseSetOption>();
-  @$core.pragma('dart2js:noInline')
-  static ResponseSetOption getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ResponseSetOption>(create);
-  static ResponseSetOption? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get code => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set code($core.int v) {
-    $_setUnsignedInt32(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasCode() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCode() => clearField(1);
-
-  /// bytes data = 2;
-  @$pb.TagNumber(3)
-  $core.String get log => $_getSZ(1);
-  @$pb.TagNumber(3)
-  set log($core.String v) {
-    $_setString(1, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasLog() => $_has(1);
-  @$pb.TagNumber(3)
-  void clearLog() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get info => $_getSZ(2);
-  @$pb.TagNumber(4)
-  set info($core.String v) {
-    $_setString(2, v);
-  }
-
-  @$pb.TagNumber(4)
-  $core.bool hasInfo() => $_has(2);
-  @$pb.TagNumber(4)
-  void clearInfo() => clearField(4);
-}
-
 class ResponseInitChain extends $pb.GeneratedMessage {
   factory ResponseInitChain({
-    ConsensusParams? consensusParams,
+    $2.ConsensusParams? consensusParams,
     $core.Iterable<ValidatorUpdate>? validators,
     $core.List<$core.int>? appHash,
   }) {
@@ -2477,8 +2963,8 @@ class ResponseInitChain extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..aOM<ConsensusParams>(1, _omitFieldNames ? '' : 'consensusParams',
-        subBuilder: ConsensusParams.create)
+    ..aOM<$2.ConsensusParams>(1, _omitFieldNames ? '' : 'consensusParams',
+        subBuilder: $2.ConsensusParams.create)
     ..pc<ValidatorUpdate>(
         2, _omitFieldNames ? '' : 'validators', $pb.PbFieldType.PM,
         subBuilder: ValidatorUpdate.create)
@@ -2510,9 +2996,9 @@ class ResponseInitChain extends $pb.GeneratedMessage {
   static ResponseInitChain? _defaultInstance;
 
   @$pb.TagNumber(1)
-  ConsensusParams get consensusParams => $_getN(0);
+  $2.ConsensusParams get consensusParams => $_getN(0);
   @$pb.TagNumber(1)
-  set consensusParams(ConsensusParams v) {
+  set consensusParams($2.ConsensusParams v) {
     setField(1, v);
   }
 
@@ -2521,7 +3007,7 @@ class ResponseInitChain extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearConsensusParams() => clearField(1);
   @$pb.TagNumber(1)
-  ConsensusParams ensureConsensusParams() => $_ensure(0);
+  $2.ConsensusParams ensureConsensusParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ValidatorUpdate> get validators => $_getList(1);
@@ -2743,60 +3229,6 @@ class ResponseQuery extends $pb.GeneratedMessage {
   void clearCodespace() => clearField(10);
 }
 
-class ResponseBeginBlock extends $pb.GeneratedMessage {
-  factory ResponseBeginBlock({
-    $core.Iterable<Event>? events,
-  }) {
-    final $result = create();
-    if (events != null) {
-      $result.events.addAll(events);
-    }
-    return $result;
-  }
-  ResponseBeginBlock._() : super();
-  factory ResponseBeginBlock.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory ResponseBeginBlock.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ResponseBeginBlock',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..pc<Event>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
-        subBuilder: Event.create)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  ResponseBeginBlock clone() => ResponseBeginBlock()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ResponseBeginBlock copyWith(void Function(ResponseBeginBlock) updates) =>
-      super.copyWith((message) => updates(message as ResponseBeginBlock))
-          as ResponseBeginBlock;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ResponseBeginBlock create() => ResponseBeginBlock._();
-  ResponseBeginBlock createEmptyInstance() => create();
-  static $pb.PbList<ResponseBeginBlock> createRepeated() =>
-      $pb.PbList<ResponseBeginBlock>();
-  @$core.pragma('dart2js:noInline')
-  static ResponseBeginBlock getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ResponseBeginBlock>(create);
-  static ResponseBeginBlock? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<Event> get events => $_getList(0);
-}
-
 class ResponseCheckTx extends $pb.GeneratedMessage {
   factory ResponseCheckTx({
     $core.int? code,
@@ -2807,9 +3239,6 @@ class ResponseCheckTx extends $pb.GeneratedMessage {
     $fixnum.Int64? gasUsed,
     $core.Iterable<Event>? events,
     $core.String? codespace,
-    $core.String? sender,
-    $fixnum.Int64? priority,
-    $core.String? mempoolError,
   }) {
     final $result = create();
     if (code != null) {
@@ -2836,15 +3265,6 @@ class ResponseCheckTx extends $pb.GeneratedMessage {
     if (codespace != null) {
       $result.codespace = codespace;
     }
-    if (sender != null) {
-      $result.sender = sender;
-    }
-    if (priority != null) {
-      $result.priority = priority;
-    }
-    if (mempoolError != null) {
-      $result.mempoolError = mempoolError;
-    }
     return $result;
   }
   ResponseCheckTx._() : super();
@@ -2870,9 +3290,6 @@ class ResponseCheckTx extends $pb.GeneratedMessage {
     ..pc<Event>(7, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
         subBuilder: Event.create)
     ..aOS(8, _omitFieldNames ? '' : 'codespace')
-    ..aOS(9, _omitFieldNames ? '' : 'sender')
-    ..aInt64(10, _omitFieldNames ? '' : 'priority')
-    ..aOS(11, _omitFieldNames ? '' : 'mempoolError')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -2984,313 +3401,13 @@ class ResponseCheckTx extends $pb.GeneratedMessage {
   $core.bool hasCodespace() => $_has(7);
   @$pb.TagNumber(8)
   void clearCodespace() => clearField(8);
-
-  @$pb.TagNumber(9)
-  $core.String get sender => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set sender($core.String v) {
-    $_setString(8, v);
-  }
-
-  @$pb.TagNumber(9)
-  $core.bool hasSender() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearSender() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $fixnum.Int64 get priority => $_getI64(9);
-  @$pb.TagNumber(10)
-  set priority($fixnum.Int64 v) {
-    $_setInt64(9, v);
-  }
-
-  @$pb.TagNumber(10)
-  $core.bool hasPriority() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearPriority() => clearField(10);
-
-  /// mempool_error is set by CometBFT.
-  /// ABCI applictions creating a ResponseCheckTX should not set mempool_error.
-  @$pb.TagNumber(11)
-  $core.String get mempoolError => $_getSZ(10);
-  @$pb.TagNumber(11)
-  set mempoolError($core.String v) {
-    $_setString(10, v);
-  }
-
-  @$pb.TagNumber(11)
-  $core.bool hasMempoolError() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearMempoolError() => clearField(11);
-}
-
-class ResponseDeliverTx extends $pb.GeneratedMessage {
-  factory ResponseDeliverTx({
-    $core.int? code,
-    $core.List<$core.int>? data,
-    $core.String? log,
-    $core.String? info,
-    $fixnum.Int64? gasWanted,
-    $fixnum.Int64? gasUsed,
-    $core.Iterable<Event>? events,
-    $core.String? codespace,
-  }) {
-    final $result = create();
-    if (code != null) {
-      $result.code = code;
-    }
-    if (data != null) {
-      $result.data = data;
-    }
-    if (log != null) {
-      $result.log = log;
-    }
-    if (info != null) {
-      $result.info = info;
-    }
-    if (gasWanted != null) {
-      $result.gasWanted = gasWanted;
-    }
-    if (gasUsed != null) {
-      $result.gasUsed = gasUsed;
-    }
-    if (events != null) {
-      $result.events.addAll(events);
-    }
-    if (codespace != null) {
-      $result.codespace = codespace;
-    }
-    return $result;
-  }
-  ResponseDeliverTx._() : super();
-  factory ResponseDeliverTx.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory ResponseDeliverTx.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ResponseDeliverTx',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(
-        2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
-    ..aOS(3, _omitFieldNames ? '' : 'log')
-    ..aOS(4, _omitFieldNames ? '' : 'info')
-    ..aInt64(5, _omitFieldNames ? '' : 'gas_wanted')
-    ..aInt64(6, _omitFieldNames ? '' : 'gas_used')
-    ..pc<Event>(7, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
-        subBuilder: Event.create)
-    ..aOS(8, _omitFieldNames ? '' : 'codespace')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  ResponseDeliverTx clone() => ResponseDeliverTx()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ResponseDeliverTx copyWith(void Function(ResponseDeliverTx) updates) =>
-      super.copyWith((message) => updates(message as ResponseDeliverTx))
-          as ResponseDeliverTx;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ResponseDeliverTx create() => ResponseDeliverTx._();
-  ResponseDeliverTx createEmptyInstance() => create();
-  static $pb.PbList<ResponseDeliverTx> createRepeated() =>
-      $pb.PbList<ResponseDeliverTx>();
-  @$core.pragma('dart2js:noInline')
-  static ResponseDeliverTx getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ResponseDeliverTx>(create);
-  static ResponseDeliverTx? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get code => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set code($core.int v) {
-    $_setUnsignedInt32(0, v);
-  }
-
-  @$pb.TagNumber(1)
-  $core.bool hasCode() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCode() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$core.int> get data => $_getN(1);
-  @$pb.TagNumber(2)
-  set data($core.List<$core.int> v) {
-    $_setBytes(1, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasData() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearData() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get log => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set log($core.String v) {
-    $_setString(2, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasLog() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearLog() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get info => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set info($core.String v) {
-    $_setString(3, v);
-  }
-
-  @$pb.TagNumber(4)
-  $core.bool hasInfo() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearInfo() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $fixnum.Int64 get gasWanted => $_getI64(4);
-  @$pb.TagNumber(5)
-  set gasWanted($fixnum.Int64 v) {
-    $_setInt64(4, v);
-  }
-
-  @$pb.TagNumber(5)
-  $core.bool hasGasWanted() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearGasWanted() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $fixnum.Int64 get gasUsed => $_getI64(5);
-  @$pb.TagNumber(6)
-  set gasUsed($fixnum.Int64 v) {
-    $_setInt64(5, v);
-  }
-
-  @$pb.TagNumber(6)
-  $core.bool hasGasUsed() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearGasUsed() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.List<Event> get events => $_getList(6);
-
-  @$pb.TagNumber(8)
-  $core.String get codespace => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set codespace($core.String v) {
-    $_setString(7, v);
-  }
-
-  @$pb.TagNumber(8)
-  $core.bool hasCodespace() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearCodespace() => clearField(8);
-}
-
-class ResponseEndBlock extends $pb.GeneratedMessage {
-  factory ResponseEndBlock({
-    $core.Iterable<ValidatorUpdate>? validatorUpdates,
-    ConsensusParams? consensusParamUpdates,
-    $core.Iterable<Event>? events,
-  }) {
-    final $result = create();
-    if (validatorUpdates != null) {
-      $result.validatorUpdates.addAll(validatorUpdates);
-    }
-    if (consensusParamUpdates != null) {
-      $result.consensusParamUpdates = consensusParamUpdates;
-    }
-    if (events != null) {
-      $result.events.addAll(events);
-    }
-    return $result;
-  }
-  ResponseEndBlock._() : super();
-  factory ResponseEndBlock.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory ResponseEndBlock.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ResponseEndBlock',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
-      createEmptyInstance: create)
-    ..pc<ValidatorUpdate>(
-        1, _omitFieldNames ? '' : 'validatorUpdates', $pb.PbFieldType.PM,
-        subBuilder: ValidatorUpdate.create)
-    ..aOM<ConsensusParams>(2, _omitFieldNames ? '' : 'consensusParamUpdates',
-        subBuilder: ConsensusParams.create)
-    ..pc<Event>(3, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
-        subBuilder: Event.create)
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  ResponseEndBlock clone() => ResponseEndBlock()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ResponseEndBlock copyWith(void Function(ResponseEndBlock) updates) =>
-      super.copyWith((message) => updates(message as ResponseEndBlock))
-          as ResponseEndBlock;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ResponseEndBlock create() => ResponseEndBlock._();
-  ResponseEndBlock createEmptyInstance() => create();
-  static $pb.PbList<ResponseEndBlock> createRepeated() =>
-      $pb.PbList<ResponseEndBlock>();
-  @$core.pragma('dart2js:noInline')
-  static ResponseEndBlock getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ResponseEndBlock>(create);
-  static ResponseEndBlock? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<ValidatorUpdate> get validatorUpdates => $_getList(0);
-
-  @$pb.TagNumber(2)
-  ConsensusParams get consensusParamUpdates => $_getN(1);
-  @$pb.TagNumber(2)
-  set consensusParamUpdates(ConsensusParams v) {
-    setField(2, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasConsensusParamUpdates() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearConsensusParamUpdates() => clearField(2);
-  @$pb.TagNumber(2)
-  ConsensusParams ensureConsensusParamUpdates() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.List<Event> get events => $_getList(2);
 }
 
 class ResponseCommit extends $pb.GeneratedMessage {
   factory ResponseCommit({
-    $core.List<$core.int>? data,
     $fixnum.Int64? retainHeight,
   }) {
     final $result = create();
-    if (data != null) {
-      $result.data = data;
-    }
     if (retainHeight != null) {
       $result.retainHeight = retainHeight;
     }
@@ -3309,8 +3426,6 @@ class ResponseCommit extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(
-        2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
     ..aInt64(3, _omitFieldNames ? '' : 'retainHeight')
     ..hasRequiredFields = false;
 
@@ -3337,28 +3452,15 @@ class ResponseCommit extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<ResponseCommit>(create);
   static ResponseCommit? _defaultInstance;
 
-  /// reserve 1
-  @$pb.TagNumber(2)
-  $core.List<$core.int> get data => $_getN(0);
-  @$pb.TagNumber(2)
-  set data($core.List<$core.int> v) {
-    $_setBytes(0, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasData() => $_has(0);
-  @$pb.TagNumber(2)
-  void clearData() => clearField(2);
-
   @$pb.TagNumber(3)
-  $fixnum.Int64 get retainHeight => $_getI64(1);
+  $fixnum.Int64 get retainHeight => $_getI64(0);
   @$pb.TagNumber(3)
   set retainHeight($fixnum.Int64 v) {
-    $_setInt64(1, v);
+    $_setInt64(0, v);
   }
 
   @$pb.TagNumber(3)
-  $core.bool hasRetainHeight() => $_has(1);
+  $core.bool hasRetainHeight() => $_has(0);
   @$pb.TagNumber(3)
   void clearRetainHeight() => clearField(3);
 }
@@ -3638,216 +3740,386 @@ class ResponseApplySnapshotChunk extends $pb.GeneratedMessage {
   $core.List<$core.String> get rejectSenders => $_getList(2);
 }
 
-/// ConsensusParams contains all consensus-relevant parameters
-/// that can be adjusted by the abci app
-class ConsensusParams extends $pb.GeneratedMessage {
-  factory ConsensusParams({
-    BlockParams? block,
-    $4.EvidenceParams? evidence,
-    $4.ValidatorParams? validator,
-    $4.VersionParams? version,
+class ResponsePrepareProposal extends $pb.GeneratedMessage {
+  factory ResponsePrepareProposal({
+    $core.Iterable<$core.List<$core.int>>? txs,
   }) {
     final $result = create();
-    if (block != null) {
-      $result.block = block;
-    }
-    if (evidence != null) {
-      $result.evidence = evidence;
-    }
-    if (validator != null) {
-      $result.validator = validator;
-    }
-    if (version != null) {
-      $result.version = version;
+    if (txs != null) {
+      $result.txs.addAll(txs);
     }
     return $result;
   }
-  ConsensusParams._() : super();
-  factory ConsensusParams.fromBuffer($core.List<$core.int> i,
+  ResponsePrepareProposal._() : super();
+  factory ResponsePrepareProposal.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory ConsensusParams.fromJson($core.String i,
+  factory ResponsePrepareProposal.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ConsensusParams',
+      _omitMessageNames ? '' : 'ResponsePrepareProposal',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..aOM<BlockParams>(1, _omitFieldNames ? '' : 'block',
-        subBuilder: BlockParams.create)
-    ..aOM<$4.EvidenceParams>(2, _omitFieldNames ? '' : 'evidence',
-        subBuilder: $4.EvidenceParams.create)
-    ..aOM<$4.ValidatorParams>(3, _omitFieldNames ? '' : 'validator',
-        subBuilder: $4.ValidatorParams.create)
-    ..aOM<$4.VersionParams>(4, _omitFieldNames ? '' : 'version',
-        subBuilder: $4.VersionParams.create)
+    ..p<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'txs', $pb.PbFieldType.PY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  ConsensusParams clone() => ConsensusParams()..mergeFromMessage(this);
+  ResponsePrepareProposal clone() =>
+      ResponsePrepareProposal()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  ConsensusParams copyWith(void Function(ConsensusParams) updates) =>
-      super.copyWith((message) => updates(message as ConsensusParams))
-          as ConsensusParams;
+  ResponsePrepareProposal copyWith(
+          void Function(ResponsePrepareProposal) updates) =>
+      super.copyWith((message) => updates(message as ResponsePrepareProposal))
+          as ResponsePrepareProposal;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ConsensusParams create() => ConsensusParams._();
-  ConsensusParams createEmptyInstance() => create();
-  static $pb.PbList<ConsensusParams> createRepeated() =>
-      $pb.PbList<ConsensusParams>();
+  static ResponsePrepareProposal create() => ResponsePrepareProposal._();
+  ResponsePrepareProposal createEmptyInstance() => create();
+  static $pb.PbList<ResponsePrepareProposal> createRepeated() =>
+      $pb.PbList<ResponsePrepareProposal>();
   @$core.pragma('dart2js:noInline')
-  static ConsensusParams getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ConsensusParams>(create);
-  static ConsensusParams? _defaultInstance;
+  static ResponsePrepareProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponsePrepareProposal>(create);
+  static ResponsePrepareProposal? _defaultInstance;
 
   @$pb.TagNumber(1)
-  BlockParams get block => $_getN(0);
+  $core.List<$core.List<$core.int>> get txs => $_getList(0);
+}
+
+class ResponseProcessProposal extends $pb.GeneratedMessage {
+  factory ResponseProcessProposal({
+    ResponseProcessProposal_ProposalStatus? status,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  ResponseProcessProposal._() : super();
+  factory ResponseProcessProposal.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ResponseProcessProposal.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResponseProcessProposal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..e<ResponseProcessProposal_ProposalStatus>(
+        1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
+        defaultOrMaker: ResponseProcessProposal_ProposalStatus.UNKNOWN,
+        valueOf: ResponseProcessProposal_ProposalStatus.valueOf,
+        enumValues: ResponseProcessProposal_ProposalStatus.values)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ResponseProcessProposal clone() =>
+      ResponseProcessProposal()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ResponseProcessProposal copyWith(
+          void Function(ResponseProcessProposal) updates) =>
+      super.copyWith((message) => updates(message as ResponseProcessProposal))
+          as ResponseProcessProposal;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResponseProcessProposal create() => ResponseProcessProposal._();
+  ResponseProcessProposal createEmptyInstance() => create();
+  static $pb.PbList<ResponseProcessProposal> createRepeated() =>
+      $pb.PbList<ResponseProcessProposal>();
+  @$core.pragma('dart2js:noInline')
+  static ResponseProcessProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponseProcessProposal>(create);
+  static ResponseProcessProposal? _defaultInstance;
+
   @$pb.TagNumber(1)
-  set block(BlockParams v) {
+  ResponseProcessProposal_ProposalStatus get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(ResponseProcessProposal_ProposalStatus v) {
     setField(1, v);
   }
 
   @$pb.TagNumber(1)
-  $core.bool hasBlock() => $_has(0);
+  $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearBlock() => clearField(1);
-  @$pb.TagNumber(1)
-  BlockParams ensureBlock() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $4.EvidenceParams get evidence => $_getN(1);
-  @$pb.TagNumber(2)
-  set evidence($4.EvidenceParams v) {
-    setField(2, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasEvidence() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearEvidence() => clearField(2);
-  @$pb.TagNumber(2)
-  $4.EvidenceParams ensureEvidence() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $4.ValidatorParams get validator => $_getN(2);
-  @$pb.TagNumber(3)
-  set validator($4.ValidatorParams v) {
-    setField(3, v);
-  }
-
-  @$pb.TagNumber(3)
-  $core.bool hasValidator() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearValidator() => clearField(3);
-  @$pb.TagNumber(3)
-  $4.ValidatorParams ensureValidator() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  $4.VersionParams get version => $_getN(3);
-  @$pb.TagNumber(4)
-  set version($4.VersionParams v) {
-    setField(4, v);
-  }
-
-  @$pb.TagNumber(4)
-  $core.bool hasVersion() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearVersion() => clearField(4);
-  @$pb.TagNumber(4)
-  $4.VersionParams ensureVersion() => $_ensure(3);
+  void clearStatus() => clearField(1);
 }
 
-/// BlockParams contains limits on the block size.
-class BlockParams extends $pb.GeneratedMessage {
-  factory BlockParams({
-    $fixnum.Int64? maxBytes,
-    $fixnum.Int64? maxGas,
+class ResponseExtendVote extends $pb.GeneratedMessage {
+  factory ResponseExtendVote({
+    $core.List<$core.int>? voteExtension,
   }) {
     final $result = create();
-    if (maxBytes != null) {
-      $result.maxBytes = maxBytes;
-    }
-    if (maxGas != null) {
-      $result.maxGas = maxGas;
+    if (voteExtension != null) {
+      $result.voteExtension = voteExtension;
     }
     return $result;
   }
-  BlockParams._() : super();
-  factory BlockParams.fromBuffer($core.List<$core.int> i,
+  ResponseExtendVote._() : super();
+  factory ResponseExtendVote.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory BlockParams.fromJson($core.String i,
+  factory ResponseExtendVote.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'BlockParams',
+      _omitMessageNames ? '' : 'ResponseExtendVote',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'maxBytes')
-    ..aInt64(2, _omitFieldNames ? '' : 'maxGas')
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'voteExtension', $pb.PbFieldType.OY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  BlockParams clone() => BlockParams()..mergeFromMessage(this);
+  ResponseExtendVote clone() => ResponseExtendVote()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  BlockParams copyWith(void Function(BlockParams) updates) =>
-      super.copyWith((message) => updates(message as BlockParams))
-          as BlockParams;
+  ResponseExtendVote copyWith(void Function(ResponseExtendVote) updates) =>
+      super.copyWith((message) => updates(message as ResponseExtendVote))
+          as ResponseExtendVote;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static BlockParams create() => BlockParams._();
-  BlockParams createEmptyInstance() => create();
-  static $pb.PbList<BlockParams> createRepeated() => $pb.PbList<BlockParams>();
+  static ResponseExtendVote create() => ResponseExtendVote._();
+  ResponseExtendVote createEmptyInstance() => create();
+  static $pb.PbList<ResponseExtendVote> createRepeated() =>
+      $pb.PbList<ResponseExtendVote>();
   @$core.pragma('dart2js:noInline')
-  static BlockParams getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<BlockParams>(create);
-  static BlockParams? _defaultInstance;
+  static ResponseExtendVote getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponseExtendVote>(create);
+  static ResponseExtendVote? _defaultInstance;
 
-  /// Note: must be greater than 0
   @$pb.TagNumber(1)
-  $fixnum.Int64 get maxBytes => $_getI64(0);
+  $core.List<$core.int> get voteExtension => $_getN(0);
   @$pb.TagNumber(1)
-  set maxBytes($fixnum.Int64 v) {
-    $_setInt64(0, v);
+  set voteExtension($core.List<$core.int> v) {
+    $_setBytes(0, v);
   }
 
   @$pb.TagNumber(1)
-  $core.bool hasMaxBytes() => $_has(0);
+  $core.bool hasVoteExtension() => $_has(0);
   @$pb.TagNumber(1)
-  void clearMaxBytes() => clearField(1);
-
-  /// Note: must be greater or equal to -1
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get maxGas => $_getI64(1);
-  @$pb.TagNumber(2)
-  set maxGas($fixnum.Int64 v) {
-    $_setInt64(1, v);
-  }
-
-  @$pb.TagNumber(2)
-  $core.bool hasMaxGas() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMaxGas() => clearField(2);
+  void clearVoteExtension() => clearField(1);
 }
 
-class LastCommitInfo extends $pb.GeneratedMessage {
-  factory LastCommitInfo({
+class ResponseVerifyVoteExtension extends $pb.GeneratedMessage {
+  factory ResponseVerifyVoteExtension({
+    ResponseVerifyVoteExtension_VerifyStatus? status,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  ResponseVerifyVoteExtension._() : super();
+  factory ResponseVerifyVoteExtension.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ResponseVerifyVoteExtension.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResponseVerifyVoteExtension',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..e<ResponseVerifyVoteExtension_VerifyStatus>(
+        1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
+        defaultOrMaker: ResponseVerifyVoteExtension_VerifyStatus.UNKNOWN,
+        valueOf: ResponseVerifyVoteExtension_VerifyStatus.valueOf,
+        enumValues: ResponseVerifyVoteExtension_VerifyStatus.values)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ResponseVerifyVoteExtension clone() =>
+      ResponseVerifyVoteExtension()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ResponseVerifyVoteExtension copyWith(
+          void Function(ResponseVerifyVoteExtension) updates) =>
+      super.copyWith(
+              (message) => updates(message as ResponseVerifyVoteExtension))
+          as ResponseVerifyVoteExtension;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResponseVerifyVoteExtension create() =>
+      ResponseVerifyVoteExtension._();
+  ResponseVerifyVoteExtension createEmptyInstance() => create();
+  static $pb.PbList<ResponseVerifyVoteExtension> createRepeated() =>
+      $pb.PbList<ResponseVerifyVoteExtension>();
+  @$core.pragma('dart2js:noInline')
+  static ResponseVerifyVoteExtension getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponseVerifyVoteExtension>(create);
+  static ResponseVerifyVoteExtension? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResponseVerifyVoteExtension_VerifyStatus get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(ResponseVerifyVoteExtension_VerifyStatus v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+}
+
+class ResponseFinalizeBlock extends $pb.GeneratedMessage {
+  factory ResponseFinalizeBlock({
+    $core.Iterable<Event>? events,
+    $core.Iterable<ExecTxResult>? txResults,
+    $core.Iterable<ValidatorUpdate>? validatorUpdates,
+    $2.ConsensusParams? consensusParamUpdates,
+    $core.List<$core.int>? appHash,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    if (txResults != null) {
+      $result.txResults.addAll(txResults);
+    }
+    if (validatorUpdates != null) {
+      $result.validatorUpdates.addAll(validatorUpdates);
+    }
+    if (consensusParamUpdates != null) {
+      $result.consensusParamUpdates = consensusParamUpdates;
+    }
+    if (appHash != null) {
+      $result.appHash = appHash;
+    }
+    return $result;
+  }
+  ResponseFinalizeBlock._() : super();
+  factory ResponseFinalizeBlock.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ResponseFinalizeBlock.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResponseFinalizeBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..pc<Event>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
+        subBuilder: Event.create)
+    ..pc<ExecTxResult>(
+        2, _omitFieldNames ? '' : 'txResults', $pb.PbFieldType.PM,
+        subBuilder: ExecTxResult.create)
+    ..pc<ValidatorUpdate>(
+        3, _omitFieldNames ? '' : 'validatorUpdates', $pb.PbFieldType.PM,
+        subBuilder: ValidatorUpdate.create)
+    ..aOM<$2.ConsensusParams>(4, _omitFieldNames ? '' : 'consensusParamUpdates',
+        subBuilder: $2.ConsensusParams.create)
+    ..a<$core.List<$core.int>>(
+        5, _omitFieldNames ? '' : 'appHash', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ResponseFinalizeBlock clone() =>
+      ResponseFinalizeBlock()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ResponseFinalizeBlock copyWith(
+          void Function(ResponseFinalizeBlock) updates) =>
+      super.copyWith((message) => updates(message as ResponseFinalizeBlock))
+          as ResponseFinalizeBlock;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResponseFinalizeBlock create() => ResponseFinalizeBlock._();
+  ResponseFinalizeBlock createEmptyInstance() => create();
+  static $pb.PbList<ResponseFinalizeBlock> createRepeated() =>
+      $pb.PbList<ResponseFinalizeBlock>();
+  @$core.pragma('dart2js:noInline')
+  static ResponseFinalizeBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResponseFinalizeBlock>(create);
+  static ResponseFinalizeBlock? _defaultInstance;
+
+  /// set of block events emmitted as part of executing the block
+  @$pb.TagNumber(1)
+  $core.List<Event> get events => $_getList(0);
+
+  /// the result of executing each transaction including the events
+  /// the particular transction emitted. This should match the order
+  /// of the transactions delivered in the block itself
+  @$pb.TagNumber(2)
+  $core.List<ExecTxResult> get txResults => $_getList(1);
+
+  /// a list of updates to the validator set. These will reflect the validator set at current height + 2.
+  @$pb.TagNumber(3)
+  $core.List<ValidatorUpdate> get validatorUpdates => $_getList(2);
+
+  /// updates to the consensus params, if any.
+  @$pb.TagNumber(4)
+  $2.ConsensusParams get consensusParamUpdates => $_getN(3);
+  @$pb.TagNumber(4)
+  set consensusParamUpdates($2.ConsensusParams v) {
+    setField(4, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasConsensusParamUpdates() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConsensusParamUpdates() => clearField(4);
+  @$pb.TagNumber(4)
+  $2.ConsensusParams ensureConsensusParamUpdates() => $_ensure(3);
+
+  /// app_hash is the hash of the applications' state which is used to confirm that execution of the transactions was deterministic. It is up to the application to decide which algorithm to use.
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get appHash => $_getN(4);
+  @$pb.TagNumber(5)
+  set appHash($core.List<$core.int> v) {
+    $_setBytes(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasAppHash() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAppHash() => clearField(5);
+}
+
+class CommitInfo extends $pb.GeneratedMessage {
+  factory CommitInfo({
     $core.int? round,
     $core.Iterable<VoteInfo>? votes,
   }) {
@@ -3860,16 +4132,16 @@ class LastCommitInfo extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  LastCommitInfo._() : super();
-  factory LastCommitInfo.fromBuffer($core.List<$core.int> i,
+  CommitInfo._() : super();
+  factory CommitInfo.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory LastCommitInfo.fromJson($core.String i,
+  factory CommitInfo.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'LastCommitInfo',
+      _omitMessageNames ? '' : 'CommitInfo',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
@@ -3881,25 +4153,23 @@ class LastCommitInfo extends $pb.GeneratedMessage {
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  LastCommitInfo clone() => LastCommitInfo()..mergeFromMessage(this);
+  CommitInfo clone() => CommitInfo()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  LastCommitInfo copyWith(void Function(LastCommitInfo) updates) =>
-      super.copyWith((message) => updates(message as LastCommitInfo))
-          as LastCommitInfo;
+  CommitInfo copyWith(void Function(CommitInfo) updates) =>
+      super.copyWith((message) => updates(message as CommitInfo)) as CommitInfo;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static LastCommitInfo create() => LastCommitInfo._();
-  LastCommitInfo createEmptyInstance() => create();
-  static $pb.PbList<LastCommitInfo> createRepeated() =>
-      $pb.PbList<LastCommitInfo>();
+  static CommitInfo create() => CommitInfo._();
+  CommitInfo createEmptyInstance() => create();
+  static $pb.PbList<CommitInfo> createRepeated() => $pb.PbList<CommitInfo>();
   @$core.pragma('dart2js:noInline')
-  static LastCommitInfo getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LastCommitInfo>(create);
-  static LastCommitInfo? _defaultInstance;
+  static CommitInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CommitInfo>(create);
+  static CommitInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get round => $_getIZ(0);
@@ -3917,8 +4187,86 @@ class LastCommitInfo extends $pb.GeneratedMessage {
   $core.List<VoteInfo> get votes => $_getList(1);
 }
 
+/// ExtendedCommitInfo is similar to CommitInfo except that it is only used in
+/// the PrepareProposal request such that CometBFT can provide vote extensions
+/// to the application.
+class ExtendedCommitInfo extends $pb.GeneratedMessage {
+  factory ExtendedCommitInfo({
+    $core.int? round,
+    $core.Iterable<ExtendedVoteInfo>? votes,
+  }) {
+    final $result = create();
+    if (round != null) {
+      $result.round = round;
+    }
+    if (votes != null) {
+      $result.votes.addAll(votes);
+    }
+    return $result;
+  }
+  ExtendedCommitInfo._() : super();
+  factory ExtendedCommitInfo.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ExtendedCommitInfo.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExtendedCommitInfo',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'round', $pb.PbFieldType.O3)
+    ..pc<ExtendedVoteInfo>(
+        2, _omitFieldNames ? '' : 'votes', $pb.PbFieldType.PM,
+        subBuilder: ExtendedVoteInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ExtendedCommitInfo clone() => ExtendedCommitInfo()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ExtendedCommitInfo copyWith(void Function(ExtendedCommitInfo) updates) =>
+      super.copyWith((message) => updates(message as ExtendedCommitInfo))
+          as ExtendedCommitInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtendedCommitInfo create() => ExtendedCommitInfo._();
+  ExtendedCommitInfo createEmptyInstance() => create();
+  static $pb.PbList<ExtendedCommitInfo> createRepeated() =>
+      $pb.PbList<ExtendedCommitInfo>();
+  @$core.pragma('dart2js:noInline')
+  static ExtendedCommitInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExtendedCommitInfo>(create);
+  static ExtendedCommitInfo? _defaultInstance;
+
+  /// The round at which the block proposer decided in the previous height.
+  @$pb.TagNumber(1)
+  $core.int get round => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set round($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasRound() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRound() => clearField(1);
+
+  /// List of validators' addresses in the last validator set with their voting
+  /// information, including vote extensions.
+  @$pb.TagNumber(2)
+  $core.List<ExtendedVoteInfo> get votes => $_getList(1);
+}
+
 /// Event allows application developers to attach additional information to
-/// ResponseBeginBlock, ResponseEndBlock, ResponseCheckTx and ResponseDeliverTx.
+/// ResponseFinalizeBlock and ResponseCheckTx.
 /// Later, transactions may be queried using these events.
 class Event extends $pb.GeneratedMessage {
   factory Event({
@@ -3993,8 +4341,8 @@ class Event extends $pb.GeneratedMessage {
 /// EventAttribute is a single key-value pair, associated with an event.
 class EventAttribute extends $pb.GeneratedMessage {
   factory EventAttribute({
-    $core.List<$core.int>? key,
-    $core.List<$core.int>? value,
+    $core.String? key,
+    $core.String? value,
     $core.bool? index,
   }) {
     final $result = create();
@@ -4022,10 +4370,8 @@ class EventAttribute extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(
-        1, _omitFieldNames ? '' : 'key', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(
-        2, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OY)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
     ..aOB(3, _omitFieldNames ? '' : 'index')
     ..hasRequiredFields = false;
 
@@ -4053,10 +4399,10 @@ class EventAttribute extends $pb.GeneratedMessage {
   static EventAttribute? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.int> get key => $_getN(0);
+  $core.String get key => $_getSZ(0);
   @$pb.TagNumber(1)
-  set key($core.List<$core.int> v) {
-    $_setBytes(0, v);
+  set key($core.String v) {
+    $_setString(0, v);
   }
 
   @$pb.TagNumber(1)
@@ -4065,10 +4411,10 @@ class EventAttribute extends $pb.GeneratedMessage {
   void clearKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.int> get value => $_getN(1);
+  $core.String get value => $_getSZ(1);
   @$pb.TagNumber(2)
-  set value($core.List<$core.int> v) {
-    $_setBytes(1, v);
+  set value($core.String v) {
+    $_setString(1, v);
   }
 
   @$pb.TagNumber(2)
@@ -4089,6 +4435,183 @@ class EventAttribute extends $pb.GeneratedMessage {
   void clearIndex() => clearField(3);
 }
 
+///  ExecTxResult contains results of executing one individual transaction.
+///
+///  * Its structure is equivalent to #ResponseDeliverTx which will be deprecated/deleted
+class ExecTxResult extends $pb.GeneratedMessage {
+  factory ExecTxResult({
+    $core.int? code,
+    $core.List<$core.int>? data,
+    $core.String? log,
+    $core.String? info,
+    $fixnum.Int64? gasWanted,
+    $fixnum.Int64? gasUsed,
+    $core.Iterable<Event>? events,
+    $core.String? codespace,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    if (log != null) {
+      $result.log = log;
+    }
+    if (info != null) {
+      $result.info = info;
+    }
+    if (gasWanted != null) {
+      $result.gasWanted = gasWanted;
+    }
+    if (gasUsed != null) {
+      $result.gasUsed = gasUsed;
+    }
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    if (codespace != null) {
+      $result.codespace = codespace;
+    }
+    return $result;
+  }
+  ExecTxResult._() : super();
+  factory ExecTxResult.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ExecTxResult.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExecTxResult',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'log')
+    ..aOS(4, _omitFieldNames ? '' : 'info')
+    ..aInt64(5, _omitFieldNames ? '' : 'gas_wanted')
+    ..aInt64(6, _omitFieldNames ? '' : 'gas_used')
+    ..pc<Event>(7, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM,
+        subBuilder: Event.create)
+    ..aOS(8, _omitFieldNames ? '' : 'codespace')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ExecTxResult clone() => ExecTxResult()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ExecTxResult copyWith(void Function(ExecTxResult) updates) =>
+      super.copyWith((message) => updates(message as ExecTxResult))
+          as ExecTxResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecTxResult create() => ExecTxResult._();
+  ExecTxResult createEmptyInstance() => create();
+  static $pb.PbList<ExecTxResult> createRepeated() =>
+      $pb.PbList<ExecTxResult>();
+  @$core.pragma('dart2js:noInline')
+  static ExecTxResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExecTxResult>(create);
+  static ExecTxResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get code => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set code($core.int v) {
+    $_setUnsignedInt32(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get log => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set log($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasLog() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLog() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get info => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set info($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasInfo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInfo() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get gasWanted => $_getI64(4);
+  @$pb.TagNumber(5)
+  set gasWanted($fixnum.Int64 v) {
+    $_setInt64(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasGasWanted() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGasWanted() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get gasUsed => $_getI64(5);
+  @$pb.TagNumber(6)
+  set gasUsed($fixnum.Int64 v) {
+    $_setInt64(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasGasUsed() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGasUsed() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<Event> get events => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get codespace => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set codespace($core.String v) {
+    $_setString(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasCodespace() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCodespace() => clearField(8);
+}
+
 ///  TxResult contains results of executing the transaction.
 ///
 ///  One usage is indexing transaction results.
@@ -4097,7 +4620,7 @@ class TxResult extends $pb.GeneratedMessage {
     $fixnum.Int64? height,
     $core.int? index,
     $core.List<$core.int>? tx,
-    ResponseDeliverTx? result,
+    ExecTxResult? result,
   }) {
     final $result = create();
     if (height != null) {
@@ -4131,8 +4654,8 @@ class TxResult extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'index', $pb.PbFieldType.OU3)
     ..a<$core.List<$core.int>>(
         3, _omitFieldNames ? '' : 'tx', $pb.PbFieldType.OY)
-    ..aOM<ResponseDeliverTx>(4, _omitFieldNames ? '' : 'result',
-        subBuilder: ResponseDeliverTx.create)
+    ..aOM<ExecTxResult>(4, _omitFieldNames ? '' : 'result',
+        subBuilder: ExecTxResult.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -4193,9 +4716,9 @@ class TxResult extends $pb.GeneratedMessage {
   void clearTx() => clearField(3);
 
   @$pb.TagNumber(4)
-  ResponseDeliverTx get result => $_getN(3);
+  ExecTxResult get result => $_getN(3);
   @$pb.TagNumber(4)
-  set result(ResponseDeliverTx v) {
+  set result(ExecTxResult v) {
     setField(4, v);
   }
 
@@ -4204,10 +4727,9 @@ class TxResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearResult() => clearField(4);
   @$pb.TagNumber(4)
-  ResponseDeliverTx ensureResult() => $_ensure(3);
+  ExecTxResult ensureResult() => $_ensure(3);
 }
 
-/// Validator
 class Validator extends $pb.GeneratedMessage {
   factory Validator({
     $core.List<$core.int>? address,
@@ -4287,10 +4809,9 @@ class Validator extends $pb.GeneratedMessage {
   void clearPower() => clearField(3);
 }
 
-/// ValidatorUpdate
 class ValidatorUpdate extends $pb.GeneratedMessage {
   factory ValidatorUpdate({
-    $5.PublicKey? pubKey,
+    $4.PublicKey? pubKey,
     $fixnum.Int64? power,
   }) {
     final $result = create();
@@ -4315,8 +4836,8 @@ class ValidatorUpdate extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..aOM<$5.PublicKey>(1, _omitFieldNames ? '' : 'pubKey',
-        subBuilder: $5.PublicKey.create)
+    ..aOM<$4.PublicKey>(1, _omitFieldNames ? '' : 'pubKey',
+        subBuilder: $4.PublicKey.create)
     ..aInt64(2, _omitFieldNames ? '' : 'power')
     ..hasRequiredFields = false;
 
@@ -4344,9 +4865,9 @@ class ValidatorUpdate extends $pb.GeneratedMessage {
   static ValidatorUpdate? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.PublicKey get pubKey => $_getN(0);
+  $4.PublicKey get pubKey => $_getN(0);
   @$pb.TagNumber(1)
-  set pubKey($5.PublicKey v) {
+  set pubKey($4.PublicKey v) {
     setField(1, v);
   }
 
@@ -4355,7 +4876,7 @@ class ValidatorUpdate extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPubKey() => clearField(1);
   @$pb.TagNumber(1)
-  $5.PublicKey ensurePubKey() => $_ensure(0);
+  $4.PublicKey ensurePubKey() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get power => $_getI64(1);
@@ -4370,18 +4891,17 @@ class ValidatorUpdate extends $pb.GeneratedMessage {
   void clearPower() => clearField(2);
 }
 
-/// VoteInfo
 class VoteInfo extends $pb.GeneratedMessage {
   factory VoteInfo({
     Validator? validator,
-    $core.bool? signedLastBlock,
+    $5.BlockIDFlag? blockIdFlag,
   }) {
     final $result = create();
     if (validator != null) {
       $result.validator = validator;
     }
-    if (signedLastBlock != null) {
-      $result.signedLastBlock = signedLastBlock;
+    if (blockIdFlag != null) {
+      $result.blockIdFlag = blockIdFlag;
     }
     return $result;
   }
@@ -4400,7 +4920,11 @@ class VoteInfo extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<Validator>(1, _omitFieldNames ? '' : 'validator',
         subBuilder: Validator.create)
-    ..aOB(2, _omitFieldNames ? '' : 'signedLastBlock')
+    ..e<$5.BlockIDFlag>(
+        3, _omitFieldNames ? '' : 'blockIdFlag', $pb.PbFieldType.OE,
+        defaultOrMaker: $5.BlockIDFlag.BLOCK_ID_FLAG_UNKNOWN,
+        valueOf: $5.BlockIDFlag.valueOf,
+        enumValues: $5.BlockIDFlag.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -4438,22 +4962,148 @@ class VoteInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Validator ensureValidator() => $_ensure(0);
 
-  @$pb.TagNumber(2)
-  $core.bool get signedLastBlock => $_getBF(1);
-  @$pb.TagNumber(2)
-  set signedLastBlock($core.bool v) {
-    $_setBool(1, v);
+  @$pb.TagNumber(3)
+  $5.BlockIDFlag get blockIdFlag => $_getN(1);
+  @$pb.TagNumber(3)
+  set blockIdFlag($5.BlockIDFlag v) {
+    setField(3, v);
   }
 
-  @$pb.TagNumber(2)
-  $core.bool hasSignedLastBlock() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSignedLastBlock() => clearField(2);
+  @$pb.TagNumber(3)
+  $core.bool hasBlockIdFlag() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearBlockIdFlag() => clearField(3);
 }
 
-class Evidence extends $pb.GeneratedMessage {
-  factory Evidence({
-    EvidenceType? type,
+class ExtendedVoteInfo extends $pb.GeneratedMessage {
+  factory ExtendedVoteInfo({
+    Validator? validator,
+    $core.List<$core.int>? voteExtension,
+    $core.List<$core.int>? extensionSignature,
+    $5.BlockIDFlag? blockIdFlag,
+  }) {
+    final $result = create();
+    if (validator != null) {
+      $result.validator = validator;
+    }
+    if (voteExtension != null) {
+      $result.voteExtension = voteExtension;
+    }
+    if (extensionSignature != null) {
+      $result.extensionSignature = extensionSignature;
+    }
+    if (blockIdFlag != null) {
+      $result.blockIdFlag = blockIdFlag;
+    }
+    return $result;
+  }
+  ExtendedVoteInfo._() : super();
+  factory ExtendedVoteInfo.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ExtendedVoteInfo.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExtendedVoteInfo',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
+      createEmptyInstance: create)
+    ..aOM<Validator>(1, _omitFieldNames ? '' : 'validator',
+        subBuilder: Validator.create)
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'voteExtension', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'extensionSignature', $pb.PbFieldType.OY)
+    ..e<$5.BlockIDFlag>(
+        5, _omitFieldNames ? '' : 'blockIdFlag', $pb.PbFieldType.OE,
+        defaultOrMaker: $5.BlockIDFlag.BLOCK_ID_FLAG_UNKNOWN,
+        valueOf: $5.BlockIDFlag.valueOf,
+        enumValues: $5.BlockIDFlag.values)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ExtendedVoteInfo clone() => ExtendedVoteInfo()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ExtendedVoteInfo copyWith(void Function(ExtendedVoteInfo) updates) =>
+      super.copyWith((message) => updates(message as ExtendedVoteInfo))
+          as ExtendedVoteInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtendedVoteInfo create() => ExtendedVoteInfo._();
+  ExtendedVoteInfo createEmptyInstance() => create();
+  static $pb.PbList<ExtendedVoteInfo> createRepeated() =>
+      $pb.PbList<ExtendedVoteInfo>();
+  @$core.pragma('dart2js:noInline')
+  static ExtendedVoteInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExtendedVoteInfo>(create);
+  static ExtendedVoteInfo? _defaultInstance;
+
+  /// The validator that sent the vote.
+  @$pb.TagNumber(1)
+  Validator get validator => $_getN(0);
+  @$pb.TagNumber(1)
+  set validator(Validator v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasValidator() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValidator() => clearField(1);
+  @$pb.TagNumber(1)
+  Validator ensureValidator() => $_ensure(0);
+
+  /// Non-deterministic extension provided by the sending validator's application.
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get voteExtension => $_getN(1);
+  @$pb.TagNumber(3)
+  set voteExtension($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasVoteExtension() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearVoteExtension() => clearField(3);
+
+  /// Vote extension signature created by CometBFT
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get extensionSignature => $_getN(2);
+  @$pb.TagNumber(4)
+  set extensionSignature($core.List<$core.int> v) {
+    $_setBytes(2, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasExtensionSignature() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearExtensionSignature() => clearField(4);
+
+  /// block_id_flag indicates whether the validator voted for a block, nil, or did not vote at all
+  @$pb.TagNumber(5)
+  $5.BlockIDFlag get blockIdFlag => $_getN(3);
+  @$pb.TagNumber(5)
+  set blockIdFlag($5.BlockIDFlag v) {
+    setField(5, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasBlockIdFlag() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearBlockIdFlag() => clearField(5);
+}
+
+class Misbehavior extends $pb.GeneratedMessage {
+  factory Misbehavior({
+    MisbehaviorType? type,
     Validator? validator,
     $fixnum.Int64? height,
     $1.Timestamp? time,
@@ -4477,23 +5127,23 @@ class Evidence extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  Evidence._() : super();
-  factory Evidence.fromBuffer($core.List<$core.int> i,
+  Misbehavior._() : super();
+  factory Misbehavior.fromBuffer($core.List<$core.int> i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(i, r);
-  factory Evidence.fromJson($core.String i,
+  factory Misbehavior.fromJson($core.String i,
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'Evidence',
+      _omitMessageNames ? '' : 'Misbehavior',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'tendermint.abci'),
       createEmptyInstance: create)
-    ..e<EvidenceType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: EvidenceType.UNKNOWN,
-        valueOf: EvidenceType.valueOf,
-        enumValues: EvidenceType.values)
+    ..e<MisbehaviorType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
+        defaultOrMaker: MisbehaviorType.UNKNOWN,
+        valueOf: MisbehaviorType.valueOf,
+        enumValues: MisbehaviorType.values)
     ..aOM<Validator>(2, _omitFieldNames ? '' : 'validator',
         subBuilder: Validator.create)
     ..aInt64(3, _omitFieldNames ? '' : 'height')
@@ -4505,28 +5155,29 @@ class Evidence extends $pb.GeneratedMessage {
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
       'Will be removed in next major version')
-  Evidence clone() => Evidence()..mergeFromMessage(this);
+  Misbehavior clone() => Misbehavior()..mergeFromMessage(this);
   @$core.Deprecated('Using this can add significant overhead to your binary. '
       'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
       'Will be removed in next major version')
-  Evidence copyWith(void Function(Evidence) updates) =>
-      super.copyWith((message) => updates(message as Evidence)) as Evidence;
+  Misbehavior copyWith(void Function(Misbehavior) updates) =>
+      super.copyWith((message) => updates(message as Misbehavior))
+          as Misbehavior;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static Evidence create() => Evidence._();
-  Evidence createEmptyInstance() => create();
-  static $pb.PbList<Evidence> createRepeated() => $pb.PbList<Evidence>();
+  static Misbehavior create() => Misbehavior._();
+  Misbehavior createEmptyInstance() => create();
+  static $pb.PbList<Misbehavior> createRepeated() => $pb.PbList<Misbehavior>();
   @$core.pragma('dart2js:noInline')
-  static Evidence getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Evidence>(create);
-  static Evidence? _defaultInstance;
+  static Misbehavior getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Misbehavior>(create);
+  static Misbehavior? _defaultInstance;
 
   @$pb.TagNumber(1)
-  EvidenceType get type => $_getN(0);
+  MisbehaviorType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type(EvidenceType v) {
+  set type(MisbehaviorType v) {
     setField(1, v);
   }
 

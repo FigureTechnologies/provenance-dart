@@ -225,6 +225,9 @@ class AddMarkerProposal extends $pb.GeneratedMessage {
 
 /// SupplyIncreaseProposal defines a governance proposal to administer a marker and increase total supply of the marker
 /// through minting coin and placing it within the marker or assigning it directly to an account
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgSupplyIncreaseProposalRequest in a governance proposal.
 class SupplyIncreaseProposal extends $pb.GeneratedMessage {
   factory SupplyIncreaseProposal({
     $core.String? title,
@@ -345,6 +348,9 @@ class SupplyIncreaseProposal extends $pb.GeneratedMessage {
 
 /// SupplyDecreaseProposal defines a governance proposal to administer a marker and decrease the total supply through
 /// burning coin held within the marker
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgSupplyDecreaseProposalRequest in a governance proposal.
 class SupplyDecreaseProposal extends $pb.GeneratedMessage {
   factory SupplyDecreaseProposal({
     $core.String? title,
@@ -448,6 +454,9 @@ class SupplyDecreaseProposal extends $pb.GeneratedMessage {
 
 /// SetAdministratorProposal defines a governance proposal to administer a marker and set administrators with specific
 /// access on the marker
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgSetAdministratorProposalRequest in a governance proposal.
 class SetAdministratorProposal extends $pb.GeneratedMessage {
   factory SetAdministratorProposal({
     $core.String? title,
@@ -557,6 +566,9 @@ class SetAdministratorProposal extends $pb.GeneratedMessage {
 
 /// RemoveAdministratorProposal defines a governance proposal to administer a marker and remove all permissions for a
 /// given address
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgRemoveAdministratorProposalRequest in a governance proposal.
 class RemoveAdministratorProposal extends $pb.GeneratedMessage {
   factory RemoveAdministratorProposal({
     $core.String? title,
@@ -666,6 +678,9 @@ class RemoveAdministratorProposal extends $pb.GeneratedMessage {
 }
 
 /// ChangeStatusProposal defines a governance proposal to administer a marker to change its status
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgChangeStatusProposalRequest in a governance proposal.
 class ChangeStatusProposal extends $pb.GeneratedMessage {
   factory ChangeStatusProposal({
     $core.String? title,
@@ -785,6 +800,9 @@ class ChangeStatusProposal extends $pb.GeneratedMessage {
 }
 
 /// WithdrawEscrowProposal defines a governance proposal to withdraw escrow coins from a marker
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgWithdrawEscrowProposalRequest in a governance proposal.
 class WithdrawEscrowProposal extends $pb.GeneratedMessage {
   factory WithdrawEscrowProposal({
     $core.String? title,
@@ -910,6 +928,9 @@ class WithdrawEscrowProposal extends $pb.GeneratedMessage {
 }
 
 /// SetDenomMetadataProposal defines a governance proposal to set the metadata for a denom
+/// Deprecated: This message is no longer usable. It is only still included for
+/// backwards compatibility (e.g. looking up old governance proposals).
+/// It is replaced by providing a MsgSetDenomMetadataProposalRequest in a governance proposal.
 class SetDenomMetadataProposal extends $pb.GeneratedMessage {
   factory SetDenomMetadataProposal({
     $core.String? title,

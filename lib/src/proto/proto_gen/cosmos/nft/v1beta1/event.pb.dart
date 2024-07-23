@@ -76,6 +76,7 @@ class EventSend extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventSend>(create);
   static EventSend? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -88,6 +89,7 @@ class EventSend extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// id is a unique identifier of the nft
   @$pb.TagNumber(2)
   $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -100,6 +102,7 @@ class EventSend extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// sender is the address of the owner of nft
   @$pb.TagNumber(3)
   $core.String get sender => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -112,6 +115,7 @@ class EventSend extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSender() => clearField(3);
 
+  /// receiver is the receiver address of nft
   @$pb.TagNumber(4)
   $core.String get receiver => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -183,6 +187,7 @@ class EventMint extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventMint>(create);
   static EventMint? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -195,6 +200,7 @@ class EventMint extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// id is a unique identifier of the nft
   @$pb.TagNumber(2)
   $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -207,6 +213,7 @@ class EventMint extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// owner is the owner address of the nft
   @$pb.TagNumber(3)
   $core.String get owner => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -278,6 +285,7 @@ class EventBurn extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventBurn>(create);
   static EventBurn? _defaultInstance;
 
+  /// class_id associated with the nft
   @$pb.TagNumber(1)
   $core.String get classId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -290,6 +298,7 @@ class EventBurn extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearClassId() => clearField(1);
 
+  /// id is a unique identifier of the nft
   @$pb.TagNumber(2)
   $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -302,6 +311,7 @@ class EventBurn extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// owner is the owner address of the nft
   @$pb.TagNumber(3)
   $core.String get owner => $_getSZ(2);
   @$pb.TagNumber(3)

@@ -386,3 +386,56 @@ final $typed_data.Uint8List queryUpgradedConsensusStateResponseDescriptor =
         'CiNRdWVyeVVwZ3JhZGVkQ29uc2Vuc3VzU3RhdGVSZXNwb25zZRJOChh1cGdyYWRlZF9jb25zZW'
         '5zdXNfc3RhdGUYASABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UhZ1cGdyYWRlZENvbnNlbnN1'
         'c1N0YXRl');
+
+@$core.Deprecated('Use queryVerifyMembershipRequestDescriptor instead')
+const QueryVerifyMembershipRequest$json = {
+  '1': 'QueryVerifyMembershipRequest',
+  '2': [
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'proof', '3': 2, '4': 1, '5': 12, '10': 'proof'},
+    {
+      '1': 'proof_height',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': {},
+      '10': 'proofHeight'
+    },
+    {
+      '1': 'merkle_path',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.commitment.v1.MerklePath',
+      '8': {},
+      '10': 'merklePath'
+    },
+    {'1': 'value', '3': 5, '4': 1, '5': 12, '10': 'value'},
+    {'1': 'time_delay', '3': 6, '4': 1, '5': 4, '10': 'timeDelay'},
+    {'1': 'block_delay', '3': 7, '4': 1, '5': 4, '10': 'blockDelay'},
+  ],
+};
+
+/// Descriptor for `QueryVerifyMembershipRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryVerifyMembershipRequestDescriptor = $convert.base64Decode(
+    'ChxRdWVyeVZlcmlmeU1lbWJlcnNoaXBSZXF1ZXN0EhsKCWNsaWVudF9pZBgBIAEoCVIIY2xpZW'
+    '50SWQSFAoFcHJvb2YYAiABKAxSBXByb29mEkMKDHByb29mX2hlaWdodBgDIAEoCzIaLmliYy5j'
+    'b3JlLmNsaWVudC52MS5IZWlnaHRCBMjeHwBSC3Byb29mSGVpZ2h0EkkKC21lcmtsZV9wYXRoGA'
+    'QgASgLMiIuaWJjLmNvcmUuY29tbWl0bWVudC52MS5NZXJrbGVQYXRoQgTI3h8AUgptZXJrbGVQ'
+    'YXRoEhQKBXZhbHVlGAUgASgMUgV2YWx1ZRIdCgp0aW1lX2RlbGF5GAYgASgEUgl0aW1lRGVsYX'
+    'kSHwoLYmxvY2tfZGVsYXkYByABKARSCmJsb2NrRGVsYXk=');
+
+@$core.Deprecated('Use queryVerifyMembershipResponseDescriptor instead')
+const QueryVerifyMembershipResponse$json = {
+  '1': 'QueryVerifyMembershipResponse',
+  '2': [
+    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+  ],
+};
+
+/// Descriptor for `QueryVerifyMembershipResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryVerifyMembershipResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1RdWVyeVZlcmlmeU1lbWJlcnNoaXBSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZX'
+        'Nz');

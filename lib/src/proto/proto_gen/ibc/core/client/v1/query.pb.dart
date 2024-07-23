@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../cosmos/base/query/v1beta1/pagination.pb.dart' as $3;
 import '../../../../google/protobuf/any.pb.dart' as $1;
+import '../../commitment/v1/commitment.pb.dart' as $4;
 import 'client.pb.dart' as $2;
 
 /// QueryClientStateRequest is the request type for the Query/ClientState RPC
@@ -1424,6 +1425,262 @@ class QueryUpgradedConsensusStateResponse extends $pb.GeneratedMessage {
   void clearUpgradedConsensusState() => clearField(1);
   @$pb.TagNumber(1)
   $1.Any ensureUpgradedConsensusState() => $_ensure(0);
+}
+
+/// QueryVerifyMembershipRequest is the request type for the Query/VerifyMembership RPC method
+class QueryVerifyMembershipRequest extends $pb.GeneratedMessage {
+  factory QueryVerifyMembershipRequest({
+    $core.String? clientId,
+    $core.List<$core.int>? proof,
+    $2.Height? proofHeight,
+    $4.MerklePath? merklePath,
+    $core.List<$core.int>? value,
+    $fixnum.Int64? timeDelay,
+    $fixnum.Int64? blockDelay,
+  }) {
+    final $result = create();
+    if (clientId != null) {
+      $result.clientId = clientId;
+    }
+    if (proof != null) {
+      $result.proof = proof;
+    }
+    if (proofHeight != null) {
+      $result.proofHeight = proofHeight;
+    }
+    if (merklePath != null) {
+      $result.merklePath = merklePath;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (timeDelay != null) {
+      $result.timeDelay = timeDelay;
+    }
+    if (blockDelay != null) {
+      $result.blockDelay = blockDelay;
+    }
+    return $result;
+  }
+  QueryVerifyMembershipRequest._() : super();
+  factory QueryVerifyMembershipRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryVerifyMembershipRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryVerifyMembershipRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.client.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'clientId')
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'proof', $pb.PbFieldType.OY)
+    ..aOM<$2.Height>(3, _omitFieldNames ? '' : 'proofHeight',
+        subBuilder: $2.Height.create)
+    ..aOM<$4.MerklePath>(4, _omitFieldNames ? '' : 'merklePath',
+        subBuilder: $4.MerklePath.create)
+    ..a<$core.List<$core.int>>(
+        5, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OY)
+    ..a<$fixnum.Int64>(
+        6, _omitFieldNames ? '' : 'timeDelay', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(
+        7, _omitFieldNames ? '' : 'blockDelay', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryVerifyMembershipRequest clone() =>
+      QueryVerifyMembershipRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryVerifyMembershipRequest copyWith(
+          void Function(QueryVerifyMembershipRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryVerifyMembershipRequest))
+          as QueryVerifyMembershipRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryVerifyMembershipRequest create() =>
+      QueryVerifyMembershipRequest._();
+  QueryVerifyMembershipRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryVerifyMembershipRequest> createRepeated() =>
+      $pb.PbList<QueryVerifyMembershipRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryVerifyMembershipRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryVerifyMembershipRequest>(create);
+  static QueryVerifyMembershipRequest? _defaultInstance;
+
+  /// client unique identifier.
+  @$pb.TagNumber(1)
+  $core.String get clientId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set clientId($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasClientId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClientId() => clearField(1);
+
+  /// the proof to be verified by the client.
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get proof => $_getN(1);
+  @$pb.TagNumber(2)
+  set proof($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasProof() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProof() => clearField(2);
+
+  /// the height of the commitment root at which the proof is verified.
+  @$pb.TagNumber(3)
+  $2.Height get proofHeight => $_getN(2);
+  @$pb.TagNumber(3)
+  set proofHeight($2.Height v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasProofHeight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProofHeight() => clearField(3);
+  @$pb.TagNumber(3)
+  $2.Height ensureProofHeight() => $_ensure(2);
+
+  /// the commitment key path.
+  @$pb.TagNumber(4)
+  $4.MerklePath get merklePath => $_getN(3);
+  @$pb.TagNumber(4)
+  set merklePath($4.MerklePath v) {
+    setField(4, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasMerklePath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMerklePath() => clearField(4);
+  @$pb.TagNumber(4)
+  $4.MerklePath ensureMerklePath() => $_ensure(3);
+
+  /// the value which is proven.
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get value => $_getN(4);
+  @$pb.TagNumber(5)
+  set value($core.List<$core.int> v) {
+    $_setBytes(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasValue() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearValue() => clearField(5);
+
+  /// optional time delay
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get timeDelay => $_getI64(5);
+  @$pb.TagNumber(6)
+  set timeDelay($fixnum.Int64 v) {
+    $_setInt64(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasTimeDelay() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTimeDelay() => clearField(6);
+
+  /// optional block delay
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get blockDelay => $_getI64(6);
+  @$pb.TagNumber(7)
+  set blockDelay($fixnum.Int64 v) {
+    $_setInt64(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasBlockDelay() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBlockDelay() => clearField(7);
+}
+
+/// QueryVerifyMembershipResponse is the response type for the Query/VerifyMembership RPC method
+class QueryVerifyMembershipResponse extends $pb.GeneratedMessage {
+  factory QueryVerifyMembershipResponse({
+    $core.bool? success,
+  }) {
+    final $result = create();
+    if (success != null) {
+      $result.success = success;
+    }
+    return $result;
+  }
+  QueryVerifyMembershipResponse._() : super();
+  factory QueryVerifyMembershipResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryVerifyMembershipResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryVerifyMembershipResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'ibc.core.client.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryVerifyMembershipResponse clone() =>
+      QueryVerifyMembershipResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryVerifyMembershipResponse copyWith(
+          void Function(QueryVerifyMembershipResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryVerifyMembershipResponse))
+          as QueryVerifyMembershipResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryVerifyMembershipResponse create() =>
+      QueryVerifyMembershipResponse._();
+  QueryVerifyMembershipResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryVerifyMembershipResponse> createRepeated() =>
+      $pb.PbList<QueryVerifyMembershipResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryVerifyMembershipResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryVerifyMembershipResponse>(create);
+  static QueryVerifyMembershipResponse? _defaultInstance;
+
+  /// boolean indicating success or failure of proof verification.
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool v) {
+    $_setBool(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => clearField(1);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

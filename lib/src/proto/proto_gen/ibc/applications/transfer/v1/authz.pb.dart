@@ -22,6 +22,7 @@ class Allocation extends $pb.GeneratedMessage {
     $core.String? sourceChannel,
     $core.Iterable<$0.Coin>? spendLimit,
     $core.Iterable<$core.String>? allowList,
+    $core.Iterable<$core.String>? allowedPacketData,
   }) {
     final $result = create();
     if (sourcePort != null) {
@@ -35,6 +36,9 @@ class Allocation extends $pb.GeneratedMessage {
     }
     if (allowList != null) {
       $result.allowList.addAll(allowList);
+    }
+    if (allowedPacketData != null) {
+      $result.allowedPacketData.addAll(allowedPacketData);
     }
     return $result;
   }
@@ -56,6 +60,7 @@ class Allocation extends $pb.GeneratedMessage {
     ..pc<$0.Coin>(3, _omitFieldNames ? '' : 'spendLimit', $pb.PbFieldType.PM,
         subBuilder: $0.Coin.create)
     ..pPS(4, _omitFieldNames ? '' : 'allowList')
+    ..pPS(5, _omitFieldNames ? '' : 'allowedPacketData')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -112,6 +117,11 @@ class Allocation extends $pb.GeneratedMessage {
   /// allow list of receivers, an empty allow list permits any receiver address
   @$pb.TagNumber(4)
   $core.List<$core.String> get allowList => $_getList(3);
+
+  /// allow list of memo strings, an empty list prohibits all memo strings;
+  /// a list only with "*" permits any memo string
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get allowedPacketData => $_getList(4);
 }
 
 /// TransferAuthorization allows the grantee to spend up to spend_limit coins from

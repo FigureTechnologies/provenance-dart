@@ -18,23 +18,15 @@ const QueryInterchainAccountRequest$json = {
   '1': 'QueryInterchainAccountRequest',
   '2': [
     {'1': 'owner', '3': 1, '4': 1, '5': 9, '10': 'owner'},
-    {
-      '1': 'connection_id',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'connectionId'
-    },
+    {'1': 'connection_id', '3': 2, '4': 1, '5': 9, '10': 'connectionId'},
   ],
 };
 
 /// Descriptor for `QueryInterchainAccountRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryInterchainAccountRequestDescriptor =
     $convert.base64Decode(
-        'Ch1RdWVyeUludGVyY2hhaW5BY2NvdW50UmVxdWVzdBIUCgVvd25lchgBIAEoCVIFb3duZXISPQ'
-        'oNY29ubmVjdGlvbl9pZBgCIAEoCUIY8t4fFHlhbWw6ImNvbm5lY3Rpb25faWQiUgxjb25uZWN0'
-        'aW9uSWQ=');
+        'Ch1RdWVyeUludGVyY2hhaW5BY2NvdW50UmVxdWVzdBIUCgVvd25lchgBIAEoCVIFb3duZXISIw'
+        'oNY29ubmVjdGlvbl9pZBgCIAEoCVIMY29ubmVjdGlvbklk');
 
 @$core.Deprecated('Use queryInterchainAccountResponseDescriptor instead')
 const QueryInterchainAccountResponse$json = {

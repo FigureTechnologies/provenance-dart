@@ -224,6 +224,7 @@ class MsgConnectionOpenTry extends $pb.GeneratedMessage {
     $core.List<$core.int>? proofConsensus,
     $3.Height? consensusHeight,
     $core.String? signer,
+    $core.List<$core.int>? hostConsensusStateProof,
   }) {
     final $result = create();
     if (clientId != null) {
@@ -263,6 +264,9 @@ class MsgConnectionOpenTry extends $pb.GeneratedMessage {
     if (signer != null) {
       $result.signer = signer;
     }
+    if (hostConsensusStateProof != null) {
+      $result.hostConsensusStateProof = hostConsensusStateProof;
+    }
     return $result;
   }
   MsgConnectionOpenTry._() : super();
@@ -301,6 +305,8 @@ class MsgConnectionOpenTry extends $pb.GeneratedMessage {
     ..aOM<$3.Height>(11, _omitFieldNames ? '' : 'consensusHeight',
         subBuilder: $3.Height.create)
     ..aOS(12, _omitFieldNames ? '' : 'signer')
+    ..a<$core.List<$core.int>>(13,
+        _omitFieldNames ? '' : 'hostConsensusStateProof', $pb.PbFieldType.OY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -478,6 +484,19 @@ class MsgConnectionOpenTry extends $pb.GeneratedMessage {
   $core.bool hasSigner() => $_has(11);
   @$pb.TagNumber(12)
   void clearSigner() => clearField(12);
+
+  /// optional proof data for host state machines that are unable to introspect their own consensus state
+  @$pb.TagNumber(13)
+  $core.List<$core.int> get hostConsensusStateProof => $_getN(12);
+  @$pb.TagNumber(13)
+  set hostConsensusStateProof($core.List<$core.int> v) {
+    $_setBytes(12, v);
+  }
+
+  @$pb.TagNumber(13)
+  $core.bool hasHostConsensusStateProof() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearHostConsensusStateProof() => clearField(13);
 }
 
 /// MsgConnectionOpenTryResponse defines the Msg/ConnectionOpenTry response type.
@@ -540,6 +559,7 @@ class MsgConnectionOpenAck extends $pb.GeneratedMessage {
     $core.List<$core.int>? proofConsensus,
     $3.Height? consensusHeight,
     $core.String? signer,
+    $core.List<$core.int>? hostConsensusStateProof,
   }) {
     final $result = create();
     if (connectionId != null) {
@@ -571,6 +591,9 @@ class MsgConnectionOpenAck extends $pb.GeneratedMessage {
     }
     if (signer != null) {
       $result.signer = signer;
+    }
+    if (hostConsensusStateProof != null) {
+      $result.hostConsensusStateProof = hostConsensusStateProof;
     }
     return $result;
   }
@@ -604,6 +627,8 @@ class MsgConnectionOpenAck extends $pb.GeneratedMessage {
     ..aOM<$3.Height>(9, _omitFieldNames ? '' : 'consensusHeight',
         subBuilder: $3.Height.create)
     ..aOS(10, _omitFieldNames ? '' : 'signer')
+    ..a<$core.List<$core.int>>(11,
+        _omitFieldNames ? '' : 'hostConsensusStateProof', $pb.PbFieldType.OY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -761,6 +786,19 @@ class MsgConnectionOpenAck extends $pb.GeneratedMessage {
   $core.bool hasSigner() => $_has(9);
   @$pb.TagNumber(10)
   void clearSigner() => clearField(10);
+
+  /// optional proof data for host state machines that are unable to introspect their own consensus state
+  @$pb.TagNumber(11)
+  $core.List<$core.int> get hostConsensusStateProof => $_getN(10);
+  @$pb.TagNumber(11)
+  set hostConsensusStateProof($core.List<$core.int> v) {
+    $_setBytes(10, v);
+  }
+
+  @$pb.TagNumber(11)
+  $core.bool hasHostConsensusStateProof() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearHostConsensusStateProof() => clearField(11);
 }
 
 /// MsgConnectionOpenAckResponse defines the Msg/ConnectionOpenAck response type.
@@ -977,6 +1015,137 @@ class MsgConnectionOpenConfirmResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgConnectionOpenConfirmResponse>(
           create);
   static MsgConnectionOpenConfirmResponse? _defaultInstance;
+}
+
+/// MsgUpdateParams defines the sdk.Msg type to update the connection parameters.
+class MsgUpdateParams extends $pb.GeneratedMessage {
+  factory MsgUpdateParams({
+    $core.String? signer,
+    $1.Params? params,
+  }) {
+    final $result = create();
+    if (signer != null) {
+      $result.signer = signer;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
+  MsgUpdateParams._() : super();
+  factory MsgUpdateParams.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParams.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParams',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'ibc.core.connection.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'signer')
+    ..aOM<$1.Params>(2, _omitFieldNames ? '' : 'params',
+        subBuilder: $1.Params.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParams clone() => MsgUpdateParams()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParams copyWith(void Function(MsgUpdateParams) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParams))
+          as MsgUpdateParams;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParams create() => MsgUpdateParams._();
+  MsgUpdateParams createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParams> createRepeated() =>
+      $pb.PbList<MsgUpdateParams>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParams getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParams>(create);
+  static MsgUpdateParams? _defaultInstance;
+
+  /// signer address
+  @$pb.TagNumber(1)
+  $core.String get signer => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set signer($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSigner() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSigner() => clearField(1);
+
+  ///  params defines the connection parameters to update.
+  ///
+  ///  NOTE: All parameters must be supplied.
+  @$pb.TagNumber(2)
+  $1.Params get params => $_getN(1);
+  @$pb.TagNumber(2)
+  set params($1.Params v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasParams() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParams() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Params ensureParams() => $_ensure(1);
+}
+
+/// MsgUpdateParamsResponse defines the MsgUpdateParams response type.
+class MsgUpdateParamsResponse extends $pb.GeneratedMessage {
+  factory MsgUpdateParamsResponse() => create();
+  MsgUpdateParamsResponse._() : super();
+  factory MsgUpdateParamsResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory MsgUpdateParamsResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MsgUpdateParamsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'ibc.core.connection.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse clone() =>
+      MsgUpdateParamsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  MsgUpdateParamsResponse copyWith(
+          void Function(MsgUpdateParamsResponse) updates) =>
+      super.copyWith((message) => updates(message as MsgUpdateParamsResponse))
+          as MsgUpdateParamsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse create() => MsgUpdateParamsResponse._();
+  MsgUpdateParamsResponse createEmptyInstance() => create();
+  static $pb.PbList<MsgUpdateParamsResponse> createRepeated() =>
+      $pb.PbList<MsgUpdateParamsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MsgUpdateParamsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MsgUpdateParamsResponse>(create);
+  static MsgUpdateParamsResponse? _defaultInstance;
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

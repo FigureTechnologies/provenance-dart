@@ -17,15 +17,8 @@ import 'dart:typed_data' as $typed_data;
 const Allocation$json = {
   '1': 'Allocation',
   '2': [
-    {'1': 'source_port', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'sourcePort'},
-    {
-      '1': 'source_channel',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'sourceChannel'
-    },
+    {'1': 'source_port', '3': 1, '4': 1, '5': 9, '10': 'sourcePort'},
+    {'1': 'source_channel', '3': 2, '4': 1, '5': 9, '10': 'sourceChannel'},
     {
       '1': 'spend_limit',
       '3': 3,
@@ -36,16 +29,23 @@ const Allocation$json = {
       '10': 'spendLimit'
     },
     {'1': 'allow_list', '3': 4, '4': 3, '5': 9, '10': 'allowList'},
+    {
+      '1': 'allowed_packet_data',
+      '3': 5,
+      '4': 3,
+      '5': 9,
+      '10': 'allowedPacketData'
+    },
   ],
 };
 
 /// Descriptor for `Allocation`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List allocationDescriptor = $convert.base64Decode(
-    'CgpBbGxvY2F0aW9uEjcKC3NvdXJjZV9wb3J0GAEgASgJQhby3h8SeWFtbDoic291cmNlX3Bvcn'
-    'QiUgpzb3VyY2VQb3J0EkAKDnNvdXJjZV9jaGFubmVsGAIgASgJQhny3h8VeWFtbDoic291cmNl'
-    'X2NoYW5uZWwiUg1zb3VyY2VDaGFubmVsEmwKC3NwZW5kX2xpbWl0GAMgAygLMhkuY29zbW9zLm'
-    'Jhc2UudjFiZXRhMS5Db2luQjDI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsv'
-    'dHlwZXMuQ29pbnNSCnNwZW5kTGltaXQSHQoKYWxsb3dfbGlzdBgEIAMoCVIJYWxsb3dMaXN0');
+    'CgpBbGxvY2F0aW9uEh8KC3NvdXJjZV9wb3J0GAEgASgJUgpzb3VyY2VQb3J0EiUKDnNvdXJjZV'
+    '9jaGFubmVsGAIgASgJUg1zb3VyY2VDaGFubmVsEmwKC3NwZW5kX2xpbWl0GAMgAygLMhkuY29z'
+    'bW9zLmJhc2UudjFiZXRhMS5Db2luQjDI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy'
+    '1zZGsvdHlwZXMuQ29pbnNSCnNwZW5kTGltaXQSHQoKYWxsb3dfbGlzdBgEIAMoCVIJYWxsb3dM'
+    'aXN0Ei4KE2FsbG93ZWRfcGFja2V0X2RhdGEYBSADKAlSEWFsbG93ZWRQYWNrZXREYXRh');
 
 @$core.Deprecated('Use transferAuthorizationDescriptor instead')
 const TransferAuthorization$json = {
@@ -67,5 +67,5 @@ const TransferAuthorization$json = {
 /// Descriptor for `TransferAuthorization`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List transferAuthorizationDescriptor = $convert.base64Decode(
     'ChVUcmFuc2ZlckF1dGhvcml6YXRpb24SUAoLYWxsb2NhdGlvbnMYASADKAsyKC5pYmMuYXBwbG'
-    'ljYXRpb25zLnRyYW5zZmVyLnYxLkFsbG9jYXRpb25CBMjeHwBSC2FsbG9jYXRpb25zOhHKtC0N'
-    'QXV0aG9yaXphdGlvbg==');
+    'ljYXRpb25zLnRyYW5zZmVyLnYxLkFsbG9jYXRpb25CBMjeHwBSC2FsbG9jYXRpb25zOibKtC0i'
+    'Y29zbW9zLmF1dGh6LnYxYmV0YTEuQXV0aG9yaXphdGlvbg==');

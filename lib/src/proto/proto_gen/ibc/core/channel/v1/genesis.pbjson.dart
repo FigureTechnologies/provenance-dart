@@ -85,8 +85,16 @@ const GenesisState$json = {
       '3': 8,
       '4': 1,
       '5': 4,
-      '8': {},
       '10': 'nextChannelSequence'
+    },
+    {
+      '1': 'params',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Params',
+      '8': {},
+      '10': 'params'
     },
   ],
 };
@@ -99,27 +107,25 @@ final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
     'F0ZUIEyN4fAFIQYWNrbm93bGVkZ2VtZW50cxJICgtjb21taXRtZW50cxgDIAMoCzIgLmliYy5j'
     'b3JlLmNoYW5uZWwudjEuUGFja2V0U3RhdGVCBMjeHwBSC2NvbW1pdG1lbnRzEkIKCHJlY2VpcH'
     'RzGAQgAygLMiAuaWJjLmNvcmUuY2hhbm5lbC52MS5QYWNrZXRTdGF0ZUIEyN4fAFIIcmVjZWlw'
-    'dHMSaQoOc2VuZF9zZXF1ZW5jZXMYBSADKAsyIy5pYmMuY29yZS5jaGFubmVsLnYxLlBhY2tldF'
-    'NlcXVlbmNlQh3I3h8A8t4fFXlhbWw6InNlbmRfc2VxdWVuY2VzIlINc2VuZFNlcXVlbmNlcxJp'
-    'Cg5yZWN2X3NlcXVlbmNlcxgGIAMoCzIjLmliYy5jb3JlLmNoYW5uZWwudjEuUGFja2V0U2VxdW'
-    'VuY2VCHcjeHwDy3h8VeWFtbDoicmVjdl9zZXF1ZW5jZXMiUg1yZWN2U2VxdWVuY2VzEmYKDWFj'
-    'a19zZXF1ZW5jZXMYByADKAsyIy5pYmMuY29yZS5jaGFubmVsLnYxLlBhY2tldFNlcXVlbmNlQh'
-    'zI3h8A8t4fFHlhbWw6ImFja19zZXF1ZW5jZXMiUgxhY2tTZXF1ZW5jZXMSVAoVbmV4dF9jaGFu'
-    'bmVsX3NlcXVlbmNlGAggASgEQiDy3h8ceWFtbDoibmV4dF9jaGFubmVsX3NlcXVlbmNlIlITbm'
-    'V4dENoYW5uZWxTZXF1ZW5jZQ==');
+    'dHMSUAoOc2VuZF9zZXF1ZW5jZXMYBSADKAsyIy5pYmMuY29yZS5jaGFubmVsLnYxLlBhY2tldF'
+    'NlcXVlbmNlQgTI3h8AUg1zZW5kU2VxdWVuY2VzElAKDnJlY3Zfc2VxdWVuY2VzGAYgAygLMiMu'
+    'aWJjLmNvcmUuY2hhbm5lbC52MS5QYWNrZXRTZXF1ZW5jZUIEyN4fAFINcmVjdlNlcXVlbmNlcx'
+    'JOCg1hY2tfc2VxdWVuY2VzGAcgAygLMiMuaWJjLmNvcmUuY2hhbm5lbC52MS5QYWNrZXRTZXF1'
+    'ZW5jZUIEyN4fAFIMYWNrU2VxdWVuY2VzEjIKFW5leHRfY2hhbm5lbF9zZXF1ZW5jZRgIIAEoBF'
+    'ITbmV4dENoYW5uZWxTZXF1ZW5jZRI5CgZwYXJhbXMYCSABKAsyGy5pYmMuY29yZS5jaGFubmVs'
+    'LnYxLlBhcmFtc0IEyN4fAFIGcGFyYW1z');
 
 @$core.Deprecated('Use packetSequenceDescriptor instead')
 const PacketSequence$json = {
   '1': 'PacketSequence',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'sequence', '3': 3, '4': 1, '5': 4, '10': 'sequence'},
   ],
 };
 
 /// Descriptor for `PacketSequence`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List packetSequenceDescriptor = $convert.base64Decode(
-    'Cg5QYWNrZXRTZXF1ZW5jZRIrCgdwb3J0X2lkGAEgASgJQhLy3h8OeWFtbDoicG9ydF9pZCJSBn'
-    'BvcnRJZBI0CgpjaGFubmVsX2lkGAIgASgJQhXy3h8ReWFtbDoiY2hhbm5lbF9pZCJSCWNoYW5u'
-    'ZWxJZBIaCghzZXF1ZW5jZRgDIAEoBFIIc2VxdWVuY2U=');
+    'Cg5QYWNrZXRTZXF1ZW5jZRIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SWQSHQoKY2hhbm5lbF9pZB'
+    'gCIAEoCVIJY2hhbm5lbElkEhoKCHNlcXVlbmNlGAMgASgEUghzZXF1ZW5jZQ==');

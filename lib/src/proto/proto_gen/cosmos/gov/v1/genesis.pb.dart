@@ -23,9 +23,13 @@ class GenesisState extends $pb.GeneratedMessage {
     $core.Iterable<$0.Deposit>? deposits,
     $core.Iterable<$0.Vote>? votes,
     $core.Iterable<$0.Proposal>? proposals,
+    @$core.Deprecated('This field is deprecated.')
     $0.DepositParams? depositParams,
+    @$core.Deprecated('This field is deprecated.')
     $0.VotingParams? votingParams,
-    $0.TallyParams? tallyParams,
+    @$core.Deprecated('This field is deprecated.') $0.TallyParams? tallyParams,
+    $0.Params? params,
+    $core.String? constitution,
   }) {
     final $result = create();
     if (startingProposalId != null) {
@@ -41,13 +45,22 @@ class GenesisState extends $pb.GeneratedMessage {
       $result.proposals.addAll(proposals);
     }
     if (depositParams != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.depositParams = depositParams;
     }
     if (votingParams != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.votingParams = votingParams;
     }
     if (tallyParams != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.tallyParams = tallyParams;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    if (constitution != null) {
+      $result.constitution = constitution;
     }
     return $result;
   }
@@ -78,6 +91,9 @@ class GenesisState extends $pb.GeneratedMessage {
         subBuilder: $0.VotingParams.create)
     ..aOM<$0.TallyParams>(7, _omitFieldNames ? '' : 'tallyParams',
         subBuilder: $0.TallyParams.create)
+    ..aOM<$0.Params>(8, _omitFieldNames ? '' : 'params',
+        subBuilder: $0.Params.create)
+    ..aOS(9, _omitFieldNames ? '' : 'constitution')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -128,50 +144,103 @@ class GenesisState extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.List<$0.Proposal> get proposals => $_getList(3);
 
-  /// params defines all the paramaters of related to deposit.
+  /// Deprecated: Prefer to use `params` instead.
+  /// deposit_params defines all the paramaters of related to deposit.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $0.DepositParams get depositParams => $_getN(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   set depositParams($0.DepositParams v) {
     setField(5, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool hasDepositParams() => $_has(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   void clearDepositParams() => clearField(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $0.DepositParams ensureDepositParams() => $_ensure(4);
 
-  /// params defines all the paramaters of related to voting.
+  /// Deprecated: Prefer to use `params` instead.
+  /// voting_params defines all the paramaters of related to voting.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $0.VotingParams get votingParams => $_getN(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   set votingParams($0.VotingParams v) {
     setField(6, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.bool hasVotingParams() => $_has(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   void clearVotingParams() => clearField(6);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $0.VotingParams ensureVotingParams() => $_ensure(5);
 
-  /// params defines all the paramaters of related to tally.
+  /// Deprecated: Prefer to use `params` instead.
+  /// tally_params defines all the paramaters of related to tally.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $0.TallyParams get tallyParams => $_getN(6);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   set tallyParams($0.TallyParams v) {
     setField(7, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.bool hasTallyParams() => $_has(6);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   void clearTallyParams() => clearField(7);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $0.TallyParams ensureTallyParams() => $_ensure(6);
+
+  ///  params defines all the paramaters of x/gov module.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(8)
+  $0.Params get params => $_getN(7);
+  @$pb.TagNumber(8)
+  set params($0.Params v) {
+    setField(8, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasParams() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearParams() => clearField(8);
+  @$pb.TagNumber(8)
+  $0.Params ensureParams() => $_ensure(7);
+
+  ///  The constitution allows builders to lay a foundation and define purpose.
+  ///  This is an immutable string set in genesis.
+  ///  There are no amendments, to go outside of scope, just fork.
+  ///  constitution is an immutable string in genesis for a chain builder to lay out their vision, ideas and ideals.
+  ///
+  ///  Since: cosmos-sdk 0.50
+  @$pb.TagNumber(9)
+  $core.String get constitution => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set constitution($core.String v) {
+    $_setString(8, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasConstitution() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConstitution() => clearField(9);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

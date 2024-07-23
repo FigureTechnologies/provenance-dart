@@ -127,12 +127,7 @@ class Params extends $pb.GeneratedMessage {
   void clearConversionFeeDenom() => clearField(4);
 }
 
-/// MsgFee is the core of what gets stored on the blockchain
-/// it consists of four parts
-/// 1. the msg type url, i.e. /cosmos.bank.v1beta1.MsgSend
-/// 2. minimum additional fees(can be of any denom)
-/// 3. optional recipient of fee based on `recipient_basis_points`
-/// 4. if recipient is declared they will recieve the basis points of the fee (0-10,000)
+/// MsgFee is the core of what gets stored on the blockchain to define a msg-based fee.
 class MsgFee extends $pb.GeneratedMessage {
   factory MsgFee({
     $core.String? msgTypeUrl,
@@ -197,6 +192,7 @@ class MsgFee extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgFee>(create);
   static MsgFee? _defaultInstance;
 
+  /// msg_type_url is the type-url of the message with the added fee, e.g. "/cosmos.bank.v1beta1.MsgSend".
   @$pb.TagNumber(1)
   $core.String get msgTypeUrl => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -209,7 +205,7 @@ class MsgFee extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMsgTypeUrl() => clearField(1);
 
-  /// additional_fee can pay in any Coin( basically a Denom and Amount, Amount can be zero)
+  /// additional_fee is the extra fee that is required for the given message type (can be in any denom).
   @$pb.TagNumber(2)
   $0.Coin get additionalFee => $_getN(1);
   @$pb.TagNumber(2)
@@ -224,6 +220,8 @@ class MsgFee extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $0.Coin ensureAdditionalFee() => $_ensure(1);
 
+  /// recipient is an option address that will receive a portion of the additional fee.
+  /// There can only be a recipient if the recipient_basis_points is not zero.
   @$pb.TagNumber(3)
   $core.String get recipient => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -236,6 +234,13 @@ class MsgFee extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearRecipient() => clearField(3);
 
+  ///  recipient_basis_points is an optional portion of the additional fee to be sent to the recipient.
+  ///  Must be between 0 and 10,000 (inclusive).
+  ///
+  ///  If there is a recipient, this must not be zero. If there is not a recipient, this must be zero.
+  ///
+  ///  The recipient will receive additional_fee * recipient_basis_points / 10,000.
+  ///  The fee collector will receive the rest, i.e. additional_fee * (10,000 - recipient_basis_points) / 10,000.
   @$pb.TagNumber(4)
   $core.int get recipientBasisPoints => $_getIZ(3);
   @$pb.TagNumber(4)

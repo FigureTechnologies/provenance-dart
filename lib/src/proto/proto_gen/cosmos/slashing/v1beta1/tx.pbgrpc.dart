@@ -27,6 +27,12 @@ class MsgClient extends $grpc.Client {
           ($0.MsgUnjail value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MsgUnjailResponse.fromBuffer(value));
+  static final _$updateParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/cosmos.slashing.v1beta1.Msg/UpdateParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,6 +42,12 @@ class MsgClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.MsgUnjailResponse> unjail($0.MsgUnjail request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$unjail, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateParams, request, options: options);
   }
 }
 
@@ -51,6 +63,15 @@ abstract class MsgServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MsgUnjail.fromBuffer(value),
         ($0.MsgUnjailResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateParams',
+            updateParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgUnjailResponse> unjail_Pre(
@@ -58,6 +79,13 @@ abstract class MsgServiceBase extends $grpc.Service {
     return unjail(call, await request);
   }
 
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateParams(call, await request);
+  }
+
   $async.Future<$0.MsgUnjailResponse> unjail(
       $grpc.ServiceCall call, $0.MsgUnjail request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
 }

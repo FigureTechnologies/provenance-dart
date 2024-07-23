@@ -34,8 +34,9 @@ const MsgSoftwareUpgrade$json = {
 /// Descriptor for `MsgSoftwareUpgrade`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgSoftwareUpgradeDescriptor = $convert.base64Decode(
     'ChJNc2dTb2Z0d2FyZVVwZ3JhZGUSNgoJYXV0aG9yaXR5GAEgASgJQhjStC0UY29zbW9zLkFkZH'
-    'Jlc3NTdHJpbmdSCWF1dGhvcml0eRI2CgRwbGFuGAIgASgLMhwuY29zbW9zLnVwZ3JhZGUudjFi'
-    'ZXRhMS5QbGFuQgTI3h8AUgRwbGFuOg6C57AqCWF1dGhvcml0eQ==');
+    'Jlc3NTdHJpbmdSCWF1dGhvcml0eRI7CgRwbGFuGAIgASgLMhwuY29zbW9zLnVwZ3JhZGUudjFi'
+    'ZXRhMS5QbGFuQgnI3h8AqOewKgFSBHBsYW46MILnsCoJYXV0aG9yaXR5iuewKh1jb3Ntb3Mtc2'
+    'RrL01zZ1NvZnR3YXJlVXBncmFkZQ==');
 
 @$core.Deprecated('Use msgSoftwareUpgradeResponseDescriptor instead')
 const MsgSoftwareUpgradeResponse$json = {
@@ -58,7 +59,8 @@ const MsgCancelUpgrade$json = {
 /// Descriptor for `MsgCancelUpgrade`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgCancelUpgradeDescriptor = $convert.base64Decode(
     'ChBNc2dDYW5jZWxVcGdyYWRlEjYKCWF1dGhvcml0eRgBIAEoCUIY0rQtFGNvc21vcy5BZGRyZX'
-    'NzU3RyaW5nUglhdXRob3JpdHk6DoLnsCoJYXV0aG9yaXR5');
+    'NzU3RyaW5nUglhdXRob3JpdHk6LoLnsCoJYXV0aG9yaXR5iuewKhtjb3Ntb3Mtc2RrL01zZ0Nh'
+    'bmNlbFVwZ3JhZGU=');
 
 @$core.Deprecated('Use msgCancelUpgradeResponseDescriptor instead')
 const MsgCancelUpgradeResponse$json = {

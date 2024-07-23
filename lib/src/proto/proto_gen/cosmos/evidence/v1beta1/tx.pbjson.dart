@@ -34,8 +34,9 @@ const MsgSubmitEvidence$json = {
 /// Descriptor for `MsgSubmitEvidence`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List msgSubmitEvidenceDescriptor = $convert.base64Decode(
     'ChFNc2dTdWJtaXRFdmlkZW5jZRI2CglzdWJtaXR0ZXIYASABKAlCGNK0LRRjb3Ntb3MuQWRkcm'
-    'Vzc1N0cmluZ1IJc3VibWl0dGVyEj4KCGV2aWRlbmNlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVm'
-    'LkFueUIMyrQtCEV2aWRlbmNlUghldmlkZW5jZToWiKAfAOigHwCC57AqCXN1Ym1pdHRlcg==');
+    'Vzc1N0cmluZ1IJc3VibWl0dGVyElYKCGV2aWRlbmNlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVm'
+    'LkFueUIkyrQtIGNvc21vcy5ldmlkZW5jZS52MWJldGExLkV2aWRlbmNlUghldmlkZW5jZTo3iK'
+    'AfAOigHwCC57AqCXN1Ym1pdHRlcornsCocY29zbW9zLXNkay9Nc2dTdWJtaXRFdmlkZW5jZQ==');
 
 @$core.Deprecated('Use msgSubmitEvidenceResponseDescriptor instead')
 const MsgSubmitEvidenceResponse$json = {

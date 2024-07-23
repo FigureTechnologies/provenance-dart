@@ -377,3 +377,97 @@ const EventParamsUpdated$json = {
 /// Descriptor for `EventParamsUpdated`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List eventParamsUpdatedDescriptor =
     $convert.base64Decode('ChJFdmVudFBhcmFtc1VwZGF0ZWQ=');
+
+@$core.Deprecated('Use eventPaymentCreatedDescriptor instead')
+const EventPaymentCreated$json = {
+  '1': 'EventPaymentCreated',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {'1': 'source_amount', '3': 2, '4': 1, '5': 9, '10': 'sourceAmount'},
+    {'1': 'target', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'target'},
+    {'1': 'target_amount', '3': 4, '4': 1, '5': 9, '10': 'targetAmount'},
+    {'1': 'external_id', '3': 5, '4': 1, '5': 9, '10': 'externalId'},
+  ],
+};
+
+/// Descriptor for `EventPaymentCreated`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventPaymentCreatedDescriptor = $convert.base64Decode(
+    'ChNFdmVudFBheW1lbnRDcmVhdGVkEjAKBnNvdXJjZRgBIAEoCUIY0rQtFGNvc21vcy5BZGRyZX'
+    'NzU3RyaW5nUgZzb3VyY2USIwoNc291cmNlX2Ftb3VudBgCIAEoCVIMc291cmNlQW1vdW50EjAK'
+    'BnRhcmdldBgDIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3RyaW5nUgZ0YXJnZXQSIwoNdGFyZ2'
+    'V0X2Ftb3VudBgEIAEoCVIMdGFyZ2V0QW1vdW50Eh8KC2V4dGVybmFsX2lkGAUgASgJUgpleHRl'
+    'cm5hbElk');
+
+@$core.Deprecated('Use eventPaymentUpdatedDescriptor instead')
+const EventPaymentUpdated$json = {
+  '1': 'EventPaymentUpdated',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {'1': 'source_amount', '3': 2, '4': 1, '5': 9, '10': 'sourceAmount'},
+    {'1': 'old_target', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'oldTarget'},
+    {'1': 'new_target', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'newTarget'},
+    {'1': 'target_amount', '3': 5, '4': 1, '5': 9, '10': 'targetAmount'},
+    {'1': 'external_id', '3': 6, '4': 1, '5': 9, '10': 'externalId'},
+  ],
+};
+
+/// Descriptor for `EventPaymentUpdated`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventPaymentUpdatedDescriptor = $convert.base64Decode(
+    'ChNFdmVudFBheW1lbnRVcGRhdGVkEjAKBnNvdXJjZRgBIAEoCUIY0rQtFGNvc21vcy5BZGRyZX'
+    'NzU3RyaW5nUgZzb3VyY2USIwoNc291cmNlX2Ftb3VudBgCIAEoCVIMc291cmNlQW1vdW50EjcK'
+    'Cm9sZF90YXJnZXQYAyABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1IJb2xkVGFyZ2V0Ej'
+    'cKCm5ld190YXJnZXQYBCABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1IJbmV3VGFyZ2V0'
+    'EiMKDXRhcmdldF9hbW91bnQYBSABKAlSDHRhcmdldEFtb3VudBIfCgtleHRlcm5hbF9pZBgGIA'
+    'EoCVIKZXh0ZXJuYWxJZA==');
+
+@$core.Deprecated('Use eventPaymentAcceptedDescriptor instead')
+const EventPaymentAccepted$json = {
+  '1': 'EventPaymentAccepted',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {'1': 'source_amount', '3': 2, '4': 1, '5': 9, '10': 'sourceAmount'},
+    {'1': 'target', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'target'},
+    {'1': 'target_amount', '3': 4, '4': 1, '5': 9, '10': 'targetAmount'},
+    {'1': 'external_id', '3': 5, '4': 1, '5': 9, '10': 'externalId'},
+  ],
+};
+
+/// Descriptor for `EventPaymentAccepted`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventPaymentAcceptedDescriptor = $convert.base64Decode(
+    'ChRFdmVudFBheW1lbnRBY2NlcHRlZBIwCgZzb3VyY2UYASABKAlCGNK0LRRjb3Ntb3MuQWRkcm'
+    'Vzc1N0cmluZ1IGc291cmNlEiMKDXNvdXJjZV9hbW91bnQYAiABKAlSDHNvdXJjZUFtb3VudBIw'
+    'CgZ0YXJnZXQYAyABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0cmluZ1IGdGFyZ2V0EiMKDXRhcm'
+    'dldF9hbW91bnQYBCABKAlSDHRhcmdldEFtb3VudBIfCgtleHRlcm5hbF9pZBgFIAEoCVIKZXh0'
+    'ZXJuYWxJZA==');
+
+@$core.Deprecated('Use eventPaymentRejectedDescriptor instead')
+const EventPaymentRejected$json = {
+  '1': 'EventPaymentRejected',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {'1': 'target', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'target'},
+    {'1': 'external_id', '3': 3, '4': 1, '5': 9, '10': 'externalId'},
+  ],
+};
+
+/// Descriptor for `EventPaymentRejected`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventPaymentRejectedDescriptor = $convert.base64Decode(
+    'ChRFdmVudFBheW1lbnRSZWplY3RlZBIwCgZzb3VyY2UYASABKAlCGNK0LRRjb3Ntb3MuQWRkcm'
+    'Vzc1N0cmluZ1IGc291cmNlEjAKBnRhcmdldBgCIAEoCUIY0rQtFGNvc21vcy5BZGRyZXNzU3Ry'
+    'aW5nUgZ0YXJnZXQSHwoLZXh0ZXJuYWxfaWQYAyABKAlSCmV4dGVybmFsSWQ=');
+
+@$core.Deprecated('Use eventPaymentCancelledDescriptor instead')
+const EventPaymentCancelled$json = {
+  '1': 'EventPaymentCancelled',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'source'},
+    {'1': 'target', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'target'},
+    {'1': 'external_id', '3': 3, '4': 1, '5': 9, '10': 'externalId'},
+  ],
+};
+
+/// Descriptor for `EventPaymentCancelled`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventPaymentCancelledDescriptor = $convert.base64Decode(
+    'ChVFdmVudFBheW1lbnRDYW5jZWxsZWQSMAoGc291cmNlGAEgASgJQhjStC0UY29zbW9zLkFkZH'
+    'Jlc3NTdHJpbmdSBnNvdXJjZRIwCgZ0YXJnZXQYAiABKAlCGNK0LRRjb3Ntb3MuQWRkcmVzc1N0'
+    'cmluZ1IGdGFyZ2V0Eh8KC2V4dGVybmFsX2lkGAMgASgJUgpleHRlcm5hbElk');

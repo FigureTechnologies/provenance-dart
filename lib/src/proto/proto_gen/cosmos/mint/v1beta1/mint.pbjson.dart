@@ -31,10 +31,10 @@ const Minter$json = {
 
 /// Descriptor for `Minter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List minterDescriptor = $convert.base64Decode(
-    'CgZNaW50ZXISWgoJaW5mbGF0aW9uGAEgASgJQjzI3h8A2t4fJmdpdGh1Yi5jb20vY29zbW9zL2'
-    'Nvc21vcy1zZGsvdHlwZXMuRGVj0rQtCmNvc21vcy5EZWNSCWluZmxhdGlvbhJpChFhbm51YWxf'
-    'cHJvdmlzaW9ucxgCIAEoCUI8yN4fANreHyZnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3'
-    'R5cGVzLkRlY9K0LQpjb3Ntb3MuRGVjUhBhbm51YWxQcm92aXNpb25z');
+    'CgZNaW50ZXISTwoJaW5mbGF0aW9uGAEgASgJQjHI3h8A2t4fG2Nvc21vc3Nkay5pby9tYXRoLk'
+    'xlZ2FjeURlY9K0LQpjb3Ntb3MuRGVjUglpbmZsYXRpb24SXgoRYW5udWFsX3Byb3Zpc2lvbnMY'
+    'AiABKAlCMcjeHwDa3h8bY29zbW9zc2RrLmlvL21hdGguTGVnYWN5RGVj0rQtCmNvc21vcy5EZW'
+    'NSEGFubnVhbFByb3Zpc2lvbnM=');
 
 @$core.Deprecated('Use paramsDescriptor instead')
 const Params$json = {
@@ -73,12 +73,12 @@ const Params$json = {
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSHQoKbWludF9kZW5vbRgBIAEoCVIJbWludERlbm9tEnAKFWluZmxhdGlvbl9yYX'
-    'RlX2NoYW5nZRgCIAEoCUI8yN4fANreHyZnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5'
-    'cGVzLkRlY9K0LQpjb3Ntb3MuRGVjUhNpbmZsYXRpb25SYXRlQ2hhbmdlEmEKDWluZmxhdGlvbl'
-    '9tYXgYAyABKAlCPMjeHwDa3h8mZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5E'
-    'ZWPStC0KY29zbW9zLkRlY1IMaW5mbGF0aW9uTWF4EmEKDWluZmxhdGlvbl9taW4YBCABKAlCPM'
-    'jeHwDa3h8mZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5EZWPStC0KY29zbW9z'
-    'LkRlY1IMaW5mbGF0aW9uTWluEl0KC2dvYWxfYm9uZGVkGAUgASgJQjzI3h8A2t4fJmdpdGh1Yi'
-    '5jb20vY29zbW9zL2Nvc21vcy1zZGsvdHlwZXMuRGVj0rQtCmNvc21vcy5EZWNSCmdvYWxCb25k'
-    'ZWQSJgoPYmxvY2tzX3Blcl95ZWFyGAYgASgEUg1ibG9ja3NQZXJZZWFyOgSYoB8A');
+    'CgZQYXJhbXMSHQoKbWludF9kZW5vbRgBIAEoCVIJbWludERlbm9tEmoKFWluZmxhdGlvbl9yYX'
+    'RlX2NoYW5nZRgCIAEoCUI2yN4fANreHxtjb3Ntb3NzZGsuaW8vbWF0aC5MZWdhY3lEZWPStC0K'
+    'Y29zbW9zLkRlY6jnsCoBUhNpbmZsYXRpb25SYXRlQ2hhbmdlElsKDWluZmxhdGlvbl9tYXgYAy'
+    'ABKAlCNsjeHwDa3h8bY29zbW9zc2RrLmlvL21hdGguTGVnYWN5RGVj0rQtCmNvc21vcy5EZWOo'
+    '57AqAVIMaW5mbGF0aW9uTWF4ElsKDWluZmxhdGlvbl9taW4YBCABKAlCNsjeHwDa3h8bY29zbW'
+    '9zc2RrLmlvL21hdGguTGVnYWN5RGVj0rQtCmNvc21vcy5EZWOo57AqAVIMaW5mbGF0aW9uTWlu'
+    'ElcKC2dvYWxfYm9uZGVkGAUgASgJQjbI3h8A2t4fG2Nvc21vc3Nkay5pby9tYXRoLkxlZ2FjeU'
+    'RlY9K0LQpjb3Ntb3MuRGVjqOewKgFSCmdvYWxCb25kZWQSJgoPYmxvY2tzX3Blcl95ZWFyGAYg'
+    'ASgEUg1ibG9ja3NQZXJZZWFyOh2K57AqGGNvc21vcy1zZGsveC9taW50L1BhcmFtcw==');

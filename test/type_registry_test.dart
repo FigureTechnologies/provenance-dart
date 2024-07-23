@@ -5,11 +5,15 @@ import 'package:provenance_dart/proto_cosmwasm_wasm_v1.dart'
     as cosmwasm_wasm_v1;
 import 'package:provenance_dart/proto_cosmwasm_wasm_v1beta1.dart'
     as cosmwasm_wasm_v1beta1;
-import 'package:provenance_dart/proto_proofs.dart' as proofs;
 import 'package:provenance_dart/proto_gogoproto.dart' as gogoproto;
 import 'package:provenance_dart/proto_cosmos_proto.dart' as cosmos_proto;
 import 'package:provenance_dart/proto_google_api.dart' as google_api;
 import 'package:provenance_dart/proto_google_protobuf.dart' as google_protobuf;
+import 'package:provenance_dart/proto_capability_v1.dart' as capability_v1;
+import 'package:provenance_dart/proto_cosmos_consensus_v1.dart'
+    as cosmos_consensus_v1;
+import 'package:provenance_dart/proto_cosmos_consensus_module_v1.dart'
+    as cosmos_consensus_module_v1;
 import 'package:provenance_dart/proto_cosmos_crypto_hd_v1.dart'
     as cosmos_crypto_hd_v1;
 import 'package:provenance_dart/proto_cosmos_crypto_secp256r1.dart'
@@ -24,50 +28,81 @@ import 'package:provenance_dart/proto_cosmos_crypto_keyring_v1.dart'
     as cosmos_crypto_keyring_v1;
 import 'package:provenance_dart/proto_cosmos_crypto_ed25519.dart'
     as cosmos_crypto_ed25519;
-import 'package:provenance_dart/proto_cosmos_quarantine_v1beta1.dart'
-    as cosmos_quarantine_v1beta1;
+import 'package:provenance_dart/proto_cosmos_upgrade_module_v1.dart'
+    as cosmos_upgrade_module_v1;
 import 'package:provenance_dart/proto_cosmos_upgrade_v1beta1.dart'
     as cosmos_upgrade_v1beta1;
+import 'package:provenance_dart/proto_cosmos_feegrant_module_v1.dart'
+    as cosmos_feegrant_module_v1;
 import 'package:provenance_dart/proto_cosmos_feegrant_v1beta1.dart'
     as cosmos_feegrant_v1beta1;
+import 'package:provenance_dart/proto_cosmos_mint_module_v1.dart'
+    as cosmos_mint_module_v1;
 import 'package:provenance_dart/proto_cosmos_mint_v1beta1.dart'
     as cosmos_mint_v1beta1;
-import 'package:provenance_dart/proto_cosmos_app_module_v1alpha1.dart'
-    as cosmos_app_module_v1alpha1;
+import 'package:provenance_dart/proto_cosmos_app_runtime_v1alpha1.dart'
+    as cosmos_app_runtime_v1alpha1;
 import 'package:provenance_dart/proto_cosmos_app_v1alpha1.dart'
     as cosmos_app_v1alpha1;
+import 'package:provenance_dart/proto_cosmos_evidence_module_v1.dart'
+    as cosmos_evidence_module_v1;
 import 'package:provenance_dart/proto_cosmos_evidence_v1beta1.dart'
     as cosmos_evidence_v1beta1;
+import 'package:provenance_dart/proto_cosmos_nft_module_v1.dart'
+    as cosmos_nft_module_v1;
 import 'package:provenance_dart/proto_cosmos_nft_v1beta1.dart'
     as cosmos_nft_v1beta1;
 import 'package:provenance_dart/proto_cosmos_msg_v1.dart' as cosmos_msg_v1;
+import 'package:provenance_dart/proto_cosmos_msg_textual_v1.dart'
+    as cosmos_msg_textual_v1;
+import 'package:provenance_dart/proto_cosmos_auth_module_v1.dart'
+    as cosmos_auth_module_v1;
 import 'package:provenance_dart/proto_cosmos_auth_v1beta1.dart'
     as cosmos_auth_v1beta1;
 import 'package:provenance_dart/proto_cosmos_group_v1.dart' as cosmos_group_v1;
+import 'package:provenance_dart/proto_cosmos_group_module_v1.dart'
+    as cosmos_group_module_v1;
+import 'package:provenance_dart/proto_cosmos_ics23_v1.dart' as cosmos_ics23_v1;
+import 'package:provenance_dart/proto_cosmos_bank_module_v1.dart'
+    as cosmos_bank_module_v1;
 import 'package:provenance_dart/proto_cosmos_bank_v1beta1.dart'
     as cosmos_bank_v1beta1;
-import 'package:provenance_dart/proto_cosmos_sanction_v1beta1.dart'
-    as cosmos_sanction_v1beta1;
-import 'package:provenance_dart/proto_cosmos_capability_v1beta1.dart'
-    as cosmos_capability_v1beta1;
+import 'package:provenance_dart/proto_cosmos_circuit_v1.dart'
+    as cosmos_circuit_v1;
+import 'package:provenance_dart/proto_cosmos_circuit_module_v1.dart'
+    as cosmos_circuit_module_v1;
+import 'package:provenance_dart/proto_cosmos_distribution_module_v1.dart'
+    as cosmos_distribution_module_v1;
 import 'package:provenance_dart/proto_cosmos_distribution_v1beta1.dart'
     as cosmos_distribution_v1beta1;
+import 'package:provenance_dart/proto_cosmos_crisis_module_v1.dart'
+    as cosmos_crisis_module_v1;
 import 'package:provenance_dart/proto_cosmos_crisis_v1beta1.dart'
     as cosmos_crisis_v1beta1;
 import 'package:provenance_dart/proto_cosmos_tx_signing_v1beta1.dart'
     as cosmos_tx_signing_v1beta1;
+import 'package:provenance_dart/proto_cosmos_tx_config_v1.dart'
+    as cosmos_tx_config_v1;
 import 'package:provenance_dart/proto_cosmos_tx_v1beta1.dart'
     as cosmos_tx_v1beta1;
-import 'package:provenance_dart/proto_cosmos_streaming_abci_v1.dart'
-    as cosmos_streaming_abci_v1;
+import 'package:provenance_dart/proto_cosmos_vesting_module_v1.dart'
+    as cosmos_vesting_module_v1;
 import 'package:provenance_dart/proto_cosmos_vesting_v1beta1.dart'
     as cosmos_vesting_v1beta1;
+import 'package:provenance_dart/proto_cosmos_staking_module_v1.dart'
+    as cosmos_staking_module_v1;
 import 'package:provenance_dart/proto_cosmos_staking_v1beta1.dart'
     as cosmos_staking_v1beta1;
+import 'package:provenance_dart/proto_cosmos_genutil_module_v1.dart'
+    as cosmos_genutil_module_v1;
 import 'package:provenance_dart/proto_cosmos_genutil_v1beta1.dart'
     as cosmos_genutil_v1beta1;
+import 'package:provenance_dart/proto_cosmos_params_module_v1.dart'
+    as cosmos_params_module_v1;
 import 'package:provenance_dart/proto_cosmos_params_v1beta1.dart'
     as cosmos_params_v1beta1;
+import 'package:provenance_dart/proto_cosmos_authz_module_v1.dart'
+    as cosmos_authz_module_v1;
 import 'package:provenance_dart/proto_cosmos_authz_v1beta1.dart'
     as cosmos_authz_v1beta1;
 import 'package:provenance_dart/proto_cosmos_orm_v1.dart' as cosmos_orm_v1;
@@ -75,14 +110,17 @@ import 'package:provenance_dart/proto_cosmos_orm_module_v1alpha1.dart'
     as cosmos_orm_module_v1alpha1;
 import 'package:provenance_dart/proto_cosmos_orm_v1alpha1.dart'
     as cosmos_orm_v1alpha1;
+import 'package:provenance_dart/proto_cosmos_orm_query_v1alpha1.dart'
+    as cosmos_orm_query_v1alpha1;
+import 'package:provenance_dart/proto_cosmos_query_v1.dart' as cosmos_query_v1;
+import 'package:provenance_dart/proto_cosmos_slashing_module_v1.dart'
+    as cosmos_slashing_module_v1;
 import 'package:provenance_dart/proto_cosmos_slashing_v1beta1.dart'
     as cosmos_slashing_v1beta1;
+import 'package:provenance_dart/proto_cosmos_autocli_v1.dart'
+    as cosmos_autocli_v1;
 import 'package:provenance_dart/proto_cosmos_base_abci_v1beta1.dart'
     as cosmos_base_abci_v1beta1;
-import 'package:provenance_dart/proto_cosmos_base_kv_v1beta1.dart'
-    as cosmos_base_kv_v1beta1;
-import 'package:provenance_dart/proto_cosmos_base_snapshots_v1beta1.dart'
-    as cosmos_base_snapshots_v1beta1;
 import 'package:provenance_dart/proto_cosmos_base_v1beta1.dart'
     as cosmos_base_v1beta1;
 import 'package:provenance_dart/proto_cosmos_base_tendermint_v1beta1.dart'
@@ -91,15 +129,25 @@ import 'package:provenance_dart/proto_cosmos_base_node_v1beta1.dart'
     as cosmos_base_node_v1beta1;
 import 'package:provenance_dart/proto_cosmos_base_query_v1beta1.dart'
     as cosmos_base_query_v1beta1;
-import 'package:provenance_dart/proto_cosmos_base_store_v1beta1.dart'
-    as cosmos_base_store_v1beta1;
 import 'package:provenance_dart/proto_cosmos_base_reflection_v1beta1.dart'
     as cosmos_base_reflection_v1beta1;
 import 'package:provenance_dart/proto_cosmos_base_reflection_v2alpha1.dart'
     as cosmos_base_reflection_v2alpha1;
+import 'package:provenance_dart/proto_cosmos_store_snapshots_v1.dart'
+    as cosmos_store_snapshots_v1;
+import 'package:provenance_dart/proto_cosmos_store_internal_kv_v1beta1.dart'
+    as cosmos_store_internal_kv_v1beta1;
+import 'package:provenance_dart/proto_cosmos_store_streaming_abci.dart'
+    as cosmos_store_streaming_abci;
+import 'package:provenance_dart/proto_cosmos_store_v1beta1.dart'
+    as cosmos_store_v1beta1;
 import 'package:provenance_dart/proto_cosmos_gov_v1.dart' as cosmos_gov_v1;
+import 'package:provenance_dart/proto_cosmos_gov_module_v1.dart'
+    as cosmos_gov_module_v1;
 import 'package:provenance_dart/proto_cosmos_gov_v1beta1.dart'
     as cosmos_gov_v1beta1;
+import 'package:provenance_dart/proto_cosmos_reflection_v1.dart'
+    as cosmos_reflection_v1;
 import 'package:provenance_dart/proto_ibc_core_types_v1.dart'
     as ibc_core_types_v1;
 import 'package:provenance_dart/proto_ibc_core_connection_v1.dart'
@@ -112,14 +160,16 @@ import 'package:provenance_dart/proto_ibc_core_port_v1.dart'
     as ibc_core_port_v1;
 import 'package:provenance_dart/proto_ibc_core_client_v1.dart'
     as ibc_core_client_v1;
-import 'package:provenance_dart/proto_ibc_lightclients_solomachine_v1.dart'
-    as ibc_lightclients_solomachine_v1;
+import 'package:provenance_dart/proto_ibc_lightclients_wasm_v1.dart'
+    as ibc_lightclients_wasm_v1;
 import 'package:provenance_dart/proto_ibc_lightclients_solomachine_v2.dart'
     as ibc_lightclients_solomachine_v2;
+import 'package:provenance_dart/proto_ibc_lightclients_solomachine_v3.dart'
+    as ibc_lightclients_solomachine_v3;
 import 'package:provenance_dart/proto_ibc_lightclients_tendermint_v1.dart'
     as ibc_lightclients_tendermint_v1;
-import 'package:provenance_dart/proto_ibc_lightclients_localhost_v1.dart'
-    as ibc_lightclients_localhost_v1;
+import 'package:provenance_dart/proto_ibc_lightclients_localhost_v2.dart'
+    as ibc_lightclients_localhost_v2;
 import 'package:provenance_dart/proto_ibc_applications_fee_v1.dart'
     as ibc_applications_fee_v1;
 import 'package:provenance_dart/proto_ibc_applications_transfer_v1.dart'
@@ -144,8 +194,6 @@ import 'package:provenance_dart/proto_provenance_msgfees_v1.dart'
     as provenance_msgfees_v1;
 import 'package:provenance_dart/proto_provenance_oracle_v1.dart'
     as provenance_oracle_v1;
-import 'package:provenance_dart/proto_provenance_reward_v1.dart'
-    as provenance_reward_v1;
 import 'package:provenance_dart/proto_provenance_ibchooks_v1.dart'
     as provenance_ibchooks_v1;
 import 'package:provenance_dart/proto_provenance_ibcratelimit_v1.dart'
@@ -160,6 +208,9 @@ import 'package:provenance_dart/proto_provenance_metadata_v1_p8e.dart'
     as provenance_metadata_v1_p8e;
 import 'package:provenance_dart/proto_provenance_hold_v1.dart'
     as provenance_hold_v1;
+import 'package:provenance_dart/proto_amino.dart' as amino;
+import 'package:provenance_dart/proto_tendermint_blocksync.dart'
+    as tendermint_blocksync;
 import 'package:provenance_dart/proto_tendermint_statesync.dart'
     as tendermint_statesync;
 import 'package:provenance_dart/proto_tendermint_consensus.dart'
@@ -175,8 +226,6 @@ import 'package:provenance_dart/proto_tendermint_state.dart'
     as tendermint_state;
 import 'package:provenance_dart/proto_tendermint_libs_bits.dart'
     as tendermint_libs_bits;
-import 'package:provenance_dart/proto_tendermint_blockchain.dart'
-    as tendermint_blockchain;
 import 'package:provenance_dart/proto_tendermint_version.dart'
     as tendermint_version;
 import 'package:provenance_dart/proto_tendermint_p2p.dart' as tendermint_p2p;
@@ -188,6 +237,101 @@ import 'package:provenance_dart/proto_tendermint_store.dart'
     as tendermint_store;
 
 main() {
+  test('cosmwasm_wasm_v1.AccessTypeParam', () {
+    final msg = cosmwasm_wasm_v1.AccessTypeParam().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.AccessConfig', () {
+    final msg = cosmwasm_wasm_v1.AccessConfig().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.Params', () {
+    final msg = cosmwasm_wasm_v1.Params().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.CodeInfo', () {
+    final msg = cosmwasm_wasm_v1.CodeInfo().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.ContractInfo', () {
+    final msg = cosmwasm_wasm_v1.ContractInfo().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.ContractCodeHistoryEntry', () {
+    final msg = cosmwasm_wasm_v1.ContractCodeHistoryEntry().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.AbsoluteTxPosition', () {
+    final msg = cosmwasm_wasm_v1.AbsoluteTxPosition().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.Model', () {
+    final msg = cosmwasm_wasm_v1.Model().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.StoreCodeAuthorization', () {
+    final msg = cosmwasm_wasm_v1.StoreCodeAuthorization().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.ContractExecutionAuthorization', () {
+    final msg = cosmwasm_wasm_v1.ContractExecutionAuthorization().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.ContractMigrationAuthorization', () {
+    final msg = cosmwasm_wasm_v1.ContractMigrationAuthorization().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.CodeGrant', () {
+    final msg = cosmwasm_wasm_v1.CodeGrant().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.ContractGrant', () {
+    final msg = cosmwasm_wasm_v1.ContractGrant().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MaxCallsLimit', () {
+    final msg = cosmwasm_wasm_v1.MaxCallsLimit().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MaxFundsLimit', () {
+    final msg = cosmwasm_wasm_v1.MaxFundsLimit().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.CombinedLimit', () {
+    final msg = cosmwasm_wasm_v1.CombinedLimit().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.AllowAllMessagesFilter', () {
+    final msg = cosmwasm_wasm_v1.AllowAllMessagesFilter().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.AcceptedMessageKeysFilter', () {
+    final msg = cosmwasm_wasm_v1.AcceptedMessageKeysFilter().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.AcceptedMessagesFilter', () {
+    final msg = cosmwasm_wasm_v1.AcceptedMessagesFilter().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmwasm_wasm_v1.StoreCodeProposal', () {
     final msg = cosmwasm_wasm_v1.StoreCodeProposal().toAny();
     final decoded = msg.toMessage();
@@ -195,6 +339,11 @@ main() {
   });
   test('cosmwasm_wasm_v1.InstantiateContractProposal', () {
     final msg = cosmwasm_wasm_v1.InstantiateContractProposal().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.InstantiateContract2Proposal', () {
+    final msg = cosmwasm_wasm_v1.InstantiateContract2Proposal().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -248,96 +397,6 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmwasm_wasm_v1.AccessTypeParam', () {
-    final msg = cosmwasm_wasm_v1.AccessTypeParam().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.AccessConfig', () {
-    final msg = cosmwasm_wasm_v1.AccessConfig().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.Params', () {
-    final msg = cosmwasm_wasm_v1.Params().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.CodeInfo', () {
-    final msg = cosmwasm_wasm_v1.CodeInfo().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.ContractInfo', () {
-    final msg = cosmwasm_wasm_v1.ContractInfo().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.ContractCodeHistoryEntry', () {
-    final msg = cosmwasm_wasm_v1.ContractCodeHistoryEntry().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.AbsoluteTxPosition', () {
-    final msg = cosmwasm_wasm_v1.AbsoluteTxPosition().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.Model', () {
-    final msg = cosmwasm_wasm_v1.Model().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.ContractExecutionAuthorization', () {
-    final msg = cosmwasm_wasm_v1.ContractExecutionAuthorization().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.ContractMigrationAuthorization', () {
-    final msg = cosmwasm_wasm_v1.ContractMigrationAuthorization().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.ContractGrant', () {
-    final msg = cosmwasm_wasm_v1.ContractGrant().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.MaxCallsLimit', () {
-    final msg = cosmwasm_wasm_v1.MaxCallsLimit().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.MaxFundsLimit', () {
-    final msg = cosmwasm_wasm_v1.MaxFundsLimit().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.CombinedLimit', () {
-    final msg = cosmwasm_wasm_v1.CombinedLimit().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.AllowAllMessagesFilter', () {
-    final msg = cosmwasm_wasm_v1.AllowAllMessagesFilter().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.AcceptedMessageKeysFilter', () {
-    final msg = cosmwasm_wasm_v1.AcceptedMessageKeysFilter().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.AcceptedMessagesFilter', () {
-    final msg = cosmwasm_wasm_v1.AcceptedMessagesFilter().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmwasm_wasm_v1.GenesisState_GenMsgs', () {
-    final msg = cosmwasm_wasm_v1.GenesisState_GenMsgs().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('cosmwasm_wasm_v1.GenesisState', () {
     final msg = cosmwasm_wasm_v1.GenesisState().toAny();
     final decoded = msg.toMessage();
@@ -373,13 +432,13 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmwasm_wasm_v1.MsgInstantiateContract2', () {
-    final msg = cosmwasm_wasm_v1.MsgInstantiateContract2().toAny();
+  test('cosmwasm_wasm_v1.MsgInstantiateContractResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgInstantiateContractResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmwasm_wasm_v1.MsgInstantiateContractResponse', () {
-    final msg = cosmwasm_wasm_v1.MsgInstantiateContractResponse().toAny();
+  test('cosmwasm_wasm_v1.MsgInstantiateContract2', () {
+    final msg = cosmwasm_wasm_v1.MsgInstantiateContract2().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -428,8 +487,121 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmwasm_wasm_v1.MsgUpdateInstantiateConfig', () {
+    final msg = cosmwasm_wasm_v1.MsgUpdateInstantiateConfig().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUpdateInstantiateConfigResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgUpdateInstantiateConfigResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUpdateParams', () {
+    final msg = cosmwasm_wasm_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUpdateParamsResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgSudoContract', () {
+    final msg = cosmwasm_wasm_v1.MsgSudoContract().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgSudoContractResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgSudoContractResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgPinCodes', () {
+    final msg = cosmwasm_wasm_v1.MsgPinCodes().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgPinCodesResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgPinCodesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUnpinCodes', () {
+    final msg = cosmwasm_wasm_v1.MsgUnpinCodes().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUnpinCodesResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgUnpinCodesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgStoreAndInstantiateContract', () {
+    final msg = cosmwasm_wasm_v1.MsgStoreAndInstantiateContract().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgStoreAndInstantiateContractResponse', () {
+    final msg =
+        cosmwasm_wasm_v1.MsgStoreAndInstantiateContractResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgAddCodeUploadParamsAddresses', () {
+    final msg = cosmwasm_wasm_v1.MsgAddCodeUploadParamsAddresses().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgAddCodeUploadParamsAddressesResponse', () {
+    final msg =
+        cosmwasm_wasm_v1.MsgAddCodeUploadParamsAddressesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgRemoveCodeUploadParamsAddresses', () {
+    final msg = cosmwasm_wasm_v1.MsgRemoveCodeUploadParamsAddresses().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgRemoveCodeUploadParamsAddressesResponse', () {
+    final msg =
+        cosmwasm_wasm_v1.MsgRemoveCodeUploadParamsAddressesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgStoreAndMigrateContract', () {
+    final msg = cosmwasm_wasm_v1.MsgStoreAndMigrateContract().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgStoreAndMigrateContractResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgStoreAndMigrateContractResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUpdateContractLabel', () {
+    final msg = cosmwasm_wasm_v1.MsgUpdateContractLabel().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgUpdateContractLabelResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgUpdateContractLabelResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmwasm_wasm_v1.MsgIBCSend', () {
     final msg = cosmwasm_wasm_v1.MsgIBCSend().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgIBCSendResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgIBCSendResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.MsgIBCWriteAcknowledgementResponse', () {
+    final msg = cosmwasm_wasm_v1.MsgIBCWriteAcknowledgementResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -550,6 +722,16 @@ main() {
   });
   test('cosmwasm_wasm_v1.QueryContractsByCreatorResponse', () {
     final msg = cosmwasm_wasm_v1.QueryContractsByCreatorResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.QueryBuildAddressRequest', () {
+    final msg = cosmwasm_wasm_v1.QueryBuildAddressRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmwasm_wasm_v1.QueryBuildAddressResponse', () {
+    final msg = cosmwasm_wasm_v1.QueryBuildAddressResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -808,71 +990,6 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('proofs.ExistenceProof', () {
-    final msg = proofs.ExistenceProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.NonExistenceProof', () {
-    final msg = proofs.NonExistenceProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.CommitmentProof', () {
-    final msg = proofs.CommitmentProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.LeafOp', () {
-    final msg = proofs.LeafOp().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.InnerOp', () {
-    final msg = proofs.InnerOp().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.ProofSpec', () {
-    final msg = proofs.ProofSpec().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.InnerSpec', () {
-    final msg = proofs.InnerSpec().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.BatchProof', () {
-    final msg = proofs.BatchProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.BatchEntry', () {
-    final msg = proofs.BatchEntry().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.CompressedBatchProof', () {
-    final msg = proofs.CompressedBatchProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.CompressedBatchEntry', () {
-    final msg = proofs.CompressedBatchEntry().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.CompressedExistenceProof', () {
-    final msg = proofs.CompressedExistenceProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('proofs.CompressedNonExistenceProof', () {
-    final msg = proofs.CompressedNonExistenceProof().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('cosmos_proto.InterfaceDescriptor', () {
     final msg = cosmos_proto.InterfaceDescriptor().toAny();
     final decoded = msg.toMessage();
@@ -1048,6 +1165,56 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('capability_v1.GenesisOwners', () {
+    final msg = capability_v1.GenesisOwners().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('capability_v1.GenesisState', () {
+    final msg = capability_v1.GenesisState().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('capability_v1.Capability', () {
+    final msg = capability_v1.Capability().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('capability_v1.Owner', () {
+    final msg = capability_v1.Owner().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('capability_v1.CapabilityOwners', () {
+    final msg = capability_v1.CapabilityOwners().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_consensus_v1.MsgUpdateParams', () {
+    final msg = cosmos_consensus_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_consensus_v1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_consensus_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_consensus_v1.QueryParamsRequest', () {
+    final msg = cosmos_consensus_v1.QueryParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_consensus_v1.QueryParamsResponse', () {
+    final msg = cosmos_consensus_v1.QueryParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_consensus_module_v1.Module', () {
+    final msg = cosmos_consensus_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_crypto_hd_v1.BIP44Params', () {
     final msg = cosmos_crypto_hd_v1.BIP44Params().toAny();
     final decoded = msg.toMessage();
@@ -1123,136 +1290,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_quarantine_v1beta1.QuarantinedFunds', () {
-    final msg = cosmos_quarantine_v1beta1.QuarantinedFunds().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.AutoResponseEntry', () {
-    final msg = cosmos_quarantine_v1beta1.AutoResponseEntry().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.AutoResponseUpdate', () {
-    final msg = cosmos_quarantine_v1beta1.AutoResponseUpdate().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QuarantineRecord', () {
-    final msg = cosmos_quarantine_v1beta1.QuarantineRecord().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QuarantineRecordSuffixIndex', () {
-    final msg = cosmos_quarantine_v1beta1.QuarantineRecordSuffixIndex().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.GenesisState', () {
-    final msg = cosmos_quarantine_v1beta1.GenesisState().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgOptIn', () {
-    final msg = cosmos_quarantine_v1beta1.MsgOptIn().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgOptInResponse', () {
-    final msg = cosmos_quarantine_v1beta1.MsgOptInResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgOptOut', () {
-    final msg = cosmos_quarantine_v1beta1.MsgOptOut().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgOptOutResponse', () {
-    final msg = cosmos_quarantine_v1beta1.MsgOptOutResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgAccept', () {
-    final msg = cosmos_quarantine_v1beta1.MsgAccept().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgAcceptResponse', () {
-    final msg = cosmos_quarantine_v1beta1.MsgAcceptResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgDecline', () {
-    final msg = cosmos_quarantine_v1beta1.MsgDecline().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgDeclineResponse', () {
-    final msg = cosmos_quarantine_v1beta1.MsgDeclineResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgUpdateAutoResponses', () {
-    final msg = cosmos_quarantine_v1beta1.MsgUpdateAutoResponses().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.MsgUpdateAutoResponsesResponse', () {
-    final msg =
-        cosmos_quarantine_v1beta1.MsgUpdateAutoResponsesResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QueryIsQuarantinedRequest', () {
-    final msg = cosmos_quarantine_v1beta1.QueryIsQuarantinedRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QueryIsQuarantinedResponse', () {
-    final msg = cosmos_quarantine_v1beta1.QueryIsQuarantinedResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QueryQuarantinedFundsRequest', () {
-    final msg =
-        cosmos_quarantine_v1beta1.QueryQuarantinedFundsRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QueryQuarantinedFundsResponse', () {
-    final msg =
-        cosmos_quarantine_v1beta1.QueryQuarantinedFundsResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QueryAutoResponsesRequest', () {
-    final msg = cosmos_quarantine_v1beta1.QueryAutoResponsesRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.QueryAutoResponsesResponse', () {
-    final msg = cosmos_quarantine_v1beta1.QueryAutoResponsesResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.EventOptIn', () {
-    final msg = cosmos_quarantine_v1beta1.EventOptIn().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.EventOptOut', () {
-    final msg = cosmos_quarantine_v1beta1.EventOptOut().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.EventFundsQuarantined', () {
-    final msg = cosmos_quarantine_v1beta1.EventFundsQuarantined().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_quarantine_v1beta1.EventFundsReleased', () {
-    final msg = cosmos_quarantine_v1beta1.EventFundsReleased().toAny();
+  test('cosmos_upgrade_module_v1.Module', () {
+    final msg = cosmos_upgrade_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1348,6 +1387,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_feegrant_module_v1.Module', () {
+    final msg = cosmos_feegrant_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_feegrant_v1beta1.BasicAllowance', () {
     final msg = cosmos_feegrant_v1beta1.BasicAllowance().toAny();
     final decoded = msg.toMessage();
@@ -1393,6 +1437,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_feegrant_v1beta1.MsgPruneAllowances', () {
+    final msg = cosmos_feegrant_v1beta1.MsgPruneAllowances().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_feegrant_v1beta1.MsgPruneAllowancesResponse', () {
+    final msg = cosmos_feegrant_v1beta1.MsgPruneAllowancesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_feegrant_v1beta1.QueryAllowanceRequest', () {
     final msg = cosmos_feegrant_v1beta1.QueryAllowanceRequest().toAny();
     final decoded = msg.toMessage();
@@ -1425,6 +1479,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_mint_module_v1.Module', () {
+    final msg = cosmos_mint_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_mint_v1beta1.Minter', () {
     final msg = cosmos_mint_v1beta1.Minter().toAny();
     final decoded = msg.toMessage();
@@ -1437,6 +1496,16 @@ main() {
   });
   test('cosmos_mint_v1beta1.GenesisState', () {
     final msg = cosmos_mint_v1beta1.GenesisState().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_mint_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_mint_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_mint_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_mint_v1beta1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1470,8 +1539,13 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_app_module_v1alpha1.Module', () {
-    final msg = cosmos_app_module_v1alpha1.Module().toAny();
+  test('cosmos_app_runtime_v1alpha1.Module', () {
+    final msg = cosmos_app_runtime_v1alpha1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_app_runtime_v1alpha1.StoreKeyConfig', () {
+    final msg = cosmos_app_runtime_v1alpha1.StoreKeyConfig().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1482,6 +1556,11 @@ main() {
   });
   test('cosmos_app_v1alpha1.ModuleConfig', () {
     final msg = cosmos_app_v1alpha1.ModuleConfig().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_app_v1alpha1.GolangBinding', () {
+    final msg = cosmos_app_v1alpha1.GolangBinding().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1507,6 +1586,11 @@ main() {
   });
   test('cosmos_app_v1alpha1.QueryConfigResponse', () {
     final msg = cosmos_app_v1alpha1.QueryConfigResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_evidence_module_v1.Module', () {
+    final msg = cosmos_evidence_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1547,6 +1631,11 @@ main() {
   });
   test('cosmos_evidence_v1beta1.QueryAllEvidenceResponse', () {
     final msg = cosmos_evidence_v1beta1.QueryAllEvidenceResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_nft_module_v1.Module', () {
+    final msg = cosmos_nft_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1665,8 +1754,28 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_auth_module_v1.Module', () {
+    final msg = cosmos_auth_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_auth_module_v1.ModuleAccountPermission', () {
+    final msg = cosmos_auth_module_v1.ModuleAccountPermission().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_auth_v1beta1.GenesisState', () {
     final msg = cosmos_auth_v1beta1.GenesisState().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_auth_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_auth_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_auth_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_auth_v1beta1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1760,6 +1869,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_auth_v1beta1.QueryAccountInfoRequest', () {
+    final msg = cosmos_auth_v1beta1.QueryAccountInfoRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_auth_v1beta1.QueryAccountInfoResponse', () {
+    final msg = cosmos_auth_v1beta1.QueryAccountInfoResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_auth_v1beta1.BaseAccount', () {
     final msg = cosmos_auth_v1beta1.BaseAccount().toAny();
     final decoded = msg.toMessage();
@@ -1767,6 +1886,11 @@ main() {
   });
   test('cosmos_auth_v1beta1.ModuleAccount', () {
     final msg = cosmos_auth_v1beta1.ModuleAccount().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_auth_v1beta1.ModuleCredential', () {
+    final msg = cosmos_auth_v1beta1.ModuleCredential().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -1890,6 +2014,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_group_v1.MsgUpdateGroupPolicyAdminResponse', () {
+    final msg = cosmos_group_v1.MsgUpdateGroupPolicyAdminResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_group_v1.MsgCreateGroupWithPolicy', () {
     final msg = cosmos_group_v1.MsgCreateGroupWithPolicy().toAny();
     final decoded = msg.toMessage();
@@ -1897,11 +2026,6 @@ main() {
   });
   test('cosmos_group_v1.MsgCreateGroupWithPolicyResponse', () {
     final msg = cosmos_group_v1.MsgCreateGroupWithPolicyResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_group_v1.MsgUpdateGroupPolicyAdminResponse', () {
-    final msg = cosmos_group_v1.MsgUpdateGroupPolicyAdminResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2166,6 +2290,81 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_group_module_v1.Module', () {
+    final msg = cosmos_group_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.ExistenceProof', () {
+    final msg = cosmos_ics23_v1.ExistenceProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.NonExistenceProof', () {
+    final msg = cosmos_ics23_v1.NonExistenceProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.CommitmentProof', () {
+    final msg = cosmos_ics23_v1.CommitmentProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.LeafOp', () {
+    final msg = cosmos_ics23_v1.LeafOp().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.InnerOp', () {
+    final msg = cosmos_ics23_v1.InnerOp().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.ProofSpec', () {
+    final msg = cosmos_ics23_v1.ProofSpec().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.InnerSpec', () {
+    final msg = cosmos_ics23_v1.InnerSpec().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.BatchProof', () {
+    final msg = cosmos_ics23_v1.BatchProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.BatchEntry', () {
+    final msg = cosmos_ics23_v1.BatchEntry().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.CompressedBatchProof', () {
+    final msg = cosmos_ics23_v1.CompressedBatchProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.CompressedBatchEntry', () {
+    final msg = cosmos_ics23_v1.CompressedBatchEntry().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.CompressedExistenceProof', () {
+    final msg = cosmos_ics23_v1.CompressedExistenceProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_ics23_v1.CompressedNonExistenceProof', () {
+    final msg = cosmos_ics23_v1.CompressedNonExistenceProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_module_v1.Module', () {
+    final msg = cosmos_bank_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_bank_v1beta1.SendAuthorization', () {
     final msg = cosmos_bank_v1beta1.SendAuthorization().toAny();
     final decoded = msg.toMessage();
@@ -2198,6 +2397,26 @@ main() {
   });
   test('cosmos_bank_v1beta1.MsgMultiSendResponse', () {
     final msg = cosmos_bank_v1beta1.MsgMultiSendResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_bank_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_bank_v1beta1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.MsgSetSendEnabled', () {
+    final msg = cosmos_bank_v1beta1.MsgSetSendEnabled().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.MsgSetSendEnabledResponse', () {
+    final msg = cosmos_bank_v1beta1.MsgSetSendEnabledResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2238,6 +2457,18 @@ main() {
   });
   test('cosmos_bank_v1beta1.QuerySpendableBalancesResponse', () {
     final msg = cosmos_bank_v1beta1.QuerySpendableBalancesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.QuerySpendableBalanceByDenomRequest', () {
+    final msg =
+        cosmos_bank_v1beta1.QuerySpendableBalanceByDenomRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.QuerySpendableBalanceByDenomResponse', () {
+    final msg =
+        cosmos_bank_v1beta1.QuerySpendableBalanceByDenomResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2291,6 +2522,18 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_bank_v1beta1.QueryDenomMetadataByQueryStringRequest', () {
+    final msg =
+        cosmos_bank_v1beta1.QueryDenomMetadataByQueryStringRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.QueryDenomMetadataByQueryStringResponse', () {
+    final msg =
+        cosmos_bank_v1beta1.QueryDenomMetadataByQueryStringResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_bank_v1beta1.QueryDenomOwnersRequest', () {
     final msg = cosmos_bank_v1beta1.QueryDenomOwnersRequest().toAny();
     final decoded = msg.toMessage();
@@ -2303,6 +2546,16 @@ main() {
   });
   test('cosmos_bank_v1beta1.QueryDenomOwnersResponse', () {
     final msg = cosmos_bank_v1beta1.QueryDenomOwnersResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.QueryDenomOwnersByQueryRequest', () {
+    final msg = cosmos_bank_v1beta1.QueryDenomOwnersByQueryRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_bank_v1beta1.QueryDenomOwnersByQueryResponse', () {
+    final msg = cosmos_bank_v1beta1.QueryDenomOwnersByQueryResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2351,140 +2604,88 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.GenesisState', () {
-    final msg = cosmos_sanction_v1beta1.GenesisState().toAny();
+  test('cosmos_circuit_v1.Permissions', () {
+    final msg = cosmos_circuit_v1.Permissions().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.MsgSanction', () {
-    final msg = cosmos_sanction_v1beta1.MsgSanction().toAny();
+  test('cosmos_circuit_v1.GenesisAccountPermissions', () {
+    final msg = cosmos_circuit_v1.GenesisAccountPermissions().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.MsgSanctionResponse', () {
-    final msg = cosmos_sanction_v1beta1.MsgSanctionResponse().toAny();
+  test('cosmos_circuit_v1.GenesisState', () {
+    final msg = cosmos_circuit_v1.GenesisState().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.MsgUnsanction', () {
-    final msg = cosmos_sanction_v1beta1.MsgUnsanction().toAny();
+  test('cosmos_circuit_v1.MsgAuthorizeCircuitBreaker', () {
+    final msg = cosmos_circuit_v1.MsgAuthorizeCircuitBreaker().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.MsgUnsanctionResponse', () {
-    final msg = cosmos_sanction_v1beta1.MsgUnsanctionResponse().toAny();
+  test('cosmos_circuit_v1.MsgAuthorizeCircuitBreakerResponse', () {
+    final msg = cosmos_circuit_v1.MsgAuthorizeCircuitBreakerResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.MsgUpdateParams', () {
-    final msg = cosmos_sanction_v1beta1.MsgUpdateParams().toAny();
+  test('cosmos_circuit_v1.MsgTripCircuitBreaker', () {
+    final msg = cosmos_circuit_v1.MsgTripCircuitBreaker().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.MsgUpdateParamsResponse', () {
-    final msg = cosmos_sanction_v1beta1.MsgUpdateParamsResponse().toAny();
+  test('cosmos_circuit_v1.MsgTripCircuitBreakerResponse', () {
+    final msg = cosmos_circuit_v1.MsgTripCircuitBreakerResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QueryIsSanctionedRequest', () {
-    final msg = cosmos_sanction_v1beta1.QueryIsSanctionedRequest().toAny();
+  test('cosmos_circuit_v1.MsgResetCircuitBreaker', () {
+    final msg = cosmos_circuit_v1.MsgResetCircuitBreaker().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QueryIsSanctionedResponse', () {
-    final msg = cosmos_sanction_v1beta1.QueryIsSanctionedResponse().toAny();
+  test('cosmos_circuit_v1.MsgResetCircuitBreakerResponse', () {
+    final msg = cosmos_circuit_v1.MsgResetCircuitBreakerResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QuerySanctionedAddressesRequest', () {
-    final msg =
-        cosmos_sanction_v1beta1.QuerySanctionedAddressesRequest().toAny();
+  test('cosmos_circuit_v1.QueryAccountRequest', () {
+    final msg = cosmos_circuit_v1.QueryAccountRequest().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QuerySanctionedAddressesResponse', () {
-    final msg =
-        cosmos_sanction_v1beta1.QuerySanctionedAddressesResponse().toAny();
+  test('cosmos_circuit_v1.AccountResponse', () {
+    final msg = cosmos_circuit_v1.AccountResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QueryTemporaryEntriesRequest', () {
-    final msg = cosmos_sanction_v1beta1.QueryTemporaryEntriesRequest().toAny();
+  test('cosmos_circuit_v1.QueryAccountsRequest', () {
+    final msg = cosmos_circuit_v1.QueryAccountsRequest().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QueryTemporaryEntriesResponse', () {
-    final msg = cosmos_sanction_v1beta1.QueryTemporaryEntriesResponse().toAny();
+  test('cosmos_circuit_v1.AccountsResponse', () {
+    final msg = cosmos_circuit_v1.AccountsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QueryParamsRequest', () {
-    final msg = cosmos_sanction_v1beta1.QueryParamsRequest().toAny();
+  test('cosmos_circuit_v1.QueryDisabledListRequest', () {
+    final msg = cosmos_circuit_v1.QueryDisabledListRequest().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.QueryParamsResponse', () {
-    final msg = cosmos_sanction_v1beta1.QueryParamsResponse().toAny();
+  test('cosmos_circuit_v1.DisabledListResponse', () {
+    final msg = cosmos_circuit_v1.DisabledListResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.Params', () {
-    final msg = cosmos_sanction_v1beta1.Params().toAny();
+  test('cosmos_circuit_module_v1.Module', () {
+    final msg = cosmos_circuit_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_sanction_v1beta1.TemporaryEntry', () {
-    final msg = cosmos_sanction_v1beta1.TemporaryEntry().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_sanction_v1beta1.EventAddressSanctioned', () {
-    final msg = cosmos_sanction_v1beta1.EventAddressSanctioned().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_sanction_v1beta1.EventAddressUnsanctioned', () {
-    final msg = cosmos_sanction_v1beta1.EventAddressUnsanctioned().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_sanction_v1beta1.EventTempAddressSanctioned', () {
-    final msg = cosmos_sanction_v1beta1.EventTempAddressSanctioned().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_sanction_v1beta1.EventTempAddressUnsanctioned', () {
-    final msg = cosmos_sanction_v1beta1.EventTempAddressUnsanctioned().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_sanction_v1beta1.EventParamsUpdated', () {
-    final msg = cosmos_sanction_v1beta1.EventParamsUpdated().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_capability_v1beta1.GenesisOwners', () {
-    final msg = cosmos_capability_v1beta1.GenesisOwners().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_capability_v1beta1.GenesisState', () {
-    final msg = cosmos_capability_v1beta1.GenesisState().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_capability_v1beta1.Capability', () {
-    final msg = cosmos_capability_v1beta1.Capability().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_capability_v1beta1.Owner', () {
-    final msg = cosmos_capability_v1beta1.Owner().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_capability_v1beta1.CapabilityOwners', () {
-    final msg = cosmos_capability_v1beta1.CapabilityOwners().toAny();
+  test('cosmos_distribution_module_v1.Module', () {
+    final msg = cosmos_distribution_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2648,6 +2849,41 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_distribution_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_distribution_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_distribution_v1beta1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.MsgCommunityPoolSpend', () {
+    final msg = cosmos_distribution_v1beta1.MsgCommunityPoolSpend().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.MsgCommunityPoolSpendResponse', () {
+    final msg =
+        cosmos_distribution_v1beta1.MsgCommunityPoolSpendResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.MsgDepositValidatorRewardsPool', () {
+    final msg =
+        cosmos_distribution_v1beta1.MsgDepositValidatorRewardsPool().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.MsgDepositValidatorRewardsPoolResponse',
+      () {
+    final msg =
+        cosmos_distribution_v1beta1.MsgDepositValidatorRewardsPoolResponse()
+            .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_distribution_v1beta1.QueryParamsRequest', () {
     final msg = cosmos_distribution_v1beta1.QueryParamsRequest().toAny();
     final decoded = msg.toMessage();
@@ -2655,6 +2891,21 @@ main() {
   });
   test('cosmos_distribution_v1beta1.QueryParamsResponse', () {
     final msg = cosmos_distribution_v1beta1.QueryParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.QueryValidatorDistributionInfoRequest', () {
+    final msg =
+        cosmos_distribution_v1beta1.QueryValidatorDistributionInfoRequest()
+            .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_distribution_v1beta1.QueryValidatorDistributionInfoResponse',
+      () {
+    final msg =
+        cosmos_distribution_v1beta1.QueryValidatorDistributionInfoResponse()
+            .toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2760,6 +3011,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_crisis_module_v1.Module', () {
+    final msg = cosmos_crisis_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_crisis_v1beta1.GenesisState', () {
     final msg = cosmos_crisis_v1beta1.GenesisState().toAny();
     final decoded = msg.toMessage();
@@ -2772,6 +3028,16 @@ main() {
   });
   test('cosmos_crisis_v1beta1.MsgVerifyInvariantResponse', () {
     final msg = cosmos_crisis_v1beta1.MsgVerifyInvariantResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_crisis_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_crisis_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_crisis_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_crisis_v1beta1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2799,6 +3065,11 @@ main() {
   });
   test('cosmos_tx_signing_v1beta1.SignatureDescriptor', () {
     final msg = cosmos_tx_signing_v1beta1.SignatureDescriptor().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_config_v1.Config', () {
+    final msg = cosmos_tx_config_v1.Config().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2849,6 +3120,46 @@ main() {
   });
   test('cosmos_tx_v1beta1.GetBlockWithTxsResponse', () {
     final msg = cosmos_tx_v1beta1.GetBlockWithTxsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxDecodeRequest', () {
+    final msg = cosmos_tx_v1beta1.TxDecodeRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxDecodeResponse', () {
+    final msg = cosmos_tx_v1beta1.TxDecodeResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxEncodeRequest', () {
+    final msg = cosmos_tx_v1beta1.TxEncodeRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxEncodeResponse', () {
+    final msg = cosmos_tx_v1beta1.TxEncodeResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxEncodeAminoRequest', () {
+    final msg = cosmos_tx_v1beta1.TxEncodeAminoRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxEncodeAminoResponse', () {
+    final msg = cosmos_tx_v1beta1.TxEncodeAminoResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxDecodeAminoRequest', () {
+    final msg = cosmos_tx_v1beta1.TxDecodeAminoRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_tx_v1beta1.TxDecodeAminoResponse', () {
+    final msg = cosmos_tx_v1beta1.TxDecodeAminoResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -2917,43 +3228,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_streaming_abci_v1.ListenBeginBlockRequest', () {
-    final msg = cosmos_streaming_abci_v1.ListenBeginBlockRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenBeginBlockResponse', () {
-    final msg = cosmos_streaming_abci_v1.ListenBeginBlockResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenEndBlockRequest', () {
-    final msg = cosmos_streaming_abci_v1.ListenEndBlockRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenEndBlockResponse', () {
-    final msg = cosmos_streaming_abci_v1.ListenEndBlockResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenDeliverTxRequest', () {
-    final msg = cosmos_streaming_abci_v1.ListenDeliverTxRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenDeliverTxResponse', () {
-    final msg = cosmos_streaming_abci_v1.ListenDeliverTxResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenCommitRequest', () {
-    final msg = cosmos_streaming_abci_v1.ListenCommitRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_streaming_abci_v1.ListenCommitResponse', () {
-    final msg = cosmos_streaming_abci_v1.ListenCommitResponse().toAny();
+  test('cosmos_vesting_module_v1.Module', () {
+    final msg = cosmos_vesting_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3019,6 +3295,11 @@ main() {
   test('cosmos_vesting_v1beta1.MsgCreatePeriodicVestingAccountResponse', () {
     final msg = cosmos_vesting_v1beta1.MsgCreatePeriodicVestingAccountResponse()
         .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_staking_module_v1.Module', () {
+    final msg = cosmos_staking_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3100,6 +3381,16 @@ main() {
   test('cosmos_staking_v1beta1.MsgCancelUnbondingDelegationResponse', () {
     final msg =
         cosmos_staking_v1beta1.MsgCancelUnbondingDelegationResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_staking_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_staking_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_staking_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_staking_v1beta1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3360,8 +3651,23 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_staking_v1beta1.ValidatorUpdates', () {
+    final msg = cosmos_staking_v1beta1.ValidatorUpdates().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_genutil_module_v1.Module', () {
+    final msg = cosmos_genutil_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_genutil_v1beta1.GenesisState', () {
     final msg = cosmos_genutil_v1beta1.GenesisState().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_params_module_v1.Module', () {
+    final msg = cosmos_params_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3397,6 +3703,11 @@ main() {
   });
   test('cosmos_params_v1beta1.Subspace', () {
     final msg = cosmos_params_v1beta1.Subspace().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_authz_module_v1.Module', () {
+    final msg = cosmos_authz_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3445,8 +3756,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_authz_v1beta1.MsgExecResponse', () {
-    final msg = cosmos_authz_v1beta1.MsgExecResponse().toAny();
+  test('cosmos_authz_v1beta1.MsgGrantResponse', () {
+    final msg = cosmos_authz_v1beta1.MsgGrantResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3455,8 +3766,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_authz_v1beta1.MsgGrantResponse', () {
-    final msg = cosmos_authz_v1beta1.MsgGrantResponse().toAny();
+  test('cosmos_authz_v1beta1.MsgExecResponse', () {
+    final msg = cosmos_authz_v1beta1.MsgExecResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3535,6 +3846,46 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_orm_query_v1alpha1.GetRequest', () {
+    final msg = cosmos_orm_query_v1alpha1.GetRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_orm_query_v1alpha1.GetResponse', () {
+    final msg = cosmos_orm_query_v1alpha1.GetResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_orm_query_v1alpha1.ListRequest_Prefix', () {
+    final msg = cosmos_orm_query_v1alpha1.ListRequest_Prefix().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_orm_query_v1alpha1.ListRequest_Range', () {
+    final msg = cosmos_orm_query_v1alpha1.ListRequest_Range().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_orm_query_v1alpha1.ListRequest', () {
+    final msg = cosmos_orm_query_v1alpha1.ListRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_orm_query_v1alpha1.ListResponse', () {
+    final msg = cosmos_orm_query_v1alpha1.ListResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_orm_query_v1alpha1.IndexValue', () {
+    final msg = cosmos_orm_query_v1alpha1.IndexValue().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_slashing_module_v1.Module', () {
+    final msg = cosmos_slashing_module_v1.Module().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_slashing_v1beta1.ValidatorSigningInfo', () {
     final msg = cosmos_slashing_v1beta1.ValidatorSigningInfo().toAny();
     final decoded = msg.toMessage();
@@ -3575,6 +3926,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_slashing_v1beta1.MsgUpdateParams', () {
+    final msg = cosmos_slashing_v1beta1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_slashing_v1beta1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_slashing_v1beta1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_slashing_v1beta1.QueryParamsRequest', () {
     final msg = cosmos_slashing_v1beta1.QueryParamsRequest().toAny();
     final decoded = msg.toMessage();
@@ -3602,6 +3963,41 @@ main() {
   });
   test('cosmos_slashing_v1beta1.QuerySigningInfosResponse', () {
     final msg = cosmos_slashing_v1beta1.QuerySigningInfosResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.ModuleOptions', () {
+    final msg = cosmos_autocli_v1.ModuleOptions().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.ServiceCommandDescriptor', () {
+    final msg = cosmos_autocli_v1.ServiceCommandDescriptor().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.RpcCommandOptions', () {
+    final msg = cosmos_autocli_v1.RpcCommandOptions().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.FlagOptions', () {
+    final msg = cosmos_autocli_v1.FlagOptions().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.PositionalArgDescriptor', () {
+    final msg = cosmos_autocli_v1.PositionalArgDescriptor().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.AppOptionsRequest', () {
+    final msg = cosmos_autocli_v1.AppOptionsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_autocli_v1.AppOptionsResponse', () {
+    final msg = cosmos_autocli_v1.AppOptionsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3655,59 +4051,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('cosmos_base_kv_v1beta1.Pairs', () {
-    final msg = cosmos_base_kv_v1beta1.Pairs().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_kv_v1beta1.Pair', () {
-    final msg = cosmos_base_kv_v1beta1.Pair().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.Snapshot', () {
-    final msg = cosmos_base_snapshots_v1beta1.Snapshot().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.Metadata', () {
-    final msg = cosmos_base_snapshots_v1beta1.Metadata().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotItem', () {
-    final msg = cosmos_base_snapshots_v1beta1.SnapshotItem().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotStoreItem', () {
-    final msg = cosmos_base_snapshots_v1beta1.SnapshotStoreItem().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotIAVLItem', () {
-    final msg = cosmos_base_snapshots_v1beta1.SnapshotIAVLItem().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotExtensionMeta', () {
-    final msg = cosmos_base_snapshots_v1beta1.SnapshotExtensionMeta().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotExtensionPayload', () {
-    final msg =
-        cosmos_base_snapshots_v1beta1.SnapshotExtensionPayload().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotKVItem', () {
-    final msg = cosmos_base_snapshots_v1beta1.SnapshotKVItem().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_snapshots_v1beta1.SnapshotSchema', () {
-    final msg = cosmos_base_snapshots_v1beta1.SnapshotSchema().toAny();
+  test('cosmos_base_abci_v1beta1.SearchBlocksResult', () {
+    final msg = cosmos_base_abci_v1beta1.SearchBlocksResult().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -3852,6 +4197,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_base_node_v1beta1.StatusRequest', () {
+    final msg = cosmos_base_node_v1beta1.StatusRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_base_node_v1beta1.StatusResponse', () {
+    final msg = cosmos_base_node_v1beta1.StatusResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_base_query_v1beta1.PageRequest', () {
     final msg = cosmos_base_query_v1beta1.PageRequest().toAny();
     final decoded = msg.toMessage();
@@ -3859,36 +4214,6 @@ main() {
   });
   test('cosmos_base_query_v1beta1.PageResponse', () {
     final msg = cosmos_base_query_v1beta1.PageResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_store_v1beta1.CommitInfo', () {
-    final msg = cosmos_base_store_v1beta1.CommitInfo().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_store_v1beta1.StoreInfo', () {
-    final msg = cosmos_base_store_v1beta1.StoreInfo().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_store_v1beta1.CommitID', () {
-    final msg = cosmos_base_store_v1beta1.CommitID().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_store_v1beta1.StoreKVPair', () {
-    final msg = cosmos_base_store_v1beta1.StoreKVPair().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_store_v1beta1.BlockMetadata_DeliverTx', () {
-    final msg = cosmos_base_store_v1beta1.BlockMetadata_DeliverTx().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('cosmos_base_store_v1beta1.BlockMetadata', () {
-    final msg = cosmos_base_store_v1beta1.BlockMetadata().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4071,6 +4396,98 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_store_snapshots_v1.Snapshot', () {
+    final msg = cosmos_store_snapshots_v1.Snapshot().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_snapshots_v1.Metadata', () {
+    final msg = cosmos_store_snapshots_v1.Metadata().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_snapshots_v1.SnapshotItem', () {
+    final msg = cosmos_store_snapshots_v1.SnapshotItem().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_snapshots_v1.SnapshotStoreItem', () {
+    final msg = cosmos_store_snapshots_v1.SnapshotStoreItem().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_snapshots_v1.SnapshotIAVLItem', () {
+    final msg = cosmos_store_snapshots_v1.SnapshotIAVLItem().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_snapshots_v1.SnapshotExtensionMeta', () {
+    final msg = cosmos_store_snapshots_v1.SnapshotExtensionMeta().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_snapshots_v1.SnapshotExtensionPayload', () {
+    final msg = cosmos_store_snapshots_v1.SnapshotExtensionPayload().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_internal_kv_v1beta1.Pairs', () {
+    final msg = cosmos_store_internal_kv_v1beta1.Pairs().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_internal_kv_v1beta1.Pair', () {
+    final msg = cosmos_store_internal_kv_v1beta1.Pair().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_streaming_abci.ListenFinalizeBlockRequest', () {
+    final msg =
+        cosmos_store_streaming_abci.ListenFinalizeBlockRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_streaming_abci.ListenFinalizeBlockResponse', () {
+    final msg =
+        cosmos_store_streaming_abci.ListenFinalizeBlockResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_streaming_abci.ListenCommitRequest', () {
+    final msg = cosmos_store_streaming_abci.ListenCommitRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_streaming_abci.ListenCommitResponse', () {
+    final msg = cosmos_store_streaming_abci.ListenCommitResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_v1beta1.CommitInfo', () {
+    final msg = cosmos_store_v1beta1.CommitInfo().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_v1beta1.StoreInfo', () {
+    final msg = cosmos_store_v1beta1.StoreInfo().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_v1beta1.CommitID', () {
+    final msg = cosmos_store_v1beta1.CommitID().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_v1beta1.StoreKVPair', () {
+    final msg = cosmos_store_v1beta1.StoreKVPair().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_store_v1beta1.BlockMetadata', () {
+    final msg = cosmos_store_v1beta1.BlockMetadata().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('cosmos_gov_v1.WeightedVoteOption', () {
     final msg = cosmos_gov_v1.WeightedVoteOption().toAny();
     final decoded = msg.toMessage();
@@ -4108,6 +4525,11 @@ main() {
   });
   test('cosmos_gov_v1.TallyParams', () {
     final msg = cosmos_gov_v1.TallyParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.Params', () {
+    final msg = cosmos_gov_v1.Params().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4163,6 +4585,36 @@ main() {
   });
   test('cosmos_gov_v1.MsgDepositResponse', () {
     final msg = cosmos_gov_v1.MsgDepositResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.MsgUpdateParams', () {
+    final msg = cosmos_gov_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.MsgUpdateParamsResponse', () {
+    final msg = cosmos_gov_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.MsgCancelProposal', () {
+    final msg = cosmos_gov_v1.MsgCancelProposal().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.MsgCancelProposalResponse', () {
+    final msg = cosmos_gov_v1.MsgCancelProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.QueryConstitutionRequest', () {
+    final msg = cosmos_gov_v1.QueryConstitutionRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_v1.QueryConstitutionResponse', () {
+    final msg = cosmos_gov_v1.QueryConstitutionResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4243,6 +4695,11 @@ main() {
   });
   test('cosmos_gov_v1.QueryTallyResultResponse', () {
     final msg = cosmos_gov_v1.QueryTallyResultResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_gov_module_v1.Module', () {
+    final msg = cosmos_gov_module_v1.Module().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4416,6 +4873,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('cosmos_reflection_v1.FileDescriptorsRequest', () {
+    final msg = cosmos_reflection_v1.FileDescriptorsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('cosmos_reflection_v1.FileDescriptorsResponse', () {
+    final msg = cosmos_reflection_v1.FileDescriptorsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_core_types_v1.GenesisState', () {
     final msg = ibc_core_types_v1.GenesisState().toAny();
     final decoded = msg.toMessage();
@@ -4502,6 +4969,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('ibc_core_connection_v1.MsgUpdateParams', () {
+    final msg = ibc_core_connection_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_connection_v1.MsgUpdateParamsResponse', () {
+    final msg = ibc_core_connection_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_core_connection_v1.QueryConnectionRequest', () {
     final msg = ibc_core_connection_v1.QueryConnectionRequest().toAny();
     final decoded = msg.toMessage();
@@ -4583,6 +5060,21 @@ main() {
   });
   test('ibc_core_commitment_v1.MerkleProof', () {
     final msg = ibc_core_commitment_v1.MerkleProof().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.Upgrade', () {
+    final msg = ibc_core_channel_v1.Upgrade().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.UpgradeFields', () {
+    final msg = ibc_core_channel_v1.UpgradeFields().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.ErrorReceipt', () {
+    final msg = ibc_core_channel_v1.ErrorReceipt().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4693,6 +5185,96 @@ main() {
   });
   test('ibc_core_channel_v1.MsgAcknowledgementResponse', () {
     final msg = ibc_core_channel_v1.MsgAcknowledgementResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeInit', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeInit().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeInitResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeInitResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeTry', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeTry().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeTryResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeTryResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeAck', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeAck().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeAckResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeAckResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeConfirm', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeConfirm().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeConfirmResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeConfirmResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeOpen', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeOpen().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeOpenResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeOpenResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeTimeout', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeTimeout().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeTimeoutResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeTimeoutResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeCancel', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeCancel().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgChannelUpgradeCancelResponse', () {
+    final msg = ibc_core_channel_v1.MsgChannelUpgradeCancelResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgUpdateParams', () {
+    final msg = ibc_core_channel_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgUpdateParamsResponse', () {
+    final msg = ibc_core_channel_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgPruneAcknowledgements', () {
+    final msg = ibc_core_channel_v1.MsgPruneAcknowledgements().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.MsgPruneAcknowledgementsResponse', () {
+    final msg = ibc_core_channel_v1.MsgPruneAcknowledgementsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4830,6 +5412,46 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('ibc_core_channel_v1.QueryNextSequenceSendRequest', () {
+    final msg = ibc_core_channel_v1.QueryNextSequenceSendRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryNextSequenceSendResponse', () {
+    final msg = ibc_core_channel_v1.QueryNextSequenceSendResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryUpgradeErrorRequest', () {
+    final msg = ibc_core_channel_v1.QueryUpgradeErrorRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryUpgradeErrorResponse', () {
+    final msg = ibc_core_channel_v1.QueryUpgradeErrorResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryUpgradeRequest', () {
+    final msg = ibc_core_channel_v1.QueryUpgradeRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryUpgradeResponse', () {
+    final msg = ibc_core_channel_v1.QueryUpgradeResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryChannelParamsRequest', () {
+    final msg = ibc_core_channel_v1.QueryChannelParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.QueryChannelParamsResponse', () {
+    final msg = ibc_core_channel_v1.QueryChannelParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_core_channel_v1.Channel', () {
     final msg = ibc_core_channel_v1.Channel().toAny();
     final decoded = msg.toMessage();
@@ -4865,6 +5487,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('ibc_core_channel_v1.Timeout', () {
+    final msg = ibc_core_channel_v1.Timeout().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_channel_v1.Params', () {
+    final msg = ibc_core_channel_v1.Params().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_core_port_v1.QueryAppVersionRequest', () {
     final msg = ibc_core_port_v1.QueryAppVersionRequest().toAny();
     final decoded = msg.toMessage();
@@ -4890,16 +5522,6 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_core_client_v1.ClientUpdateProposal', () {
-    final msg = ibc_core_client_v1.ClientUpdateProposal().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('ibc_core_client_v1.UpgradeProposal', () {
-    final msg = ibc_core_client_v1.UpgradeProposal().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('ibc_core_client_v1.Height', () {
     final msg = ibc_core_client_v1.Height().toAny();
     final decoded = msg.toMessage();
@@ -4907,6 +5529,16 @@ main() {
   });
   test('ibc_core_client_v1.Params', () {
     final msg = ibc_core_client_v1.Params().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.ClientUpdateProposal', () {
+    final msg = ibc_core_client_v1.ClientUpdateProposal().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.UpgradeProposal', () {
+    final msg = ibc_core_client_v1.UpgradeProposal().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -4962,6 +5594,36 @@ main() {
   });
   test('ibc_core_client_v1.MsgSubmitMisbehaviourResponse', () {
     final msg = ibc_core_client_v1.MsgSubmitMisbehaviourResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.MsgRecoverClient', () {
+    final msg = ibc_core_client_v1.MsgRecoverClient().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.MsgRecoverClientResponse', () {
+    final msg = ibc_core_client_v1.MsgRecoverClientResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.MsgIBCSoftwareUpgrade', () {
+    final msg = ibc_core_client_v1.MsgIBCSoftwareUpgrade().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.MsgIBCSoftwareUpgradeResponse', () {
+    final msg = ibc_core_client_v1.MsgIBCSoftwareUpgradeResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.MsgUpdateParams', () {
+    final msg = ibc_core_client_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_core_client_v1.MsgUpdateParamsResponse', () {
+    final msg = ibc_core_client_v1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -5056,86 +5718,93 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.ClientState', () {
-    final msg = ibc_lightclients_solomachine_v1.ClientState().toAny();
+  test('ibc_core_client_v1.QueryVerifyMembershipRequest', () {
+    final msg = ibc_core_client_v1.QueryVerifyMembershipRequest().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.ConsensusState', () {
-    final msg = ibc_lightclients_solomachine_v1.ConsensusState().toAny();
+  test('ibc_core_client_v1.QueryVerifyMembershipResponse', () {
+    final msg = ibc_core_client_v1.QueryVerifyMembershipResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.Header', () {
-    final msg = ibc_lightclients_solomachine_v1.Header().toAny();
+  test('ibc_lightclients_wasm_v1.ClientState', () {
+    final msg = ibc_lightclients_wasm_v1.ClientState().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.Misbehaviour', () {
-    final msg = ibc_lightclients_solomachine_v1.Misbehaviour().toAny();
+  test('ibc_lightclients_wasm_v1.ConsensusState', () {
+    final msg = ibc_lightclients_wasm_v1.ConsensusState().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.SignatureAndData', () {
-    final msg = ibc_lightclients_solomachine_v1.SignatureAndData().toAny();
+  test('ibc_lightclients_wasm_v1.ClientMessage', () {
+    final msg = ibc_lightclients_wasm_v1.ClientMessage().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.TimestampedSignatureData', () {
-    final msg =
-        ibc_lightclients_solomachine_v1.TimestampedSignatureData().toAny();
+  test('ibc_lightclients_wasm_v1.Checksums', () {
+    final msg = ibc_lightclients_wasm_v1.Checksums().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.SignBytes', () {
-    final msg = ibc_lightclients_solomachine_v1.SignBytes().toAny();
+  test('ibc_lightclients_wasm_v1.GenesisState', () {
+    final msg = ibc_lightclients_wasm_v1.GenesisState().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.HeaderData', () {
-    final msg = ibc_lightclients_solomachine_v1.HeaderData().toAny();
+  test('ibc_lightclients_wasm_v1.Contract', () {
+    final msg = ibc_lightclients_wasm_v1.Contract().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.ClientStateData', () {
-    final msg = ibc_lightclients_solomachine_v1.ClientStateData().toAny();
+  test('ibc_lightclients_wasm_v1.MsgStoreCode', () {
+    final msg = ibc_lightclients_wasm_v1.MsgStoreCode().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.ConsensusStateData', () {
-    final msg = ibc_lightclients_solomachine_v1.ConsensusStateData().toAny();
+  test('ibc_lightclients_wasm_v1.MsgStoreCodeResponse', () {
+    final msg = ibc_lightclients_wasm_v1.MsgStoreCodeResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.ConnectionStateData', () {
-    final msg = ibc_lightclients_solomachine_v1.ConnectionStateData().toAny();
+  test('ibc_lightclients_wasm_v1.MsgRemoveChecksum', () {
+    final msg = ibc_lightclients_wasm_v1.MsgRemoveChecksum().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.ChannelStateData', () {
-    final msg = ibc_lightclients_solomachine_v1.ChannelStateData().toAny();
+  test('ibc_lightclients_wasm_v1.MsgRemoveChecksumResponse', () {
+    final msg = ibc_lightclients_wasm_v1.MsgRemoveChecksumResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.PacketCommitmentData', () {
-    final msg = ibc_lightclients_solomachine_v1.PacketCommitmentData().toAny();
+  test('ibc_lightclients_wasm_v1.MsgMigrateContract', () {
+    final msg = ibc_lightclients_wasm_v1.MsgMigrateContract().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.PacketAcknowledgementData', () {
-    final msg =
-        ibc_lightclients_solomachine_v1.PacketAcknowledgementData().toAny();
+  test('ibc_lightclients_wasm_v1.MsgMigrateContractResponse', () {
+    final msg = ibc_lightclients_wasm_v1.MsgMigrateContractResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.PacketReceiptAbsenceData', () {
-    final msg =
-        ibc_lightclients_solomachine_v1.PacketReceiptAbsenceData().toAny();
+  test('ibc_lightclients_wasm_v1.QueryChecksumsRequest', () {
+    final msg = ibc_lightclients_wasm_v1.QueryChecksumsRequest().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_solomachine_v1.NextSequenceRecvData', () {
-    final msg = ibc_lightclients_solomachine_v1.NextSequenceRecvData().toAny();
+  test('ibc_lightclients_wasm_v1.QueryChecksumsResponse', () {
+    final msg = ibc_lightclients_wasm_v1.QueryChecksumsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_wasm_v1.QueryCodeRequest', () {
+    final msg = ibc_lightclients_wasm_v1.QueryCodeRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_wasm_v1.QueryCodeResponse', () {
+    final msg = ibc_lightclients_wasm_v1.QueryCodeResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -5222,6 +5891,47 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('ibc_lightclients_solomachine_v3.ClientState', () {
+    final msg = ibc_lightclients_solomachine_v3.ClientState().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.ConsensusState', () {
+    final msg = ibc_lightclients_solomachine_v3.ConsensusState().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.Header', () {
+    final msg = ibc_lightclients_solomachine_v3.Header().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.Misbehaviour', () {
+    final msg = ibc_lightclients_solomachine_v3.Misbehaviour().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.SignatureAndData', () {
+    final msg = ibc_lightclients_solomachine_v3.SignatureAndData().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.TimestampedSignatureData', () {
+    final msg =
+        ibc_lightclients_solomachine_v3.TimestampedSignatureData().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.SignBytes', () {
+    final msg = ibc_lightclients_solomachine_v3.SignBytes().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_lightclients_solomachine_v3.HeaderData', () {
+    final msg = ibc_lightclients_solomachine_v3.HeaderData().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_lightclients_tendermint_v1.ClientState', () {
     final msg = ibc_lightclients_tendermint_v1.ClientState().toAny();
     final decoded = msg.toMessage();
@@ -5247,8 +5957,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('ibc_lightclients_localhost_v1.ClientState', () {
-    final msg = ibc_lightclients_localhost_v1.ClientState().toAny();
+  test('ibc_lightclients_localhost_v2.ClientState', () {
+    final msg = ibc_lightclients_localhost_v2.ClientState().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -5486,6 +6196,16 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('ibc_applications_transfer_v1.MsgUpdateParams', () {
+    final msg = ibc_applications_transfer_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_transfer_v1.MsgUpdateParamsResponse', () {
+    final msg = ibc_applications_transfer_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_applications_transfer_v1.DenomTrace', () {
     final msg = ibc_applications_transfer_v1.DenomTrace().toAny();
     final decoded = msg.toMessage();
@@ -5548,6 +6268,18 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('ibc_applications_transfer_v1.QueryTotalEscrowForDenomRequest', () {
+    final msg =
+        ibc_applications_transfer_v1.QueryTotalEscrowForDenomRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_transfer_v1.QueryTotalEscrowForDenomResponse', () {
+    final msg =
+        ibc_applications_transfer_v1.QueryTotalEscrowForDenomResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('ibc_applications_transfer_v2.FungibleTokenPacketData', () {
     final msg = ibc_applications_transfer_v2.FungibleTokenPacketData().toAny();
     final decoded = msg.toMessage();
@@ -5579,6 +6311,42 @@ main() {
   });
   test('ibc_applications_interchain_accounts_host_v1.Params', () {
     final msg = ibc_applications_interchain_accounts_host_v1.Params().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_interchain_accounts_host_v1.QueryRequest', () {
+    final msg =
+        ibc_applications_interchain_accounts_host_v1.QueryRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_interchain_accounts_host_v1.MsgUpdateParams', () {
+    final msg =
+        ibc_applications_interchain_accounts_host_v1.MsgUpdateParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_interchain_accounts_host_v1.MsgUpdateParamsResponse',
+      () {
+    final msg =
+        ibc_applications_interchain_accounts_host_v1.MsgUpdateParamsResponse()
+            .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_interchain_accounts_host_v1.MsgModuleQuerySafe', () {
+    final msg =
+        ibc_applications_interchain_accounts_host_v1.MsgModuleQuerySafe()
+            .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test(
+      'ibc_applications_interchain_accounts_host_v1.MsgModuleQuerySafeResponse',
+      () {
+    final msg = ibc_applications_interchain_accounts_host_v1
+            .MsgModuleQuerySafeResponse()
+        .toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -5631,6 +6399,23 @@ main() {
     final msg =
         ibc_applications_interchain_accounts_controller_v1.MsgSendTxResponse()
             .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('ibc_applications_interchain_accounts_controller_v1.MsgUpdateParams',
+      () {
+    final msg =
+        ibc_applications_interchain_accounts_controller_v1.MsgUpdateParams()
+            .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test(
+      'ibc_applications_interchain_accounts_controller_v1.MsgUpdateParamsResponse',
+      () {
+    final msg = ibc_applications_interchain_accounts_controller_v1
+            .MsgUpdateParamsResponse()
+        .toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -5701,6 +6486,11 @@ main() {
     final msg = ibc_applications_interchain_accounts_genesis_v1
             .RegisteredInterchainAccount()
         .toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.Payment', () {
+    final msg = provenance_exchange_v1.Payment().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -5960,6 +6750,66 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('provenance_exchange_v1.MsgCreatePaymentRequest', () {
+    final msg = provenance_exchange_v1.MsgCreatePaymentRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgCreatePaymentResponse', () {
+    final msg = provenance_exchange_v1.MsgCreatePaymentResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgAcceptPaymentRequest', () {
+    final msg = provenance_exchange_v1.MsgAcceptPaymentRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgAcceptPaymentResponse', () {
+    final msg = provenance_exchange_v1.MsgAcceptPaymentResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgRejectPaymentRequest', () {
+    final msg = provenance_exchange_v1.MsgRejectPaymentRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgRejectPaymentResponse', () {
+    final msg = provenance_exchange_v1.MsgRejectPaymentResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgRejectPaymentsRequest', () {
+    final msg = provenance_exchange_v1.MsgRejectPaymentsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgRejectPaymentsResponse', () {
+    final msg = provenance_exchange_v1.MsgRejectPaymentsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgCancelPaymentsRequest', () {
+    final msg = provenance_exchange_v1.MsgCancelPaymentsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgCancelPaymentsResponse', () {
+    final msg = provenance_exchange_v1.MsgCancelPaymentsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgChangePaymentTargetRequest', () {
+    final msg = provenance_exchange_v1.MsgChangePaymentTargetRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgChangePaymentTargetResponse', () {
+    final msg = provenance_exchange_v1.MsgChangePaymentTargetResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('provenance_exchange_v1.MsgGovCreateMarketRequest', () {
     final msg = provenance_exchange_v1.MsgGovCreateMarketRequest().toAny();
     final decoded = msg.toMessage();
@@ -5997,6 +6847,16 @@ main() {
   });
   test('provenance_exchange_v1.MsgGovUpdateParamsResponse', () {
     final msg = provenance_exchange_v1.MsgGovUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgUpdateParamsRequest', () {
+    final msg = provenance_exchange_v1.MsgUpdateParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.MsgUpdateParamsResponse', () {
+    final msg = provenance_exchange_v1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -6192,6 +7052,60 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('provenance_exchange_v1.QueryGetPaymentRequest', () {
+    final msg = provenance_exchange_v1.QueryGetPaymentRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetPaymentResponse', () {
+    final msg = provenance_exchange_v1.QueryGetPaymentResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetPaymentsWithSourceRequest', () {
+    final msg =
+        provenance_exchange_v1.QueryGetPaymentsWithSourceRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetPaymentsWithSourceResponse', () {
+    final msg =
+        provenance_exchange_v1.QueryGetPaymentsWithSourceResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetPaymentsWithTargetRequest', () {
+    final msg =
+        provenance_exchange_v1.QueryGetPaymentsWithTargetRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetPaymentsWithTargetResponse', () {
+    final msg =
+        provenance_exchange_v1.QueryGetPaymentsWithTargetResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetAllPaymentsRequest', () {
+    final msg = provenance_exchange_v1.QueryGetAllPaymentsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryGetAllPaymentsResponse', () {
+    final msg = provenance_exchange_v1.QueryGetAllPaymentsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryPaymentFeeCalcRequest', () {
+    final msg = provenance_exchange_v1.QueryPaymentFeeCalcRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.QueryPaymentFeeCalcResponse', () {
+    final msg = provenance_exchange_v1.QueryPaymentFeeCalcResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('provenance_exchange_v1.EventOrderCreated', () {
     final msg = provenance_exchange_v1.EventOrderCreated().toAny();
     final decoded = msg.toMessage();
@@ -6305,6 +7219,31 @@ main() {
   });
   test('provenance_exchange_v1.EventParamsUpdated', () {
     final msg = provenance_exchange_v1.EventParamsUpdated().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.EventPaymentCreated', () {
+    final msg = provenance_exchange_v1.EventPaymentCreated().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.EventPaymentUpdated', () {
+    final msg = provenance_exchange_v1.EventPaymentUpdated().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.EventPaymentAccepted', () {
+    final msg = provenance_exchange_v1.EventPaymentAccepted().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.EventPaymentRejected', () {
+    final msg = provenance_exchange_v1.EventPaymentRejected().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_exchange_v1.EventPaymentCancelled', () {
+    final msg = provenance_exchange_v1.EventPaymentCancelled().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -6489,6 +7428,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('provenance_attribute_v1.EventAttributeParamsUpdated', () {
+    final msg = provenance_attribute_v1.EventAttributeParamsUpdated().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('provenance_attribute_v1.GenesisState', () {
     final msg = provenance_attribute_v1.GenesisState().toAny();
     final decoded = msg.toMessage();
@@ -6555,6 +7499,16 @@ main() {
   });
   test('provenance_attribute_v1.MsgSetAccountDataResponse', () {
     final msg = provenance_attribute_v1.MsgSetAccountDataResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_attribute_v1.MsgUpdateParamsRequest', () {
+    final msg = provenance_attribute_v1.MsgUpdateParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_attribute_v1.MsgUpdateParamsResponse', () {
+    final msg = provenance_attribute_v1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -6826,175 +7780,13 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('provenance_reward_v1.RewardProgram', () {
-    final msg = provenance_reward_v1.RewardProgram().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.ClaimPeriodRewardDistribution', () {
-    final msg = provenance_reward_v1.ClaimPeriodRewardDistribution().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.RewardAccountState', () {
-    final msg = provenance_reward_v1.RewardAccountState().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QualifyingAction', () {
-    final msg = provenance_reward_v1.QualifyingAction().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QualifyingActions', () {
-    final msg = provenance_reward_v1.QualifyingActions().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.ActionDelegate', () {
-    final msg = provenance_reward_v1.ActionDelegate().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.ActionTransfer', () {
-    final msg = provenance_reward_v1.ActionTransfer().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.ActionVote', () {
-    final msg = provenance_reward_v1.ActionVote().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.ActionCounter', () {
-    final msg = provenance_reward_v1.ActionCounter().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.GenesisState', () {
-    final msg = provenance_reward_v1.GenesisState().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgCreateRewardProgramRequest', () {
-    final msg = provenance_reward_v1.MsgCreateRewardProgramRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgCreateRewardProgramResponse', () {
-    final msg = provenance_reward_v1.MsgCreateRewardProgramResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgEndRewardProgramRequest', () {
-    final msg = provenance_reward_v1.MsgEndRewardProgramRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgEndRewardProgramResponse', () {
-    final msg = provenance_reward_v1.MsgEndRewardProgramResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgClaimRewardsRequest', () {
-    final msg = provenance_reward_v1.MsgClaimRewardsRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgClaimRewardsResponse', () {
-    final msg = provenance_reward_v1.MsgClaimRewardsResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgClaimAllRewardsRequest', () {
-    final msg = provenance_reward_v1.MsgClaimAllRewardsRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.MsgClaimAllRewardsResponse', () {
-    final msg = provenance_reward_v1.MsgClaimAllRewardsResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.ClaimedRewardPeriodDetail', () {
-    final msg = provenance_reward_v1.ClaimedRewardPeriodDetail().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.RewardProgramClaimDetail', () {
-    final msg = provenance_reward_v1.RewardProgramClaimDetail().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryRewardProgramByIDRequest', () {
-    final msg = provenance_reward_v1.QueryRewardProgramByIDRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryRewardProgramByIDResponse', () {
-    final msg = provenance_reward_v1.QueryRewardProgramByIDResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryRewardProgramsRequest', () {
-    final msg = provenance_reward_v1.QueryRewardProgramsRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryRewardProgramsResponse', () {
-    final msg = provenance_reward_v1.QueryRewardProgramsResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryClaimPeriodRewardDistributionsRequest', () {
-    final msg =
-        provenance_reward_v1.QueryClaimPeriodRewardDistributionsRequest()
-            .toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryClaimPeriodRewardDistributionsResponse', () {
-    final msg =
-        provenance_reward_v1.QueryClaimPeriodRewardDistributionsResponse()
-            .toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryClaimPeriodRewardDistributionsByIDRequest',
-      () {
-    final msg =
-        provenance_reward_v1.QueryClaimPeriodRewardDistributionsByIDRequest()
-            .toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryClaimPeriodRewardDistributionsByIDResponse',
-      () {
-    final msg =
-        provenance_reward_v1.QueryClaimPeriodRewardDistributionsByIDResponse()
-            .toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryRewardDistributionsByAddressRequest', () {
-    final msg =
-        provenance_reward_v1.QueryRewardDistributionsByAddressRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.QueryRewardDistributionsByAddressResponse', () {
-    final msg = provenance_reward_v1.QueryRewardDistributionsByAddressResponse()
-        .toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('provenance_reward_v1.RewardAccountResponse', () {
-    final msg = provenance_reward_v1.RewardAccountResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('provenance_ibchooks_v1.Params', () {
     final msg = provenance_ibchooks_v1.Params().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibchooks_v1.EventIBCHooksParamsUpdated', () {
+    final msg = provenance_ibchooks_v1.EventIBCHooksParamsUpdated().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -7010,6 +7802,26 @@ main() {
   });
   test('provenance_ibchooks_v1.MsgEmitIBCAckResponse', () {
     final msg = provenance_ibchooks_v1.MsgEmitIBCAckResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibchooks_v1.MsgUpdateParamsRequest', () {
+    final msg = provenance_ibchooks_v1.MsgUpdateParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibchooks_v1.MsgUpdateParamsResponse', () {
+    final msg = provenance_ibchooks_v1.MsgUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibchooks_v1.QueryParamsRequest', () {
+    final msg = provenance_ibchooks_v1.QueryParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibchooks_v1.QueryParamsResponse', () {
+    final msg = provenance_ibchooks_v1.QueryParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -7045,6 +7857,16 @@ main() {
   });
   test('provenance_ibcratelimit_v1.MsgGovUpdateParamsResponse', () {
     final msg = provenance_ibcratelimit_v1.MsgGovUpdateParamsResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibcratelimit_v1.MsgUpdateParamsRequest', () {
+    final msg = provenance_ibcratelimit_v1.MsgUpdateParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_ibcratelimit_v1.MsgUpdateParamsResponse', () {
+    final msg = provenance_ibcratelimit_v1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -7185,6 +8007,11 @@ main() {
   });
   test('provenance_marker_v1.EventSetNetAssetValue', () {
     final msg = provenance_marker_v1.EventSetNetAssetValue().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.EventMarkerParamsUpdated', () {
+    final msg = provenance_marker_v1.EventMarkerParamsUpdated().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -7376,6 +8203,17 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('provenance_marker_v1.MsgSupplyDecreaseProposalRequest', () {
+    final msg = provenance_marker_v1.MsgSupplyDecreaseProposalRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgSupplyDecreaseProposalResponse', () {
+    final msg =
+        provenance_marker_v1.MsgSupplyDecreaseProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('provenance_marker_v1.MsgUpdateRequiredAttributesRequest', () {
     final msg =
         provenance_marker_v1.MsgUpdateRequiredAttributesRequest().toAny();
@@ -7425,6 +8263,73 @@ main() {
   });
   test('provenance_marker_v1.MsgAddNetAssetValuesResponse', () {
     final msg = provenance_marker_v1.MsgAddNetAssetValuesResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgSetAdministratorProposalRequest', () {
+    final msg =
+        provenance_marker_v1.MsgSetAdministratorProposalRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgSetAdministratorProposalResponse', () {
+    final msg =
+        provenance_marker_v1.MsgSetAdministratorProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgRemoveAdministratorProposalRequest', () {
+    final msg =
+        provenance_marker_v1.MsgRemoveAdministratorProposalRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgRemoveAdministratorProposalResponse', () {
+    final msg =
+        provenance_marker_v1.MsgRemoveAdministratorProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgChangeStatusProposalRequest', () {
+    final msg = provenance_marker_v1.MsgChangeStatusProposalRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgChangeStatusProposalResponse', () {
+    final msg = provenance_marker_v1.MsgChangeStatusProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgWithdrawEscrowProposalRequest', () {
+    final msg = provenance_marker_v1.MsgWithdrawEscrowProposalRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgWithdrawEscrowProposalResponse', () {
+    final msg =
+        provenance_marker_v1.MsgWithdrawEscrowProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgSetDenomMetadataProposalRequest', () {
+    final msg =
+        provenance_marker_v1.MsgSetDenomMetadataProposalRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgSetDenomMetadataProposalResponse', () {
+    final msg =
+        provenance_marker_v1.MsgSetDenomMetadataProposalResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgUpdateParamsRequest', () {
+    final msg = provenance_marker_v1.MsgUpdateParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_marker_v1.MsgUpdateParamsResponse', () {
+    final msg = provenance_marker_v1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -7563,6 +8468,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('provenance_name_v1.EventNameParamsUpdated', () {
+    final msg = provenance_name_v1.EventNameParamsUpdated().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('provenance_name_v1.GenesisState', () {
     final msg = provenance_name_v1.GenesisState().toAny();
     final decoded = msg.toMessage();
@@ -7605,6 +8515,16 @@ main() {
   });
   test('provenance_name_v1.MsgModifyNameResponse', () {
     final msg = provenance_name_v1.MsgModifyNameResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_name_v1.MsgUpdateParamsRequest', () {
+    final msg = provenance_name_v1.MsgUpdateParamsRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('provenance_name_v1.MsgUpdateParamsResponse', () {
+    final msg = provenance_name_v1.MsgUpdateParamsResponse().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -8601,6 +9521,36 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('tendermint_blocksync.BlockRequest', () {
+    final msg = tendermint_blocksync.BlockRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_blocksync.NoBlockResponse', () {
+    final msg = tendermint_blocksync.NoBlockResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_blocksync.BlockResponse', () {
+    final msg = tendermint_blocksync.BlockResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_blocksync.StatusRequest', () {
+    final msg = tendermint_blocksync.StatusRequest().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_blocksync.StatusResponse', () {
+    final msg = tendermint_blocksync.StatusResponse().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_blocksync.Message', () {
+    final msg = tendermint_blocksync.Message().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('tendermint_statesync.Message', () {
     final msg = tendermint_statesync.Message().toAny();
     final decoded = msg.toMessage();
@@ -8751,11 +9701,6 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.RequestSetOption', () {
-    final msg = tendermint_abci.RequestSetOption().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('tendermint_abci.RequestInitChain', () {
     final msg = tendermint_abci.RequestInitChain().toAny();
     final decoded = msg.toMessage();
@@ -8766,23 +9711,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.RequestBeginBlock', () {
-    final msg = tendermint_abci.RequestBeginBlock().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('tendermint_abci.RequestCheckTx', () {
     final msg = tendermint_abci.RequestCheckTx().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_abci.RequestDeliverTx', () {
-    final msg = tendermint_abci.RequestDeliverTx().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_abci.RequestEndBlock', () {
-    final msg = tendermint_abci.RequestEndBlock().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -8811,6 +9741,31 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('tendermint_abci.RequestPrepareProposal', () {
+    final msg = tendermint_abci.RequestPrepareProposal().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.RequestProcessProposal', () {
+    final msg = tendermint_abci.RequestProcessProposal().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.RequestExtendVote', () {
+    final msg = tendermint_abci.RequestExtendVote().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.RequestVerifyVoteExtension', () {
+    final msg = tendermint_abci.RequestVerifyVoteExtension().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.RequestFinalizeBlock', () {
+    final msg = tendermint_abci.RequestFinalizeBlock().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('tendermint_abci.Response', () {
     final msg = tendermint_abci.Response().toAny();
     final decoded = msg.toMessage();
@@ -8836,11 +9791,6 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.ResponseSetOption', () {
-    final msg = tendermint_abci.ResponseSetOption().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('tendermint_abci.ResponseInitChain', () {
     final msg = tendermint_abci.ResponseInitChain().toAny();
     final decoded = msg.toMessage();
@@ -8851,23 +9801,8 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.ResponseBeginBlock', () {
-    final msg = tendermint_abci.ResponseBeginBlock().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
   test('tendermint_abci.ResponseCheckTx', () {
     final msg = tendermint_abci.ResponseCheckTx().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_abci.ResponseDeliverTx', () {
-    final msg = tendermint_abci.ResponseDeliverTx().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_abci.ResponseEndBlock', () {
-    final msg = tendermint_abci.ResponseEndBlock().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -8896,18 +9831,38 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.ConsensusParams', () {
-    final msg = tendermint_abci.ConsensusParams().toAny();
+  test('tendermint_abci.ResponsePrepareProposal', () {
+    final msg = tendermint_abci.ResponsePrepareProposal().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.BlockParams', () {
-    final msg = tendermint_abci.BlockParams().toAny();
+  test('tendermint_abci.ResponseProcessProposal', () {
+    final msg = tendermint_abci.ResponseProcessProposal().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.LastCommitInfo', () {
-    final msg = tendermint_abci.LastCommitInfo().toAny();
+  test('tendermint_abci.ResponseExtendVote', () {
+    final msg = tendermint_abci.ResponseExtendVote().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.ResponseVerifyVoteExtension', () {
+    final msg = tendermint_abci.ResponseVerifyVoteExtension().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.ResponseFinalizeBlock', () {
+    final msg = tendermint_abci.ResponseFinalizeBlock().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.CommitInfo', () {
+    final msg = tendermint_abci.CommitInfo().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.ExtendedCommitInfo', () {
+    final msg = tendermint_abci.ExtendedCommitInfo().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -8918,6 +9873,11 @@ main() {
   });
   test('tendermint_abci.EventAttribute', () {
     final msg = tendermint_abci.EventAttribute().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.ExecTxResult', () {
+    final msg = tendermint_abci.ExecTxResult().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -8941,8 +9901,13 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_abci.Evidence', () {
-    final msg = tendermint_abci.Evidence().toAny();
+  test('tendermint_abci.ExtendedVoteInfo', () {
+    final msg = tendermint_abci.ExtendedVoteInfo().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_abci.Misbehavior', () {
+    final msg = tendermint_abci.Misbehavior().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -9016,6 +9981,11 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
+  test('tendermint_types.ABCIParams', () {
+    final msg = tendermint_types.ABCIParams().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
   test('tendermint_types.PartSetHeader', () {
     final msg = tendermint_types.PartSetHeader().toAny();
     final decoded = msg.toMessage();
@@ -9053,6 +10023,16 @@ main() {
   });
   test('tendermint_types.CommitSig', () {
     final msg = tendermint_types.CommitSig().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_types.ExtendedCommit', () {
+    final msg = tendermint_types.ExtendedCommit().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_types.ExtendedCommitSig', () {
+    final msg = tendermint_types.ExtendedCommitSig().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -9103,6 +10083,11 @@ main() {
   });
   test('tendermint_types.CanonicalVote', () {
     final msg = tendermint_types.CanonicalVote().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_types.CanonicalVoteExtension', () {
+    final msg = tendermint_types.CanonicalVoteExtension().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -9161,8 +10146,18 @@ main() {
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
-  test('tendermint_state.ABCIResponses', () {
-    final msg = tendermint_state.ABCIResponses().toAny();
+  test('tendermint_state.LegacyABCIResponses', () {
+    final msg = tendermint_state.LegacyABCIResponses().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_state.ResponseBeginBlock', () {
+    final msg = tendermint_state.ResponseBeginBlock().toAny();
+    final decoded = msg.toMessage();
+    expect(decoded, isNotNull);
+  });
+  test('tendermint_state.ResponseEndBlock', () {
+    final msg = tendermint_state.ResponseEndBlock().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });
@@ -9193,36 +10188,6 @@ main() {
   });
   test('tendermint_libs_bits.BitArray', () {
     final msg = tendermint_libs_bits.BitArray().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_blockchain.BlockRequest', () {
-    final msg = tendermint_blockchain.BlockRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_blockchain.NoBlockResponse', () {
-    final msg = tendermint_blockchain.NoBlockResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_blockchain.BlockResponse', () {
-    final msg = tendermint_blockchain.BlockResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_blockchain.StatusRequest', () {
-    final msg = tendermint_blockchain.StatusRequest().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_blockchain.StatusResponse', () {
-    final msg = tendermint_blockchain.StatusResponse().toAny();
-    final decoded = msg.toMessage();
-    expect(decoded, isNotNull);
-  });
-  test('tendermint_blockchain.Message', () {
-    final msg = tendermint_blockchain.Message().toAny();
     final decoded = msg.toMessage();
     expect(decoded, isNotNull);
   });

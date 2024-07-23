@@ -14,14 +14,14 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../base/query/v1beta1/pagination.pb.dart' as $1;
-import 'staking.pb.dart' as $2;
+import '../../base/query/v1beta1/pagination.pb.dart' as $2;
+import 'staking.pb.dart' as $3;
 
 /// QueryValidatorsRequest is request type for Query/Validators RPC method.
 class QueryValidatorsRequest extends $pb.GeneratedMessage {
   factory QueryValidatorsRequest({
     $core.String? status,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (status != null) {
@@ -46,8 +46,8 @@ class QueryValidatorsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'status')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -90,9 +90,9 @@ class QueryValidatorsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(2)
-  $1.PageRequest get pagination => $_getN(1);
+  $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(2, v);
   }
 
@@ -101,14 +101,14 @@ class QueryValidatorsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePagination() => $_ensure(1);
+  $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
 /// QueryValidatorsResponse is response type for the Query/Validators RPC method
 class QueryValidatorsResponse extends $pb.GeneratedMessage {
   factory QueryValidatorsResponse({
-    $core.Iterable<$2.Validator>? validators,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.Validator>? validators,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (validators != null) {
@@ -132,11 +132,11 @@ class QueryValidatorsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.Validator>(
+    ..pc<$3.Validator>(
         1, _omitFieldNames ? '' : 'validators', $pb.PbFieldType.PM,
-        subBuilder: $2.Validator.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.Validator.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -166,13 +166,13 @@ class QueryValidatorsResponse extends $pb.GeneratedMessage {
 
   /// validators contains all the queried validators.
   @$pb.TagNumber(1)
-  $core.List<$2.Validator> get validators => $_getList(0);
+  $core.List<$3.Validator> get validators => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -181,7 +181,7 @@ class QueryValidatorsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryValidatorRequest is response type for the Query/Validator RPC method
@@ -253,7 +253,7 @@ class QueryValidatorRequest extends $pb.GeneratedMessage {
 /// QueryValidatorResponse is response type for the Query/Validator RPC method
 class QueryValidatorResponse extends $pb.GeneratedMessage {
   factory QueryValidatorResponse({
-    $2.Validator? validator,
+    $3.Validator? validator,
   }) {
     final $result = create();
     if (validator != null) {
@@ -274,8 +274,8 @@ class QueryValidatorResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.Validator>(1, _omitFieldNames ? '' : 'validator',
-        subBuilder: $2.Validator.create)
+    ..aOM<$3.Validator>(1, _omitFieldNames ? '' : 'validator',
+        subBuilder: $3.Validator.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -305,9 +305,9 @@ class QueryValidatorResponse extends $pb.GeneratedMessage {
 
   /// validator defines the validator info.
   @$pb.TagNumber(1)
-  $2.Validator get validator => $_getN(0);
+  $3.Validator get validator => $_getN(0);
   @$pb.TagNumber(1)
-  set validator($2.Validator v) {
+  set validator($3.Validator v) {
     setField(1, v);
   }
 
@@ -316,7 +316,7 @@ class QueryValidatorResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearValidator() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Validator ensureValidator() => $_ensure(0);
+  $3.Validator ensureValidator() => $_ensure(0);
 }
 
 /// QueryValidatorDelegationsRequest is request type for the
@@ -324,7 +324,7 @@ class QueryValidatorResponse extends $pb.GeneratedMessage {
 class QueryValidatorDelegationsRequest extends $pb.GeneratedMessage {
   factory QueryValidatorDelegationsRequest({
     $core.String? validatorAddr,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (validatorAddr != null) {
@@ -349,8 +349,8 @@ class QueryValidatorDelegationsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'validatorAddr')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -396,9 +396,9 @@ class QueryValidatorDelegationsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(2)
-  $1.PageRequest get pagination => $_getN(1);
+  $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(2, v);
   }
 
@@ -407,15 +407,15 @@ class QueryValidatorDelegationsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePagination() => $_ensure(1);
+  $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
 /// QueryValidatorDelegationsResponse is response type for the
 /// Query/ValidatorDelegations RPC method
 class QueryValidatorDelegationsResponse extends $pb.GeneratedMessage {
   factory QueryValidatorDelegationsResponse({
-    $core.Iterable<$2.DelegationResponse>? delegationResponses,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.DelegationResponse>? delegationResponses,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (delegationResponses != null) {
@@ -439,11 +439,11 @@ class QueryValidatorDelegationsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.DelegationResponse>(
+    ..pc<$3.DelegationResponse>(
         1, _omitFieldNames ? '' : 'delegationResponses', $pb.PbFieldType.PM,
-        subBuilder: $2.DelegationResponse.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.DelegationResponse.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -475,13 +475,13 @@ class QueryValidatorDelegationsResponse extends $pb.GeneratedMessage {
   static QueryValidatorDelegationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$2.DelegationResponse> get delegationResponses => $_getList(0);
+  $core.List<$3.DelegationResponse> get delegationResponses => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -490,7 +490,7 @@ class QueryValidatorDelegationsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryValidatorUnbondingDelegationsRequest is required type for the
@@ -498,7 +498,7 @@ class QueryValidatorDelegationsResponse extends $pb.GeneratedMessage {
 class QueryValidatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
   factory QueryValidatorUnbondingDelegationsRequest({
     $core.String? validatorAddr,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (validatorAddr != null) {
@@ -524,8 +524,8 @@ class QueryValidatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'validatorAddr')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -572,9 +572,9 @@ class QueryValidatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(2)
-  $1.PageRequest get pagination => $_getN(1);
+  $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(2, v);
   }
 
@@ -583,15 +583,15 @@ class QueryValidatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePagination() => $_ensure(1);
+  $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
 /// QueryValidatorUnbondingDelegationsResponse is response type for the
 /// Query/ValidatorUnbondingDelegations RPC method.
 class QueryValidatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
   factory QueryValidatorUnbondingDelegationsResponse({
-    $core.Iterable<$2.UnbondingDelegation>? unbondingResponses,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.UnbondingDelegation>? unbondingResponses,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (unbondingResponses != null) {
@@ -616,11 +616,11 @@ class QueryValidatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.UnbondingDelegation>(
+    ..pc<$3.UnbondingDelegation>(
         1, _omitFieldNames ? '' : 'unbondingResponses', $pb.PbFieldType.PM,
-        subBuilder: $2.UnbondingDelegation.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.UnbondingDelegation.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -653,13 +653,13 @@ class QueryValidatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
   static QueryValidatorUnbondingDelegationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$2.UnbondingDelegation> get unbondingResponses => $_getList(0);
+  $core.List<$3.UnbondingDelegation> get unbondingResponses => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -668,7 +668,7 @@ class QueryValidatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegationRequest is request type for the Query/Delegation RPC method.
@@ -758,7 +758,7 @@ class QueryDelegationRequest extends $pb.GeneratedMessage {
 /// QueryDelegationResponse is response type for the Query/Delegation RPC method.
 class QueryDelegationResponse extends $pb.GeneratedMessage {
   factory QueryDelegationResponse({
-    $2.DelegationResponse? delegationResponse,
+    $3.DelegationResponse? delegationResponse,
   }) {
     final $result = create();
     if (delegationResponse != null) {
@@ -779,8 +779,8 @@ class QueryDelegationResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.DelegationResponse>(1, _omitFieldNames ? '' : 'delegationResponse',
-        subBuilder: $2.DelegationResponse.create)
+    ..aOM<$3.DelegationResponse>(1, _omitFieldNames ? '' : 'delegationResponse',
+        subBuilder: $3.DelegationResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -810,9 +810,9 @@ class QueryDelegationResponse extends $pb.GeneratedMessage {
 
   /// delegation_responses defines the delegation info of a delegation.
   @$pb.TagNumber(1)
-  $2.DelegationResponse get delegationResponse => $_getN(0);
+  $3.DelegationResponse get delegationResponse => $_getN(0);
   @$pb.TagNumber(1)
-  set delegationResponse($2.DelegationResponse v) {
+  set delegationResponse($3.DelegationResponse v) {
     setField(1, v);
   }
 
@@ -821,7 +821,7 @@ class QueryDelegationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDelegationResponse() => clearField(1);
   @$pb.TagNumber(1)
-  $2.DelegationResponse ensureDelegationResponse() => $_ensure(0);
+  $3.DelegationResponse ensureDelegationResponse() => $_ensure(0);
 }
 
 /// QueryUnbondingDelegationRequest is request type for the
@@ -916,7 +916,7 @@ class QueryUnbondingDelegationRequest extends $pb.GeneratedMessage {
 /// RPC method.
 class QueryUnbondingDelegationResponse extends $pb.GeneratedMessage {
   factory QueryUnbondingDelegationResponse({
-    $2.UnbondingDelegation? unbond,
+    $3.UnbondingDelegation? unbond,
   }) {
     final $result = create();
     if (unbond != null) {
@@ -937,8 +937,8 @@ class QueryUnbondingDelegationResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.UnbondingDelegation>(1, _omitFieldNames ? '' : 'unbond',
-        subBuilder: $2.UnbondingDelegation.create)
+    ..aOM<$3.UnbondingDelegation>(1, _omitFieldNames ? '' : 'unbond',
+        subBuilder: $3.UnbondingDelegation.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -971,9 +971,9 @@ class QueryUnbondingDelegationResponse extends $pb.GeneratedMessage {
 
   /// unbond defines the unbonding information of a delegation.
   @$pb.TagNumber(1)
-  $2.UnbondingDelegation get unbond => $_getN(0);
+  $3.UnbondingDelegation get unbond => $_getN(0);
   @$pb.TagNumber(1)
-  set unbond($2.UnbondingDelegation v) {
+  set unbond($3.UnbondingDelegation v) {
     setField(1, v);
   }
 
@@ -982,7 +982,7 @@ class QueryUnbondingDelegationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearUnbond() => clearField(1);
   @$pb.TagNumber(1)
-  $2.UnbondingDelegation ensureUnbond() => $_ensure(0);
+  $3.UnbondingDelegation ensureUnbond() => $_ensure(0);
 }
 
 /// QueryDelegatorDelegationsRequest is request type for the
@@ -990,7 +990,7 @@ class QueryUnbondingDelegationResponse extends $pb.GeneratedMessage {
 class QueryDelegatorDelegationsRequest extends $pb.GeneratedMessage {
   factory QueryDelegatorDelegationsRequest({
     $core.String? delegatorAddr,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (delegatorAddr != null) {
@@ -1015,8 +1015,8 @@ class QueryDelegatorDelegationsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'delegatorAddr')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1062,9 +1062,9 @@ class QueryDelegatorDelegationsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(2)
-  $1.PageRequest get pagination => $_getN(1);
+  $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(2, v);
   }
 
@@ -1073,15 +1073,15 @@ class QueryDelegatorDelegationsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePagination() => $_ensure(1);
+  $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegatorDelegationsResponse is response type for the
 /// Query/DelegatorDelegations RPC method.
 class QueryDelegatorDelegationsResponse extends $pb.GeneratedMessage {
   factory QueryDelegatorDelegationsResponse({
-    $core.Iterable<$2.DelegationResponse>? delegationResponses,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.DelegationResponse>? delegationResponses,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (delegationResponses != null) {
@@ -1105,11 +1105,11 @@ class QueryDelegatorDelegationsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.DelegationResponse>(
+    ..pc<$3.DelegationResponse>(
         1, _omitFieldNames ? '' : 'delegationResponses', $pb.PbFieldType.PM,
-        subBuilder: $2.DelegationResponse.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.DelegationResponse.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1142,13 +1142,13 @@ class QueryDelegatorDelegationsResponse extends $pb.GeneratedMessage {
 
   /// delegation_responses defines all the delegations' info of a delegator.
   @$pb.TagNumber(1)
-  $core.List<$2.DelegationResponse> get delegationResponses => $_getList(0);
+  $core.List<$3.DelegationResponse> get delegationResponses => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -1157,7 +1157,7 @@ class QueryDelegatorDelegationsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegatorUnbondingDelegationsRequest is request type for the
@@ -1165,7 +1165,7 @@ class QueryDelegatorDelegationsResponse extends $pb.GeneratedMessage {
 class QueryDelegatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
   factory QueryDelegatorUnbondingDelegationsRequest({
     $core.String? delegatorAddr,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (delegatorAddr != null) {
@@ -1191,8 +1191,8 @@ class QueryDelegatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'delegatorAddr')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1239,9 +1239,9 @@ class QueryDelegatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(2)
-  $1.PageRequest get pagination => $_getN(1);
+  $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(2, v);
   }
 
@@ -1250,15 +1250,15 @@ class QueryDelegatorUnbondingDelegationsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePagination() => $_ensure(1);
+  $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
 /// QueryUnbondingDelegatorDelegationsResponse is response type for the
 /// Query/UnbondingDelegatorDelegations RPC method.
 class QueryDelegatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
   factory QueryDelegatorUnbondingDelegationsResponse({
-    $core.Iterable<$2.UnbondingDelegation>? unbondingResponses,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.UnbondingDelegation>? unbondingResponses,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (unbondingResponses != null) {
@@ -1283,11 +1283,11 @@ class QueryDelegatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.UnbondingDelegation>(
+    ..pc<$3.UnbondingDelegation>(
         1, _omitFieldNames ? '' : 'unbondingResponses', $pb.PbFieldType.PM,
-        subBuilder: $2.UnbondingDelegation.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.UnbondingDelegation.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1320,13 +1320,13 @@ class QueryDelegatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
   static QueryDelegatorUnbondingDelegationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$2.UnbondingDelegation> get unbondingResponses => $_getList(0);
+  $core.List<$3.UnbondingDelegation> get unbondingResponses => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -1335,7 +1335,7 @@ class QueryDelegatorUnbondingDelegationsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryRedelegationsRequest is request type for the Query/Redelegations RPC
@@ -1345,7 +1345,7 @@ class QueryRedelegationsRequest extends $pb.GeneratedMessage {
     $core.String? delegatorAddr,
     $core.String? srcValidatorAddr,
     $core.String? dstValidatorAddr,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (delegatorAddr != null) {
@@ -1378,8 +1378,8 @@ class QueryRedelegationsRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'delegatorAddr')
     ..aOS(2, _omitFieldNames ? '' : 'srcValidatorAddr')
     ..aOS(3, _omitFieldNames ? '' : 'dstValidatorAddr')
-    ..aOM<$1.PageRequest>(4, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(4, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1448,9 +1448,9 @@ class QueryRedelegationsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(4)
-  $1.PageRequest get pagination => $_getN(3);
+  $2.PageRequest get pagination => $_getN(3);
   @$pb.TagNumber(4)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(4, v);
   }
 
@@ -1459,15 +1459,15 @@ class QueryRedelegationsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearPagination() => clearField(4);
   @$pb.TagNumber(4)
-  $1.PageRequest ensurePagination() => $_ensure(3);
+  $2.PageRequest ensurePagination() => $_ensure(3);
 }
 
 /// QueryRedelegationsResponse is response type for the Query/Redelegations RPC
 /// method.
 class QueryRedelegationsResponse extends $pb.GeneratedMessage {
   factory QueryRedelegationsResponse({
-    $core.Iterable<$2.RedelegationResponse>? redelegationResponses,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.RedelegationResponse>? redelegationResponses,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (redelegationResponses != null) {
@@ -1491,11 +1491,11 @@ class QueryRedelegationsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.RedelegationResponse>(
+    ..pc<$3.RedelegationResponse>(
         1, _omitFieldNames ? '' : 'redelegationResponses', $pb.PbFieldType.PM,
-        subBuilder: $2.RedelegationResponse.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.RedelegationResponse.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1525,13 +1525,13 @@ class QueryRedelegationsResponse extends $pb.GeneratedMessage {
   static QueryRedelegationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$2.RedelegationResponse> get redelegationResponses => $_getList(0);
+  $core.List<$3.RedelegationResponse> get redelegationResponses => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -1540,7 +1540,7 @@ class QueryRedelegationsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegatorValidatorsRequest is request type for the
@@ -1548,7 +1548,7 @@ class QueryRedelegationsResponse extends $pb.GeneratedMessage {
 class QueryDelegatorValidatorsRequest extends $pb.GeneratedMessage {
   factory QueryDelegatorValidatorsRequest({
     $core.String? delegatorAddr,
-    $1.PageRequest? pagination,
+    $2.PageRequest? pagination,
   }) {
     final $result = create();
     if (delegatorAddr != null) {
@@ -1573,8 +1573,8 @@ class QueryDelegatorValidatorsRequest extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'delegatorAddr')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1620,9 +1620,9 @@ class QueryDelegatorValidatorsRequest extends $pb.GeneratedMessage {
 
   /// pagination defines an optional pagination for the request.
   @$pb.TagNumber(2)
-  $1.PageRequest get pagination => $_getN(1);
+  $2.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageRequest v) {
+  set pagination($2.PageRequest v) {
     setField(2, v);
   }
 
@@ -1631,15 +1631,15 @@ class QueryDelegatorValidatorsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePagination() => $_ensure(1);
+  $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegatorValidatorsResponse is response type for the
 /// Query/DelegatorValidators RPC method.
 class QueryDelegatorValidatorsResponse extends $pb.GeneratedMessage {
   factory QueryDelegatorValidatorsResponse({
-    $core.Iterable<$2.Validator>? validators,
-    $1.PageResponse? pagination,
+    $core.Iterable<$3.Validator>? validators,
+    $2.PageResponse? pagination,
   }) {
     final $result = create();
     if (validators != null) {
@@ -1663,11 +1663,11 @@ class QueryDelegatorValidatorsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..pc<$2.Validator>(
+    ..pc<$3.Validator>(
         1, _omitFieldNames ? '' : 'validators', $pb.PbFieldType.PM,
-        subBuilder: $2.Validator.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
-        subBuilder: $1.PageResponse.create)
+        subBuilder: $3.Validator.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'pagination',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1700,13 +1700,13 @@ class QueryDelegatorValidatorsResponse extends $pb.GeneratedMessage {
 
   /// validators defines the validators' info of a delegator.
   @$pb.TagNumber(1)
-  $core.List<$2.Validator> get validators => $_getList(0);
+  $core.List<$3.Validator> get validators => $_getList(0);
 
   /// pagination defines the pagination in the response.
   @$pb.TagNumber(2)
-  $1.PageResponse get pagination => $_getN(1);
+  $2.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($1.PageResponse v) {
+  set pagination($2.PageResponse v) {
     setField(2, v);
   }
 
@@ -1715,7 +1715,7 @@ class QueryDelegatorValidatorsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePagination() => $_ensure(1);
+  $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
 /// QueryDelegatorValidatorRequest is request type for the
@@ -1809,7 +1809,7 @@ class QueryDelegatorValidatorRequest extends $pb.GeneratedMessage {
 /// Query/DelegatorValidator RPC method.
 class QueryDelegatorValidatorResponse extends $pb.GeneratedMessage {
   factory QueryDelegatorValidatorResponse({
-    $2.Validator? validator,
+    $3.Validator? validator,
   }) {
     final $result = create();
     if (validator != null) {
@@ -1830,8 +1830,8 @@ class QueryDelegatorValidatorResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.Validator>(1, _omitFieldNames ? '' : 'validator',
-        subBuilder: $2.Validator.create)
+    ..aOM<$3.Validator>(1, _omitFieldNames ? '' : 'validator',
+        subBuilder: $3.Validator.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -1864,9 +1864,9 @@ class QueryDelegatorValidatorResponse extends $pb.GeneratedMessage {
 
   /// validator defines the validator info.
   @$pb.TagNumber(1)
-  $2.Validator get validator => $_getN(0);
+  $3.Validator get validator => $_getN(0);
   @$pb.TagNumber(1)
-  set validator($2.Validator v) {
+  set validator($3.Validator v) {
     setField(1, v);
   }
 
@@ -1875,7 +1875,7 @@ class QueryDelegatorValidatorResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearValidator() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Validator ensureValidator() => $_ensure(0);
+  $3.Validator ensureValidator() => $_ensure(0);
 }
 
 /// QueryHistoricalInfoRequest is request type for the Query/HistoricalInfo RPC
@@ -1950,7 +1950,7 @@ class QueryHistoricalInfoRequest extends $pb.GeneratedMessage {
 /// method.
 class QueryHistoricalInfoResponse extends $pb.GeneratedMessage {
   factory QueryHistoricalInfoResponse({
-    $2.HistoricalInfo? hist,
+    $3.HistoricalInfo? hist,
   }) {
     final $result = create();
     if (hist != null) {
@@ -1971,8 +1971,8 @@ class QueryHistoricalInfoResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.HistoricalInfo>(1, _omitFieldNames ? '' : 'hist',
-        subBuilder: $2.HistoricalInfo.create)
+    ..aOM<$3.HistoricalInfo>(1, _omitFieldNames ? '' : 'hist',
+        subBuilder: $3.HistoricalInfo.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -2004,9 +2004,9 @@ class QueryHistoricalInfoResponse extends $pb.GeneratedMessage {
 
   /// hist defines the historical info at the given height.
   @$pb.TagNumber(1)
-  $2.HistoricalInfo get hist => $_getN(0);
+  $3.HistoricalInfo get hist => $_getN(0);
   @$pb.TagNumber(1)
-  set hist($2.HistoricalInfo v) {
+  set hist($3.HistoricalInfo v) {
     setField(1, v);
   }
 
@@ -2015,7 +2015,7 @@ class QueryHistoricalInfoResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearHist() => clearField(1);
   @$pb.TagNumber(1)
-  $2.HistoricalInfo ensureHist() => $_ensure(0);
+  $3.HistoricalInfo ensureHist() => $_ensure(0);
 }
 
 /// QueryPoolRequest is request type for the Query/Pool RPC method.
@@ -2063,7 +2063,7 @@ class QueryPoolRequest extends $pb.GeneratedMessage {
 /// QueryPoolResponse is response type for the Query/Pool RPC method.
 class QueryPoolResponse extends $pb.GeneratedMessage {
   factory QueryPoolResponse({
-    $2.Pool? pool,
+    $3.Pool? pool,
   }) {
     final $result = create();
     if (pool != null) {
@@ -2084,7 +2084,7 @@ class QueryPoolResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.Pool>(1, _omitFieldNames ? '' : 'pool', subBuilder: $2.Pool.create)
+    ..aOM<$3.Pool>(1, _omitFieldNames ? '' : 'pool', subBuilder: $3.Pool.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -2112,9 +2112,9 @@ class QueryPoolResponse extends $pb.GeneratedMessage {
 
   /// pool defines the pool info.
   @$pb.TagNumber(1)
-  $2.Pool get pool => $_getN(0);
+  $3.Pool get pool => $_getN(0);
   @$pb.TagNumber(1)
-  set pool($2.Pool v) {
+  set pool($3.Pool v) {
     setField(1, v);
   }
 
@@ -2123,7 +2123,7 @@ class QueryPoolResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPool() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Pool ensurePool() => $_ensure(0);
+  $3.Pool ensurePool() => $_ensure(0);
 }
 
 /// QueryParamsRequest is request type for the Query/Params RPC method.
@@ -2171,7 +2171,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
 /// QueryParamsResponse is response type for the Query/Params RPC method.
 class QueryParamsResponse extends $pb.GeneratedMessage {
   factory QueryParamsResponse({
-    $2.Params? params,
+    $3.Params? params,
   }) {
     final $result = create();
     if (params != null) {
@@ -2192,8 +2192,8 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'cosmos.staking.v1beta1'),
       createEmptyInstance: create)
-    ..aOM<$2.Params>(1, _omitFieldNames ? '' : 'params',
-        subBuilder: $2.Params.create)
+    ..aOM<$3.Params>(1, _omitFieldNames ? '' : 'params',
+        subBuilder: $3.Params.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -2221,9 +2221,9 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
 
   /// params holds all the parameters of this module.
   @$pb.TagNumber(1)
-  $2.Params get params => $_getN(0);
+  $3.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($2.Params v) {
+  set params($3.Params v) {
     setField(1, v);
   }
 
@@ -2232,7 +2232,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Params ensureParams() => $_ensure(0);
+  $3.Params ensureParams() => $_ensure(0);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

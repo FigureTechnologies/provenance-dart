@@ -54,7 +54,7 @@ const NameRecord$json = {
   '1': 'NameRecord',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'address', '3': 2, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'address', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'address'},
     {'1': 'restricted', '3': 3, '4': 1, '5': 8, '10': 'restricted'},
   ],
   '7': {},
@@ -62,8 +62,9 @@ const NameRecord$json = {
 
 /// Descriptor for `NameRecord`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List nameRecordDescriptor = $convert.base64Decode(
-    'CgpOYW1lUmVjb3JkEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHYWRkcmVzcxgCIAEoCVIHYWRkcm'
-    'VzcxIeCgpyZXN0cmljdGVkGAMgASgIUgpyZXN0cmljdGVkOgSYoB8A');
+    'CgpOYW1lUmVjb3JkEhIKBG5hbWUYASABKAlSBG5hbWUSMgoHYWRkcmVzcxgCIAEoCUIY0rQtFG'
+    'Nvc21vcy5BZGRyZXNzU3RyaW5nUgdhZGRyZXNzEh4KCnJlc3RyaWN0ZWQYAyABKAhSCnJlc3Ry'
+    'aWN0ZWQ6EJigHwCC57AqB2FkZHJlc3M=');
 
 @$core.Deprecated('Use createRootNameProposalDescriptor instead')
 const CreateRootNameProposal$json = {
@@ -75,15 +76,15 @@ const CreateRootNameProposal$json = {
     {'1': 'owner', '3': 4, '4': 1, '5': 9, '10': 'owner'},
     {'1': 'restricted', '3': 5, '4': 1, '5': 8, '10': 'restricted'},
   ],
-  '7': {},
+  '7': {'3': true},
 };
 
 /// Descriptor for `CreateRootNameProposal`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createRootNameProposalDescriptor = $convert.base64Decode(
     'ChZDcmVhdGVSb290TmFtZVByb3Bvc2FsEhQKBXRpdGxlGAEgASgJUgV0aXRsZRIgCgtkZXNjcm'
     'lwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24SEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVvd25lchgE'
-    'IAEoCVIFb3duZXISHgoKcmVzdHJpY3RlZBgFIAEoCFIKcmVzdHJpY3RlZDoMiKAfAJigHwDooB'
-    '8A');
+    'IAEoCVIFb3duZXISHgoKcmVzdHJpY3RlZBgFIAEoCFIKcmVzdHJpY3RlZDoOGAGIoB8AmKAfAO'
+    'igHwA=');
 
 @$core.Deprecated('Use eventNameBoundDescriptor instead')
 const EventNameBound$json = {
@@ -129,3 +130,39 @@ const EventNameUpdate$json = {
 final $typed_data.Uint8List eventNameUpdateDescriptor = $convert.base64Decode(
     'Cg9FdmVudE5hbWVVcGRhdGUSGAoHYWRkcmVzcxgBIAEoCVIHYWRkcmVzcxISCgRuYW1lGAIgAS'
     'gJUgRuYW1lEh4KCnJlc3RyaWN0ZWQYAyABKAhSCnJlc3RyaWN0ZWQ=');
+
+@$core.Deprecated('Use eventNameParamsUpdatedDescriptor instead')
+const EventNameParamsUpdated$json = {
+  '1': 'EventNameParamsUpdated',
+  '2': [
+    {
+      '1': 'allow_unrestricted_names',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'allowUnrestrictedNames'
+    },
+    {'1': 'max_name_levels', '3': 2, '4': 1, '5': 9, '10': 'maxNameLevels'},
+    {
+      '1': 'min_segment_length',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'minSegmentLength'
+    },
+    {
+      '1': 'max_segment_length',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'maxSegmentLength'
+    },
+  ],
+};
+
+/// Descriptor for `EventNameParamsUpdated`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventNameParamsUpdatedDescriptor = $convert.base64Decode(
+    'ChZFdmVudE5hbWVQYXJhbXNVcGRhdGVkEjgKGGFsbG93X3VucmVzdHJpY3RlZF9uYW1lcxgBIA'
+    'EoCVIWYWxsb3dVbnJlc3RyaWN0ZWROYW1lcxImCg9tYXhfbmFtZV9sZXZlbHMYAiABKAlSDW1h'
+    'eE5hbWVMZXZlbHMSLAoSbWluX3NlZ21lbnRfbGVuZ3RoGAMgASgJUhBtaW5TZWdtZW50TGVuZ3'
+    'RoEiwKEm1heF9zZWdtZW50X2xlbmd0aBgEIAEoCVIQbWF4U2VnbWVudExlbmd0aA==');

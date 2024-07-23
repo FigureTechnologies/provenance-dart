@@ -17,7 +17,7 @@ import 'dart:typed_data' as $typed_data;
 const GenesisState$json = {
   '1': 'GenesisState',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
     {
       '1': 'denom_traces',
       '3': 2,
@@ -36,13 +36,23 @@ const GenesisState$json = {
       '8': {},
       '10': 'params'
     },
+    {
+      '1': 'total_escrowed',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.v1beta1.Coin',
+      '8': {},
+      '10': 'totalEscrowed'
+    },
   ],
 };
 
 /// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode(
-    'CgxHZW5lc2lzU3RhdGUSKwoHcG9ydF9pZBgBIAEoCUIS8t4fDnlhbWw6InBvcnRfaWQiUgZwb3'
-    'J0SWQScgoMZGVub21fdHJhY2VzGAIgAygLMiguaWJjLmFwcGxpY2F0aW9ucy50cmFuc2Zlci52'
-    'MS5EZW5vbVRyYWNlQiXI3h8A8t4fE3lhbWw6ImRlbm9tX3RyYWNlcyKq3x8GVHJhY2VzUgtkZW'
-    '5vbVRyYWNlcxJCCgZwYXJhbXMYAyABKAsyJC5pYmMuYXBwbGljYXRpb25zLnRyYW5zZmVyLnYx'
-    'LlBhcmFtc0IEyN4fAFIGcGFyYW1z');
+    'CgxHZW5lc2lzU3RhdGUSFwoHcG9ydF9pZBgBIAEoCVIGcG9ydElkElsKDGRlbm9tX3RyYWNlcx'
+    'gCIAMoCzIoLmliYy5hcHBsaWNhdGlvbnMudHJhbnNmZXIudjEuRGVub21UcmFjZUIOyN4fAKrf'
+    'HwZUcmFjZXNSC2Rlbm9tVHJhY2VzEkIKBnBhcmFtcxgDIAEoCzIkLmliYy5hcHBsaWNhdGlvbn'
+    'MudHJhbnNmZXIudjEuUGFyYW1zQgTI3h8AUgZwYXJhbXMScgoOdG90YWxfZXNjcm93ZWQYBCAD'
+    'KAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3'
+    'MvY29zbW9zLXNkay90eXBlcy5Db2luc1INdG90YWxFc2Nyb3dlZA==');

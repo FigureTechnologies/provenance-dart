@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../cosmos/base/query/v1beta1/pagination.pb.dart' as $2;
+import '../../../../cosmos/base/v1beta1/coin.pb.dart' as $3;
 import 'transfer.pb.dart' as $1;
 
 /// QueryDenomTraceRequest is the request type for the Query/DenomTrace RPC
@@ -696,6 +697,145 @@ class QueryEscrowAddressResponse extends $pb.GeneratedMessage {
   $core.bool hasEscrowAddress() => $_has(0);
   @$pb.TagNumber(1)
   void clearEscrowAddress() => clearField(1);
+}
+
+/// QueryTotalEscrowForDenomRequest is the request type for TotalEscrowForDenom RPC method.
+class QueryTotalEscrowForDenomRequest extends $pb.GeneratedMessage {
+  factory QueryTotalEscrowForDenomRequest({
+    $core.String? denom,
+  }) {
+    final $result = create();
+    if (denom != null) {
+      $result.denom = denom;
+    }
+    return $result;
+  }
+  QueryTotalEscrowForDenomRequest._() : super();
+  factory QueryTotalEscrowForDenomRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryTotalEscrowForDenomRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryTotalEscrowForDenomRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'ibc.applications.transfer.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryTotalEscrowForDenomRequest clone() =>
+      QueryTotalEscrowForDenomRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryTotalEscrowForDenomRequest copyWith(
+          void Function(QueryTotalEscrowForDenomRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryTotalEscrowForDenomRequest))
+          as QueryTotalEscrowForDenomRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryTotalEscrowForDenomRequest create() =>
+      QueryTotalEscrowForDenomRequest._();
+  QueryTotalEscrowForDenomRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryTotalEscrowForDenomRequest> createRepeated() =>
+      $pb.PbList<QueryTotalEscrowForDenomRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryTotalEscrowForDenomRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryTotalEscrowForDenomRequest>(
+          create);
+  static QueryTotalEscrowForDenomRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get denom => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set denom($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasDenom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDenom() => clearField(1);
+}
+
+/// QueryTotalEscrowForDenomResponse is the response type for TotalEscrowForDenom RPC method.
+class QueryTotalEscrowForDenomResponse extends $pb.GeneratedMessage {
+  factory QueryTotalEscrowForDenomResponse({
+    $3.Coin? amount,
+  }) {
+    final $result = create();
+    if (amount != null) {
+      $result.amount = amount;
+    }
+    return $result;
+  }
+  QueryTotalEscrowForDenomResponse._() : super();
+  factory QueryTotalEscrowForDenomResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryTotalEscrowForDenomResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryTotalEscrowForDenomResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'ibc.applications.transfer.v1'),
+      createEmptyInstance: create)
+    ..aOM<$3.Coin>(1, _omitFieldNames ? '' : 'amount',
+        subBuilder: $3.Coin.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryTotalEscrowForDenomResponse clone() =>
+      QueryTotalEscrowForDenomResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryTotalEscrowForDenomResponse copyWith(
+          void Function(QueryTotalEscrowForDenomResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as QueryTotalEscrowForDenomResponse))
+          as QueryTotalEscrowForDenomResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryTotalEscrowForDenomResponse create() =>
+      QueryTotalEscrowForDenomResponse._();
+  QueryTotalEscrowForDenomResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryTotalEscrowForDenomResponse> createRepeated() =>
+      $pb.PbList<QueryTotalEscrowForDenomResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryTotalEscrowForDenomResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryTotalEscrowForDenomResponse>(
+          create);
+  static QueryTotalEscrowForDenomResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.Coin get amount => $_getN(0);
+  @$pb.TagNumber(1)
+  set amount($3.Coin v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAmount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAmount() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.Coin ensureAmount() => $_ensure(0);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

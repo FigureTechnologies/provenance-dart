@@ -49,6 +49,14 @@ const QueryIncentivizedPacketsResponse$json = {
       '8': {},
       '10': 'incentivizedPackets'
     },
+    {
+      '1': 'pagination',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageResponse',
+      '10': 'pagination'
+    },
   ],
 };
 
@@ -57,7 +65,8 @@ final $typed_data.Uint8List queryIncentivizedPacketsResponseDescriptor =
     $convert.base64Decode(
         'CiBRdWVyeUluY2VudGl2aXplZFBhY2tldHNSZXNwb25zZRJmChRpbmNlbnRpdml6ZWRfcGFja2'
         'V0cxgBIAMoCzItLmliYy5hcHBsaWNhdGlvbnMuZmVlLnYxLklkZW50aWZpZWRQYWNrZXRGZWVz'
-        'QgTI3h8AUhNpbmNlbnRpdml6ZWRQYWNrZXRz');
+        'QgTI3h8AUhNpbmNlbnRpdml6ZWRQYWNrZXRzEkcKCnBhZ2luYXRpb24YAiABKAsyJy5jb3Ntb3'
+        'MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXNwb25zZVIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use queryIncentivizedPacketRequestDescriptor instead')
 const QueryIncentivizedPacketRequest$json = {
@@ -146,6 +155,14 @@ const QueryIncentivizedPacketsForChannelResponse$json = {
       '6': '.ibc.applications.fee.v1.IdentifiedPacketFees',
       '10': 'incentivizedPackets'
     },
+    {
+      '1': 'pagination',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageResponse',
+      '10': 'pagination'
+    },
   ],
 };
 
@@ -155,7 +172,8 @@ final $typed_data.Uint8List
     $convert.base64Decode(
         'CipRdWVyeUluY2VudGl2aXplZFBhY2tldHNGb3JDaGFubmVsUmVzcG9uc2USYAoUaW5jZW50aX'
         'ZpemVkX3BhY2tldHMYASADKAsyLS5pYmMuYXBwbGljYXRpb25zLmZlZS52MS5JZGVudGlmaWVk'
-        'UGFja2V0RmVlc1ITaW5jZW50aXZpemVkUGFja2V0cw==');
+        'UGFja2V0RmVlc1ITaW5jZW50aXZpemVkUGFja2V0cxJHCgpwYWdpbmF0aW9uGAIgASgLMicuY2'
+        '9zbW9zLmJhc2UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2VSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use queryTotalRecvFeesRequestDescriptor instead')
 const QueryTotalRecvFeesRequest$json = {
@@ -198,9 +216,9 @@ const QueryTotalRecvFeesResponse$json = {
 /// Descriptor for `QueryTotalRecvFeesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryTotalRecvFeesResponseDescriptor =
     $convert.base64Decode(
-        'ChpRdWVyeVRvdGFsUmVjdkZlZXNSZXNwb25zZRJ8CglyZWN2X2ZlZXMYASADKAsyGS5jb3Ntb3'
-        'MuYmFzZS52MWJldGExLkNvaW5CRMjeHwDy3h8QeWFtbDoicmVjdl9mZWVzIqrfHyhnaXRodWIu'
-        'Y29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zUghyZWN2RmVlcw==');
+        'ChpRdWVyeVRvdGFsUmVjdkZlZXNSZXNwb25zZRJoCglyZWN2X2ZlZXMYASADKAsyGS5jb3Ntb3'
+        'MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNk'
+        'ay90eXBlcy5Db2luc1IIcmVjdkZlZXM=');
 
 @$core.Deprecated('Use queryTotalAckFeesRequestDescriptor instead')
 const QueryTotalAckFeesRequest$json = {
@@ -242,9 +260,9 @@ const QueryTotalAckFeesResponse$json = {
 
 /// Descriptor for `QueryTotalAckFeesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryTotalAckFeesResponseDescriptor = $convert.base64Decode(
-    'ChlRdWVyeVRvdGFsQWNrRmVlc1Jlc3BvbnNlEnkKCGFja19mZWVzGAEgAygLMhkuY29zbW9zLm'
-    'Jhc2UudjFiZXRhMS5Db2luQkPI3h8A8t4fD3lhbWw6ImFja19mZWVzIqrfHyhnaXRodWIuY29t'
-    'L2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zUgdhY2tGZWVz');
+    'ChlRdWVyeVRvdGFsQWNrRmVlc1Jlc3BvbnNlEmYKCGFja19mZWVzGAEgAygLMhkuY29zbW9zLm'
+    'Jhc2UudjFiZXRhMS5Db2luQjDI3h8Aqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsv'
+    'dHlwZXMuQ29pbnNSB2Fja0ZlZXM=');
 
 @$core.Deprecated('Use queryTotalTimeoutFeesRequestDescriptor instead')
 const QueryTotalTimeoutFeesRequest$json = {
@@ -285,51 +303,44 @@ const QueryTotalTimeoutFeesResponse$json = {
 };
 
 /// Descriptor for `QueryTotalTimeoutFeesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List queryTotalTimeoutFeesResponseDescriptor = $convert.base64Decode(
-    'Ch1RdWVyeVRvdGFsVGltZW91dEZlZXNSZXNwb25zZRKFAQoMdGltZW91dF9mZWVzGAEgAygLMh'
-    'kuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQkfI3h8A8t4fE3lhbWw6InRpbWVvdXRfZmVlcyKq'
-    '3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1ILdGltZW91dEZlZX'
-    'M=');
+final $typed_data.Uint8List queryTotalTimeoutFeesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1RdWVyeVRvdGFsVGltZW91dEZlZXNSZXNwb25zZRJuCgx0aW1lb3V0X2ZlZXMYASADKAsyGS'
+        '5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29z'
+        'bW9zLXNkay90eXBlcy5Db2luc1ILdGltZW91dEZlZXM=');
 
 @$core.Deprecated('Use queryPayeeRequestDescriptor instead')
 const QueryPayeeRequest$json = {
   '1': 'QueryPayeeRequest',
   '2': [
-    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'relayer', '3': 2, '4': 1, '5': 9, '10': 'relayer'},
   ],
 };
 
 /// Descriptor for `QueryPayeeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryPayeeRequestDescriptor = $convert.base64Decode(
-    'ChFRdWVyeVBheWVlUmVxdWVzdBI0CgpjaGFubmVsX2lkGAEgASgJQhXy3h8ReWFtbDoiY2hhbm'
-    '5lbF9pZCJSCWNoYW5uZWxJZBIYCgdyZWxheWVyGAIgASgJUgdyZWxheWVy');
+    'ChFRdWVyeVBheWVlUmVxdWVzdBIdCgpjaGFubmVsX2lkGAEgASgJUgljaGFubmVsSWQSGAoHcm'
+    'VsYXllchgCIAEoCVIHcmVsYXllcg==');
 
 @$core.Deprecated('Use queryPayeeResponseDescriptor instead')
 const QueryPayeeResponse$json = {
   '1': 'QueryPayeeResponse',
   '2': [
-    {
-      '1': 'payee_address',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {},
-      '10': 'payeeAddress'
-    },
+    {'1': 'payee_address', '3': 1, '4': 1, '5': 9, '10': 'payeeAddress'},
   ],
 };
 
 /// Descriptor for `QueryPayeeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryPayeeResponseDescriptor = $convert.base64Decode(
-    'ChJRdWVyeVBheWVlUmVzcG9uc2USPQoNcGF5ZWVfYWRkcmVzcxgBIAEoCUIY8t4fFHlhbWw6In'
-    'BheWVlX2FkZHJlc3MiUgxwYXllZUFkZHJlc3M=');
+    'ChJRdWVyeVBheWVlUmVzcG9uc2USIwoNcGF5ZWVfYWRkcmVzcxgBIAEoCVIMcGF5ZWVBZGRyZX'
+    'Nz');
 
 @$core.Deprecated('Use queryCounterpartyPayeeRequestDescriptor instead')
 const QueryCounterpartyPayeeRequest$json = {
   '1': 'QueryCounterpartyPayeeRequest',
   '2': [
-    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'channel_id', '3': 1, '4': 1, '5': 9, '10': 'channelId'},
     {'1': 'relayer', '3': 2, '4': 1, '5': 9, '10': 'relayer'},
   ],
 };
@@ -337,8 +348,8 @@ const QueryCounterpartyPayeeRequest$json = {
 /// Descriptor for `QueryCounterpartyPayeeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryCounterpartyPayeeRequestDescriptor =
     $convert.base64Decode(
-        'Ch1RdWVyeUNvdW50ZXJwYXJ0eVBheWVlUmVxdWVzdBI0CgpjaGFubmVsX2lkGAEgASgJQhXy3h'
-        '8ReWFtbDoiY2hhbm5lbF9pZCJSCWNoYW5uZWxJZBIYCgdyZWxheWVyGAIgASgJUgdyZWxheWVy');
+        'Ch1RdWVyeUNvdW50ZXJwYXJ0eVBheWVlUmVxdWVzdBIdCgpjaGFubmVsX2lkGAEgASgJUgljaG'
+        'FubmVsSWQSGAoHcmVsYXllchgCIAEoCVIHcmVsYXllcg==');
 
 @$core.Deprecated('Use queryCounterpartyPayeeResponseDescriptor instead')
 const QueryCounterpartyPayeeResponse$json = {
@@ -349,7 +360,6 @@ const QueryCounterpartyPayeeResponse$json = {
       '3': 1,
       '4': 1,
       '5': 9,
-      '8': {},
       '10': 'counterpartyPayee'
     },
   ],
@@ -358,8 +368,8 @@ const QueryCounterpartyPayeeResponse$json = {
 /// Descriptor for `QueryCounterpartyPayeeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryCounterpartyPayeeResponseDescriptor =
     $convert.base64Decode(
-        'Ch5RdWVyeUNvdW50ZXJwYXJ0eVBheWVlUmVzcG9uc2USTAoSY291bnRlcnBhcnR5X3BheWVlGA'
-        'EgASgJQh3y3h8ZeWFtbDoiY291bnRlcnBhcnR5X3BheWVlIlIRY291bnRlcnBhcnR5UGF5ZWU=');
+        'Ch5RdWVyeUNvdW50ZXJwYXJ0eVBheWVlUmVzcG9uc2USLQoSY291bnRlcnBhcnR5X3BheWVlGA'
+        'EgASgJUhFjb3VudGVycGFydHlQYXllZQ==');
 
 @$core.Deprecated('Use queryFeeEnabledChannelsRequestDescriptor instead')
 const QueryFeeEnabledChannelsRequest$json = {
@@ -397,42 +407,50 @@ const QueryFeeEnabledChannelsResponse$json = {
       '8': {},
       '10': 'feeEnabledChannels'
     },
+    {
+      '1': 'pagination',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.query.v1beta1.PageResponse',
+      '10': 'pagination'
+    },
   ],
 };
 
 /// Descriptor for `QueryFeeEnabledChannelsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryFeeEnabledChannelsResponseDescriptor =
     $convert.base64Decode(
-        'Ch9RdWVyeUZlZUVuYWJsZWRDaGFubmVsc1Jlc3BvbnNlEoEBChRmZWVfZW5hYmxlZF9jaGFubm'
-        'VscxgBIAMoCzIqLmliYy5hcHBsaWNhdGlvbnMuZmVlLnYxLkZlZUVuYWJsZWRDaGFubmVsQiPI'
-        '3h8A8t4fG3lhbWw6ImZlZV9lbmFibGVkX2NoYW5uZWxzIlISZmVlRW5hYmxlZENoYW5uZWxz');
+        'Ch9RdWVyeUZlZUVuYWJsZWRDaGFubmVsc1Jlc3BvbnNlEmIKFGZlZV9lbmFibGVkX2NoYW5uZW'
+        'xzGAEgAygLMiouaWJjLmFwcGxpY2F0aW9ucy5mZWUudjEuRmVlRW5hYmxlZENoYW5uZWxCBMje'
+        'HwBSEmZlZUVuYWJsZWRDaGFubmVscxJHCgpwYWdpbmF0aW9uGAIgASgLMicuY29zbW9zLmJhc2'
+        'UucXVlcnkudjFiZXRhMS5QYWdlUmVzcG9uc2VSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use queryFeeEnabledChannelRequestDescriptor instead')
 const QueryFeeEnabledChannelRequest$json = {
   '1': 'QueryFeeEnabledChannelRequest',
   '2': [
-    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'portId'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'channelId'},
+    {'1': 'port_id', '3': 1, '4': 1, '5': 9, '10': 'portId'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
   ],
 };
 
 /// Descriptor for `QueryFeeEnabledChannelRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryFeeEnabledChannelRequestDescriptor =
     $convert.base64Decode(
-        'Ch1RdWVyeUZlZUVuYWJsZWRDaGFubmVsUmVxdWVzdBIrCgdwb3J0X2lkGAEgASgJQhLy3h8OeW'
-        'FtbDoicG9ydF9pZCJSBnBvcnRJZBI0CgpjaGFubmVsX2lkGAIgASgJQhXy3h8ReWFtbDoiY2hh'
-        'bm5lbF9pZCJSCWNoYW5uZWxJZA==');
+        'Ch1RdWVyeUZlZUVuYWJsZWRDaGFubmVsUmVxdWVzdBIXCgdwb3J0X2lkGAEgASgJUgZwb3J0SW'
+        'QSHQoKY2hhbm5lbF9pZBgCIAEoCVIJY2hhbm5lbElk');
 
 @$core.Deprecated('Use queryFeeEnabledChannelResponseDescriptor instead')
 const QueryFeeEnabledChannelResponse$json = {
   '1': 'QueryFeeEnabledChannelResponse',
   '2': [
-    {'1': 'fee_enabled', '3': 1, '4': 1, '5': 8, '8': {}, '10': 'feeEnabled'},
+    {'1': 'fee_enabled', '3': 1, '4': 1, '5': 8, '10': 'feeEnabled'},
   ],
 };
 
 /// Descriptor for `QueryFeeEnabledChannelResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryFeeEnabledChannelResponseDescriptor =
     $convert.base64Decode(
-        'Ch5RdWVyeUZlZUVuYWJsZWRDaGFubmVsUmVzcG9uc2USNwoLZmVlX2VuYWJsZWQYASABKAhCFv'
-        'LeHxJ5YW1sOiJmZWVfZW5hYmxlZCJSCmZlZUVuYWJsZWQ=');
+        'Ch5RdWVyeUZlZUVuYWJsZWRDaGFubmVsUmVzcG9uc2USHwoLZmVlX2VuYWJsZWQYASABKAhSCm'
+        'ZlZUVuYWJsZWQ=');

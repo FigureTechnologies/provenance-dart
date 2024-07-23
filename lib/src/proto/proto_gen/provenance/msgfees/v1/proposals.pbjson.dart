@@ -38,18 +38,16 @@ const AddMsgFeeProposal$json = {
       '10': 'recipientBasisPoints'
     },
   ],
-  '7': {},
+  '7': {'3': true},
 };
 
 /// Descriptor for `AddMsgFeeProposal`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addMsgFeeProposalDescriptor = $convert.base64Decode(
     'ChFBZGRNc2dGZWVQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb2'
-    '4YAiABKAlSC2Rlc2NyaXB0aW9uEiAKDG1zZ190eXBlX3VybBgDIAEoCVIKbXNnVHlwZVVybBKL'
-    'AQoOYWRkaXRpb25hbF9mZWUYBCABKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CScjeHw'
-    'Dy3h8VeWFtbDoiYWRkaXRpb25hbF9mZWUiqt8fKGdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1z'
-    'ZGsvdHlwZXMuQ29pbnNSDWFkZGl0aW9uYWxGZWUSHAoJcmVjaXBpZW50GAUgASgJUglyZWNpcG'
-    'llbnQSNAoWcmVjaXBpZW50X2Jhc2lzX3BvaW50cxgGIAEoCVIUcmVjaXBpZW50QmFzaXNQb2lu'
-    'dHM6CJigHwHooB8B');
+    '4YAiABKAlSC2Rlc2NyaXB0aW9uEiAKDG1zZ190eXBlX3VybBgDIAEoCVIKbXNnVHlwZVVybBJG'
+    'Cg5hZGRpdGlvbmFsX2ZlZRgEIAEoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkIEyN4fAF'
+    'INYWRkaXRpb25hbEZlZRIcCglyZWNpcGllbnQYBSABKAlSCXJlY2lwaWVudBI0ChZyZWNpcGll'
+    'bnRfYmFzaXNfcG9pbnRzGAYgASgJUhRyZWNpcGllbnRCYXNpc1BvaW50czoCGAE=');
 
 @$core.Deprecated('Use updateMsgFeeProposalDescriptor instead')
 const UpdateMsgFeeProposal$json = {
@@ -76,17 +74,16 @@ const UpdateMsgFeeProposal$json = {
       '10': 'recipientBasisPoints'
     },
   ],
-  '7': {},
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateMsgFeeProposal`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateMsgFeeProposalDescriptor = $convert.base64Decode(
     'ChRVcGRhdGVNc2dGZWVQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIAoLZGVzY3JpcH'
     'Rpb24YAiABKAlSC2Rlc2NyaXB0aW9uEiAKDG1zZ190eXBlX3VybBgDIAEoCVIKbXNnVHlwZVVy'
-    'bBJyCg5hZGRpdGlvbmFsX2ZlZRgEIAEoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkIwyN'
-    '4fAKrfHyhnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkNvaW5zUg1hZGRpdGlv'
-    'bmFsRmVlEhwKCXJlY2lwaWVudBgFIAEoCVIJcmVjaXBpZW50EjQKFnJlY2lwaWVudF9iYXNpc1'
-    '9wb2ludHMYBiABKAlSFHJlY2lwaWVudEJhc2lzUG9pbnRzOgiYoB8B6KAfAQ==');
+    'bBJGCg5hZGRpdGlvbmFsX2ZlZRgEIAEoCzIZLmNvc21vcy5iYXNlLnYxYmV0YTEuQ29pbkIEyN'
+    '4fAFINYWRkaXRpb25hbEZlZRIcCglyZWNpcGllbnQYBSABKAlSCXJlY2lwaWVudBI0ChZyZWNp'
+    'cGllbnRfYmFzaXNfcG9pbnRzGAYgASgJUhRyZWNpcGllbnRCYXNpc1BvaW50czoCGAE=');
 
 @$core.Deprecated('Use removeMsgFeeProposalDescriptor instead')
 const RemoveMsgFeeProposal$json = {
@@ -96,14 +93,14 @@ const RemoveMsgFeeProposal$json = {
     {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
     {'1': 'msg_type_url', '3': 3, '4': 1, '5': 9, '10': 'msgTypeUrl'},
   ],
-  '7': {},
+  '7': {'3': true},
 };
 
 /// Descriptor for `RemoveMsgFeeProposal`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeMsgFeeProposalDescriptor = $convert.base64Decode(
     'ChRSZW1vdmVNc2dGZWVQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIAoLZGVzY3JpcH'
     'Rpb24YAiABKAlSC2Rlc2NyaXB0aW9uEiAKDG1zZ190eXBlX3VybBgDIAEoCVIKbXNnVHlwZVVy'
-    'bDoImKAfAeigHwE=');
+    'bDoCGAE=');
 
 @$core.Deprecated('Use updateNhashPerUsdMilProposalDescriptor instead')
 const UpdateNhashPerUsdMilProposal$json = {
@@ -113,7 +110,7 @@ const UpdateNhashPerUsdMilProposal$json = {
     {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
     {'1': 'nhash_per_usd_mil', '3': 3, '4': 1, '5': 4, '10': 'nhashPerUsdMil'},
   ],
-  '7': {},
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateNhashPerUsdMilProposal`. Decode as a `google.protobuf.DescriptorProto`.
@@ -121,7 +118,7 @@ final $typed_data.Uint8List updateNhashPerUsdMilProposalDescriptor =
     $convert.base64Decode(
         'ChxVcGRhdGVOaGFzaFBlclVzZE1pbFByb3Bvc2FsEhQKBXRpdGxlGAEgASgJUgV0aXRsZRIgCg'
         'tkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24SKQoRbmhhc2hfcGVyX3VzZF9taWwYAyAB'
-        'KARSDm5oYXNoUGVyVXNkTWlsOgiYoB8B6KAfAQ==');
+        'KARSDm5oYXNoUGVyVXNkTWlsOgIYAQ==');
 
 @$core.Deprecated('Use updateConversionFeeDenomProposalDescriptor instead')
 const UpdateConversionFeeDenomProposal$json = {
@@ -137,7 +134,7 @@ const UpdateConversionFeeDenomProposal$json = {
       '10': 'conversionFeeDenom'
     },
   ],
-  '7': {},
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateConversionFeeDenomProposal`. Decode as a `google.protobuf.DescriptorProto`.
@@ -145,4 +142,4 @@ final $typed_data.Uint8List updateConversionFeeDenomProposalDescriptor =
     $convert.base64Decode(
         'CiBVcGRhdGVDb252ZXJzaW9uRmVlRGVub21Qcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bG'
         'USIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEjAKFGNvbnZlcnNpb25fZmVlX2Rl'
-        'bm9tGAQgASgJUhJjb252ZXJzaW9uRmVlRGVub206CJigHwHooB8B');
+        'bm9tGAQgASgJUhJjb252ZXJzaW9uRmVlRGVub206AhgB');

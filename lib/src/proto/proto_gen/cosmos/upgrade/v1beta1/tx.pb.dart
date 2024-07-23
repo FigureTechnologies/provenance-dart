@@ -72,7 +72,7 @@ class MsgSoftwareUpgrade extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgSoftwareUpgrade>(create);
   static MsgSoftwareUpgrade? _defaultInstance;
 
-  /// authority is the address of the governance account.
+  /// authority is the address that controls the module (defaults to x/gov unless overwritten).
   @$pb.TagNumber(1)
   $core.String get authority => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -200,7 +200,7 @@ class MsgCancelUpgrade extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<MsgCancelUpgrade>(create);
   static MsgCancelUpgrade? _defaultInstance;
 
-  /// authority is the address of the governance account.
+  /// authority is the address that controls the module (defaults to x/gov unless overwritten).
   @$pb.TagNumber(1)
   $core.String get authority => $_getSZ(0);
   @$pb.TagNumber(1)

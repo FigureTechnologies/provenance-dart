@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../proofs.pb.dart' as $0;
+import '../../../../cosmos/ics23/v1/proofs.pb.dart' as $0;
 
 /// MerkleRoot defines a merkle root hash.
 /// In the Cosmos SDK, the AppHash of a block header becomes the root.

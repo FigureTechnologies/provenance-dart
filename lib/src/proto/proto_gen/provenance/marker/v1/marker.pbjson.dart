@@ -85,12 +85,11 @@ const Params$json = {
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSOgoQbWF4X3RvdGFsX3N1cHBseRgBIAEoBEIQGAHI3h8A2t4fBnVpbnQ2NFIObW'
-    'F4VG90YWxTdXBwbHkSKwoRZW5hYmxlX2dvdmVybmFuY2UYAiABKAhSEGVuYWJsZUdvdmVybmFu'
-    'Y2USOAoYdW5yZXN0cmljdGVkX2Rlbm9tX3JlZ2V4GAMgASgJUhZ1bnJlc3RyaWN0ZWREZW5vbV'
-    'JlZ2V4EmMKCm1heF9zdXBwbHkYBCABKAlCRMjeHwDa3h8VY29zbW9zc2RrLmlvL21hdGguSW50'
-    '8t4fI2pzb246Im1heF9zdXBwbHkiIHlhbWw6Im1heF9zdXBwbHkiUgltYXhTdXBwbHk6CJigHw'
-    'DooB8A');
+    'CgZQYXJhbXMSLAoQbWF4X3RvdGFsX3N1cHBseRgBIAEoBEICGAFSDm1heFRvdGFsU3VwcGx5Ei'
+    'sKEWVuYWJsZV9nb3Zlcm5hbmNlGAIgASgIUhBlbmFibGVHb3Zlcm5hbmNlEjgKGHVucmVzdHJp'
+    'Y3RlZF9kZW5vbV9yZWdleBgDIAEoCVIWdW5yZXN0cmljdGVkRGVub21SZWdleBI8CgptYXhfc3'
+    'VwcGx5GAQgASgJQh3I3h8A2t4fFWNvc21vc3Nkay5pby9tYXRoLkludFIJbWF4U3VwcGx5OgTo'
+    'oB8B');
 
 @$core.Deprecated('Use markerAccountDescriptor instead')
 const MarkerAccount$json = {
@@ -105,7 +104,7 @@ const MarkerAccount$json = {
       '8': {},
       '10': 'baseAccount'
     },
-    {'1': 'manager', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'manager'},
+    {'1': 'manager', '3': 2, '4': 1, '5': 9, '10': 'manager'},
     {
       '1': 'access_control',
       '3': 3,
@@ -131,7 +130,6 @@ const MarkerAccount$json = {
       '4': 1,
       '5': 14,
       '6': '.provenance.marker.v1.MarkerType',
-      '8': {},
       '10': 'markerType'
     },
     {'1': 'supply_fixed', '3': 8, '4': 1, '5': 8, '10': 'supplyFixed'},
@@ -162,20 +160,18 @@ const MarkerAccount$json = {
 
 /// Descriptor for `MarkerAccount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List markerAccountDescriptor = $convert.base64Decode(
-    'Cg1NYXJrZXJBY2NvdW50EmAKDGJhc2VfYWNjb3VudBgBIAEoCzIgLmNvc21vcy5hdXRoLnYxYm'
-    'V0YTEuQmFzZUFjY291bnRCG9DeHwHy3h8TeWFtbDoiYmFzZV9hY2NvdW50IlILYmFzZUFjY291'
-    'bnQSNgoHbWFuYWdlchgCIAEoCUIc8t4fGGpzb246Im1hbmFnZXIsb21pdGVtcHR5IlIHbWFuYW'
-    'dlchJOCg5hY2Nlc3NfY29udHJvbBgDIAMoCzIhLnByb3ZlbmFuY2UubWFya2VyLnYxLkFjY2Vz'
-    'c0dyYW50QgTI3h8AUg1hY2Nlc3NDb250cm9sEjoKBnN0YXR1cxgEIAEoDjIiLnByb3ZlbmFuY2'
-    'UubWFya2VyLnYxLk1hcmtlclN0YXR1c1IGc3RhdHVzEhQKBWRlbm9tGAUgASgJUgVkZW5vbRJx'
-    'CgZzdXBwbHkYBiABKAlCWcjeHwDa3h8mZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eX'
-    'Blcy5JbnTy3h8nanNvbjoidG90YWxfc3VwcGx5IiB5YW1sOiJ0b3RhbF9zdXBwbHkiUgZzdXBw'
-    'bHkSYwoLbWFya2VyX3R5cGUYByABKA4yIC5wcm92ZW5hbmNlLm1hcmtlci52MS5NYXJrZXJUeX'
-    'BlQiDy3h8canNvbjoibWFya2VyX3R5cGUsb21pdGVtcHR5IlIKbWFya2VyVHlwZRIhCgxzdXBw'
-    'bHlfZml4ZWQYCCABKAhSC3N1cHBseUZpeGVkEjgKGGFsbG93X2dvdmVybmFuY2VfY29udHJvbB'
-    'gJIAEoCFIWYWxsb3dHb3Zlcm5hbmNlQ29udHJvbBIyChVhbGxvd19mb3JjZWRfdHJhbnNmZXIY'
-    'CiABKAhSE2FsbG93Rm9yY2VkVHJhbnNmZXISLwoTcmVxdWlyZWRfYXR0cmlidXRlcxgLIAMoCV'
-    'IScmVxdWlyZWRBdHRyaWJ1dGVzOhqIoB8AmKAfAMq0LQ5NYXJrZXJBY2NvdW50SQ==');
+    'Cg1NYXJrZXJBY2NvdW50EkkKDGJhc2VfYWNjb3VudBgBIAEoCzIgLmNvc21vcy5hdXRoLnYxYm'
+    'V0YTEuQmFzZUFjY291bnRCBNDeHwFSC2Jhc2VBY2NvdW50EhgKB21hbmFnZXIYAiABKAlSB21h'
+    'bmFnZXISTgoOYWNjZXNzX2NvbnRyb2wYAyADKAsyIS5wcm92ZW5hbmNlLm1hcmtlci52MS5BY2'
+    'Nlc3NHcmFudEIEyN4fAFINYWNjZXNzQ29udHJvbBI6CgZzdGF0dXMYBCABKA4yIi5wcm92ZW5h'
+    'bmNlLm1hcmtlci52MS5NYXJrZXJTdGF0dXNSBnN0YXR1cxIUCgVkZW5vbRgFIAEoCVIFZGVub2'
+    '0SNQoGc3VwcGx5GAYgASgJQh3I3h8A2t4fFWNvc21vc3Nkay5pby9tYXRoLkludFIGc3VwcGx5'
+    'EkEKC21hcmtlcl90eXBlGAcgASgOMiAucHJvdmVuYW5jZS5tYXJrZXIudjEuTWFya2VyVHlwZV'
+    'IKbWFya2VyVHlwZRIhCgxzdXBwbHlfZml4ZWQYCCABKAhSC3N1cHBseUZpeGVkEjgKGGFsbG93'
+    'X2dvdmVybmFuY2VfY29udHJvbBgJIAEoCFIWYWxsb3dHb3Zlcm5hbmNlQ29udHJvbBIyChVhbG'
+    'xvd19mb3JjZWRfdHJhbnNmZXIYCiABKAhSE2FsbG93Rm9yY2VkVHJhbnNmZXISLwoTcmVxdWly'
+    'ZWRfYXR0cmlidXRlcxgLIAMoCVIScmVxdWlyZWRBdHRyaWJ1dGVzOhqIoB8AmKAfAMq0LQ5NYX'
+    'JrZXJBY2NvdW50SQ==');
 
 @$core.Deprecated('Use netAssetValueDescriptor instead')
 const NetAssetValue$json = {
@@ -471,3 +467,31 @@ final $typed_data.Uint8List eventSetNetAssetValueDescriptor = $convert.base64Dec
     'ChVFdmVudFNldE5ldEFzc2V0VmFsdWUSFAoFZGVub20YASABKAlSBWRlbm9tEhQKBXByaWNlGA'
     'IgASgJUgVwcmljZRIWCgZ2b2x1bWUYAyABKAlSBnZvbHVtZRIWCgZzb3VyY2UYBCABKAlSBnNv'
     'dXJjZQ==');
+
+@$core.Deprecated('Use eventMarkerParamsUpdatedDescriptor instead')
+const EventMarkerParamsUpdated$json = {
+  '1': 'EventMarkerParamsUpdated',
+  '2': [
+    {
+      '1': 'enable_governance',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'enableGovernance'
+    },
+    {
+      '1': 'unrestricted_denom_regex',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'unrestrictedDenomRegex'
+    },
+    {'1': 'max_supply', '3': 3, '4': 1, '5': 9, '10': 'maxSupply'},
+  ],
+};
+
+/// Descriptor for `EventMarkerParamsUpdated`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventMarkerParamsUpdatedDescriptor = $convert.base64Decode(
+    'ChhFdmVudE1hcmtlclBhcmFtc1VwZGF0ZWQSKwoRZW5hYmxlX2dvdmVybmFuY2UYASABKAlSEG'
+    'VuYWJsZUdvdmVybmFuY2USOAoYdW5yZXN0cmljdGVkX2Rlbm9tX3JlZ2V4GAIgASgJUhZ1bnJl'
+    'c3RyaWN0ZWREZW5vbVJlZ2V4Eh0KCm1heF9zdXBwbHkYAyABKAlSCW1heFN1cHBseQ==');

@@ -45,13 +45,11 @@ const Params$json = {
   '2': [
     {'1': 'max_value_length', '3': 1, '4': 1, '5': 13, '10': 'maxValueLength'},
   ],
-  '7': {},
 };
 
 /// Descriptor for `Params`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List paramsDescriptor = $convert.base64Decode(
-    'CgZQYXJhbXMSKAoQbWF4X3ZhbHVlX2xlbmd0aBgBIAEoDVIObWF4VmFsdWVMZW5ndGg6BJigHw'
-    'A=');
+    'CgZQYXJhbXMSKAoQbWF4X3ZhbHVlX2xlbmd0aBgBIAEoDVIObWF4VmFsdWVMZW5ndGg=');
 
 @$core.Deprecated('Use attributeDescriptor instead')
 const Attribute$json = {
@@ -227,3 +225,17 @@ const EventAccountDataUpdated$json = {
 final $typed_data.Uint8List eventAccountDataUpdatedDescriptor =
     $convert.base64Decode(
         'ChdFdmVudEFjY291bnREYXRhVXBkYXRlZBIYCgdhY2NvdW50GAEgASgJUgdhY2NvdW50');
+
+@$core.Deprecated('Use eventAttributeParamsUpdatedDescriptor instead')
+const EventAttributeParamsUpdated$json = {
+  '1': 'EventAttributeParamsUpdated',
+  '2': [
+    {'1': 'max_value_length', '3': 1, '4': 1, '5': 9, '10': 'maxValueLength'},
+  ],
+};
+
+/// Descriptor for `EventAttributeParamsUpdated`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventAttributeParamsUpdatedDescriptor =
+    $convert.base64Decode(
+        'ChtFdmVudEF0dHJpYnV0ZVBhcmFtc1VwZGF0ZWQSKAoQbWF4X3ZhbHVlX2xlbmd0aBgBIAEoCV'
+        'IObWF4VmFsdWVMZW5ndGg=');

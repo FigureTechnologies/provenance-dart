@@ -19,8 +19,6 @@ class AccessType extends $pb.ProtobufEnum {
       AccessType._(0, _omitEnumNames ? '' : 'ACCESS_TYPE_UNSPECIFIED');
   static const AccessType ACCESS_TYPE_NOBODY =
       AccessType._(1, _omitEnumNames ? '' : 'ACCESS_TYPE_NOBODY');
-  static const AccessType ACCESS_TYPE_ONLY_ADDRESS =
-      AccessType._(2, _omitEnumNames ? '' : 'ACCESS_TYPE_ONLY_ADDRESS');
   static const AccessType ACCESS_TYPE_EVERYBODY =
       AccessType._(3, _omitEnumNames ? '' : 'ACCESS_TYPE_EVERYBODY');
   static const AccessType ACCESS_TYPE_ANY_OF_ADDRESSES =
@@ -29,7 +27,6 @@ class AccessType extends $pb.ProtobufEnum {
   static const $core.List<AccessType> values = <AccessType>[
     ACCESS_TYPE_UNSPECIFIED,
     ACCESS_TYPE_NOBODY,
-    ACCESS_TYPE_ONLY_ADDRESS,
     ACCESS_TYPE_EVERYBODY,
     ACCESS_TYPE_ANY_OF_ADDRESSES,
   ];

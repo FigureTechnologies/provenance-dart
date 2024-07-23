@@ -81,6 +81,60 @@ class MsgClient extends $grpc.Client {
           ($0.MsgAcknowledgement value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MsgAcknowledgementResponse.fromBuffer(value));
+  static final _$channelUpgradeInit = $grpc.ClientMethod<
+          $0.MsgChannelUpgradeInit, $0.MsgChannelUpgradeInitResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeInit',
+      ($0.MsgChannelUpgradeInit value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeInitResponse.fromBuffer(value));
+  static final _$channelUpgradeTry = $grpc.ClientMethod<$0.MsgChannelUpgradeTry,
+          $0.MsgChannelUpgradeTryResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeTry',
+      ($0.MsgChannelUpgradeTry value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeTryResponse.fromBuffer(value));
+  static final _$channelUpgradeAck = $grpc.ClientMethod<$0.MsgChannelUpgradeAck,
+          $0.MsgChannelUpgradeAckResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeAck',
+      ($0.MsgChannelUpgradeAck value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeAckResponse.fromBuffer(value));
+  static final _$channelUpgradeConfirm = $grpc.ClientMethod<
+          $0.MsgChannelUpgradeConfirm, $0.MsgChannelUpgradeConfirmResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeConfirm',
+      ($0.MsgChannelUpgradeConfirm value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeConfirmResponse.fromBuffer(value));
+  static final _$channelUpgradeOpen = $grpc.ClientMethod<
+          $0.MsgChannelUpgradeOpen, $0.MsgChannelUpgradeOpenResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeOpen',
+      ($0.MsgChannelUpgradeOpen value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeOpenResponse.fromBuffer(value));
+  static final _$channelUpgradeTimeout = $grpc.ClientMethod<
+          $0.MsgChannelUpgradeTimeout, $0.MsgChannelUpgradeTimeoutResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeTimeout',
+      ($0.MsgChannelUpgradeTimeout value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeTimeoutResponse.fromBuffer(value));
+  static final _$channelUpgradeCancel = $grpc.ClientMethod<
+          $0.MsgChannelUpgradeCancel, $0.MsgChannelUpgradeCancelResponse>(
+      '/ibc.core.channel.v1.Msg/ChannelUpgradeCancel',
+      ($0.MsgChannelUpgradeCancel value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgChannelUpgradeCancelResponse.fromBuffer(value));
+  static final _$updateChannelParams =
+      $grpc.ClientMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+          '/ibc.core.channel.v1.Msg/UpdateChannelParams',
+          ($0.MsgUpdateParams value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MsgUpdateParamsResponse.fromBuffer(value));
+  static final _$pruneAcknowledgements = $grpc.ClientMethod<
+          $0.MsgPruneAcknowledgements, $0.MsgPruneAcknowledgementsResponse>(
+      '/ibc.core.channel.v1.Msg/PruneAcknowledgements',
+      ($0.MsgPruneAcknowledgements value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.MsgPruneAcknowledgementsResponse.fromBuffer(value));
 
   MsgClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -144,6 +198,60 @@ class MsgClient extends $grpc.Client {
       $0.MsgAcknowledgement request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acknowledgement, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeInitResponse> channelUpgradeInit(
+      $0.MsgChannelUpgradeInit request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeInit, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeTryResponse> channelUpgradeTry(
+      $0.MsgChannelUpgradeTry request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeTry, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeAckResponse> channelUpgradeAck(
+      $0.MsgChannelUpgradeAck request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeAck, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeConfirmResponse>
+      channelUpgradeConfirm($0.MsgChannelUpgradeConfirm request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeConfirm, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeOpenResponse> channelUpgradeOpen(
+      $0.MsgChannelUpgradeOpen request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeOpen, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeTimeoutResponse>
+      channelUpgradeTimeout($0.MsgChannelUpgradeTimeout request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeTimeout, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgChannelUpgradeCancelResponse> channelUpgradeCancel(
+      $0.MsgChannelUpgradeCancel request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$channelUpgradeCancel, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgUpdateParamsResponse> updateChannelParams(
+      $0.MsgUpdateParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateChannelParams, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MsgPruneAcknowledgementsResponse>
+      pruneAcknowledgements($0.MsgPruneAcknowledgements request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pruneAcknowledgements, request, options: options);
   }
 }
 
@@ -238,6 +346,87 @@ abstract class MsgServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.MsgAcknowledgement.fromBuffer(value),
         ($0.MsgAcknowledgementResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeInit,
+            $0.MsgChannelUpgradeInitResponse>(
+        'ChannelUpgradeInit',
+        channelUpgradeInit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeInit.fromBuffer(value),
+        ($0.MsgChannelUpgradeInitResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeTry,
+            $0.MsgChannelUpgradeTryResponse>(
+        'ChannelUpgradeTry',
+        channelUpgradeTry_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeTry.fromBuffer(value),
+        ($0.MsgChannelUpgradeTryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeAck,
+            $0.MsgChannelUpgradeAckResponse>(
+        'ChannelUpgradeAck',
+        channelUpgradeAck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeAck.fromBuffer(value),
+        ($0.MsgChannelUpgradeAckResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeConfirm,
+            $0.MsgChannelUpgradeConfirmResponse>(
+        'ChannelUpgradeConfirm',
+        channelUpgradeConfirm_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeConfirm.fromBuffer(value),
+        ($0.MsgChannelUpgradeConfirmResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeOpen,
+            $0.MsgChannelUpgradeOpenResponse>(
+        'ChannelUpgradeOpen',
+        channelUpgradeOpen_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeOpen.fromBuffer(value),
+        ($0.MsgChannelUpgradeOpenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeTimeout,
+            $0.MsgChannelUpgradeTimeoutResponse>(
+        'ChannelUpgradeTimeout',
+        channelUpgradeTimeout_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeTimeout.fromBuffer(value),
+        ($0.MsgChannelUpgradeTimeoutResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgChannelUpgradeCancel,
+            $0.MsgChannelUpgradeCancelResponse>(
+        'ChannelUpgradeCancel',
+        channelUpgradeCancel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgChannelUpgradeCancel.fromBuffer(value),
+        ($0.MsgChannelUpgradeCancelResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MsgUpdateParams, $0.MsgUpdateParamsResponse>(
+            'UpdateChannelParams',
+            updateChannelParams_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MsgUpdateParams.fromBuffer(value),
+            ($0.MsgUpdateParamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MsgPruneAcknowledgements,
+            $0.MsgPruneAcknowledgementsResponse>(
+        'PruneAcknowledgements',
+        pruneAcknowledgements_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MsgPruneAcknowledgements.fromBuffer(value),
+        ($0.MsgPruneAcknowledgementsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MsgChannelOpenInitResponse> channelOpenInit_Pre(
@@ -298,6 +487,59 @@ abstract class MsgServiceBase extends $grpc.Service {
     return acknowledgement(call, await request);
   }
 
+  $async.Future<$0.MsgChannelUpgradeInitResponse> channelUpgradeInit_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeInit> request) async {
+    return channelUpgradeInit(call, await request);
+  }
+
+  $async.Future<$0.MsgChannelUpgradeTryResponse> channelUpgradeTry_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeTry> request) async {
+    return channelUpgradeTry(call, await request);
+  }
+
+  $async.Future<$0.MsgChannelUpgradeAckResponse> channelUpgradeAck_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeAck> request) async {
+    return channelUpgradeAck(call, await request);
+  }
+
+  $async.Future<$0.MsgChannelUpgradeConfirmResponse> channelUpgradeConfirm_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeConfirm> request) async {
+    return channelUpgradeConfirm(call, await request);
+  }
+
+  $async.Future<$0.MsgChannelUpgradeOpenResponse> channelUpgradeOpen_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeOpen> request) async {
+    return channelUpgradeOpen(call, await request);
+  }
+
+  $async.Future<$0.MsgChannelUpgradeTimeoutResponse> channelUpgradeTimeout_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeTimeout> request) async {
+    return channelUpgradeTimeout(call, await request);
+  }
+
+  $async.Future<$0.MsgChannelUpgradeCancelResponse> channelUpgradeCancel_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgChannelUpgradeCancel> request) async {
+    return channelUpgradeCancel(call, await request);
+  }
+
+  $async.Future<$0.MsgUpdateParamsResponse> updateChannelParams_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.MsgUpdateParams> request) async {
+    return updateChannelParams(call, await request);
+  }
+
+  $async.Future<$0.MsgPruneAcknowledgementsResponse> pruneAcknowledgements_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.MsgPruneAcknowledgements> request) async {
+    return pruneAcknowledgements(call, await request);
+  }
+
   $async.Future<$0.MsgChannelOpenInitResponse> channelOpenInit(
       $grpc.ServiceCall call, $0.MsgChannelOpenInit request);
   $async.Future<$0.MsgChannelOpenTryResponse> channelOpenTry(
@@ -318,4 +560,22 @@ abstract class MsgServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.MsgTimeoutOnClose request);
   $async.Future<$0.MsgAcknowledgementResponse> acknowledgement(
       $grpc.ServiceCall call, $0.MsgAcknowledgement request);
+  $async.Future<$0.MsgChannelUpgradeInitResponse> channelUpgradeInit(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeInit request);
+  $async.Future<$0.MsgChannelUpgradeTryResponse> channelUpgradeTry(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeTry request);
+  $async.Future<$0.MsgChannelUpgradeAckResponse> channelUpgradeAck(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeAck request);
+  $async.Future<$0.MsgChannelUpgradeConfirmResponse> channelUpgradeConfirm(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeConfirm request);
+  $async.Future<$0.MsgChannelUpgradeOpenResponse> channelUpgradeOpen(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeOpen request);
+  $async.Future<$0.MsgChannelUpgradeTimeoutResponse> channelUpgradeTimeout(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeTimeout request);
+  $async.Future<$0.MsgChannelUpgradeCancelResponse> channelUpgradeCancel(
+      $grpc.ServiceCall call, $0.MsgChannelUpgradeCancel request);
+  $async.Future<$0.MsgUpdateParamsResponse> updateChannelParams(
+      $grpc.ServiceCall call, $0.MsgUpdateParams request);
+  $async.Future<$0.MsgPruneAcknowledgementsResponse> pruneAcknowledgements(
+      $grpc.ServiceCall call, $0.MsgPruneAcknowledgements request);
 }

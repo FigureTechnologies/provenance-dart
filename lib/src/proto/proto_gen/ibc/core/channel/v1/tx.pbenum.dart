@@ -24,11 +24,15 @@ class ResponseResultType extends $pb.ProtobufEnum {
   static const ResponseResultType RESPONSE_RESULT_TYPE_SUCCESS =
       ResponseResultType._(
           2, _omitEnumNames ? '' : 'RESPONSE_RESULT_TYPE_SUCCESS');
+  static const ResponseResultType RESPONSE_RESULT_TYPE_FAILURE =
+      ResponseResultType._(
+          3, _omitEnumNames ? '' : 'RESPONSE_RESULT_TYPE_FAILURE');
 
   static const $core.List<ResponseResultType> values = <ResponseResultType>[
     RESPONSE_RESULT_TYPE_UNSPECIFIED,
     RESPONSE_RESULT_TYPE_NOOP,
     RESPONSE_RESULT_TYPE_SUCCESS,
+    RESPONSE_RESULT_TYPE_FAILURE,
   ];
 
   static final $core.Map<$core.int, ResponseResultType> _byValue =

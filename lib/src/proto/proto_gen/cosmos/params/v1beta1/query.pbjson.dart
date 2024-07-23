@@ -45,8 +45,8 @@ const QueryParamsResponse$json = {
 
 /// Descriptor for `QueryParamsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List queryParamsResponseDescriptor = $convert.base64Decode(
-    'ChNRdWVyeVBhcmFtc1Jlc3BvbnNlEj4KBXBhcmFtGAEgASgLMiIuY29zbW9zLnBhcmFtcy52MW'
-    'JldGExLlBhcmFtQ2hhbmdlQgTI3h8AUgVwYXJhbQ==');
+    'ChNRdWVyeVBhcmFtc1Jlc3BvbnNlEkMKBXBhcmFtGAEgASgLMiIuY29zbW9zLnBhcmFtcy52MW'
+    'JldGExLlBhcmFtQ2hhbmdlQgnI3h8AqOewKgFSBXBhcmFt');
 
 @$core.Deprecated('Use querySubspacesRequestDescriptor instead')
 const QuerySubspacesRequest$json = {

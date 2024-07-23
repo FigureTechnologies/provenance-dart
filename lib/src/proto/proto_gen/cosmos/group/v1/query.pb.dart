@@ -137,7 +137,7 @@ class QueryGroupInfoResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryGroupInfoResponse>(create);
   static QueryGroupInfoResponse? _defaultInstance;
 
-  /// info is the GroupInfo for the group.
+  /// info is the GroupInfo of the group.
   @$pb.TagNumber(1)
   $1.GroupInfo get info => $_getN(0);
   @$pb.TagNumber(1)
@@ -276,7 +276,7 @@ class QueryGroupPolicyInfoResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<QueryGroupPolicyInfoResponse>(create);
   static QueryGroupPolicyInfoResponse? _defaultInstance;
 
-  /// info is the GroupPolicyInfo for the group policy.
+  /// info is the GroupPolicyInfo of the group policy.
   @$pb.TagNumber(1)
   $1.GroupPolicyInfo get info => $_getN(0);
   @$pb.TagNumber(1)

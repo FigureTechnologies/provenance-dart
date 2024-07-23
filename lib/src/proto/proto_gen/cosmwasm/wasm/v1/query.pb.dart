@@ -1841,6 +1841,196 @@ class QueryContractsByCreatorResponse extends $pb.GeneratedMessage {
   $2.PageResponse ensurePagination() => $_ensure(1);
 }
 
+/// QueryBuildAddressRequest is the request type for the Query/BuildAddress RPC
+/// method.
+class QueryBuildAddressRequest extends $pb.GeneratedMessage {
+  factory QueryBuildAddressRequest({
+    $core.String? codeHash,
+    $core.String? creatorAddress,
+    $core.String? salt,
+    $core.List<$core.int>? initArgs,
+  }) {
+    final $result = create();
+    if (codeHash != null) {
+      $result.codeHash = codeHash;
+    }
+    if (creatorAddress != null) {
+      $result.creatorAddress = creatorAddress;
+    }
+    if (salt != null) {
+      $result.salt = salt;
+    }
+    if (initArgs != null) {
+      $result.initArgs = initArgs;
+    }
+    return $result;
+  }
+  QueryBuildAddressRequest._() : super();
+  factory QueryBuildAddressRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryBuildAddressRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryBuildAddressRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'codeHash')
+    ..aOS(2, _omitFieldNames ? '' : 'creatorAddress')
+    ..aOS(3, _omitFieldNames ? '' : 'salt')
+    ..a<$core.List<$core.int>>(
+        4, _omitFieldNames ? '' : 'initArgs', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryBuildAddressRequest clone() =>
+      QueryBuildAddressRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryBuildAddressRequest copyWith(
+          void Function(QueryBuildAddressRequest) updates) =>
+      super.copyWith((message) => updates(message as QueryBuildAddressRequest))
+          as QueryBuildAddressRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryBuildAddressRequest create() => QueryBuildAddressRequest._();
+  QueryBuildAddressRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryBuildAddressRequest> createRepeated() =>
+      $pb.PbList<QueryBuildAddressRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryBuildAddressRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryBuildAddressRequest>(create);
+  static QueryBuildAddressRequest? _defaultInstance;
+
+  /// CodeHash is the hash of the code
+  @$pb.TagNumber(1)
+  $core.String get codeHash => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set codeHash($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasCodeHash() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCodeHash() => clearField(1);
+
+  /// CreatorAddress is the address of the contract instantiator
+  @$pb.TagNumber(2)
+  $core.String get creatorAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set creatorAddress($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasCreatorAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCreatorAddress() => clearField(2);
+
+  /// Salt is a hex encoded salt
+  @$pb.TagNumber(3)
+  $core.String get salt => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set salt($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasSalt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSalt() => clearField(3);
+
+  /// InitArgs are optional json encoded init args to be used in contract address
+  /// building if provided
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get initArgs => $_getN(3);
+  @$pb.TagNumber(4)
+  set initArgs($core.List<$core.int> v) {
+    $_setBytes(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasInitArgs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInitArgs() => clearField(4);
+}
+
+/// QueryBuildAddressResponse is the response type for the Query/BuildAddress RPC
+/// method.
+class QueryBuildAddressResponse extends $pb.GeneratedMessage {
+  factory QueryBuildAddressResponse({
+    $core.String? address,
+  }) {
+    final $result = create();
+    if (address != null) {
+      $result.address = address;
+    }
+    return $result;
+  }
+  QueryBuildAddressResponse._() : super();
+  factory QueryBuildAddressResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryBuildAddressResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QueryBuildAddressResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmwasm.wasm.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'address')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryBuildAddressResponse clone() =>
+      QueryBuildAddressResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryBuildAddressResponse copyWith(
+          void Function(QueryBuildAddressResponse) updates) =>
+      super.copyWith((message) => updates(message as QueryBuildAddressResponse))
+          as QueryBuildAddressResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryBuildAddressResponse create() => QueryBuildAddressResponse._();
+  QueryBuildAddressResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryBuildAddressResponse> createRepeated() =>
+      $pb.PbList<QueryBuildAddressResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryBuildAddressResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryBuildAddressResponse>(create);
+  static QueryBuildAddressResponse? _defaultInstance;
+
+  /// Address is the contract address
+  @$pb.TagNumber(1)
+  $core.String get address => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set address($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAddress() => clearField(1);
+}
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

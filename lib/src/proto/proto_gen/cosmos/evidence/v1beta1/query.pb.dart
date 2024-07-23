@@ -19,11 +19,17 @@ import '../../base/query/v1beta1/pagination.pb.dart' as $2;
 /// QueryEvidenceRequest is the request type for the Query/Evidence RPC method.
 class QueryEvidenceRequest extends $pb.GeneratedMessage {
   factory QueryEvidenceRequest({
+    @$core.Deprecated('This field is deprecated.')
     $core.List<$core.int>? evidenceHash,
+    $core.String? hash,
   }) {
     final $result = create();
     if (evidenceHash != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.evidenceHash = evidenceHash;
+    }
+    if (hash != null) {
+      $result.hash = hash;
     }
     return $result;
   }
@@ -42,6 +48,7 @@ class QueryEvidenceRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..a<$core.List<$core.int>>(
         1, _omitFieldNames ? '' : 'evidenceHash', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'hash')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -69,17 +76,37 @@ class QueryEvidenceRequest extends $pb.GeneratedMessage {
   static QueryEvidenceRequest? _defaultInstance;
 
   /// evidence_hash defines the hash of the requested evidence.
+  /// Deprecated: Use hash, a HEX encoded string, instead.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.int> get evidenceHash => $_getN(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set evidenceHash($core.List<$core.int> v) {
     $_setBytes(0, v);
   }
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasEvidenceHash() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearEvidenceHash() => clearField(1);
+
+  ///  hash defines the evidence hash of the requested evidence.
+  ///
+  ///  Since: cosmos-sdk 0.47
+  @$pb.TagNumber(2)
+  $core.String get hash => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set hash($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasHash() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHash() => clearField(2);
 }
 
 /// QueryEvidenceResponse is the response type for the Query/Evidence RPC method.

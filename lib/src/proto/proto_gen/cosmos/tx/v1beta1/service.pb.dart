@@ -27,14 +27,17 @@ export 'service.pbenum.dart';
 /// RPC method.
 class GetTxsEventRequest extends $pb.GeneratedMessage {
   factory GetTxsEventRequest({
+    @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$core.String>? events,
     @$core.Deprecated('This field is deprecated.') $2.PageRequest? pagination,
     OrderBy? orderBy,
     $fixnum.Int64? page,
     $fixnum.Int64? limit,
+    $core.String? query,
   }) {
     final $result = create();
     if (events != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.events.addAll(events);
     }
     if (pagination != null) {
@@ -49,6 +52,9 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
     }
     if (limit != null) {
       $result.limit = limit;
+    }
+    if (query != null) {
+      $result.query = query;
     }
     return $result;
   }
@@ -76,6 +82,7 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(6, _omitFieldNames ? '' : 'query')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -102,6 +109,9 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   static GetTxsEventRequest? _defaultInstance;
 
   /// events is the list of transaction event type.
+  /// Deprecated post v0.47.x: use query instead, which should contain a valid
+  /// events query.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.String> get events => $_getList(0);
 
@@ -138,7 +148,8 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearOrderBy() => clearField(3);
 
-  /// page is the page number to query, starts at 1. If not provided, will default to first page.
+  /// page is the page number to query, starts at 1. If not provided, will
+  /// default to first page.
   @$pb.TagNumber(4)
   $fixnum.Int64 get page => $_getI64(3);
   @$pb.TagNumber(4)
@@ -164,6 +175,22 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   $core.bool hasLimit() => $_has(4);
   @$pb.TagNumber(5)
   void clearLimit() => clearField(5);
+
+  ///  query defines the transaction event query that is proxied to Tendermint's
+  ///  TxSearch RPC method. The query must be valid.
+  ///
+  ///  Since cosmos-sdk 0.50
+  @$pb.TagNumber(6)
+  $core.String get query => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set query($core.String v) {
+    $_setString(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasQuery() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuery() => clearField(6);
 }
 
 /// GetTxsEventResponse is the response type for the Service.TxsByEvents
@@ -861,7 +888,8 @@ class GetBlockWithTxsRequest extends $pb.GeneratedMessage {
   $2.PageRequest ensurePagination() => $_ensure(1);
 }
 
-///  GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs method.
+///  GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs
+///  method.
 ///
 ///  Since: cosmos-sdk 0.45.2
 class GetBlockWithTxsResponse extends $pb.GeneratedMessage {
@@ -980,6 +1008,552 @@ class GetBlockWithTxsResponse extends $pb.GeneratedMessage {
   void clearPagination() => clearField(4);
   @$pb.TagNumber(4)
   $2.PageResponse ensurePagination() => $_ensure(3);
+}
+
+///  TxDecodeRequest is the request type for the Service.TxDecode
+///  RPC method.
+///
+///  Since: cosmos-sdk 0.47
+class TxDecodeRequest extends $pb.GeneratedMessage {
+  factory TxDecodeRequest({
+    $core.List<$core.int>? txBytes,
+  }) {
+    final $result = create();
+    if (txBytes != null) {
+      $result.txBytes = txBytes;
+    }
+    return $result;
+  }
+  TxDecodeRequest._() : super();
+  factory TxDecodeRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxDecodeRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxDecodeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'txBytes', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxDecodeRequest clone() => TxDecodeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxDecodeRequest copyWith(void Function(TxDecodeRequest) updates) =>
+      super.copyWith((message) => updates(message as TxDecodeRequest))
+          as TxDecodeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeRequest create() => TxDecodeRequest._();
+  TxDecodeRequest createEmptyInstance() => create();
+  static $pb.PbList<TxDecodeRequest> createRepeated() =>
+      $pb.PbList<TxDecodeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxDecodeRequest>(create);
+  static TxDecodeRequest? _defaultInstance;
+
+  /// tx_bytes is the raw transaction.
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get txBytes => $_getN(0);
+  @$pb.TagNumber(1)
+  set txBytes($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTxBytes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTxBytes() => clearField(1);
+}
+
+///  TxDecodeResponse is the response type for the
+///  Service.TxDecode method.
+///
+///  Since: cosmos-sdk 0.47
+class TxDecodeResponse extends $pb.GeneratedMessage {
+  factory TxDecodeResponse({
+    $3.Tx? tx,
+  }) {
+    final $result = create();
+    if (tx != null) {
+      $result.tx = tx;
+    }
+    return $result;
+  }
+  TxDecodeResponse._() : super();
+  factory TxDecodeResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxDecodeResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxDecodeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..aOM<$3.Tx>(1, _omitFieldNames ? '' : 'tx', subBuilder: $3.Tx.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxDecodeResponse clone() => TxDecodeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxDecodeResponse copyWith(void Function(TxDecodeResponse) updates) =>
+      super.copyWith((message) => updates(message as TxDecodeResponse))
+          as TxDecodeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeResponse create() => TxDecodeResponse._();
+  TxDecodeResponse createEmptyInstance() => create();
+  static $pb.PbList<TxDecodeResponse> createRepeated() =>
+      $pb.PbList<TxDecodeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxDecodeResponse>(create);
+  static TxDecodeResponse? _defaultInstance;
+
+  /// tx is the decoded transaction.
+  @$pb.TagNumber(1)
+  $3.Tx get tx => $_getN(0);
+  @$pb.TagNumber(1)
+  set tx($3.Tx v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTx() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTx() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.Tx ensureTx() => $_ensure(0);
+}
+
+///  TxEncodeRequest is the request type for the Service.TxEncode
+///  RPC method.
+///
+///  Since: cosmos-sdk 0.47
+class TxEncodeRequest extends $pb.GeneratedMessage {
+  factory TxEncodeRequest({
+    $3.Tx? tx,
+  }) {
+    final $result = create();
+    if (tx != null) {
+      $result.tx = tx;
+    }
+    return $result;
+  }
+  TxEncodeRequest._() : super();
+  factory TxEncodeRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxEncodeRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxEncodeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..aOM<$3.Tx>(1, _omitFieldNames ? '' : 'tx', subBuilder: $3.Tx.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxEncodeRequest clone() => TxEncodeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxEncodeRequest copyWith(void Function(TxEncodeRequest) updates) =>
+      super.copyWith((message) => updates(message as TxEncodeRequest))
+          as TxEncodeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeRequest create() => TxEncodeRequest._();
+  TxEncodeRequest createEmptyInstance() => create();
+  static $pb.PbList<TxEncodeRequest> createRepeated() =>
+      $pb.PbList<TxEncodeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxEncodeRequest>(create);
+  static TxEncodeRequest? _defaultInstance;
+
+  /// tx is the transaction to encode.
+  @$pb.TagNumber(1)
+  $3.Tx get tx => $_getN(0);
+  @$pb.TagNumber(1)
+  set tx($3.Tx v) {
+    setField(1, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTx() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTx() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.Tx ensureTx() => $_ensure(0);
+}
+
+///  TxEncodeResponse is the response type for the
+///  Service.TxEncode method.
+///
+///  Since: cosmos-sdk 0.47
+class TxEncodeResponse extends $pb.GeneratedMessage {
+  factory TxEncodeResponse({
+    $core.List<$core.int>? txBytes,
+  }) {
+    final $result = create();
+    if (txBytes != null) {
+      $result.txBytes = txBytes;
+    }
+    return $result;
+  }
+  TxEncodeResponse._() : super();
+  factory TxEncodeResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxEncodeResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxEncodeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'txBytes', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxEncodeResponse clone() => TxEncodeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxEncodeResponse copyWith(void Function(TxEncodeResponse) updates) =>
+      super.copyWith((message) => updates(message as TxEncodeResponse))
+          as TxEncodeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeResponse create() => TxEncodeResponse._();
+  TxEncodeResponse createEmptyInstance() => create();
+  static $pb.PbList<TxEncodeResponse> createRepeated() =>
+      $pb.PbList<TxEncodeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxEncodeResponse>(create);
+  static TxEncodeResponse? _defaultInstance;
+
+  /// tx_bytes is the encoded transaction bytes.
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get txBytes => $_getN(0);
+  @$pb.TagNumber(1)
+  set txBytes($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTxBytes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTxBytes() => clearField(1);
+}
+
+///  TxEncodeAminoRequest is the request type for the Service.TxEncodeAmino
+///  RPC method.
+///
+///  Since: cosmos-sdk 0.47
+class TxEncodeAminoRequest extends $pb.GeneratedMessage {
+  factory TxEncodeAminoRequest({
+    $core.String? aminoJson,
+  }) {
+    final $result = create();
+    if (aminoJson != null) {
+      $result.aminoJson = aminoJson;
+    }
+    return $result;
+  }
+  TxEncodeAminoRequest._() : super();
+  factory TxEncodeAminoRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxEncodeAminoRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxEncodeAminoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'aminoJson')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxEncodeAminoRequest clone() =>
+      TxEncodeAminoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxEncodeAminoRequest copyWith(void Function(TxEncodeAminoRequest) updates) =>
+      super.copyWith((message) => updates(message as TxEncodeAminoRequest))
+          as TxEncodeAminoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeAminoRequest create() => TxEncodeAminoRequest._();
+  TxEncodeAminoRequest createEmptyInstance() => create();
+  static $pb.PbList<TxEncodeAminoRequest> createRepeated() =>
+      $pb.PbList<TxEncodeAminoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeAminoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxEncodeAminoRequest>(create);
+  static TxEncodeAminoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get aminoJson => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set aminoJson($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAminoJson() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAminoJson() => clearField(1);
+}
+
+///  TxEncodeAminoResponse is the response type for the Service.TxEncodeAmino
+///  RPC method.
+///
+///  Since: cosmos-sdk 0.47
+class TxEncodeAminoResponse extends $pb.GeneratedMessage {
+  factory TxEncodeAminoResponse({
+    $core.List<$core.int>? aminoBinary,
+  }) {
+    final $result = create();
+    if (aminoBinary != null) {
+      $result.aminoBinary = aminoBinary;
+    }
+    return $result;
+  }
+  TxEncodeAminoResponse._() : super();
+  factory TxEncodeAminoResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxEncodeAminoResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxEncodeAminoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'aminoBinary', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxEncodeAminoResponse clone() =>
+      TxEncodeAminoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxEncodeAminoResponse copyWith(
+          void Function(TxEncodeAminoResponse) updates) =>
+      super.copyWith((message) => updates(message as TxEncodeAminoResponse))
+          as TxEncodeAminoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeAminoResponse create() => TxEncodeAminoResponse._();
+  TxEncodeAminoResponse createEmptyInstance() => create();
+  static $pb.PbList<TxEncodeAminoResponse> createRepeated() =>
+      $pb.PbList<TxEncodeAminoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TxEncodeAminoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxEncodeAminoResponse>(create);
+  static TxEncodeAminoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get aminoBinary => $_getN(0);
+  @$pb.TagNumber(1)
+  set aminoBinary($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAminoBinary() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAminoBinary() => clearField(1);
+}
+
+///  TxDecodeAminoRequest is the request type for the Service.TxDecodeAmino
+///  RPC method.
+///
+///  Since: cosmos-sdk 0.47
+class TxDecodeAminoRequest extends $pb.GeneratedMessage {
+  factory TxDecodeAminoRequest({
+    $core.List<$core.int>? aminoBinary,
+  }) {
+    final $result = create();
+    if (aminoBinary != null) {
+      $result.aminoBinary = aminoBinary;
+    }
+    return $result;
+  }
+  TxDecodeAminoRequest._() : super();
+  factory TxDecodeAminoRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxDecodeAminoRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxDecodeAminoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'aminoBinary', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxDecodeAminoRequest clone() =>
+      TxDecodeAminoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxDecodeAminoRequest copyWith(void Function(TxDecodeAminoRequest) updates) =>
+      super.copyWith((message) => updates(message as TxDecodeAminoRequest))
+          as TxDecodeAminoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeAminoRequest create() => TxDecodeAminoRequest._();
+  TxDecodeAminoRequest createEmptyInstance() => create();
+  static $pb.PbList<TxDecodeAminoRequest> createRepeated() =>
+      $pb.PbList<TxDecodeAminoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeAminoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxDecodeAminoRequest>(create);
+  static TxDecodeAminoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get aminoBinary => $_getN(0);
+  @$pb.TagNumber(1)
+  set aminoBinary($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAminoBinary() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAminoBinary() => clearField(1);
+}
+
+///  TxDecodeAminoResponse is the response type for the Service.TxDecodeAmino
+///  RPC method.
+///
+///  Since: cosmos-sdk 0.47
+class TxDecodeAminoResponse extends $pb.GeneratedMessage {
+  factory TxDecodeAminoResponse({
+    $core.String? aminoJson,
+  }) {
+    final $result = create();
+    if (aminoJson != null) {
+      $result.aminoJson = aminoJson;
+    }
+    return $result;
+  }
+  TxDecodeAminoResponse._() : super();
+  factory TxDecodeAminoResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TxDecodeAminoResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TxDecodeAminoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'cosmos.tx.v1beta1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'aminoJson')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TxDecodeAminoResponse clone() =>
+      TxDecodeAminoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TxDecodeAminoResponse copyWith(
+          void Function(TxDecodeAminoResponse) updates) =>
+      super.copyWith((message) => updates(message as TxDecodeAminoResponse))
+          as TxDecodeAminoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeAminoResponse create() => TxDecodeAminoResponse._();
+  TxDecodeAminoResponse createEmptyInstance() => create();
+  static $pb.PbList<TxDecodeAminoResponse> createRepeated() =>
+      $pb.PbList<TxDecodeAminoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TxDecodeAminoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TxDecodeAminoResponse>(create);
+  static TxDecodeAminoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get aminoJson => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set aminoJson($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasAminoJson() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAminoJson() => clearField(1);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

@@ -162,14 +162,14 @@ class ResponsePing extends $pb.GeneratedMessage {
 class ResponseBroadcastTx extends $pb.GeneratedMessage {
   factory ResponseBroadcastTx({
     $0.ResponseCheckTx? checkTx,
-    $0.ResponseDeliverTx? deliverTx,
+    $0.ExecTxResult? txResult,
   }) {
     final $result = create();
     if (checkTx != null) {
       $result.checkTx = checkTx;
     }
-    if (deliverTx != null) {
-      $result.deliverTx = deliverTx;
+    if (txResult != null) {
+      $result.txResult = txResult;
     }
     return $result;
   }
@@ -188,8 +188,8 @@ class ResponseBroadcastTx extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.ResponseCheckTx>(1, _omitFieldNames ? '' : 'checkTx',
         subBuilder: $0.ResponseCheckTx.create)
-    ..aOM<$0.ResponseDeliverTx>(2, _omitFieldNames ? '' : 'deliverTx',
-        subBuilder: $0.ResponseDeliverTx.create)
+    ..aOM<$0.ExecTxResult>(2, _omitFieldNames ? '' : 'txResult',
+        subBuilder: $0.ExecTxResult.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('Using this can add significant overhead to your binary. '
@@ -230,18 +230,18 @@ class ResponseBroadcastTx extends $pb.GeneratedMessage {
   $0.ResponseCheckTx ensureCheckTx() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $0.ResponseDeliverTx get deliverTx => $_getN(1);
+  $0.ExecTxResult get txResult => $_getN(1);
   @$pb.TagNumber(2)
-  set deliverTx($0.ResponseDeliverTx v) {
+  set txResult($0.ExecTxResult v) {
     setField(2, v);
   }
 
   @$pb.TagNumber(2)
-  $core.bool hasDeliverTx() => $_has(1);
+  $core.bool hasTxResult() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDeliverTx() => clearField(2);
+  void clearTxResult() => clearField(2);
   @$pb.TagNumber(2)
-  $0.ResponseDeliverTx ensureDeliverTx() => $_ensure(1);
+  $0.ExecTxResult ensureTxResult() => $_ensure(1);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

@@ -25,8 +25,8 @@ const Coin$json = {
 
 /// Descriptor for `Coin`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List coinDescriptor = $convert.base64Decode(
-    'CgRDb2luEhQKBWRlbm9tGAEgASgJUgVkZW5vbRIxCgZhbW91bnQYAiABKAlCGcjeHwDa3h8DSW'
-    '500rQtCmNvc21vcy5JbnRSBmFtb3VudDoE6KAfAQ==');
+    'CgRDb2luEhQKBWRlbm9tGAEgASgJUgVkZW5vbRJICgZhbW91bnQYAiABKAlCMMjeHwDa3h8VY2'
+    '9zbW9zc2RrLmlvL21hdGguSW500rQtCmNvc21vcy5JbnSo57AqAVIGYW1vdW50OgTooB8B');
 
 @$core.Deprecated('Use decCoinDescriptor instead')
 const DecCoin$json = {
@@ -40,8 +40,9 @@ const DecCoin$json = {
 
 /// Descriptor for `DecCoin`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List decCoinDescriptor = $convert.base64Decode(
-    'CgdEZWNDb2luEhQKBWRlbm9tGAEgASgJUgVkZW5vbRIxCgZhbW91bnQYAiABKAlCGcjeHwDa3h'
-    '8DRGVj0rQtCmNvc21vcy5EZWNSBmFtb3VudDoE6KAfAQ==');
+    'CgdEZWNDb2luEhQKBWRlbm9tGAEgASgJUgVkZW5vbRJJCgZhbW91bnQYAiABKAlCMcjeHwDa3h'
+    '8bY29zbW9zc2RrLmlvL21hdGguTGVnYWN5RGVj0rQtCmNvc21vcy5EZWNSBmFtb3VudDoE6KAf'
+    'AQ==');
 
 @$core.Deprecated('Use intProtoDescriptor instead')
 const IntProto$json = {
@@ -53,8 +54,8 @@ const IntProto$json = {
 
 /// Descriptor for `IntProto`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List intProtoDescriptor = $convert.base64Decode(
-    'CghJbnRQcm90bxIrCgNpbnQYASABKAlCGcjeHwDa3h8DSW500rQtCmNvc21vcy5JbnRSA2ludA'
-    '==');
+    'CghJbnRQcm90bxI9CgNpbnQYASABKAlCK8jeHwDa3h8VY29zbW9zc2RrLmlvL21hdGguSW500r'
+    'QtCmNvc21vcy5JbnRSA2ludA==');
 
 @$core.Deprecated('Use decProtoDescriptor instead')
 const DecProto$json = {
@@ -66,5 +67,5 @@ const DecProto$json = {
 
 /// Descriptor for `DecProto`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List decProtoDescriptor = $convert.base64Decode(
-    'CghEZWNQcm90bxIrCgNkZWMYASABKAlCGcjeHwDa3h8DRGVj0rQtCmNvc21vcy5EZWNSA2RlYw'
-    '==');
+    'CghEZWNQcm90bxJDCgNkZWMYASABKAlCMcjeHwDa3h8bY29zbW9zc2RrLmlvL21hdGguTGVnYW'
+    'N5RGVj0rQtCmNvc21vcy5EZWNSA2RlYw==');
